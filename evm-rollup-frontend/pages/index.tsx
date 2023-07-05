@@ -1,10 +1,31 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Box, Text, Flex, Spacer } from "@chakra-ui/react";
-import SignupForm from "@/pages/components/SIgnupForm";
+import { Box, Text, Flex, Spacer, Center, Container } from "@chakra-ui/react";
 import bgStyles from "@/styles/BgImage.module.css";
 
+import SignupForm from "@/pages/components/SIgnupForm";
+import ModalBox from "./components/ModalBox";
+
 export default function Home() {
+  const modalBoxContent = [
+    {
+      title: "Unparalleled Decentralization",
+      paragraph:
+        "Our EVM Rollup solution takes decentralization to new heights, surpassing other Layer 2 (L2) solutions in the market. By harnessing the power of the Tezos blockchain, we ensure that your applications and app-chains remain truly decentralized, transparent, and resilient.",
+    },
+    {
+      title: "Versatility and Flexibility",
+      paragraph:
+        "Whether you're envisioning an open decentralized platform or a private app-chain, Etherlink provides the perfect foundation. With its versatile architecture, you can create tailored solutions that fit your unique business requirements and user needs.",
+    },
+    {
+      title: "Scalability and Speed",
+      paragraph:
+        "Leave scalability concerns behind as Etherlink leverages the Tezos network's inherent scalability. Enjoy lightning-fast transaction processing and a seamless user experience, enabling you to handle high volumes of transactions with ease.",
+    },
+  ];
+  const bgUpperPath = "/bg-upper.png";
+
   return (
     <>
       <Head>
@@ -14,7 +35,7 @@ export default function Home() {
       </Head>
       <Box pl="81px" pr="81px" pb="197px">
         <Image
-          src="/bg-upper.png"
+          src={bgUpperPath}
           alt="bg-image"
           fill={true}
           objectFit="cover"
@@ -33,7 +54,7 @@ export default function Home() {
           </Flex>
         </Flex>
 
-        <Flex mt="20%">
+        <Flex mt="20%" direction={{ base: "column", md: "row" }}>
           <Box maxW="700px">
             <Text fontSize="90px" lineHeight="100%">
               The Future <br />
@@ -50,7 +71,35 @@ export default function Home() {
           <SignupForm />
         </Flex>
       </Box>
-      <Box></Box>
+
+      <Box
+        pt={{ base: "60px", md: "80px", xl: "104px" }}
+        pb={{ base: "80px", md: "120px", xl: "164px" }}
+        bg="#04001C"
+      >
+        <Center
+          fontSize={{ base: "24px", md: "32px", xl: "48px" }}
+          color="white"
+        >
+          Why Choose Etherlink?
+        </Center>
+        <Center
+          fontSize={{ base: "16px", md: "20px", xl: "24px" }}
+          color="white"
+        >
+          Be at the forefront of decentralized innovation
+        </Center>
+        <Flex justify="space-around" wrap="wrap" gap="20px" mt="20px">
+          {modalBoxContent?.map((content, index) => (
+            <ModalBox
+              key={index}
+              title={content.title}
+              paragraph={content.paragraph}
+            />
+          ))}
+        </Flex>
+      </Box>
+
       <Box></Box>
     </>
   );

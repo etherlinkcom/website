@@ -1,4 +1,17 @@
+/* the background image should use higher resolution and photoshop it to expand to whole page */
+
 .bgUpperImage {
   z-index: -1;
-  padding-left: 488px;
+}
+
+@media screen and (min-width: 768px) {
+  .bgUpperImage {
+    padding-left: 188px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bgUpperImage {
+    padding-left: 488px;
+  }
 }
