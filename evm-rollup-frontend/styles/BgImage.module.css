@@ -31,7 +31,5 @@
 @media screen and (max-width: 450px) {
   .bgBottomImage {
     background-position: -300px 0;
-    border: red solid 10px;
-    background-size: cover;
   }
 }
