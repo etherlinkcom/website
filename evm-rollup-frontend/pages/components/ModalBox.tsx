@@ -1,4 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
+import { roboto } from "../font";
 
 function ModalBox({ title, paragraph }: { title: string; paragraph: string }) {
   const style = {
@@ -14,10 +15,12 @@ function ModalBox({ title, paragraph }: { title: string; paragraph: string }) {
       p={{ base: "32px 20px", xl: "40px" }}
       sx={style}
     >
-      <Text fontSize={{ base: "20px", xl: "24px" }} fontWeight={700} mb="5px">
+      <Text fontSize={{ base: "18px", xl: "22px" }} fontWeight={700} mb="5px">
         {title}
       </Text>
-      <Text fontSize="16px">{paragraph}</Text>
+      <Text className={roboto.className} fontSize="16px">
+        {paragraph}
+      </Text>
     </Box>
   );
 }

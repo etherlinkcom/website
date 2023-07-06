@@ -3,6 +3,7 @@ import { Text } from "@chakra-ui/react";
 import { FormControl, FormHelperText, Input, Button } from "@chakra-ui/react";
 import { useState } from "react";
 import * as EmailValidator from "email-validator";
+import { roboto } from "../font";
 
 export default function SignupForm() {
   const formStyle = {
@@ -40,6 +41,7 @@ export default function SignupForm() {
       <Text
         fontSize={{ base: "14px", md: "16px", xl: "18px" }}
         fontWeight={400}
+        className={roboto.className}
       >
         Provide your email to be among the first to experience the full power of
         Etherlink when it launches.
@@ -80,6 +82,7 @@ export default function SignupForm() {
         <FormHelperText
           fontSize={{ base: "12px", xl: "14px" }}
           fontWeight={400}
+          className={roboto.className}
         >
           Note: We respect your privacy and promise not to share your
           information with third parties.

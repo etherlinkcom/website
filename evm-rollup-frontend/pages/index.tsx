@@ -1,5 +1,4 @@
 import Head from "next/head";
-// import Image from "next/image";
 import {
   Box,
   Text,
@@ -9,10 +8,11 @@ import {
   Button,
   Image,
 } from "@chakra-ui/react";
-import bgStyles from "@/styles/BgImage.module.css";
+// import bgStyles from "@/styles/BgImage.module.css";
 
 import SignupForm from "@/pages/components/SIgnupForm";
 import ModalBox from "./components/ModalBox";
+import { roboto } from "./font";
 
 export default function Home() {
   const modalBoxContent = [
@@ -47,13 +47,11 @@ export default function Home() {
           md: "30px 50px 100px 50px",
           xl: "40px 81px 150px 81px",
         }}
+        backgroundImage={bgUpperPath}
+        backgroundRepeat="no-repeat"
+        backgroundSize="cover"
+        backgroundColor="#F4F4EA"
       >
-        {/* <Image
-          src={bgUpperPath}
-          alt="bg-image"
-          objectFit="cover"
-          className={bgStyles.bgUpperImage}
-        /> */}
         <Flex align="center">
           <Text
             fontSize={{ base: "24px", md: "28px", xl: "32px" }}
@@ -89,6 +87,7 @@ export default function Home() {
               fontSize={{ base: "16px", md: "20px", xl: "24px" }}
               maxW="630px"
               pt="3%"
+              className={roboto.className}
             >
               Built on the robust Tezos blockchain, Etherlink empowers
               businesses and developers to create a new era of open, secure, and
@@ -152,6 +151,7 @@ export default function Home() {
             fontSize={{ base: "14px", md: "20px", xl: "24px" }}
             maxW="700px"
             mt="20px"
+            className={roboto.className}
           >
             Together, let's shape the future of decentralized applications and
             unleash the true power of the Tezos blockchain. Enter your email
