@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Head from "next/head";
 import { Box, Text, Flex, Spacer, Button, Image } from "@chakra-ui/react";
 import bgStyles from "@/styles/BgImage.module.css";
@@ -24,6 +25,8 @@ export default function Home() {
         "Leave scalability concerns behind as Etherlink leverages the Tezos network's inherent scalability. Enjoy lightning-fast transaction processing and a seamless user experience, enabling you to handle high volumes of transactions with ease.",
     },
   ];
+
+  const signupRef: React.RefObject<HTMLInputElement> = useRef(null);
 
   return (
     <>
@@ -83,7 +86,7 @@ export default function Home() {
             </Text>
           </Box>
           <Spacer />
-          <SignupForm />
+          <SignupForm signupRef={signupRef} />
         </Flex>
       </Box>
 
@@ -157,6 +160,7 @@ export default function Home() {
             p="12px 40px"
             mt="20px"
             borderRadius="75px"
+            onClick={() => signupRef.current?.focus()}
           >
             Sign up
           </Button>

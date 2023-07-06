@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Box } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { FormControl, FormHelperText, Input, Button } from "@chakra-ui/react";
@@ -5,7 +6,11 @@ import { useState } from "react";
 import * as EmailValidator from "email-validator";
 import { roboto } from "@/theme/fonts";
 
-export default function SignupForm() {
+export default forwardRef(function SignupForm({
+  signupRef,
+}: {
+  signupRef: React.RefObject<HTMLInputElement>;
+}) {
   const formStyle = {
     background: "white",
     borderRadius: 20,
@@ -54,6 +59,7 @@ export default function SignupForm() {
           placeholder="Name"
           onChange={(e) => setName(e.target.value)}
           value={name}
+          ref={signupRef}
         />
         <Input
           type="email"
@@ -90,4 +96,4 @@ export default function SignupForm() {
       </FormControl>
     </Box>
   );
-}
+});
