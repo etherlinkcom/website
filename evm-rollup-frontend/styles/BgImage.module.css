@@ -7,11 +7,13 @@
 @media screen and (min-width: 768px) {
   .bgUpperImage {
     padding-left: 188px;
+    z-index: -1;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .bgUpperImage {
     padding-left: 488px;
+    z-index: -1;
   }
 }

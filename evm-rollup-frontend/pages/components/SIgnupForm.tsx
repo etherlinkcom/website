@@ -7,7 +7,6 @@ import * as EmailValidator from "email-validator";
 export default function SignupForm() {
   const formStyle = {
     background: "white",
-    padding: "50px",
     borderRadius: 20,
     maxWidth: "545px",
   };
@@ -31,11 +30,17 @@ export default function SignupForm() {
   };
 
   return (
-    <Box sx={formStyle}>
-      <Text fontSize={36} fontWeight={450}>
+    <Box sx={formStyle} p={{ base: "20px", md: "35px", xl: "50px" }}>
+      <Text
+        fontSize={{ base: "20px", md: "28px", xl: "36px" }}
+        fontWeight={450}
+      >
         Be a part of this journey
       </Text>
-      <Text>
+      <Text
+        fontSize={{ base: "14px", md: "16px", xl: "18px" }}
+        fontWeight={400}
+      >
         Provide your email to be among the first to experience the full power of
         Etherlink when it launches.
       </Text>
@@ -61,16 +66,21 @@ export default function SignupForm() {
           </Text>
         )}
         <Button
-          mt="35px"
+          mt="30px"
           mb="35px"
           w="100%"
-          colorScheme="messenger"
+          bg="#003BE8"
+          color="#FFFFFF"
+          borderRadius={750}
           onClick={submit}
           isDisabled={!name.length || !email.length}
         >
           Sign up
         </Button>
-        <FormHelperText>
+        <FormHelperText
+          fontSize={{ base: "12px", xl: "14px" }}
+          fontWeight={400}
+        >
           Note: We respect your privacy and promise not to share your
           information with third parties.
         </FormHelperText>

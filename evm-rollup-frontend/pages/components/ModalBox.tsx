@@ -14,7 +14,7 @@ function ModalBox({ title, paragraph }: { title: string; paragraph: string }) {
       p={{ base: "32px 20px", xl: "40px" }}
       sx={style}
     >
-      <Text fontSize={{ base: "20px", xl: "24px" }} fontWeight={700}>
+      <Text fontSize={{ base: "20px", xl: "24px" }} fontWeight={700} mb="5px">
         {title}
       </Text>
       <Text fontSize="16px">{paragraph}</Text>
