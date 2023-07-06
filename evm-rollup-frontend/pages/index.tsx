@@ -63,7 +63,7 @@ export default function Home() {
         <Flex mt="20%" direction={{ base: "column", md: "row" }} gap="20px">
           <Box maxW="700px">
             <Text
-              fontSize={{ base: "30px", md: "60px", xl: "90px" }}
+              fontSize={{ base: "30px", md: "50px", xl: "90px" }}
               lineHeight="110%"
               fontWeight="450"
             >

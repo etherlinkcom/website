@@ -16,8 +16,22 @@
   background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 820px) {
+  .bgBottomImage {
+    background-position: -100px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bgBottomImage {
+    background-position: -200px 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
   .bgBottomImage {
     background-position: -300px 0;
+    border: red solid 10px;
+    background-size: cover;
   }
 }
