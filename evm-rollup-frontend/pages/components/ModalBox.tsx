@@ -1,5 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
-import { roboto } from "../font";
+import { roboto } from "@/theme/fonts";
 
 function ModalBox({ title, paragraph }: { title: string; paragraph: string }) {
   const style = {

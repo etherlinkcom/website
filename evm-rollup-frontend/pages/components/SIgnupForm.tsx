@@ -3,7 +3,7 @@ import { Text } from "@chakra-ui/react";
 import { FormControl, FormHelperText, Input, Button } from "@chakra-ui/react";
 import { useState } from "react";
 import * as EmailValidator from "email-validator";
-import { roboto } from "../font";
+import { roboto } from "@/theme/fonts";
 
 export default function SignupForm() {
   const formStyle = {

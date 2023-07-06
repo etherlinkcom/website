@@ -4,7 +4,7 @@ import bgStyles from "@/styles/BgImage.module.css";
 
 import SignupForm from "@/pages/components/SIgnupForm";
 import ModalBox from "./components/ModalBox";
-import { roboto } from "./font";
+import { roboto } from "@/theme/fonts";
 
 export default function Home() {
   const modalBoxContent = [
