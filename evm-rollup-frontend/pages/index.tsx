@@ -1,14 +1,6 @@
 import Head from "next/head";
-import {
-  Box,
-  Text,
-  Flex,
-  Spacer,
-  Center,
-  Button,
-  Image,
-} from "@chakra-ui/react";
-// import bgStyles from "@/styles/BgImage.module.css";
+import { Box, Text, Flex, Spacer, Button, Image } from "@chakra-ui/react";
+import bgStyles from "@/styles/BgImage.module.css";
 
 import SignupForm from "@/pages/components/SIgnupForm";
 import ModalBox from "./components/ModalBox";
@@ -32,7 +24,6 @@ export default function Home() {
         "Leave scalability concerns behind as Etherlink leverages the Tezos network's inherent scalability. Enjoy lightning-fast transaction processing and a seamless user experience, enabling you to handle high volumes of transactions with ease.",
     },
   ];
-  const bgUpperPath = "/bg-upper.png";
 
   return (
     <>
@@ -47,10 +38,7 @@ export default function Home() {
           md: "30px 50px 100px 50px",
           xl: "40px 81px 150px 81px",
         }}
-        backgroundImage={bgUpperPath}
-        backgroundRepeat="no-repeat"
-        backgroundSize="cover"
-        backgroundColor="#F4F4EA"
+        className={bgStyles.bgUpperImage}
       >
         <Flex align="center">
           <Text
@@ -61,7 +49,7 @@ export default function Home() {
           </Text>
           <Spacer />
           <Flex>
-            <Text alignSelf="center" fontSize="12px">
+            <Text alignSelf="center" fontSize="12px" pr="5px">
               Powered by
             </Text>
             <Image
@@ -118,7 +106,13 @@ export default function Home() {
         >
           Be at the forefront of decentralized innovation
         </Text>
-        <Flex justify="space-around" wrap="wrap" gap="20px" mt="20px">
+        <Flex
+          justify="space-around"
+          wrap="wrap"
+          gap="20px"
+          mt={{ base: "40px", md: "60px", xl: "80px" }}
+          p={{ base: "0px 16px", xl: "0px 30px" }}
+        >
           {modalBoxContent?.map((content, index) => (
             <ModalBox
               key={index}
@@ -129,13 +123,13 @@ export default function Home() {
         </Flex>
       </Box>
 
-      <Box>
+      <Box className={bgStyles.bgBottomImage}>
         <Flex
           direction="column"
           align="center"
           p={{
-            base: "100px 90px 200px 90px",
-            md: "45px",
+            base: "50px 16px 150px 16px",
+            md: "75px 50px 175px 50px",
             xl: "100px 90px 200px 90px",
           }}
         >
@@ -149,7 +143,7 @@ export default function Home() {
           </Text>
           <Text
             fontSize={{ base: "14px", md: "20px", xl: "24px" }}
-            maxW="700px"
+            w={{ base: "288px", md: "400px", xl: "700px" }}
             mt="20px"
             className={roboto.className}
           >
@@ -167,7 +161,11 @@ export default function Home() {
             Sign up
           </Button>
         </Flex>
-        <Text fontSize={{ base: "16px", xl: "18px" }} p="0px 0px 20px 15px">
+        <Text
+          fontSize={{ base: "16px", xl: "18px" }}
+          p="0px 0px 20px 15px"
+          className={roboto.className}
+        >
           © Etherlink 2023
         </Text>
       </Box>

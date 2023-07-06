@@ -10,11 +10,7 @@ function ModalBox({ title, paragraph }: { title: string; paragraph: string }) {
   };
 
   return (
-    <Box
-      width={{ base: "288px", md: "350px", xl: "430px" }}
-      p={{ base: "32px 20px", xl: "40px" }}
-      sx={style}
-    >
+    <Box width="430px" p={{ base: "32px 20px", xl: "40px" }} sx={style}>
       <Text fontSize={{ base: "18px", xl: "22px" }} fontWeight={700} mb="5px">
         {title}
       </Text>
