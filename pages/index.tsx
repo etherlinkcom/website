@@ -146,12 +146,13 @@ export default function Home() {
             above and be the first to know when Etherlink goes live.
           </Text>
           <Button
-            bg='#003BE8'
+            bg='#0000ff'
             color='#FFFFFF'
             p='12px 40px'
             mt='20px'
             borderRadius='75px'
             onClick={() => signupRef.current?.focus()}
+            _hover={{ bg: '#0000b3' }}
           >
             Sign up
           </Button>

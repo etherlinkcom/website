@@ -106,12 +106,13 @@ export default forwardRef(function SignupForm({
         <Button
           mb='35px'
           w='100%'
-          bg='#003BE8'
+          bg='#0000ff'
           color='#FFFFFF'
           borderRadius={750}
           onClick={submit}
           isDisabled={!name.length || !email.length}
           _disabled={{bg: '#C5C5C5'}}
+          _hover={name.length && email.length ? { bg: '#0000b3' } : { bg: '', cursor: 'no-drop' }}
         >
           Sign up
         </Button>
