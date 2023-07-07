@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Router from "next/router";
 import { Box, Flex, Button, Center, Text } from "@chakra-ui/react";
-import PasswordInput from "@/pages/components/PasswordInput";
+import PasswordInput from "@/components/PasswordInput";
 
 const PasswordProtectPage = () => {
   const [password, setPassword] = useState("");

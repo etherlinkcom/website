@@ -3,8 +3,8 @@ import Head from "next/head";
 import { Box, Text, Flex, Spacer, Button, Image } from "@chakra-ui/react";
 import bgStyles from "@/styles/BgImage.module.css";
 
-import SignupForm from "@/pages/components/SIgnupForm";
-import ModalBox from "./components/ModalBox";
+import SignupForm from "@/components/SIgnupForm";
+import ModalBox from "../components/ModalBox";
 import { roboto } from "@/theme/fonts";
 
 export default function Home() {
