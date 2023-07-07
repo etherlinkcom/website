@@ -21,7 +21,7 @@ export default forwardRef(function SignupForm({
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const submit = () => {
+  const submit = async () => {
     const isEmailValid = EmailValidator.validate(email);
 
     if (!isEmailValid) {
@@ -29,9 +29,20 @@ export default forwardRef(function SignupForm({
     } else {
       // to be finished after setting up CRM
       setErrorMessage("");
+
+      const res = await fetch("/api/subscribeUser", {
+        body: JSON.stringify({
+          name,
+          email,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+
       setName("");
       setEmail("");
-      console.log("submit the form");
     }
   };
 
