@@ -141,7 +141,7 @@ export default function Home() {
           </Text>
           <Text
             fontSize={{ base: '14px', md: '20px', xl: '24px' }}
-            w={{ base: '288px', md: '610px', xl: '710px' }}
+            w={{ base: '350px', md: '610px', xl: '710px' }}
             mt='20px'
             className={roboto.className}
             lineHeight='135%'
