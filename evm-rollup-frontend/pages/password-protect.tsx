@@ -8,7 +8,7 @@ const PasswordProtectPage = () => {
   const [error, setError] = useState("");
 
   const submit = async () => {
-    setError("Wrong Passwrod");
+    setError("");
 
     const res = await fetch("/api/password-protect", {
       body: JSON.stringify({
