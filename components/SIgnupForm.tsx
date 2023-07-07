@@ -15,7 +15,8 @@ export default forwardRef(function SignupForm({
     background: 'white',
     borderRadius: 20,
     maxWidth: ['100%', null, '545px'],
-    minW: '500px'
+    minW: '300px',
+    minH: '414px'
   }
 
   const [name, setName] = useState('')
@@ -59,6 +60,7 @@ export default forwardRef(function SignupForm({
         fontSize={{ base: '14px', md: '16px', xl: '18px' }}
         fontWeight={400}
         className={roboto.className}
+        my="12px"
       >
         Provide your email to be among the first to experience the full power of
         Etherlink when it launches.
@@ -66,8 +68,9 @@ export default forwardRef(function SignupForm({
       <FormControl>
         <Input
           bg='#F4F4EA'
-          mb='15px'
+          mb='30px'
           mt='10px'
+          h="50px"
           placeholder='Name'
           onChange={e => setName(e.target.value)}
           value={name}
@@ -76,6 +79,8 @@ export default forwardRef(function SignupForm({
         <Input
           type='email'
           bg='#F4F4EA'
+          mb='40px'
+          h="50px"
           placeholder='Email address'
           onChange={e => setEmail(e.target.value)}
           value={email}
@@ -86,7 +91,6 @@ export default forwardRef(function SignupForm({
           </Text>
         )}
         <Button
-          mt='30px'
           mb='35px'
           w='100%'
           bg='#003BE8'

@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import Head from 'next/head'
-import { Box, Text, Flex, Spacer, Button, Image } from '@chakra-ui/react'
+import { Box, Text, Flex, Button } from '@chakra-ui/react'
 import bgStyles from '@/styles/BgImage.module.css'
 
 import SignupForm from '@/components/SIgnupForm'
@@ -39,8 +39,8 @@ export default function Home() {
       </Head>
       <Flex
         flexDir='column'
-        minH={['0px', null, '100vh']}
-        pb={['73px', null, '0px']}
+        minH={['0px', null,'100vh']}
+        pb={['73px', null,'0px']}
         backgroundImage='/bg-upper.jpg'
         backgroundPosition={['-550px', null, '0px']}
         backgroundSize='cover'
@@ -48,14 +48,14 @@ export default function Home() {
         <Header px={['16px', null, '80px']} />
         <Flex
           alignItems='center'
-          flex={1}
+          grow={1}
           direction={['column', null, 'column', 'row']}
           px={GUTTER_PX}
+          pt={['50px', null, '10px', "0px"]}
         >
-          <Box maxW='640px'>
+          <Box maxW='640px' >
             <Text
-              fontSize={['30px', '50px', '70px', '90px']}
-              // bg={['red', 'orange', 'green', 'blue', 'pink']}
+              fontSize={['30px', '50px', '60px', '90px']}
               maxW='530px'
               lineHeight='110%'
               fontWeight='450'
