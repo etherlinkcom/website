@@ -1,15 +1,3 @@
-.bgUpperImage {
-  background-image: url("/bg-upper.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 768px) {
-  .bgUpperImage {
-    background-position: -550px 0;
-  }
-}
-
 .bgBottomImage {
   background-image: url("/bg-bottom.jpg");
   background-size: cover;

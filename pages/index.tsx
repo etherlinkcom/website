@@ -42,7 +42,7 @@ export default function Home() {
         minH={['0px', null,'100vh']}
         pb={['73px', null,'0px']}
         backgroundImage='/bg-upper.jpg'
-        backgroundPosition={['-550px', null, '0px']}
+        backgroundPosition={['-350px', '-100px', '0px']}
         backgroundSize='cover'
       >
         <Header px={['16px', null, '80px']} />
@@ -58,9 +58,9 @@ export default function Home() {
               fontSize={['30px', '50px', '60px', '90px']}
               maxW='530px'
               lineHeight='110%'
-              fontWeight='450'
+              fontWeight={450}
             >
-              The Future of Ethereum L2 Solutions
+              The Future <br /> of Ethereum <br /> L2 Solutions
             </Text>
             <Text
               fontSize={{ base: '16px', md: '20px', lg: '20px', xl: '24px' }}
