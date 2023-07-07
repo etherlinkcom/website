@@ -23,9 +23,24 @@
     "next": "13.4.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "typescript": "*"
   },
   "devDependencies": {
-    "@types/cookie": "^0.5.1"
+    "@types/cookie": "^0.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^36.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "prettier": "^3.0.0"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "arrowParens": "avoid",
+    "semi": false
   }
 }

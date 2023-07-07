@@ -1,0 +1,43 @@
+{
+  "extends": ["standard-with-typescript", "plugin:react/recommended"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react/jsx-key": "error",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/consistent-type-assertions": "warn",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "multiline-ternary": "off",
+    "template-tag-spacing": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/no-confusing-void-expression": "off",
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "react/self-closing-comp": "error",
+    "react/jsx-newline": [
+      "error",
+      { "prevent": true, "allowMultilines": false }
+    ]
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest"
+  },
+  "ignorePatterns": ["next-env.d.ts"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
