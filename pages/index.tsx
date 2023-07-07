@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 import Head from 'next/head'
 import { Box, Text, Flex, Button } from '@chakra-ui/react'
-import bgStyles from '@/styles/BgImage.module.css'
 
 import SignupForm from '@/components/SIgnupForm'
 import ModalBox from '../components/ModalBox'
@@ -44,6 +43,7 @@ export default function Home() {
         backgroundImage='/bg-upper.jpg'
         backgroundPosition={['-350px', '-100px', '0px']}
         backgroundSize='cover'
+        backgroundRepeat= 'no-repeat'
       >
         <Header px={['16px', null, '80px']} />
         <Flex
@@ -116,7 +116,13 @@ export default function Home() {
         </Flex>
       </Box>
 
-      <Box className={bgStyles.bgBottomImage} pt='80px'>
+      <Box 
+        pt='80px' 
+        backgroundImage='/bg-bottom.jpg'
+        backgroundPosition={['-500px', '-100px', '0px']}
+        backgroundSize='cover'
+        backgroundRepeat= 'no-repeat'
+      >
         <Flex
           direction='column'
           align='center'
@@ -130,15 +136,16 @@ export default function Home() {
             fontWeight='450'
             fontSize={{ base: '28px', md: '45px', xl: '60px' }}
             align='center'
-            lineHeight='100%'
+            lineHeight='36px'
           >
             Join the Etherlink <br /> Revolution
           </Text>
           <Text
             fontSize={{ base: '14px', md: '20px', xl: '24px' }}
-            w={{ base: '288px', md: '400px', xl: '700px' }}
+            w={{ base: '288px', md: '610px', xl: '710px' }}
             mt='20px'
             className={roboto.className}
+            lineHeight='135%'
           >
             Together, let's shape the future of decentralized applications and
             unleash the true power of the Tezos blockchain. Enter your email
