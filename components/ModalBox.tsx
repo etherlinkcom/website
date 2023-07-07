@@ -16,7 +16,6 @@ function ModalBox({
   return (
     <Box
       width='430px'
-      // p={{ base: '32px 20px', xl: '40px' }}
       py={['32px', null, '40px']}
       px={['20px', null, '40px']}
       sx={style}

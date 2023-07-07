@@ -79,15 +79,15 @@ export default function Home() {
 
       <Box
         pt={{ base: '60px', md: '80px', xl: '104px' }}
-        pb={{ base: '80px', md: '120px', xl: '164px' }}
+        pb={{ base: '80px', md: '130px', xl: '164px' }}
         bg='#04001C'
-        // bg='red'
         px={GUTTER_PX}
       >
         <Text
           align='center'
           fontSize={{ base: '24px', md: '32px', xl: '48px' }}
           color='white'
+          mb='20px'
         >
           Why Choose Etherlink?
         </Text>
@@ -103,7 +103,6 @@ export default function Home() {
           wrap='wrap'
           gap='20px'
           mt={{ base: '40px', md: '60px', xl: '80px' }}
-          px={GUTTER_PX}
         >
           {modalBoxContent?.map((content, index) => (
             <ModalBox
@@ -117,7 +116,7 @@ export default function Home() {
         </Flex>
       </Box>
 
-      <Box className={bgStyles.bgBottomImage}>
+      <Box className={bgStyles.bgBottomImage} pt='80px'>
         <Flex
           direction='column'
           align='center'
@@ -159,7 +158,7 @@ export default function Home() {
         </Flex>
         <Text
           fontSize={{ base: '16px', xl: '18px' }}
-          p='0px 0px 20px 15px'
+          p='50px 0px 20px 15px'
           className={roboto.className}
         >
           © Etherlink 2023
