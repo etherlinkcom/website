@@ -55,7 +55,7 @@ export default function Home() {
         >
           <Box maxW='640px' >
             <Text
-              fontSize={['30px', '50px', '60px', '90px']}
+              fontSize={['30px', '50px', '60px', '85px']}
               maxW='530px'
               lineHeight='110%'
               fontWeight={450}

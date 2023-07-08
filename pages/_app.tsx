@@ -1,16 +1,13 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import { Noto_Sans } from '@next/font/google'
-
-const noto_sans = Noto_Sans({
-  subsets: ['latin'],
-  weight: ['400', '700']
-})
+import localFont from 'next/font/local'
+ 
+const fivo_sans = localFont({ src: './FivoSans/FivoSans-Medium.otf'})
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={noto_sans.className}>
+    <main className={fivo_sans.className}>
       <ChakraProvider
         theme={extendTheme({
           breakpoints: {
