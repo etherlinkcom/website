@@ -41,9 +41,8 @@ export default function Home() {
         minH={['0px', null,'100vh']}
         pb={['73px', null,'0px']}
         backgroundImage='/bg-upper.jpg'
-        backgroundPosition={['-350px', '-200px', '0px']}
+        backgroundPosition={['-350px', '-200px', '-500px', '0px']}
         backgroundSize='cover'
-        // backgroundRepeat= 'no-repeat'
       >
         <Header px={['16px', null, '80px']} />
         <Flex
@@ -51,7 +50,7 @@ export default function Home() {
           grow={1}
           direction={['column', null, 'column', 'row']}
           px={GUTTER_PX}
-          pt={['50px', null, '10px', "0px"]}
+          pt={['50px', null, '80px', "0px"]}
         >
           <Box maxW='640px' >
             <Text
@@ -72,7 +71,7 @@ export default function Home() {
               scalable applications.
             </Text>
           </Box>
-          <Box flex={[0, 0, 0, 1]} minH='32px' minW={'32px'} />
+          <Box flex={[0, 0, 0.5, 1]} minH='32px' minW={'32px'} />
           <SignupForm signupRef={signupRef} />
         </Flex>
       </Flex>
@@ -121,7 +120,6 @@ export default function Home() {
         backgroundImage='/bg-bottom.jpg'
         backgroundPosition={['-500px', '-100px', '0px']}
         backgroundSize='cover'
-        backgroundRepeat= 'no-repeat'
       >
         <Flex
           direction='column'
