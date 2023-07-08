@@ -50,7 +50,7 @@ export default function Home() {
           grow={1}
           direction={['column', null, 'column', 'row']}
           px={GUTTER_PX}
-          pt={['50px', null, '80px', "0px"]}
+          pt={['50px', null, '150px', "0px"]}
         >
           <Box maxW='640px' >
             <Text
