@@ -41,9 +41,9 @@ export default function Home() {
         minH={['0px', null,'100vh']}
         pb={['73px', null,'0px']}
         backgroundImage='/bg-upper.jpg'
-        backgroundPosition={['-350px', '-100px', '0px']}
+        backgroundPosition={['-350px', '-200px', '0px']}
         backgroundSize='cover'
-        backgroundRepeat= 'no-repeat'
+        // backgroundRepeat= 'no-repeat'
       >
         <Header px={['16px', null, '80px']} />
         <Flex
