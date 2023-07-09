@@ -1,14 +1,7 @@
 import { forwardRef } from 'react'
 import { Box } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
-import {
-  FormControl,
-  FormHelperText,
-  Input,
-  Button,
-  Image,
-  Flex
-} from '@chakra-ui/react'
+import { Image, Flex } from '@chakra-ui/react'
 import { useState } from 'react'
 import * as EmailValidator from 'email-validator'
 import { roboto } from '@/theme/fonts'
@@ -26,15 +19,12 @@ export default forwardRef(function SignupForm({
     minW: '300px',
     minH: '414px'
   }
-  const submitBtnStyle = {
-    background: 'red'
-  }
 
   const [fname, setFname] = useState('')
   const [lname, setLname] = useState('')
   const [email, setEmail] = useState('')
   // const [errorMessage, setErrorMessage] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(true)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   // const handleKepUp = (e: React.KeyboardEvent<HTMLDivElement>) => {
   //   const key = e.key
@@ -72,14 +62,14 @@ export default forwardRef(function SignupForm({
   // }
 
   const handleSubmit = () => {
-    setFname('')
-    setLname('')
-    setEmail('')
     setIsSubmitted(true)
 
     setTimeout(() => {
       setIsSubmitted(false)
-    }, 3000)
+      setFname('')
+      setLname('')
+      setEmail('')
+    }, 6000)
   }
 
   return (
@@ -92,13 +82,13 @@ export default forwardRef(function SignupForm({
         />
         <div id='mc_embed_signup'>
           <form
+            onSubmit={handleSubmit}
             action='https://tezos.us6.list-manage.com/subscribe/post?u=80b9a27c332a234b4cac5c13b&amp;id=f9f1bf7266&amp;f_id=00fcd5e0f0'
             method='post'
             id='mc-embedded-subscribe-form'
             name='mc-embedded-subscribe-form'
             className='validate'
             target='_blank'
-            onSubmit={handleSubmit}
           >
             <div id='mc_embed_signup_scroll'>
               <h2></h2>
@@ -118,7 +108,7 @@ export default forwardRef(function SignupForm({
                   value={email}
                   ref={signupRef}
                   onChange={e => setEmail(e.target.value)}
-                  style={{ background: '#F4F4EA' }}
+                  style={{ background: '#F4F4EA', height: '50px' }}
                 />
                 <span id='mce-EMAIL-HELPERTEXT' className='helper_text'></span>
               </div>
@@ -131,7 +121,7 @@ export default forwardRef(function SignupForm({
                   id='mce-FNAME'
                   value={fname}
                   onChange={e => setFname(e.target.value)}
-                  style={{ background: '#F4F4EA' }}
+                  style={{ background: '#F4F4EA', height: '50px' }}
                 />
               </div>
               <div className='mc-field-group'>
@@ -143,10 +133,15 @@ export default forwardRef(function SignupForm({
                   id='mce-LNAME'
                   value={lname}
                   onChange={e => setLname(e.target.value)}
-                  style={{ background: '#F4F4EA' }}
+                  style={{
+                    background: '#F4F4EA',
+                    height: '50px',
+                    marginBottom: '40px'
+                  }}
                 />
               </div>
-              <div id='mce-responses' className='clearfalse'>
+
+              {/* <div id='mce-responses' className='clearfalse'>
                 <div
                   className='response'
                   id='mce-error-response'
@@ -157,7 +152,7 @@ export default forwardRef(function SignupForm({
                   id='mce-success-response'
                   style={{ display: 'none' }}
                 ></div>
-              </div>
+              </div> */}
               <div
                 aria-hidden='true'
                 style={{ position: 'absolute', left: '-5000px' }}
@@ -166,7 +161,6 @@ export default forwardRef(function SignupForm({
                   type='text'
                   name='b_80b9a27c332a234b4cac5c13b_f9f1bf7266'
                   tabIndex={-1}
-                  value=''
                 />
               </div>
               <div className='clear'>
@@ -184,7 +178,7 @@ export default forwardRef(function SignupForm({
                     fontSize: '16px',
                     height: '50px'
                   }}
-                  value='Subscribe'
+                  value='Sign up'
                 />
               </div>
             </div>
@@ -194,7 +188,7 @@ export default forwardRef(function SignupForm({
                 color='white'
                 borderRadius={5}
                 p='12px 0px 12px 14px'
-                mb='10px'
+                mb='15px'
               >
                 <Image alignSelf='center' h='20px' w='20px' src='/tick.png' />
                 <Text
@@ -206,13 +200,22 @@ export default forwardRef(function SignupForm({
                 </Text>
               </Flex>
             )}
+
+            <Text
+              fontSize={['12px', '14px', '16px']}
+              fontWeight={400}
+              w={380}
+              className={roboto.className}
+            >
+              Note: We respect your privacy and promise not to share your
+              information with third parties.
+            </Text>
           </form>
         </div>
         <script
           type='text/javascript'
           src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'
         ></script>
-        {/* <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]=EMAIL;ftypes[0]=merge;,fnames[1]=FNAME;ftypes[1]=merge;,fnames[2]=LNAME;ftypes[2]=merge;,fnames[3]=ADDRESS;ftypes[3]=merge;,fnames[4]=PHONE;ftypes[4]=merge;false}(jQuery));var $mcj = jQuery.noConflict(true);</script> */}
       </div>
     </Box>
   )
