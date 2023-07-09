@@ -21,7 +21,12 @@ function ModalBox({
       sx={style}
       {...props}
     >
-      <Text fontSize={['18px', null, '19px', '24px']} className={fivo_sans_heavy.className} fontWeight={700} mb='5px'>
+      <Text
+        fontSize={['18px', null, '19px', '24px']}
+        className={fivo_sans_heavy.className}
+        fontWeight={700}
+        mb='5px'
+      >
         {title}
       </Text>
       <Text className={roboto.className} fontSize='16px'>

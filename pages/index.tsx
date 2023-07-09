@@ -38,10 +38,10 @@ export default function Home() {
       </Head>
       <Flex
         flexDir='column'
-        minH={['0px', null,'100vh']}
-        pb={['73px', null,'0px']}
+        minH={['0px', null, '100vh']}
+        pb={['73px', null, '0px']}
         backgroundImage='/bg-upper.jpg'
-        backgroundPosition={['-350px', '-200px', '-500px', '0px']}
+        backgroundPosition={['-400px', null, '-500px', '0px']}
         backgroundSize='cover'
       >
         <Header px={['16px', null, '80px']} />
@@ -50,9 +50,9 @@ export default function Home() {
           grow={1}
           direction={['column', null, 'column', 'row']}
           px={GUTTER_PX}
-          py={['50px', null, '100px', "0px"]}
+          py={['50px', null, '100px', '0px']}
         >
-          <Box maxW='640px' >
+          <Box maxW='640px'>
             <Text
               fontSize={['30px', '50px', '60px', '85px']}
               maxW='530px'
@@ -62,7 +62,7 @@ export default function Home() {
               The Future <br /> of Ethereum <br /> L2 Solutions
             </Text>
             <Text
-              fontSize={{ base: '16px', md: '20px', lg: '20px', xl: '24px' }}
+              fontSize={['18px', '20px', '22px', '24px']}
               mt={['12px', '32px', '24px']}
               className={roboto.className}
             >
@@ -115,8 +115,8 @@ export default function Home() {
         </Flex>
       </Box>
 
-      <Box 
-        pt='80px' 
+      <Box
+        pt='80px'
         backgroundImage='/bg-bottom.jpg'
         backgroundPosition={['-500px', '-100px', '0px']}
         backgroundSize='cover'
@@ -138,7 +138,7 @@ export default function Home() {
             Join the Etherlink <br /> Revolution
           </Text>
           <Text
-            fontSize={{ base: '14px', md: '20px', xl: '24px' }}
+            fontSize={{ base: '18px', md: '20px', lg: '20px', xl: '24px' }}
             w={{ base: '350px', md: '610px', xl: '710px' }}
             mt='20px'
             className={roboto.className}

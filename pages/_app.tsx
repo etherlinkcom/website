@@ -2,8 +2,8 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import localFont from 'next/font/local'
- 
-const fivo_sans = localFont({ src: './FivoSans/FivoSans-Medium.otf'})
+
+const fivo_sans = localFont({ src: './FivoSans/FivoSans-Medium.otf' })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
