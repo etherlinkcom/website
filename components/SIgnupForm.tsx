@@ -96,10 +96,7 @@ export default forwardRef(function SignupForm({
             className='validate'
             target='_blank'
           >
-            <Text
-              fontSize={{ base: '20px', md: '28px', xl: '36px' }}
-              fontWeight={450}
-            >
+            <Text fontSize={['20px', '26px', '32px', '36ppx']} fontWeight={450}>
               Be a part of this journey
             </Text>
             <Text
