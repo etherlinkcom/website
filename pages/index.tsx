@@ -50,7 +50,7 @@ export default function Home() {
           w='100%'
           alignItems='center'
           backgroundImage='/bg-upper.jpg'
-          backgroundPosition={['-500px', '-550px', '-300px', '-20em']}
+          backgroundPosition={['-500px', '-550px', '-300px', 'center']}
           backgroundSize='cover'
         >
           <Box w='100%'>
