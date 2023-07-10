@@ -52,7 +52,7 @@ export default function Home() {
           px={GUTTER_PX}
           py={['50px', null, '100px', '0px']}
         >
-          <Box maxW='640px'>
+          <Box maxW={['100%', null, '400px', '640px']} h='100%'>
             <Text
               fontSize={['30px', '50px', '60px', '85px']}
               maxW='550px'
@@ -72,7 +72,9 @@ export default function Home() {
             </Text>
           </Box>
           <Box flex={[0, 0, 0.5, 1]} minH='32px' minW={'32px'} />
-          <SignupForm signupRef={signupRef} />
+          <Flex flex={1} maxW='100%'>
+            <SignupForm signupRef={signupRef} />
+          </Flex>
         </Flex>
       </Flex>
 

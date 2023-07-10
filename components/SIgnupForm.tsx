@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, Input } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { Image, Flex } from '@chakra-ui/react'
 import { useState } from 'react'
@@ -109,11 +109,12 @@ export default forwardRef(function SignupForm({
               power of Etherlink when it launches.
             </Text>
             <div id='mc_embed_signup_scroll'>
-              <div className='mc-field-group'>
+              <div className='mc-field-group' style={{ width: '100%' }}>
                 <label htmlFor='mce-EMAIL'>
                   Email Address <span className='asterisk'>*</span>
                 </label>
-                <input
+                <Input
+                  w='100%'
                   type='email'
                   name='EMAIL'
                   className='required email'
@@ -126,7 +127,7 @@ export default forwardRef(function SignupForm({
                 />
                 <span id='mce-EMAIL-HELPERTEXT' className='helper_text'></span>
               </div>
-              <div className='mc-field-group'>
+              <div className='mc-field-group' style={{ width: '100%' }}>
                 <label htmlFor='mce-FNAME'>First Name </label>
                 <input
                   type='text'
@@ -138,7 +139,7 @@ export default forwardRef(function SignupForm({
                   style={{ background: '#F4F4EA', height: '50px' }}
                 />
               </div>
-              <div className='mc-field-group'>
+              <div className='mc-field-group' style={{ width: '100%' }}>
                 <label htmlFor='mce-LNAME'>Last Name </label>
                 <input
                   type='text'
