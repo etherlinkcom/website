@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <main
       style={{
-        backgroundColor: '  #F3F3E9'
+        backgroundColor: '#F3F3E9'
       }}
       className={fivo_sans.className}
     >

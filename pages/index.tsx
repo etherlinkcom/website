@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import Head from 'next/head'
-import { Box, Text, Flex, Button } from '@chakra-ui/react'
+import { Box, Text, Flex, Button, Image } from '@chakra-ui/react'
 
 import SignupForm from '@/components/SIgnupForm'
 import ModalBox from '../components/ModalBox'
@@ -46,18 +46,28 @@ export default function Home() {
         <Flex
           flexDir='column'
           minH={['0px', null, '100vh', 'min(100vh, 2000px)']}
-          maxW='2500px'
           pb={['73px', null, '0px']}
           w='100%'
           alignItems='center'
-          backgroundImage='/bg-upper.jpg'
-          backgroundPosition={['-500px', '-550px', '-300px', 'center center']}
-          backgroundSize='cover'
+          position='relative'
         >
-          <Box w='100%'>
-            <Header px={['16px', null, '80px']} />
-          </Box>
+          <Image
+            position='absolute'
+            src='/bg-upper.jpg'
+            h='100%'
+            w='100%'
+            zIndex={0}
+            objectFit={['cover', null, 'cover', 'cover']}
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
+          />
+          <Flex justifyContent='center' w='100%' zIndex={1}>
+            <Header maxW='1920px' px={GUTTER_PX} />
+          </Flex>
           <Flex
+            zIndex={1}
             w='100%'
             maxW='1920px'
             alignItems='center'
