@@ -4,6 +4,7 @@ import { Text } from '@chakra-ui/react'
 import { Image, Flex } from '@chakra-ui/react'
 import { useState } from 'react'
 import { roboto } from '@/theme/fonts'
+import * as EmailValidator from 'email-validator'
 
 export default forwardRef(function SignupForm({
   signupRef
@@ -201,7 +202,7 @@ export default forwardRef(function SignupForm({
                 onClick={handleSubmit}
               />
             </div>
-            {isSubmitted && (
+            {isSubmitted && EmailValidator.validate(email) && (
               <Flex
                 bg='#037E01'
                 color='white'
