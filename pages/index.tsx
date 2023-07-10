@@ -180,6 +180,7 @@ export default function Home() {
             borderRadius='75px'
             onClick={() => signupRef.current?.focus()}
             _hover={{ bg: '#0000b3' }}
+            h='50px'
           >
             Sign up
           </Button>
