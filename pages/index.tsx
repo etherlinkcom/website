@@ -41,7 +41,7 @@ export default function Home() {
         minH={['0px', null, '100vh']}
         pb={['73px', null, '0px']}
         backgroundImage='/bg-upper.jpg'
-        backgroundPosition={['-400px', null, '-500px', '0px']}
+        backgroundPosition={['-500px', '-550px', '-300px', '0px']}
         backgroundSize='cover'
       >
         <Header px={['16px', null, '80px']} />
