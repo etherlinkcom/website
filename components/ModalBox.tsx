@@ -25,6 +25,7 @@ function ModalBox({
         fontSize={['18px', null, '19px', '24px']}
         className={fivo_sans_medium.className}
         mb='5px'
+        lineHeight='110%'
       >
         {title}
       </Text>
