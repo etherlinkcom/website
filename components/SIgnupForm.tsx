@@ -106,7 +106,6 @@ export default forwardRef(function SignupForm({
               fontWeight={400}
               className={roboto.className}
               my='12px'
-              minW={['256px', '350px', '440px']}
             >
               Provide your email to be among the first to experience the full
               power of Etherlink when it launches.
@@ -224,7 +223,6 @@ export default forwardRef(function SignupForm({
             <Text
               fontSize={['12px', '14px', '16px']}
               fontWeight={400}
-              w={380}
               className={roboto.className}
             >
               Note: We respect your privacy and promise not to share your

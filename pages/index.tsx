@@ -48,7 +48,7 @@ export default function Home() {
         <Flex
           alignItems='center'
           grow={1}
-          direction={['column', null, 'column', 'row']}
+          direction={['column', 'column', 'row', 'row']}
           px={GUTTER_PX}
           py={['50px', null, '100px', '0px']}
         >
