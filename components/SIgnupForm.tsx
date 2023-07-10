@@ -3,7 +3,6 @@ import { Box } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { Image, Flex } from '@chakra-ui/react'
 import { useState } from 'react'
-import * as EmailValidator from 'email-validator'
 import { roboto } from '@/theme/fonts'
 
 export default forwardRef(function SignupForm({
@@ -25,6 +24,7 @@ export default forwardRef(function SignupForm({
   const [email, setEmail] = useState('')
   // const [errorMessage, setErrorMessage] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isHovering, setIsHovering] = useState(false)
 
   // const handleKepUp = (e: React.KeyboardEvent<HTMLDivElement>) => {
   //   const key = e.key
@@ -71,6 +71,10 @@ export default forwardRef(function SignupForm({
       setEmail('')
     }, 6000)
   }
+
+  const handleMouseEnter = () => setIsHovering(true)
+
+  const handleMouseLeave = () => setIsHovering(false)
 
   return (
     <Box sx={formStyle}>
@@ -153,7 +157,7 @@ export default forwardRef(function SignupForm({
                   style={{ display: 'none' }}
                 ></div>
               </div> */}
-              <div
+              {/* <div
                 aria-hidden='true'
                 style={{ position: 'absolute', left: '-5000px' }}
               >
@@ -162,25 +166,28 @@ export default forwardRef(function SignupForm({
                   name='b_80b9a27c332a234b4cac5c13b_f9f1bf7266'
                   tabIndex={-1}
                 />
-              </div>
-              <div className='clear'>
-                <input
-                  type='submit'
-                  name='subscribe'
-                  id='mc-embedded-subscribe'
-                  className={'button'}
-                  style={{
-                    marginBottom: '35px',
-                    width: '100%',
-                    background: '#0000ff',
-                    color: '#FFFFFF',
-                    borderRadius: '750px',
-                    fontSize: '16px',
-                    height: '50px'
-                  }}
-                  value='Sign up'
-                />
-              </div>
+              </div> */}
+
+              <input
+                type='submit'
+                name='subscribe'
+                id='mc-embedded-subscribe'
+                className={'button'}
+                style={{
+                  marginBottom: '35px',
+                  width: '100%',
+                  background: '#0000ff',
+                  color: '#FFFFFF',
+                  borderRadius: '750px',
+                  fontSize: '16px',
+                  height: '50px',
+                  backgroundColor: isHovering ? '#0000b3' : '#0000ff'
+                }}
+                value='Sign up'
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleSubmit}
+              />
             </div>
             {isSubmitted && (
               <Flex

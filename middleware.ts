@@ -1,17 +1,18 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server'
 
-const isPasswordEnabled = !!process.env.PASSWORD_PROTECT;
+const isPasswordEnabled = !!process.env.PASSWORD_PROTECT
+console.log('password', process.env.PASSWORD_PROTECT)
 
 export async function middleware(req: NextRequest) {
-  const isLoggedIn = req.cookies.has("login");
+  const isLoggedIn = req.cookies.has('login')
   const isPathPasswordProtect =
-    req.nextUrl.pathname.startsWith("/password-protect");
+    req.nextUrl.pathname.startsWith('/password-protect')
 
   if (isPasswordEnabled && !isLoggedIn && !isPathPasswordProtect) {
-    return NextResponse.redirect(new URL("/password-protect", req.url));
+    return NextResponse.redirect(new URL('/password-protect', req.url))
   }
 
-  return NextResponse.next();
+  return NextResponse.next()
 }
 export const config = {
   matcher: [
@@ -21,6 +22,6 @@ export const config = {
      * - _next/static (static files)
      * - favicon.ico (favicon file)
      */
-    "/((?!api|_next/static|favicon.ico|under-development.svg).*)",
-  ],
-};
+    '/((?!api|_next/static|favicon.ico|under-development.svg).*)'
+  ]
+}
