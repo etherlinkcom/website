@@ -135,6 +135,7 @@ export default function Home() {
             fontWeight='450'
             fontSize={{ base: '28px', md: '45px', xl: '60px' }}
             align='center'
+            lineHeight='100%'
           >
             Join the Etherlink <br /> Revolution
           </Text>
