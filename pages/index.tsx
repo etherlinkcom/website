@@ -13,17 +13,17 @@ export default function Home() {
     {
       title: 'Unparalleled Decentralization',
       paragraph:
-        'Our EVM Rollup solution takes decentralization to new heights, surpassing other Layer 2 (L2) solutions in the market. By harnessing the power of the Tezos blockchain, we ensure that your applications and app-chains remain truly decentralized, transparent, and resilient.'
+        'Our EVM rollup takes decentralization seriously. By harnessing Tezos enshrined smart rollups, we provide a decentralized, cost-efficient, and resilient generalized EVM L2 solution.'
     },
     {
-      title: 'Versatility and Flexibility',
+      title: 'Inherit Battle-Tested Governance from Tezos',
       paragraph:
-        "Whether you're envisioning an open decentralized platform or a private app-chain, Etherlink provides the perfect foundation. With its versatile architecture, you can create tailored solutions that fit your unique business requirements and user needs."
+        "Our rollup governance isn't dictated by a select few - it's decided by the proven governance model of Tezos Layer 1. Experience decentralized decision-making in its truest form on a rollup designed to evolve!"
     },
     {
       title: 'Scalability and Speed',
       paragraph:
-        "Leave scalability concerns behind as Etherlink leverages the Tezos network's inherent scalability. Enjoy lightning-fast transaction processing and a seamless user experience, enabling you to handle high volumes of transactions with ease."
+        "And what's more? Tezos has a stellar track record of continuous performance improvement. This commitment to excellence cascades into our rollup, assuring its future potential, cost-effectiveness, and scalability."
     }
   ]
 
@@ -59,7 +59,7 @@ export default function Home() {
               lineHeight='110%'
               fontWeight={450}
             >
-              The Future <br /> of Ethereum <br /> L2 Solutions
+              A fully decentralized Ethereum L2 solution
             </Text>
             <Text
               fontSize={['18px', '20px', '22px', '24px']}
@@ -144,9 +144,9 @@ export default function Home() {
             className={roboto.className}
             lineHeight='135%'
           >
-            Together, let's shape the future of decentralized applications and
-            unleash the true power of the Tezos blockchain. Enter your email
-            above and be the first to know when Etherlink goes live.
+            Decentralization, cost-efficient scaling, on-chain governance, and
+            constant evolution - all in one place. Join the Etherlink EVM rollup
+            on Tezos and be part of the blockchain revolution!
           </Text>
           <Button
             bg='#0000ff'
