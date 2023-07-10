@@ -94,11 +94,22 @@ export default forwardRef(function SignupForm({
             className='validate'
             target='_blank'
           >
+            <Text
+              fontSize={{ base: '20px', md: '28px', xl: '36px' }}
+              fontWeight={450}
+            >
+              Be a part of this journey
+            </Text>
+            <Text
+              fontSize={{ base: '14px', md: '16px', xl: '18px' }}
+              fontWeight={400}
+              className={roboto.className}
+              my='12px'
+            >
+              Provide your email to be among the first to experience the full
+              power of Etherlink when it launches.
+            </Text>
             <div id='mc_embed_signup_scroll'>
-              <h2></h2>
-              <div className='indicates-required'>
-                <span className='asterisk'>*</span> indicates required
-              </div>
               <div className='mc-field-group'>
                 <label htmlFor='mce-EMAIL'>
                   Email Address <span className='asterisk'>*</span>
@@ -157,7 +168,7 @@ export default forwardRef(function SignupForm({
                   style={{ display: 'none' }}
                 ></div>
               </div> */}
-              {/* <div
+              <div
                 aria-hidden='true'
                 style={{ position: 'absolute', left: '-5000px' }}
               >
@@ -166,7 +177,7 @@ export default forwardRef(function SignupForm({
                   name='b_80b9a27c332a234b4cac5c13b_f9f1bf7266'
                   tabIndex={-1}
                 />
-              </div> */}
+              </div>
 
               <input
                 type='submit'
