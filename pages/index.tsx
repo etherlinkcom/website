@@ -40,6 +40,7 @@ export default function Home() {
           and developers to create a new era of open, secure, and scalable
           applications.'
         />
+        <link rel='icon' href='/etherlink_favicon.png' sizes='any' />
       </Head>
       <Flex
         flexDir='column'
