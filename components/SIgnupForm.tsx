@@ -18,7 +18,8 @@ export default forwardRef(function SignupForm({
     maxWidth: ['100%', null, '600px', '545px'],
     minW: '300px',
     minH: '414px',
-    px: '10px'
+    px: '10px',
+    py: '25px'
   }
 
   const [fname, setFname] = useState('')
