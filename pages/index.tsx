@@ -78,7 +78,7 @@ export default function Home() {
             </Text>
           </Box>
           <Box flex={[0, 0, 0.5, 1]} minH='32px' minW={'32px'} />
-          <Flex flex={1} maxW='100%'>
+          <Flex flex={1} w='100%' justifyContent={['center', null, 'flex-end']}>
             <SignupForm signupRef={signupRef} />
           </Flex>
         </Flex>
