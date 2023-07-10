@@ -42,92 +42,105 @@ export default function Home() {
         />
         <link rel='icon' href='/etherlink_favicon.png' sizes='any' />
       </Head>
-      <Flex
-        flexDir='column'
-        minH={['0px', null, '100vh']}
-        pb={['73px', null, '0px']}
-        backgroundImage='/bg-upper.jpg'
-        backgroundPosition={['-500px', '-550px', '-300px', '0px']}
-        backgroundSize='cover'
-      >
-        <Header px={['16px', null, '80px']} />
+      <Flex flexDir='column' w='100%' alignItems='center' bg='#F3F3E9'>
         <Flex
+          flexDir='column'
+          minH={['0px', null, '100vh']}
+          pb={['73px', null, '0px']}
+          w='100%'
           alignItems='center'
-          grow={1}
-          direction={['column', 'column', 'row', 'row']}
-          px={GUTTER_PX}
-          py={['50px', null, '100px', '0px']}
+          backgroundImage='/bg-upper.jpg'
+          backgroundPosition={['-500px', '-550px', '-300px', '-20em']}
+          backgroundSize='cover'
         >
-          <Box maxW={['100%', null, '400px', '640px']} h='100%'>
-            <Text
-              fontSize={['30px', '50px', '60px', '85px']}
-              maxW='550px'
-              lineHeight='110%'
-              fontWeight={450}
-            >
-              A fully decentralized Ethereum L2 solution
-            </Text>
-            <Text
-              fontSize={['18px', '20px', '22px', '24px']}
-              mt={['12px', '32px', '24px']}
-              className={roboto.className}
-            >
-              Built on the robust Tezos blockchain, Etherlink empowers
-              businesses and developers to create a new era of open, secure, and
-              scalable applications.
-            </Text>
+          <Box w='100%'>
+            <Header px={['16px', null, '80px']} />
           </Box>
-          <Box flex={[0, 0, 0.5, 1]} minH='32px' minW={'32px'} />
-          <Flex flex={1} w='100%' justifyContent={['center', null, 'flex-end']}>
-            <SignupForm signupRef={signupRef} />
+          <Flex
+            w='100%'
+            maxW='1920px'
+            alignItems='center'
+            grow={1}
+            direction={['column', 'column', 'row', 'row']}
+            px={GUTTER_PX}
+            py={['50px', null, '100px', '0px']}
+          >
+            <Box maxW={['100%', null, '400px', '640px']} h='100%'>
+              <Text
+                fontSize={['30px', '50px', '60px', '85px']}
+                maxW='550px'
+                lineHeight='110%'
+                fontWeight={450}
+              >
+                A fully decentralized Ethereum L2 solution
+              </Text>
+              <Text
+                fontSize={['18px', '20px', '22px', '24px']}
+                mt={['12px', '32px', '24px']}
+                className={roboto.className}
+              >
+                Built on the robust Tezos blockchain, Etherlink empowers
+                businesses and developers to create a new era of open, secure,
+                and scalable applications.
+              </Text>
+            </Box>
+            <Box flex={[0, 0, 0.5, 1]} minH='32px' minW={'32px'} />
+            <Flex
+              flex={1}
+              w='100%'
+              justifyContent={['center', null, 'flex-end']}
+            >
+              <SignupForm signupRef={signupRef} />
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
-
-      <Box
-        pt={{ base: '60px', md: '80px', xl: '104px' }}
-        pb={{ base: '80px', md: '130px', xl: '164px' }}
-        bg='#04001C'
-        px={GUTTER_PX}
-      >
-        <Text
-          align='center'
-          fontSize={{ base: '24px', md: '32px', xl: '48px' }}
-          color='white'
-          mb='20px'
+      <Flex w='100%' alignItems='center' justifyContent='center' bg='#04001C'>
+        <Box
+          w='100%'
+          pt={{ base: '60px', md: '80px', xl: '104px' }}
+          pb={{ base: '80px', md: '130px', xl: '164px' }}
+          maxW='1920px'
+          px={GUTTER_PX}
         >
-          Why Choose Etherlink?
-        </Text>
-        <Text
-          align='center'
-          fontSize={{ base: '16px', md: '20px', xl: '24px' }}
-          color='white'
-          className={roboto.className}
-        >
-          Be at the forefront of decentralized innovation
-        </Text>
-        <Flex
-          justify='space-around'
-          wrap='wrap'
-          gap='20px'
-          mt={{ base: '40px', md: '60px', xl: '80px' }}
-        >
-          {modalBoxContent?.map((content, index) => (
-            <ModalBox
-              minW='232px'
-              flex={1}
-              key={index}
-              title={content.title}
-              paragraph={content.paragraph}
-            />
-          ))}
-        </Flex>
-      </Box>
-
+          <Text
+            align='center'
+            fontSize={{ base: '24px', md: '32px', xl: '48px' }}
+            color='white'
+            mb='20px'
+          >
+            Why Choose Etherlink?
+          </Text>
+          <Text
+            align='center'
+            fontSize={{ base: '16px', md: '20px', xl: '24px' }}
+            color='white'
+            className={roboto.className}
+          >
+            Be at the forefront of decentralized innovation
+          </Text>
+          <Flex
+            justify='space-around'
+            wrap='wrap'
+            gap='20px'
+            mt={{ base: '40px', md: '60px', xl: '80px' }}
+          >
+            {modalBoxContent?.map((content, index) => (
+              <ModalBox
+                minW='232px'
+                flex={1}
+                key={index}
+                title={content.title}
+                paragraph={content.paragraph}
+              />
+            ))}
+          </Flex>
+        </Box>
+      </Flex>
       <Box
         pt='80px'
         backgroundImage='/bg-bottom.jpg'
-        backgroundPosition={['-500px', '-100px', '0px']}
+        backgroundPosition={['-500px', '-100px', 'center']}
         backgroundSize='cover'
       >
         <Flex
@@ -149,7 +162,8 @@ export default function Home() {
           </Text>
           <Text
             fontSize={{ base: '18px', md: '20px', lg: '20px', xl: '24px' }}
-            w={{ base: '350px', md: '610px', xl: '710px' }}
+            w='100%'
+            maxW={['100%', '490px', '720px']}
             mt='20px'
             className={roboto.className}
             lineHeight='135%'
