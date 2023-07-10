@@ -14,7 +14,7 @@ export default forwardRef(function SignupForm({
   const formStyle = {
     background: 'white',
     borderRadius: 20,
-    w: '500px',
+    w: ['480px', null, '450px', '500px'],
     maxWidth: ['100%', null, '600px', '545px'],
     minW: '300px',
     minH: '414px',
