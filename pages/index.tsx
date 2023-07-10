@@ -94,6 +94,7 @@ export default function Home() {
           align='center'
           fontSize={{ base: '16px', md: '20px', xl: '24px' }}
           color='white'
+          className={roboto.className}
         >
           Be at the forefront of decentralized innovation
         </Text>

@@ -1,5 +1,5 @@
 import { Box, BoxProps, Text } from '@chakra-ui/react'
-import { roboto, fivo_sans_heavy } from '@/theme/fonts'
+import { roboto, fivo_sans_medium } from '@/theme/fonts'
 
 function ModalBox({
   title,
@@ -23,8 +23,7 @@ function ModalBox({
     >
       <Text
         fontSize={['18px', null, '19px', '24px']}
-        className={fivo_sans_heavy.className}
-        fontWeight={700}
+        className={fivo_sans_medium.className}
         mb='5px'
       >
         {title}
