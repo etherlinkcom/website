@@ -196,7 +196,9 @@ export default forwardRef(function SignupForm({
                 value='Sign up'
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onClick={handleSubmit}
+                onClick={() => {
+                  if (EmailValidator.validate(email)) handleSubmit()
+                }}
               />
             </div>
             {isSubmitted && EmailValidator.validate(email) && (
