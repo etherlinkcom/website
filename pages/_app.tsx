@@ -7,7 +7,12 @@ const fivo_sans = localFont({ src: './FivoSans/FivoSans-Medium.otf' })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={fivo_sans.className}>
+    <main
+      style={{
+        backgroundColor: '  #F3F3E9'
+      }}
+      className={fivo_sans.className}
+    >
       <ChakraProvider
         theme={extendTheme({
           breakpoints: {

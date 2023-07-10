@@ -46,11 +46,12 @@ export default function Home() {
         <Flex
           flexDir='column'
           minH={['0px', null, '100vh', 'min(100vh, 2000px)']}
+          maxW='2500px'
           pb={['73px', null, '0px']}
           w='100%'
           alignItems='center'
           backgroundImage='/bg-upper.jpg'
-          backgroundPosition={['-500px', '-550px', '-300px', 'center']}
+          backgroundPosition={['-500px', '-550px', '-300px', 'center center']}
           backgroundSize='cover'
         >
           <Box w='100%'>
