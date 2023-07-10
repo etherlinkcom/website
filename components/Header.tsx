@@ -1,4 +1,4 @@
-import { Flex, FlexProps, Spacer, Text, Image } from '@chakra-ui/react'
+import { Flex, FlexProps, Spacer, Text, Image, Link } from '@chakra-ui/react'
 
 export const Header = (props: FlexProps) => {
   return (
@@ -7,19 +7,23 @@ export const Header = (props: FlexProps) => {
         fontSize={{ base: '24px', md: '28px', xl: '32px' }}
         fontWeight='700'
       >
-        Etherlink
+        <Link _hover={{ textDecoration: 'none' }} href='https://tezos.com'>
+          Etherlink
+        </Link>
       </Text>
       <Spacer />
-      <Flex>
-        <Text alignSelf='center' fontSize='12px' pr='5px'>
-          Powered by
-        </Text>
-        <Image
-          w={{ base: '70px', md: '85px', xl: '100px' }}
-          src='/tezos-xtz-seeklogo.svg'
-          alt='tezos logo'
-        />
-      </Flex>
+      <Link _hover={{ textDecoration: 'none' }} href='https://tezos.com'>
+        <Flex>
+          <Text alignSelf='center' fontSize='12px' pr='5px'>
+            Powered by
+          </Text>
+          <Image
+            w={{ base: '70px', md: '85px', xl: '100px' }}
+            src='/tezos-xtz-seeklogo.svg'
+            alt='tezos logo'
+          />
+        </Flex>
+      </Link>
     </Flex>
   )
 }
