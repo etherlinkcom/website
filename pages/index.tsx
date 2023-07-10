@@ -34,11 +34,12 @@ export default function Home() {
       <Head>
         <title>Etherlink</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta name='description'>
-          Built on the robust Tezos blockchain, Etherlink empowers businesses
+        <meta
+          name='description'
+          content='Built on the robust Tezos blockchain, Etherlink empowers businesses
           and developers to create a new era of open, secure, and scalable
-          applications.
-        </meta>
+          applications.'
+        />
       </Head>
       <Flex
         flexDir='column'
