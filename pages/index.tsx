@@ -42,10 +42,10 @@ export default function Home() {
         />
         <link rel='icon' href='/etherlink_favicon.png' sizes='any' />
       </Head>
-      <Flex flexDir='column' w='100%' alignItems='center' bg='#F3F3E9'>
+      <Flex flexDir='column' w='100%' alignItems='center'>
         <Flex
           flexDir='column'
-          minH={['0px', null, '100vh']}
+          minH={['0px', null, '100vh', 'min(100vh, 2000px)']}
           pb={['73px', null, '0px']}
           w='100%'
           alignItems='center'
