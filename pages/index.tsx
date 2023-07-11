@@ -140,6 +140,7 @@ export default function Home() {
               <ModalBox
                 minW='232px'
                 flex={1}
+                width='430px'
                 key={index}
                 title={content.title}
                 paragraph={content.paragraph}
