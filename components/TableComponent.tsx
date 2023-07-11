@@ -24,7 +24,11 @@ const TableComponent = () => {
     <TableContainer maxW='1350px'>
       <Table>
         <Thead>
-          <Tr>{tHead?.map(h => <Th fontSize='24px'>{h}</Th>)}</Tr>
+          <Tr>
+            {tHead?.map(h => (
+              <Th fontSize={['12px', '14px', '18px', '24px']}>{h}</Th>
+            ))}
+          </Tr>
         </Thead>
         <Tbody>
           <Tr bg='#FFFFFF'>{feature1?.map(d => <Td>{d}</Td>)}</Tr>
