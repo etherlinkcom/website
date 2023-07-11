@@ -45,7 +45,7 @@ export default function Home() {
       <Flex flexDir='column' w='100%' alignItems='center' bg='#F3F3E9'>
         <Flex
           flexDir='column'
-          minH={['0px', null, '100vh']}
+          minH={['0px', null, '50vh', '100vh']}
           pb={['73px', null, '0px']}
           w='100%'
           alignItems='center'
@@ -54,7 +54,7 @@ export default function Home() {
           backgroundSize='cover'
         >
           <Box w='100%'>
-            <Header px={['16px', null, '80px']} />
+            <Header px={GUTTER_PX} />
           </Box>
           <Flex
             w='100%'
