@@ -154,7 +154,12 @@ export default function Phase2() {
 
             <Box flex={[0, 0, 0.5, 1]} minH='32px' minW={'22px'} />
 
-            <Flex w='100%' flexDir={'column'} mt='80px'>
+            <Flex
+              w='100%'
+              flexDir={'column'}
+              mt='80px'
+              mb={['40px', null, '50px', '70px']}
+            >
               <Text
                 align='center'
                 mb='20px'
@@ -233,7 +238,7 @@ export default function Phase2() {
           align='center'
           fontSize={['32px', '36px', '38px', '42px']}
         >
-          Etherlink vs other L2 solutions
+          Etherlink vs <br /> other L2 solutions
         </Text>
         <Center>
           <TableComponent />
