@@ -285,7 +285,7 @@ export default function Phase2() {
         >
           Etherlink vs <br /> other L2 solutions
         </Text>
-        <Center>
+        <Center mt={['30px', null, '50px', '80px']}>
           <TableComponent />
         </Center>
         <Text
@@ -312,7 +312,11 @@ export default function Phase2() {
         </Grid>
       </Box>
 
-      <Flex flexDir={['column', 'column', 'row', 'row']} mx={GUTTER_PX}>
+      <Flex
+        mt={[null, null, '70px']}
+        flexDir={['column', 'column', 'row', 'row']}
+        mx={GUTTER_PX}
+      >
         <Image
           objectFit='cover'
           maxW='999px'
