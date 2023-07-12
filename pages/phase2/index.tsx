@@ -152,7 +152,7 @@ export default function Phase2() {
               fontSize={['30px', '40px', '50px', '60px']}
               maxW='700px'
               lineHeight='110%'
-              fontWeight={450}
+              fontWeight={700}
               align='center'
             >
               The Future of Ethereum L2 Solutions
