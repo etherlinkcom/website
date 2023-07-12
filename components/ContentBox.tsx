@@ -33,7 +33,6 @@ function ContentBox({
       <Text
         fontSize={['56px', '62px', '68px', '72px']}
         mb='5px'
-        // lineHeight='110%'
         fontWeight={700}
         align='center'
       >

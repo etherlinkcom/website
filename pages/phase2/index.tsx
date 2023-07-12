@@ -92,119 +92,121 @@ export default function Phase2() {
 
   return (
     <>
-      <Flex flexDir='column' w='100%' alignItems='center'>
-        <Flex
-          flexDir='column'
-          minH={['0px', null, '100vh', 'min(100vh, 2000px)']}
-          pb={['73px', null, '0px']}
+      <Flex
+        flexDir='column'
+        minH={['0px', null, '100vh', 'min(100vh, 2000px)']}
+        pb={['73px', null, '0px']}
+        w='100%'
+        alignItems='center'
+        position='relative'
+        // the other way of bg image
+        // backgroundImage='/bg-bottom.jpg'
+        // backgroundSize='cover'
+        // backgroundPosition={['-1600px', '-1300px', '-350px', '0px']}
+      >
+        <Image
+          position='absolute'
+          src='/bg-bottom.jpg'
+          h='100%'
           w='100%'
-          alignItems='center'
-          position='relative'
-        >
-          <Image
-            position='absolute'
-            src='/bg-bottom.jpg'
-            h='100%'
-            w='100%'
-            zIndex={0}
-            objectFit={['cover', null, 'cover', 'cover']}
-            top={0}
-            left={0}
-            right={0}
-            bottom={0}
-          />
+          zIndex={0}
+          objectFit={['cover', null, 'cover', 'cover']}
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+        />
 
-          <Flex justifyContent='center' w='100%' zIndex={1}>
-            <Header maxW='1920px' px={GUTTER_PX} />
-          </Flex>
+        <Flex justifyContent='center' w='100%' zIndex={1}>
+          <Header maxW='1920px' px={GUTTER_PX} />
+        </Flex>
+
+        <Flex
+          zIndex={1}
+          w='100%'
+          maxW='1920px'
+          alignItems='center'
+          grow={1}
+          direction={'column'}
+          px={GUTTER_PX}
+          py={['50px', null, '100px', '0px']}
+        >
+          <Box maxW={['100%', null, '700px']}>
+            <Text
+              fontSize={['30px', '50px', '60px', '70px']}
+              maxW='700px'
+              lineHeight='110%'
+              fontWeight={450}
+              align='center'
+            >
+              The Future of Ethereum L2 Solutions
+            </Text>
+            <Text
+              fontSize={['18px', '20px', '22px', '24px']}
+              mt={['12px', '32px', '24px']}
+              className={roboto.className}
+              align='center'
+            >
+              Built on the robust Tezos blockchain, our product empowers
+              businesses and developers to create a new era of open, secure, and
+              scalable applications on Ethereum.
+            </Text>
+            <Flex justify='center'>
+              <Button
+                bg='#0000ff'
+                color='#FFFFFF'
+                p='12px 40px'
+                mt='20px'
+                borderRadius='75px'
+                _hover={{ bg: '#0000b3' }}
+                h='50px'
+                maxW='260px'
+                w='100%'
+                className={fivo_sans_light.className}
+              >
+                Connect wallet
+              </Button>
+              <Box flex={[0, 0, 0.1, 0.3]} minH='2px' minW={'12px'} />
+              <Button
+                backgroundColor='rgba(243, 243, 233, 0.1)'
+                color='#33F'
+                p='12px 40px'
+                mt='20px'
+                borderRadius='75px'
+                // _hover={{ bg: '#0000b3' }}
+                border='1px solid #33F;'
+                h='50px'
+                maxW='260px'
+                w='100%'
+                className={fivo_sans_light.className}
+              >
+                Read docs
+              </Button>
+            </Flex>
+          </Box>
 
           <Flex
-            zIndex={1}
-            w='100%'
-            maxW='1920px'
-            alignItems='center'
-            grow={1}
-            direction={'column'}
-            px={GUTTER_PX}
-            py={['50px', null, '100px', '0px']}
+            flexDir={'column'}
+            mt='80px'
+            mb={['40px', null, '50px', '70px']}
+            fontWeight={700}
           >
-            <Box maxW={['100%', null, '700px']} h='100%'>
-              <Text
-                fontSize={['30px', '50px', '60px', '85px']}
-                maxW='700px'
-                lineHeight='110%'
-                fontWeight={450}
-                align='center'
-              >
-                The Future of Ethereum L2 Solutions
-              </Text>
-              <Text
-                fontSize={['18px', '20px', '22px', '24px']}
-                mt={['12px', '32px', '24px']}
-                className={roboto.className}
-                align='center'
-              >
-                Built on the robust Tezos blockchain, our product empowers
-                businesses and developers to create a new era of open, secure,
-                and scalable applications on Ethereum.
-              </Text>
-              <Flex justify='center'>
-                <Button
-                  bg='#0000ff'
-                  color='#FFFFFF'
-                  p='12px 40px'
-                  mt='20px'
-                  borderRadius='75px'
-                  _hover={{ bg: '#0000b3' }}
-                  h='50px'
-                  maxW='260px'
-                  w='100%'
-                  className={fivo_sans_light.className}
-                >
-                  Connect wallet
-                </Button>
-                <Box flex={[0, 0, 0.1, 0.3]} minH='2px' minW={'12px'} />
-                <Button
-                  backgroundColor='rgba(243, 243, 233, 0.1)'
-                  color='#33F'
-                  p='12px 40px'
-                  mt='20px'
-                  borderRadius='75px'
-                  // _hover={{ bg: '#0000b3' }}
-                  border='1px solid #33F;'
-                  h='50px'
-                  maxW='260px'
-                  w='100%'
-                  className={fivo_sans_light.className}
-                >
-                  Read docs
-                </Button>
-              </Flex>
-            </Box>
-
-            <Flex
-              flexDir={'column'}
-              mt='80px'
-              mb={['40px', null, '50px', '70px']}
-              fontWeight={700}
+            <Text
+              align='center'
+              mb='20px'
+              fontSize={['26px', '30px', '32px', '36px']}
             >
-              <Text
-                align='center'
-                mb='20px'
-                fontSize={['26px', '30px', '32px', '36px']}
-              >
-                Etherlink in numbers
-              </Text>
-              <Flex justify='center' wrap='wrap' gap='20px'>
-                {CONTENT?.map((c, index) => (
-                  <ContentBox
-                    key={index}
-                    title={c.title}
-                    paragraph={c.paragraph}
-                    w='600px'
-                  />
-                ))}
-              </Flex>
+              Etherlink in numbers
+            </Text>
+            <Flex justify='center' wrap='wrap' gap='20px'>
+              {CONTENT?.map((c, index) => (
+                <ContentBox
+                  key={index}
+                  title={c.title}
+                  paragraph={c.paragraph}
+                  w='600px'
+                />
+              ))}
             </Flex>
           </Flex>
         </Flex>
