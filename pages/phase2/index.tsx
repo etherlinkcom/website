@@ -3,6 +3,7 @@ import { GUTTER_PX } from '@/theme/constants'
 import ModalBox from '@/components/ModalBox'
 import ContentBox from '@/components/ContentBox'
 import TableComponent from '@/components/TableComponent'
+import FaqBox from '@/components/FaqBox'
 import { roboto, fivo_sans_light } from '@/theme/fonts'
 import { Header } from '@/components/Header'
 
@@ -52,6 +53,39 @@ export default function Phase2() {
       title: 'Scaling with integrity',
       paragraph:
         'Enjoy massive scalability, while integrity and security is guaranteed by Tezos’ decentralized Layer 1.'
+    }
+  ]
+
+  const faqsContent = [
+    {
+      title: 'What is Etherlink?',
+      content:
+        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
+    },
+    {
+      title: 'What is Etherlink?',
+      content:
+        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
+    },
+    {
+      title: 'What is Etherlink?',
+      content:
+        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
+    },
+    {
+      title: 'What is Etherlink?',
+      content:
+        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
+    },
+    {
+      title: 'What is Etherlink?',
+      content:
+        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
+    },
+    {
+      title: 'What is Etherlink?',
+      content:
+        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
     }
   ]
 
@@ -128,12 +162,7 @@ export default function Phase2() {
                 >
                   Connect wallet
                 </Button>
-                <Box
-                  flex={[0, 0, 0.1, 0.3]}
-                  //   bg={['red', 'yellow', 'orange', 'pink']}
-                  minH='2px'
-                  minW={'12px'}
-                />
+                <Box flex={[0, 0, 0.1, 0.3]} minH='2px' minW={'12px'} />
                 <Button
                   backgroundColor='rgba(243, 243, 233, 0.1)'
                   color='#33F'
@@ -232,7 +261,7 @@ export default function Phase2() {
         </Box>
       </Flex>
 
-      <Box py='80px'>
+      <Box py='80px' px={GUTTER_PX}>
         <Text
           lineHeight='62px'
           align='center'
@@ -243,6 +272,28 @@ export default function Phase2() {
         <Center>
           <TableComponent />
         </Center>
+        <Text
+          align='center'
+          mt='100px '
+          fontSize={['30px', '36px', '44px', '48px']}
+          fontWeight={700}
+        >
+          FAQs
+        </Text>
+        <Grid
+          gap='20px'
+          mt={{ base: '40px', md: '60px', xl: '80px' }}
+          gridTemplateColumns={[
+            'repeat(1, minmax(320px, 1fr))',
+            'repeat(2, minmax(120px, 1fr))',
+            'repeat(2, minmax(220px, 1fr))',
+            'repeat(2, minmax(430px, 1fr))'
+          ]}
+        >
+          {faqsContent?.map((faq, index) => (
+            <FaqBox key={index} title={faq.title} content={faq.content} />
+          ))}
+        </Grid>
       </Box>
     </>
   )
