@@ -297,17 +297,32 @@ export default function Phase2() {
         </Grid>
       </Box>
 
-      <Flex flexDir={['column', null, 'row']} bg='#FFF' mx={GUTTER_PX}>
-        <Image ml='auto' mr='auto' objectFit='cover' src='/content-img.png' />
-        <Flex flexDir='column' px='70px' pt='90px'>
+      <Flex flexDir={['column', 'column', 'row', 'row']} mx={GUTTER_PX}>
+        <Image
+          objectFit='cover'
+          maxW='999px'
+          src='/content-img.png'
+          w={['100%', null, '50%']}
+        />
+        <Flex
+          flexDir='column'
+          px='70px'
+          py={['30px', null, '60px', '90px']}
+          bg='#FFF'
+          flexGrow={1}
+          // bg={['red', 'yellow', 'green', 'grey']}
+          transform={[null, null, 'translateX(-5px)']}
+        >
           <Text
             fontWeight={700}
-            fontSize={['32px', '38px', '44px', '48px']}
+            fontSize={['32px', '38px', '42px', '48px']}
             lineHeight='62px'
+            mb='15px'
+            maxW='515px'
           >
             Unlock the Potential. Transform the Future
           </Text>
-          <Text className={roboto.className}>
+          <Text maxW='515px' className={roboto.className}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id
             dolor vitae diam consequat vulputate. Nunc et euismod mauris.
           </Text>
@@ -319,7 +334,7 @@ export default function Phase2() {
             borderRadius='75px'
             _hover={{ bg: '#0000b3' }}
             h='50px'
-            maxW='200px'
+            maxW={['100%', '200px', '200px']}
             className={roboto.className}
           >
             Register
