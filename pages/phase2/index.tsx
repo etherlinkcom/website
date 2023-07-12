@@ -61,7 +61,7 @@ export default function Phase2() {
     {
       title: 'What is Etherlink?',
       content:
-        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
+        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum. applications on Ethereum.Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
     },
     {
       title: 'What is Etherlink?',
@@ -315,7 +315,7 @@ export default function Phase2() {
             bg='#0000ff'
             color='#FFFFFF'
             p='12px 40px'
-            mt='20px'
+            my='20px'
             borderRadius='75px'
             _hover={{ bg: '#0000b3' }}
             h='50px'

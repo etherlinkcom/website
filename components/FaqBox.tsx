@@ -6,16 +6,18 @@ const FaqBox = ({ title, content }: { title: string; content: string }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Flex flexDir='column'>
+    <Flex
+      flexDir='column'
+      _hover={{ cursor: 'pointer' }}
+      onClick={() => setIsOpen(!isOpen)}
+    >
       <Flex
         maxW='1000px'
         bg='#FFFFFF'
         py='32px'
         px='24px'
-        borderRadius='10px'
-        boxShadow='0px 0px 8px 0px rgba(0, 0, 0, 0.05)'
-        _hover={{ cursor: 'pointer' }}
-        onClick={() => setIsOpen(!isOpen)}
+        borderRadius={isOpen ? '10px 10px 0px 0px' : '10px'}
+        maxH='300px'
       >
         <Text
           className={roboto.className}
@@ -25,22 +27,26 @@ const FaqBox = ({ title, content }: { title: string; content: string }) => {
           {title}
         </Text>
         <Spacer />
-        <Image w='20px' h={['20px', null, '22px']} src='/faq-plus.png' />
+        {isOpen ? (
+          <Image w='20px' h='5px' src='/faq-close.png' />
+        ) : (
+          <Image w='20px' h={['18px', null, '20px']} src='/faq-plus.png' />
+        )}
       </Flex>
-
-      {isOpen && (
-        <Box
-          maxW='1000px'
-          mt='10px'
-          bg='#FFFFFF'
-          py='32px'
-          px='24px'
-          borderRadius='10px'
-          boxShadow='0px 0px 8px 0px rgba(0, 0, 0, 0.05)'
-        >
-          <Text>{content}</Text>
-        </Box>
-      )}
+      <Box
+        maxW='1000px'
+        bg='#FFFFFF'
+        borderRadius='0px 0px 10px 10px'
+        boxShadow='0px 0px 0px 0px rgba(0, 0, 0, 0.05)'
+        maxH='400px'
+        transform='translateY(-20px)'
+      >
+        {isOpen && (
+          <Text pb='30px' px='24px'>
+            {content}
+          </Text>
+        )}
+      </Box>
     </Flex>
   )
 }
