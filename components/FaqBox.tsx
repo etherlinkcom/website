@@ -8,7 +8,7 @@ const FaqBox = ({ title, content }: { title: string; content: string }) => {
   return (
     <Flex flexDir='column'>
       <Flex
-        maxW='800px'
+        maxW='1000px'
         bg='#FFFFFF'
         py='32px'
         px='24px'
@@ -30,7 +30,7 @@ const FaqBox = ({ title, content }: { title: string; content: string }) => {
 
       {isOpen && (
         <Box
-          maxW='666px'
+          maxW='1000px'
           mt='10px'
           bg='#FFFFFF'
           py='32px'
