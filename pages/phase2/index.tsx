@@ -182,13 +182,11 @@ export default function Phase2() {
               </Flex>
             </Box>
 
-            <Box flex={[0, 0, 0.5, 1]} minH='32px' minW={'22px'} />
-
             <Flex
-              w='100%'
               flexDir={'column'}
               mt='80px'
               mb={['40px', null, '50px', '70px']}
+              fontWeight={700}
             >
               <Text
                 align='center'
@@ -197,17 +195,13 @@ export default function Phase2() {
               >
                 Etherlink in numbers
               </Text>
-              <Flex
-                justify='space-around'
-                wrap='wrap'
-                gap='20px'
-                // mt={{ base: '40px', md: '60px', xl: '80px' }}
-              >
+              <Flex justify='center' wrap='wrap' gap='20px'>
                 {CONTENT?.map((c, index) => (
                   <ContentBox
                     key={index}
                     title={c.title}
                     paragraph={c.paragraph}
+                    w='600px'
                   />
                 ))}
               </Flex>
@@ -316,7 +310,7 @@ export default function Phase2() {
           <Text
             fontWeight={700}
             fontSize={['32px', '38px', '42px', '48px']}
-            lineHeight='62px'
+            lineHeight={['120%', null, '62px']}
             mb='15px'
             maxW='515px'
           >
