@@ -4,6 +4,7 @@ import ModalBox from '@/components/ModalBox'
 import ContentBox from '@/components/ContentBox'
 import TableComponent from '@/components/TableComponent'
 import FaqBox from '@/components/FaqBox'
+import Footer from '@/components/Footer'
 import { roboto, fivo_sans_light } from '@/theme/fonts'
 import { Header } from '@/components/Header'
 
@@ -295,6 +296,8 @@ export default function Phase2() {
           ))}
         </Grid>
       </Box>
+
+      <Footer />
     </>
   )
 }
