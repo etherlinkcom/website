@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Text
       fontSize={{ base: '16px', xl: '18px' }}
-      p='50px 0px 20px 15px'
+      p='0px 0px 20px 15px'
       mt='80px'
       className={roboto.className}
     >

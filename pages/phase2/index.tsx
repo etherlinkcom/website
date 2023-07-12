@@ -329,7 +329,6 @@ export default function Phase2() {
           py={['30px', null, '60px', '90px']}
           bg='#FFF'
           flexGrow={1}
-          // bg={['red', 'yellow', 'green', 'grey']}
           transform={[null, null, 'translateX(-5px)']}
         >
           <Text
