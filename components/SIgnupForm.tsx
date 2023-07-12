@@ -9,7 +9,7 @@ import * as EmailValidator from 'email-validator'
 export default forwardRef(function SignupForm({
   signupRef
 }: {
-  signupRef: React.RefObject<HTMLInputElement>
+  signupRef?: React.RefObject<HTMLInputElement>
 }) {
   const formStyle = {
     background: 'white',

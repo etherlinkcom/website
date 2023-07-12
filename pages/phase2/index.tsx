@@ -1,9 +1,25 @@
-import { Box, Text, Flex, Button, Image, Grid, Center } from '@chakra-ui/react'
+import {
+  Box,
+  Text,
+  Flex,
+  Button,
+  Image,
+  Grid,
+  Center,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure
+} from '@chakra-ui/react'
 import { GUTTER_PX } from '@/theme/constants'
 import ModalBox from '@/components/ModalBox'
 import ContentBox from '@/components/ContentBox'
 import TableComponent from '@/components/TableComponent'
 import FaqBox from '@/components/FaqBox'
+import SIgnupForm from '@/components/SIgnupForm'
 import Footer from '@/components/Footer'
 import { roboto, fivo_sans_light } from '@/theme/fonts'
 import { Header } from '@/components/Header'
@@ -89,7 +105,7 @@ export default function Phase2() {
         'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
     }
   ]
-
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
       <Flex
@@ -335,9 +351,26 @@ export default function Phase2() {
             h='50px'
             maxW={['100%', '200px', '200px']}
             className={roboto.className}
+            onClick={onOpen}
           >
             Register
           </Button>
+
+          <Modal size='xl' isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalCloseButton />
+              <ModalBody>
+                <SIgnupForm />
+              </ModalBody>
+
+              <ModalFooter>
+                <Button colorScheme='blue' mr={3} onClick={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
         </Flex>
       </Flex>
 
