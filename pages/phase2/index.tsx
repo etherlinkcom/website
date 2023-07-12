@@ -297,6 +297,36 @@ export default function Phase2() {
         </Grid>
       </Box>
 
+      <Flex flexDir={['column', null, 'row']} bg='#FFF' mx={GUTTER_PX}>
+        <Image ml='auto' mr='auto' objectFit='cover' src='/content-img.png' />
+        <Flex flexDir='column' px='70px' pt='90px'>
+          <Text
+            fontWeight={700}
+            fontSize={['32px', '38px', '44px', '48px']}
+            lineHeight='62px'
+          >
+            Unlock the Potential. Transform the Future
+          </Text>
+          <Text className={roboto.className}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id
+            dolor vitae diam consequat vulputate. Nunc et euismod mauris.
+          </Text>
+          <Button
+            bg='#0000ff'
+            color='#FFFFFF'
+            p='12px 40px'
+            mt='20px'
+            borderRadius='75px'
+            _hover={{ bg: '#0000b3' }}
+            h='50px'
+            maxW='200px'
+            className={roboto.className}
+          >
+            Register
+          </Button>
+        </Flex>
+      </Flex>
+
       <Footer />
     </>
   )
