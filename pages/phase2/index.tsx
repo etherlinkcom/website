@@ -129,11 +129,11 @@ export default function Phase2() {
           grow={1}
           direction={'column'}
           px={GUTTER_PX}
-          py={['50px', null, '100px', '0px']}
+          py={['50px', null, '100px', '100px']}
         >
           <Box maxW={['100%', null, '700px']}>
             <Text
-              fontSize={['30px', '50px', '60px', '70px']}
+              fontSize={['30px', '40px', '50px', '60px']}
               maxW='700px'
               lineHeight='110%'
               fontWeight={450}
@@ -187,8 +187,8 @@ export default function Phase2() {
 
           <Flex
             flexDir={'column'}
-            mt='80px'
-            mb={['40px', null, '50px', '70px']}
+            mt={['50px', null, '180px']}
+            mb={['0px', null, '50px', '100px']}
             fontWeight={700}
           >
             <Text
@@ -205,6 +205,7 @@ export default function Phase2() {
                   title={c.title}
                   paragraph={c.paragraph}
                   w='600px'
+                  minH='162px'
                 />
               ))}
             </Flex>
@@ -225,6 +226,7 @@ export default function Phase2() {
             fontSize={{ base: '24px', md: '32px', xl: '48px' }}
             color='white'
             mb='20px'
+            fontWeight={450}
           >
             Why Choose Etherlink?
           </Text>
@@ -260,9 +262,10 @@ export default function Phase2() {
 
       <Box py='80px' px={GUTTER_PX}>
         <Text
-          lineHeight='62px'
+          lineHeight={['normal', null, '62px']}
           align='center'
           fontSize={['32px', '36px', '38px', '42px']}
+          fontWeight={700}
         >
           Etherlink vs <br /> other L2 solutions
         </Text>

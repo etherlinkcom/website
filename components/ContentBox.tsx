@@ -24,7 +24,7 @@ function ContentBox({
 
   return (
     <Box
-      h={['250px', null, '270px']}
+      h={['200px', null, '270px']}
       py={['32px', null, '40px']}
       px={['20px', null, '40px']}
       sx={style}
