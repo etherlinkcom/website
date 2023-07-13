@@ -34,7 +34,7 @@ const termsConditions = () => {
         If you do not agree to these terms, you must not use our site.
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        1 INFORMATION ABOUT US{' '}
+        1. INFORMATION ABOUT US{' '}
       </Text>
       <Text mb={5}>
         Our site is owned and operated by the Tezos Foundation (Dammstrasse 16,
@@ -50,7 +50,7 @@ const termsConditions = () => {
         telephone number and postal address).{' '}
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        2 CHANGES TO THESE TERMS
+        2. CHANGES TO THESE TERMS
       </Text>
       <Text mb={5}>
         We may amend these terms from time to time by amending this page.{' '}
@@ -63,7 +63,7 @@ const termsConditions = () => {
         These terms were most recently updated on 11 July 2023.
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        3 CHANGES TO OUR SITE
+        3. CHANGES TO OUR SITE
       </Text>
       <Text mb={5}>
         We may update our site from time to time, and may change its content at
@@ -76,7 +76,7 @@ const termsConditions = () => {
         content on our site which may be out of date at any given time.{' '}
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        4 ACCESSING OUR SITE
+        4. ACCESSING OUR SITE
       </Text>
       <Text mb={5}>
         We do not guarantee that our site, or any content on it, will always be
@@ -95,7 +95,7 @@ const termsConditions = () => {
         applicable terms and conditions, and that they comply with them.
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        5 HOW YOU MAY USE MATERIAL ON OUR SITE
+        5. HOW YOU MAY USE MATERIAL ON OUR SITE
       </Text>
       <Text mb={5}>
         We are the owner or the licensee of all intellectual property rights in
@@ -140,7 +140,7 @@ const termsConditions = () => {
         belonging to us.
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        6 NO TEXT OR DATA MINING, OR WEB SCRAPING{' '}
+        6. NO TEXT OR DATA MINING, OR WEB SCRAPING{' '}
       </Text>
       <Text mb={5}>
         You shall not conduct, facilitate, authorise, or permit any text or data
@@ -167,13 +167,12 @@ const termsConditions = () => {
         Article 4(3) of Digital Copyright Directive ((EU) 2019/790).{' '}
       </Text>
       <Text mb={5}>
-        {' '}
         This clause shall not apply insofar as (but only to the extent that) we
         are unable to exclude or limit text or data mining or web scraping
         activity by contract under the laws which are applicable to us.
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        7 NO RELIANCE ON INFORMATION{' '}
+        7. NO RELIANCE ON INFORMATION
       </Text>
       <Text mb={5}>
         The content on our site is provided for general information only. It is
@@ -195,7 +194,7 @@ const termsConditions = () => {
         over the contents of those websites or resources.
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        8 VIRUSES
+        8. VIRUSES
       </Text>
       <Text mb={5}>
         We do not guarantee that our site will be secure or free from bugs or
@@ -232,7 +231,7 @@ const termsConditions = () => {
         <ListItem>take any other actions which we deem appropriate.</ListItem>
       </OrderedList>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        9 LINKING TO OUR SITE
+        9. LINKING TO OUR SITE
       </Text>
 
       <Text mb={5}>
@@ -264,7 +263,7 @@ const termsConditions = () => {
         that set out above, please contact us.
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        10 BREACHES OF THESE TERMS
+        10. BREACHES OF THESE TERMS
       </Text>
       <Text mb={5}>
         When we consider that a breach of these terms of use has occurred, we
@@ -293,7 +292,7 @@ const termsConditions = () => {
         may take any other action we reasonably deem appropriate.
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        11 LIMITATION OF LIABILITY
+        11. LIMITATION OF LIABILITY
       </Text>
       <Text mb={5}>
         Nothing in these terms excludes or limits our liability for death or
@@ -348,14 +347,14 @@ const termsConditions = () => {
         breaches of these terms of use.
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        12 OUR RIGHTS AND OBLIGATIONS
+        12. OUR RIGHTS AND OBLIGATIONS
       </Text>
       <Text mb={5}>
         We may transfer our rights and obligations under these terms to another
         organisation. We aim to inform you in writing if this happens.
       </Text>
       <Text mb={5} fontWeight={700} fontSize='1.25rem'>
-        13 APPLICABLE LAW AND JURISDICTION
+        13. APPLICABLE LAW AND JURISDICTION
       </Text>
       <Text mb={5}>
         These terms of use and any difference or dispute or claim (including
