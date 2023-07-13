@@ -5,10 +5,9 @@ import {
   Tr,
   Th,
   Td,
-  TableContainer,
-  Box
+  TableContainer
 } from '@chakra-ui/react'
-import { fivo_sans_heavy } from '@/theme/fonts'
+import { roboto, fivo_sans_heavy, fivo_sans_medium } from '@/theme/fonts'
 
 import { feature1 } from '@/theme/constants'
 
@@ -23,13 +22,12 @@ const TableComponent = () => {
   ]
 
   return (
-    <TableContainer maxW='1350px'>
+    <TableContainer className={fivo_sans_heavy.className} maxW='1350px'>
       <Table>
         <Thead>
           <Tr>
             {tHead?.map(h => (
               <Th
-                // fontFamily={fivo_sans_heavy.className}
                 fontSize={['12px', '14px', '18px', '24px']}
                 fontWeight={700}
                 textTransform='capitalize'
@@ -39,7 +37,7 @@ const TableComponent = () => {
             ))}
           </Tr>
         </Thead>
-        <Tbody fontWeight={400}>
+        <Tbody className={roboto.className} fontWeight={400}>
           <Tr bg='#FFFFFF'>
             {feature1?.map((d, index) => {
               if (index === 0) {
