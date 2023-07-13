@@ -111,7 +111,7 @@ export default function Phase2() {
       <Flex
         flexDir='column'
         minH={['0px', null, '100vh', 'min(100vh, 2000px)']}
-        pb={['73px', null, '0px']}
+        pb={['73px', null, '50px']}
         alignItems='center'
         position='relative'
         // the other way of bg image
