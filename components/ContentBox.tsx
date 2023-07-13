@@ -1,5 +1,4 @@
 import { Box, Text, BoxProps } from '@chakra-ui/react'
-import { roboto, fivo_sans_medium } from '@/theme/fonts'
 import { Inter } from 'next/font/google'
 
 // If loading a variable font, you don't need to specify the font weight
