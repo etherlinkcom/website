@@ -286,7 +286,7 @@ export default function Phase2() {
         </Center>
         <Text
           align='center'
-          mt='100px '
+          my={['20px', '50px', '80px']}
           fontSize={['30px', '36px', '44px', '48px']}
           fontWeight={700}
         >
@@ -294,7 +294,6 @@ export default function Phase2() {
         </Text>
         <Grid
           gap={['0px', '10px', '20px']}
-          mt={{ base: '40px', md: '60px', xl: '80px' }}
           gridTemplateColumns={[
             'repeat(1, minmax(320px, 1fr))',
             'repeat(2, minmax(120px, 1fr))',
