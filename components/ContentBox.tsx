@@ -18,21 +18,14 @@ function ContentBox({
     background: '#FFF',
     boxShadow: '0px 0px 8px 0px rgba(0, 0, 0, 0.05)',
     backdropFilter: 'blur(87px)',
-    maxWidth: '380px',
+    maxWidth: '315px',
     maxHeight: '270px'
   }
 
   return (
-    <Box
-      h={['200px', null, '270px']}
-      py={['32px', null, '40px']}
-      px={['20px', null, '40px']}
-      sx={style}
-      {...props}
-    >
+    <Box p={['20px 40px', null, '50px 30px']} sx={style} {...props}>
       <Text
         fontSize={['56px', '62px', '68px', '72px']}
-        mb='5px'
         fontWeight={700}
         align='center'
       >
@@ -42,7 +35,7 @@ function ContentBox({
         align='center'
         className={inter.className}
         fontWeight={400}
-        fontSize='16px'
+        fontSize={['20px', null, '24px']}
       >
         {paragraph}
       </Text>

@@ -112,15 +112,14 @@ export default function Phase2() {
         flexDir='column'
         minH={['0px', null, '100vh', 'min(100vh, 2000px)']}
         pb={['73px', null, '0px']}
-        w='100%'
         alignItems='center'
         position='relative'
         // the other way of bg image
-        // backgroundImage='/bg-bottom.jpg'
-        // backgroundSize='cover'
-        // backgroundPosition={['-1600px', '-1300px', '-350px', '0px']}
+        backgroundImage='/bg-bottom.jpg'
+        backgroundSize='cover'
+        backgroundPosition={['-400px', '-400px', '-350px', '0px']}
       >
-        <Image
+        {/* <Image
           position='absolute'
           src='/bg-bottom.jpg'
           h='100%'
@@ -131,7 +130,7 @@ export default function Phase2() {
           left={0}
           right={0}
           bottom={0}
-        />
+        /> */}
 
         <Flex justifyContent='center' w='100%' zIndex={1}>
           <Header maxW='1920px' px={GUTTER_PX} />
@@ -145,14 +144,16 @@ export default function Phase2() {
           grow={1}
           direction={'column'}
           px={GUTTER_PX}
-          py={['50px', null, '100px', '100px']}
+          pt='50px'
+          // py={['50px', null, '100px', '100px']}
+          // border='solid yellow 3px'
         >
           <Box maxW={['100%', null, '700px']}>
             <Text
-              fontSize={['30px', '40px', '50px', '60px']}
+              fontSize={['32px', '40px', '50px', '60px']}
               maxW='700px'
               lineHeight='110%'
-              fontWeight={700}
+              fontWeight={['450px', null, '700px']}
               align='center'
             >
               The Future of Ethereum L2 Solutions
@@ -168,33 +169,36 @@ export default function Phase2() {
               scalable applications on Ethereum.
             </Text>
 
-            <Flex justify='center' gap='20px'>
+            <Flex
+              flexDir={['column', null, 'row']}
+              justify='center'
+              gap={['0px', null, '10px']}
+              pb='100px'
+              // border='solid green 3px'
+            >
               <Button
                 bg='#0000ff'
                 color='#FFFFFF'
-                p='12px 40px'
                 mt='20px'
                 borderRadius='75px'
                 _hover={{ bg: '#0000b3' }}
                 h='50px'
-                maxW='260px'
-                w='100%'
+                w={['100%', null, '260px']}
                 className={fivo_sans_light.className}
+                fontSize={20}
               >
                 Connect wallet
               </Button>
               <Button
                 backgroundColor='rgba(243, 243, 233, 0.1)'
                 color='#33F'
-                p='12px 40px'
                 mt='20px'
                 borderRadius='75px'
-                // _hover={{ bg: '#0000b3' }}
                 border='1px solid #33F;'
                 h='50px'
-                maxW='260px'
-                w='100%'
+                w={['100%', null, '260px']}
                 className={fivo_sans_light.className}
+                fontSize={20}
               >
                 Read docs
               </Button>
@@ -203,9 +207,10 @@ export default function Phase2() {
 
           <Flex
             flexDir={'column'}
-            mt={['50px', null, '180px']}
-            mb={['0px', null, '50px', '100px']}
+            // pt={['50px', null, '80px']}
+            // mb={['0px', null, '50px', '100px']}
             fontWeight={700}
+            // border='solid red 3px'
           >
             <Text
               align='center'
@@ -220,8 +225,8 @@ export default function Phase2() {
                   key={index}
                   title={c.title}
                   paragraph={c.paragraph}
-                  w='600px'
-                  minH='162px'
+                  w={['350px', null, '500px']}
+                  h={['160px', null, '240px']}
                 />
               ))}
             </Flex>
