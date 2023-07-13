@@ -334,7 +334,7 @@ export default function Phase2() {
         >
           <Text
             fontWeight={700}
-            fontSize={['32px', '38px', '42px', '48px']}
+            fontSize={['30px', '38px', '42px', '48px']}
             lineHeight={['120%', null, '62px']}
             mb='15px'
             maxW='515px'
