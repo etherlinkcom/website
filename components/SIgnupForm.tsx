@@ -1,7 +1,5 @@
 import { forwardRef } from 'react'
-import { Box, Input } from '@chakra-ui/react'
-import { Text } from '@chakra-ui/react'
-import { Image, Flex } from '@chakra-ui/react'
+import { Image, Flex, Text, Box, Input, Link } from '@chakra-ui/react'
 import { useState } from 'react'
 import { roboto } from '@/theme/fonts'
 import * as EmailValidator from 'email-validator'
@@ -227,8 +225,11 @@ export default forwardRef(function SignupForm({
               fontWeight={400}
               className={roboto.className}
             >
-              Note: We respect your privacy and promise not to share your
-              information with third parties.
+              Note: By signing up, you agree to our{' '}
+              <Link textDecor='underline' href='/privacy'>
+                privacy policy
+              </Link>{' '}
+              and terms & conditions.
             </Text>
           </form>
         </div>
