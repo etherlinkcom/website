@@ -326,10 +326,11 @@ export default function Phase2() {
         />
         <Flex
           flexDir='column'
-          px='70px'
+          px={['12px', '30px', '70px']}
           py={['30px', null, '60px', '90px']}
           bg='#FFF'
           flexGrow={1}
+          // w={['288px', '333px','500px', '666px']}
           transform={[null, null, 'translateX(-5px)']}
         >
           <Text
