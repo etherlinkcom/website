@@ -4,6 +4,8 @@ import { Box, Text, Flex, Button, Image } from '@chakra-ui/react'
 
 import SignupForm from '@/components/SIgnupForm'
 import ModalBox from '../components/ModalBox'
+import Footer from '@/components/Footer'
+
 import { roboto } from '@/theme/fonts'
 import { Header } from '@/components/Header'
 import { GUTTER_PX } from '@/theme/constants'
@@ -140,6 +142,7 @@ export default function Home() {
               <ModalBox
                 minW='232px'
                 flex={1}
+                width='430px'
                 key={index}
                 title={content.title}
                 paragraph={content.paragraph}
@@ -196,14 +199,7 @@ export default function Home() {
             Sign up
           </Button>
         </Flex>
-        <Text
-          fontSize={{ base: '16px', xl: '18px' }}
-          p='50px 0px 20px 15px'
-          mt='80px'
-          className={roboto.className}
-        >
-          © Etherlink 2023
-        </Text>
+        <Footer />
       </Box>
     </>
   )
