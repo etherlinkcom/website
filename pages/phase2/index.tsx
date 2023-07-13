@@ -313,7 +313,7 @@ export default function Phase2() {
       </Box>
 
       <Flex
-        mt={[null, null, '70px']}
+        mt={[null, null, '40px']}
         flexDir={['column', 'column', 'row', 'row']}
         mx={GUTTER_PX}
       >
