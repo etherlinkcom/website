@@ -229,7 +229,11 @@ export default forwardRef(function SignupForm({
               <Link textDecor='underline' href='/privacy-notice'>
                 privacy policy
               </Link>{' '}
-              and terms & conditions.
+              and{' '}
+              <Link textDecor='underline' href='/terms-conditions'>
+                terms & conditions
+              </Link>
+              .
             </Text>
           </form>
         </div>

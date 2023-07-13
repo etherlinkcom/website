@@ -4,11 +4,14 @@ const privacy = () => {
   return (
     <Box
       lineHeight={1.6}
-      maxW='700px'
+      maxW='1000px'
       py='50px'
       mx='auto'
-      px={['10px', null, '0px']}
+      px={['10px', null, '30px']}
     >
+      <Text align='center' mb={5} fontSize={['48px', null, '74px']}>
+        Privacy Notice
+      </Text>
       <Text mb={5}>
         Version effective as of April 1<sup>st</sup>, 2023 <br />
       </Text>
