@@ -23,7 +23,7 @@ const TableComponent = () => {
 
   return (
     <TableContainer className={fivo_sans_heavy.className} maxW='1350px'>
-      <Table>
+      <Table size={['sm', 'md', 'lg']}>
         <Thead>
           <Tr>
             {tHead?.map(h => (
