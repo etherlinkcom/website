@@ -167,7 +167,8 @@ export default function Phase2() {
               businesses and developers to create a new era of open, secure, and
               scalable applications on Ethereum.
             </Text>
-            <Flex justify='center'>
+
+            <Flex justify='center' gap='20px'>
               <Button
                 bg='#0000ff'
                 color='#FFFFFF'
@@ -182,7 +183,6 @@ export default function Phase2() {
               >
                 Connect wallet
               </Button>
-              <Box flex={[0, 0, 0.1, 0.3]} minH='2px' minW={'12px'} />
               <Button
                 backgroundColor='rgba(243, 243, 233, 0.1)'
                 color='#33F'
