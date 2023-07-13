@@ -237,7 +237,7 @@ export default function Phase2() {
         <Box
           w='100%'
           pt={{ base: '60px', md: '80px', xl: '104px' }}
-          pb={{ base: '80px', md: '130px', xl: '164px' }}
+          pb={['70px', '100px', '120px']}
           maxW='1920px'
           px={GUTTER_PX}
         >
