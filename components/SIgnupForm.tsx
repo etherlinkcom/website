@@ -226,7 +226,7 @@ export default forwardRef(function SignupForm({
               className={roboto.className}
             >
               Note: By signing up, you agree to our{' '}
-              <Link textDecor='underline' href='/privacy'>
+              <Link textDecor='underline' href='/privacy-notice'>
                 privacy policy
               </Link>{' '}
               and terms & conditions.
