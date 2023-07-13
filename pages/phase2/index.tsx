@@ -272,7 +272,7 @@ export default function Phase2() {
         </Box>
       </Flex>
 
-      <Box py={['30px', null, '80px']} px={GUTTER_PX}>
+      <Box py={['40px', null, '80px']} px={GUTTER_PX}>
         <Text
           lineHeight={['normal', null, '62px']}
           align='center'
