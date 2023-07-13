@@ -361,7 +361,7 @@ export default function Phase2() {
             Register
           </Button>
 
-          <Modal size={['sm', 'md', 'xl']} isOpen={isOpen} onClose={onClose}>
+          <Modal size={['sm', 'md', 'lg']} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
               <ModalCloseButton />
