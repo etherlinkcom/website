@@ -243,15 +243,15 @@ export default function Phase2() {
         >
           <Text
             align='center'
-            fontSize={{ base: '24px', md: '32px', xl: '48px' }}
+            fontSize={['24px', null, '36px']}
             color='white'
             mb='20px'
-            fontWeight={450}
+            fontWeight={['450px', null, '700px']}
           >
             Why Choose Etherlink?
           </Text>
           <Grid
-            gap='20px'
+            gap='30px'
             mt={{ base: '40px', md: '60px', xl: '80px' }}
             gridTemplateColumns={[
               'repeat(1, minmax(5px, 1fr))',
@@ -355,19 +355,13 @@ export default function Phase2() {
             Register
           </Button>
 
-          <Modal size={['sm', null, 'xl']} isOpen={isOpen} onClose={onClose}>
+          <Modal size={['sm', 'md', 'xl']} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
               <ModalCloseButton />
               <ModalBody>
                 <SIgnupForm />
               </ModalBody>
-
-              <ModalFooter>
-                <Button colorScheme='blue' mr={3} onClick={onClose}>
-                  Close
-                </Button>
-              </ModalFooter>
             </ModalContent>
           </Modal>
         </Flex>

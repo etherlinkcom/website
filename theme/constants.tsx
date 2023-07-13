@@ -1,4 +1,4 @@
-import { Image, Box, Text, Center } from '@chakra-ui/react'
+import { Image, Text, Center } from '@chakra-ui/react'
 
 export const GUTTER_PX = ['16px', '60px', '40px', '80px']
 
@@ -7,18 +7,18 @@ export const feature1 = [
     Feature name
   </Text>,
   <Center>
-    <Image w={['16px', '20px', '26px', '30px']} src='/cross.png' />
+    <Image w={['12px', null, '16px', '20px']} src='/cross.svg' />
   </Center>,
   <Center>
-    <Image w={['16px', '20px', '26px', '30px']} src='/cross.png' />
+    <Image w={['12px', null, '16px', '20px']} src='/cross.svg' />
   </Center>,
   <Center>
-    <Image w={['16px', '20px', '26px', '30px']} src='/cross.png' />
+    <Image w={['12px', null, '16px', '20px']} src='/cross.svg' />
   </Center>,
   <Center>
-    <Image w={['16px', '20px', '26px', '30px']} src='/cross.png' />
+    <Image w={['12px', null, '16px', '20px']} src='/cross.svg' />
   </Center>,
   <Center>
-    <Image w={['16px', '20px', '26px', '30px']} src='/cross.png' />
+    <Image w={['12px', null, '16px', '20px']} src='/green-tick.svg' />
   </Center>
 ]
