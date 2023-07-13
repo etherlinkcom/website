@@ -293,7 +293,7 @@ export default function Phase2() {
           FAQs
         </Text>
         <Grid
-          gap={['0px', '10px', '20px']}
+          gap={['5px', '10px', '20px']}
           gridTemplateColumns={[
             'repeat(1, minmax(320px, 1fr))',
             'repeat(2, minmax(120px, 1fr))',
