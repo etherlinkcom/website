@@ -117,7 +117,7 @@ export default function Phase2() {
         // the other way of bg image
         backgroundImage='/bg-bottom.jpg'
         backgroundSize='cover'
-        backgroundPosition={['-400px', '-400px', '-350px', '0px']}
+        backgroundPosition={['-400px', '-400px', '-150px', '0px']}
       >
         {/* <Image
           position='absolute'
@@ -173,8 +173,7 @@ export default function Phase2() {
               flexDir={['column', null, 'row']}
               justify='center'
               gap={['0px', null, '10px']}
-              pb='100px'
-              // border='solid green 3px'
+              pb={['50px', null, '100px']}
             >
               <Button
                 bg='#0000ff'
@@ -185,7 +184,7 @@ export default function Phase2() {
                 h='50px'
                 w={['100%', null, '260px']}
                 className={fivo_sans_light.className}
-                fontSize={20}
+                fontSize={['16px', null, '20px']}
               >
                 Connect wallet
               </Button>
@@ -198,7 +197,7 @@ export default function Phase2() {
                 h='50px'
                 w={['100%', null, '260px']}
                 className={fivo_sans_light.className}
-                fontSize={20}
+                fontSize={['16px', null, '20px']}
               >
                 Read docs
               </Button>
@@ -225,8 +224,8 @@ export default function Phase2() {
                   key={index}
                   title={c.title}
                   paragraph={c.paragraph}
-                  w={['350px', null, '500px']}
-                  h={['160px', null, '240px']}
+                  w={['340px', null, '315px']}
+                  h={['160px', null, '270px']}
                 />
               ))}
             </Flex>
@@ -251,19 +250,11 @@ export default function Phase2() {
           >
             Why Choose Etherlink?
           </Text>
-          <Text
-            align='center'
-            fontSize={{ base: '16px', md: '20px', xl: '24px' }}
-            color='white'
-            className={roboto.className}
-          >
-            Be at the forefront of decentralized innovation
-          </Text>
           <Grid
             gap='20px'
             mt={{ base: '40px', md: '60px', xl: '80px' }}
             gridTemplateColumns={[
-              'repeat(1, minmax(320px, 1fr))',
+              'repeat(1, minmax(5px, 1fr))',
               'repeat(2, minmax(120px, 1fr))',
               'repeat(3, minmax(220px, 1fr))',
               'repeat(3, minmax(430px, 1fr))'
@@ -281,11 +272,11 @@ export default function Phase2() {
         </Box>
       </Flex>
 
-      <Box py='80px' px={GUTTER_PX}>
+      <Box py={['30px', null, '80px']} px={GUTTER_PX}>
         <Text
           lineHeight={['normal', null, '62px']}
           align='center'
-          fontSize={['32px', '36px', '38px', '42px']}
+          fontSize={['24px', '32px', '40px', '48px']}
           fontWeight={700}
         >
           Etherlink vs <br /> other L2 solutions

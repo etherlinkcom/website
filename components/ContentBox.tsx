@@ -17,9 +17,9 @@ function ContentBox({
     borderRadius: '20px',
     background: '#FFF',
     boxShadow: '0px 0px 8px 0px rgba(0, 0, 0, 0.05)',
-    backdropFilter: 'blur(87px)',
-    maxWidth: '315px',
-    maxHeight: '270px'
+    backdropFilter: 'blur(87px)'
+    // maxWidth: '315px',
+    // maxHeight: '270px'
   }
 
   return (
