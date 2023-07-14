@@ -9,6 +9,7 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
+  ModalFooter,
   ModalBody,
   ModalCloseButton,
   useDisclosure
@@ -144,6 +145,8 @@ export default function Phase2() {
           direction={'column'}
           px={GUTTER_PX}
           pt='50px'
+          // py={['50px', null, '100px', '100px']}
+          // border='solid yellow 3px'
         >
           <Box maxW={['100%', null, '700px']}>
             <Text
@@ -201,7 +204,13 @@ export default function Phase2() {
             </Flex>
           </Box>
 
-          <Flex flexDir={'column'} fontWeight={700}>
+          <Flex
+            flexDir={'column'}
+            // pt={['50px', null, '80px']}
+            // mb={['0px', null, '50px', '100px']}
+            fontWeight={700}
+            // border='solid red 3px'
+          >
             <Text
               align='center'
               mb='20px'
@@ -257,7 +266,6 @@ export default function Phase2() {
                 key={index}
                 title={content.title}
                 paragraph={content.paragraph}
-                mb={['0px', null, '10px']}
               />
             ))}
           </Grid>
