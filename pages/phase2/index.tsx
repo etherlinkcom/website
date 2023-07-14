@@ -225,7 +225,7 @@ export default function Phase2() {
                   title={c.title}
                   paragraph={c.paragraph}
                   w={['340px', null, '315px']}
-                  h={['160px', null, '270px']}
+                  h={['160px', null, '240px']}
                 />
               ))}
             </Flex>
