@@ -265,7 +265,7 @@ export default function Phase2() {
       </Flex>
 
       <Box py={['40px', null, '80px']} px={GUTTER_PX}>
-        <Text
+        {/* <Text
           lineHeight={['normal', null, '62px']}
           align='center'
           fontSize={['24px', '32px', '40px', '48px']}
@@ -275,10 +275,10 @@ export default function Phase2() {
         </Text>
         <Center mt={['30px', null, '50px', '80px']}>
           <TableComponent />
-        </Center>
+        </Center> */}
         <Text
           align='center'
-          my={['20px', '50px', '80px']}
+          // my={['20px', '50px', '80px']}
           fontSize={['30px', '36px', '44px', '48px']}
           fontWeight={700}
         >
