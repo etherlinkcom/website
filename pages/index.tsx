@@ -91,7 +91,10 @@ export default function Home() {
               w='100%'
               justifyContent={['center', null, 'flex-end']}
             >
-              <SignupForm signupRef={signupRef} />
+              <SignupForm
+                w={['480px', null, '450px', '500px']}
+                signupRef={signupRef}
+              />
             </Flex>
           </Flex>
         </Flex>

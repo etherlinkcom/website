@@ -1,18 +1,18 @@
 import { forwardRef } from 'react'
-import { Image, Flex, Text, Box, Input, Link } from '@chakra-ui/react'
+import { Image, Flex, Text, Box, Input, Link, BoxProps } from '@chakra-ui/react'
 import { useState } from 'react'
 import { roboto } from '@/theme/fonts'
 import * as EmailValidator from 'email-validator'
 
 export default forwardRef(function SignupForm({
-  signupRef
+  signupRef,
+  ...props
 }: {
   signupRef?: React.RefObject<HTMLInputElement>
-}) {
+} & BoxProps) {
   const formStyle = {
     background: 'white',
     borderRadius: 20,
-    w: ['480px', null, '450px', '500px'],
     maxWidth: ['100%', null, '600px', '545px'],
     minW: '300px',
     minH: '414px',
@@ -78,7 +78,7 @@ export default forwardRef(function SignupForm({
   const handleMouseLeave = () => setIsHovering(false)
 
   return (
-    <Box sx={formStyle}>
+    <Box sx={formStyle} {...props}>
       <div id='mc_embed_shell'>
         <link
           href='//cdn-images.mailchimp.com/embedcode/classic-061523.css'

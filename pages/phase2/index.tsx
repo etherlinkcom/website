@@ -371,7 +371,6 @@ export default function Phase2() {
           </Modal>
         </Flex>
       </Flex>
-
       <Footer />
     </>
   )
