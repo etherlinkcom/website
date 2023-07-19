@@ -1,5 +1,7 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import Script from 'next/script'
+import Head from 'next/head'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import localFont from 'next/font/local'
 
@@ -24,6 +26,31 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         })}
       >
+        <Head>
+          <title>Etherlink</title>
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <meta
+            name='description'
+            content='Built on the robust Tezos blockchain, Etherlink empowers businesses
+          and developers to create a new era of open, secure, and scalable
+          applications.'
+          />
+          <link rel='icon' href='/etherlink_favicon.png' sizes='any' />
+        </Head>
+
+        <Script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-4JXNEND0PX'
+        ></Script>
+        <Script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4JXNEND0PX');
+          `}
+        </Script>
         <Component {...pageProps} />
       </ChakraProvider>
     </main>

@@ -1,5 +1,4 @@
 import { useRef } from 'react'
-import Head from 'next/head'
 import { Box, Text, Flex, Button, Image } from '@chakra-ui/react'
 
 import SignupForm from '@/components/SIgnupForm'
@@ -33,17 +32,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Etherlink</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta
-          name='description'
-          content='Built on the robust Tezos blockchain, Etherlink empowers businesses
-          and developers to create a new era of open, secure, and scalable
-          applications.'
-        />
-        <link rel='icon' href='/etherlink_favicon.png' sizes='any' />
-      </Head>
       <Flex flexDir='column' w='100%' alignItems='center'>
         <Flex
           flexDir='column'
