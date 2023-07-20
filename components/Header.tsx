@@ -7,10 +7,7 @@ export const Header = (props: FlexProps) => {
         fontSize={{ base: '24px', md: '28px', xl: '32px' }}
         fontWeight='700'
       >
-        <Link
-          _hover={{ textDecoration: 'none' }}
-          href='https://etherlink.vercel.app/'
-        >
+        <Link _hover={{ textDecoration: 'none' }} href='/'>
           Etherlink
         </Link>
       </Text>
