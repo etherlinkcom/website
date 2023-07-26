@@ -41,6 +41,11 @@ export default function App({ Component, pageProps }: AppProps) {
             href='https://www.etherlink.com'
             key='canonical'
           />
+          <meta
+            key='og.site_name'
+            property='og:site_name'
+            content='Etherlink'
+          />
         </Head>
 
         <Script
