@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
           and developers to create a new era of open, secure, and scalable
           applications.'
           />
-          <link rel='icon' href='/etherlink_favicon.png' sizes='any' />
+          <link rel='icon' href='/Favicon_144w.png' sizes='any' />
           <link rel='canonical' href='https://www.etherlink.com' />
         </Head>
 
