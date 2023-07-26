@@ -36,6 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
           applications.'
           />
           <link rel='icon' href='/etherlink_favicon.png' sizes='any' />
+          <link rel='canonical' href='https://www.etherlink.com' />
         </Head>
 
         <Script
