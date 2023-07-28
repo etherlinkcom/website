@@ -30,6 +30,10 @@ export default function App({ Component, pageProps }: AppProps) {
       >
         <Head>
           <title>Etherlink</title>
+          <meta
+            name='google-site-verification'
+            content='vW2mbSwUqLkuA0DEBOHcVvh8PhCMWczNvZ99N3LGhtw'
+          />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <meta
             name='description'
