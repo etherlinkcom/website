@@ -1,21 +1,26 @@
 import { useState } from 'react'
-import { Box, Text, Flex, Image, Spacer, BoxProps } from '@chakra-ui/react'
+import {
+  Box,
+  Text,
+  Flex,
+  Image,
+  Spacer,
+  BoxProps,
+  Link
+} from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { roboto } from '@/theme/fonts'
 
 const FaqBox = ({
   title,
   content,
+  href,
   ...props
-}: { title: string; content: string } & BoxProps) => {
+}: { title: string; content: string; href: string } & BoxProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Flex
-      flexDir='column'
-      _hover={{ cursor: 'pointer' }}
-      onClick={() => setIsOpen(!isOpen)}
-      {...props}
-    >
+    <Flex flexDir='column' {...props}>
       <Flex
         maxW='1000px'
         bg='#FFFFFF'
@@ -23,6 +28,8 @@ const FaqBox = ({
         px={['18px', null, '24px']}
         borderRadius={isOpen ? '10px 10px 0px 0px' : '10px'}
         maxH='300px'
+        _hover={{ cursor: 'pointer' }}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <Text
           className={roboto.className}
@@ -51,7 +58,14 @@ const FaqBox = ({
             pb={['20px', null, '32px']}
             px={['18px', null, '24px']}
           >
-            {content}
+            {href.length ? (
+              <Link href={href}>
+                {content}
+                <ExternalLinkIcon ml='3px' />
+              </Link>
+            ) : (
+              content
+            )}
           </Text>
         )}
       </Box>

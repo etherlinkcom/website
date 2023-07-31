@@ -5,11 +5,9 @@ import {
   Button,
   Image,
   Grid,
-  Center,
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   useDisclosure,
@@ -79,34 +77,20 @@ export default function Phase2() {
 
   const faqsContent = [
     {
-      title: 'What is Etherlink?',
-      content:
-        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum. applications on Ethereum.Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
+      title: 'How can I try this out?',
+      content: 'Follow our tutorial!',
+      href: ''
     },
     {
-      title: 'What is Etherlink?',
-      content:
-        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
+      title: 'Can I run my own customized instance of the EVM rollup?',
+      content: 'Yes, you can. Everything is open source.',
+      href: 'https://gitlab.com/tezos/tezo'
     },
     {
-      title: 'What is Etherlink?',
+      title: 'How to get help?',
       content:
-        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
-    },
-    {
-      title: 'What is Etherlink?',
-      content:
-        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
-    },
-    {
-      title: 'What is Etherlink?',
-      content:
-        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
-    },
-    {
-      title: 'What is Etherlink?',
-      content:
-        'Built on the robust Tezos blockchain, our product empowers businesses and developers to create a new era of open, secure, and scalable applications on Ethereum.'
+        'Our community is there for you. Come to the #evm-testnets on the Tezos slack workspace.',
+      href: ''
     }
   ]
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -161,8 +145,6 @@ export default function Phase2() {
           direction={'column'}
           px={GUTTER_PX}
           pt='50px'
-          // py={['50px', null, '100px', '100px']}
-          // border='solid yellow 3px'
         >
           <Box maxW={['100%', null, '700px']}>
             <Text
@@ -221,7 +203,7 @@ export default function Phase2() {
             </Flex>
           </Box>
 
-          <Flex
+          {/* <Flex
             flexDir={'column'}
             // pt={['50px', null, '80px']}
             // mb={['0px', null, '50px', '100px']}
@@ -246,7 +228,7 @@ export default function Phase2() {
                 />
               ))}
             </Flex>
-          </Flex>
+          </Flex> */}
         </Flex>
       </Flex>
 
@@ -323,6 +305,7 @@ export default function Phase2() {
               key={index}
               title={faq.title}
               content={faq.content}
+              href={faq.href}
               mb={['10px', null, '20px']}
             />
           ))}
