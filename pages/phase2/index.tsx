@@ -23,6 +23,7 @@ import SIgnupForm from '@/components/SIgnupForm'
 import Footer from '@/components/Footer'
 import { roboto, fivo_sans_light } from '@/theme/fonts'
 import { Header } from '@/components/Header'
+import Script from 'next/script'
 
 export default function Phase2() {
   const CONTENT = [
@@ -185,6 +186,7 @@ export default function Phase2() {
                 w={['100%', null, '260px']}
                 className={fivo_sans_light.className}
                 fontSize={['16px', null, '20px']}
+                id='connectButton'
               >
                 Connect wallet
               </Button>
@@ -372,6 +374,52 @@ export default function Phase2() {
         </Flex>
       </Flex>
       <Footer />
+
+      <Script>
+        {`
+          const button = document.getElementById('connectButton');
+          button.addEventListener('click', async () => {
+              if (window.ethereum) {
+                  try {
+                      // Request account access
+                      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+  
+                      console.log('Trying to connect to the custom network...');
+  
+                      const chainId = '0x1f47b'; // 128123 in hexadecimal
+                      const chainName = 'Tezos EVM ghostnet';
+                      const nativeCurrency = {
+                          name: 'CTEZ',
+                          symbol: 'CTEZ', // Usually a 3-4 letters acronym
+                          decimals: 18 // The number of decimals that the currency has
+                      };
+                      const rpcUrls = ['https://evm.ghostnet-evm.tzalpha.net'];
+                      const blockExplorerUrls = null; // null if a block explorer isn't available
+  
+                      try {
+                          await window.ethereum.request({
+                              method: 'wallet_addEthereumChain',
+                              params: [{
+                                  chainId,
+                                  chainName,
+                                  nativeCurrency,
+                                  rpcUrls,
+                                  blockExplorerUrls
+                              }]
+                          });
+                          console.log('Successfully connected to the custom network');
+                      } catch (addError) {
+                          console.log('Error adding custom network:', addError);
+                      }
+                  } catch (connectError) {
+                      console.error("User denied account access");
+                  }
+              } else {
+                  console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+              }
+          });
+        `}
+      </Script>
     </>
   )
 }
