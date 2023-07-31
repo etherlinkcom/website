@@ -144,7 +144,7 @@ export default function Phase2() {
           grow={1}
           direction={'column'}
           px={GUTTER_PX}
-          pt='50px'
+          justify='center'
         >
           <Box maxW={['100%', null, '700px']}>
             <Text
@@ -154,7 +154,7 @@ export default function Phase2() {
               fontWeight={['450px', null, '700px']}
               align='center'
             >
-              The Future of Ethereum L2 Solutions
+              A Fully Decentralized Ethereum L2 Solution
             </Text>
             <Text
               fontSize={['18px', '20px', '22px', '24px']}
