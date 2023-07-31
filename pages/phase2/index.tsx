@@ -140,13 +140,13 @@ export default function Phase2() {
           <Header maxW='1920px' px={GUTTER_PX} />
         </Flex>
 
-        <Box id='alert-div'>
-          <Alert status='error'>
+        <Box>
+          <Alert id='error-alert' display='none' status='error'>
             <AlertIcon />
             <AlertDescription id='error-desc'></AlertDescription>
           </Alert>
 
-          <Alert status='success'>
+          <Alert id='success-alert' display='none' status='success'>
             <AlertIcon />
             <AlertDescription id='success-desc'></AlertDescription>
           </Alert>
@@ -393,8 +393,12 @@ export default function Phase2() {
       <Script>
         {`
           const button = document.getElementById('connectButton');
+
           const errorDesc = document.getElementById('error-desc');
           const successDesc = document.getElementById('success-desc');
+
+          const errorAlert = document.getElementById('error-alert')
+          const successAlert = document.getElementById('success-alert')
 
           button.addEventListener('click', async () => {
               if (window.ethereum) {
@@ -427,30 +431,38 @@ export default function Phase2() {
                           });
                           // console.log('Successfully connected to the custom network');
                           
-                          addTextToAlert(successDesc, "Successfully connected to the custom network");
+                          addTextToAlert(successAlert, successDesc, "Successfully connected to the custom network");
 
                       } catch (addError) {
                           // console.log('Error adding custom network:', addError);
-                          addTextToAlert(errorDesc, 'Error adding custom network: ' + addError);
+                          addTextToAlert(errorAlert, errorDesc, 'Error adding custom network: ' + addError);
                       }
                   } catch (connectError) {
                       // console.error("User denied account access");
-                      addTextToAlert(errorDesc, "User denied account access");
+                      addTextToAlert(errorAlert, errorDesc, "User denied account access");
                   }
               } else {
                   // console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
-                  addTextToAlert(errorDesc, 'Non-Ethereum browser detected. You should consider trying MetaMask!');
+                  addTextToAlert(errorAlert, errorDesc, 'Non-Ethereum browser detected. You should consider trying MetaMask!');
               }
           });
 
-          function addTextToAlert(parent, text) {
-            const currentText = parent.childNodes[0]
-            if(currentText) {
-              parent.removeChild(currentText)
-            }
+          let displayTimeOut;
+
+          function addTextToAlert(alertDiv, alertDesc, text) {
+            const currentText = alertDesc.childNodes[0]
+            
+            if(currentText) alertDesc.removeChild(currentText)
 
             const textNode = document.createTextNode(text)
-            parent.appendChild(textNode)
+            alertDesc.appendChild(textNode)
+            alertDiv.style.display = "inline-block"
+            
+            if(displayTimeOut) clearTimeout(displayTimeOut)
+
+            displayTimeOut = setTimeout(function() {
+              alertDiv.style.display = 'none'
+            }, 2000)
           }
         `}
       </Script>
