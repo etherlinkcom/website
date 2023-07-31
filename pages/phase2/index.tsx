@@ -12,7 +12,10 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  useDisclosure
+  useDisclosure,
+  Alert,
+  AlertIcon,
+  AlertDescription
 } from '@chakra-ui/react'
 import { GUTTER_PX } from '@/theme/constants'
 import ModalBox from '@/components/ModalBox'
@@ -136,6 +139,18 @@ export default function Phase2() {
         <Flex justifyContent='center' w='100%' zIndex={1}>
           <Header maxW='1920px' px={GUTTER_PX} />
         </Flex>
+
+        <Box id='alert-div'>
+          <Alert status='error'>
+            <AlertIcon />
+            <AlertDescription id='error-desc'></AlertDescription>
+          </Alert>
+
+          <Alert status='success'>
+            <AlertIcon />
+            <AlertDescription id='success-desc'></AlertDescription>
+          </Alert>
+        </Box>
 
         <Flex
           zIndex={1}
@@ -378,13 +393,16 @@ export default function Phase2() {
       <Script>
         {`
           const button = document.getElementById('connectButton');
+          const errorDesc = document.getElementById('error-desc');
+          const successDesc = document.getElementById('success-desc');
+
           button.addEventListener('click', async () => {
               if (window.ethereum) {
                   try {
                       // Request account access
                       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
   
-                      console.log('Trying to connect to the custom network...');
+                      // console.log('Trying to connect to the custom network...');
   
                       const chainId = '0x1f47b'; // 128123 in hexadecimal
                       const chainName = 'Tezos EVM ghostnet';
@@ -407,17 +425,33 @@ export default function Phase2() {
                                   blockExplorerUrls
                               }]
                           });
-                          console.log('Successfully connected to the custom network');
+                          // console.log('Successfully connected to the custom network');
+                          
+                          addTextToAlert(successDesc, "Successfully connected to the custom network");
+
                       } catch (addError) {
-                          console.log('Error adding custom network:', addError);
+                          // console.log('Error adding custom network:', addError);
+                          addTextToAlert(errorDesc, 'Error adding custom network: ' + addError);
                       }
                   } catch (connectError) {
-                      console.error("User denied account access");
+                      // console.error("User denied account access");
+                      addTextToAlert(errorDesc, "User denied account access");
                   }
               } else {
-                  console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+                  // console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+                  addTextToAlert(errorDesc, 'Non-Ethereum browser detected. You should consider trying MetaMask!');
               }
           });
+
+          function addTextToAlert(parent, text) {
+            const currentText = parent.childNodes[0]
+            if(currentText) {
+              parent.removeChild(currentText)
+            }
+
+            const textNode = document.createTextNode(text)
+            parent.appendChild(textNode)
+          }
         `}
       </Script>
     </>
