@@ -5,6 +5,8 @@ import Script from 'next/script'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import localFont from 'next/font/local'
 
+import Head from 'next/head'
+
 const fivo_sans = localFont({ src: './FivoSans/FivoSans-Medium.otf' })
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -15,6 +17,23 @@ export default function App({ Component, pageProps }: AppProps) {
       }}
       className={fivo_sans.className}
     >
+      <Head>
+        <title>Etherlink</title>
+        <meta
+          name='google-site-verification'
+          content='vW2mbSwUqLkuA0DEBOHcVvh8PhCMWczNvZ99N3LGhtw'
+        />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta
+          name='description'
+          content='Built on the robust Tezos blockchain, Etherlink empowers businesses
+          and developers to create a new era of open, secure, and scalable
+          applications.'
+        />
+        <link rel='icon' href='/Favicon_144w.png' />
+        <link rel='canonical' href='https://www.etherlink.com' />
+        <meta key='og.site_name' property='og:site_name' content='Etherlink' />
+      </Head>
       <ChakraProvider
         theme={extendTheme({
           breakpoints: {

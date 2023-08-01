@@ -9,8 +9,6 @@ import { roboto } from '@/theme/fonts'
 import { Header } from '@/components/Header'
 import { GUTTER_PX } from '@/theme/constants'
 
-import Head from 'next/head'
-
 export default function Home() {
   const modalBoxContent = [
     {
@@ -34,24 +32,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Etherlink</title>
-        <meta
-          name='google-site-verification'
-          content='vW2mbSwUqLkuA0DEBOHcVvh8PhCMWczNvZ99N3LGhtw'
-        />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta
-          name='description'
-          content='Built on the robust Tezos blockchain, Etherlink empowers businesses
-          and developers to create a new era of open, secure, and scalable
-          applications.'
-        />
-        <link rel='icon' href='/Favicon_144w.png' />
-        <link rel='canonical' href='https://www.etherlink.com' />
-        <meta key='og.site_name' property='og:site_name' content='Etherlink' />
-      </Head>
-
       <Flex flexDir='column' w='100%' alignItems='center'>
         <Flex
           flexDir='column'
