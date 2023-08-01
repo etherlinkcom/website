@@ -8,8 +8,6 @@ import localFont from 'next/font/local'
 const fivo_sans = localFont({ src: './FivoSans/FivoSans-Medium.otf' })
 
 export default function App({ Component, pageProps }: AppProps) {
-  const SITE_URL = process.env.NEXT_PUBLIC_WEBSITE_URL
-
   return (
     <main
       style={{
@@ -42,12 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
           applications.'
           />
           <link rel='icon' href='/Favicon_144w.png' sizes='144x144' />
-          <link
-            rel='canonical'
-            href='https://www.etherlink.com'
-            key='canonical'
-          />
-          <meta key='og.url' property='og:url' content={SITE_URL} />
+          <link rel='canonical' href='https://www.etherlink.com' />
           <meta
             key='og.site_name'
             property='og:site_name'
