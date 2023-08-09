@@ -105,7 +105,7 @@ export default function Phase2() {
         // the other way of bg image
         backgroundImage='/bg-bottom.jpg'
         backgroundSize='cover'
-        backgroundPosition={['-400px', '-400px', '-150px', '0px']}
+        backgroundPosition={['-350px', '-100px', '-150px', '0px']}
       >
         {/* <Image
           position='absolute'
@@ -172,6 +172,8 @@ export default function Phase2() {
               justify='center'
               gap={['0px', null, '10px']}
               pb={['50px', null, '100px']}
+              maxW={['300px', '350px', '1200px']}
+              m='auto'
             >
               <Button
                 bg='#0000ff'
