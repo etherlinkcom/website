@@ -145,6 +145,7 @@ export default function Phase2() {
           direction={'column'}
           px={GUTTER_PX}
           justify='center'
+          mt={['50px', null, '0px']}
         >
           <Box maxW={['100%', null, '700px']}>
             <Text
