@@ -290,6 +290,7 @@ export default function Phase2() {
           // my={['20px', '50px', '80px']}
           fontSize={['30px', '36px', '44px', '48px']}
           fontWeight={700}
+          mb='30px'
         >
           FAQs
         </Text>

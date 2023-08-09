@@ -22,6 +22,8 @@ const FaqBox = ({
   return (
     <Flex flexDir='column' {...props}>
       <Flex
+        h={['70px', null, '150px']}
+        alignItems='center'
         maxW='1000px'
         bg='#FFFFFF'
         py={['20px', null, '32px']}
