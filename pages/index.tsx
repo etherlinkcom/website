@@ -12,7 +12,7 @@ import { GUTTER_PX } from '@/theme/constants'
 export default function Home() {
   const modalBoxContent = [
     {
-      title: 'Unparalleled Decentralization',
+      title: 'Unparalleled Decentralization Test',
       paragraph:
         'Our EVM rollup takes decentralization seriously. By harnessing Tezos enshrined smart rollups, we provide a decentralized, cost-efficient, and resilient generalized EVM L2 solution.'
     },
