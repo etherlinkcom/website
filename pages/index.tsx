@@ -1,7 +1,5 @@
 import { useRef } from 'react'
 import { Box, Text, Flex, Button, Image } from '@chakra-ui/react'
-
-import SignupForm from '@/components/SIgnupForm'
 import ModalBox from '../components/ModalBox'
 import Footer from '@/components/Footer'
 
@@ -28,7 +26,7 @@ export default function Home() {
     }
   ]
 
-  const signupRef: React.RefObject<HTMLInputElement> = useRef(null)
+  // const signupRef: React.RefObject<HTMLInputElement> = useRef(null)
 
   return (
     <>
@@ -53,9 +51,38 @@ export default function Home() {
             right={0}
             bottom={0}
           />
-          <Flex justifyContent='center' w='100%' zIndex={1}>
+          {/* <Flex justifyContent='center' w='100%' zIndex={1}>
             <Header maxW='1920px' px={GUTTER_PX} />
           </Flex>
+          <Flex
+            zIndex={1}
+            w='100%'
+            maxW='1920px'
+            alignItems='center'
+            grow={1}
+            direction={['column', 'column', 'row', 'row']}
+            px={GUTTER_PX}
+            py={['50px', null, '100px', '0px']}
+          > */}
+          {/* <Box maxW={['100%', null, '400px', '640px']} h='100%'>
+              <Text
+                fontSize={['30px', '50px', '60px', '85px']}
+                maxW='550px'
+                lineHeight='110%'
+                fontWeight={450}
+              >
+                A fully decentralized Ethereum L2 solution
+              </Text>
+              <Text
+                fontSize={['18px', '20px', '22px', '24px']}
+                mt={['12px', '32px', '24px']}
+                className={roboto.className}
+              >
+                Built on the robust Tezos blockchain, Etherlink empowers
+                businesses and developers to create a new era of open, secure,
+                and scalable applications.
+              </Text>
+            </Box> */}
           <Flex
             zIndex={1}
             w='100%'
@@ -85,7 +112,8 @@ export default function Home() {
                 and scalable applications.
               </Text>
             </Box>
-            <Box flex={[0, 0, 0.5, 1]} minH='32px' minW={'32px'} />
+
+            {/* <Box flex={[0, 0, 0.5, 1]} minH='32px' minW={'32px'} />
             <Flex
               flex={1}
               w='100%'
@@ -95,7 +123,7 @@ export default function Home() {
                 w={['480px', null, '450px', '500px']}
                 signupRef={signupRef}
               />
-            </Flex>
+            </Flex> */}
           </Flex>
         </Flex>
       </Flex>
@@ -177,7 +205,7 @@ export default function Home() {
             constant evolution - all in one place. Join the Etherlink EVM rollup
             on Tezos and be part of the blockchain revolution!
           </Text>
-          <Button
+          {/* <Button
             bg='#0000ff'
             color='#FFFFFF'
             p='12px 40px'
@@ -188,7 +216,7 @@ export default function Home() {
             h='50px'
           >
             Sign up
-          </Button>
+          </Button> */}
         </Flex>
         <Footer />
       </Box>
