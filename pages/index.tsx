@@ -213,10 +213,15 @@ export default function Phase2() {
               </Button>
             </Flex>
             <Flex
-                justify='center'
-                align='center'
-                mt={['5px', '5px', '5px']}
-                gap={['10px', '15px', '20px']}
+              justify='center'
+              align='center'
+              mt={['5px', '5px', '5px']}
+              gap={['10px', '15px', '20px']}
+            >
+              <a
+                href='https://discord.gg/tezos'
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 <img
                   src='/DiscordIcon.svg'
@@ -224,21 +229,42 @@ export default function Phase2() {
                   width={50}
                   height={50}
                 />
+              </a>
+              <a
+                href='https://t.me/tezosplatform'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <img
                   src='/TelegramIcon.svg'
                   alt='Telegram'
                   width={50}
                   height={50}
                 />
+              </a>
+              <a
+                href='https://github.com/trilitech'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <img
                   src='/GithubIcon.svg'
                   alt='Github'
                   width={50}
                   height={50}
                 />
+              </a>
+              <a
+                href='mailto:reachout@etherlink.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <img src='/EmailIcon.svg' alt='Email' width={50} height={50} />
-              </Flex>
+              </a>
+            </Flex>
           </Box>
+
+
 
           {/* <Flex
             flexDir={'column'}
