@@ -9,3 +9,7 @@ html,
 body {
   overflow-x: hidden;
 }
+
+a:hover img {
+  filter: drop-shadow(4px 8px 3px #888);
+}

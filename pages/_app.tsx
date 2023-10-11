@@ -1,6 +1,5 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import Script from 'next/script'
 
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import localFont from 'next/font/local'
@@ -19,14 +18,6 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <Head>
         <title>Etherlink</title>
-        <meta
-          name='google-site-verification'
-          content='vW2mbSwUqLkuA0DEBOHcVvh8PhCMWczNvZ99N3LGhtw'
-        />
-        <meta
-          name='google-site-verification'
-          content='tGkpZdzSZucKDtLP4gOh5os9zBdiwksNSfOGhuHNnOw'
-        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta
           name='description'
@@ -49,19 +40,6 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         })}
       >
-        <Script
-          async
-          src='https://www.googletagmanager.com/gtag/js?id=G-4JXNEND0PX'
-        ></Script>
-        <Script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-4JXNEND0PX');
-          `}
-        </Script>
         <Component {...pageProps} />
       </ChakraProvider>
     </main>

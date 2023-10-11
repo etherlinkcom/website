@@ -16,7 +16,7 @@ const Footer = () => {
           _hover={{ textDecoration: 'none' }}
           href='mailto:reachout@tezos.com'
         >
-          <strong>reachout@tezos.com</strong>
+          <strong>reachout@etherlink.com</strong>
         </Link>
       </Text>
     </Box>
