@@ -47,53 +47,53 @@ export default function Phase2() {
 
   const modalBoxContent = [
     {
-      title: 'Unparalleled Decentralization',
+      title: 'Fairness 🤗',
       paragraph:
-        'Our EVM rollup takes decentralization seriously. By harnessing Tezos enshrined smart rollups, we provide a decentralized, cost-efficient, and resilient generalized EVM L2 solution.'
+        "With a distributed sequencer from day 1, transaction confirmation order is fair for all users."
     },
     {
-      title: 'Versatility and Flexibility',
+      title: 'Fast Finality 🏎️',
       paragraph:
-        "Whether you're envisioning an open decentralized platform or a private app-chain, Etherlink provides the perfect foundation. With its versatile architecture, you can create tailored solutions that fit your unique business requirements and user needs. "
+        'Tezos L1 finality is 2 blocks guaranteed. Transaction data posted to L1 every 30 seconds.  Therefore, average Etherlink time to L1 finality is 30 seconds.'
     },
     {
-      title: 'Scalability and Speed',
+      title: 'Security 🔐',
       paragraph:
-        "And what's more? Tezos has a stellar track record of continuous performance improvement. This commitment to excellence cascades into our rollup, assuring its future potential, cost-effectiveness, and scalability."
+        "Data Availability on L1. Rollup is enshrined so Tezos bakers are the only point of failure. From day 1, distributed sequencing for a more transparent and decentralised L2. Users can submit transaction directly to L1 if sequencing fails with a 1 day delay.nd what's more? Tezos has a stellar track record of continuous performance improvement. This commitment to excellence cascades into our rollup, assuring its future potential, cost-effectiveness, and scalability."
     },
     {
-      title: 'Customizable Layer 2 solutions',
+      title: 'Upgradeable 🛠️',
       paragraph:
-        'From open decentralized platforms to private app-chains under your control. Smart Rollups can be anything you want.'
+        'Tezos has a built-in capability to upgrade itself, which allows the network to evolve without requiring a hard fork. This feature allows Tezos to adapt to new technologies and to address user needs rapidly. Etherlink will adopt Tezos’ governance model to evolve rapidly and create a world-class EVM developer experience.'
     },
     {
-      title: 'Open source technology',
-      paragraph:
-        'The Tezos protocol and Smart Rollup architecture are open source tools freely available to everyone (but your rollup doesn’t have to be).'
-    },
-    {
-      title: 'Scaling with integrity',
+      title: 'Rebaking 🤝',
       paragraph:
         'Enjoy massive scalability, while integrity and security is guaranteed by Tezos’ decentralized Layer 1.'
+    },
+    {
+      title: 'Lightning Fast ⚡️',
+      paragraph:
+        'Average Etherlink block time is ~250ms. On the roadmap, Etherlink is striving towards parallel execution for smart contracts.'
     }
   ]
 
   const faqsContent = [
     {
-      title: 'How can I try this out?',
-      content: 'Follow our tutorial!',
+      title: 'Can I deploy a smart contract on Etherlink?',
+      content: 'Of course, just follow this tutorial on the docs.',
       href: ''
     },
     {
-      title: 'Can I run my own customized instance of the EVM rollup?',
-      content: 'Yes, you can. Everything is open source.',
-      href: 'https://gitlab.com/tezos/tezo'
+      title: 'Can I fork it?',
+      content: 'Yes, you can - everything is open source',
+      href: 'https://gitlab.com/tezos/tezos/-/tree/master/src/kernel_evm'
     },
     {
-      title: 'How to get help?',
+      title: 'Where can I keep up to speed with Etherlink and its progress?',
       content:
-        'Our community is there for you. Come to the #evm-testnets on the Tezos slack workspace.',
-      href: ''
+        'Best place is to go to Discord and ask your questions there.',
+      href: 'https://discord.gg/tezos'
     }
   ]
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -110,18 +110,6 @@ export default function Phase2() {
         backgroundSize='cover'
         backgroundPosition={['-350px', '-100px', '-150px', '0px']}
       >
-        {/* <Image
-          position='absolute'
-          src='/bg-bottom.jpg'
-          h='100%'
-          w='100%'
-          zIndex={0}
-          objectFit={['cover', null, 'cover', 'cover']}
-          top={0}
-          left={0}
-          right={0}
-          bottom={0}
-        /> */}
 
         <Flex justifyContent='center' w='100%' zIndex={1}>
           <Header maxW='1920px' px={GUTTER_PX} />
@@ -166,9 +154,10 @@ export default function Phase2() {
               className={roboto.className}
               align='center'
             >
-              Built on the robust Tezos blockchain, our product empowers
-              businesses and developers to create a new era of open, secure, and
-              scalable applications on Ethereum.
+              Etherlink is a EVM-compatible L2, built on Tezos, which prioritizes fairness,
+              fast finality and security.
+              Etherlink empowers developers to create a new era of open, secure,
+              and scalable Ethereum compatible applications on Tezos.
             </Text>
 
             <Flex
@@ -263,35 +252,6 @@ export default function Phase2() {
               </a>
             </Flex>
           </Box>
-
-
-
-          {/* <Flex
-            flexDir={'column'}
-            // pt={['50px', null, '80px']}
-            // mb={['0px', null, '50px', '100px']}
-            fontWeight={700}
-            // border='solid red 3px'
-          >
-            <Text
-              align='center'
-              mb='20px'
-              fontSize={['26px', '30px', '32px', '36px']}
-            >
-              Etherlink in numbers
-            </Text>
-            <Flex justify='center' wrap='wrap' gap='20px'>
-              {CONTENT?.map((c, index) => (
-                <ContentBox
-                  key={index}
-                  title={c.title}
-                  paragraph={c.paragraph}
-                  w={['340px', null, '315px']}
-                  h={['160px', null, '240px']}
-                />
-              ))}
-            </Flex>
-          </Flex> */}
         </Flex>
       </Flex>
 
@@ -381,61 +341,9 @@ export default function Phase2() {
         flexDir={['column', 'column', 'row', 'row']}
         mx={GUTTER_PX}
       >
-        <Image
-          objectFit='cover'
-          maxW='999px'
-          src='/content-img.png'
-          w={['100%', null, '50%']}
-        />
-        <Flex
-          flexDir='column'
-          px={['12px', '30px', '70px']}
-          py={['30px', null, '60px', '90px']}
-          bg='#FFF'
-          flexGrow={1}
-          // w={['288px', '333px','500px', '666px']}
-          transform={[null, null, 'translateX(-5px)']}
-        >
-          <Text
-            fontWeight={700}
-            fontSize={['30px', '38px', '42px', '48px']}
-            lineHeight={['120%', null, '62px']}
-            mb='15px'
-            maxW='515px'
-          >
-            Unlock the Potential. Transform the Future
-          </Text>
-          <Text maxW='515px' className={roboto.className}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id
-            dolor vitae diam consequat vulputate. Nunc et euismod mauris.
-          </Text>
-          <Button
-            bg='#0000ff'
-            color='#FFFFFF'
-            p='12px 40px'
-            my='20px'
-            borderRadius='75px'
-            _hover={{ bg: '#0000b3' }}
-            h='50px'
-            maxW={['100%', '200px', '200px']}
-            className={roboto.className}
-            onClick={onOpen}
-          >
-            Register
-          </Button>
 
-          <Modal size={['sm', 'md', 'lg']} isOpen={isOpen} onClose={onClose}>
-            <ModalOverlay />
-            <ModalContent>
-              <ModalCloseButton />
-              {/* <ModalBody>
-                <SignupForm />
-              </ModalBody> */}
-            </ModalContent>
-          </Modal>
-        </Flex>
       </Flex>
-      <Footer />
+      <Footer /> 
 
       <Script>
         {`
@@ -456,7 +364,7 @@ export default function Phase2() {
                       // console.log('Trying to connect to the custom network...');
   
                       const chainId = '0x1f47b'; // 128123 in hexadecimal
-                      const chainName = 'Tezos EVM ghostnet';
+                      const chainName = 'Etherlink Ghostnet';
                       const nativeCurrency = {
                           name: 'CTEZ',
                           symbol: 'CTEZ', // Usually a 3-4 letters acronym
@@ -478,7 +386,7 @@ export default function Phase2() {
                           });
                           // console.log('Successfully connected to the custom network');
                           
-                          addTextToAlert(successAlert, successDesc, "Successfully connected to the custom network");
+                          addTextToAlert(successAlert, successDesc, "Successfully connected to Etherlink Ghostnet. Happy building 🔨");
 
                       } catch (addError) {
                           // console.log('Error adding custom network:', addError);
