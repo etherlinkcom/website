@@ -47,9 +47,9 @@ export default function Phase2() {
 
   const modalBoxContent = [
     {
-      title: 'Fairness 🤗',
+      title: 'Fairness ⚖️',
       paragraph:
-        "With a distributed sequencer from day 1, transaction confirmation order is fair for all users."
+        'With a distributed sequencer from day 1, transaction confirmation order is fair for all users.'
     },
     {
       title: 'Fast Finality 🏎️',
@@ -74,7 +74,7 @@ export default function Phase2() {
     {
       title: 'Lightning Fast ⚡️',
       paragraph:
-        'Average Etherlink block time is ~250ms. On the roadmap, Etherlink is striving towards parallel execution for smart contracts.'
+        'Average Etherlink block time is ~450ms. On the roadmap, Etherlink is striving towards parallel execution for smart contracts.'
     }
   ]
 
@@ -91,8 +91,7 @@ export default function Phase2() {
     },
     {
       title: 'Where can I keep up to speed with Etherlink and its progress?',
-      content:
-        'Best place is to go to Discord and ask your questions there.',
+      content: 'Best place is to go to Discord and ask your questions there.',
       href: 'https://discord.gg/tezos'
     }
   ]
@@ -110,7 +109,6 @@ export default function Phase2() {
         backgroundSize='cover'
         backgroundPosition={['-350px', '-100px', '-150px', '0px']}
       >
-
         <Flex justifyContent='center' w='100%' zIndex={1}>
           <Header maxW='1920px' px={GUTTER_PX} />
         </Flex>
@@ -154,10 +152,10 @@ export default function Phase2() {
               className={roboto.className}
               align='center'
             >
-              Etherlink is a EVM-compatible L2, built on Tezos, which prioritizes fairness,
-              fast finality and security.
-              Etherlink empowers developers to create a new era of open, secure,
-              and scalable Ethereum compatible applications on Tezos.
+              Etherlink is a EVM-compatible L2, built on Tezos, which
+              prioritizes fairness, fast finality and security. Etherlink
+              empowers developers to create a new era of open, secure, and
+              scalable Ethereum compatible applications on Tezos.
             </Text>
 
             <Flex
@@ -340,10 +338,8 @@ export default function Phase2() {
         mt={[null, null, '40px']}
         flexDir={['column', 'column', 'row', 'row']}
         mx={GUTTER_PX}
-      >
-
-      </Flex>
-      <Footer /> 
+      ></Flex>
+      <Footer />
 
       <Script>
         {`
