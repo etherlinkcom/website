@@ -59,7 +59,7 @@ export default function Phase2() {
     {
       title: 'Security 🔐',
       paragraph:
-        "Data Availability on L1. Rollup is enshrined so Tezos bakers are the only point of failure. From day 1, distributed sequencing for a more transparent and decentralised L2. Users can submit transaction directly to L1 if sequencing fails with a 1 day delay.nd what's more? Tezos has a stellar track record of continuous performance improvement. This commitment to excellence cascades into our rollup, assuring its future potential, cost-effectiveness, and scalability."
+        "Rollup is enshrined so Tezos bakers are the only point of failure. From day 1, distributed sequencing for a more transparent and decentralised L2. Users can submit transaction directly to L1 if sequencing fails with a 1 day delay."
     },
     {
       title: 'Upgradeable 🛠️',
