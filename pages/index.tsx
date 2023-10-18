@@ -362,8 +362,8 @@ export default function Phase2() {
                       const chainId = '0x1f47b'; // 128123 in hexadecimal
                       const chainName = 'Etherlink Ghostnet';
                       const nativeCurrency = {
-                          name: 'CTEZ',
-                          symbol: 'CTEZ', // Usually a 3-4 letters acronym
+                          name: 'XTZ',
+                          symbol: 'XTZ', // Usually a 3-4 letters acronym
                           decimals: 18 // The number of decimals that the currency has
                       };
                       const rpcUrls = ['https://evm.ghostnet-evm.tzalpha.net'];
