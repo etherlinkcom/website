@@ -206,7 +206,19 @@ export default function Phase2() {
               gap={['10px', '15px', '20px']}
             >
               <a
-                href='https://discord.gg/tezos'
+                href='https://x.com/etherlinkcom'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <img
+                  src='/XIcon.png'
+                  alt='X'
+                  width={50}
+                  height={50}
+                />
+              </a>
+              <a
+                href='https://discord.gg/etherlink'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -218,7 +230,7 @@ export default function Phase2() {
                 />
               </a>
               <a
-                href='https://t.me/tezosplatform'
+                href='https://t.me/etherlinkcom'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -230,7 +242,7 @@ export default function Phase2() {
                 />
               </a>
               <a
-                href='https://github.com/trilitech'
+                href='https://github.com/etherlinkcom'
                 target='_blank'
                 rel='noopener noreferrer'
               >
