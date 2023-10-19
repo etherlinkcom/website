@@ -124,7 +124,7 @@ export default function Index() {
         >
           <Box maxW={['100%', null, '700px']}>
             <Text
-              fontSize={['32px', '40px', '50px', '60px']}
+              fontSize={['28px', '36px', '46px', '56px']}
               maxW='700px'
               lineHeight='110%'
               fontWeight={['450px', null, '700px']}
