@@ -1,4 +1,9 @@
-import { Flex, FlexProps, Spacer, Text, Image, Link } from '@chakra-ui/react'
+import { Flex, FlexProps, Spacer, Text, Image, Box, Link } from '@chakra-ui/react'
+import {
+  ThirdwebProvider,
+  ConnectWallet,
+  metamaskWallet,
+} from "@thirdweb-dev/react";
 
 export const Header = (props: FlexProps) => {
   return (
@@ -12,18 +17,40 @@ export const Header = (props: FlexProps) => {
         </Link>
       </Text>
       <Spacer />
-      <Link _hover={{ textDecoration: 'none' }} href='https://tezos.com'>
-        <Flex>
-          <Text alignSelf='center' fontSize='12px' pr='5px'>
-            Powered by
-          </Text>
-          <Image
-            w={{ base: '70px', md: '85px', xl: '100px' }}
-            src='/tezos-xtz-seeklogo.svg'
-            alt='tezos logo'
-          />
-        </Flex>
-      </Link>
+      <Flex>
+        <Box
+          pt='10px'
+        >
+          <ThirdwebProvider
+            activeChain={{
+              // === Required information for connecting to the network === \\
+              chainId: 128123, // Chain ID of the network
+              // Array of RPC URLs to use
+              rpc: ["https://evm.ghostnet-evm.tzalpha.net/"],
+              // === Information for adding the network to your wallet (how it will appear for first time users) === \\
+              // Information about the chain's native currency (i.e. the currency that is used to pay for gas)
+              nativeCurrency: {
+                decimals: 18,
+                name: "XTZ",
+                symbol: "XTZ",
+              },
+              shortName: "etherlink", // Display value shown in the wallet UI
+              slug: "etherlink", // Display value shown in the wallet UI
+              testnet: true, // Boolean indicating whether the chain is a testnet or mainnet
+              chain: "Etherlink Ghostnet", // Name of the network
+              name: "Etherlink Ghostnet", // Name of the network
+            }}
+            supportedWallets={[metamaskWallet()]}
+          >
+            <ConnectWallet
+              theme={"light"}
+              modalSize={"wide"}
+              btnTitle={"Add Etherlink to Metamask"}
+            />
+          </ThirdwebProvider>
+        </Box>
+      </Flex>
+
     </Flex>
   )
 }
