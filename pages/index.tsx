@@ -16,8 +16,6 @@ import {
   AlertDescription
 } from '@chakra-ui/react'
 
-
-
 import { GUTTER_PX } from '@/theme/constants'
 import ModalBox from '@/components/ModalBox'
 import ContentBox from '@/components/ContentBox'
@@ -88,7 +86,7 @@ export default function Index() {
     <>
       <Flex
         flexDir='column'
-        minH={['0px', null, '100vh', 'min(100vh, 2000px)']}
+        minH={['0px', null, '93vh', 'min(93vh, 2000px)']}
         pb={['73px', null, '50px']}
         alignItems='center'
         position='relative'
@@ -132,18 +130,16 @@ export default function Index() {
               fontWeight={['450px', null, '700px']}
               align='center'
             >
-              A Fully Decentralized Ethereum L2 Solution
+              Fast 🏎️ , Fair ⚖️ and Dangerously Safe 🔐
             </Text>
             <Text
-              fontSize={['18px', '20px', '22px', '24px']}
+              fontSize={['14px', '16px', '18px', '20px']}
               mt={['12px', '32px', '24px']}
               className={roboto.className}
               align='center'
             >
               Etherlink is a EVM-compatible blockchain, which
-              prioritizes fair transaction ordering, low latency and security. Etherlink
-              empowers developers to create a new era of open, secure, and
-              scalable Ethereum compatible applications powered by Tezos smart rollup technology.
+              prioritizes <em>fair transaction ordering</em>, <em>low latency</em> and <em>security</em> powered by Tezos smart rollups.
             </Text>
 
             <Flex
@@ -160,8 +156,8 @@ export default function Index() {
                 href='https://bridge.ghostnet-evm.tzalpha.net/'
                 target='_blank'
                 rel='noopener noreferrer'
-                bg='#0000ff'
-                color='#FFFFFF'
+                bg='black'
+                color='white'
                 mt='20px'
                 borderRadius='75px'
                 _hover={{ bg: '#0000b3' }}
@@ -178,11 +174,11 @@ export default function Index() {
                 href='https://docs.etherlink.com'
                 target='_blank'
                 rel='noopener noreferrer'
-                backgroundColor='rgba(243, 243, 233, 0.1)'
-                color='#33F'
+                bg='black'
+                color='white'
                 mt='20px'
                 borderRadius='75px'
-                border='1px solid #33F;'
+                _hover={{ bg: '#0000b3' }}
                 h='50px'
                 w={['100%', null, '260px']}
                 className={fivo_sans_light.className}
