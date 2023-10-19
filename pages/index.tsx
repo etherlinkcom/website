@@ -130,7 +130,7 @@ export default function Index() {
               fontWeight={['450px', null, '700px']}
               align='center'
             >
-              Fast 🏎️ , Fair ⚖️ and Dangerously Safe 🔐
+              DeFi at the speed of light
             </Text>
             <Text
               fontSize={['14px', '16px', '18px', '20px']}
@@ -139,7 +139,7 @@ export default function Index() {
               align='center'
             >
               Etherlink is a EVM-compatible blockchain, which
-              prioritizes <em>fair transaction ordering</em>, <em>low latency</em> and <em>security</em> powered by Tezos smart rollups.
+              prioritizes <em>fair transaction ordering</em>, <em>low latency</em> and <em>security</em> powered by Tezos smart rollup technology.
             </Text>
 
             <Flex
