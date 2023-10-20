@@ -1,47 +1,45 @@
 {
-  "name": "evm-rollup-frontend",
+  "name": "nextly-template",
   "version": "0.1.0",
+  "description": "Nextly Landing Page Template",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://gituhb.com/web3templates/nextly-template"
+  },
+  "keywords": [
+    "nextjs",
+    "tailwindcss",
+    "free"
+  ],
+  "author": "Surjith S M",
+  "license": "ISC",
   "dependencies": {
-    "@chakra-ui/icons": "^2.1.0",
-    "@chakra-ui/next-js": "^2.1.4",
-    "@chakra-ui/react": "^2.7.1",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@next/font": "^13.4.8",
-    "@types/node": "20.3.3",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "cookie": "^0.5.0",
-    "email-validator": "^2.0.4",
-    "framer-motion": "^10.12.18",
-    "next": "13.4.8",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "*"
+    "@emotion/css": "^11.10.6",
+    "@emotion/react": "^11.10.6",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.6",
+    "@headlessui/react": "^1.7.14",
+    "@heroicons/react": "^2.0.17",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@thirdweb-dev/react": "^4.0.7",
+    "@thirdweb-dev/sdk": "^4.0.6",
+    "ethers": "^5",
+    "next": "^13.3.1",
+    "next-themes": "^0.2.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.43.9"
   },
   "devDependencies": {
-    "@types/cookie": "^0.5.1",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "eslint": "^8.0.1",
-    "eslint-config-standard-with-typescript": "^36.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "prettier": "^3.0.0"
-  },
-  "prettier": {
-    "trailingComma": "none",
-    "tabWidth": 2,
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "arrowParents": "avoid",
-    "semi": false
+    "autoprefixer": "^10.4.14",
+    "eslint-config-prettier": "^8.8.0",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.1"
   }
 }
