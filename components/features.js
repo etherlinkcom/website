@@ -21,7 +21,7 @@ const Features = () => {
               Transact at the speed of thought
             </h2>
             <p className="text-2xl leading-normal ">
-              Etherlink has a goal block time of  <span className="text-etherlinkGreen">~500ms</span>. Batches are posted every X minutes to L1.
+              Etherlink has a goal block time of  <span className="text-etherlinkGreen">~500ms</span>. Batches are posted every 2 minutes to L1.
             </p>
           </div>
         </div>
