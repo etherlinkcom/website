@@ -37,7 +37,7 @@ const Navbar = () => {
             Join the community
           </Link>
 
-          <ThemeChanger />
+          {/* <ThemeChanger /> */}
         </div>
       </nav>
     </div>
