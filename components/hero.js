@@ -95,13 +95,13 @@ const Hero = () => {
                 rel="noopener">
                 <Discord />
               </a>
-              <a
+              {/* <a
                 href="https://t.me/etherlinkcom"
                 target="_blank"
                 rel="noopener">
                 <span className="sr-only">Telegram</span>
                 <Telegram />
-              </a>
+              </a> */}
             </div>
             </div>
           </div>
