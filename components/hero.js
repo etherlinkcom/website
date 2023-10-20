@@ -8,13 +8,16 @@ import {
   metamaskWallet,
 } from "@thirdweb-dev/react";
 
-import { darkTheme } from "@thirdweb-dev/react";
+import { lightTheme } from "@thirdweb-dev/react";
 
-const customTheme = darkTheme({
+const customTheme = lightTheme({
   colors: {
-    primaryButtonBg: "#4F46E5",
-    primaryButtonText: "#ffffff",
-    connectedButtonBg: "#ffffff"
+    primaryButtonBg: 'white',
+    primaryButtonHoverBg: 'green',
+    primaryText: 'black',
+    primaryButtonText: 'white',
+    connectedButtonBg: 'black',
+    secondaryButtonBg: 'black',
     // ... etc
   },
 });
@@ -76,7 +79,7 @@ const Hero = () => {
               switchToActiveChain={true}
               theme={customTheme}
               modalSize={"wide"}
-              className="mt-10 px-10 py-6 text-xl font-medium text-center text-black bg-white rounded-md hover:bg-shaderGreen"
+              className="mt-10 px-10 py-6 text-xl  bg-white text-black hover:bg-shaderGreen font-medium text-center rounded-md"
               btnTitle="Add Etherlink To Metamask"
             />
           </ThirdwebProvider>
