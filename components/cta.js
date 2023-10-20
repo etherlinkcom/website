@@ -18,7 +18,7 @@ const Cta = () => {
             href="https://docs.etherlink.com"
             target="_blank"
             rel="noopener"
-            className="inline-block py-3 mx-auto text-lg font-medium text-center text-black bg-slate-200 rounded-md px-7 lg:px-10 lg:py-5 hover:bg-etherlinkGreen">
+            className="inline-block py-3 mx-auto text-lg font-medium text-center text-black bg-white rounded-md px-7 lg:px-10 lg:py-5 hover:bg-etherlinkGreen">
             Read the Docs
           </a>
         </div>

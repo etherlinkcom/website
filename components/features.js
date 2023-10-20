@@ -11,7 +11,7 @@ const Features = () => {
               MEV Protected
             </h2>
             <p className="text-2xl leading-normal ">
-              With a distributed sequencer from day 1, Etherlink has fair transaction ordering <Mark>out-of-the-box.</Mark>
+              With a distributed sequencer from day 1, Etherlink has fair transaction ordering <span className="text-etherlinkGreen">out-of-the-box.</span>
             </p>
           </div>
         </div>
@@ -21,7 +21,7 @@ const Features = () => {
               Transact at the speed of thought
             </h2>
             <p className="text-2xl leading-normal ">
-              Etherlink has a goal block time of <Mark>~500ms</Mark>. Batches are posted every X minutes to L1.
+              Etherlink has a goal block time of  <span className="text-etherlinkGreen">~500ms</span>. Batches are posted every X minutes to L1.
             </p>
           </div>
         </div>
@@ -31,7 +31,7 @@ const Features = () => {
               Best-in-class economic security
             </h2>
             <p className="text-2xl leading-normal ">
-              Tezos Smart Rollups are <Mark>enshrined</Mark>, meaning that Tezos validators are the only point of failure. 
+              Tezos Smart Rollups are  <span className="text-etherlinkGreen">enshrined</span>, meaning that Tezos validators are the only point of failure. 
             </p>
           </div>
         </div>
@@ -44,7 +44,7 @@ function Mark(props) {
   return (
     <>
       {" "}
-      <mark className="text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-borderGreen dark:bg-etherlinkGreen dark:text-black px-1 py-1">
+      <mark className="dark:bg-trueGray-800 dark:text-etherlinkGreen">
         {props.children}
       </mark>{" "}
     </>

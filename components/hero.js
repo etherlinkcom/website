@@ -40,13 +40,14 @@ const Hero = () => {
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl">
             <div className="flex flex-col space-y-2">
+              <h1 className="text-5xl font-bold text-gray-300 mb-4">
+                DeFi at the <i>speed of light</i>
+              </h1>
               <p className="text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-                Etherlink is an EVM compatible blockchain, which priorities
+                Etherlink is an EVM compatible blockchain, which prioritises 
               </p>
               <p className="text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-                <Mark>fair transaction ordering</Mark>,
-                <Mark>low latency</Mark> and
-                <Mark>security</Mark>
+                <span className="text-etherlinkGreen">fair transaction ordering</span>, <span className="text-etherlinkGreen">low latency</span> and <span className="text-etherlinkGreen">security</span>
               </p>
               <p className="text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
                 all powered by Tezos smart rollup technology.
@@ -75,7 +76,7 @@ const Hero = () => {
               switchToActiveChain={true}
               theme={customTheme}
               modalSize={"wide"}
-              className="mt-10 px-10 py-6 text-xl font-medium text-center text-black bg-slate-200 rounded-md hover:bg-shaderGreen"
+              className="mt-10 px-10 py-6 text-xl font-medium text-center text-black bg-white rounded-md hover:bg-shaderGreen"
               btnTitle="Add Etherlink To Metamask"
             />
           </ThirdwebProvider>
@@ -166,7 +167,8 @@ function Mark(props) {
   return (
     <>
       {" "}
-      <mark className="text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-borderGreen dark:bg-etherlinkGreen dark:text-black px-1 py-1">
+      <mark className="
+      dark:bg-trueGray-900 dark:text-etherlinkGreen">
         {props.children}
       </mark>{" "}
     </>
