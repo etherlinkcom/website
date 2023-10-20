@@ -22,7 +22,7 @@ export default function Footer() {
             <div>
               <Link href="/" className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
                 <Image
-                  src="/img/etherlink.png"
+                  src="/img/etherlink_logo.png"
                   alt="N"
                   width="32"
                   height="32"
@@ -32,25 +32,25 @@ export default function Footer() {
               </Link>
             </div>
 
-              <a
-                href="https://tezos.com"
-                target="_blank"
-                rel="noopener"
-                className="relative block w-44">
-                  Powered by
-                <Image
-                  src="/img/tezos.png"
-                  alt="Powered by Tezos"
-                  width="106"
-                  height="22"
-                />
-              </a>
+            <a
+              href="https://tezos.com"
+              target="_blank"
+              rel="noopener"
+              className="relative block w-44">
+              Powered by
+              <Image
+                src="/img/tezos.png"
+                alt="Powered by Tezos"
+                width="106"
+                height="22"
+              />
+            </a>
           </div>
 
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {navigation.map((item, index) => (
-                <Link key={index} href={item.link} className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
+                <Link key={index} href={item.link} className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700" target="_blank" rel="noopener noreferrer">
                   {item.name}
                 </Link>
               ))}
@@ -59,7 +59,7 @@ export default function Footer() {
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {legal.map((item, index) => (
-                <Link key={index} href={item.link} className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
+                <Link key={index} href={item.link} className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700" target="_blank" rel="noopener noreferrer">
                   {item.name}
                 </Link>
               ))}
@@ -101,13 +101,7 @@ export default function Footer() {
         </div>
 
         <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
-          Copyright © {new Date().getFullYear()}. Made with ♥ by{" "}
-          <a
-            href="https://web3templates.com/"
-            target="_blank"
-            rel="noopener">
-            Etherlink.
-          </a>{" "}
+          Copyright © {new Date().getFullYear()}. Made with ♥ by Etherlink.
         </div>
       </Container>
     </div>
