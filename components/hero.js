@@ -16,8 +16,7 @@ const customTheme = lightTheme({
     primaryButtonHoverBg: 'green',
     primaryText: 'black',
     primaryButtonText: 'white',
-    connectedButtonBg: 'black',
-    secondaryButtonBg: 'black',
+    secondaryButtonBg: '#b6feda',
     // ... etc
   },
 });
