@@ -12,9 +12,12 @@ import { darkTheme } from "@thirdweb-dev/react";
 
 const customTheme = darkTheme({
   colors: {
-    primaryButtonBg: "#4F46E5",
-    primaryButtonText: "#ffffff",
-    connectedButtonBg: "#ffffff"
+    primaryText: 'white',
+    primaryButtonBg: 'white',
+    primaryButtonText: 'white',
+    accentButtonBg: '#ffffff',
+    connectedButtonBg: 'black',
+    secondaryButtonBg: 'black'
     // ... etc
   },
 });
@@ -76,7 +79,7 @@ const Hero = () => {
               switchToActiveChain={true}
               theme={customTheme}
               modalSize={"wide"}
-              className="mt-10 px-10 py-6 text-xl font-medium text-center text-black bg-white rounded-md hover:bg-shaderGreen"
+              className="mt-10 px-10 py-6 text-xl ring-2 ring-white font-medium text-center rounded-md"
               btnTitle="Add Etherlink To Metamask"
             />
           </ThirdwebProvider>
