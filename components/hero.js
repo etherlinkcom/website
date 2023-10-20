@@ -54,7 +54,7 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
+            <div className="flex flex-row items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center">
             <ThirdwebProvider
             activeChain={{
               chainId: 128123, // Chain ID of the network
@@ -81,8 +81,7 @@ const Hero = () => {
             />
           </ThirdwebProvider>
 
-            </div>
-            <div className="flex mt-10 space-x-8 text-2xl text-gray-400 dark:text-gray-500">
+            <div className="flex pt-12 pl-4 space-x-8 text-2xl text-gray-400 dark:text-gray-500">
               <a
                 href="https://x.com/etherlinkcom"
                 target="_blank"
@@ -103,12 +102,7 @@ const Hero = () => {
                 <span className="sr-only">Telegram</span>
                 <Telegram />
               </a>
-              <a
-                href="mailto:reachout@etherlink.com"
-                target="_blank"
-                rel="noopener">
-                <Email />
-              </a>
+            </div>
             </div>
           </div>
         </div>

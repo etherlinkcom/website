@@ -33,9 +33,9 @@ const Navbar = () => {
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
 
-          {/* <Link href="https://docs.etherlink.com" className="px-4 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
-              Get Started
-          </Link> */}
+          <Link href="https://discord.gg/etherlink" className="px-4 py-3 text-black bg-white rounded-md md:ml-5 hover:bg-shaderGreen">
+              Join the community
+          </Link>
 
           <ThemeChanger />
         </div>
