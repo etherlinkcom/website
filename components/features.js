@@ -40,15 +40,4 @@ const Features = () => {
   );
 }
 
-function Mark(props) {
-  return (
-    <>
-      {" "}
-      <mark className="dark:bg-trueGray-800 dark:text-etherlinkGreen">
-        {props.children}
-      </mark>{" "}
-    </>
-  );
-}
-
 export default Features;
