@@ -9,6 +9,9 @@ module.exports = {
     extend: {
       colors: {
         trueGray: colors.neutral,
+        'etherlinkGreen': '#b6feda',
+        'borderGreen': '#59ad8c',
+        'shaderGreen': '#9bfecd'
       },
     },
     fontFamily: {

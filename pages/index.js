@@ -3,7 +3,7 @@ import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 
 import Footer from "../components/footer";
-import Testimonials from "../components/testimonials";
+import Features from "../components/features";
 import Cta from "../components/cta";
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
       </Head>
       <Navbar />
       <Hero />
-      <Testimonials />
+      <Features />
       <Cta />
       <Footer />
     </>

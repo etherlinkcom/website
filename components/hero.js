@@ -38,7 +38,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex items-center w-full lg:w-1/2">
-          <div className="max-w-2xl ">
+          <div className="max-w-2xl">
             <div className="flex flex-col space-y-2">
               <p className="text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
                 Etherlink is an EVM compatible blockchain, which priorities
@@ -75,7 +75,7 @@ const Hero = () => {
               switchToActiveChain={true}
               theme={customTheme}
               modalSize={"wide"}
-              className="mt-10 px-10 py-6 text-xl font-medium text-center text-white bg-indigo-600 rounded-md"
+              className="mt-10 px-10 py-6 text-xl font-medium text-center text-black bg-slate-200 rounded-md hover:bg-shaderGreen"
               btnTitle="Add Etherlink To Metamask"
             />
           </ThirdwebProvider>
@@ -166,7 +166,7 @@ function Mark(props) {
   return (
     <>
       {" "}
-      <mark className="text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">
+      <mark className="text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-borderGreen dark:bg-etherlinkGreen dark:text-black px-1 py-1">
         {props.children}
       </mark>{" "}
     </>
