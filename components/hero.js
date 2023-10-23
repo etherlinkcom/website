@@ -47,7 +47,7 @@ const Hero = () => {
               </h1>
               <div className="text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
                 An EVM-compatible optimistic rollup with:
-                <ul class="list-disc list-inside mt-3 mb-3">
+                <ul className="list-disc list-inside mt-3 mb-3">
                   <li className="mb-1.5"><span className="text-etherlinkGreen">fair ordering</span> of transactions</li>
                   <li className="mb-1.5"><span className="text-etherlinkGreen">fast execution</span> of transactions</li>
                   <li> a high level of <span className="text-etherlinkGreen">security</span></li>
@@ -61,14 +61,14 @@ const Hero = () => {
                   href="https://docs.etherlink.com"
                   target="_blank"
                   rel="noopener"
-                  className="inline-block py-3 text-lg font-medium text-center text-black bg-white rounded-md px-7 lg:px-10 lg:py-4 hover:bg-etherlinkGreen">
+                  className="inline-block py-3 text-lg font-medium text-center text-black bg-white border-solid border-2 border-white rounded-md px-7 lg:px-10 lg:py-4 hover:bg-etherlinkGreen hover:border-etherlinkGreen">
                   Start Building
                 </a>
                 <a
                   href="https://bridge.etherlink.com"
                   target="_blank"
                   rel="noopener"
-                  className="inline-block py-3 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-white hover:text-black">
+                  className="inline-block py-3 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-etherlinkGreen hover:text-black">
                   Bridge to Etherlink
               </a>
               {/* <ThirdwebProvider
