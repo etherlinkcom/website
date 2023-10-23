@@ -18,7 +18,7 @@ export default function Footer() {
     <div className="relative">
       <Container>
         <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-5">
-          <div className="lg:col-span-2 flex justify-between align-center">
+          <div className="lg:col-span-2 flex flex-col sm:flex-row justify-between align-center">
             <div>
               <Link href="/" className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
                 <Image
@@ -36,7 +36,7 @@ export default function Footer() {
               href="https://tezos.com"
               target="_blank"
               rel="noopener"
-              className="relative block w-44">
+              className="relative block w-44 mt-4 sm:mt-0">
               Powered by
               <Image
                 src="/img/tezos.png"
