@@ -61,7 +61,7 @@ const Hero = () => {
                   href="https://docs.etherlink.com"
                   target="_blank"
                   rel="noopener"
-                  className="inline-block py-3 text-lg font-medium text-center text-black bg-white rounded-md px-7 lg:px-10 lg:py-4 hover:bg-etherlinkGreen">
+                  className="inline-block py-3 text-lg font-medium text-center text-black bg-white border-solid border-2 border-white rounded-md px-7 lg:px-10 lg:py-4 hover:bg-etherlinkGreen hover:border-etherlinkGreen">
                   Start Building
                 </a>
                 <a
