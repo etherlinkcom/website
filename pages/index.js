@@ -2,6 +2,7 @@ import Head from "next/head";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import Features from "../components/features";
+import Timeline from "../components/timeline";
 import Cta from "../components/cta";
 import Footer from "../components/footer";
 
@@ -18,6 +19,7 @@ const Home = () => {
       </Head>
       <Navbar />
       <Hero />
+      <Timeline />
       <Features />
       <Cta />
       <Footer />
