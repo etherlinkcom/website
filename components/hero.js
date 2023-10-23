@@ -2,24 +2,24 @@ import Image from "next/image";
 import Container from "./container";
 import etherlink_hero from "../public/img/etherlink_hero.png";
 
-import {
-  ThirdwebProvider,
-  ConnectWallet,
-  metamaskWallet,
-} from "@thirdweb-dev/react";
+// import {
+//   ThirdwebProvider,
+//   ConnectWallet,
+//   metamaskWallet,
+// } from "@thirdweb-dev/react";
 
-import { lightTheme } from "@thirdweb-dev/react";
+// import { lightTheme } from "@thirdweb-dev/react";
 
-const customTheme = lightTheme({
-  colors: {
-    primaryButtonBg: 'white',
-    primaryButtonHoverBg: 'green',
-    primaryText: 'black',
-    primaryButtonText: 'white',
-    secondaryButtonBg: '#b6feda',
-    // ... etc
-  },
-});
+// const customTheme = lightTheme({
+//   colors: {
+//     primaryButtonBg: 'white',
+//     primaryButtonHoverBg: 'green',
+//     primaryText: 'black',
+//     primaryButtonText: 'white',
+//     secondaryButtonBg: '#b6feda',
+//     // ... etc
+//   },
+// });
               // === Required information for connecting to the network === \\
 
 const Hero = () => {
@@ -56,19 +56,19 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex flex-row items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center">
+            <div className="flex flex-col sm:flex-row items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center">
               <a
                   href="https://docs.etherlink.com"
                   target="_blank"
                   rel="noopener"
-                  className="inline-block py-3 text-lg font-medium text-center text-black bg-white border-solid border-2 border-white rounded-md px-7 lg:px-10 lg:py-4 hover:bg-etherlinkGreen hover:border-etherlinkGreen">
+                  className="inline-block py-3 text-lg font-medium text-center text-black bg-white rounded-md px-7 lg:px-10 lg:py-4 hover:bg-etherlinkGreen">
                   Start Building
                 </a>
                 <a
                   href="https://bridge.etherlink.com"
                   target="_blank"
                   rel="noopener"
-                  className="inline-block py-3 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-etherlinkGreen hover:text-black">
+                  className="inline-block py-3 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-white hover:text-black">
                   Bridge to Etherlink
               </a>
               {/* <ThirdwebProvider

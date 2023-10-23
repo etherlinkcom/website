@@ -63,7 +63,7 @@ const Navbar = () => {
                         {item.name}
                       </Link>
                     ))}
-                    <Link href="https://docs.etherlink.com" className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">
+                    <Link href="https://docs.etherlink.com" className="w-full px-6 py-2 mt-3 text-center text-black bg-shaderGreen rounded-md lg:ml-5">
                       Etherlink Docs
                     </Link>
                   </>
