@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
-
-import Footer from "../components/footer";
 import Features from "../components/features";
 import Cta from "../components/cta";
+import Footer from "../components/footer";
 
 const Home = () => {
   return (

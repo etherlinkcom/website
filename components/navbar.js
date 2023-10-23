@@ -7,6 +7,7 @@ const Navbar = () => {
   const navigation = [
     { name: "Faucet", link: "https://faucet.etherlink.com" },
     { name: "Explorer", link: "https://explorer.etherlink.com" },
+    { name: "Bridge", link: "https://bridge.etherlink.com" },
   ];
 
   return (
@@ -31,6 +32,7 @@ const Navbar = () => {
                   </span>
                 </Link>
 
+                {/* mobile menu */}
                 <Disclosure.Button
                   aria-label="Toggle Menu"
                   className="px-2 py-1 ml-auto text-gray-500 rounded-md lg:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700">
@@ -61,8 +63,8 @@ const Navbar = () => {
                         {item.name}
                       </Link>
                     ))}
-                    <Link href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">
-                      Get Started
+                    <Link href="https://docs.etherlink.com" className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">
+                      Etherlink Docs
                     </Link>
                   </>
                 </Disclosure.Panel>
@@ -76,15 +78,15 @@ const Navbar = () => {
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <Link href={menu.link} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800" target="_blank" rel="noopener noreferrer">
+                <Link href={menu.link} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none hover:bg-etherlinkGreen dark:hover:text-black" target="_blank" rel="noopener noreferrer">
                     {menu.name}
                 </Link>
               </li>
             ))}
           </ul>
           <div className="mr-3 space-x-4 nav__item">
-            <Link href="https://discord.gg/etherlink" className="px-4 py-3 text-black bg-white rounded-md md:ml-5 hover:bg-shaderGreen" target="_blank" rel="noopener noreferrer">
-              Join the community
+            <Link href="https://docs.etherlink.com" className="px-4 py-3 text-black bg-white rounded-md md:ml-5 hover:bg-shaderGreen" target="_blank" rel="noopener noreferrer">
+              Etherlink Docs
             </Link>
             {/* <ThemeChanger /> */}
           </div>
