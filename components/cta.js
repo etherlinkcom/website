@@ -10,7 +10,7 @@ const Cta = () => {
             Ready to learn more about Etherlink?
           </h2>
           <p className="mt-2 font-medium text-white text-opacity-90 lg:text-xl">
-            Go ahead and read the docs. You know you want to.
+            Our step-by-step guides will help you get started.
           </p>
         </div>
         <div className="flex-shrink-0 w-full text-center lg:w-auto">
@@ -18,7 +18,7 @@ const Cta = () => {
             href="https://docs.etherlink.com"
             target="_blank"
             rel="noopener"
-            className="inline-block py-3 mx-auto text-lg font-medium text-center text-black bg-white rounded-md px-7 lg:px-10 lg:py-5 hover:bg-etherlinkGreen">
+            className="inline-block py-3 mx-auto text-lg font-medium text-center text-white border-solid border-2 border-white hover:text-black rounded-md px-7 lg:px-10 lg:py-5 hover:bg-white">
             Read the Docs
           </a>
         </div>

@@ -16,8 +16,7 @@ const customTheme = lightTheme({
     primaryButtonHoverBg: 'green',
     primaryText: 'black',
     primaryButtonText: 'white',
-    connectedButtonBg: 'black',
-    secondaryButtonBg: 'black',
+    secondaryButtonBg: '#b6feda',
     // ... etc
   },
 });
@@ -42,70 +41,83 @@ const Hero = () => {
         </div>
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl">
-            <div className="flex flex-col space-y-2">
-              <h1 className="text-5xl font-bold text-gray-300 mb-4">
-                DeFi at the <i>speed of light</i>
+            <div className="flex flex-col space-y-2 mb-10">
+              <h1 className="text-5xl font-bold text-gray-300 mb-10">
+                Build Web3 on <span className="text-etherlinkGreen">Etherlink</span>
               </h1>
-              <p className="text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-                Etherlink is an EVM compatible blockchain, which prioritises 
-              </p>
-              <p className="text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-                <span className="text-etherlinkGreen">fair transaction ordering</span>, <span className="text-etherlinkGreen">low latency</span> and <span className="text-etherlinkGreen">security</span>
-              </p>
-              <p className="text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-                all powered by Tezos smart rollup technology.
-              </p>
+              <div className="text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
+                An EVM-compatible optimistic rollup with:
+                <ul class="list-disc list-inside mt-3 mb-3">
+                  <li className="mb-1.5"><span className="text-etherlinkGreen">fair ordering</span> of transactions</li>
+                  <li className="mb-1.5"><span className="text-etherlinkGreen">fast execution</span> of transactions</li>
+                  <li> a high level of <span className="text-etherlinkGreen">security</span></li>
+                </ul>
+                <div> powered by Tezos smart rollup technology.</div>
+              </div>
             </div>
 
             <div className="flex flex-row items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center">
-            <ThirdwebProvider
-            activeChain={{
-              chainId: 128123, // Chain ID of the network
-              rpc: ["https://evm.ghostnet-evm.tzalpha.net/"],
-              nativeCurrency: {
-                decimals: 18,
-                name: "XTZ",
-                symbol: "XTZ",
-              },
-              shortName: "etherlink",
-              slug: "etherlink",
-              testnet: true,
-              chain: "Etherlink Ghostnet",
-              name: "Etherlink Ghostnet", 
-            }}
-            supportedWallets={[metamaskWallet()]}
-          >
-            <ConnectWallet
-              switchToActiveChain={true}
-              theme={customTheme}
-              modalSize={"wide"}
-              className="mt-10 px-10 py-6 text-xl  bg-white text-black hover:bg-shaderGreen font-medium text-center rounded-md"
-              btnTitle="Add Etherlink To Metamask"
-            />
-          </ThirdwebProvider>
-
-            <div className="flex pt-12 pl-4 space-x-8 text-2xl text-gray-400 dark:text-gray-500">
               <a
-                href="https://x.com/etherlinkcom"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">X</span>
-                <Twitter />
+                  href="https://docs.etherlink.com"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-block py-3 text-lg font-medium text-center text-black bg-white rounded-md px-7 lg:px-10 lg:py-4 hover:bg-etherlinkGreen">
+                  Start Building
+                </a>
+                <a
+                  href="https://bridge.etherlink.com"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-block py-3 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-white hover:text-black">
+                  Bridge to Etherlink
               </a>
-              <a
-                href="https://discord.gg/etherlink"
-                target="_blank"
-                rel="noopener">
-                <Discord />
-              </a>
-              {/* <a
-                href="https://t.me/etherlinkcom"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">Telegram</span>
-                <Telegram />
-              </a> */}
-            </div>
+              {/* <ThirdwebProvider
+                activeChain={{
+                  chainId: 128123, // Chain ID of the network
+                  rpc: ["https://evm.ghostnet-evm.tzalpha.net/"],
+                  nativeCurrency: {
+                    decimals: 18,
+                    name: "XTZ",
+                    symbol: "XTZ",
+                  },
+                  shortName: "etherlink",
+                  slug: "etherlink",
+                  testnet: true,
+                  chain: "Etherlink Ghostnet",
+                  name: "Etherlink Ghostnet", 
+                }}
+                supportedWallets={[metamaskWallet()]}
+              >
+                <ConnectWallet
+                  switchToActiveChain={true}
+                  theme={customTheme}
+                  modalSize={"wide"}
+                  className="mt-10 px-10 py-6 text-xl  bg-white text-black hover:bg-shaderGreen font-medium text-center rounded-md"
+                  btnTitle="Add Etherlink To Metamask"
+                />
+              </ThirdwebProvider> */}
+              {/* <div className="flex pt-12 pl-4 space-x-8 text-2xl text-gray-400 dark:text-gray-500">
+                <a
+                  href="https://x.com/etherlinkcom"
+                  target="_blank"
+                  rel="noopener">
+                  <span className="sr-only">X</span>
+                  <Twitter />
+                </a>
+                <a
+                  href="https://discord.gg/etherlink"
+                  target="_blank"
+                  rel="noopener">
+                  <Discord />
+                </a>
+                <a
+                  href="https://t.me/etherlinkcom"
+                  target="_blank"
+                  rel="noopener">
+                  <span className="sr-only">Telegram</span>
+                  <Telegram />
+                </a>
+              </div> */}
             </div>
           </div>
         </div>
