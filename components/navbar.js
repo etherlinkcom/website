@@ -85,7 +85,7 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="mr-3 space-x-4 nav__item">
-            <Link href="https://docs.etherlink.com" className="px-4 py-3 text-black bg-white rounded-md md:ml-5 hover:bg-shaderGreen" target="_blank" rel="noopener noreferrer">
+            <Link href="https://docs.etherlink.com" className="px-4 py-3 text-black bg-white rounded-md md:ml-5 hover:bg-borderGreen" target="_blank" rel="noopener noreferrer">
               Etherlink Docs
             </Link>
             {/* <ThemeChanger /> */}

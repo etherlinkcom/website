@@ -11,7 +11,7 @@ const milestones = [
     //     cardDetailedText: ""
     // },
     {
-        title: "November 2023",
+        title: "Nov '23",
         cardTitle: "Etherlink Ghostnet",
         cardSubtitle: "Stable Release",
         cardDetailedText: ["- 15 second block time", "- Oracle Price Feeds available from 2 providers", "- LayerZero Endpoint"],
@@ -25,7 +25,7 @@ const milestones = [
         // </div>
     },
     {
-        title: "December 2023",
+        title: "Dec '23",
         cardTitle: "Etherlink Ghostnet",
         cardSubtitle: "with Provisional Centralised Sequencer",
         cardDetailedText: ["- 500ms block time", "- Subgraphs available from 2 providers", "- LayerZero wrapped asset bridge"],
@@ -45,7 +45,7 @@ const milestones = [
     //     cardDetailedText: ""
     // },
     {
-        title: "January 2024",
+        title: "Jan '24",
         cardTitle: "Etherlink Explorer",
         cardSubtitle: "explorer.etherlink.com",
         cardDetailedText: ["- Full functionality implemented", "- L2-to-L1 Transaction Viewer "],
@@ -59,13 +59,13 @@ const milestones = [
         // </div>
     },
     {
-        title: "February 2024",
+        title: "Feb '24",
         cardTitle: "Etherlink Ghostnet",
         cardSubtitle: "with Distributed Sequencer",
         cardDetailedText: ["- Sequencer Operator Reveal 🎩👀", "- ETHDenver Hackathon with infrastructure partners"],
     },
     {
-        title: "March 2024",
+        title: "Mar '24",
         cardTitle: "Etherlink Mainnet Launch",
         cardSubtitle: `Full Launch v1.0`,
         cardDetailedText: ["- Fully functional mainnet with Distributed Sequencer", "- Fair Ordering, Fast Execution (500ms) and Secure"]
@@ -75,41 +75,42 @@ const milestones = [
 const Roadmap = () => {
     return (
         <Container className="flex flex-wrap justify-center">
-            <div className="ml-32 mr-32 -mt-12" style={{ width: "90vh" }}>
+            <div className="-mt-12" style={{ width: "100vh" }}>
                 <SectionTitle
                     pretitle="Track our Progress"
                     title="Etherlink Roadmap"
                     className="text-center"></SectionTitle>
-                <Chrono
-                    items={milestones}
-                    mode="VERTICAL"
-                    // cardHeight={100}
-                    activeItemIndex={0}
-                    theme={{
-                        primary: '#59ad8c',
-                        secondary: '#59ad8c',
-                        titleColor: '#b6feda',
-                        cardBgColor: '#171717',
-                        cardTitleColor: 'white',
-                        titleColorActive: 'black',
-                        cardSubtitleColor: 'white',
-                        cardDetailsColor: 'white',
-                    }}
-                    fontSizes={{
-                        cardSubtitle: '0.85rem',
-                        cardText: '1rem',
-                        cardTitle: '1.4rem',
-                        title: '1.4rem',
-                    }}
-                    lineWidth={6}
-                    // disableTimelinePoint={true}
-                    borderLessCards={true}
-                    // contentDetailsHeight={100}
-                    hideControls={true}
-                    disableNavOnKey
-                    disableClickOnCircle={true}
-                />
-                <div className=""> </div>
+                <div className="ml-16">
+                    <Chrono
+                        items={milestones}
+                        mode="VERTICAL"
+                        activeItemIndex={12}
+                        theme={{
+                            primary: '#59ad8c',
+                            secondary: '#59ad8c',
+                            titleColor: '#59ad8c',
+                            cardBgColor: '#171717',
+                            cardTitleColor: 'white',
+                            titleColorActive: 'black',
+                            cardSubtitleColor: 'white',
+                            cardDetailsColor: 'white',
+                        }}
+                        fontSizes={{
+                            cardSubtitle: '0.85rem',
+                            cardText: '1rem',
+                            cardTitle: '1.4rem',
+                            title: '1rem',
+                        }}
+                        cardWidth={400}
+                        lineWidth={6}
+                        scrollable={false}
+                        borderLessCards={true}
+                        hideControls={true}
+                        disableNavOnKey
+                        disableClickOnCircle={true}
+                        disableAutoScrollOnClick={true}
+                    />
+                </div>
             </div>
         </Container>
 
