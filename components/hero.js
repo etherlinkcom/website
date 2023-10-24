@@ -20,7 +20,6 @@ import etherlink_hero from "../public/img/etherlink_hero.png";
 //     // ... etc
 //   },
 // });
-              // === Required information for connecting to the network === \\
 
 const Hero = () => {
   return (
