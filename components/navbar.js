@@ -6,7 +6,7 @@ import { Disclosure } from "@headlessui/react";
 const Navbar = () => {
   const navigation = [
     { name: "Faucet", link: "https://faucet.etherlink.com" },
-    { name: "Explorer", link: "https://explorer.etherlink.com" },
+    { name: "Explorer", link: "https://explorer.ghostnet-evm.tzalpha.net/" },
     { name: "Bridge", link: "https://bridge.etherlink.com" },
   ];
 
