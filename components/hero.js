@@ -38,7 +38,7 @@ const Hero = () => {
             />
           </div>
         </div>
-        <div className="flex items-center justify-center w-full lg:w-1/2 lg:items-start">
+        <div className="flex items-center justify-center w-full lg:w-1/2">
           <div className="max-w-2xl text-center lg:text-left">
             <div className="flex flex-col space-y-2 mb-10">
               <h1 className="text-5xl font-bold text-gray-300 mb-10">
