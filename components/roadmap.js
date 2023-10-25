@@ -80,7 +80,7 @@ const Roadmap = () => {
                     pretitle="Track our Progress"
                     title="Etherlink Roadmap"
                     className="text-center"></SectionTitle>
-                <div className="ml-16">
+                <div className="ml-16 sm:ml-8">
                     <Chrono
                         items={milestones}
                         mode="VERTICAL"
@@ -102,6 +102,7 @@ const Roadmap = () => {
                             title: '1rem',
                         }}
                         cardWidth={400}
+                        cardHeight={250}
                         lineWidth={6}
                         scrollable={false}
                         borderLessCards={true}
