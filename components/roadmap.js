@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react"
 import { Chrono } from "react-chrono";
 import Container from "./container";
