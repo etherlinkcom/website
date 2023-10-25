@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "./container";
+import Container from "./shared/container";
 
-const Cta = () => {
+export default function Cta() {
   return (
     <Container>
       <div className="flex flex-wrap items-center justify-between w-full max-w-4xl -mt-24 mb-4 gap-5 mx-auto text-white bg-borderGreen px-7 py-7 lg:px-12 lg:py-12 lg:flex-nowrap rounded-xl">
@@ -26,5 +26,3 @@ const Cta = () => {
     </Container>
   );
 }
-
-export default Cta;

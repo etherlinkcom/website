@@ -2,63 +2,27 @@
 
 import React from "react"
 import { Chrono } from "react-chrono";
-import Container from "./container";
-import SectionTitle from "./sectionTitle";
+import Container from "./shared/container";
+import SectionTitle from "./shared/sectionTitle";
 
 const milestones = [
-    // {
-    //     title: "Now",
-    //     cardTitle: "",
-    //     cardSubtitle: "",
-    //     cardDetailedText: ""
-    // },
     {
         title: "Nov '23",
         cardTitle: "Etherlink Ghostnet",
         cardSubtitle: "Stable Release",
         cardDetailedText: ["- 15 second block time", "- Oracle Price Feeds available from 2 providers", "- LayerZero Endpoint"],
-        // timelineContent: 
-        // <div className="justify-start"> 
-        // <ul>
-        //     <li>15 second block time</li>
-        //     <li>Oracle Price Feeds available from 2 providers</li>
-        //     <li>LayerZero Endpoint</li>
-        // </ul>
-        // </div>
     },
     {
         title: "Dec '23",
         cardTitle: "Etherlink Ghostnet",
         cardSubtitle: "with Provisional Centralised Sequencer",
         cardDetailedText: ["- 500ms block time", "- Subgraphs available from 2 providers", "- LayerZero wrapped asset bridge"],
-        // timelineContent: 
-        // <div className="justify-start"> 
-        // <ul>
-        //     <li>500ms block time</li>
-        //     <li>Subgraphs available from 2 providers</li>
-        //     <li>LayerZero Wrapped Asset Bridge</li>
-        // </ul>
-        // </div>
     },
-    // {
-    //     title: "🎉 End of 2023 🎉",
-    //     cardTitle: "",
-    //     cardSubtitle: "",
-    //     cardDetailedText: ""
-    // },
     {
         title: "Jan '24",
         cardTitle: "Etherlink Explorer",
         cardSubtitle: "explorer.etherlink.com",
         cardDetailedText: ["- Full functionality implemented", "- L2-to-L1 Transaction Viewer "],
-        // timelineContent: 
-        // <div className="justify-start"> 
-        // <ul>
-        //     <li>500ms block time</li>
-        //     <li>Subgraphs available from 2 providers</li>
-        //     <li>LayerZero Wrapped Asset Bridge</li>
-        // </ul>
-        // </div>
     },
     {
         title: "Feb '24",
@@ -74,7 +38,7 @@ const milestones = [
     }
 ];
 
-const Roadmap = () => {
+export default function Roadmap() {
     return (
         <Container className="flex flex-wrap justify-center">
             <div className="-mt-12" style={{ width: "100vh" }}>
@@ -119,6 +83,3 @@ const Roadmap = () => {
 
     )
 }
-
-export default Roadmap;
-

@@ -1,14 +1,13 @@
 "use client"
 
+import { useState } from "react";
+// import ToggleTheme from "./toggleTheme";
+
 import Link from "next/link";
-import ThemeChanger from "./DarkSwitch";
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 
-import { useState } from "react";
-
-
-const Navbar = () => {
+export default function Navbar() {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [buttonColor, setButtonColor] = useState(false);
@@ -30,7 +29,7 @@ const Navbar = () => {
                   <span className="flex items-center space-x-1 text-3xl font-medium text-indigo-500 dark:text-gray-100">
                     <span>
                       <Image
-                        src="/img/etherlink_logo.png"
+                        src="/img/etherlinkLogo.png"
                         alt="N"
                         width="128"
                         height="128"
@@ -83,8 +82,6 @@ const Navbar = () => {
         </Disclosure>
 
         {/* menu  */}
-
-
         <div className="hidden text-center lg:flex lg:items-center justify-between">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
@@ -114,15 +111,13 @@ const Navbar = () => {
                 </div>
               </div>
             )}
-            {/* <ThemeChanger /> */}
+            {/* <ToggleTheme /> */}
           </div>
         </div>
       </nav>
     </div >
   );
 }
-
-export default Navbar;
 
 
 const Twitter = ({ size = 24 }) => (
