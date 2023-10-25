@@ -64,7 +64,7 @@ const Hero = () => {
                   Start Building
                 </a>
                 <a
-                  href="https://bridge.etherlink.com"
+                  href="https://bridge.ghostnet-evm.tzalpha.net/"
                   target="_blank"
                   rel="noopener"
                   className="inline-block py-3 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-borderGreen hover:border-borderGreen hover:text-black">
