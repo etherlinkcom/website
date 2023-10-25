@@ -99,14 +99,10 @@ const Navbar = () => {
               </svg>
             </button>
             {modalOpen && (
-              <div className="absolute top-full mt-2 w-11/12 bg-white rounded-lg p-8 z-50 transform translate-x-1">
-                <div className="flex flex-col items-center justify-center h-full space-y-4">
-                  <Link href="https://x.com/etherlinkcom" target="_blank" rel="noopener noreferrer">
-                    <Twitter size={32} />
-                  </Link>
-                  <Link href="https://discord.gg/etherlink" target="_blank" rel="noopener noreferrer">
-                    <Discord size={32} />
-                  </Link>
+              <div className="absolute top-full mt-2 w-11/12 bg-white rounded-lg p-4 z-50 transform translate-x-1">
+                <div className="flex flex-row items-center justify-center h-full space-x-4 -mb-1">
+                  <Twitter size={32} />
+                  <Discord size={40} />
                 </div>
               </div>
             )}
