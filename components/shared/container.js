@@ -1,6 +1,6 @@
 import React from "react";
 
-const Container = (props) => {
+export default function Container(props) {
   return (
     <div
       className={`container p-8 mx-auto xl:px-0 ${
@@ -10,5 +10,3 @@ const Container = (props) => {
     </div>
   );
 }
-
-export default Container;

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
-const ThemeChanger = () => {
+export default function ToggleTheme() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
@@ -49,5 +48,3 @@ const ThemeChanger = () => {
     </div>
   );
 };
-
-export default ThemeChanger;

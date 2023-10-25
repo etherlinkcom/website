@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "./container";
+import Container from "./shared/container";
 
-const Features = () => {
+export default function Features() {
   return (
     <Container>
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
@@ -17,21 +17,21 @@ const Features = () => {
         </div>
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-          <h2 className="text-2xl leading-normal text-borderGreen text-center">
+            <h2 className="text-2xl leading-normal text-borderGreen text-center">
               Low Latency
             </h2>
             <p className="text-2xl leading-normal text-center">
-            <span className="text-borderGreen">~500ms</span> target block time. Transaction Batches are posted every 2 minutes to L1.
+              <span className="text-borderGreen">~500ms</span> target block time. Transaction Batches are posted every 2 minutes to L1.
             </p>
           </div>
         </div>
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-          <h2 className="text-2xl leading-normal text-borderGreen text-center">
+            <h2 className="text-2xl leading-normal text-borderGreen text-center">
               Security
             </h2>
             <p className="text-2xl leading-normal text-center">
-              Tezos Smart Rollups are  <span className="text-borderGreen">enshrined</span>, meaning that Tezos validators are the only point of failure. 
+              Tezos Smart Rollups are  <span className="text-borderGreen">enshrined</span>, meaning that Tezos validators are the only point of failure.
             </p>
           </div>
         </div>
@@ -39,5 +39,3 @@ const Features = () => {
     </Container>
   );
 }
-
-export default Features;

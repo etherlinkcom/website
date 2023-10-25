@@ -1,12 +1,12 @@
+"use client"
+
 import { ThemeProvider } from "next-themes";
 import "../css/tailwind.css";
 
-function MyApp({ Component, pageProps }) {
+export default function ClientLayout({ children }) {
   return (
     <ThemeProvider attribute="class"a defaultTheme="dark">
-      <Component {...pageProps} />
+        { children }
     </ThemeProvider>
   );
 }
-
-export default MyApp;
