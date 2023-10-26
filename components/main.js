@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "./shared/container";
 import etherlinkMain from "../public/img/etherlinkMain.png";
 
@@ -32,7 +33,7 @@ export default function Main() {
                   <li className="mb-1.5"><span className="text-borderGreen">fast execution</span> of transactions</li>
                   <li> a high level of <span className="text-borderGreen">security</span></li>
                 </ul>
-                <div> powered by Tezos smart rollup technology.</div>
+                <div> powered by Tezos <Link className="text-borderGreen hover:text-etherlinkGreen cursor-pointer underline" href="https://tezos.com/developers/smart-rollups/" target="_blank" rel="noopener noreferrer">Smart Rollup</Link> technology.</div>
               </div>
             </div>
 
@@ -45,7 +46,7 @@ export default function Main() {
                 Start Building
               </a>
               <a
-                href="https://bridge.ghostnet-evm.tzalpha.net/"
+                href="https://bridge.etherlink.com/"
                 target="_blank"
                 rel="noopener"
                 className="inline-block py-3 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-borderGreen hover:border-borderGreen hover:text-black">

@@ -34,7 +34,7 @@ const milestones = [
         title: "Mar '24",
         cardTitle: "Etherlink Mainnet Launch",
         cardSubtitle: `Full Launch v1.0`,
-        cardDetailedText: ["- Fully functional mainnet with Distributed Sequencer", "- Fair Ordering, Fast Execution (500ms) and Secure"]
+        cardDetailedText: ["- Fully functional Mainnet with Distributed Sequencer", "- Fair Ordering, Fast Execution (500ms) and Secure"]
     }
 ];
 
