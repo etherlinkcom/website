@@ -15,7 +15,7 @@ export default function Navbar() {
   const navigation = [
     { name: "Faucet", link: "https://faucet.etherlink.com" },
     { name: "Explorer", link: "https://explorer.ghostnet-evm.tzalpha.net/" },
-    { name: "Bridge", link: "https://bridge.ghostnet-evm.tzalpha.net/" },
+    { name: "Bridge", link: "https://bridge.etherlink.com/" },
   ];
 
   return (
