@@ -1,9 +1,13 @@
-import { NextResponse } from 'next/server';
+import nextConnect from 'next-connect';
 import { ethers } from 'ethers';
 
-export async function POST(req, res) {
+const handler = nextConnect();
+
+handler.use(express.json());
+
+handler.post(async (req, res) => {
     try {
-        const { walletAddress } = req.body.walletAddress;
+        const { walletAddress } = req.body;
         console.log(walletAddress)
         const privateKey = process.env.PRIVATE_KEY;
         const provider = new ethers.providers.JsonRpcProvider(process.env.JSON_RPC_URL);
@@ -16,23 +20,11 @@ export async function POST(req, res) {
 
         const txResponse = await wallet.sendTransaction(transaction);
         const receipt = await txResponse.wait();
-        return NextResponse.json(
-            {
-                body: { receipt },
-            },
-            {
-                status: 200,
-            },
-        );
+        return res.status(200).json({ receipt });
     } catch (error) {
         console.error(error);
-        return NextResponse.json(
-            {
-                body: "error",
-            },
-            {
-                status: 500,
-            },
-        );
+        return res.status(500).json({ error: 'An error occurred' });
     }
-};
+});
+
+export default handler;
