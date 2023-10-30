@@ -1,11 +1,7 @@
-import nextConnect from 'next-connect';
+import { NextResponse } from 'next/server';
 import { ethers } from 'ethers';
 
-const handler = nextConnect();
-
-handler.use(express.json());
-
-handler.post(async (req, res) => {
+export async function POST(req, res) {
     try {
         const { walletAddress } = req.body;
         console.log(walletAddress)
@@ -20,11 +16,23 @@ handler.post(async (req, res) => {
 
         const txResponse = await wallet.sendTransaction(transaction);
         const receipt = await txResponse.wait();
-        return res.status(200).json({ receipt });
+        return NextResponse.json(
+            {
+                body: { receipt },
+            },
+            {
+                status: 200,
+            },
+        );
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: 'An error occurred' });
+        return NextResponse.json(
+            {
+                body: "error",
+            },
+            {
+                status: 500,
+            },
+        );
     }
-});
-
-export default handler;
+};
