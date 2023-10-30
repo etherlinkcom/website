@@ -28,12 +28,6 @@ const Faucet = () => {
   const [tokensClaimed, setTokensClaimed] = useState(false)
   const [txHash, setTxHash] = useState("")
 
-  // useEffect(() => {
-  //   if (txHash) {
-  //     window.open(`https://explorer.ghostnet-evm.tzalpha.net/tx/${txHash}`, '_blank'); // replace with your URL
-  //   }
-  // }, [txHash]);
-
   useEffect(() => {
     if (txHash) {
       setIsLoading(false);
@@ -97,15 +91,15 @@ const Faucet = () => {
         <button
           onClick={txHash ? () => window.open(`https://explorer.ghostnet-evm.tzalpha.net/tx/${txHash}`, '_blank') : callFaucet}
           disabled={isLoading}
-          className={`inline-block py-3 ml-4 text-lg font-medium text-center text-black border-solid border-2 border-black rounded-md px-7 lg:px-6 lg:py-4 hover:bg-borderGreen hover:border-borderGreen hover:text-black ${isLoading ? 'opacity-50 hover:bg-white hover:border-black cursor: not-allowed' : ''}`}
+          className={`flex flex-row items-center justify-center inline-block py-3 ml-4 text-lg font-medium text-center text-black border-solid border-2 border-black rounded-md px-7 lg:px-6 lg:py-4 hover:bg-borderGreen hover:border-borderGreen hover:text-black ${isLoading ? 'opacity-50 hover:bg-white hover:border-black cursor: not-allowed' : ''}`}
         >
           {isLoading ? 'Loading...' : txHash ?
             <>
               <Image
                 src="/img/etherlinkLogo.png"
                 alt="N"
-                width="128"
-                height="128"
+                width="32"
+                height="32"
                 className="w-8 mr-2"
               />
               {`${txHash.slice(0, 6)}...${txHash.slice(-4)}`}
