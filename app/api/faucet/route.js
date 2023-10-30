@@ -17,7 +17,7 @@ export async function POST(req, res) {
         const receipt = await txResponse.wait();
         return NextResponse.json(
             {
-                body: json({ receipt }),
+                body: { receipt },
             },
             {
                 status: 200,
