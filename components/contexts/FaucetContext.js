@@ -1,4 +1,3 @@
-// contexts/FaucetContext.js
 import { createContext, useState } from 'react';
 
 export const FaucetContext = createContext();
