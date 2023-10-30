@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 
 export async function POST(request) {
     try {
-        const { walletAddress } = request.body;
+        const { walletAddress } = await request.json()
         const privateKey = process.env.PRIVATE_KEY;
         const provider = new ethers.providers.JsonRpcProvider(process.env.JSON_RPC_URL);
         const wallet = new ethers.Wallet(privateKey, provider);
