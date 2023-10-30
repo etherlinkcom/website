@@ -1,11 +1,21 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from 'next/dynamic';
 import Container from "./shared/container";
+
+import { useContext } from 'react';
+import { FaucetContext } from './contexts/FaucetContext';
+
 import etherlinkMain from "../public/img/etherlinkMain.png";
+const DynamicFaucet = dynamic(() => import('../components/faucet'));
 
 export default function Main() {
+  const { showFaucet } = useContext(FaucetContext);
   return (
     <>
+      {showFaucet && <DynamicFaucet />}
       <Container className="flex flex-wrap">
         <div className="flex items-center justify-center w-full lg:w-1/2">
           <div className="">

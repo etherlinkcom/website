@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { FaucetContext } from "../contexts/FaucetContext";
 // import ToggleTheme from "./toggleTheme";
 
 import Link from "next/link";
@@ -8,12 +9,13 @@ import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 
 export default function Navbar() {
+  const { setShowFaucet } = useContext(FaucetContext);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [buttonColor, setButtonColor] = useState(false);
 
   const navigation = [
-    { name: "Faucet", link: "https://faucet.etherlink.com" },
+    { name: "Faucet", onClick: () => { console.log("Faucet Clicked!"); setShowFaucet(true); } },
     { name: "Explorer", link: "https://explorer.ghostnet-evm.tzalpha.net/" },
     { name: "Bridge", link: "https://bridge.etherlink.com/" },
   ];
@@ -67,7 +69,12 @@ export default function Navbar() {
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
                     {navigation.map((item, index) => (
-                      <Link key={index} href={item.link} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800" target="_blank" rel="noopener noreferrer">
+                      item.name === "Faucet" ?
+                      <a key={index} onClick={item.onClick} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800">
+                        {item.name}
+                      </a>
+                      :
+                      <Link key={index} href={item.link} onClick={item.onClick} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800" target="_blank" rel="noopener noreferrer">
                         {item.name}
                       </Link>
                     ))}
@@ -85,8 +92,15 @@ export default function Navbar() {
         <div className="hidden text-center lg:flex lg:items-center justify-between">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
+              menu.name === "Faucet" ?
               <li className="mr-3 nav__item" key={index}>
-                <Link href={menu.link} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none hover:bg-etherlinkGreen dark:hover:text-black" target="_blank" rel="noopener noreferrer">
+                <a onClick={menu.onClick} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none hover:bg-etherlinkGreen dark:hover:text-black">
+                  {menu.name}
+                </a>
+              </li>
+              :
+              <li className="mr-3 nav__item" key={index}>
+                <Link href={menu.link} onClick={menu.onClick} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none hover:bg-etherlinkGreen dark:hover:text-black" target="_blank" rel="noopener noreferrer">
                   {menu.name}
                 </Link>
               </li>

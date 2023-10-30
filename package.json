@@ -1,7 +1,7 @@
 {
-  "name": "nextly-template",
-  "version": "0.1.0",
-  "description": "Nextly Landing Page Template",
+  "name": "etherlink.com",
+  "version": "1.0.0",
+  "description": "Etherlink's website",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,14 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gituhb.com/web3templates/nextly-template"
+    "url": "https://github.com/etherlinkcom/frontend"
   },
   "keywords": [
     "nextjs",
     "tailwindcss",
     "free"
   ],
-  "author": "Surjith S M",
   "license": "ISC",
   "dependencies": {
     "@emotion/css": "^11.10.6",
