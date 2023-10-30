@@ -22,7 +22,7 @@ const Faucet = () => {
   // }
 
   const address = useAddress();
-  const shortAddress = `${address.slice(0, 6)}...${address.slice(-4)}`;
+  // const shortAddress = `${address.slice(0, 6)}...${address.slice(-4)}`;
 
 
   return (
@@ -46,7 +46,7 @@ const Faucet = () => {
           }}
           className="mt-10 px-10 py-6 text-xl  bg-white text-black hover:bg-shaderGreen font-medium text-center rounded-md"
         >
-          Send 1 XTZ to {shortAddress}
+          Send 1 XTZ to {address}
         </button>
       {/* </ThirdwebProvider> */}
     </div>
