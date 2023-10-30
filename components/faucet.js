@@ -34,6 +34,12 @@ const Faucet = () => {
   //   }
   // }, [txHash]);
 
+  useEffect(() => {
+    if (txHash) {
+      setIsLoading(false);
+    }
+  }, [txHash]);
+
   function onCaptchaComplete() {
     console.log("In Captcha complete, completing innit...")
     setCaptchaCompleted(true)
