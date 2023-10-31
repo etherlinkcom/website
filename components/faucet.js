@@ -25,7 +25,7 @@ const Faucet = () => {
 
   const [captchaCompleted, setCaptchaCompleted] = useState(false)
   const [isLoading, setIsLoading] = useState(false);
-  const [tokensClaimed, setTokensClaimed] = useState(false)
+  // const [tokensClaimed, setTokensClaimed] = useState(false)
   const [txHash, setTxHash] = useState("")
 
   useEffect(() => {
@@ -71,13 +71,15 @@ const Faucet = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <ConnectWallet
-        switchToActiveChain={true}
-        theme={customTheme}
-        modalSize={"wide"}
-        className="hover:bg-shaderGreen"
-        btnTitle="Add Etherlink To Metamask"
-      />
+      <div className="-mt-5">
+        <ConnectWallet
+          switchToActiveChain={true}
+          theme={customTheme}
+          modalSize={"wide"}
+          className="hover:bg-shaderGreen"
+          btnTitle="Connect Etherlink To Metamask"
+        />
+      </div>
       <div className="flex justify-center w-full">
         {walletStatus === "connected" &&
           <ReCAPTCHA
@@ -91,13 +93,22 @@ const Faucet = () => {
         <button
           onClick={txHash ? () => window.open(`https://explorer.ghostnet-evm.tzalpha.net/tx/${txHash}`, '_blank') : callFaucet}
           disabled={isLoading}
-          className={`flex flex-row items-center justify-center inline-block py-3 ml-4 text-lg font-medium text-center text-black border-solid border-2 border-black rounded-md px-7 lg:px-6 lg:py-4 hover:bg-borderGreen hover:border-borderGreen hover:text-black ${isLoading ? 'opacity-50 hover:bg-white hover:border-black cursor: not-allowed' : ''}`}
+          className={`flex flex-row items-center justify-center inline-block py-3 ml-4 text-lg font-medium text-center text-white bg-black border-solid border-2 border-black rounded-md px-7 lg:px-6 lg:py-4 ${isLoading ? 'opacity-75 cursor-not-allowed' : ''}`}
         >
-          {isLoading ? 'Loading...' : txHash ?
+          {isLoading ? <>
+            <Image
+              src="/img/etherlinkLogo.png"
+              alt="Loading..."
+              width="32"
+              height="32"
+              className={`w-8 mr-2 ${isLoading ? 'spin-logo' : ''}`}
+            />
+            Loading...
+          </> : txHash ?
             <>
               <Image
                 src="/img/etherlinkLogo.png"
-                alt="N"
+                alt="etherlinkLogo"
                 width="32"
                 height="32"
                 className="w-8 mr-2"

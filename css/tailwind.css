@@ -21,3 +21,12 @@
     border-bottom: 10px solid #59ad8c; /* match the color of your timeline */
   }
 }
+
+.spin-logo {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

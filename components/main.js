@@ -29,11 +29,11 @@ export default function Main() {
             />
           </div>
         </div>
-        <div className={`flex items-center justify-center w-full lg:w-1/2 ${showFaucet ? "bg-white rounded-lg" : ""}`}>
+        <div className={`flex items-center justify-center w-full lg:w-1/2 ${showFaucet ? "bg-white rounded-lg mt-10 mb-10 " : ""}`}>
           <div className="max-w-2xl text-center lg:text-left">
             <div className="flex flex-col space-y-2 mb-10">
               <h1 className={`text-5xl font-bold ${showFaucet ? "text-black" : "text-gray-300"} mb-10`}>
-                {showFaucet ? "Get Test XTZ on" : "Build Web3 on"} <span className="text-borderGreen">Etherlink</span>
+                {showFaucet ? "Get test XTZ on" : "Build Web3 on"} <span className="text-borderGreen">Etherlink</span>
               </h1>
               {!showFaucet && <div className={`text-xl leading-normal ${showFaucet ? "text-black" : "text-gray-500"} text-left lg:text-xl xl:text-2xl ${showFaucet ? "" : "dark:text-gray-300"}`}>
                 An EVM-compatible optimistic rollup with:
