@@ -11,7 +11,6 @@ const customTheme = darkTheme({
   colors: {
     primaryText: 'white',
     primaryButtonBg: '#b6feda',
-    primaryButtonHoverBg: 'green',
     primaryButtonText: 'black',
     secondaryButtonBg: '#59ad8c',
     connectedButtonBgHover: '#59ad8c',
@@ -78,7 +77,7 @@ const Faucet = () => {
           switchToActiveChain={true}
           theme={customTheme}
           modalSize={"wide"}
-          className="hover:bg-shaderGreen"
+          className="hover:bg-borderGreen"
           btnTitle="Connect Etherlink To Metamask"
         />
       </div>
@@ -96,7 +95,7 @@ const Faucet = () => {
         <button
           onClick={txHash ? () => window.open(`https://explorer.ghostnet-evm.tzalpha.net/tx/${txHash}`, '_blank') : callFaucet}
           disabled={isLoading}
-          className={`flex flex-row items-center justify-center inline-block py-3 ml-4 text-lg font-medium text-center text-white bg-black border-solid border-2 border-black rounded-md px-7 lg:px-6 lg:py-4 hover:bg-shaderGreen hover:border-borderGreen hover:text-black ${isLoading ? 'opacity-75 cursor-not-allowed hover:bg-black hover:border-black hover:text-white' : ''}`}
+          className={`flex flex-row items-center justify-center inline-block py-3 ml-4 text-lg font-medium text-center text-white bg-black border-solid border-2 border-black rounded-md px-7 lg:px-6 lg:py-4 hover:bg-black hover:border-black hover:text-white ${isLoading ? 'opacity-75 cursor-not-allowed hover:bg-black hover:border-black hover:text-white' : ''}`}
         >
           {isLoading ? <>
             <Image
