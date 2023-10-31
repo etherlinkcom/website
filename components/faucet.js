@@ -6,14 +6,16 @@ import {
 
 
 // Thirdweb Connect Wallet Theme
-import { lightTheme } from "@thirdweb-dev/react";
-const customTheme = lightTheme({
+import { darkTheme } from "@thirdweb-dev/react";
+const customTheme = darkTheme({
   colors: {
-    primaryText: 'black',
+    primaryText: 'white',
     primaryButtonBg: '#b6feda',
     primaryButtonHoverBg: 'green',
     primaryButtonText: 'black',
-    secondaryButtonBg: '#b6feda',
+    secondaryButtonBg: '#59ad8c',
+    connectedButtonBgHover: '#59ad8c',
+    borderColor: 'white'
   },
 });
 
@@ -86,6 +88,7 @@ const Faucet = () => {
             sitekey="6Lcbu-AoAAAAAOPS85LI3sqIvAwErDKdtZJ8d1Xh"
             onChange={onCaptchaComplete}
             className="mt-10 mb-10"
+            theme="dark"
           />
         }
       </div>
@@ -93,7 +96,7 @@ const Faucet = () => {
         <button
           onClick={txHash ? () => window.open(`https://explorer.ghostnet-evm.tzalpha.net/tx/${txHash}`, '_blank') : callFaucet}
           disabled={isLoading}
-          className={`flex flex-row items-center justify-center inline-block py-3 ml-4 text-lg font-medium text-center text-white bg-black border-solid border-2 border-black rounded-md px-7 lg:px-6 lg:py-4 ${isLoading ? 'opacity-75 cursor-not-allowed' : ''}`}
+          className={`flex flex-row items-center justify-center inline-block py-3 ml-4 text-lg font-medium text-center text-white bg-black border-solid border-2 border-black rounded-md px-7 lg:px-6 lg:py-4 hover:bg-shaderGreen hover:border-borderGreen hover:text-black ${isLoading ? 'opacity-75 cursor-not-allowed hover:bg-black hover:border-black hover:text-white' : ''}`}
         >
           {isLoading ? <>
             <Image
