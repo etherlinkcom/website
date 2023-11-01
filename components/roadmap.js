@@ -22,7 +22,7 @@ const milestones = [
         title: "Feb '24",
         cardTitle: "Testnet Beta",
         cardSubtitle: "",
-        cardDetailedText: ["- Provisional Distributed Sequencer", "- Full functionality implemented on Explorer", "- ETHDenver Hackathon with infrastructure partners", "- Election of the initial set of 7 geographically distributed Sequencer Operators"],
+        cardDetailedText: ["- Provisional Distributed Sequencer", "- Full Explorer Launch", "- ETHDenver Hackathon", "- Election of 7 initial geographically distributed Sequencer Operators"],
     },
     {
         title: "Mar '24",
@@ -43,9 +43,8 @@ export default function Roadmap() {
                 <div className="ml-16 sm:ml-8">
                     <Chrono
                         items={milestones}
-                        borderLessCards={true}
-                        mode="VERTICAL"
                         activeItemIndex={12}
+                        mode="VERTICAL"
                         theme={{
                             primary: '#59ad8c',
                             secondary: '#59ad8c',
@@ -62,12 +61,12 @@ export default function Roadmap() {
                             cardTitle: '1.4rem',
                             title: '1rem',
                         }}
-                        cardWidth={400}
-                        cardHeight={250}
                         lineWidth={6}
+                        cardHeight={250}
                         scrollable={false}
+                        useReadMore={false}
                         hideControls={true}
-                        disableNavOnKey
+                        disableNavOnKey={true}
                         disableClickOnCircle={true}
                         disableAutoScrollOnClick={true}
                     />

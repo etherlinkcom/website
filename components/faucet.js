@@ -96,7 +96,7 @@ const Faucet = () => {
               />
               {`${txHash.slice(0, 6)}...${txHash.slice(-4)}`}
             </> :
-            `Send 1 XTZ to ${shortAddress}`}
+            `Send 0.1 XTZ to ${shortAddress}`}
         </button> : ""
     )
   }

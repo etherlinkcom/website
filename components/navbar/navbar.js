@@ -68,11 +68,13 @@ export default function Navbar() {
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
                     {navigation.map((item, index) => (
-                      item.name === "Faucet" ?
-                        <a key={index} onClick={item.onClick} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800">
-                          {item.name}
-                        </a>
-                        :
+                      // Commenting out the faucet functionality for now
+                      // item.name === "Faucet" ?
+                      //   <a key={index} onClick={item.onClick} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800">
+                      //     {item.name}
+                      //   </a>
+                      //   :
+                      item.name !== "Faucet" &&
                         <Link key={index} href={item.link} onClick={item.onClick} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800" target="_blank" rel="noopener noreferrer">
                           {item.name}
                         </Link>
@@ -93,7 +95,7 @@ export default function Navbar() {
             {navigation.map((menu, index) => (
               menu.name === "Faucet" ?
                 <li className="mr-3 nav__item" key={index}>
-                  <a onClick={menu.onClick} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none hover:bg-etherlinkGreen dark:hover:text-black">
+                  <a onClick={menu.onClick} className="inline-block px-4 py-2 text-lg font-normal no-underline rounded-md text-gray-200 hover:text-borderGreen cursor-pointer">
                     {menu.name}
                   </a>
                 </li>
@@ -102,7 +104,7 @@ export default function Navbar() {
                   <Link
                     href={menu.link}
                     onClick={menu.onClick}
-                    className="inline-block px-4 py-2 text-lg font-normal no-underline rounded-md text-gray-200 hover:bg-etherlinkGreen hover:text-black"
+                    className="inline-block px-4 py-2 text-lg font-normal no-underline rounded-md text-gray-200 hover:text-borderGreen cursor-pointer"
                     target="_blank"
                     rel="noopener noreferrer">
                     {menu.name}
