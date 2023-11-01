@@ -1,19 +1,20 @@
 "use client"
 
-import { useState } from "react";
-// import ToggleTheme from "./toggleTheme";
+import { useState, useContext } from "react";
+import { FaucetContext } from "../contexts/FaucetContext";
 
 import Link from "next/link";
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 
 export default function Navbar() {
+  const { showFaucet, setShowFaucet } = useContext(FaucetContext);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [buttonColor, setButtonColor] = useState(false);
 
   const navigation = [
-    { name: "Faucet", link: "https://faucet.etherlink.com" },
+    { name: "Faucet", onClick: () => { setShowFaucet(!showFaucet); } },
     { name: "Explorer", link: "https://explorer.ghostnet-evm.tzalpha.net/" },
     { name: "Bridge", link: "https://bridge.etherlink.com/" },
   ];
@@ -31,8 +32,8 @@ export default function Navbar() {
                       <Image
                         src="/img/etherlinkLogo.png"
                         alt="N"
-                        width="128"
-                        height="128"
+                        width={128}
+                        height={128}
                         className="w-8 mr-2"
                       />
                     </span>
@@ -67,9 +68,16 @@ export default function Navbar() {
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
                     {navigation.map((item, index) => (
-                      <Link key={index} href={item.link} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800" target="_blank" rel="noopener noreferrer">
-                        {item.name}
-                      </Link>
+                      // Commenting out the faucet functionality for now
+                      // item.name === "Faucet" ?
+                      //   <a key={index} onClick={item.onClick} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800">
+                      //     {item.name}
+                      //   </a>
+                      //   :
+                      item.name !== "Faucet" &&
+                        <Link key={index} href={item.link} onClick={item.onClick} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800" target="_blank" rel="noopener noreferrer">
+                          {item.name}
+                        </Link>
                     ))}
                     <Link href="https://x.com/etherlinkcom" className="w-full px-6 py-2 mt-3 text-center text-black bg-shaderGreen rounded-md lg:ml-5">
                       Join the Community
@@ -85,15 +93,27 @@ export default function Navbar() {
         <div className="hidden text-center lg:flex lg:items-center justify-between">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
-              <li className="mr-3 nav__item" key={index}>
-                <Link href={menu.link} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none hover:bg-etherlinkGreen dark:hover:text-black" target="_blank" rel="noopener noreferrer">
-                  {menu.name}
-                </Link>
-              </li>
+              menu.name === "Faucet" ?
+                <li className="mr-3 nav__item" key={index}>
+                  <a onClick={menu.onClick} className="inline-block px-4 py-2 text-lg font-normal no-underline rounded-md text-gray-200 hover:text-borderGreen cursor-pointer">
+                    {menu.name}
+                  </a>
+                </li>
+                :
+                <li className="mr-3 nav__item" key={index}>
+                  <Link
+                    href={menu.link}
+                    onClick={menu.onClick}
+                    className="inline-block px-4 py-2 text-lg font-normal no-underline rounded-md text-gray-200 hover:text-borderGreen cursor-pointer"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    {menu.name}
+                  </Link>
+                </li>
             ))}
           </ul>
           <div className="relative mr-3 space-x-4 nav__item">
-            <button onClick={() => {setModalOpen(!modalOpen); setButtonColor(!buttonColor)}} className={`flex items-center px-4 py-3 text-black hover:bg-borderGreen ${buttonColor ? 'bg-borderGreen' : 'bg-white'} rounded-md md:ml-5`}>
+            <button onClick={() => { setModalOpen(!modalOpen); setButtonColor(!buttonColor) }} className={`flex items-center px-4 py-3 text-black hover:bg-borderGreen ${buttonColor ? 'bg-borderGreen' : 'bg-white'} rounded-md md:ml-5`}>
               <span>Join the Community</span>
               <svg className={`transition-transform duration-200 ml-1 w-4 h-4 ${modalOpen ? 'transform rotate-180' : 'transform rotate-270'}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -111,7 +131,6 @@ export default function Navbar() {
                 </div>
               </div>
             )}
-            {/* <ToggleTheme /> */}
           </div>
         </div>
       </nav>

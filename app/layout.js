@@ -1,11 +1,10 @@
 import ClientLayout from "./ClientLayout"
-import Link from "next/link";
 
 export default function RootLayout({ children }) {
     return (
       <html lang="en">
         <head>
-          <Link
+          <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap"
             rel="stylesheet"
           />

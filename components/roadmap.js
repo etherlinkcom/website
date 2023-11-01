@@ -7,34 +7,28 @@ import SectionTitle from "./shared/sectionTitle";
 
 const milestones = [
     {
-        title: "Nov '23",
-        cardTitle: "Etherlink Ghostnet",
-        cardSubtitle: "Stable Release",
-        cardDetailedText: ["- 15 second block time", "- Oracle Price Feeds available from 2 providers", "- LayerZero Endpoint"],
-    },
-    {
         title: "Dec '23",
-        cardTitle: "Etherlink Ghostnet",
-        cardSubtitle: "with Provisional Centralised Sequencer",
-        cardDetailedText: ["- 500ms block time", "- Subgraphs available from 2 providers", "- LayerZero wrapped asset bridge"],
+        cardTitle: "Testnet Alpha",
+        cardSubtitle: "",
+        cardDetailedText: ["- Provisional Centralized Sequencer", "- Oracle Price Feeds available from 2 providers", "- Subgraphs available from 2 providers", "- LayerZero Bridge"],
     },
-    {
-        title: "Jan '24",
-        cardTitle: "Etherlink Explorer",
-        cardSubtitle: "explorer.etherlink.com",
-        cardDetailedText: ["- Full functionality implemented", "- L2-to-L1 Transaction Viewer "],
-    },
+    // {
+    //     title: "Jan '24",
+    //     cardTitle: "The Egg Incubator Kickoff",
+    //     cardSubtitle: "@ Singapore",
+    //     cardDetailedText: ["", ""],
+    // },
     {
         title: "Feb '24",
-        cardTitle: "Etherlink Ghostnet",
-        cardSubtitle: "with Distributed Sequencer",
-        cardDetailedText: ["- Sequencer Operator Reveal 🎩👀", "- ETHDenver Hackathon with infrastructure partners"],
+        cardTitle: "Testnet Beta",
+        cardSubtitle: "",
+        cardDetailedText: ["- Provisional Distributed Sequencer", "- Full Explorer Launch", "- ETHDenver Hackathon", "- Election of 7 initial geographically distributed Sequencer Operators"],
     },
     {
         title: "Mar '24",
-        cardTitle: "Etherlink Mainnet Launch",
-        cardSubtitle: `Full Launch v1.0`,
-        cardDetailedText: ["- Fully functional Mainnet with Distributed Sequencer", "- Fair Ordering, Fast Execution (500ms) and Secure"]
+        cardTitle: "Mainnet Launch 🚀",
+        cardSubtitle: ``,
+        cardDetailedText: ["- Significant Partner Apps Launched", "- Ecosystem Fund Applications Open"]
     }
 ];
 
@@ -49,8 +43,8 @@ export default function Roadmap() {
                 <div className="ml-16 sm:ml-8">
                     <Chrono
                         items={milestones}
-                        mode="VERTICAL"
                         activeItemIndex={12}
+                        mode="VERTICAL"
                         theme={{
                             primary: '#59ad8c',
                             secondary: '#59ad8c',
@@ -67,13 +61,12 @@ export default function Roadmap() {
                             cardTitle: '1.4rem',
                             title: '1rem',
                         }}
-                        cardWidth={400}
-                        cardHeight={250}
                         lineWidth={6}
+                        cardHeight={250}
                         scrollable={false}
-                        borderLessCards={true}
+                        useReadMore={false}
                         hideControls={true}
-                        disableNavOnKey
+                        disableNavOnKey={true}
                         disableClickOnCircle={true}
                         disableAutoScrollOnClick={true}
                     />
