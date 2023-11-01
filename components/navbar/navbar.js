@@ -2,7 +2,6 @@
 
 import { useState, useContext } from "react";
 import { FaucetContext } from "../contexts/FaucetContext";
-// import ToggleTheme from "./toggleTheme";
 
 import Link from "next/link";
 import Image from "next/image"
@@ -15,7 +14,7 @@ export default function Navbar() {
   const [buttonColor, setButtonColor] = useState(false);
 
   const navigation = [
-    { name: "Faucet", onClick: () => { console.log("Faucet Clicked!"); setShowFaucet(!showFaucet); } },
+    { name: "Faucet", onClick: () => { setShowFaucet(!showFaucet); } },
     { name: "Explorer", link: "https://explorer.ghostnet-evm.tzalpha.net/" },
     { name: "Bridge", link: "https://bridge.etherlink.com/" },
   ];
@@ -33,8 +32,8 @@ export default function Navbar() {
                       <Image
                         src="/img/etherlinkLogo.png"
                         alt="N"
-                        width="128"
-                        height="128"
+                        width={128}
+                        height={128}
                         className="w-8 mr-2"
                       />
                     </span>
@@ -130,7 +129,6 @@ export default function Navbar() {
                 </div>
               </div>
             )}
-            {/* <ToggleTheme /> */}
           </div>
         </div>
       </nav>

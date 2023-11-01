@@ -10,4 +10,4 @@ export const FaucetProvider = ({ children }) => {
       {children}
     </FaucetContext.Provider>
   );
-};
+}
