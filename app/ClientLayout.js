@@ -22,7 +22,7 @@ function ThirdWebConfig({ children }) {
   };
 
   return (
-    <ThirdwebProvider activeChain={activeChain} supportedWallets={[metamaskWallet()]}>
+    <ThirdwebProvider clientId="b6e4deaae9898f34fddd8ce911f99316" activeChain={activeChain} supportedWallets={[metamaskWallet()]}>
       {children}
     </ThirdwebProvider>
   );
