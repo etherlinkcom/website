@@ -3,17 +3,20 @@
 import { useState, useContext } from "react";
 import { FaucetContext } from "../contexts/FaucetContext";
 
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const { showFaucet, setShowFaucet } = useContext(FaucetContext);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [buttonColor, setButtonColor] = useState(false);
 
   const navigation = [
+    { name: "🐣 Incubator 🐣", link: "/incubator" },
     { name: "Faucet", onClick: () => { setShowFaucet(!showFaucet); } },
     { name: "Explorer", link: "https://explorer.ghostnet-evm.tzalpha.net/" },
     { name: "Bridge", link: "https://bridge.etherlink.com/" },
@@ -103,9 +106,9 @@ export default function Navbar() {
                 <li className="mr-3 nav__item" key={index}>
                   <Link
                     href={menu.link}
-                    onClick={menu.onClick}
-                    className="inline-block px-4 py-2 text-lg font-normal no-underline rounded-md text-gray-200 hover:text-darkGreen cursor-pointer"
-                    target="_blank"
+                    onClick={menu.onClick ? menu.onClick : null}
+                    className={`inline-block px-4 py-2 text-lg font-normal no-underline rounded-md ${menu.link === "/incubator" && pathname === "/incubator" ? "bg-darkGreen text-black hover:text-white" : "text-gray-200 hover:text-darkGreen"} cursor-pointer`}
+                    target={menu.link === "/incubator" ? "_self" : "_blank"}
                     rel="noopener noreferrer">
                     {menu.name}
                   </Link>
@@ -133,7 +136,7 @@ export default function Navbar() {
             )}
           </div>
         </div>
-      </nav>
+      </nav >
     </div >
   );
 }

@@ -1,54 +1,50 @@
 import React from "react";
 import Image from "next/image";
-import Container from "./shared/container";
+import Container from "../shared/container";
 
 import {
   FaceSmileIcon,
   ChartBarSquareIcon,
   CursorArrowRaysIcon,
-  DevicePhoneMobileIcon,
-  AdjustmentsHorizontalIcon,
-  SunIcon,
   ChevronDoubleRightIcon,
 } from "@heroicons/react/24/solid";
 
 
-import bgs1 from "../public/img/bgs1.png";
-import bgs2 from "../public/img/bgs2.png";
+import bgs1 from "../../public/img/bgs1.png";
+import bgs2 from "../../public/img/bgs2.png";
 
-function Incubator(props) {
+function IncubatorInfo(props) {
   const { data } = props;
   return (
     <>
-      <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ">
-        <div
-          className={`flex items-center justify-center w-full lg:w-1/2 ${
-            props.imgPos === "right" ? "lg:order-1" : ""
-          }`}>
-          <div>
-            <Image
-              src={data.image}
-              width="521"
-              height="auto"
-              alt="Benefits"
-              className={"object-cover"}
-              placeholder="blur"
-              blurDataURL={data.image.src}
-            />
+      <Container className={`flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ${props.noImage ? "justify-center items-center" : ""}`}>
+        {!props.noImage && (
+          <div
+            className={`flex items-center justify-center w-full lg:w-1/2 ${props.imgPos === "right" ? "lg:order-1" : ""
+              }`}>
+            <div>
+              <Image
+                src={data.image}
+                width="521"
+                height="auto"
+                alt="Benefits"
+                className={"object-cover"}
+                placeholder="blur"
+                blurDataURL={data.image.src}
+              />
+            </div>
           </div>
-        </div>
+        )}
 
         <div
-          className={`flex flex-wrap items-center w-full lg:w-1/2 ${
-            data.imgPos === "right" ? "lg:justify-end" : ""
-          }`}>
-          <div>
-            <div className="flex flex-col w-full mt-4">
+          className={`flex flex-wrap items-center w-full lg:w-1/2 ${data.imgPos === "right" ? "lg:justify-end" : ""
+            }`}>
+          <div className="xl:ml-24">
+            <div className="flex flex-col w-full mt-4 text-center xl:text-left">
               <h3 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
                 {data.title}
               </h3>
-
-              <p className="max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300">
+              <p className="max-w-2xl py-4 text-xl text-left max-lg:text-center text-gray-300">
                 {data.desc}
               </p>
             </div>
@@ -80,7 +76,7 @@ function Benefit(props) {
           <h4 className="text-xl font-medium text-gray-800 dark:text-gray-200">
             {props.title}
           </h4>
-          <p className="mt-1 text-gray-500 dark:text-gray-400">
+          <p className="mt-1 text-gray-500 dark:text-gray-400 lg:mr-24">
             {props.children}
           </p>
         </div>
@@ -97,7 +93,7 @@ const benefitOne = {
   bullets: [
     {
       title: "Who can join?",
-      desc: "The DeFi incubator programme is available to hungry startups with a passion for innovating in the DeFi space. There is a list of ‘decentralised finance ideas’ shared on this page, which will likely have product market fit and hence be prioritised during the selection process. Having said so, we will consider interesting projects that do meet this criteria as long as it is truly innovative.",
+      desc: "The DeFi incubator programme is available to hungry startups with a passion for innovating in the DeFi space. There is a list of DeFi ideas here, which will likely have product market fit and hence be prioritised during the selection process. Having said so, we will consider interesting projects that do meet this criteria as long as it is truly innovative.",
       icon: <FaceSmileIcon />,
     },
     {
@@ -119,23 +115,8 @@ const benefitTwo = {
   image: bgs2,
   bullets: [
     {
-      title: "All expenses paid to Singapore",
-      desc: "Travel, accomodation and visa support",
-      icon: <ChevronDoubleRightIcon />,
-    },
-    {
-      title: "Space for you to get work done",
-      desc: "Access to co-working facilities, including meeting rooms",
-      icon: <ChevronDoubleRightIcon />,
-    },
-    {
       title: "Immerse yourself in the full entrepreneur stack",
       desc: "Workshops ranging from technical, research, legal and fundraising.",
-      icon: <ChevronDoubleRightIcon />,
-    },
-    {
-      title: "Dedicated 1-on-1 support",
-      desc: "A dedicated mentor to assist you with your needs.",
       icon: <ChevronDoubleRightIcon />,
     },
     {
@@ -144,21 +125,31 @@ const benefitTwo = {
       icon: <ChevronDoubleRightIcon />,
     },
     {
-      title: "Technical and Design Support",
-      desc: "Development and design teams will also be available based on the needs of the startup.",
+      title: "Dedicated 1-on-1 support",
+      desc: "A dedicated mentor to assist you with your needs, as well as development and design support.",
       icon: <ChevronDoubleRightIcon />,
     },
     {
-      title: "Get Connected",
-      desc: "Networking opportunities with investors and venture capitalists (VCs)",
+      title: "All expenses paid to Singapore",
+      desc: "Travel, accomodation and visa support",
       icon: <ChevronDoubleRightIcon />,
     },
+    // {
+    //   title: "Technical and Design Support",
+    //   desc: "Development and design teams will also be available based on the needs of the startup.",
+    //   icon: <ChevronDoubleRightIcon />,
+    // },
+    // {
+    //   title: "Get Connected",
+    //   desc: "Networking opportunities with investors and venture capitalists (VCs)",
+    //   icon: <ChevronDoubleRightIcon />,
+    // },
     {
       title: "Significant Financial Upside",
-      desc: "The benefits of this incubator have been estimated at £120,000 per startup, which you’ll receive without an exchange of tokens/equity.",
+      desc: "Estimated benefits at $120,000 per startup, which you’ll receive without an exchange of tokens/equity.",
       icon: <ChevronDoubleRightIcon />,
     },
   ],
 };
 
-export {benefitOne, benefitTwo, Incubator};
+export { benefitOne, benefitTwo, IncubatorInfo };

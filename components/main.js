@@ -1,10 +1,10 @@
 "use client"
 
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import Container from "./shared/container";
 
-import { useContext } from 'react';
-import { FaucetContext } from './contexts/FaucetContext';
+import { useContext } from "react";
+import { FaucetContext } from "./contexts/FaucetContext";
 
 import HeroImage from "./hero/image";
 import HeroContent from "./hero/content";
