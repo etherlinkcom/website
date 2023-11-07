@@ -15,8 +15,8 @@ const Home = () => {
         <>
             <Navbar />
             <SectionTitle
-                pretitle="Optional: Share your Dewhale address to be eligible to win $1,000 USDT 💸"
-                title="Would you use Etherlink?">
+                pretitle="Optional: Share your Dewhale address at the end to be eligible to win $1,000 USDT 💸"
+                title="Dewhales member survey for Etherlink">
             </SectionTitle>
             <Survey />
             <Footer />
