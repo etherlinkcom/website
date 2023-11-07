@@ -16,7 +16,7 @@ export default function Navbar() {
   const [buttonColor, setButtonColor] = useState(false);
 
   const navigation = [
-    { name: "🐣 Incubator 🐣", link: "/incubator" },
+    // { name: "🐣 Incubator 🐣", link: "/incubator" },
     { name: "Faucet", onClick: () => { setShowFaucet(!showFaucet); } },
     { name: "Explorer", link: "https://explorer.ghostnet-evm.tzalpha.net/" },
     { name: "Bridge", link: "https://bridge.etherlink.com/" },
