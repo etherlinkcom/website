@@ -10,7 +10,7 @@ const HeroImage = () => (
             className={"object-cover"}
             alt="Etherlink Pastel Green Blockchain Spiral"
             loading="eager"
-            placeholder="blur"
+            // placeholder="blur"
         />
     </div>
 )
