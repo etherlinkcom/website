@@ -1,8 +1,7 @@
-import Navbar from "../components/navbarOld";
+import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
 import Survey from "./survey";
 import Footer from "../components/footer";
-
 
 export const metadata = {
     title: 'Etherlink',
