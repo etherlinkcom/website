@@ -1,10 +1,9 @@
 import Image from "next/image";
-import incubatorMain from "../../public/img/incubatorMain.png";
 
 const HeroImage = () => (
     <div className="flex items-center justify-center w-full lg:w-1/2">
         <Image
-            src={incubatorMain}
+            src="/img/incubator/main.png"
             width="616"
             height="617"
             className={"object-cover"}

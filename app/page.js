@@ -1,9 +1,9 @@
-import Navbar from "../components/navbar/navbar";
-import Main from "../components/main";
-import Features from "../components/features";
-import Roadmap from "../components/roadmap";
-import Cta from "../components/cta";
-import Footer from "../components/footer";
+import Navbar from "./components/navbar";
+import Main from "./components/main";
+import Features from "./components/features";
+import Roadmap from "./components/roadmap";
+import Cta from "./components/cta";
+import Footer from "./components/footer";
 
 export const metadata = {
   title: 'Etherlink',

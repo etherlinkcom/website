@@ -7,7 +7,7 @@ const IncubatorContent = () => (
                 <h1 className={"text-5xl font-bold mb-10"}>
                     Build <span className="text-darkGreen">DeFi</span> on Etherlink
                 </h1>
-                <div className="text-xl leading-normal text-left lg:text-xl xl:text-xl dark:text-gray-300">
+                <div className="text-xl leading-normal text-left lg:text-xl xl:text-xl text-gray-300">
                     The Etherlink DeFi Incubator hosted by <Link className="text-darkGreen hover:text-lightGreen cursor-pointer" href="https://www.tzapac.com/" target="_blank" rel="noopener noreferrer">TZAPAC</Link> is:
                     <ul className="list-disc list-inside mt-3 mb-3">
                         <li className="mb-1.5">looking for DeFi experts with a <span className="text-darkGreen">builder mindset 🔨</span></li>

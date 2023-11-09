@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Container from "../shared/container";
+import Container from "../components/container";
 
 import {
   FaceSmileIcon,
@@ -10,8 +10,8 @@ import {
 } from "@heroicons/react/24/solid";
 
 
-import bgs1 from "../../public/img/bgs1.png";
-import bgs2 from "../../public/img/bgs2.png";
+import bgs1 from "../../public/img/incubator/singapore_1.png";
+import bgs2 from "../../public/img/incubator/singapore_2.png";
 
 function IncubatorInfo(props) {
   const { data } = props;
@@ -41,7 +41,7 @@ function IncubatorInfo(props) {
             }`}>
           <div className="xl:ml-24">
             <div className="flex flex-col w-full mt-4 text-center xl:text-left">
-              <h3 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
+              <h3 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white">
                 {data.title}
               </h3>
               <p className="max-w-2xl py-4 text-xl text-left max-lg:text-center text-gray-300">
@@ -73,10 +73,10 @@ function Benefit(props) {
           })}
         </div>
         <div>
-          <h4 className="text-xl font-medium text-gray-800 dark:text-gray-200">
+          <h4 className="text-xl font-medium text-gray-200">
             {props.title}
           </h4>
-          <p className="mt-1 text-gray-500 dark:text-gray-400 lg:mr-24">
+          <p className="mt-1 text-gray-400 lg:mr-24">
             {props.children}
           </p>
         </div>

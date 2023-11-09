@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Container from "./shared/container";
+import Container from "./container";
 
 export default function Cta({ headerText, descriptionText, buttonText, buttonUrl }) {
   return (

@@ -1,9 +1,9 @@
-import Navbar from "../../components/navbar/navbar";
-import IncubatorMain from "../../components/incubator/main";
-import Cta from "../../components/cta";
-import SectionTitle from "../../components/shared/sectionTitle";
-import { benefitOne, benefitTwo, IncubatorInfo } from "../../components/incubator/incubator";
-import Footer from "../../components/footer";
+import Navbar from "../components/navbar";
+import IncubatorMain from "./main";
+import Cta from "../components/cta";
+import SectionTitle from "../components/sectionTitle";
+import { benefitOne, benefitTwo, IncubatorInfo } from "./incubator";
+import Footer from "../components/footer";
 
 export const metadata = {
     title: 'Etherlink',
