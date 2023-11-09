@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
 import Image from "next/image"
+
+import { useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import {
@@ -57,12 +58,12 @@ const Faucet = () => {
 
   const ConnectWalletButton = () => {
     return (
-        <ConnectWallet
-          switchToActiveChain={true}
-          theme={customTheme}
-          modalSize={"wide"}
-          btnTitle="Connect Etherlink To Metamask"
-        />
+      <ConnectWallet
+        switchToActiveChain={true}
+        theme={customTheme}
+        modalSize={"wide"}
+        btnTitle="Connect Etherlink To Metamask"
+      />
     )
   }
 
@@ -76,7 +77,7 @@ const Faucet = () => {
         >
           {isLoading ? <>
             <Image
-              src="/img/etherlinkLogo.png"
+              src="/img/home/logo.png"
               alt="Loading..."
               width={32}
               height={32}
@@ -86,8 +87,8 @@ const Faucet = () => {
           </> : txHash ?
             <>
               <Image
-                src="/img/etherlinkLogo.png"
-                alt="etherlinkLogo"
+                src="/img/home/logo.png"
+                alt="logo"
                 width={32}
                 height={32}
                 className="w-8 mr-2"

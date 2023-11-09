@@ -1,14 +1,13 @@
-import Navbar from "../../components/navbar/navbar";
-import SectionTitle from "../../components/shared/sectionTitle";
+import Navbar from "../components/navbarOld";
+import SectionTitle from "../components/sectionTitle";
 import Survey from "./survey";
-import Footer from "../../components/footer";
+import Footer from "../components/footer";
 
 
 export const metadata = {
     title: 'Etherlink',
     description: 'Build Web3 on Etherlink',
 }
-
 
 const Home = () => {
     return (

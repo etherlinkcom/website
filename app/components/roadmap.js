@@ -2,8 +2,8 @@
 
 import React from "react"
 import { Chrono } from "react-chrono";
-import Container from "./shared/container";
-import SectionTitle from "./shared/sectionTitle";
+import Container from "./container";
+import SectionTitle from "./sectionTitle";
 
 const milestones = [
     {
