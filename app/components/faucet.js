@@ -6,6 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import {
   ConnectWallet,
   lightTheme,
+  useChainId,
   useAddress,
   useConnectionStatus
 } from "@thirdweb-dev/react";
@@ -28,6 +29,7 @@ const Faucet = () => {
 
   const address = useAddress();
   const walletStatus = useConnectionStatus();
+  const chainId = useChainId();
   const shortAddress = address ? `${address.slice(0, 6)}...${address.slice(-4)}` : address;
 
   useEffect(() => {
@@ -69,7 +71,7 @@ const Faucet = () => {
 
   const ClaimButton = ({ walletStatus, captchaCompleted }) => {
     return (
-      walletStatus === "connected" ?
+      walletStatus === "connected" && chainId === 128123 ?
         <button
           onClick={txHash ? () => window.open(`https://explorer.ghostnet-evm.tzalpha.net/tx/${txHash}`, '_blank') : callFaucet}
           disabled={isLoading || !captchaCompleted}
@@ -110,7 +112,7 @@ const Faucet = () => {
         </div>
         <div className="flex flex-col items-center">
           <ConnectWalletButton />
-          {walletStatus === "connected" && <ReCAPTCHA
+          {(walletStatus === "connected" && chainId === 128123) && <ReCAPTCHA
             sitekey="6Lcbu-AoAAAAAOPS85LI3sqIvAwErDKdtZJ8d1Xh"
             onChange={() => setCaptchaCompleted(true)}
             onExpired={() => setCaptchaCompleted(false)}
