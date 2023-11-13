@@ -21,8 +21,16 @@ function ThirdWebConfig({ children }) {
     name: "Etherlink Testnet",
   };
 
+  const dAppMeta = {
+    name: "Etherlink Testnet Faucet",
+    description: "Drip Testnet XTZ",
+    logoUrl: "https://etherlink.com/logo.png",
+    url: "https://etherlink.com",
+    isDarkMode: true,
+  };
+
   return (
-    <ThirdwebProvider clientId="b6e4deaae9898f34fddd8ce911f99316" activeChain={activeChain} supportedWallets={[metamaskWallet()]}>
+    <ThirdwebProvider clientId="b6e4deaae9898f34fddd8ce911f99316" activeChain={activeChain} supportedWallets={[metamaskWallet()]} dAppMeta={dAppMeta}>
       {children}
     </ThirdwebProvider>
   );
