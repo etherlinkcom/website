@@ -8,7 +8,7 @@ import "../public/css/tailwind.css";
 function ThirdWebConfig({ children }) {
   const activeChain = {
     chainId: 128123,
-    rpc: ["https://evm.ghostnet-evm.tzalpha.net/"],
+    rpc: ["https://node.ghostnet.etherlink.com"],
     nativeCurrency: {
       decimals: 18,
       name: "XTZ",
