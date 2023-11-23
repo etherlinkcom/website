@@ -21,7 +21,7 @@ export default function Features() {
               Very Low Fees
             </h2>
             <p className="text-2xl leading-normal text-center">
-              Etherlink has super low fees. How low? Think <span className="text-darkGreen">$0.001</span> per transaction (ERC-20 at ~200 TPS), not $20.
+              Etherlink has super low fees. How low? Think <span className="text-darkGreen">$0.01</span> per transaction (ERC-20 at ~200 TPS), not $20.
             </p>
           </div>
         </div>
