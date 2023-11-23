@@ -12,17 +12,11 @@ const milestones = [
         cardSubtitle: "",
         cardDetailedText: ["- Provisional Centralized Sequencer", "- Oracle Price Feeds available from 2 providers", "- Subgraphs available from 2 providers", "- LayerZero Bridge"],
     },
-    // {
-    //     title: "Jan '24",
-    //     cardTitle: "The Egg Incubator Kickoff",
-    //     cardSubtitle: "@ Singapore",
-    //     cardDetailedText: ["", ""],
-    // },
     {
         title: "Feb '24",
         cardTitle: "Testnet Beta",
         cardSubtitle: "",
-        cardDetailedText: ["- Provisional Distributed Sequencer", "- Full Explorer Launch", "- ETHDenver Hackathon", "- Election of 7 initial geographically distributed Sequencer Operators"],
+        cardDetailedText: ["- Provisional Decentralized Sequencer", "- Full Explorer Launch", "- ETHDenver Hackathon", "- Election of 7 initial geographically distributed Sequencer Operators"],
     },
     {
         title: "Mar '24",
