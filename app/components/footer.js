@@ -8,13 +8,11 @@ import { X, Discord, Telegram, GitHub } from '../../public/img/icons';
 export default function Footer() {
   const navigation = [
     { name: "Spotlight", link: "https://spotlight.tezos.com" },
-    { name: "Tezos", link: "https://tezos.com" },
     { name: "Documentation", link: "https://docs.etherlink.com" },
+    { name: "Brand Assets", link: "https://tinyurl.com/etherlinkbrandassets" },
   ];
   const legal = [
-    { name: "Terms", link: "/terms" },
-    { name: "Privacy", link: "/privacy" },
-    { name: "Legal", link: "/legal" },
+    { name: "Brand Assets", link: "https://tinyurl.com/etherlinkbrandassets" },
   ];
   return (
     <div className="relative">
