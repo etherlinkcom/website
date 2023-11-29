@@ -19,7 +19,7 @@ const MainContent = () => {
             Build Web3 on <span className="text-darkGreen">Etherlink</span>
           </h1>
           <div className="text-xl leading-normal text-left lg:text-xl xl:text-2xl text-gray-300">
-            An EVM-compatible optimistic rollup with:
+            An EVM-compatible optimistic rollup with :
             <ul className="list-disc list-inside mt-3 mb-3">
               <li className="mb-1.5"><span className="text-darkGreen">fair </span> transaction ordering</li>
               <li className="mb-1.5"><span className="text-darkGreen">fast </span>transaction execution</li>
