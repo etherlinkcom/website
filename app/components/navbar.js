@@ -86,7 +86,7 @@ export default function Navbar() {
   const navigation = [
     // { name: "🐣 Incubator 🐣", link: "/incubator" },
     { name: "Faucet", onClick: () => { setShowFaucet(!showFaucet); } },
-    { name: "Explorer", link: "https://explorer.ghostnet-evm.tzalpha.net/" },
+    { name: "Explorer", link: "https://explorer.etherlink.com/" },
     { name: "Bridge", link: "https://bridge.etherlink.com/" },
   ];
 
