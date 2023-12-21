@@ -7,22 +7,22 @@ import SectionTitle from "./sectionTitle";
 
 const milestones = [
     {
-        title: "Dec '23",
-        cardTitle: "Testnet Alpha",
+        title: "January 2024",
+        cardTitle: "Testnet Alpha 🛺",
         cardSubtitle: "",
-        cardDetailedText: ["- Provisional Centralized Sequencer", "- Oracle Price Feeds available from 2 providers", "- Subgraphs available from 2 providers", "- LayerZero Bridge"],
+        cardDetailedText: ["- EtherScout Explorer out of beta, hosted by BlockScout", "- Oracle Price Feeds available from Redstone", "- Subgraphs available from The Graph and Chainstack", "- LayerZero Wrapped-Asset Bridge"],
     },
     {
-        title: "Feb '24",
-        cardTitle: "Testnet Beta",
+        title: "February 2024",
+        cardTitle: "Testnet Beta 🚘",
         cardSubtitle: "",
-        cardDetailedText: ["- Provisional Decentralized Sequencer", "- Full Explorer Launch", "- ETHDenver Hackathon", "- Election of 7 initial geographically distributed Sequencer Operators"],
+        cardDetailedText: ["- ETHDenver Etherlink Hackathon", "- Provisional Decentralized Sequencer", "- Beta version of a 'DeFi Super App' live on Etherlink Testnet", "- Layer3 Testnet-related Quests introduced"],
     },
     {
-        title: "Mar '24",
+        title: "March 2024",
         cardTitle: "Mainnet Launch 🚀",
         cardSubtitle: ``,
-        cardDetailedText: ["- Significant Partner Apps Launched", "- Ecosystem Fund Applications Open"]
+        cardDetailedText: ["- Etherlink Incubator Kick-off in London", "- Tezos L1 Bakers governance mechanism initialized for Kernel upgrades", "- Tezos L1 Bakers choice mechanism for Sequencer Operators initialized", "- Audits finalized for the Etherlink Kernel & Sequencer"]
     }
 ];
 
