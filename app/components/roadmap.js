@@ -16,7 +16,7 @@ const milestones = [
         title: "February 2024",
         cardTitle: "Testnet Beta 🚘",
         cardSubtitle: "",
-        cardDetailedText: ["- Etherlink Hackathon", "- Provisional Decentralized Sequencer", "- Beta version of a 'DeFi Super App' live on Etherlink Testnet", "- Layer3 Testnet-related Quests introduced"],
+        cardDetailedText: ["- ETHDenver Etherlink Hackathon", "- Provisional Decentralized Sequencer", "- Beta version of a 'DeFi Super App' live on Etherlink Testnet", "- Layer3 Testnet-related Quests introduced"],
     },
     {
         title: "March 2024",
