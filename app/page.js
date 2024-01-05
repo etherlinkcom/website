@@ -3,6 +3,7 @@ import Main from "./components/main";
 import Features from "./components/features";
 import Roadmap from "./components/roadmap";
 import Cta from "./components/cta";
+import Partners from "./components/partners";
 import Footer from "./components/footer";
 
 export const metadata = {
@@ -23,6 +24,7 @@ const Home = () => {
         buttonText="Read the Docs"
         buttonUrl="https://docs.etherlink.com" 
       />
+      <Partners />
       <Footer />
     </>
   );
