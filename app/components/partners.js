@@ -30,8 +30,6 @@ export default function Partners() {
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
                         {BigTechLogoImg}
                     </div>
-                </div>
-                <div className="flex flex-wrap justify-center gap-10 mt-5 md:justify-center">
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
                         {BigTechLogoImg}
                     </div>
