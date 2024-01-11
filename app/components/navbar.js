@@ -119,7 +119,7 @@ export default function Navbar() {
     { name: "Faucet", onClick: () => { setShowFaucet(!showFaucet); } },
     { name: "Explorer", link: "https://explorer.etherlink.com/" },
     { name: "Bridge", link: "https://bridge.etherlink.com/" },
-    { name: "Connect Wallet", component: <ConnectWalletButton />, condition: pathname === '/faucet' },
+    // { name: "Connect Wallet", component: <ConnectWalletButton />, condition: pathname === '/faucet' },
   ];
 
   return (
