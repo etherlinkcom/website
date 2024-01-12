@@ -1,4 +1,5 @@
 import React from "react";
+import { loremIpsum } from "lorem-ipsum";
 import Container from "./container";
 import Image from "next/image";
 
@@ -47,6 +48,7 @@ const ThirdwebLogoImg =
         loading="eager"
     />
 
+
 export default function Partners() {
     return (
         <Container>
@@ -60,17 +62,21 @@ export default function Partners() {
                         {BlockscoutLogoImg}
                     </div>
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
-                        {L0LogoImg}
-                    </div>
-                    <div className="flex items-center text-gray-400 dark:text-gray-400">
                         {L3LogoImg}
                     </div>
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
-                        {StormLogoImg}
+                        {L0LogoImg}
                     </div>
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
                         {ThirdwebLogoImg}
                     </div>
+                    <div className="flex items-center text-gray-400 dark:text-gray-400">
+                        {StormLogoImg}
+                    </div>
+                </div>
+
+                <div className="text-xl text-center text-gray-700 dark:text-white mt-10 ml-30 mr-30">
+                    {loremIpsum({count: 10})}
                 </div>
             </div>
         </Container>
