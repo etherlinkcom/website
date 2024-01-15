@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from "next-themes";
 import { FaucetProvider } from "./contexts/FaucetContext";
-import { ThirdwebProvider, metamaskWallet } from "@thirdweb-dev/react";
+import { ThirdwebProvider, metamaskWallet, localWallet, walletConnect, phantomWallet, embeddedWallet } from "@thirdweb-dev/react";
 import "../public/css/tailwind.css";
 
 function ThirdWebConfig({ children }) {
@@ -30,7 +30,20 @@ function ThirdWebConfig({ children }) {
   };
 
   return (
-    <ThirdwebProvider clientId="b6e4deaae9898f34fddd8ce911f99316" activeChain={activeChain} supportedWallets={[metamaskWallet()]} dAppMeta={dAppMeta}>
+    <ThirdwebProvider clientId="b6e4deaae9898f34fddd8ce911f99316"
+      activeChain={activeChain}
+      supportedWallets={[
+        metamaskWallet({ recommended: true }),
+        // walletConnect(),
+        localWallet(),
+        // embeddedWallet({
+        //   auth: {
+        //     options: ["email", "apple", "google"],
+        //   },
+        // }),
+        // phantomWallet({ recommended: true }),
+      ]}
+      dAppMeta={dAppMeta}>
       {children}
     </ThirdwebProvider>
   );
