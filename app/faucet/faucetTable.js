@@ -22,11 +22,14 @@ const customTheme = lightTheme({
   },
 });
 
+import { useBalance } from "@thirdweb-dev/react";
+
 const FaucetTable = ({ title }) => {
   const [captchaCompleted, setCaptchaCompleted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isClaimLoading, setIsClaimLoading] = useState(false);
   const [txHash, setTxHash] = useState("");
   const recaptchaRef = useRef();
+  // const { data, isLoading } = useBalance();
 
   const address = useAddress();
   const walletStatus = useConnectionStatus();
@@ -37,7 +40,7 @@ const FaucetTable = ({ title }) => {
 
   useEffect(() => {
     if (txHash) {
-      setIsLoading(false);
+      setIsClaimLoading(false);
     }
   }, [txHash]);
 
@@ -65,9 +68,19 @@ const FaucetTable = ({ title }) => {
   //   );
   // };
 
+  const BalanceDisplay = () => {
+    const { data, isLoading } = useBalance();
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
+
+    const readableBalance = (data.value / 10 ** 18).toFixed(2);
+    return <div>Balance: {readableBalance.toString()}</div>;
+  };
+
   const callFaucet = async (token) => {
     const body = JSON.stringify({ walletAddress: address, token: token });
-    setIsLoading(true);
+    setIsClaimLoading(true);
     const response = await fetch('/api/faucet', {
       method: 'POST',
       headers: {
@@ -117,16 +130,16 @@ const FaucetTable = ({ title }) => {
       walletStatus === "connected" && chainId === 128123 ?
         <button
           onClick={txHash ? () => window.open(`https://explorer.etherlink.com/tx/${txHash}`, '_blank') : callWithReCAPTCHA}
-          disabled={isLoading}
-          className={`flex flex-row items-center justify-center py-3 text-lg font-medium text-center text-black bg-white border-solid border-2 border-black rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-black hover:text-white ${isLoading  ? 'opacity-50 cursor-not-allowed' : ''}`}
+          disabled={isClaimLoading}
+          className={`flex flex-row items-center justify-center py-3 text-lg font-medium text-center text-black bg-white border-solid border-2 border-black rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-black hover:text-white ${isClaimLoading  ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
-          {isLoading ? <>
+          {isClaimLoading ? <>
             <Image
               src="/img/home/logo.png"
               alt="Loading..."
               width={32}
               height={32}
-              className={`w-8 mr-2 ${isLoading ? 'spin-logo' : ''}`}
+              className={`w-8 mr-2 ${isClaimLoading ? 'spin-logo' : ''}`}
             />
             Loading...
           </> : txHash ?
@@ -153,6 +166,8 @@ const FaucetTable = ({ title }) => {
             {title}
           </h1>
           <p> Connect your wallet below and click claim to receive 0.1 XTZ, 10 eUSD, 10 USDT, and more! </p>
+          <p> Your current XTZ balance is: </p> <BalanceDisplay />
+          {/* <p> {data && data.value.toString()} </p> */}
         </div>
         <div className="flex flex-col items-center">
           <ConnectWalletButton />
@@ -160,8 +175,6 @@ const FaucetTable = ({ title }) => {
             sitekey="6Lel71EpAAAAABL0ioHbsj2MGmeiiz8wFxWkC6lK"
             ref={recaptchaRef}
             size="invisible"
-            // onChange={() => setCaptchaCompleted(true)}
-            // onExpired={() => setCaptchaCompleted(false)}
             className="mt-10"
             theme="light"
           />}
