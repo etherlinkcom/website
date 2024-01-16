@@ -4,6 +4,9 @@ import { ThemeProvider } from "next-themes";
 import { FaucetProvider } from "./contexts/FaucetContext";
 import { ThirdwebProvider, metamaskWallet, localWallet, walletConnect, phantomWallet, embeddedWallet } from "@thirdweb-dev/react";
 import "../public/css/tailwind.css";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 function ThirdWebConfig({ children }) {
   const activeChain = {
@@ -30,7 +33,7 @@ function ThirdWebConfig({ children }) {
   };
 
   return (
-    <ThirdwebProvider clientId="b6e4deaae9898f34fddd8ce911f99316"
+    <ThirdwebProvider clientId={process.env.THIRDWEB_CLIENT_ID}
       activeChain={activeChain}
       supportedWallets={[
         metamaskWallet({ recommended: true }),
