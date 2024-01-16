@@ -22,7 +22,6 @@ const customTheme = lightTheme({
   },
 });
 
-
 const FaucetTable = ({ title }) => {
   const [captchaCompleted, setCaptchaCompleted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);

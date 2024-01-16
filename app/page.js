@@ -24,7 +24,7 @@ const Home = () => {
         buttonText="Read the Docs"
         buttonUrl="https://docs.etherlink.com" 
       />
-      <Partners />
+      {/* <Partners /> */}
       <Footer />
     </>
   );
