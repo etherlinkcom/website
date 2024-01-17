@@ -7,22 +7,22 @@ import SectionTitle from "./sectionTitle";
 
 const milestones = [
     {
-        title: "January 2024",
-        cardTitle: "Testnet Alpha 🛺",
+        title: "Q1 2024",
+        cardTitle: " 🏗️ Phase One",
         cardSubtitle: "",
-        cardDetailedText: ["- EtherScout Explorer out of beta, hosted by BlockScout", "- Oracle Price Feeds available from Redstone", "- Subgraphs available from The Graph and Chainstack", "- LayerZero Wrapped-Asset Bridge"],
+        cardDetailedText: ["- BuildersNet launch", "- Builders Program Launch", "- Testnet Latency Improvements", "- Etherlink Ecosystem Announcements", "- Day-One Launch Partners", "- Web3 Infrastructure Partners", "- App Launches", "- Governance", "- Etherlink Quests"],
     },
     {
-        title: "February 2024",
-        cardTitle: "Testnet Beta 🚘",
+        title: "Q2 2024",
+        cardTitle: " 🏭 Phase Two",
         cardSubtitle: "",
-        cardDetailedText: ["- Etherlink Hackathon", "- Provisional Decentralized Sequencer", "- Beta version of a 'DeFi Super App' live on Etherlink Testnet", "- Layer3 Testnet-related Quests introduced"],
+        cardDetailedText: ["- Etherlink Launch", "- Etherlink Incubator Kick-off in Singapore", "- Etherlink Ecosystem Expansion", "- Etherlink Hackathon", "- Audits finalized for the Etherlink Kernel & Sequencer", "- Etherlink Quests Expansion"],
     },
     {
-        title: "March 2024",
-        cardTitle: "Mainnet Launch 🚀",
+        title: "Q3 2024",
+        cardTitle: " 🏛️ Phase Three",
         cardSubtitle: ``,
-        cardDetailedText: ["- Etherlink Incubator Kick-off in London", "- Tezos L1 Bakers governance mechanism initialized for Kernel upgrades", "- Tezos L1 Bakers choice mechanism for Sequencer Operators initialized", "- Audits finalized for the Etherlink Kernel & Sequencer"]
+        cardDetailedText: ["- Fair Ordering (MEV Protection)", "- DAL Support", "- TezDev 2024", "- More Coming Soon™"]
     }
 ];
 

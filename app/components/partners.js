@@ -30,9 +30,9 @@ const L3LogoImg =
         loading="eager"
     />
 
-const StormLogoImg =
+const RedstoneLogoImg =
     <Image
-        src="/img/partners/storm.png"
+        src="/img/partners/RedStone.png"
         width="220"
         height="33"
         className={"object-cover"}
@@ -59,25 +59,25 @@ export default function Partners() {
 
                 <div className="flex flex-wrap justify-center mt-10 gap-10 md:justify-center">
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
-                        {BlockscoutLogoImg}
-                    </div>
-                    <div className="flex items-center text-gray-400 dark:text-gray-400">
-                        {L3LogoImg}
-                    </div>
-                    <div className="flex items-center text-gray-400 dark:text-gray-400">
-                        {L0LogoImg}
+                        {RedstoneLogoImg}
                     </div>
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
                         {ThirdwebLogoImg}
                     </div>
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
-                        {StormLogoImg}
+                        {L0LogoImg}
+                    </div>
+                    <div className="flex items-center text-gray-400 dark:text-gray-400">
+                        {L3LogoImg}
+                    </div>
+                    <div className="flex items-center text-gray-400 dark:text-gray-400">
+                        {BlockscoutLogoImg}
                     </div>
                 </div>
 
-                <div className="text-xl text-center text-gray-700 dark:text-white mt-10 ml-30 mr-30">
-                    {loremIpsum({count: 10})}
-                </div>
+                {/* <div className="text-xl text-center text-gray-700 dark:text-white mt-10 ml-30 mr-30">
+                    {loremIpsum({ count: 10 })}
+                </div> */}
             </div>
         </Container>
     );

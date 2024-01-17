@@ -68,7 +68,7 @@ const FaucetTable = ({ title }) => {
   //   );
   // };
 
-  const BalanceDisplay = () => {
+  const XTZBalanceDisplay = () => {
     const { data, isLoading } = useBalance();
     if (isLoading) {
       return <div>Loading...</div>;
@@ -77,6 +77,16 @@ const FaucetTable = ({ title }) => {
     const readableBalance = (data.value / 10 ** 18).toFixed(2);
     return <div>Balance: {readableBalance.toString()}</div>;
   };
+
+  const USDBalanceDisplay = () => {
+    const { data, isLoading } = useBalance("0x1A71f491fb0Ef77F13F8f6d2a927dd4C969ECe4f");
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
+
+    const readableBalance = (data.value / 10 ** 18).toFixed(2);
+    return <div>Balance: {readableBalance.toString()}</div>;
+  }; 
 
   const callFaucet = async (token) => {
     const body = JSON.stringify({ walletAddress: address, token: token });
@@ -166,7 +176,8 @@ const FaucetTable = ({ title }) => {
             {title}
           </h1>
           <p> Connect your wallet below and click claim to receive 0.1 XTZ, 10 eUSD, 10 USDT, and more! </p>
-          <p> Your current XTZ balance is: </p> <BalanceDisplay />
+          <p> Your current XTZ balance is: </p> <XTZBalanceDisplay />
+          <p> Your current eUSD balance is: </p> <USDBalanceDisplay />
           {/* <p> {data && data.value.toString()} </p> */}
         </div>
         <div className="flex flex-col items-center">
