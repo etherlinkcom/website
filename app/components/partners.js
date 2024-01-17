@@ -15,7 +15,7 @@ const BlockscoutLogoImg =
 const L0LogoImg =
     <Image
         src="/img/partners/L0.png"
-        width="220"
+        width="350"
         height="33"
         className={"object-cover"}
         loading="eager"
@@ -24,7 +24,7 @@ const L0LogoImg =
 const L3LogoImg =
     <Image
         src="/img/partners/L3.png"
-        width="220"
+        width="225"
         height="33"
         className={"object-cover"}
         loading="eager"
@@ -42,7 +42,7 @@ const RedstoneLogoImg =
 const ThirdwebLogoImg =
     <Image
         src="/img/partners/thirdweb.png"
-        width="220"
+        width="275"
         height="33"
         className={"object-cover"}
         loading="eager"
@@ -57,14 +57,14 @@ export default function Partners() {
                     Our partners from <span className="text-darkGreen">day one</span>{" "}
                 </div>
 
-                <div className="flex flex-wrap justify-center mt-10 gap-10 md:justify-center">
+                <div className="flex flex-wrap justify-center mt-10 gap-8 md:justify-center">
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
                         {RedstoneLogoImg}
                     </div>
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
                         {ThirdwebLogoImg}
                     </div>
-                    <div className="flex items-center text-gray-400 dark:text-gray-400">
+                    <div className="flex items-center text-gray-400 dark:text-gray-400 -mr-2">
                         {L0LogoImg}
                     </div>
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
