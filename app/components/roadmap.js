@@ -33,8 +33,9 @@ export default function Roadmap() {
                 <SectionTitle
                     pretitle="Track our Progress"
                     title="Etherlink Roadmap"
-                    className="text-center"></SectionTitle>
-                <div className="ml-16 sm:ml-8">
+                    className="text-center">
+                </SectionTitle>
+                <div className="ml-10 sm:ml-8">
                     <Chrono
                         items={milestones}
                         activeItemIndex={12}

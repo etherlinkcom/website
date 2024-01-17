@@ -2,6 +2,7 @@ import React from "react";
 import { loremIpsum } from "lorem-ipsum";
 import Container from "./container";
 import Image from "next/image";
+import SectionTitle from "./sectionTitle";
 
 const BlockscoutLogoImg =
     <Image
@@ -54,10 +55,14 @@ export default function Partners() {
         <Container>
             <div className="flex flex-col justify-center">
                 <div className="text-xl text-center text-gray-700 dark:text-white">
-                    Our partners from <span className="text-darkGreen">day one</span>{" "}
+                    <SectionTitle
+                        pretitle="We been grindin'"
+                        title="Day-1 Partners"
+                        className="text-center">
+                    </SectionTitle>
                 </div>
 
-                <div className="flex flex-wrap justify-center mt-10 gap-8 md:justify-center">
+                <div className="flex flex-wrap justify-center gap-8 md:justify-center">
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
                         {RedstoneLogoImg}
                     </div>
