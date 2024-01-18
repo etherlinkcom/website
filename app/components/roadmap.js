@@ -7,22 +7,22 @@ import SectionTitle from "./sectionTitle";
 
 const milestones = [
     {
-        title: "January 2024",
-        cardTitle: "Testnet Alpha 🛺",
+        title: "Q1 2024",
+        cardTitle: " 🏗️ Phase One",
         cardSubtitle: "",
-        cardDetailedText: ["- EtherScout Explorer out of beta, hosted by BlockScout", "- Oracle Price Feeds available from Redstone", "- Subgraphs available from The Graph and Chainstack", "- LayerZero Wrapped-Asset Bridge"],
+        cardDetailedText: ["- Testnet Latency Improvements", "- Etherlink Infra Ecosystem", "- Builders Program Launch", "- Etherlink Quests Launch", "- Mainnet Open Beta"],
     },
     {
-        title: "February 2024",
-        cardTitle: "Testnet Beta 🚘",
+        title: "Q2 2024",
+        cardTitle: " 🏭 Phase Two",
         cardSubtitle: "",
-        cardDetailedText: ["- Etherlink Hackathon", "- Provisional Decentralized Sequencer", "- Beta version of a 'DeFi Super App' live on Etherlink Testnet", "- Layer3 Testnet-related Quests introduced"],
+        cardDetailedText: ["- Etherlink Incubator Kick-off", "- Ambassador Program Launch", "- Etherlink Hackathon", "- Audits finalized for the Etherlink Kernel & Sequencer", "- Etherlink Ecosystem & Partner Expansion "],
     },
     {
-        title: "March 2024",
-        cardTitle: "Mainnet Launch 🚀",
+        title: "Q3 2024",
+        cardTitle: " 🏛️ Phase Three",
         cardSubtitle: ``,
-        cardDetailedText: ["- Etherlink Incubator Kick-off in London", "- Tezos L1 Bakers governance mechanism initialized for Kernel upgrades", "- Tezos L1 Bakers choice mechanism for Sequencer Operators initialized", "- Audits finalized for the Etherlink Kernel & Sequencer"]
+        cardDetailedText: ["- TezDev 2024", "- Etherlink Quests Expansion", "- MEV Protection", "- DAL Integration","- More Coming Soon™"]
     }
 ];
 
@@ -33,8 +33,9 @@ export default function Roadmap() {
                 <SectionTitle
                     pretitle="Track our Progress"
                     title="Etherlink Roadmap"
-                    className="text-center"></SectionTitle>
-                <div className="ml-16 sm:ml-8">
+                    className="text-center">
+                </SectionTitle>
+                <div className="ml-10 sm:ml-8">
                     <Chrono
                         items={milestones}
                         activeItemIndex={12}

@@ -4,7 +4,7 @@ import Container from "./container";
 export default function Features() {
   return (
     <Container>
-      <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3 -mb-4">
         <div className="lg:col-span-2 xl:col-auto">
           <div className="flex flex-col justify-between w-full h-full px-14 rounded-2xl py-14 bg-trueGray-800">
             <h2 className="text-2xl leading-normal text-darkGreen text-center">

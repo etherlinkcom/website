@@ -23,7 +23,8 @@ const UnderConstruction = () => {
         <>
             <Navbar />
             <div className="flex justify-center items-center min-h-screen">
-                <FaucetTable title="Etherlink Faucet" />
+                {/* <FaucetTable title="Etherlink Faucet" /> */}
+                Under Construction
             </div>
             <Footer />
         </>

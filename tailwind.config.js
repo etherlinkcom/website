@@ -20,6 +20,9 @@ module.exports = {
         'max-xl': {'max': '1280px'},
         'max-2xl': {'max': '1536px'},
       },
+      borderWidth: {
+        '6': '6px',
+      },
     },
     fontFamily: {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
