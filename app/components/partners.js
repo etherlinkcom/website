@@ -7,7 +7,7 @@ import SectionTitle from "./sectionTitle";
 const BlockscoutLogoImg =
     <Image
         src="/img/partners/blockscout.png"
-        width="220"
+        width="250"
         height="33"
         className={"object-cover"}
         loading="eager"
@@ -16,7 +16,7 @@ const BlockscoutLogoImg =
 const L0LogoImg =
     <Image
         src="/img/partners/L0.png"
-        width="350"
+        width="275"
         height="33"
         className={"object-cover"}
         loading="eager"
@@ -34,7 +34,7 @@ const L3LogoImg =
 const RedstoneLogoImg =
     <Image
         src="/img/partners/RedStone.png"
-        width="220"
+        width="250"
         height="33"
         className={"object-cover"}
         loading="eager"
@@ -63,7 +63,7 @@ export default function Partners() {
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-8 md:justify-center">
-                    <div className="flex items-center text-gray-400 dark:text-gray-400">
+                    <div className="flex items-center text-gray-400 dark:text-gray-400 -mr-4">
                         {RedstoneLogoImg}
                     </div>
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
@@ -72,7 +72,7 @@ export default function Partners() {
                     <div className="flex items-center text-gray-400 dark:text-gray-400 -mr-2">
                         {L0LogoImg}
                     </div>
-                    <div className="flex items-center text-gray-400 dark:text-gray-400">
+                    <div className="flex items-center text-gray-400 dark:text-gray-400 -mr-2">
                         {L3LogoImg}
                     </div>
                     <div className="flex items-center text-gray-400 dark:text-gray-400">
@@ -83,6 +83,7 @@ export default function Partners() {
                 {/* <div className="text-xl text-center text-gray-700 dark:text-white mt-10 ml-30 mr-30">
                     {loremIpsum({ count: 10 })}
                 </div> */}
+                <div className="mt-12 border-t-2 border-darkGreen w-4/5 mx-auto rounded opacity-60"></div>
             </div>
         </Container>
     );

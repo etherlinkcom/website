@@ -17,6 +17,7 @@ const Home = () => {
       <Navbar />
       <Main />
       <Features />
+      <Partners />
       <Roadmap />
       <Cta 
         headerText="Ready to learn more about Etherlink?" 
