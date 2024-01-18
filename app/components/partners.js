@@ -57,7 +57,7 @@ export default function Partners() {
                 <div className="text-xl text-center text-gray-700 dark:text-white">
                     <SectionTitle
                         pretitle="We been grindin'"
-                        title="Day-1 Partners"
+                        title="Etherlink Partners"
                         className="text-center">
                     </SectionTitle>
                 </div>
@@ -82,6 +82,9 @@ export default function Partners() {
 
                 {/* <div className="text-xl text-center text-gray-700 dark:text-white mt-10 ml-30 mr-30">
                     {loremIpsum({ count: 10 })}
+                </div> */}
+                {/* <div className="text-2xl text-white text-center mt-10">
+                    From Day 1
                 </div> */}
             </div>
         </Container>

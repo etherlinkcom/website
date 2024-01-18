@@ -10,19 +10,19 @@ const milestones = [
         title: "Q1 2024",
         cardTitle: " 🏗️ Phase One",
         cardSubtitle: "",
-        cardDetailedText: ["- BuildersNet launch", "- Builders Program Launch", "- Testnet Latency Improvements", "- Etherlink Ecosystem Announcements", "- Day-One Launch Partners", "- Web3 Infrastructure Partners", "- App Launches", "- Governance", "- Etherlink Quests"],
+        cardDetailedText: ["- Testnet Latency Improvements", "- Etherlink Infra Ecosystem", "- Builders Program Launch", "- Etherlink Quests Launch", "- Mainnet Open Beta"],
     },
     {
         title: "Q2 2024",
         cardTitle: " 🏭 Phase Two",
         cardSubtitle: "",
-        cardDetailedText: ["- Etherlink Launch", "- Etherlink Incubator Kick-off in Singapore", "- Etherlink Ecosystem Expansion", "- Etherlink Hackathon", "- Audits finalized for the Etherlink Kernel & Sequencer", "- Etherlink Quests Expansion"],
+        cardDetailedText: ["- Etherlink Incubator Kick-off", "- Ambassador Program Launch", "- Etherlink Hackathon", "- Audits finalized for the Etherlink Kernel & Sequencer", "- Etherlink Ecosystem & Partner Expansion "],
     },
     {
         title: "Q3 2024",
         cardTitle: " 🏛️ Phase Three",
         cardSubtitle: ``,
-        cardDetailedText: ["- Fair Ordering (MEV Protection)", "- DAL Support", "- TezDev 2024", "- More Coming Soon™"]
+        cardDetailedText: ["- TezDev", "- Etherlink Quests Expansion", "- MEV Protection", "- DAL Integration","- More Coming Soon™"]
     }
 ];
 
