@@ -22,7 +22,7 @@ const milestones = [
         title: "Q3 2024",
         cardTitle: " 🏛️ Phase Three",
         cardSubtitle: ``,
-        cardDetailedText: ["- TezDev", "- Etherlink Quests Expansion", "- MEV Protection", "- DAL Integration","- More Coming Soon™"]
+        cardDetailedText: ["- TezDev 2024", "- Etherlink Quests Expansion", "- MEV Protection", "- DAL Integration","- More Coming Soon™"]
     }
 ];
 
