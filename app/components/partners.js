@@ -7,7 +7,7 @@ import SectionTitle from "./sectionTitle";
 const BlockscoutLogoImg =
     <Image
         src="/img/partners/blockscout.png"
-        width="250"
+        width="225"
         height="33"
         className={"object-cover"}
         loading="eager"
@@ -16,7 +16,7 @@ const BlockscoutLogoImg =
 const L0LogoImg =
     <Image
         src="/img/partners/L0.png"
-        width="275"
+        width="250"
         height="33"
         className={"object-cover"}
         loading="eager"
@@ -25,7 +25,7 @@ const L0LogoImg =
 const L3LogoImg =
     <Image
         src="/img/partners/L3.png"
-        width="225"
+        width="200"
         height="33"
         className={"object-cover"}
         loading="eager"
@@ -34,7 +34,7 @@ const L3LogoImg =
 const RedstoneLogoImg =
     <Image
         src="/img/partners/RedStone.png"
-        width="250"
+        width="225"
         height="33"
         className={"object-cover"}
         loading="eager"
@@ -43,7 +43,7 @@ const RedstoneLogoImg =
 const ThirdwebLogoImg =
     <Image
         src="/img/partners/thirdweb.png"
-        width="275"
+        width="250"
         height="33"
         className={"object-cover"}
         loading="eager"
