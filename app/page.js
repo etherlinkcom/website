@@ -8,7 +8,7 @@ import Footer from "./components/footer";
 
 export const metadata = {
   title: 'Etherlink',
-  description: 'Build Web3 on Etherlink',
+  description: 'A decentralized & EVM compatible Layer-2 blockchain that looks after its users',
 }
 
 const Home = () => {
