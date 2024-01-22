@@ -11,13 +11,13 @@ export const metadata = {
   description: 'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.',
 }
 
-const Home = () => {
+const Home = () => {    
   return (
     <>
       <Navbar />
       <Main />
       <Features />
-      <Partners />
+      <Partners />  
       <Roadmap />
       <Cta 
         headerText="Ready to learn more about Etherlink?" 

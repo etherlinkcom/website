@@ -1,4 +1,5 @@
 import ClientLayout from "./ClientLayout"
+import FathomComponent from "./components/fathom";
 
 export default function RootLayout({ children }) {
     return (
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
         <ClientLayout>
           {children}
         </ClientLayout>
+        <FathomComponent />
         </body>
       </html>
     );
