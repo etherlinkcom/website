@@ -11,9 +11,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <FathomComponent />
         <ClientLayout>
           {children}
-          <FathomComponent />
         </ClientLayout>
       </body>
     </html>
