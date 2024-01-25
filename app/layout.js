@@ -1,4 +1,5 @@
 import ClientLayout from "./ClientLayout"
+import { Analytics } from '@vercel/analytics/react';
 import FathomComponent from "./components/fathom";
 
 export default function RootLayout({ children }) {
@@ -11,8 +12,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <FathomComponent />
+        <Analytics />
         <ClientLayout>
+          <FathomComponent />
           {children}
         </ClientLayout>
       </body>
