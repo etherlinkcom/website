@@ -1,18 +1,37 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import * as Fathom from "fathom-client";
+import { load, trackPageview } from 'fathom-client';
+import { useEffect, Suspense } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 
-const FathomComponent = () => {
+function TrackPageView() {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  // Load the Fathom script on mount
   useEffect(() => {
-    Fathom.load("CGVCFOHS", {
-      includedDomains: ["etherlink.com"],
-      spa: "auto"
+    load('CGVCFOHS', {
+      auto: false
     });
   }, []);
 
+  // Record a pageview when route changes
+  useEffect(() => {
+    if (!pathname) return;
+
+    trackPageview({
+      url: pathname + searchParams.toString(),
+      referrer: document.referrer
+    });
+  }, [pathname, searchParams]);
+
   return null;
-};
+}
 
-
-export default FathomComponent;
+export default function FathomComponent() {
+  return (
+    <Suspense fallback={null}>
+      <TrackPageView />
+    </Suspense>
+  );
+}
