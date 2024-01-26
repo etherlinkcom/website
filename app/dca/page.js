@@ -8,7 +8,7 @@ export const metadata = {
     title: 'DeFi Catalyst Accelerator',
     description: 'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.',
     metadataBase: 'https://etherlink.com/dca'
-  }
+}
 
 const Home = () => {
     return (

@@ -32,7 +32,7 @@ const L3LogoImg =
 
 const RedstoneLogoImg =
     <Image
-        src="/img/partners/RedStone.png"
+        src="/logo_with_text.png"
         width="225"
         height="33"
         className={"object-cover"}
@@ -56,7 +56,7 @@ export default function Partners() {
                 <div className="text-xl text-center text-gray-700 dark:text-white">
                     <SectionTitle
                         pretitle="From Day One"
-                        title="Our Partners"
+                        title="Powered By"
                         className="text-center">
                     </SectionTitle>
                 </div>

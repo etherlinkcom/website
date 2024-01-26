@@ -8,7 +8,7 @@ const MainContent = () => {
     <div className="flex items-center justify-center w-full lg:w-1/2">
       <div className="max-w-2xl text-center lg:text-left">
         <div className="flex flex-col space-y-2 mb-10">
-          <h1 className={"text-5xl font-bold mb-10"}>
+          <h1 className="text-5xl font-bold mb-10">
             DeFi Catalyst <span className="text-darkGreen">Accelerator</span>
           </h1>
           <div className="text-xl leading-normal text-left lg:text-xl xl:text-2xl text-gray-300">
