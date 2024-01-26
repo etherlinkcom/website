@@ -17,3 +17,18 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.image-blur {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-blur::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle at center 40%, transparent 40%, #171717 68%);
+}
