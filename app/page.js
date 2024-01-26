@@ -6,11 +6,6 @@ import Cta from "./components/cta";
 import Partners from "./components/partners";
 import Footer from "./components/footer";
 
-export const metadata = {
-  title: 'Etherlink',
-  description: 'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.',
-}
-
 const Home = () => {    
   return (
     <>

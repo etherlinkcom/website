@@ -5,9 +5,10 @@ import Survey from "./survey";
 import Footer from "../components/footer";
 
 export const metadata = {
-    title: 'Etherlink',
-    description: 'Build Web3 on Etherlink',
-}
+    title: 'DeFi Catalyst Accelerator',
+    description: 'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.',
+    metadataBase: 'https://etherlink.com/dca'
+  }
 
 const Home = () => {
     return (
