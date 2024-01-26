@@ -44,13 +44,13 @@ const MainContent = () => {
   )
 }
 
-const ImageWrapper = ({ children }) => {
-  return (
-    <div className="image-blur">
-      {children}
-    </div>
-  );
-};
+// const ImageWrapper = ({ children }) => {
+//   return (
+//     <div className="image-blur">
+//       {children}
+//     </div>
+//   );
+// };
 
 
 export default function MainDCA() {
@@ -58,7 +58,6 @@ export default function MainDCA() {
     <>
       <Container className="flex flex-wrap">
         <div className="flex items-center justify-center w-full lg:w-1/2">
-          <ImageWrapper>
             <Image
               src="/img/DCA/hero.png"
               width="616"
@@ -67,7 +66,6 @@ export default function MainDCA() {
               alt="Etherlink Pastel Green Blockchain Spiral"
               loading="eager"
             />
-          </ImageWrapper>
         </div>
         <MainContent />
       </Container>
