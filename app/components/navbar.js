@@ -117,7 +117,7 @@ export default function Navbar() {
   const navigation = [
     // { name: "🐣 Incubator 🐣", link: "/incubator" },
     { name: "Faucet", onClick: () => { setShowFaucet(!showFaucet); } },
-    { name: "Explorer", link: "https://testnet-explorer.etherlink.com/" },
+    { name: "Explorer", link: "https://explorer.etherlink.com/" },
     { name: "Bridge", link: "https://bridge.etherlink.com/" },
     // { name: "Connect Wallet", component: <ConnectWalletButton />, condition: pathname === '/faucet' },
   ];
