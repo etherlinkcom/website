@@ -38,11 +38,11 @@ const MainContent = () => {
             Start Building
           </a>
           <a
-            href="https://bridge.etherlink.com/"
+            href="https://x.com/intent/user?screen_name=etherlinkcom"
             target="_blank"
             rel="noopener"
             className="inline-block py-3 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black">
-            Bridge to Etherlink
+            Follow Etherlink 
           </a>
         </div>
       </div>
