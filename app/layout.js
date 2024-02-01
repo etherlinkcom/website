@@ -5,12 +5,6 @@ import FathomComponent from "./components/fathom";
 
 export const metadata = {
   metadataBase: new URL('https://etherlink.com'),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    images: './opengraph-image.png',
-  },
 }
 
 export default function RootLayout({ children }) {
