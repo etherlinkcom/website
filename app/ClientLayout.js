@@ -3,7 +3,7 @@
 import { ThemeProvider } from "next-themes";
 import { FaucetProvider } from "./contexts/FaucetContext";
 import { ThirdwebProvider, metamaskWallet, localWallet, walletConnect, phantomWallet, embeddedWallet } from "@thirdweb-dev/react";
-import "../public/css/tailwind.css";
+import "./global.css";
 
 
 function ThirdWebConfig({ children }) {
@@ -15,6 +15,7 @@ function ThirdWebConfig({ children }) {
       name: "XTZ",
       symbol: "XTZ",
     },
+    explorers: [{ name: "Etherlink Explorer", url: "https://testnet-explorer.etherlink.com/" }],
     shortName: "etherlink",
     slug: "etherlink",
     testnet: true,
