@@ -1,7 +1,5 @@
 "use client"
-
-import { useState, useContext } from "react";
-import { FaucetContext } from "../contexts/FaucetContext";
+import { useState } from "react";
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -11,13 +9,9 @@ import { Disclosure } from "@headlessui/react";
 import { X, Discord } from '../../public/img/icons';
 
 // connect wallet button
-
 import {
   ConnectWallet,
   lightTheme,
-  useChainId,
-  useAddress,
-  useConnectionStatus
 } from "@thirdweb-dev/react";
 
 const customTheme = lightTheme({
@@ -30,22 +24,6 @@ const customTheme = lightTheme({
     borderColor: '#59ad8c'
   },
 });
-
-// Navigation item component
-// const NavItem = ({ item, pathname }) => {
-//   return (
-//     <li className="mr-3 nav__item">
-//       <Link
-//         href={item.link}
-//         onClick={item.onClick ? item.onClick : null}
-//         className={`inline-block px-4 py-2 text-lg font-normal no-underline rounded-md ${item.link === "/incubator" && pathname === "/incubator" ? "bg-darkGreen text-black hover:text-white" : "text-gray-200 hover:text-darkGreen"} cursor-pointer`}
-//         target={item.link === "/incubator" ? "_self" : "_blank"}
-//         rel="noopener noreferrer">
-//         {item.name}
-//       </Link>
-//     </li>
-//   );
-// };
 
 const ConnectWalletButton = () => {
   return (
@@ -61,12 +39,6 @@ const ConnectWalletButton = () => {
 const NavItem = ({ item, pathname }) => {
   if (item.component && item.condition) {
     return item.component
-  } else if (item.name === "Faucet") {
-    return (
-      <a onClick={item.onClick} className="inline-block px-4 py-2 text-lg font-normal no-underline rounded-md text-gray-200 hover:text-darkGreen cursor-pointer">
-        {item.name}
-      </a>
-    );
   } else if (item.link) {
     return (
       <Link
@@ -81,19 +53,12 @@ const NavItem = ({ item, pathname }) => {
   }
 };
 
-// Commenting out the mobile faucet functionality for now
-// item.name === "Faucet" ?
-//   <a key={index} onClick={item.onClick} className="w-full px-4 py-2 -ml-4 rounded-md text-gray-300 hover:text-indigo-500 focus:text-indigo-500">
-//     {item.name}
-//   </a>
-//   :
 const MobileMenu = ({ navigation }) => {
   return (
     <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
       <>
         {navigation.map((item, index) => (
           item.component && item.condition ? item.component :
-            item.name !== "Faucet" &&
             <Link key={index} href={item.link} onClick={item.onClick} className="w-full px-4 py-2 -ml-4 rounded-md text-gray-300" target="_blank" rel="noopener noreferrer">
               {item.name}
             </Link>
@@ -109,17 +74,14 @@ const MobileMenu = ({ navigation }) => {
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { showFaucet, setShowFaucet } = useContext(FaucetContext);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [buttonColor, setButtonColor] = useState(false);
 
   const navigation = [
-    // { name: "🐣 Incubator 🐣", link: "/incubator" },
-    { name: "Faucet", onClick: () => { setShowFaucet(!showFaucet); } },
+    // { name: "Faucet", onClick: () => { setShowFaucet(!showFaucet); } },
+    { name: "Faucet", link: "https://faucet.etherlink.com/" },
     { name: "Explorer", link: "https://testnet-explorer.etherlink.com/" },
-    // { name: "Bridge", link: "https://bridge.etherlink.com/" },
-    // { name: "Connect Wallet", component: <ConnectWalletButton />, condition: pathname === '/faucet' },
   ];
 
   return (
@@ -180,7 +142,6 @@ export default function Navbar() {
               <NavItem item={menu} pathname={pathname} key={index} />
             ))}
           </ul>
-          {pathname !== "/faucet" && (
             <div className="relative mr-3 space-x-4 nav__item">
               <button onClick={() => { setModalOpen(!modalOpen); setButtonColor(!buttonColor) }} className={`flex items-center px-4 py-3 text-black hover:bg-darkGreen ${buttonColor ? 'bg-darkGreen' : 'bg-white'} rounded-md md:ml-5`}>
                 <span>Join the Community</span>
@@ -201,7 +162,6 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-          )}
         </div>
       </nav >
     </div >

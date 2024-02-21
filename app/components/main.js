@@ -5,11 +5,6 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 
-import { useContext } from "react";
-import { FaucetContext } from "../contexts/FaucetContext";
-
-const Faucet = dynamic(() => import('../components/faucet'));
-
 const MainContent = () => {
   return (
     <div className="flex items-center justify-center w-full lg:w-1/2">
@@ -29,19 +24,19 @@ const MainContent = () => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row l:items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center">
+        <div className="flex flex-col justify-between sm:flex-row l:items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center">
           <a
             href="https://docs.etherlink.com"
             target="_blank"
             rel="noopener"
-            className="inline-block py-3 text-lg font-medium text-center text-black bg-white border-solid border-2 border-white rounded-md px-7 lg:px-10 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black">
+            className="inline-block py-3 w-full sm:w-1/2 text-lg font-medium text-center text-black bg-white border-solid border-2 border-white rounded-md px-7 lg:px-10 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black">
             Start Building
           </a>
           <a
             href="https://x.com/intent/user?screen_name=etherlinkcom"
             target="_blank"
             rel="noopener"
-            className="inline-block py-3 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black">
+            className="inline-block py-3 w-full sm:w-1/2 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black">
             Follow Etherlink 
           </a>
         </div>
@@ -52,7 +47,6 @@ const MainContent = () => {
 
 
 export default function Main() {
-  const { showFaucet } = useContext(FaucetContext);
 
   return (
     <>
@@ -65,10 +59,9 @@ export default function Main() {
             className={"object-cover"}
             alt="Etherlink Pastel Green Blockchain Spiral"
             loading="eager"
-          // placeholder="blur"
           />
         </div>
-        {showFaucet ? <Faucet /> : <MainContent />}
+        <MainContent />
       </Container>
     </>
   );

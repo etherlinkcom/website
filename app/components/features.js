@@ -6,7 +6,7 @@ export default function Features() {
     <Container>
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3 -mb-4">
         <div className="lg:col-span-2 xl:col-auto">
-          <div className="flex flex-col justify-between w-full h-full px-14 rounded-2xl py-14 bg-trueGray-800">
+          <div className="flex flex-col justify-between w-full h-full px-14 rounded-2xl py-14 bg-trueGray-800 shadow-md shadow-slate-400/40 hover:shadow-lg hover:shadow-darkGreen">
             <h2 className="text-2xl leading-normal text-darkGreen text-center">
               Decentralized Sequencer
             </h2>
@@ -16,7 +16,7 @@ export default function Features() {
           </div>
         </div>
         <div className="">
-          <div className="flex flex-col justify-between w-full h-full px-14 rounded-2xl py-14 bg-trueGray-800">
+          <div className="flex flex-col justify-between w-full h-full px-14 rounded-2xl py-14 bg-trueGray-800 shadow-md shadow-slate-400/40 hover:shadow-lg hover:shadow-darkGreen">
             <h2 className="text-2xl leading-normal text-darkGreen text-center">
               Very Low Fees
             </h2>
@@ -27,7 +27,7 @@ export default function Features() {
           </div>
         </div>
         <div className="">
-          <div className="flex flex-col justify-between w-full h-full px-14 rounded-2xl py-14 bg-trueGray-800">
+          <div className="flex flex-col justify-between w-full h-full px-14 rounded-2xl py-14 bg-trueGray-800 shadow-md shadow-slate-400/40 hover:shadow-lg hover:shadow-darkGreen">
             <h2 className="text-2xl leading-normal text-darkGreen mb-4 text-center">
               MEV Protection
             </h2>
