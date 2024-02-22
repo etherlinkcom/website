@@ -5,18 +5,16 @@ import Image from "next/image";
 export default function Features() {
   return (
     <Container className="w-3/4">
-      <div className="mr-12 mb-12">
+      <div className="mr-12 mb-12 xl:text-left text-center">
         <h1 className="text-3xl font-semibold mb-6">DCA is a DeFi-focused accelerator program aiming to support startups (Builders/Developers) building on Etherlink.</h1>
         <h1 className="text-3xl font-semibold">The DCA begins with a 2-week in-person bootcamp in Singapore. The remaining 4 weeks are completed remotely.</h1>
       </div>
 
-      <div className="grid gap-10 grid-rows-2 grid-cols-2 -mb-4">
-        <div className="lg:col-span-2 xl:col-auto">
-          <FeatureBox
-            title="Mentorship & Guidance"
-            bodyText="Targeted support from the Core DeFi team of the Tezos ecosystem and experienced mentors in the space. We will help you validate ideas, focus your time & resources, complement your team and eventually raise money from our network of VC partners."
-          />
-        </div>
+      <div className="grid gap-10 xl:grid-rows-2 xl:grid-cols-2 grid-rows-4 grid-cols-1 -mb-4">
+        <FeatureBox
+          title="Mentorship & Guidance"
+          bodyText="Targeted support from the Core DeFi team of the Tezos ecosystem and experienced mentors in the space. We will help you validate ideas, focus your time & resources, complement your team and eventually raise money from our network of VC partners."
+        />
         <FeatureBox
           title="$200k Funding"
           bodyText="Receive a potential investment of $200k designed to support you while you raise your seed round."
@@ -50,13 +48,13 @@ export default function Features() {
             Through the DCA we want to bring to the community on-chain projects with a financial angle.
             This might include but is not limited to the following sectors.
           </p>
-        <ul className="list-disc pl-5 mt-5 text-2xl">
-          <li>User-Friendly Web 2.5 DeFi Platforms / Crypto Neobanks</li>
-          <li>Digital Asset Management Platform / Automated Strategy Vaults</li>
-          <li>Sports Betting</li>
-          <li>Real World Assets (RWA)</li>
-          <li>Innovative Trading Marketplaces</li>
-        </ul>
+          <ul className="list-disc pl-5 mt-5 text-2xl">
+            <li>User-Friendly Web 2.5 DeFi Platforms / Crypto Neobanks</li>
+            <li>Digital Asset Management Platform / Automated Strategy Vaults</li>
+            <li>Sports Betting</li>
+            <li>Real World Assets (RWA)</li>
+            <li>Innovative Trading Marketplaces</li>
+          </ul>
         </div>
       </div>
     </Container>
