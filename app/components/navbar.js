@@ -7,17 +7,6 @@ import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 import { X, Discord } from '../../public/img/icons';
 
-const customTheme = lightTheme({
-  colors: {
-    primaryText: 'black',
-    primaryButtonBg: '#b6feda',
-    primaryButtonText: 'black',
-    secondaryButtonBg: '#59ad8c',
-    connectedButtonBgHover: '#59ad8c',
-    borderColor: '#59ad8c'
-  },
-});
-
 const NavItem = ({ item, pathname }) => {
   if (item.component && item.condition) {
     return item.component
