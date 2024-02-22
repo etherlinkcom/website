@@ -1,18 +1,11 @@
 "use client"
 import { useState } from "react";
-
 import { usePathname } from "next/navigation";
+
 import Link from "next/link";
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
-
 import { X, Discord } from '../../public/img/icons';
-
-// connect wallet button
-import {
-  ConnectWallet,
-  lightTheme,
-} from "@thirdweb-dev/react";
 
 const customTheme = lightTheme({
   colors: {
@@ -24,17 +17,6 @@ const customTheme = lightTheme({
     borderColor: '#59ad8c'
   },
 });
-
-const ConnectWalletButton = () => {
-  return (
-    <ConnectWallet
-      switchToActiveChain={true}
-      theme={customTheme}
-      modalSize={"wide"}
-      btnTitle="Connect Etherlink To Metamask"
-    />
-  )
-}
 
 const NavItem = ({ item, pathname }) => {
   if (item.component && item.condition) {
