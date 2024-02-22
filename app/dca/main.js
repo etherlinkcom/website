@@ -6,8 +6,8 @@ import Image from "next/image";
 export default function Main() {
   return (
     <>
-      <Container className="flex flex-col justify-between sm:flex-row w-full sm:w-3/4">
-        <div className="flex items-center justify-center">
+      <Container className="flex flex-col items-center justify-between xl:flex-row xl:w-3/4 w-full">
+        <div className="flex items-center justify-center xl:mr-12">
           <Image
             src="/img/dca/hero.png"
             width="600"
@@ -17,7 +17,7 @@ export default function Main() {
             loading="eager"
           />
         </div>
-        <div className="flex flex-col items-center justify-center w-1/2 max-w-2xl text-center">
+        <div className="flex flex-col items-center justify-center w-1/2 max-w-2xl text-center mt-12 xl:mt-0">
           <h2 className="text-md text-slate-400 mb-2">
             Applications open until the 31st of March 2024
           </h2>
@@ -39,7 +39,7 @@ export default function Main() {
               href="https://x.com/intent/user?screen_name=etherlinkcom"
               target="_blank"
               rel="noopener"
-              className="inline-block py-3 w-full sm:w-1/2 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black mt-3">
+              className="flex items-center justify-center inline-block py-3 w-full sm:w-1/2 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black mt-3">
               Schedule
             </a>
           </div>
