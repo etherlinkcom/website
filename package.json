@@ -30,5 +30,13 @@
   },
   "devDependencies": {
     "lorem-ipsum": "^2.0.8"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "arrowParens": "avoid",
+    "semi": false
   }
 }
