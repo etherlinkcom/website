@@ -13,7 +13,7 @@ export default function Features() {
             <p className="text-2xl leading-normal text-center">
               The <span className="text-darkGreen">decentralized</span>{" "}
               sequencer reduces the risk of{" "}
-              <span className="text-darkGreen">centralised control</span> and
+              <span className="text-darkGreen">centralised control</span> and{" "}
               <span className="text-darkGreen">manipulation</span>.
             </p>
           </div>
