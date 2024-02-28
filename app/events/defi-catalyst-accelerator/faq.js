@@ -1,11 +1,10 @@
 'use client'
 import { useState } from 'react'
-import Container from '../../components/container'
 
 export default function Faq() {
   return (
     <>
-      <Container className='flex flex-col w-3/4'>
+      <div className='flex flex-col'>
         <h1 className='text-3xl font-semibold mb-6'>
           Frequently Asked Questions
         </h1>
@@ -14,7 +13,7 @@ export default function Faq() {
             <FaqItem key={index} question={faq.question} answer={faq.answer} />
           ))}
         </div>
-      </Container>
+      </div>
     </>
   )
 }
@@ -25,7 +24,7 @@ const FaqItem = ({ question, answer }) => {
   const toggleOpen = () => setIsOpen(!isOpen)
 
   return (
-    <div className='border-t border-b border-gray-200 py-4'>
+    <div className='border-t border-gray-200 py-4 hover:cursor-pointer'>
       <div className='flex justify-between items-center' onClick={toggleOpen}>
         <p className='font-semibold text-2xl'>{question}</p>
         {isOpen ? (
