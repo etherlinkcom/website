@@ -1,6 +1,6 @@
 'use client'
 
-import Container from '../components/container'
+import Container from '../../components/container'
 import Image from 'next/image'
 
 export default function Main() {
@@ -9,7 +9,7 @@ export default function Main() {
       <Container className='flex flex-col items-center justify-between xl:flex-row xl:w-3/4 w-full'>
         <div className='flex items-center justify-center xl:mr-12'>
           <Image
-            src='/img/dca/hero.png'
+            src='/img/dca/DCA_Hero_Etherlink_02.png'
             width='600'
             height='617'
             className={'object-cover'}
