@@ -4,8 +4,8 @@ import { useState } from 'react'
 export default function Faq() {
   return (
     <div>
-      <div className='flex flex-col py-10 w-4/5 mx-auto max-w-screen-2xl'>
-        <h1 className='text-3xl font-semibold mb-14'>
+      <div className='flex flex-col py-10 md:py-20'>
+        <h1 className='text-2xl md:text-3xl font-semibold mb-8 md:mb-14'>
           Frequently Asked Questions
         </h1>
         <div>
@@ -26,7 +26,7 @@ const FaqItem = ({ question, answer }) => {
   return (
     <div className='border-t border-gray-500 py-4 hover:cursor-pointer'>
       <div className='flex justify-between items-center' onClick={toggleOpen}>
-        <p className='font-semibold text-2xl'>{question}</p>
+        <p className='font-semibold text-xl md:text-2xl'>{question}</p>
         {isOpen ? (
           <ChevronUp
             className={`transform transition-transform duration-200 ${
@@ -41,7 +41,7 @@ const FaqItem = ({ question, answer }) => {
           />
         )}
       </div>
-      {isOpen && <p className='mt-2 mb-2'>{answer}</p>}
+      {isOpen && <p className='mt-2 mb-2 text-md md:text-lg'>{answer}</p>}
     </div>
   )
 }

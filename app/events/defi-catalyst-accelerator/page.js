@@ -16,7 +16,7 @@ const Home = () => {
       <Features />
       <Program />
       <Faq />
-      <div className='mt-32 w-4/5 mx-auto max-w-screen-2xl'>
+      <div className='mt-16'>
         <Cta
           headerText='DCA with us'
           descriptionText='Join our community of crypto founders and the wider Tezos community.'
