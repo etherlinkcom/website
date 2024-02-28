@@ -3,8 +3,8 @@ import { useState } from 'react'
 
 export default function Faq() {
   return (
-    <>
-      <div className='flex flex-col'>
+    <div>
+      <div className='flex flex-col py-10 w-4/5 mx-auto max-w-screen-2xl'>
         <h1 className='text-3xl font-semibold mb-6'>
           Frequently Asked Questions
         </h1>
@@ -14,7 +14,7 @@ export default function Faq() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
