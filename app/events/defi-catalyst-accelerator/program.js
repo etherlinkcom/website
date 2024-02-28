@@ -13,7 +13,7 @@ export default function Program() {
           <p className='text-gray-500 font-semibold text-3xl mb-1'>Week 1-2</p>
           <p>Singapore</p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 w-5/6 gap-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 md:w-5/6 gap-8'>
           <Card
             title='Meet the mentors, cohort, & local ecosystem'
             text='Begin collaborating intensively your mentors covering each aspect of your project, in addition to meeting with other cohort members and networking with the Web3 VC and builder community in Singapore.'
@@ -30,7 +30,7 @@ export default function Program() {
           <p className='text-gray-500 font-semibold text-3xl'>Week 3 - 6</p>
           <p>Remote</p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 w-5/6 gap-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 md:w-5/6 gap-8'>
           <Card
             title='Mentorship & lectures'
             text='Learn how to build in crypto and grow your product. Start attending weekly check-ins and live lectures.'
@@ -46,7 +46,7 @@ export default function Program() {
           <p className='text-gray-500 font-semibold text-3xl'>End of week 6</p>
           <p>Investor Committee</p>
         </div>
-        <p className='md:text-center text-2xl font-semibold w-4/6'>
+        <p className='md:text-center text-2xl font-semibold md:w-4/6'>
           Present your product to leading VCs & experts for investment.
         </p>
       </div>

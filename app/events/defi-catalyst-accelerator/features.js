@@ -46,7 +46,7 @@ export default function Features() {
         </h1>
       </div>
 
-      <div className='grid gap-10 xl:grid-rows-2 xl:grid-cols-2 grid-rows-4 grid-cols-1 -mb-4'>
+      <div className='grid grid-cols-1 xl:grid-cols-2 gap-10 mb-4'>
         {FEATURE_CONTENT.map((data, index) => (
           <FeatureBox key={index} {...data} />
         ))}
@@ -90,7 +90,7 @@ export default function Features() {
 
 const FeatureBox = ({ title, bodyText }) => {
   return (
-    <div className='flex flex-col border-2 p-7 rounded-2xl'>
+    <div className='flex flex-col border-2 p-8 rounded-2xl'>
       <h2 className='text-2xl leading-normal text-left mb-3'>{title}</h2>
       <p className='text-l leading-normal text-left'>{bodyText}</p>
     </div>
