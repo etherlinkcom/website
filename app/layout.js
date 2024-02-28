@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang='en' className='scroll-smooth'>
       <head>
         <link
           href='https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap'

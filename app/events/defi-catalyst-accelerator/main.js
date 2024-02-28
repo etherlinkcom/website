@@ -34,8 +34,7 @@ export default function Main() {
             Apply Now
           </Link>
           <Link
-            href='https://x.com/intent/user?screen_name=etherlinkcom'
-            target='_blank'
+            href='#schedule'
             rel='noopener'
             className='flex items-center justify-center py-3 w-full sm:w-1/2 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black mt-3'
           >

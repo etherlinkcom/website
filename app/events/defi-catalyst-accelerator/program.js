@@ -1,6 +1,6 @@
 export default function Program() {
   return (
-    <div className='my-16'>
+    <div className='my-16' id='schedule'>
       <div className='mb-10'>
         <h1 className='text-3xl font-semibold md:text-4xl'>Our Program</h1>
         <h2 className='text-xl mt-6 mb-6'>
