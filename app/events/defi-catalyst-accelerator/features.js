@@ -34,7 +34,7 @@ export default function Features() {
       <div className='mb-10 md:mb-20 w-max-auto md:w-3/4 text-center self-center'>
         <h1 className='text-xl md:text-2xl mb-6'>
           DCA is a DeFi-focused accelerator program aiming to support startups
-          (Builders/Developers) building on Etherlink / Tezos.
+          (Builders/Developers) building on Etherlink.
         </h1>
         <h1 className='text-xl md:text-2xl'>
           The DCA begins with a 2-week in-person bootcamp in Singapore. The

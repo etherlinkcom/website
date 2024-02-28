@@ -71,12 +71,12 @@ const faqs = [
   {
     question: 'When should I apply?',
     answer:
-      'The application period opens on 1st February and closes on 31st March.'
+      'The application period opened on 1st February and closes on 31st March 2024.'
   },
   {
     question: 'When does the program start?',
     answer:
-      'The program runs for 6 weeks, starting on April 15, 2024. The first two weeks are in-person in Singapore, with the remaining four weeks conducted virtually.'
+      'The program runs for 6 weeks, starting on 15th April, 2024. The first two weeks are in-person in Singapore, with the remaining four weeks conducted virtually.'
   },
   {
     question: 'How much does the program cost?',

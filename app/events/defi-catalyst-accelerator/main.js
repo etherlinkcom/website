@@ -16,7 +16,7 @@ export default function Main() {
       </div>
       <div className='flex flex-col items-center justify-center xl:w-1/2 max-w-2xl text-center mt-12 xl:mt-0'>
         <h2 className='text-md text-darkGreen mb-2 '>
-          Applications open until the 31st of March 2024
+          Applications open until the 31st March 2024
         </h2>
         <h1 className='text-3xl md:text-5xl font-bold mb-6 mt-2'>
           DeFi Catalyst <span className='text-darkGreen'>Accelerator</span>
