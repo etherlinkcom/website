@@ -50,13 +50,17 @@ export default function Features() {
         </div>
 
         <div className='mt-20'>
-          <h1 className='text-3xl font-semibold'>Who is DCA for?</h1>
-          <h2 className='text-xl mt-6'>
-            The program is open to all early-stage projects but we believe we
-            can add the most value to founders at the Idea or Ideation stage!
-          </h2>
+          <div className='flex flex-col'>
+            <h1 className='text-3xl text-center font-semibold'>
+              Who is DCA for?
+            </h1>
+            <h2 className='text-2xl text-center mt-6 w-3/4 self-center'>
+              The program is open to all early-stage projects but we believe we
+              can add the most value to founders at the Idea or Ideation stage!
+            </h2>
+          </div>
 
-          <div className='flex items-center justify-center w-full mt-10'>
+          <div className='flex items-center justify-center w-full my-16'>
             <Image
               src='/img/dca/timeline.png'
               width={1300}

@@ -5,7 +5,7 @@ export default function Faq() {
   return (
     <div>
       <div className='flex flex-col py-10 w-4/5 mx-auto max-w-screen-2xl'>
-        <h1 className='text-3xl font-semibold mb-6'>
+        <h1 className='text-3xl font-semibold mb-14'>
           Frequently Asked Questions
         </h1>
         <div>
@@ -24,7 +24,7 @@ const FaqItem = ({ question, answer }) => {
   const toggleOpen = () => setIsOpen(!isOpen)
 
   return (
-    <div className='border-t border-gray-200 py-4 hover:cursor-pointer'>
+    <div className='border-t border-gray-500 py-4 hover:cursor-pointer'>
       <div className='flex justify-between items-center' onClick={toggleOpen}>
         <p className='font-semibold text-2xl'>{question}</p>
         {isOpen ? (

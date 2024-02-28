@@ -1,17 +1,20 @@
 export default function Program() {
   return (
     <div>
-      <div className='my-16 w-4/5 mx-auto max-w-screen-2xl' id='schedule'>
+      <div
+        className='py-16 w-4/5 mx-auto max-w-screen-2xl border-t border-b border-darkGreen'
+        id='schedule'
+      >
         <div className='mb-10'>
-          <h1 className='text-3xl font-semibold md:text-4xl'>Our Program</h1>
-          <h2 className='text-xl mt-6 mb-6'>
+          <h1 className='text-3xl font-semibold'>Our Program</h1>
+          <h2 className='text-2xl mt-6 mb-16 md:w-3/5'>
             2-week in-person onboarding followed by a 4-week fully remote
             program for global participants.
           </h2>
         </div>
-        <div className='flex flex-col md:flex-row justify-between mb-12 gap-12'>
+        <div className='flex flex-col md:flex-row justify-between mb-16 gap-12'>
           <div>
-            <p className='text-gray-500 font-semibold text-3xl mb-1'>
+            <p className='text-darkGreen font-semibold text-2xl mb-1'>
               Week 1 - 2
             </p>
             <p>Singapore</p>
@@ -28,9 +31,9 @@ export default function Program() {
             />
           </div>
         </div>
-        <div className='flex flex-col md:flex-row justify-between mb-12 gap-12'>
+        <div className='flex flex-col md:flex-row justify-between mb-16 gap-12'>
           <div>
-            <p className='text-gray-500 font-semibold text-3xl'>Week 3 - 6</p>
+            <p className='text-darkGreen font-semibold text-2xl'>Week 3 - 6</p>
             <p>Remote</p>
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 md:w-3/4 gap-8'>
@@ -46,7 +49,7 @@ export default function Program() {
         </div>
         <div className='flex flex-col md:flex-row justify-between gap-12'>
           <div>
-            <p className='text-gray-500 font-semibold text-3xl'>
+            <p className='text-darkGreen font-semibold text-2xl'>
               End of week 6
             </p>
             <p>Investor Committee</p>
@@ -66,7 +69,7 @@ const Card = ({ text, title }) => {
   return (
     <div className='flex flex-col'>
       <text className='font-semibold text-2xl mb-4'>{title}</text>
-      <text>{text}</text>
+      <text className='text-lg'>{text}</text>
     </div>
   )
 }
