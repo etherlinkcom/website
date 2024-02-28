@@ -7,13 +7,13 @@ const MainContent = () => {
   return (
     <div className="flex items-center justify-center w-full lg:w-1/2">
       <div className="max-w-2xl text-center lg:text-left">
-        <div className="flex flex-col space-y-2 mb-12">
-          <h1 className={"text-5xl font-bold mb-10"}>
+        <div className="flex flex-col space-y-2 mb-4 md:mb-12">
+          <h1 className={"text-3xl md:text-5xl font-bold mb-4 md:mb-10"}>
             Build Web3 on <span className="text-darkGreen">Etherlink</span>
           </h1>
-          <div className="text-xl leading-normal text-left lg:text-xl xl:text-2xl text-gray-300">
-            An EVM-compatible optimistic rollup with :
-            <ul className="list-disc list-inside mt-3 mb-3">
+          <div className="text-xl leading-normal text-left lg:text-xl xl:text-2xl text-gray-300 mb-4 md:mb-10">
+            An EVM-compatible optimistic rollup with:
+            <ul className="list-disc list-inside mt-3 mb-3 text-base md:text-xl">
               <li className="mb-1.5">
                 <span className="text-darkGreen">Decentralised</span> - by
                 design
@@ -29,7 +29,7 @@ const MainContent = () => {
             </ul>
             <div>
               {" "}
-              powered by Tezos{" "}
+              Powered by Tezos{" "}
               <Link
                 className="text-darkGreen hover:text-lightGreen cursor-pointer"
                 href="https://tezos.com/developers/smart-rollups/"
