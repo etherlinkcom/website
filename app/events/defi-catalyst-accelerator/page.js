@@ -19,7 +19,7 @@ const Home = () => {
       <div className='mt-16'>
         <Cta
           headerText='DCA with us'
-          descriptionText='Join our community of crypto founders and the wider Tezos community.'
+          descriptionText='Join our community of founders and the wider Tezos community.'
           buttonText='Apply Now'
           buttonUrl='https://tt-tezos.typeform.com/to/EURHmEhg'
         />
