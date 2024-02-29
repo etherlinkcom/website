@@ -12,7 +12,7 @@ const MainContent = () => {
             Build Web3 on <span className='text-darkGreen'>Etherlink</span>
           </h1>
           <div className='text-xl leading-normal text-left lg:text-xl xl:text-2xl text-gray-300 mb-4 md:mb-10'>
-            An EVM-compatible optimistic rollup with:
+            An EVM-compatible optimistic rollup that is:
             <ul className='list-disc list-inside mt-3 mb-3 text-base md:text-xl'>
               <li className='mb-1.5'>
                 <span className='text-darkGreen'>Decentralized</span> - by
