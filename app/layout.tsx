@@ -8,7 +8,11 @@ export const metadata = {
   metadataBase: new URL('https://etherlink.com')
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
     <html lang='en' className='scroll-smooth'>
       <head>

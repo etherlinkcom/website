@@ -7,54 +7,56 @@ import Image from 'next/image'
 import { Disclosure } from '@headlessui/react'
 import { X, Discord } from '../../public/img/icons'
 
-const NavItem = ({ item, pathname }) => {
-  if (item.component && item.condition) {
-    return item.component
-  } else if (item.link) {
-    return (
-      <Link
-        href={item.link}
-        onClick={item.onClick ? item.onClick : null}
-        className={`inline-block px-4 py-2 text-lg font-normal no-underline rounded-md ${
-          item.link === '/incubator' && pathname === '/incubator'
-            ? 'bg-darkGreen text-black hover:text-white'
-            : 'text-gray-200 hover:text-darkGreen'
-        } cursor-pointer`}
-        target={
-          item.link === '/incubator'
-            ? '_self'
-            : item.link?.startsWith('http')
-            ? '_blank'
-            : '_self'
-        }
-        rel='noopener noreferrer'
-      >
-        {item.name}
-      </Link>
-    )
-  }
+interface NavigationProps {
+  name: string
+  link: string
 }
 
-const MobileMenu = ({ navigation }) => {
+const NavItem = ({
+  item,
+  pathname
+}: {
+  item: NavigationProps
+  pathname: string
+}) => {
+  // I have asked Sasha if we still need pathname prop. We can get rid of pathname prop and usePathname if we don't need it.
+  return (
+    <Link
+      href={item.link}
+      className={`inline-block px-4 py-2 text-lg font-normal no-underline rounded-md ${
+        item.link === '/incubator' && pathname === '/incubator'
+          ? 'bg-darkGreen text-black hover:text-white'
+          : 'text-gray-200 hover:text-darkGreen'
+      } cursor-pointer`}
+      target={
+        item.link === '/incubator'
+          ? '_self'
+          : item.link?.startsWith('http')
+          ? '_blank'
+          : '_self'
+      }
+      rel='noopener noreferrer'
+    >
+      {item.name}
+    </Link>
+  )
+}
+
+const MobileMenu = ({ navigation }: { navigation: NavigationProps[] }) => {
   return (
     <Disclosure.Panel className='flex flex-wrap w-full my-5 lg:hidden'>
       <>
-        {navigation.map((item, index) =>
-          item.component && item.condition ? (
-            item.component
-          ) : (
-            <Link
-              key={index}
-              href={item.link}
-              onClick={item.onClick}
-              className='w-full px-4 py-2 -ml-4 rounded-md text-gray-300'
-              target={item.link?.startsWith('http') ? '_blank' : '_self'}
-              rel='noopener noreferrer'
-            >
-              {item.name}
-            </Link>
-          )
-        )}
+        {navigation.map((item, index) => (
+          <Link
+            key={index}
+            href={item.link}
+            className='w-full px-4 py-2 -ml-4 rounded-md text-gray-300'
+            target={item.link?.startsWith('http') ? '_blank' : '_self'}
+            rel='noopener noreferrer'
+          >
+            {item.name}
+          </Link>
+        ))}
         <Link
           href='https://x.com/etherlinkcom'
           className='w-full px-6 py-2 mt-3 text-center text-black bg-darkGreen rounded-md lg:ml-5'
