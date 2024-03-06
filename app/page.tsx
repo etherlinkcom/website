@@ -3,8 +3,9 @@ import Features from './components/features'
 import Roadmap from './components/roadmap'
 import Cta from './components/cta'
 import Partners from './components/partners'
+import type { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Etherlink',
   description:
     'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.'
