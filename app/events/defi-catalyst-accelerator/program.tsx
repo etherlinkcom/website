@@ -65,7 +65,7 @@ export default function Program() {
   )
 }
 
-const Card = ({ text, title }) => {
+const Card = ({ text, title }: { title: string; text: string }) => {
   return (
     <div className='flex flex-col'>
       <text className='font-semibold text-xl md:text-2xl mb-4'>{title}</text>

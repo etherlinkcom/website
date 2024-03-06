@@ -18,7 +18,13 @@ export default function Faq() {
   )
 }
 
-const FaqItem = ({ question, answer }) => {
+const FaqItem = ({
+  question,
+  answer
+}: {
+  question: string
+  answer: string | JSX.Element
+}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = () => setIsOpen(!isOpen)
@@ -27,19 +33,7 @@ const FaqItem = ({ question, answer }) => {
     <div className='border-t border-gray-500 py-4 hover:cursor-pointer'>
       <div className='flex justify-between items-center' onClick={toggleOpen}>
         <p className='font-semibold text-xl md:text-2xl'>{question}</p>
-        {isOpen ? (
-          <ChevronUp
-            className={`transform transition-transform duration-200 ${
-              isOpen ? 'rotate-180' : ''
-            }`}
-          />
-        ) : (
-          <ChevronDown
-            className={`transform transition-transform duration-200 ${
-              isOpen ? 'rotate-180' : ''
-            }`}
-          />
-        )}
+        {isOpen ? <ChevronUp /> : <ChevronDown />}
       </div>
       {isOpen && <p className='mt-2 mb-2 text-md md:text-lg'>{answer}</p>}
     </div>
