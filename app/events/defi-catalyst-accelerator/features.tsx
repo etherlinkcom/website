@@ -88,7 +88,7 @@ export default function Features() {
   )
 }
 
-const Box = ({ title, text }) => {
+const Box = ({ title, text }: { title: string; text: string }) => {
   return (
     <div className='p-8 rounded-2xl bg-neutral-800 shadow-md shadow-slate-400/40 hover:shadow-lg hover:shadow-darkGreen'>
       <h2 className='text-xl md:text-2xl leading-normal text-darkGreen text-center mb-6'>
