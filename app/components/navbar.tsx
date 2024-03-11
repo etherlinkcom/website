@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react'
-import { usePathname } from 'next/navigation'
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -12,29 +11,12 @@ interface NavigationProps {
   link: string
 }
 
-const NavItem = ({
-  item,
-  pathname
-}: {
-  item: NavigationProps
-  pathname: string
-}) => {
-  // I have asked Sasha if we still need pathname prop. We can get rid of pathname prop and usePathname if we don't need it.
+const NavItem = ({ item }: { item: NavigationProps }) => {
   return (
     <Link
       href={item.link}
-      className={`inline-block px-4 py-2 text-lg font-normal no-underline rounded-md ${
-        item.link === '/incubator' && pathname === '/incubator'
-          ? 'bg-darkGreen text-black hover:text-white'
-          : 'text-gray-200 hover:text-darkGreen'
-      } cursor-pointer`}
-      target={
-        item.link === '/incubator'
-          ? '_self'
-          : item.link?.startsWith('http')
-          ? '_blank'
-          : '_self'
-      }
+      className='inline-block px-4 py-2 text-lg font-normal no-underline rounded-md text-gray-200 hover:text-darkGreen cursor-pointer'
+      target={item.link?.startsWith('http') ? '_blank' : '_self'}
       rel='noopener noreferrer'
     >
       {item.name}
@@ -69,8 +51,6 @@ const MobileMenu = ({ navigation }: { navigation: NavigationProps[] }) => {
 }
 
 export default function Navbar() {
-  const pathname = usePathname()
-
   const [modalOpen, setModalOpen] = useState(false)
   const [buttonColor, setButtonColor] = useState(false)
 
@@ -141,7 +121,7 @@ export default function Navbar() {
         <div className='hidden text-center lg:flex lg:items-center justify-between'>
           <ul className='items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex'>
             {navigation.map((menu, index) => (
-              <NavItem item={menu} pathname={pathname} key={index} />
+              <NavItem item={menu} key={index} />
             ))}
           </ul>
           <div className='relative mr-3 space-x-4 nav__item'>
