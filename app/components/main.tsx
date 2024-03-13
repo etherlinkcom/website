@@ -53,7 +53,7 @@ const MainContent = () => {
             Start Building
           </Link>
           <Link
-            href='https://x.com/intent/user?screen_name=etherlinkcom'
+            href='https://twitter.com/etherlink'
             target='_blank'
             rel='noopener'
             className='inline-block py-3 w-full sm:w-1/2 text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black'
