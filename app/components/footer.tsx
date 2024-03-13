@@ -1,46 +1,50 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import Container from "./container";
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import Container from './container'
 
-import { X, Discord, Telegram, GitHub } from '../../public/img/icons';
+import { X, Discord, Telegram, GitHub } from '../../public/img/icons'
 
 export default function Footer() {
   const navigation = [
-    { name: "Spotlight", link: "https://spotlight.tezos.com" },
-    { name: "Documentation", link: "https://docs.etherlink.com" },
-    { name: "Brand Assets", link: "https://tinyurl.com/etherlinkbrandassets" },
-  ];
+    { name: 'Spotlight', link: 'https://spotlight.tezos.com' },
+    { name: 'Documentation', link: 'https://docs.etherlink.com' },
+    { name: 'Brand Assets', link: 'https://tinyurl.com/etherlinkbrandassets' }
+  ]
   const legal = [
-    { name: "Brand Assets", link: "https://tinyurl.com/etherlinkbrandassets" },
-  ];
+    { name: 'Brand Assets', link: 'https://tinyurl.com/etherlinkbrandassets' }
+  ]
   return (
-    <div className="relative">
+    <div className='relative'>
       <Container>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-neutral-700 lg:grid-cols-5">
-          <div className="lg:col-span-2 flex flex-col sm:flex-row justify-between align-center">
+        <div className='grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-neutral-700 lg:grid-cols-5'>
+          <div className='lg:col-span-2 flex flex-col sm:flex-row justify-between align-center'>
             <div>
-              <Link href="/" className="flex items-center space-x-2 text-2xl font-medium  text-gray-100">
+              <Link
+                href='/'
+                className='flex items-center space-x-2 text-2xl font-medium  text-gray-100'
+              >
                 <Image
-                  src="/img/home/logo.png"
-                  alt="N"
+                  src='/img/home/logo.png'
+                  alt='N'
                   width={32}
                   height={32}
-                  className="w-8"
+                  className='w-8'
                 />
                 <span>Etherlink</span>
               </Link>
             </div>
 
             <a
-              href="https://tezos.com"
-              target="_blank"
-              rel="noopener"
-              className="relative block w-44 mt-4 sm:mt-0">
+              href='https://tezos.com'
+              target='_blank'
+              rel='noopener'
+              className='relative block w-44 mt-4 sm:mt-0'
+            >
               Powered by
               <Image
-                src="/img/home/tezos.png"
-                alt="Powered by Tezos"
+                src='/img/home/tezos.png'
+                alt='Powered by Tezos'
                 width={106}
                 height={22}
               />
@@ -48,9 +52,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
+            <div className='flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0'>
               {navigation.map((item, index) => (
-                <Link key={index} href={item.link} className="w-full px-4 py-2 rounded-md text-gray-300 hover:text-darkGreen" target="_blank" rel="noopener noreferrer">
+                <Link
+                  key={index}
+                  href={item.link}
+                  className='w-full px-4 py-2 rounded-md text-gray-300 hover:text-darkGreen'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   {item.name}
                 </Link>
               ))}
@@ -65,36 +75,40 @@ export default function Footer() {
               ))}
             </div> */}
           </div>
-          <div className="">
+          <div className=''>
             <div>Join the Community</div>
-            <div className="flex mt-5 space-x-5 text-gray-500 items-center">
+            <div className='flex mt-5 space-x-5 text-gray-500 items-center'>
               <a
-                href="https://x.com/etherlinkcom"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only hover:fill-darkGreen">X</span>
+                href='https://twitter.com/etherlink'
+                target='_blank'
+                rel='noopener'
+              >
+                <span className='sr-only hover:fill-darkGreen'>X</span>
                 <X size={32} />
               </a>
               <a
-                href="https://discord.gg/etherlink"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">Discord</span>
+                href='https://discord.gg/etherlink'
+                target='_blank'
+                rel='noopener'
+              >
+                <span className='sr-only'>Discord</span>
                 <Discord size={37} />
               </a>
               <a
-                href="https://t.me/etherlinkcom"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">Telegram</span>
+                href='https://t.me/etherlinkcom'
+                target='_blank'
+                rel='noopener'
+              >
+                <span className='sr-only'>Telegram</span>
                 <Telegram size={34} />
               </a>
               <a
-                href="https://github.com/etherlinkcom"
-                target="_blank"
-                rel="noopener"
-                className="mb-1">
-                <span className="sr-only">GitHub</span>
+                href='https://github.com/etherlinkcom'
+                target='_blank'
+                rel='noopener'
+                className='mb-1'
+              >
+                <span className='sr-only'>GitHub</span>
                 <GitHub size={36} />
               </a>
               {/* <a
@@ -108,21 +122,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="my-10 text-sm text-center text-gray-400">
-          © Copyright Tezos Foundation {new Date().getFullYear()}. All Rights Reserved.
+        <div className='my-10 text-sm text-center text-gray-400'>
+          © Copyright Tezos Foundation {new Date().getFullYear()}. All Rights
+          Reserved.
         </div>
       </Container>
     </div>
-  );
+  )
 }
-
-
-
-
-
-
-
-
-
-
-

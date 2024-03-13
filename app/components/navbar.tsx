@@ -58,7 +58,7 @@ const MobileMenu = ({ navigation }: { navigation: NavigationProps[] }) => {
           </Link>
         ))}
         <Link
-          href='https://x.com/etherlinkcom'
+          href='https://twitter.com/etherlink'
           className='w-full px-6 py-2 mt-3 text-center text-black bg-darkGreen rounded-md lg:ml-5'
         >
           Join the Community
@@ -177,7 +177,7 @@ export default function Navbar() {
               <div className='absolute top-full mt-2 w-11/12 bg-white rounded-lg p-4 z-50 transform translate-x-1'>
                 <div className='flex flex-row items-center justify-center h-full space-x-4 -mb-1'>
                   <Link
-                    href='https://x.com/etherlinkcom'
+                    href='https://twitter.com/etherlink'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
