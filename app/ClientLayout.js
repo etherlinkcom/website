@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { ThemeProvider } from "next-themes";
-import "./global.css";
+import { ThemeProvider } from 'next-themes'
+import './global.css'
 
 export default function ClientLayout({ children }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark">
-          {children}
+    <ThemeProvider attribute='class' defaultTheme='dark'>
+      {children}
     </ThemeProvider>
-  );
+  )
 }
