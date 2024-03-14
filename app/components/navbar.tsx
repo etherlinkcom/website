@@ -32,8 +32,8 @@ const NavItem = ({
         item.link === '/incubator'
           ? '_self'
           : item.link?.startsWith('http')
-          ? '_blank'
-          : '_self'
+            ? '_blank'
+            : '_self'
       }
       rel='noopener noreferrer'
     >
