@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react'
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -39,33 +38,40 @@ const MobileMenu = ({ navigation }: { navigation: NavigationProps[] }) => {
             {item.name}
           </Link>
         ))}
-        <Link
-          href='https://twitter.com/etherlink'
-          className='w-full px-6 py-2 mt-3 text-center text-black bg-darkGreen rounded-md lg:ml-5'
-        >
-          Join the Community
-        </Link>
+        <div className='flex flex-col h-full items-center gap-3 mt-3'>
+          <Link
+            href='https://twitter.com/etherlink'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <X size={20} fill='white' />
+          </Link>
+          <Link
+            href='https://discord.gg/etherlink'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Discord size={28} fill='white' />
+          </Link>
+        </div>
       </>
     </Disclosure.Panel>
   )
 }
 
 export default function Navbar() {
-  const [modalOpen, setModalOpen] = useState(false)
-  const [buttonColor, setButtonColor] = useState(false)
-
   const navigation = [
-    // { name: "Faucet", onClick: () => { setShowFaucet(!showFaucet); } },
     {
-      name: 'DeFi Catalyst Accelerator',
+      name: 'Incubator',
       link: '/events/defi-catalyst-accelerator'
     },
     { name: 'Faucet', link: 'https://faucet.etherlink.com/' },
-    { name: 'Explorer', link: 'https://testnet-explorer.etherlink.com/' }
+    { name: 'Explorer', link: 'https://testnet-explorer.etherlink.com/' },
+    { name: 'Blog', link: 'https://medium.com/@etherlink' }
   ]
 
   return (
-    <div className='w-full'>
+    <div className='relative z-50 w-full'>
       <nav className='container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0'>
         <Disclosure>
           {({ open }) => (
@@ -73,15 +79,13 @@ export default function Navbar() {
               <div className='flex flex-wrap items-center justify-between w-full lg:w-auto'>
                 <Link href='/'>
                   <span className='flex items-center space-x-1 text-3xl font-medium text-gray-100'>
-                    <span>
-                      <Image
-                        src='/img/home/logo.png'
-                        alt='N'
-                        width={128}
-                        height={128}
-                        className='w-8 mr-2'
-                      />
-                    </span>
+                    <Image
+                      src='/img/home/logo.png'
+                      alt='N'
+                      width={32}
+                      height={32}
+                      className='mr-2'
+                    />
                     <span>Etherlink</span>
                   </span>
                 </Link>
@@ -124,55 +128,21 @@ export default function Navbar() {
               <NavItem item={menu} key={index} />
             ))}
           </ul>
-          <div className='relative mr-3 space-x-4 nav__item'>
-            <button
-              onClick={() => {
-                setModalOpen(!modalOpen)
-                setButtonColor(!buttonColor)
-              }}
-              className={`flex items-center px-4 py-3 text-black hover:bg-darkGreen ${
-                buttonColor ? 'bg-darkGreen' : 'bg-white'
-              } rounded-md md:ml-5`}
+          <div className='flex flex-row items-center justify-center h-full space-x-4 -mb-1 ml-10'>
+            <Link
+              href='https://twitter.com/etherlink'
+              target='_blank'
+              rel='noopener noreferrer'
             >
-              <span>Join the Community</span>
-              <svg
-                className={`transition-transform duration-200 ml-1 w-4 h-4 ${
-                  modalOpen ? 'transform rotate-180' : 'transform rotate-270'
-                }`}
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-                aria-hidden='true'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M19 9l-7 7-7-7'
-                />
-              </svg>
-            </button>
-            {modalOpen && (
-              <div className='absolute top-full mt-2 w-11/12 bg-white rounded-lg p-4 z-50 transform translate-x-1'>
-                <div className='flex flex-row items-center justify-center h-full space-x-4 -mb-1'>
-                  <Link
-                    href='https://twitter.com/etherlink'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <X size={32} fill='black' />
-                  </Link>
-                  <Link
-                    href='https://discord.gg/etherlink'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <Discord size={40} fill='black' />
-                  </Link>
-                </div>
-              </div>
-            )}
+              <X size={28} fill='white' />
+            </Link>
+            <Link
+              href='https://discord.gg/etherlink'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Discord size={36} fill='white' />
+            </Link>
           </div>
         </div>
       </nav>

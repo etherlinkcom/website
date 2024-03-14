@@ -7,9 +7,9 @@ import { X, Discord, Telegram, GitHub } from '../../public/img/icons'
 
 export default function Footer() {
   const navigation = [
-    { name: 'Spotlight', link: 'https://spotlight.tezos.com' },
+    { name: 'Blog', link: 'https://medium.com/@etherlink' },
     { name: 'Documentation', link: 'https://docs.etherlink.com' },
-    { name: 'Brand Assets', link: 'https://tinyurl.com/etherlinkbrandassets' }
+    { name: 'Brand Assets', link: '/Etherlink_Assets.zip' }
   ]
   const legal = [
     { name: 'Brand Assets', link: 'https://tinyurl.com/etherlinkbrandassets' }
@@ -29,7 +29,7 @@ export default function Footer() {
                   alt='N'
                   width={32}
                   height={32}
-                  className='w-8'
+                  className='w-auto h-auto'
                 />
                 <span>Etherlink</span>
               </Link>
@@ -43,6 +43,7 @@ export default function Footer() {
             >
               Powered by
               <Image
+                className='w-auto h-auto'
                 src='/img/home/tezos.png'
                 alt='Powered by Tezos'
                 width={106}
@@ -93,14 +94,6 @@ export default function Footer() {
               >
                 <span className='sr-only'>Discord</span>
                 <Discord size={37} />
-              </a>
-              <a
-                href='https://t.me/etherlinkcom'
-                target='_blank'
-                rel='noopener'
-              >
-                <span className='sr-only'>Telegram</span>
-                <Telegram size={34} />
               </a>
               <a
                 href='https://github.com/etherlinkcom'

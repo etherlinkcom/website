@@ -3,15 +3,26 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
-  content: ['./app/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    'node_modules/flowbite-react/lib/esm/**/*.js'
+  ],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
         ...colors,
+        newGreen: '#38ff9c',
         lightGreen: '#b6feda',
         darkGreen: '#59ad8c',
-        midGreen: '#9bfecd'
+        midGreen: '#9bfecd',
+        grey: '#414349',
+        lightBlack: '#262626',
+        midBlack: '#1c1c1c',
+        darkBlack: '#171717',
+        white: '#ffffff'
       },
       screens: {
         'max-sm': { max: '640px' },
@@ -25,5 +36,6 @@ module.exports = {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
       stock: [defaultTheme.fontFamily.sans]
     }
-  }
+  },
+  plugins: [require('flowbite/plugin')]
 }
