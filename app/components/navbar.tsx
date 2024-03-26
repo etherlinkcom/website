@@ -23,7 +23,13 @@ const NavItem = ({ item }: { item: NavigationProps }) => {
   )
 }
 
-const MobileMenu = ({ navigation }: { navigation: NavigationProps[] }) => {
+const MobileMenu = ({
+  navigation,
+  close
+}: {
+  navigation: NavigationProps[]
+  close: () => void
+}) => {
   return (
     <Disclosure.Panel className='flex flex-wrap w-full my-5 lg:hidden'>
       <>
@@ -34,6 +40,7 @@ const MobileMenu = ({ navigation }: { navigation: NavigationProps[] }) => {
             className='w-full px-4 py-2 -ml-4 rounded-md text-gray-300'
             target={item.link?.startsWith('http') ? '_blank' : '_self'}
             rel='noopener noreferrer'
+            onClick={close}
           >
             {item.name}
           </Link>
@@ -74,10 +81,10 @@ export default function Navbar() {
     <div className='relative z-50 w-full'>
       <nav className='container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0'>
         <Disclosure>
-          {({ open }) => (
+          {({ open, close }) => (
             <>
               <div className='flex flex-wrap items-center justify-between w-full lg:w-auto'>
-                <Link href='/'>
+                <Link href='/' onClick={() => close()}>
                   <span className='flex items-center space-x-1 text-3xl font-medium text-gray-100'>
                     <Image
                       src='/img/home/logo.png'
@@ -115,7 +122,7 @@ export default function Navbar() {
                     )}
                   </svg>
                 </Disclosure.Button>
-                <MobileMenu navigation={navigation} />
+                <MobileMenu navigation={navigation} close={close} />
               </div>
             </>
           )}
