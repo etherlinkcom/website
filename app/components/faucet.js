@@ -93,7 +93,7 @@ const Faucet = () => {
               alt='Loading...'
               width={32}
               height={32}
-              className={`w-8 mr-2 ${isLoading ? 'spin-logo' : ''}`}
+              className={`mr-2 ${isLoading ? 'spin-logo' : ''} w-auto h-auto`}
             />
             Loading...
           </>
@@ -104,7 +104,7 @@ const Faucet = () => {
               alt='logo'
               width={32}
               height={32}
-              className='w-8 mr-2'
+              className='mr-2 w-auto h-auto'
             />
             {`${txHash.slice(0, 6)}...${txHash.slice(-4)}`}
           </>

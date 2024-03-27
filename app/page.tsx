@@ -1,8 +1,8 @@
-import Main from './components/main'
-import Features from './components/features'
-import Roadmap from './components/roadmap'
+import Container from './components/container'
+import { Main } from './components/pages/Home/Main'
+import { Partners } from './components/pages/Home/Partners'
+import { Roadmap } from './components/pages/Home/Roadmap'
 import Cta from './components/cta'
-import Partners from './components/partners'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -13,18 +13,17 @@ export const metadata: Metadata = {
 
 const Home = () => {
   return (
-    <>
+    <Container>
       <Main />
-      <Features />
       <Partners />
       <Roadmap />
       <Cta
-        headerText='Ready to learn more about Etherlink?'
+        headerText='Start building on Etherlink today'
         descriptionText='Our step-by-step guides will help you get started'
-        buttonText='Read the Docs'
-        buttonUrl='https://docs.etherlink.com'
+        buttonText='Docs'
+        buttonUrl='https://docs.etherlink.com/'
       />
-    </>
+    </Container>
   )
 }
 
