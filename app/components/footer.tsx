@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Container from './container'
 
-import { X, Discord, Telegram, GitHub } from '../../public/img/icons'
+import { X, Discord, GitHub } from '../../public/img/icons'
 
 export default function Footer() {
   const navigation = [
@@ -29,7 +29,6 @@ export default function Footer() {
                   alt='N'
                   width={32}
                   height={32}
-                  className='w-auto h-auto'
                 />
                 <span>Etherlink</span>
               </Link>
