@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     question: 'When should I apply?',
-    answer: 'The application period has now closed'
+    answer: 'The application period has now closed.'
   },
   {
     question: 'When does the program start?',
@@ -76,7 +76,7 @@ const faqs = [
       "Applications will be assessed based on market potential, competitive edge, team expertise, and alignment with the accelerator's focus segments. Shortlisted projects will be invited for discussion after which a final selection will be made."
   },
   {
-    question: 'What resources will the team recieve?',
+    question: 'What resources will the team receive?',
     answer:
       'Teams will get direct access to mentors covering DeFi, UX/UI, Marketing/Presentation and Security. In Singapore, teams will have access to co-working facilities in addition to workshops covering research, technical aspects, security, legal, market making, UX, and fundraising. There will also be networking opportunities with investors and other ecosystem participants.'
   }
