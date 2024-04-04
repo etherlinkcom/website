@@ -52,20 +52,8 @@ const faqs = [
       'Startups will benefit from mentoring from both the Core DeFi and VC Team of the Tezos ecosystem. As well as providing market-leading DeFi mentoring, we support founders in building a crypto network with partners and VCs, as well as connections with other top-tier builders. Admitted startups will have the opportunity to receive investments from the Tezos Foundation, as well as integration and support from Etherlink.'
   },
   {
-    question: 'How can I apply?',
-    answer: (
-      <a
-        href='https://tt-tezos.typeform.com/to/EURHmEhg'
-        style={{ textDecoration: 'underline' }}
-      >
-        Apply here
-      </a>
-    )
-  },
-  {
     question: 'When should I apply?',
-    answer:
-      'The application period opened on 1st February and closes on 31st March 2024.'
+    answer: 'The application period has now closed.'
   },
   {
     question: 'When does the program start?',
@@ -88,7 +76,7 @@ const faqs = [
       "Applications will be assessed based on market potential, competitive edge, team expertise, and alignment with the accelerator's focus segments. Shortlisted projects will be invited for discussion after which a final selection will be made."
   },
   {
-    question: 'What resources will the team recieve?',
+    question: 'What resources will the team receive?',
     answer:
       'Teams will get direct access to mentors covering DeFi, UX/UI, Marketing/Presentation and Security. In Singapore, teams will have access to co-working facilities in addition to workshops covering research, technical aspects, security, legal, market making, UX, and fundraising. There will also be networking opportunities with investors and other ecosystem participants.'
   }
