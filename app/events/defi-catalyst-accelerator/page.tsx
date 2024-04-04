@@ -20,8 +20,8 @@ const Home = () => {
         <Cta
           headerText='DCA with us'
           descriptionText='Join our community of founders and the wider Tezos community.'
-          buttonText='Apply Now'
-          buttonUrl='https://tt-tezos.typeform.com/to/EURHmEhg'
+          buttonText='Follow Us'
+          buttonUrl='https://twitter.com/etherlink'
         />
       </div>
     </>
