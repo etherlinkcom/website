@@ -69,7 +69,7 @@ const MobileMenu = ({
 export default function Navbar() {
   const navigation = [
     {
-      name: 'Incubator',
+      name: 'Accelerator',
       link: '/events/defi-catalyst-accelerator'
     },
     { name: 'Faucet', link: 'https://faucet.etherlink.com/' },
@@ -87,7 +87,7 @@ export default function Navbar() {
                 <Link href='/' onClick={() => close()}>
                   <span className='flex items-center space-x-1 text-3xl font-medium text-gray-100'>
                     <Image
-                      src='/img/home/logo.png'
+                      src='/img/home/new-logo.svg'
                       alt='N'
                       width={32}
                       height={32}
