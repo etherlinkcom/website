@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@headlessui/react": "^1.7.14",
+    "@next/third-parties": "^14.2.3",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.63",
     "@vercel/analytics": "^1.1.2",
