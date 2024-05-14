@@ -49,7 +49,7 @@ export const Main = () => {
               delay={800 + 100 * index}
               key={index}
             >
-              <div className='flex flex-col justify-center bg-midBlack rounded-xl px-2 xl:px-3 2xl:px-5 py-7 xl:py-9 2xl:py-14 text-lg md:text-3xl font-medium text-white h-full'>
+              <div className='flex flex-col justify-center bg-midBlack rounded-xl px-9 xl:px-16 2xl:px-20 py-7 xl:py-9 2xl:py-14 text-lg md:text-3xl font-medium text-white h-full'>
                 <Image
                   draggable={false}
                   className='mx-auto mb-6 w-auto h-auto xl:h-28 2xl:h-36'

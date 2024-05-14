@@ -17,9 +17,9 @@ export const FEATURES: Feature[] = [
     image: './img/home/squencer.svg',
     text: (
       <p>
-        Building the <span className='text-newGreen'>world's first</span>
+        <span className='text-newGreen'>Decentralized</span>
         <br />
-        decentralized sequencer
+        governance
       </p>
     )
   },
