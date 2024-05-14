@@ -78,23 +78,20 @@ export default function Navbar() {
   ]
 
   return (
-    <div className='relative z-50 w-full'>
+    <div className='relative z-50 w-full -translate-y-10'>
       <nav className='container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0'>
         <Disclosure>
           {({ open, close }) => (
             <>
               <div className='flex flex-wrap items-center justify-between w-full lg:w-auto'>
                 <Link href='/' onClick={() => close()}>
-                  <span className='flex items-center space-x-1 text-3xl font-medium text-gray-100'>
-                    <Image
-                      src='/img/home/new-logo.svg'
-                      alt='N'
-                      width={32}
-                      height={32}
-                      className='mr-2'
-                    />
-                    <span>Etherlink</span>
-                  </span>
+                  <Image
+                    src='/img/home/beta_logo.svg'
+                    alt='Etherlink Beta Logo'
+                    width={200}
+                    height={200}
+                    className='mr-2 '
+                  />
                 </Link>
 
                 {/* mobile menu */}

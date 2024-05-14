@@ -22,14 +22,15 @@ export const Main = () => {
       <div className='z-50'>
         <Fade triggerOnce direction='down' delay={200}>
           <h1 className='text-left md:text-center text-4xl md:text-6xl xl:text-7xl font-extrabold leading-tight text-white'>
-            <span className='text-newGreen'>A Truly Decentralized</span>
+            <span className='text-newGreen'>A Fast, Fair and Free</span>
             <br />
             Layer 2 Blockchain
           </h1>
         </Fade>
         <Fade triggerOnce delay={400}>
           <p className='text-center mt-2 font-light text-lg xl:text-3xl text-white'>
-            Powered by Tezos Smart Rollups Technology
+            Non-custodial scaling solution <br /> powered by Tezos Smart Rollups
+            Technology
           </p>
         </Fade>
 
