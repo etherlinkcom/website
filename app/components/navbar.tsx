@@ -78,7 +78,7 @@ export default function Navbar() {
   ]
 
   return (
-    <div className='relative z-50 w-full -translate-y-10'>
+    <div className='relative z-50 w-full sm:-translate-y-10'>
       <nav className='container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0'>
         <Disclosure>
           {({ open, close }) => (
