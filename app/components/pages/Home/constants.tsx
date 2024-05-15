@@ -39,7 +39,7 @@ export const FEATURES: Feature[] = [
     image: './img/home/transaction.svg',
     text: (
       <p>
-        <span className='text-newGreen'>&lt;$0.01</span> per
+        <span className='text-newGreen'>$0.001</span> per
         <br />
         transaction
       </p>
