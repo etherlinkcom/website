@@ -22,7 +22,9 @@ export const Main = () => {
       <div className='z-50'>
         <Fade triggerOnce direction='down' delay={200}>
           <h1 className='text-left md:text-center text-4xl md:text-6xl xl:text-7xl font-extrabold leading-tight text-white'>
-            <span className='text-newGreen'>Fast, Fair and (Nearly) Free</span>
+            <span className='text-newGreen'>
+              Fast, Fair and <span className='text-white'>(Nearly)</span> Free
+            </span>
             <br />
             Layer 2 Blockchain
           </h1>
