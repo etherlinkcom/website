@@ -73,7 +73,7 @@ export default function Navbar() {
       link: '/events/defi-catalyst-accelerator'
     },
     { name: 'Faucet', link: 'https://faucet.etherlink.com/' },
-    { name: 'Explorer', link: 'https://testnet-explorer.etherlink.com/' },
+    { name: 'Explorer', link: 'https://explorer.etherlink.com/' },
     { name: 'Blog', link: 'https://medium.com/@etherlink' }
   ]
 
