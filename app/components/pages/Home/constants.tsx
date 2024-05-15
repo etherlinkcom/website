@@ -98,20 +98,20 @@ export const PHASES = [
     },
     {
       name: 'First partners onboarded',
-      done: false
+      done: true
     }
   ],
   [
     {
-      name: 'Etherlink Incubator launch',
-      done: false
+      name: 'DeFi Catalyst Accelerator',
+      done: true
+    },
+    {
+      name: 'Mainnet Beta',
+      done: true
     },
     {
       name: 'Quests launch',
-      done: false
-    },
-    {
-      name: 'Mainnet Open Beta',
       done: false
     },
     {
