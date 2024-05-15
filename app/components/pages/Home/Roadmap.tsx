@@ -25,7 +25,7 @@ export const calculateProgress = (currentPhase: number, phases: Phases) => {
 }
 
 export const Roadmap = () => {
-  const [currentPhase, setCurrentPhase] = useState(1)
+  const [currentPhase, setCurrentPhase] = useState(2)
 
   const BUTTONS = [
     {

@@ -22,14 +22,17 @@ export const Main = () => {
       <div className='z-50'>
         <Fade triggerOnce direction='down' delay={200}>
           <h1 className='text-left md:text-center text-4xl md:text-6xl xl:text-7xl font-extrabold leading-tight text-white'>
-            <span className='text-newGreen'>A Truly Decentralized</span>
+            <span className='text-newGreen'>
+              Fast, Fair and <span className='text-white'>(Nearly)</span> Free
+            </span>
             <br />
             Layer 2 Blockchain
           </h1>
         </Fade>
         <Fade triggerOnce delay={400}>
           <p className='text-center mt-2 font-light text-lg xl:text-3xl text-white'>
-            Powered by Tezos Smart Rollups Technology
+            Non-custodial scaling solution <br /> powered by Tezos Smart Rollups
+            technology
           </p>
         </Fade>
 
@@ -48,7 +51,7 @@ export const Main = () => {
               delay={800 + 100 * index}
               key={index}
             >
-              <div className='flex flex-col justify-center bg-midBlack rounded-xl px-2 xl:px-3 2xl:px-5 py-7 xl:py-9 2xl:py-14 text-lg md:text-3xl font-medium text-white h-full'>
+              <div className='flex flex-col justify-center bg-midBlack rounded-xl px-9 xl:px-16 2xl:px-20 py-7 xl:py-9 2xl:py-14 text-lg md:text-3xl font-medium text-white h-full'>
                 <Image
                   draggable={false}
                   className='mx-auto mb-6 w-auto h-auto xl:h-28 2xl:h-36'

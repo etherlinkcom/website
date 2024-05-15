@@ -17,9 +17,9 @@ export const FEATURES: Feature[] = [
     image: './img/home/squencer.svg',
     text: (
       <p>
-        Building the <span className='text-newGreen'>world's first</span>
+        <span className='text-newGreen'>Decentralized</span>
         <br />
-        decentralized sequencer
+        governance
       </p>
     )
   },
@@ -30,7 +30,7 @@ export const FEATURES: Feature[] = [
       <p>
         <span className='text-newGreen'>MEV protection</span>
         <br />
-        out-of-the-box
+        by design
       </p>
     )
   },
@@ -39,7 +39,7 @@ export const FEATURES: Feature[] = [
     image: './img/home/transaction.svg',
     text: (
       <p>
-        <span className='text-newGreen'>$0.01</span> per
+        <span className='text-newGreen'>$0.001</span> per
         <br />
         transaction
       </p>
@@ -98,20 +98,20 @@ export const PHASES = [
     },
     {
       name: 'First partners onboarded',
-      done: false
+      done: true
     }
   ],
   [
     {
-      name: 'Etherlink Incubator launch',
-      done: false
+      name: 'DeFi Catalyst Accelerator',
+      done: true
+    },
+    {
+      name: 'Mainnet Beta',
+      done: true
     },
     {
       name: 'Quests launch',
-      done: false
-    },
-    {
-      name: 'Mainnet Open Beta',
       done: false
     },
     {

@@ -25,12 +25,11 @@ export default function Footer() {
                 className='flex items-center space-x-2 text-2xl font-medium  text-gray-100'
               >
                 <Image
-                  src='/img/home/new-logo.svg'
-                  alt='N'
-                  width={32}
-                  height={32}
+                  src='/img/home/beta_logo.svg'
+                  alt='Etherlink Beta Logo'
+                  width={200}
+                  height={200}
                 />
-                <span>Etherlink</span>
               </Link>
             </div>
 
