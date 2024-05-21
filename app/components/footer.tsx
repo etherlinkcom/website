@@ -9,7 +9,7 @@ export default function Footer() {
   const navigation = [
     { name: 'Blog', link: 'https://medium.com/@etherlink' },
     { name: 'Documentation', link: 'https://docs.etherlink.com' },
-    { name: 'Brand Assets', link: '/Etherlink_Assets.zip' }
+    { name: 'Brand Assets', link: '/Etherlink_Brand_Assets.zip' }
   ]
   const legal = [
     { name: 'Brand Assets', link: 'https://tinyurl.com/etherlinkbrandassets' }
