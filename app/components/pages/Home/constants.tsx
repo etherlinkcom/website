@@ -1,7 +1,8 @@
-interface Feature {
+export interface Feature {
   alt: string
   image: string
   text: JSX.Element
+  description: string
 }
 
 interface Phase {
@@ -11,39 +12,53 @@ interface Phase {
 
 export type Phases = Phase[][]
 
+const FeatureTitle = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <h1 className='text-start text-2xl sm:text-3xl border-l border-newGreen pl-4 font-bold leading-none'>
+      {children}
+    </h1>
+  )
+}
+
 export const FEATURES: Feature[] = [
   {
     alt: 'Squencer',
     image: './img/home/squencer.svg',
     text: (
-      <p>
+      <FeatureTitle>
         <span className='text-newGreen'>Decentralized</span>
         <br />
         governance
-      </p>
-    )
+      </FeatureTitle>
+    ),
+    description:
+      'Stakers can play an active role in decision-making by proposing and voting on the sequencer and Etherlink upgrades, fostering transparency and fairness.'
   },
   {
     alt: 'Protection',
     image: './img/home/protection.svg',
     text: (
-      <p>
+      <FeatureTitle>
         <span className='text-newGreen'>MEV protection</span>
         <br />
         by design
-      </p>
-    )
+      </FeatureTitle>
+    ),
+    description:
+      'Threshold encryption designed specifically for the sequencer distributes decryption key shares among multiple key holders, safeguarding users by preventing the sequencer from tampering with transaction ordering.'
   },
   {
     alt: 'Transaction',
     image: './img/home/transaction.svg',
     text: (
-      <p>
+      <FeatureTitle>
         <span className='text-newGreen'>$0.001</span> per
         <br />
         transaction
-      </p>
-    )
+      </FeatureTitle>
+    ),
+    description:
+      'At only a fraction of a cent, Etherlink fees are as low as it gets, enabling cost-effective transactions and opening the doors to innovation.'
   }
 ]
 
@@ -112,11 +127,11 @@ export const PHASES = [
     },
     {
       name: 'Quests launch',
-      done: false
+      done: true
     },
     {
       name: 'Hackathon',
-      done: false
+      done: true
     },
     {
       name: 'Audits finalized for the kernel',

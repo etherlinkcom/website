@@ -12,7 +12,7 @@ import { customProgressTheme } from './Roadmap'
 export const MobileRoadmap = () => {
   const swiperInfoRef = useRef<any>()
 
-  const [currentPhase, setCurrentPhase] = useState(1)
+  const [currentPhase, setCurrentPhase] = useState(2)
 
   return (
     <div className='md:hidden w-full mx-auto px-6'>
@@ -21,6 +21,7 @@ export const MobileRoadmap = () => {
           <span className='text-newGreen'>Q{currentPhase}</span> 2024
         </h1>
         <Swiper
+          initialSlide={currentPhase - 1}
           ref={swiperInfoRef}
           spaceBetween={10}
           slidesPerView={1}
@@ -30,14 +31,20 @@ export const MobileRoadmap = () => {
         >
           {PHASES.map((phase, index) => (
             <SwiperSlide key={index}>
-              <ul className='pl-4'>
+              <ul>
                 {phase.map((detail, index) => (
-                  <li
-                    className={`${detail.done ? 'text-newGreen' : 'text-white'} font-light text-normal list-disc`}
-                    key={index}
-                  >
-                    {detail.name}
-                  </li>
+                  <div className='flex gap-2' key={index}>
+                    {detail.done ? (
+                      <img src='/img/home/square-check.svg' alt='check icon' />
+                    ) : (
+                      <img src='/img/home/square.svg' alt='square icon' />
+                    )}
+                    <p
+                      className={`${detail.done ? 'text-newGreen' : 'text-white'} font-light text-lg`}
+                    >
+                      {detail.name}
+                    </p>
+                  </div>
                 ))}
               </ul>
             </SwiperSlide>
