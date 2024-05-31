@@ -1,0 +1,19 @@
+/* Make all slides the same height based on the tallest slide, https://github.com/nolimits4web/swiper/issues/2372 */
+.swiper-slide {
+  height: auto;
+}
+
+.mobileCarousel .swiper-pagination {
+  position: relative !important;
+  margin: 20px auto 0px auto;
+}
+
+.mobileCarousel .swiper-pagination .swiper-pagination-bullet {
+  border: 1px solid gray;
+  opacity: 1;
+}
+
+.mobileCarousel .swiper-pagination .swiper-pagination-bullet-active {
+  border: 1px solid white;
+  background-color: white;
+}

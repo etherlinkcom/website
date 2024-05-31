@@ -24,7 +24,8 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "out/types/**/*.ts"
+    "out/types/**/*.ts",
+    "app/components/icons.js"
   ],
   "exclude": ["node_modules"]
 }

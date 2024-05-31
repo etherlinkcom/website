@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Container from './container'
 
-import { X, Discord, GitHub } from '../../public/img/icons'
+import { X, Discord, GitHub } from './icons'
 
 export default function Footer() {
   const navigation = [
@@ -76,14 +76,14 @@ export default function Footer() {
           </div>
           <div className=''>
             <div>Join the Community</div>
-            <div className='flex mt-5 space-x-5 text-gray-500 items-center'>
+            <div className='flex mt-5 text-gray-500 items-center'>
               <a
                 href='https://twitter.com/etherlink'
                 target='_blank'
                 rel='noopener'
               >
-                <span className='sr-only hover:fill-darkGreen'>X</span>
-                <X size={32} />
+                <span className='sr-only'>Twitter</span>
+                <X size={40} />
               </a>
               <a
                 href='https://discord.gg/etherlink'
@@ -91,7 +91,7 @@ export default function Footer() {
                 rel='noopener'
               >
                 <span className='sr-only'>Discord</span>
-                <Discord size={37} />
+                <Discord size={40} />
               </a>
               <a
                 href='https://github.com/etherlinkcom'
@@ -100,7 +100,7 @@ export default function Footer() {
                 className='mb-1'
               >
                 <span className='sr-only'>GitHub</span>
-                <GitHub size={36} />
+                <GitHub size={40} />
               </a>
               {/* <a
                 href="mailto:reachout@etherlink.com"

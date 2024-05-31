@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import Container from './container'
 
 export default function Cta({
   headerText,
@@ -16,16 +15,16 @@ export default function Cta({
 }) {
   return (
     <div
-      className="flex flex-wrap items-center justify-between w-full max-w-6xl md-10 md:mt-24 mb-2 gap-5 mx-auto 
+      className="flex flex-col flex-wrap w-full max-w-7xl md-10 md:mt-24 mb-2 gap-5 mx-auto
         px-7 py-10 md:py-7 lg:px-12 lg:py-20 lg:flex-nowrap rounded-xl bg-[url('/img/home/bg-cta.png')]"
     >
       <div className='flex-grow text-left text-black'>
-        <h2 className='text-3xl md:text-3xl font-bold lg:text-5xl'>
-          {headerText}
-        </h2>
-        <p className='mt-2 md:mt-4 font-light text-xl'>{descriptionText}</p>
+        <h2 className='text-3xl font-bold lg:text-4xl'>{headerText}</h2>
+        <p className='mt-2 md:mt-4 font-light text-lg max-w-[600px]'>
+          {descriptionText}
+        </p>
       </div>
-      <div className='w-full md:w-auto'>
+      <div className=''>
         <Button text={buttonText} link={buttonUrl} />
       </div>
     </div>
@@ -40,7 +39,7 @@ export const Button = ({ text, link }: { text: string; link: string }) => {
       <button
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
-        className='flex items-center justify-center gap-2 bg-black text-newGreen text-xl md:text-2xl font-semibold px-7 md:px-14 py-3 md:py-5 rounded-xl w-full'
+        className='flex items-center justify-center gap-2 bg-black text-newGreen text-xl md:text-2xl font-semibold px-7 md:px-14 py-3 md:py-5 rounded-xl'
       >
         {text}
         <div

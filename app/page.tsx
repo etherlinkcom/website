@@ -13,17 +13,19 @@ export const metadata: Metadata = {
 
 const Home = () => {
   return (
-    <Container>
+    <>
       <Main />
       <Partners />
-      <Roadmap />
-      <Cta
-        headerText='Start building on Etherlink today'
-        descriptionText='Our step-by-step guides will help you get started'
-        buttonText='Docs'
-        buttonUrl='https://docs.etherlink.com/'
-      />
-    </Container>
+      <Container>
+        <Roadmap />
+        <Cta
+          headerText='Start building on Etherlink today'
+          descriptionText='Our step-by-step guides will help you get started'
+          buttonText='Docs'
+          buttonUrl='https://docs.etherlink.com/'
+        />
+      </Container>
+    </>
   )
 }
 

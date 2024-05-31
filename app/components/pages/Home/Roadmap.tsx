@@ -7,9 +7,19 @@ import { MobileRoadmap } from './MobileRoadmap'
 import { Phases } from './constants'
 import type { CustomFlowbiteTheme } from 'flowbite-react'
 
+// flowbite-react 0.9 bug, need to include all these to style to show
 export const customProgressTheme: CustomFlowbiteTheme['progress'] = {
+  base: 'w-full overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700',
+  label: 'mb-1 flex justify-between font-medium dark:text-white',
+  bar: 'space-x-2 rounded-full text-center font-medium leading-none text-cyan-300 dark:text-cyan-100',
   color: {
     newGreen: 'bg-newGreen'
+  },
+  size: {
+    sm: 'h-1.5',
+    md: 'h-2.5',
+    lg: 'h-4',
+    xl: 'h-6'
   }
 }
 
@@ -43,7 +53,7 @@ export const Roadmap = () => {
   ]
 
   return (
-    <div className='relative my-20 xl-my-40 max-w-7xl mx-auto bg-midBlack md:px-20 py-10 md:py-20 rounded'>
+    <div className='relative max-w-7xl mx-auto bg-midBlack md:px-20 py-10 md:py-20 rounded mt-4 mb-20'>
       <div className='flex items-center justify-between gap-4 mb-10 md:mb-20'>
         <h1 className='text-white font-bold text-4xl md:text-5xl lg:text-6xl mx-auto md:mx-0 text-center'>
           Etherlink <span className='text-newGreen'>Roadmap</span>
@@ -66,16 +76,25 @@ export const Roadmap = () => {
             <div className='flex flex-col'>
               {PHASES.map((phase, index) => (
                 <ul
-                  className={`${currentPhase === index + 1 ? 'list-disc' : 'hidden'} ml-8`}
+                  className={`${currentPhase === index + 1 ? '' : 'hidden'} ml-8`}
                   key={index}
                 >
                   {phase.map((detail, index) => (
-                    <li
-                      className={`${detail.done ? 'text-newGreen' : 'text-white'} font-light text-lg`}
-                      key={index}
-                    >
-                      {detail.name}
-                    </li>
+                    <div className='flex items-center gap-2' key={index}>
+                      {detail.done ? (
+                        <img
+                          src='/img/home/square-check.svg'
+                          alt='check icon'
+                        />
+                      ) : (
+                        <img src='/img/home/square.svg' alt='square icon' />
+                      )}
+                      <p
+                        className={`${detail.done ? 'text-newGreen' : 'text-white'} font-light text-lg`}
+                      >
+                        {detail.name}
+                      </p>
+                    </div>
                   ))}
                 </ul>
               ))}
@@ -92,8 +111,8 @@ export const Roadmap = () => {
       </div>
       <MobileRoadmap />
       <Progress
-        className='hidden md:block'
         color='newGreen'
+        className='hidden md:block'
         progress={calculateProgress(currentPhase, PHASES)}
         theme={customProgressTheme}
       />
