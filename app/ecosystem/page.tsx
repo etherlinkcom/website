@@ -5,7 +5,7 @@ import Cta from '../components/cta'
 import { FooterBanner } from './FooterBanner'
 
 export const metadata: Metadata = {
-  title: 'Etherlink Ecosystem',
+  title: 'Explore Our Ecosystem | Etherlink',
   description:
     'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.'
 }
