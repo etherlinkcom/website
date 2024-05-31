@@ -6,7 +6,8 @@ import Cta from './components/cta'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Etherlink',
+  title:
+    'Layer 2 Blockchain Solutions | Tezos Smart Rollups Technology | Etherlink',
   description:
     'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.'
 }

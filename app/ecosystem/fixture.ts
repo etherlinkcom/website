@@ -115,15 +115,16 @@ export const projects: ProjectCardProps[] = [
     twitter: undefined,
     website: 'https://renora.io/'
   },
-  {
-    image: '/img/ecosystem/Midas.jpg',
-    title: 'Midas (stablecoin)',
-    description:
-      'Midas will offer a stablecoin for Etherlink, eUSD with free on-ramping.',
-    categories: ['defi'],
-    twitter: 'https://twitter.com/MidasRWA',
-    website: 'https://midas.app/'
-  },
+  // This is commercially sensitive at the moment
+  // {
+  //   image: '/img/ecosystem/Midas.jpg',
+  //   title: 'Midas (stablecoin)',
+  //   description:
+  //     'Midas will offer a stablecoin for Etherlink, eUSD with free on-ramping.',
+  //   categories: ['defi'],
+  //   twitter: 'https://twitter.com/MidasRWA',
+  //   website: 'https://midas.app/'
+  // },
   {
     image: '/img/ecosystem/OnChainVision-labs.jpeg',
     title: 'OnChainVision labs',
