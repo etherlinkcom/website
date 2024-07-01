@@ -76,7 +76,7 @@ export const projects: ProjectCardProps[] = [
     title: 'Hashleap',
     description:
       'A platform that streamlines crypto payments for Web3 businesses and freelancers.',
-    categories: ['dapp'],
+    categories: ['defi'],
     twitter: 'https://twitter.com/hashleap',
     website: 'https://hashleap.io/'
   },
@@ -94,7 +94,7 @@ export const projects: ProjectCardProps[] = [
     title: 'SaveX',
     description:
       'An on-chain neobank for underbanked people in the US and Latin America.',
-    categories: ['dapp'],
+    categories: ['defi'],
     twitter: 'https://twitter.com/getsavex',
     website: 'https://getsavex.com/'
   },
@@ -102,7 +102,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Ladder.jpg',
     title: 'Ladder',
     description: 'An NFT AMM.',
-    categories: ['gamefi'],
+    categories: ['gaming'],
     twitter: 'https://x.com/Ladder_NFT',
     website: 'https://ladder.top/'
   },
@@ -111,7 +111,7 @@ export const projects: ProjectCardProps[] = [
     title: 'Renora',
     description:
       'Renora is a SaaS platform that helps private investors systematically manage digital assets through their bots.',
-    categories: ['dapp'],
+    categories: ['defi'],
     twitter: undefined,
     website: 'https://renora.io/'
   },
@@ -127,10 +127,10 @@ export const projects: ProjectCardProps[] = [
   // },
   {
     image: '/img/ecosystem/OnChainVision-labs.jpeg',
-    title: 'OnChainVision labs',
+    title: 'OnChainVision Labs',
     description:
       'A platform for users to build, tokenize, and manage digital assets onchain.',
-    categories: ['dapp'],
+    categories: ['dev-tools'],
     twitter: 'https://x.com/ocvlabs?mx=2',
     website: 'https://www.ocvlabs.com/'
   },
@@ -138,7 +138,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Stargate.jpeg',
     title: 'Stargate',
     description: 'An omnichain bridge solution built on LayerZero.',
-    categories: ['bridge'],
+    categories: ['infra'],
     twitter: 'https://twitter.com/stargatefinance?lang=en',
     website: 'https://stargate.finance/'
   },
@@ -147,7 +147,7 @@ export const projects: ProjectCardProps[] = [
     title: 'Pyth Network',
     description:
       'A pull-model price feed oracle that provides market data from the world’s largest professional traders and exchanges to any smart contract.',
-    categories: ['oracle'],
+    categories: ['infra'],
     twitter: 'https://x.com/PythNetwork',
     website: 'https://pyth.network/'
   }
