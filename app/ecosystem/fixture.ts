@@ -150,5 +150,217 @@ export const projects: ProjectCardProps[] = [
     categories: ['infra'],
     twitter: 'https://x.com/PythNetwork',
     website: 'https://pyth.network/'
+  },
+  {
+    image: '/img/ecosystem/Magic-Link.jpg',
+    title: 'Magic.link',
+    description:
+      'Unlock the benefits of web3 with highly scalable, battle-tested, secure wallet infrastructure.',
+    categories: ['dev-tools', 'ecosystem-partner'],
+    twitter: 'https://x.com/magic_labs',
+    website: 'https://magic.link/'
+  },
+  {
+    image: '/img/ecosystem/Transak.jpg',
+    title: 'Transak',
+    description:
+      'A developer integration toolkit to let users buy/sell crypto in any app, website or web plugin.',
+    categories: ['dev-tools', 'infra'],
+    twitter: 'https://x.com/transak',
+    website: 'https://transak.com/'
+  },
+  {
+    image: '/img/ecosystem/zeeve.png',
+    title: 'Zeeve',
+    description:
+      'An enterprise-grade automation platform providing deployment, monitoring and management of Blockchain nodes and networks.',
+    categories: ['infra', 'ecosystem-partner'],
+    twitter: 'https://x.com/0xZeeve',
+    website: 'https://www.zeeve.io/'
+  },
+  {
+    image: '/img/ecosystem/Web3Auth.jpg',
+    title: 'Web3Auth',
+    description:
+      'Pluggable wallet infrastructure for Web3 wallets and applications. Streamline the onboarding of both mainstream and crypto native users in under a minute. ',
+    categories: ['dev-tools'],
+    twitter: 'https://x.com/web3auth',
+    website: 'https://web3auth.io/'
+  },
+  {
+    image: '/img/ecosystem/Secret-Network.jpg',
+    title: 'Secret Network',
+    description:
+      'decentralized confidential computing (DeCC), enabling dApps to make use of encrypted data.',
+    categories: ['dev-tools'],
+    twitter: 'https://x.com/SecretNetwork',
+    website: 'https://scrt.network/'
+  },
+  {
+    image: '/img/ecosystem/Layer3.jpg',
+    title: 'Layer3',
+    description:
+      'Discover the world of crypto like never before. With interactive Quests that make learning and exploring crypto fun, engaging, and rewarding.',
+    categories: ['social'],
+    twitter: 'https://x.com/layer3xyz',
+    website: 'https://layer3.xyz/'
+  },
+  {
+    image: '/img/ecosystem/MintyCodeDAO.jpg',
+    title: 'Mintycode.io',
+    description:
+      'Decentralised Marketplace for Open-Source Creators, Users, and Contributors.',
+    categories: ['social'],
+    twitter: 'https://x.com/MintyCodeDao',
+    website: 'http://mintycode.io/'
+  },
+  {
+    image: '/img/ecosystem/UHT.jpg',
+    title: 'UHT',
+    description:
+      'Gamify health, reward healthy behaviour & lifestyle habits with UHT (Universal Health Token).',
+    categories: ['social'],
+    twitter: 'https://x.com/UHTofficial',
+    website: 'https://universalhealthtoken.xyz/'
+  },
+  {
+    image: '/img/ecosystem/Open Ticketing Protocol Logo.jpg',
+    title: 'Open Ticketing Protocol (GET Protocol)',
+    description:
+      'The home of onchain ticketing. Bringing accessible onchain benefits to millions of event attendees, organizers and artists around the world.',
+    categories: ['social'],
+    twitter: 'https://x.com/onopenxyz',
+    website: 'https://onopen.xyz/'
+  },
+  {
+    image: '/img/ecosystem/tachyswap.jpg',
+    title: 'TachySwap',
+    description: 'AMM based decentralized exchange.',
+    categories: ['defi'],
+    twitter: 'https://x.com/tachyswap',
+    website: 'https://tachyswap.org/'
+  },
+  {
+    image: '/img/ecosystem/cobweb-labs.jpg',
+    title: 'CobWeb Labs',
+    description: 've(3,3) DEX.',
+    categories: ['defi'],
+    twitter: 'https://x.com/CobWebLabs',
+    website: 'https://cobweblabs.xyz'
+  },
+  {
+    image: '/img/ecosystem/Tenderly.png',
+    title: 'Tenderly',
+    description:
+      'Full-stack Web3 infrastructure – node infra, exploration tools & dev environments.',
+    categories: ['dev-tools'],
+    twitter: 'https://x.com/TenderlyApp',
+    website: 'https://tenderly.co/'
+  },
+  {
+    image: '/img/ecosystem/Bithotel.jpg',
+    title: 'Bithotel',
+    description:
+      'Revolutionary social pixelart game (free-to-play!) on Mobile and PC.',
+    categories: ['gaming'],
+    twitter: 'https://x.com/playbithotel',
+    website: 'https://bithotel.io/#/'
+  },
+  {
+    image: '/img/ecosystem/TaskOn.svg',
+    title: 'TaskOn',
+    description:
+      'A Web3 task collaboration platform ideal for marketing, operations and community growth.',
+    categories: ['social'],
+    twitter: 'https://x.com/taskonxyz',
+    website: 'https://taskon.xyz/'
+  },
+  {
+    image: '/img/ecosystem/Questflow.jpg',
+    title: 'Questflow',
+    description:
+      'Decentralized Autonomous AI Agent Network - orchestrate multiple AI agents to take action on autopilot & dispatch real-world incentives to agents.',
+    categories: ['social'],
+    twitter: 'https://x.com/questflow',
+    website: 'https://www.questflow.ai/'
+  },
+  {
+    image: '/img/ecosystem/TheGraph.jpg',
+    title: 'The Graph',
+    description:
+      'A web3 protocol for organizing and accessing blockchain data.',
+    categories: ['infra'],
+    twitter: 'https://x.com/graphprotocol',
+    website: 'https://thegraph.com'
+  },
+  {
+    image: '/img/ecosystem/Omnisea.jpg',
+    title: 'Omnisea',
+    description: 'Omnichain NFT Launchpad powered by LayerZero.',
+    categories: ['nfts'],
+    twitter: 'https://x.com/omnisea',
+    website: 'https://omnisea.org/'
+  },
+  {
+    image: '/img/ecosystem/groupfi.jpg',
+    title: 'GroupFi',
+    description:
+      'A Web3 messaging protocol designed by the Tanglepay Team for seamless, feeless, on-chain and cross-application group communication. ',
+    categories: ['dev-tools'],
+    twitter: 'https://x.com/groupfi_ai',
+    website: 'https://groupfi.ai/'
+  },
+  {
+    image: '/img/ecosystem/ChessPlay.jpg',
+    title: 'Chess Play',
+    description:
+      'Chess meets blockchain. Your destination for innovative gameplay and secure transactions. Reshaping the future of on chain chess!',
+    categories: ['gaming'],
+    twitter: 'https://x.com/play_chess_/',
+    website: 'https://www.chessplay.live/'
+  },
+  {
+    image: '/img/ecosystem/Gamefi.jpg',
+    title: 'GameFi',
+    description: 'A One-stop Destination Launchpad For Web3 Enthusiasts.',
+    categories: ['launchpad'],
+    twitter: 'https://x.com/gamefi_official?lang=en',
+    website: 'https://gamefi.org/'
+  },
+  {
+    image: '/img/ecosystem/Openpad.jpg',
+    title: 'OpenPad',
+    description:
+      'Decentralized Crowdfunding Ecosystem + Onestop Incubation Hub for Web3 Projects.',
+    categories: ['launchpad'],
+    twitter: 'https://x.com/Openpad_io',
+    website: 'https://openpad.io/homepage'
+  },
+  {
+    image: '/img/ecosystem/Paid-Network.jpg',
+    title: 'Paid Network',
+    description:
+      'Launchpad focused on connecting highly vetted ideas & projects with passionate communities in order to crowdfund their visions to life.',
+    categories: ['launchpad'],
+    twitter: 'https://x.com/paid_network',
+    website: 'https://www.paidnetwork.com/'
+  },
+  {
+    image: '/img/ecosystem/tRACEHAWK_sQUARE.png',
+    title: 'TraceHawk',
+    description:
+      'A personalized block viewing tool for inspecting and analyzing EVM and non-EVM blockchain data & transactions.',
+    categories: ['infra'],
+    twitter: 'https://x.com/tracehawk_io',
+    website: 'https://www.tracehawk.io/'
+  },
+  {
+    image: '/img/ecosystem/TRACEEYE.png',
+    title: 'Traceye',
+    description:
+      'An enterprise-grade Blockchain Infrastructure Automation Platform.',
+    categories: ['infra'],
+    twitter: '',
+    website: 'https://www.traceye.io/'
   }
 ]

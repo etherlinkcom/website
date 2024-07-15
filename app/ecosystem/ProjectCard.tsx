@@ -16,6 +16,8 @@ type Category =
   | 'gamefi'
   | 'nfts'
   | 'social'
+  | 'ecosystem-partner'
+  | 'launchpad'
 
 export interface ProjectCardProps {
   image: string
@@ -104,6 +106,10 @@ const convertCategory = (category: Category) => {
       return 'NFTs'
     case 'gaming':
       return 'Gaming'
+    case 'ecosystem-partner':
+      return 'Ecosystem Partner'
+    case 'launchpad':
+      return 'Launchpad'
   }
 }
 
