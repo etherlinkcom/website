@@ -13,7 +13,8 @@ export const projects: ProjectCardProps[] = [
   {
     image: '/img/ecosystem/Blockscout.jpg',
     title: 'Blockscout',
-    description: 'A tool for inspecting and analyzing EVM based blockchains.',
+    description:
+      'A full-featured open-source tool for exploring, confirming, and inspecting transactions on more than 800 blockchain networks.',
     categories: ['data-science'],
     twitter: 'https://twitter.com/blockscoutcom',
     website: 'https://www.blockscout.com/'
@@ -22,11 +23,10 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Fireblocks.jpeg',
     title: 'Fireblocks',
     description: 'The most used custody service provider in the crypto space.',
-    categories: ['bridge'],
+    categories: ['infra'],
     twitter: 'https://twitter.com/FireblocksHQ',
     website: 'https://www.fireblocks.com/'
   },
-
   {
     image: '/img/ecosystem/Subsquid.jpeg',
     title: 'Subsquid',
@@ -49,7 +49,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Redstone.png',
     title: 'Redstone',
     description:
-      'A price feed oracle protocol that provides both the push-model and the pull-model.',
+      'Cross-chain data oracle providing pricing data for Smart Contracts & DeFi protocols.',
     categories: ['oracle'],
     twitter: 'https://twitter.com/redstone_defi',
     website: 'https://redstone.finance/'
@@ -70,6 +70,33 @@ export const projects: ProjectCardProps[] = [
     categories: ['defi'],
     twitter: 'https://twitter.com/HanjiProtocol',
     website: 'https://hanji.io/'
+  },
+  {
+    image: '/img/ecosystem/Magic-Link.jpg',
+    title: 'Magic.link',
+    description:
+      'Unlock the benefits of Web3 with highly scalable, battle-tested, secure wallet infrastructure.',
+    categories: ['dev-tools', 'ecosystem-partner'],
+    twitter: 'https://x.com/magic_labs',
+    website: 'https://magic.link/'
+  },
+  {
+    image: '/img/ecosystem/Layer3.jpg',
+    title: 'Layer3',
+    description:
+      'Discover the world of crypto like never before with interactive quests that make learning and exploring crypto fun, engaging, and rewarding.',
+    categories: ['social'],
+    twitter: 'https://x.com/layer3xyz',
+    website: 'https://layer3.xyz/'
+  },
+  {
+    image: '/img/ecosystem/TheGraph.jpg',
+    title: 'The Graph',
+    description:
+      'A Web3 protocol for organizing and accessing blockchain data.',
+    categories: ['infra'],
+    twitter: 'https://x.com/graphprotocol',
+    website: 'https://thegraph.com'
   },
   {
     image: '/img/ecosystem/Hashleap.jpeg',
@@ -101,7 +128,8 @@ export const projects: ProjectCardProps[] = [
   {
     image: '/img/ecosystem/Ladder.jpg',
     title: 'Ladder',
-    description: 'An NFT AMM.',
+    description:
+      'A decentralized NFT AMM, enabling instant NFT swaps and better price discovery.',
     categories: ['gaming'],
     twitter: 'https://x.com/Ladder_NFT',
     website: 'https://ladder.top/'
@@ -146,19 +174,10 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Pyth-Network.jpeg',
     title: 'Pyth Network',
     description:
-      'A pull-model price feed oracle that provides market data from the world&#39;s largest professional traders and exchanges to any smart contract.',
+      'Secure your smart contracts with reliable, low-latency market data from institutional sources. ',
     categories: ['infra'],
     twitter: 'https://x.com/PythNetwork',
     website: 'https://pyth.network/'
-  },
-  {
-    image: '/img/ecosystem/Magic-Link.jpg',
-    title: 'Magic.link',
-    description:
-      'Unlock the benefits of Web3 with highly scalable, battle-tested, secure wallet infrastructure.',
-    categories: ['dev-tools', 'ecosystem-partner'],
-    twitter: 'https://x.com/magic_labs',
-    website: 'https://magic.link/'
   },
   {
     image: '/img/ecosystem/Transak.jpg',
@@ -197,15 +216,6 @@ export const projects: ProjectCardProps[] = [
     website: 'https://scrt.network/'
   },
   {
-    image: '/img/ecosystem/Layer3.jpg',
-    title: 'Layer3',
-    description:
-      'Discover the world of crypto like never before with interactive quests that make learning and exploring crypto fun, engaging, and rewarding.',
-    categories: ['social'],
-    twitter: 'https://x.com/layer3xyz',
-    website: 'https://layer3.xyz/'
-  },
-  {
     image: '/img/ecosystem/MintyCodeDAO.jpg',
     title: 'Mintycode.io',
     description:
@@ -235,7 +245,8 @@ export const projects: ProjectCardProps[] = [
   {
     image: '/img/ecosystem/tachyswap.jpg',
     title: 'TachySwap',
-    description: 'AMM based decentralized exchange.',
+    description:
+      'An AMM based decentralized exchange. Swap tokens with minimal cost, minimal time and maximal convenience.',
     categories: ['defi'],
     twitter: 'https://x.com/tachyswap',
     website: 'https://tachyswap.org/'
@@ -243,7 +254,7 @@ export const projects: ProjectCardProps[] = [
   {
     image: '/img/ecosystem/cobweb-labs.jpg',
     title: 'CobWeb Labs',
-    description: 've(3,3) DEX.',
+    description: 'A central trading and liquidity marketplace.',
     categories: ['defi'],
     twitter: 'https://x.com/CobWebLabs',
     website: 'https://cobweblabs.xyz'
@@ -283,15 +294,6 @@ export const projects: ProjectCardProps[] = [
     categories: ['social'],
     twitter: 'https://x.com/questflow',
     website: 'https://www.questflow.ai/'
-  },
-  {
-    image: '/img/ecosystem/TheGraph.jpg',
-    title: 'The Graph',
-    description:
-      'A Web3 protocol for organizing and accessing blockchain data.',
-    categories: ['infra'],
-    twitter: 'https://x.com/graphprotocol',
-    website: 'https://thegraph.com'
   },
   {
     image: '/img/ecosystem/Omnisea.jpg',
