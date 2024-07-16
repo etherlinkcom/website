@@ -5,7 +5,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Thirdweb.jpg',
     title: 'Thirdweb',
     description:
-      'A platform that provides a suite of tools for developers to build, launch, and manage their web3 projects.',
+      'A platform that provides a suite of tools for developers to build, launch, and manage their Web3 projects.',
     categories: ['dev-tools'],
     twitter: 'https://twitter.com/thirdweb',
     website: 'https://thirdweb.com/'
@@ -129,7 +129,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/OnChainVision-labs.jpeg',
     title: 'OnChainVision Labs',
     description:
-      'A platform for users to build, tokenize, and manage digital assets onchain.',
+      'A platform for users to build, tokenize, and manage digital assets on-chain.',
     categories: ['dev-tools'],
     twitter: 'https://x.com/ocvlabs?mx=2',
     website: 'https://www.ocvlabs.com/'
@@ -146,7 +146,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Pyth-Network.jpeg',
     title: 'Pyth Network',
     description:
-      'A pull-model price feed oracle that provides market data from the world’s largest professional traders and exchanges to any smart contract.',
+      'A pull-model price feed oracle that provides market data from the world&#39;s largest professional traders and exchanges to any smart contract.',
     categories: ['infra'],
     twitter: 'https://x.com/PythNetwork',
     website: 'https://pyth.network/'
@@ -155,7 +155,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Magic-Link.jpg',
     title: 'Magic.link',
     description:
-      'Unlock the benefits of web3 with highly scalable, battle-tested, secure wallet infrastructure.',
+      'Unlock the benefits of Web3 with highly scalable, battle-tested, secure wallet infrastructure.',
     categories: ['dev-tools', 'ecosystem-partner'],
     twitter: 'https://x.com/magic_labs',
     website: 'https://magic.link/'
@@ -173,7 +173,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/zeeve.png',
     title: 'Zeeve',
     description:
-      'An enterprise-grade automation platform providing deployment, monitoring and management of Blockchain nodes and networks.',
+      'An enterprise-grade automation platform providing deployment, monitoring and management of blockchain nodes and networks.',
     categories: ['infra', 'ecosystem-partner'],
     twitter: 'https://x.com/0xZeeve',
     website: 'https://www.zeeve.io/'
@@ -191,7 +191,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Secret-Network.jpg',
     title: 'Secret Network',
     description:
-      'decentralized confidential computing (DeCC), enabling dApps to make use of encrypted data.',
+      'Decentralized confidential computing (DeCC), enabling dApps to make use of encrypted data.',
     categories: ['dev-tools'],
     twitter: 'https://x.com/SecretNetwork',
     website: 'https://scrt.network/'
@@ -200,7 +200,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Layer3.jpg',
     title: 'Layer3',
     description:
-      'Discover the world of crypto like never before. With interactive Quests that make learning and exploring crypto fun, engaging, and rewarding.',
+      'Discover the world of crypto like never before with interactive quests that make learning and exploring crypto fun, engaging, and rewarding.',
     categories: ['social'],
     twitter: 'https://x.com/layer3xyz',
     website: 'https://layer3.xyz/'
@@ -209,7 +209,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/MintyCodeDAO.jpg',
     title: 'Mintycode.io',
     description:
-      'Decentralised Marketplace for Open-Source Creators, Users, and Contributors.',
+      'Decentralised marketplace for open-source creators, users, and contributors.',
     categories: ['social'],
     twitter: 'https://x.com/MintyCodeDao',
     website: 'http://mintycode.io/'
@@ -218,7 +218,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/UHT.jpg',
     title: 'UHT',
     description:
-      'Gamify health, reward healthy behaviour & lifestyle habits with UHT (Universal Health Token).',
+      'Gamify health and reward healthy behaviour & lifestyle habits with UHT (Universal Health Token).',
     categories: ['social'],
     twitter: 'https://x.com/UHTofficial',
     website: 'https://universalhealthtoken.xyz/'
@@ -227,7 +227,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Open Ticketing Protocol Logo.jpg',
     title: 'Open Ticketing Protocol (GET Protocol)',
     description:
-      'The home of onchain ticketing. Bringing accessible onchain benefits to millions of event attendees, organizers and artists around the world.',
+      'The home of on-chain ticketing, bringing accessible on-chain benefits to millions of event attendees, organizers and artists around the world.',
     categories: ['social'],
     twitter: 'https://x.com/onopenxyz',
     website: 'https://onopen.xyz/'
@@ -261,13 +261,13 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/Bithotel.jpg',
     title: 'Bithotel',
     description:
-      'Revolutionary social pixelart game (free-to-play!) on Mobile and PC.',
+      'Revolutionary social pixelart game (free-to-play!) on mobile and PC.',
     categories: ['gaming'],
     twitter: 'https://x.com/playbithotel',
     website: 'https://bithotel.io/#/'
   },
   {
-    image: '/img/ecosystem/TaskOn.svg',
+    image: '/img/ecosystem/taskon.png',
     title: 'TaskOn',
     description:
       'A Web3 task collaboration platform ideal for marketing, operations and community growth.',
@@ -288,7 +288,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/TheGraph.jpg',
     title: 'The Graph',
     description:
-      'A web3 protocol for organizing and accessing blockchain data.',
+      'A Web3 protocol for organizing and accessing blockchain data.',
     categories: ['infra'],
     twitter: 'https://x.com/graphprotocol',
     website: 'https://thegraph.com'
@@ -296,7 +296,7 @@ export const projects: ProjectCardProps[] = [
   {
     image: '/img/ecosystem/Omnisea.jpg',
     title: 'Omnisea',
-    description: 'Omnichain NFT Launchpad powered by LayerZero.',
+    description: 'Omnichain NFT launchpad powered by LayerZero.',
     categories: ['nfts'],
     twitter: 'https://x.com/omnisea',
     website: 'https://omnisea.org/'
@@ -314,7 +314,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/ChessPlay.jpg',
     title: 'Chess Play',
     description:
-      'Chess meets blockchain. Your destination for innovative gameplay and secure transactions. Reshaping the future of on chain chess!',
+      'Chess meets blockchain: your destination for innovative gameplay and secure transactions, reshaping the future of on-chain chess!',
     categories: ['gaming'],
     twitter: 'https://x.com/play_chess_/',
     website: 'https://www.chessplay.live/'
@@ -322,7 +322,7 @@ export const projects: ProjectCardProps[] = [
   {
     image: '/img/ecosystem/Gamefi.jpg',
     title: 'GameFi',
-    description: 'A One-stop Destination Launchpad For Web3 Enthusiasts.',
+    description: 'A one-stop destination launchpad for Web3 enthusiasts.',
     categories: ['launchpad'],
     twitter: 'https://x.com/gamefi_official?lang=en',
     website: 'https://gamefi.org/'
@@ -358,7 +358,7 @@ export const projects: ProjectCardProps[] = [
     image: '/img/ecosystem/TRACEEYE.png',
     title: 'Traceye',
     description:
-      'An enterprise-grade Blockchain Infrastructure Automation Platform.',
+      'An enterprise-grade blockchain infrastructure automation platform.',
     categories: ['infra'],
     twitter: '',
     website: 'https://www.traceye.io/'
