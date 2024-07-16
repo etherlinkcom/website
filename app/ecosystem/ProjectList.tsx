@@ -5,7 +5,7 @@ import { ProjectCard } from './ProjectCard'
 import { projects } from './fixture'
 
 export const ProjectList = () => {
-  const [numToShow, setNumToShow] = useState(6)
+  const [numToShow, setNumToShow] = useState(18)
 
   const totalProjects = projects.length
 

@@ -16,6 +16,8 @@ type Category =
   | 'gamefi'
   | 'nfts'
   | 'social'
+  | 'ecosystem-partner'
+  | 'launchpad'
 
 export interface ProjectCardProps {
   image: string
@@ -46,9 +48,11 @@ export const ProjectCard = ({
       </div>
       <p className='w-full text-gray-300 text-sm'>{description}</p>
       <div className='flex items-center justify-between'>
-        {categories.map((category, index) => (
-          <CategoryBox category={category} key={index} />
-        ))}
+        <div className='flex items-center gap-2'>
+          {categories.map((category, index) => (
+            <CategoryBox category={category} key={index} />
+          ))}
+        </div>
         <div className='flex items-center gap-1'>
           {!!twitter && (
             <Link href={twitter} target='_blank'>
@@ -104,6 +108,10 @@ const convertCategory = (category: Category) => {
       return 'NFTs'
     case 'gaming':
       return 'Gaming'
+    case 'ecosystem-partner':
+      return 'Ecosystem Partner'
+    case 'launchpad':
+      return 'Launchpad'
   }
 }
 
