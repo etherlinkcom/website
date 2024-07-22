@@ -16,11 +16,11 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
     title: 'Bridge',
     items: [
       {
-        name: 'EVM Bridge',
+        name: 'EVM bridge',
         link: 'https://etherlinkbridge.com'
       },
       {
-        name: 'Tezos Bridge',
+        name: 'Tezos bridge',
         link: 'https://bridge.etherlink.com'
       }
     ]
@@ -36,13 +36,14 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
     link: 'https://docs.etherlink.com/'
   },
   {
+    dropdown: false,
+    title: 'Faucet',
+    link: 'https://faucet.etherlink.com/'
+  },
+  {
     dropdown: true,
     title: 'Resources',
     items: [
-      {
-        name: 'Faucet',
-        link: 'https://faucet.etherlink.com/'
-      },
       {
         name: 'Testnet explorer',
         link: 'https://testnet-explorer.etherlink.com/'

@@ -1,31 +1,54 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
+import { PrimaryButton } from './buttons/PrimaryButton'
+import { GhostButton } from './buttons/GhostButton'
 
 export default function Cta({
   headerText,
   descriptionText,
-  buttonText,
-  buttonUrl
+  primaryButton,
+  ghostButton
 }: {
   headerText: string
   descriptionText: string
-  buttonText: string
-  buttonUrl: string
+  primaryButton: {
+    text: string
+    link: string
+  }
+  ghostButton?: {
+    text: string
+    link: string
+  }
 }) {
   return (
     <div
-      className="flex flex-col flex-wrap w-full max-w-7xl md-10 md:mt-24 mb-2 gap-5 mx-auto
-        px-7 py-10 md:py-7 lg:px-12 lg:py-20 lg:flex-nowrap rounded-xl bg-[url('/img/home/bg-cta.png')]"
+      className="flex flex-col md:flex-row flex-wrap w-full mb-16 gap-5 mx-auto md:items-center justify-between
+        px-[28px] pt-[34px] pb-[36px]  md:px-[48px] md:pt-[64px] md:pb-[56px] lg:flex-nowrap rounded-xl bg-[url('/CTA-Mobile.png')] md:bg-[url('/CTA-bg.png')] bg-cover"
     >
-      <div className='flex-grow text-left text-black'>
-        <h2 className='text-3xl font-bold lg:text-4xl'>{headerText}</h2>
-        <p className='mt-2 md:mt-4 font-light text-lg max-w-[600px]'>
+      <div className='flex-grow text-left text-black max-w-[560px] lg:w-full'>
+        <h2 className='text-[30px] md:text-[55px] font-semibold md:font-bold -tracking-[1.1px]'>
+          {headerText}
+        </h2>
+        <p className='mt-2 md:mt-4 font-light text-lg max-w-[600px] -tracking-[0.46px]'>
           {descriptionText}
         </p>
       </div>
-      <div className=''>
-        <Button text={buttonText} link={buttonUrl} />
+      <div className='flex flex-col md:flex-row gap-6 md:gap-4 h-fit'>
+        <PrimaryButton
+          className='bg-white text-black hover:bg-newGreen'
+          text={primaryButton.text}
+          href={primaryButton.link}
+          icon={<img src='/img/home/arrow-right.svg' alt='arrow right icon' />}
+        />
+        {ghostButton && (
+          <GhostButton
+            icon={<img src='/img/home/bridge-icon.svg' alt='bridge icon' />}
+            className=''
+            text={ghostButton.text}
+            href={ghostButton.link}
+          />
+        )}
       </div>
     </div>
   )

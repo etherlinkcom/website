@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
+const flowbite = require('flowbite-react/tailwind')
 
 module.exports = {
   mode: 'jit',
@@ -7,7 +8,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    'node_modules/flowbite-react/lib/esm/**/*.js'
+    flowbite.content()
   ],
   darkMode: 'class',
   theme: {
@@ -30,6 +31,26 @@ module.exports = {
         'max-lg': { max: '1024px' },
         'max-xl': { max: '1280px' },
         'max-2xl': { max: '1536px' }
+      },
+      keyframes: {
+        circling: {
+          '0%, 100%': {
+            clipPath: 'inset(0 0 95% 0 round 24px)',
+            opacity: '1'
+          },
+          '75%': {
+            clipPath: 'inset(0 95% 0 0 round 24px)'
+          },
+          '50%': {
+            clipPath: 'inset(95% 0 0 0 round 24px)'
+          },
+          '25%': {
+            clipPath: 'inset(0 0 0 95% round 24px)'
+          }
+        }
+      },
+      animation: {
+        circling: 'circling 2s linear'
       }
     },
     fontFamily: {
@@ -37,5 +58,5 @@ module.exports = {
       stock: [defaultTheme.fontFamily.sans]
     }
   },
-  plugins: [require('flowbite/plugin')]
+  plugins: [flowbite.plugin()]
 }

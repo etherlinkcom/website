@@ -19,8 +19,10 @@ const Ecosystem = () => {
         <Cta
           headerText='List a project on the Etherlink ecosystem'
           descriptionText='Submit your project to be listed on the Etherlink ecosystem today or request an update to an existing entry.'
-          buttonText='Submit a Project'
-          buttonUrl='https://tt-tezos.typeform.com/to/Z48NYwJr'
+          primaryButton={{
+            text: 'Submit a Project',
+            link: 'https://tt-tezos.typeform.com/to/Z48NYwJr'
+          }}
         />
       </div>
       {/* <div className='px-8'>

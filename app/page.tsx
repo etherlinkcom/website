@@ -1,7 +1,10 @@
 import Container from './components/container'
 import { Main } from './components/pages/Home/Main'
-import { Partners } from './components/pages/Home/Partners'
-import { Roadmap } from './components/pages/Home/Roadmap'
+// import { Partners } from './components/pages/Home/Partners'
+import { ExperienceSection } from './components/pages/Home/ExperienceSection'
+import { DeveloperExperience } from './components/pages/Home/DeveloperExperience'
+// import { Roadmap } from './components/pages/Home/Roadmap'
+import { ExploreEcosystem } from './components/pages/Home/ExploreEcosystem'
 import Cta from './components/cta'
 import type { Metadata } from 'next'
 
@@ -16,14 +19,21 @@ const Home = () => {
   return (
     <>
       <Main />
-      <Partners />
+      <ExploreEcosystem />
+      <ExperienceSection />
+      <DeveloperExperience />
       <Container>
-        <Roadmap />
         <Cta
-          headerText='Start building on Etherlink today'
-          descriptionText='Our step-by-step guides will help you get started'
-          buttonText='Docs'
-          buttonUrl='https://docs.etherlink.com/'
+          headerText='Ready to get started?'
+          descriptionText='Useful resources to get started building and bridging on Etherlink'
+          primaryButton={{
+            text: 'Start building',
+            link: 'https://docs.etherlink.com/'
+          }}
+          ghostButton={{
+            text: 'EVM bridge',
+            link: 'https://www.etherlinkbridge.com/bridge'
+          }}
         />
       </Container>
     </>
