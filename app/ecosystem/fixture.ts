@@ -60,7 +60,7 @@ export const projects: ProjectCardProps[] = [
     description:
       'A platform for discovering the best rates and effortlessly bridging positions across all EVM chains.',
     categories: ['defi'],
-    twitter: 'https://twitter.com/plenty_network',
+    twitter: 'https://x.com/PlendFinance',
     website: 'https://www.plend.finance/'
   },
   {
