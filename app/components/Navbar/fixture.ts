@@ -12,6 +12,20 @@ export interface NavbarItem {
 
 export const NAVBAR_ITEMS: NavbarItem[] = [
   {
+    dropdown: true,
+    title: 'Bridge',
+    items: [
+      {
+        name: 'EVM Bridge',
+        link: 'https://etherlinkbridge.com'
+      },
+      {
+        name: 'Tezos Bridge',
+        link: 'https://bridge.etherlink.com'
+      }
+    ]
+  },
+  {
     dropdown: false,
     title: 'Ecosystem',
     link: '/ecosystem'
