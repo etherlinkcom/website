@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { X, Discord } from '../icons'
 import { Drawer, CustomFlowbiteTheme } from 'flowbite-react'
 import { isExternalLink } from '.'
+import { EtherlinkLogo } from '../EtherlinkLogo'
 
 const customDrawerTheme: CustomFlowbiteTheme['drawer'] = {
   root: {
@@ -54,19 +55,7 @@ export const MobileNavbar = ({
       theme={customDrawerTheme}
       position='right'
     >
-      <Drawer.Header
-        titleIcon={() => (
-          <Link href='/' onClick={handleClose}>
-            <Image
-              src='/img/home/beta_logo.svg'
-              alt='Etherlink Beta Logo'
-              width={190}
-              height={120}
-              className='-mt-8'
-            />
-          </Link>
-        )}
-      />
+      <Drawer.Header titleIcon={() => <EtherlinkLogo />} />
       <div className='flex flex-col w-full gap-4'>
         {NAVBAR_ITEMS.map((item, index) => {
           if (!!item.dropdown && !!item.items) {

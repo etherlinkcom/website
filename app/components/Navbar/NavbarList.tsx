@@ -11,7 +11,7 @@ const customDropdownTheme: CustomFlowbiteTheme['dropdown'] = {
   floating: {
     item: {
       container:
-        'hover:bg-lightBlack text-white transition-all duration-500 rounded-lg',
+        'hover:bg-[#232323] text-white hover:text-newGreen transition-all duration-500 rounded',
       base: 'text-base px-3 py-2'
     },
     style: {
@@ -19,7 +19,7 @@ const customDropdownTheme: CustomFlowbiteTheme['dropdown'] = {
     }
   },
   inlineWrapper:
-    'flex items-center text-gray-300 hover:text-white hover:bg-midBlack px-3 py-2 rounded-lg text-base transition-all duration-500'
+    'flex items-center text-gray-300 hover:text-newGreen hover:bg-[#232323] px-3 py-2 rounded-[32px] text-base transition-all duration-500 px-6 py-3'
 }
 
 export const NavbarList = ({ dropdown, title, link, items }: NavbarItem) => {
@@ -47,7 +47,7 @@ export const NavbarList = ({ dropdown, title, link, items }: NavbarItem) => {
   return (
     <Link
       href={link as string}
-      className='w-full px-3 py-2 rounded-lg text-gray-300 text-base hover:text-white hover:bg-midBlack transition-all duration-500'
+      className='w-full px-6 py-3 rounded-[32px] text-gray-300 text-base hover:text-newGreen hover:bg-[#232323] transition-all duration-500'
       target={isExternalLink(link as string)}
       rel='noopener noreferrer'
     >

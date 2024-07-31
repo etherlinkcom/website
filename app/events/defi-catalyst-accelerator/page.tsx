@@ -20,8 +20,10 @@ const Home = () => {
         <Cta
           headerText='DCA with us'
           descriptionText='Join our community of founders and the wider Tezos community.'
-          buttonText='Follow Us'
-          buttonUrl='https://twitter.com/etherlink'
+          primaryButton={{
+            text: 'Follow Us',
+            link: 'https://twitter.com/etherlink'
+          }}
         />
       </div>
     </>

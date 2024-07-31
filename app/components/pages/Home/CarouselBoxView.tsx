@@ -12,8 +12,11 @@ export const CarouselBoxView = () => {
   return (
     <div className='lg:hidden mobileCarousel'>
       <Swiper
-        spaceBetween={15}
-        slidesPerView={1.3}
+        style={{
+          padding: '4px'
+        }}
+        spaceBetween={25}
+        slidesPerView={1.1}
         modules={[Pagination]}
         pagination={{
           clickable: true

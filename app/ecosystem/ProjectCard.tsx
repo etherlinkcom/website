@@ -115,7 +115,7 @@ const convertCategory = (category: Category) => {
   }
 }
 
-const CategoryBox = ({ category }: { category: Category }) => {
+export const CategoryBox = ({ category }: { category: Category }) => {
   return (
     <div className='bg-darkBlack text-gray-300 text-xs rounded p-2 text-center'>
       {convertCategory(category)}

@@ -1,55 +1,63 @@
 'use client'
-import React from 'react'
-import Image from 'next/image'
-import { ArrowButton } from '../../buttons/ArrowButton'
-import { Button } from '../../buttons/Button'
-import { FEATURES, Feature } from './constants'
+import React, { useState } from 'react'
+import { FlipContent, FeatureTitle, FEATURES, Feature } from './constants'
 import { Fade } from 'react-awesome-reveal'
 import dynamic from 'next/dynamic'
 import { CarouselBoxView } from './CarouselBoxView'
+import { PrimaryButton } from '../../buttons/PrimaryButton'
+import { GhostButton } from '../../buttons/GhostButton'
+import Container from '../../container'
+import Image from 'next/image'
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 export const Main = () => {
   return (
-    <div className='relative min-h-screen flex flex-col items-center justify-center w-full mb-24 lg:mb-44 mt-24 md:mt-30 lg:mt-34 xl:mt-40'>
+    <Container className='relative min-h-screen flex flex-col items-center justify-center w-full mb-24 lg:mb-44 mt-24 md:mt-30 lg:mt-34 xl:mt-40'>
       {/* background image */}
-      <div className='flex justify-center'>
-        <Lottie
-          className='absolute top-0 xl:inset-0 z-0 w-full'
-          animationData={require('./bg-animation.json')}
-        />
-      </div>
+      <Lottie
+        className='absolute -translate-y-[400px] md:-translate-y-[300px]  xl:inset-0 z-0 w-[260%] sm:w-full'
+        animationData={require('./lottie/Head.json')}
+      />
       <div className='z-10 w-full'>
-        <div className='px-8 mx-auto'>
+        <div className='mx-auto'>
           <Fade triggerOnce direction='down' delay={200}>
-            <h1 className='text-left md:text-center text-4xl md:text-6xl xl:text-7xl font-extrabold leading-tight text-white'>
-              <span className='text-newGreen'>
-                Fast, Fair and <span className='text-white'>(Nearly)</span> Free
+            <h1 className='text-center text-[36px] md:text-[69px] font-semibold leading-tight text-white -tracking-[1.38px] mb-3'>
+              <span className='text-white'>
+                The{' '}
+                <span className='text-newGreen'>
+                  fast<span className='text-white'>,</span> fair{' '}
+                </span>
+                and (nearly) <span className='text-newGreen'>free</span> L2
               </span>
-              <br />
-              Layer 2 Blockchain
             </h1>
           </Fade>
           <Fade triggerOnce delay={400}>
-            <p className='text-center mt-2 font-light text-lg xl:text-3xl text-white'>
-              Non-custodial scaling solution <br /> powered by Tezos Smart
-              Rollups technology
+            <p className='text-center mt-2 font-normal text-[16px] md:text-[28px] text-[#9B9B9B] -tracking-[1.38px]'>
+              Powered by Tezos Smart Rollups Technology
             </p>
           </Fade>
 
-          <div className='relative flex flex-col md:flex-row md:items-center justify-center gap-3 md:gap-6 my-7 md:my-14 w-full'>
+          <div className='relative flex flex-col md:flex-row md:items-center justify-center gap-[24px] md:gap-6 mt-[80px] mb-[104px] md:my-14 w-ful'>
             <Fade triggerOnce delay={600}>
-              <ArrowButton
-                text='Build'
-                link='https://docs.etherlink.com/'
-                className='bg-newGreen hover:bg-lightGreen text-black text-xl md:text-2xl font-semibold px-7 md:px-14 py-3 md:py-5'
+              <PrimaryButton
+                className='w-full'
+                text='Start building'
+                href='https://docs.etherlink.com/'
+                icon={
+                  <img src='/img/home/arrow-right.svg' alt='arrow right icon' />
+                }
               />
-              <Button text='Follow' link='https://twitter.com/etherlink' />
+              <GhostButton
+                className='w-full'
+                text='EVM bridge'
+                href='https://www.etherlinkbridge.com/bridge'
+                icon={<img src='/img/home/bridge-icon.svg' alt='bridge icon' />}
+              />
             </Fade>
           </div>
 
-          <div className='hidden lg:grid lg:grid-cols-3 gap-6 w-full md:max-w-[1536px] mx-auto'>
+          <div className='hidden lg:grid lg:grid-cols-3 gap-8 w-full md:max-w-[1536px] mx-auto mt-[104px] md:mt-[208px]'>
             {FEATURES.map((data, index) => (
               <Fade
                 direction='up'
@@ -63,36 +71,90 @@ export const Main = () => {
           </div>
         </div>
 
-        <div className='pl-8'>
-          <CarouselBoxView />
+        <CarouselBoxView />
+      </div>
+    </Container>
+  )
+}
+
+export const FeatureBox = ({
+  image,
+  alt,
+  text,
+  description,
+  flipContent
+}: Feature) => {
+  const [isClicked, setIsClicked] = useState(false)
+
+  return (
+    <div
+      className='flex px-6 py-6 rounded-3xl h-[540px] md:h-[660px] backdrop-blur bg-[#1B1B1B] p-2
+        shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] hover:cursor-pointer border-2 border-transparent hover:border-2 hover:border-newGreen group'
+      onClick={() => setIsClicked(!isClicked)}
+    >
+      <div
+        className={`grid grid-rows-[1fr_1fr_auto] grid-cols-1 min-h-[300px] transition-opacity duration-1000 ease overflow-hidden
+          ${isClicked ? 'opacity-0 w-0 h-0' : 'opacity-100 w-full'}`}
+      >
+        <div
+          className='flex flex-col justify-center rounded-xl py-10 font-medium text-white
+            mb-6 bg-lightBlack group-hover:bg-[#5C72FB] transition-colors duration-300 ease-in'
+        >
+          <Image
+            draggable={false}
+            className='mx-auto w-auto'
+            width={160}
+            height={160}
+            src={image}
+            alt={alt}
+          />
         </div>
+        <div className='flex flex-col gap-4 py-1 px-1 h-full'>
+          {text}
+          <p className='text-gray-400 text-sm md:text-base max-w-72'>
+            {description}
+          </p>
+          <div className='w-full h-full flex flex-col justify-end lg:items-start mt-6'>
+            <GhostButton
+              className='group-hover:bg-newGreen group-hover:text-black transition-colors duration-300 -tracking-[0.36px]'
+              text='Learn more'
+              animation={false}
+            />
+          </div>
+        </div>
+        {/* <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling'></span> */}
+      </div>
+
+      <div
+        className={`overflow-hidden transition-opacity duration-1000 ease
+            ${isClicked ? 'opacity-100' : 'opacity-0 w-0 h-0'}
+          `}
+      >
+        <div className='grid grid-rows-[1fr_1fr_1fr] grid-cols-1 min-h-[300px] h-full justify-around gap-10'>
+          {flipContent.map((data, index) => (
+            <BackContent flipContent={data} key={index} />
+          ))}
+        </div>
+        {/* <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling'></span> */}
       </div>
     </div>
   )
 }
 
-export const FeatureBox = ({ image, alt, text, description }: Feature) => {
+const BackContent = ({ flipContent }: { flipContent: FlipContent }) => {
   return (
-    <div className='px-8 py-6 rounded-xl h-full backdrop-blur-md bg-midBlack/70 border border-[#242424]'>
-      <div
-        className='flex flex-col justify-center rounded-lg py-10 font-medium text-white mb-6'
-        style={{
-          backgroundColor: 'rgba(89, 173, 140, 0.03)'
-        }}
-      >
-        <Image
-          draggable={false}
-          className='mx-auto w-auto h-32'
-          width={100}
-          height={100}
-          src={image}
-          alt={alt}
-        />
-      </div>
-      <div className='flex flex-col gap-4 py-6 px-1'>
-        {text}
-        <p className='text-gray-400 text-sm md:text-base'>{description}</p>
-      </div>
+    <div className='flex flex-col relative w-full '>
+      <FeatureTitle title={flipContent.title} subTitle={flipContent.subTitle} />
+
+      {typeof flipContent.description === 'string' ? (
+        <p className='text-gray-400 text-sm md:text-base p-2.5'>
+          {flipContent.description}
+        </p>
+      ) : (
+        flipContent.description
+      )}
+
+      <div className='absolute right-0'>{flipContent.icon}</div>
     </div>
   )
 }

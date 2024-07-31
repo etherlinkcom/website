@@ -2,7 +2,7 @@ import ClientLayout from './ClientLayout'
 import { Analytics } from '@vercel/analytics/react'
 import FathomComponent from './components/fathom'
 import { Navbar } from './components/Navbar'
-import Footer from './components/footer'
+import { Footer } from './components/footer'
 import { GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata = {

@@ -2,122 +2,92 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Container from './container'
-
+import { EtherlinkLogo } from './EtherlinkLogo'
 import { X, Discord, GitHub } from './icons'
 
-export default function Footer() {
-  const navigation = [
-    { name: 'Blog', link: 'https://medium.com/@etherlink' },
-    { name: 'Documentation', link: 'https://docs.etherlink.com' },
-    { name: 'Brand Assets', link: '/Etherlink_Brand_Assets.zip' }
-  ]
-  const legal = [
-    { name: 'Brand Assets', link: 'https://tinyurl.com/etherlinkbrandassets' }
-  ]
+const NAVS = [
+  { name: 'Blog', link: 'https://medium.com/@etherlink' },
+  { name: 'Documentation', link: 'https://docs.etherlink.com' }
+  // { name: 'Brand Assets', link: '/Etherlink_Brand_Assets.zip' }
+]
+
+export const Footer = () => {
   return (
-    <div className='relative'>
-      <Container>
-        <div className='grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-neutral-700 lg:grid-cols-5'>
-          <div className='lg:col-span-2 flex flex-col sm:flex-row justify-between align-center'>
-            <div>
-              <Link
-                href='/'
-                className='flex items-center space-x-2 text-2xl font-medium  text-gray-100'
-              >
-                <Image
-                  src='/img/home/beta_logo.svg'
-                  alt='Etherlink Beta Logo'
-                  width={200}
-                  height={200}
-                />
-              </Link>
-            </div>
-
-            <a
-              href='https://tezos.com'
-              target='_blank'
-              rel='noopener'
-              className='relative block w-44 mt-4 sm:mt-0'
-            >
-              Powered by
-              <Image
-                className='w-auto h-auto'
-                src='/img/home/tezos.png'
-                alt='Powered by Tezos'
-                width={106}
-                height={22}
-              />
-            </a>
-          </div>
-
-          <div>
-            <div className='flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0'>
-              {navigation.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.link}
-                  className='w-full px-4 py-2 rounded-md text-gray-300 hover:text-darkGreen'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            {/* <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-              {legal.map((item, index) => (
-                <Link key={index} href={item.link} className="w-full px-4 py-2 rounded-md text-gray-300 hover:text-darkGreen" target="_blank" rel="noopener noreferrer">
-                  {item.name}
-                </Link>
-              ))}
-            </div> */}
-          </div>
-          <div className=''>
-            <div>Join the Community</div>
-            <div className='flex mt-5 text-gray-500 items-center'>
-              <a
-                href='https://twitter.com/etherlink'
-                target='_blank'
-                rel='noopener'
-              >
-                <span className='sr-only'>Twitter</span>
-                <X size={40} />
-              </a>
-              <a
-                href='https://discord.gg/etherlink'
-                target='_blank'
-                rel='noopener'
-              >
-                <span className='sr-only'>Discord</span>
-                <Discord size={40} />
-              </a>
-              <a
-                href='https://github.com/etherlinkcom'
-                target='_blank'
-                rel='noopener'
-                className='mb-1'
-              >
-                <span className='sr-only'>GitHub</span>
-                <GitHub size={40} />
-              </a>
-              {/* <a
-                href="mailto:reachout@etherlink.com"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">Reach out</span>
-                <Email />
-              </a> */}
-            </div>
+    <Container className='relative flex flex-col pb-6 pt-[104px]'>
+      <div
+        className="block absolute top-0 left-1/2 -translate-x-1/2
+          w-full h-full bg-[url('/img/home/gradient.svg')] bg-no-repeat bg-cover bg-top"
+      />
+      {/* top */}
+      <div className='flex flex-col md:flex-row justify-between md:items-end border-b border-[#515151] pb-10 md:pb-6 z-50'>
+        <div className='flex flex-col justify-start items-center md:items-start'>
+          <EtherlinkLogo />
+          <div className='flex flex-col md:flex-row mt-6 text-center gap-6 md:gap-0 hover:cursor-pointer'>
+            {NAVS.map((nav, index) => {
+              if (index === NAVS.length - 1) {
+                return (
+                  <Link href={nav.link} target='_blank'>
+                    <p className='text-white hover:text-newGreen transition-colors duration-300'>
+                      {nav.name}
+                    </p>
+                  </Link>
+                )
+              }
+              return (
+                <>
+                  <Link href={nav.link} target='_blank'>
+                    <p className='text-white hover:text-newGreen transition-colors duration-300'>
+                      {nav.name}
+                    </p>
+                  </Link>
+                  <p className='px-4 text-[#515151] hidden md:block'>|</p>
+                </>
+              )
+            })}
           </div>
         </div>
-
-        <div className='my-10 text-sm text-center text-gray-400'>
-          © Copyright Tezos Foundation {new Date().getFullYear()}. All Rights
-          Reserved.
+        <div className='flex justify-center md:justify-end items-center gap-4 mt-6 md:mt-0 md:border-l md:border-[#515151] pl-4'>
+          <Link
+            href='https://discord.gg/etherlink'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Discord className='rounded bg-[#262626]' size={38} />
+          </Link>
+          <Link
+            href='https://github.com/etherlinkcom'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <GitHub className='rounded bg-[#262626]' size={38} />
+          </Link>
+          <Link
+            href='https://twitter.com/etherlink'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <X className='rounded bg-[#262626]' size={38} />
+          </Link>
         </div>
-      </Container>
-    </div>
+      </div>
+      {/* bottom */}
+      <div className='flex items-center flex-col-reverse md:flex-row justify-between pt-10 md:pt-6 gap-6 z-50'>
+        <p className='text-[#9B9B9B] text-sm text-center max-w-64 md:max-w-full mx-auto md:mx-0'>
+          © Copyright Tezos Foundation 2024. All Rights Reserved.
+        </p>
+        <div className='flex items-center text-[#9B9B9B] gap-4 justify-center'>
+          <p className='text-sm '>Powered by</p>
+          <Link href='https://tezos.com' target='_blank'>
+            <Image
+              width={92}
+              height={32}
+              src='/tezos-logo-gray.svg'
+              alt='Tezos logo'
+              className='hover:cursor-pointer'
+            />
+          </Link>
+        </div>
+      </div>
+    </Container>
   )
 }
