@@ -7,7 +7,7 @@
     "format": "prettier --write .",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "npx serve@latest out"
   },
   "repository": {
     "type": "git",
