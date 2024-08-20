@@ -41,6 +41,11 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
     link: 'https://faucet.etherlink.com/'
   },
   {
+    dropdown: false,
+    title: 'Status',
+    link: 'https://status.etherlink.com/'
+  },
+  {
     dropdown: true,
     title: 'Resources',
     items: [
