@@ -17,8 +17,10 @@ export const Navbar = () => {
 
   return (
     <Container className='relative flex justify-between items-center pt-8 lg:pt-[66px] z-[999] md:max-w-[1536px] mx-auto'>
-      <EtherlinkLogo />
-      <div className='hidden lg:flex items-center gap-6'>
+      <div className='flex-shrink-0'>
+        <EtherlinkLogo />
+      </div>
+      <div className='hidden lg:flex items-center'>
         <div className='flex items-center pr-4 border-r border-[#414349B2] h-[30px] gap-1'>
           {NAVBAR_ITEMS.map((item, index) => (
             <NavbarList {...item} key={index} />
