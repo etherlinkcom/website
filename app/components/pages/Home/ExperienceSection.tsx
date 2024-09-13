@@ -89,7 +89,7 @@ export const ExperienceSection = () => {
           }
           title='Open and'
           subTitle='Permissionless'
-          desc='Users retain full ownership of assets. This non-custodial architecture Is resistant to censorship.'
+          desc='Users retain full ownership of assets. This non-custodial architecture is resistant to censorship.'
         />
         <CustomFlex
           lottie={
