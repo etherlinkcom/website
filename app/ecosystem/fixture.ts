@@ -28,13 +28,13 @@ export const projects: ProjectCardProps[] = [
     website: 'https://www.fireblocks.com/'
   },
   {
-    image: '/img/ecosystem/Subsquid.jpeg',
-    title: 'Subsquid',
+    image: '/img/ecosystem/SQD.jpg',
+    title: 'SQD',
     description:
       'A peer-to-peer network to batch query and aggregate terabytes of on-chain and off-chain data.',
     categories: ['data-science'],
-    twitter: 'https://twitter.com/subsquid',
-    website: 'https://subsquid.io/'
+    twitter: 'https://twitter.com/hellosqd',
+    website: 'https://www.sqd.dev/'
   },
   {
     image: '/img/ecosystem/LayerZero.jpeg',
