@@ -364,14 +364,5 @@ export const projects: ProjectCardProps[] = [
     categories: ['infra'],
     twitter: '',
     website: 'https://www.traceye.io/'
-  },
-  {
-    image: '/img/ecosystem/VNX.png',
-    title: 'VNX',
-    description:
-      'VNX is a European-regulated tokenization platform aiming to bridge traditional investments and DeFi by bringing real-world assets to the crypto world.',
-    categories: ['defi', 'rwa'],
-    twitter: 'https://x.com/vnx_platform',
-    website: 'https://vnx.li/'
   }
 ]
