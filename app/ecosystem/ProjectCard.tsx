@@ -18,6 +18,7 @@ type Category =
   | 'social'
   | 'ecosystem-partner'
   | 'launchpad'
+  | 'rwa'
 
 export interface ProjectCardProps {
   image: string
@@ -112,6 +113,8 @@ const convertCategory = (category: Category) => {
       return 'Ecosystem Partner'
     case 'launchpad':
       return 'Launchpad'
+    case 'rwa':
+      return 'RWA'
   }
 }
 
