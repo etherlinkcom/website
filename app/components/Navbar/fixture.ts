@@ -17,12 +17,18 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
     title: 'Use',
     items: [
       {
-        name: 'EVM bridge',
-        link: 'https://etherlinkbridge.com'
-      },
-      {
-        name: 'Tezos bridge',
-        link: 'https://bridge.etherlink.com'
+        name: 'Bridge',
+        link: '',
+        subItems: [
+          {
+            name: 'EVM Bridge',
+            link: 'http://etherlinkbridge.com/'
+          },
+          {
+            name: 'Tezos Bridge',
+            link: 'http://bridge.etherlink.com/'
+          }
+        ]
       },
       {
         name: 'Status',
@@ -52,26 +58,22 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
         link: 'https://docs.etherlink.com/get-started/using-your-wallet/'
       },
       {
-        name: 'Tezos Bridge',
-        link: 'https://testnet.bridge.etherlink.com/',
+        name: 'Testnet Resources',
+        link: '',
         subItems: [
           {
-            name: 'Tezos Testnet',
-            link: 'https://testnet.bridge.etherlink.com/testnet'
+            name: 'Faucet',
+            link: 'http://faucet.etherlink.com/'
           },
           {
-            name: 'Tezos Mainnet',
-            link: 'https://bridge.etherlink.com/mainnet'
+            name: 'Explorer',
+            link: 'http://testnet.explorer.etherlink.com/'
+          },
+          {
+            name: 'Tezos Bridge',
+            link: 'http://testnet.bridge.etherlink.com/'
           }
         ]
-      },
-      {
-        name: 'Faucet',
-        link: 'https://faucet.etherlink.com/'
-      },
-      {
-        name: 'Explorer',
-        link: 'https://testnet.explorer.etherlink.com/'
       }
     ]
   },

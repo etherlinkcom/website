@@ -11,8 +11,8 @@ import { PrimaryButton } from '../buttons/PrimaryButton'
 
 const customDrawerTheme: CustomFlowbiteTheme['drawer'] = {
   root: {
-    base: 'fixed z-40 overflow-y-auto bg-white p-4 transition-transform duration-300 pt-0 bg-grey900 rounded-t-3xl border-t border-grey600',
-    backdrop: 'fixed inset-0 z-30 bg-gray-900/50 bg-transparent',
+    base: 'fixed z-[1000] overflow-y-auto bg-white p-4 transition-transform duration-300 pt-0 bg-grey-900 rounded-t-3xl border-t border-grey-600',
+    backdrop: 'fixed inset-0 z-[999] bg-gray-900/50 bg-transparent',
     edge: 'bottom-0',
     position: {
       right: {
@@ -24,7 +24,7 @@ const customDrawerTheme: CustomFlowbiteTheme['drawer'] = {
   header: {
     inner: {
       closeButton:
-        'absolute end-10 top-8 flex h-6 w-4 items-center justify-center rounded-lg bg-transparent text-grey100 text-sm hover:bg-darkBlack',
+        'absolute end-10 top-8 flex h-6 w-4 items-center justify-center rounded-lg bg-transparent text-grey-100 text-sm hover:bg-darkBlack',
       closeIcon: 'h-6 w-6'
     }
   },
@@ -40,8 +40,8 @@ export const MobileNavbar = ({
   isOpen: boolean
   handleClose: () => void
 }) => {
-  const [currentView, setCurrentView] = useState<'main' | 'dropdown'>('main')
-  const [activeDropdown, setActiveDropdown] = useState<Item[] | null>(null)
+  const [currentView, setCurrentView] = useState<'main' | 'secondary'>('main')
+  const [activeSecondary, setActiveSecondary] = useState<Item[] | null>(null)
   const [openDropdowns, setOpenDropdowns] = useState<{
     [key: number]: boolean
   }>({})
@@ -59,14 +59,14 @@ export const MobileNavbar = ({
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const handleDropdownClick = (item: NavbarItem) => {
+  const handleSecondaryClick = (item: NavbarItem) => {
     if (isAnimating) return
     setIsAnimating(true)
     setSelectedItemTitle(item.title)
     setDirection('out')
     setTimeout(() => {
-      setCurrentView('dropdown')
-      setActiveDropdown(item.items ?? null)
+      setCurrentView('secondary')
+      setActiveSecondary(item.items ?? null)
       setIsAnimating(false)
     }, 250)
   }
@@ -76,11 +76,9 @@ export const MobileNavbar = ({
     setIsAnimating(true)
     setSelectedItemTitle('')
     setDirection('in')
-    setTimeout(() => {
-      setCurrentView('main')
-      setActiveDropdown(null)
-      setIsAnimating(false)
-    }, 250)
+    setCurrentView('main')
+    setActiveSecondary(null)
+    setIsAnimating(false)
   }
 
   const toggleDropdown = (index: number) => {
@@ -106,7 +104,7 @@ export const MobileNavbar = ({
       position='bottom'
     >
       <div
-        className='h-[1px] w-[39px] bg-grey600 rounded-full mx-auto'
+        className='h-[1px] w-[39px] bg-grey-600 rounded-full mx-auto'
         style={{ marginTop: '8px' }}
       />
       <Drawer.Header titleIcon={() => null} />
@@ -114,20 +112,19 @@ export const MobileNavbar = ({
       {/* Header Section with Back Button, Item Title, and Close Button */}
       <div className='flex items-center justify-between px-6'>
         {/* Back Button */}
-        {currentView === 'dropdown' && (
-          <div
-            onClick={handleBackClick}
-            className='flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white'
-          >
-            <ArrowRightIcon fill='#BCBCBC' className='rotate-180 h-4 w-4' />
-          </div>
-        )}
+        {currentView === 'secondary' && (
+          <>
+            <div
+              onClick={handleBackClick}
+              className='flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white'
+            >
+              <ArrowRightIcon fill='#BCBCBC' className='rotate-180 h-4 w-4' />
+            </div>
 
-        {/* Selected Item Title */}
-        {currentView === 'dropdown' && (
-          <div className='flex-1 text-center font-bold text-grey100'>
-            {selectedItemTitle}
-          </div>
+            <div className='flex-1 text-center font-bold text-grey-100'>
+              {selectedItemTitle}
+            </div>
+          </>
         )}
 
         <div className='w-[24px]' />
@@ -142,8 +139,8 @@ export const MobileNavbar = ({
             {itemsWithDropdown.map((item, index) => (
               <div
                 key={index}
-                onClick={() => handleDropdownClick(item)}
-                className='w-full px-6 py-[10px] rounded-full font-bold text-gray-300 text-sm hover:text-newGreen hover:bg-grey700 text-grey100 transition-all duration-500 cursor-pointer flex justify-between items-center'
+                onClick={() => handleSecondaryClick(item)}
+                className='w-full px-6 py-[10px] rounded-full font-bold text-sm hover:text-newGreen hover:bg-grey-700 text-grey-100 transition-all duration-500 cursor-pointer flex justify-between items-center'
               >
                 {item.title}
                 <CheveronIcon fill='#BCBCBC' />
@@ -151,13 +148,13 @@ export const MobileNavbar = ({
             ))}
 
             {/* Horizontal stroke */}
-            <div className='h-[1px] w-[90%] mx-auto bg-grey600 rounded-full my-2' />
+            <div className='h-[1px] w-[90%] mx-auto bg-grey-600 rounded-full my-2' />
 
             {/* Render the items without dropdowns */}
             {itemsWithoutDropdown.map((item, index) => (
               <Link
                 href={item.link as string}
-                className='w-full px-6 py-[10px] rounded-full font-bold text-gray-300 text-sm hover:text-newGreen text-grey100 hover:bg-grey700 transition-all duration-500'
+                className='w-full px-6 py-[10px] rounded-full font-bold text-sm hover:text-newGreen text-grey-100 hover:bg-grey-700 transition-all duration-500'
                 target={isExternalLink(item.link as string)}
                 rel='noopener noreferrer'
                 key={index}
@@ -167,10 +164,10 @@ export const MobileNavbar = ({
               </Link>
             ))}
             {/* Horizontal stroke */}
-            <div className='h-[1px] w-[90%] mx-auto bg-grey600 rounded-full my-2' />
+            <div className='h-[1px] w-[90%] mx-auto bg-grey-600 rounded-full my-2' />
 
             <div
-              className={`flex flex-col items-center rounded-3xl w-full px-6 pt-4 pb-2 text-sm text-gray-300 hover:text-newGreen bg-newGreen cursor-pointer`}
+              className={`flex flex-col items-center rounded-3xl w-full px-6 pt-4 pb-2 text-sm hover:text-newGreen bg-newGreen cursor-pointer`}
               style={{
                 backgroundImage: `url('/img/home/mobile-navbar-start-building.svg')`,
                 backgroundRepeat: 'no-repeat',
@@ -188,8 +185,8 @@ export const MobileNavbar = ({
                 <PrimaryButton
                   text='Start Building'
                   href='https://docs.etherlink.com/'
-                  className='!bg-grey900 w-full'
-                  textClassName='!text-grey100 text-sm'
+                  className='!bg-grey-900 w-full'
+                  textClassName='!text-grey-100 text-sm'
                 />
               </div>
             </div>
@@ -199,14 +196,14 @@ export const MobileNavbar = ({
             className={`flex flex-col gap-4 transition-all ${direction === 'in' ? 'slide-out-right' : 'slide-in-right'}`}
           >
             {/* Render the active dropdown's items */}
-            {activeDropdown?.map((item, index) =>
+            {activeSecondary?.map((item, index) =>
               item.subItems?.length ? (
                 <div key={index}>
                   <div
                     onClick={() => toggleDropdown(index)}
-                    className={`flex items-center w-full px-6 py-[10px] text-sm text-gray-300 hover:text-newGreen hover:bg-grey700 cursor-pointer ${
+                    className={`flex items-center w-full px-6 py-[10px] text-sm text-gray-300 hover:text-newGreen hover:bg-grey-700 cursor-pointer ${
                       openDropdowns[index]
-                        ? 'rounded-t-2xl bg-grey700 text-neonGreen'
+                        ? 'rounded-t-2xl bg-grey-700 text-neonGreen'
                         : 'rounded-2xl'
                     } transition-all duration-500`}
                   >
@@ -223,13 +220,13 @@ export const MobileNavbar = ({
                   </div>
 
                   {openDropdowns[index] && (
-                    <div className='pl-0 bg-grey800 rounded-b-2xl'>
+                    <div className='pl-0 bg-grey-800 rounded-b-2xl'>
                       {item.subItems.map((subItem, subIndex) => (
                         <Link
                           href={subItem.link}
                           target={isExternalLink(subItem.link)}
                           key={`${index}-${subIndex}`}
-                          className={`block w-full px-[34px] py-3 rounded-full text-gray-300 font-semibold text-sm hover:text-newGreen hover:bg-grey700 transition-all duration-500 ${
+                          className={`block w-full px-[34px] py-3 rounded-full text-gray-300 font-semibold text-sm hover:text-newGreen hover:bg-grey-700 transition-all duration-500 ${
                             subIndex === (item.subItems?.length ?? 0) - 1
                               ? 'rounded-b-md'
                               : ''
@@ -244,7 +241,7 @@ export const MobileNavbar = ({
               ) : (
                 <Link
                   href={item.link}
-                  className='w-full px-6 py-[10px] rounded-full text-gray-300 font-bold text-sm hover:text-newGreen hover:bg-grey700 transition-all duration-500'
+                  className='w-full px-6 py-[10px] rounded-full text-gray-300 font-bold text-sm hover:text-newGreen hover:bg-grey-700 transition-all duration-500'
                   target={isExternalLink(item.link)}
                   key={index}
                 >

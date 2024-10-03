@@ -12,25 +12,25 @@ import { CheveronIcon } from '../Icons/CheveronIcon'
 const customDropdownTheme: CustomFlowbiteTheme['dropdown'] = {
   arrowIcon: 'ml-2 h-4 w-4',
   content:
-    'py-1 focus:outline-none text-grey300 m-2 rounded-3xl bg-grey900 space-y-[4px]',
+    'py-1 focus:outline-none text-grey-300 m-2 rounded-3xl bg-grey-900 space-y-[4px]',
   floating: {
     item: {
       container:
-        'hover:bg-grey600 text-white hover:text-newGreen transition-all duration-500 rounded rounded-3xl',
-      base: 'text-sm px-3 py-2 w-full px-[24px] block text-grey100 hover:text-newGreen'
+        'hover:bg-grey-600 text-white hover:text-newGreen transition-all duration-500 rounded rounded-3xl',
+      base: 'text-sm px-3 py-2 w-full px-[24px] block text-grey-100 hover:text-newGreen'
     },
     style: {
-      auto: 'text-sm bg-grey900 w-[290px] rounded-[24px] border-[1px] border-grey600'
+      auto: 'text-sm bg-grey-900 w-[290px] rounded-[24px] border-[1px] border-grey-600'
     }
   },
   inlineWrapper:
-    'flex items-center text-grey300 hover:text-newGreen hover:bg-grey600 px-3 py-2 rounded-[32px] text-sm transition-all duration-500 px-6 py-3'
+    'flex items-center text-grey-300 hover:text-newGreen hover:bg-grey-600 px-3 py-2 rounded-[32px] text-sm transition-all duration-500 px-6 py-3'
 }
 
 const customDropdownThemeTwo: FlowbiteDropdownItemTheme = {
   container:
-    'hover:bg-grey600 text-white hover:text-newGreen transition-all duration-500 rounded rounded-3xl',
-  base: 'text-sm px-3 py-2 w-full px-[24px] block text-grey100 hover:text-newGreen',
+    'hover:bg-grey-600 text-white hover:text-newGreen transition-all duration-500 rounded rounded-3xl',
+  base: 'text-sm px-3 py-2 w-full px-[24px] block text-grey-100 hover:text-newGreen',
   icon: ''
 }
 
@@ -61,7 +61,7 @@ export const NavbarList = ({ dropdown, title, link, items }: NavbarItem) => {
                 onClick={() => toggleDropdown(index)}
                 className={`flex items-center w-full ${
                   openDropdowns[index]
-                    ? 'rounded-t-[12px] text-neonGreen bg-grey700'
+                    ? 'rounded-t-[12px] text-neonGreen bg-grey-700'
                     : 'rounded-[24px]'
                 }`}
               >
@@ -88,7 +88,7 @@ export const NavbarList = ({ dropdown, title, link, items }: NavbarItem) => {
                       href={subItem.link}
                       target={isExternalLink(subItem.link)}
                       key={`${index}-${subIndex}`}
-                      className={`hover:text-newGreen bg-grey800 ${
+                      className={`hover:text-newGreen bg-grey-800 ${
                         subIndex === (data.subItems?.length ?? 0) - 1
                           ? 'rounded-b-[12px]'
                           : ''
@@ -119,7 +119,7 @@ export const NavbarList = ({ dropdown, title, link, items }: NavbarItem) => {
   return (
     <Link
       href={link as string}
-      className='w-full px-6 py-3 rounded-[32px] text-grey300 text-sm hover:text-newGreen hover:bg-grey600 transition-all duration-500'
+      className='w-full px-6 py-3 rounded-[32px] text-grey-300 text-sm hover:text-newGreen hover:bg-grey-600 transition-all duration-500'
       target={isExternalLink(link as string)}
       rel='noopener noreferrer'
     >
