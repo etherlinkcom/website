@@ -1,6 +1,7 @@
 export interface Item {
   name: string
   link: string
+  subItems?: Item[]
 }
 
 export interface NavbarItem {
@@ -13,7 +14,7 @@ export interface NavbarItem {
 export const NAVBAR_ITEMS: NavbarItem[] = [
   {
     dropdown: true,
-    title: 'Bridge',
+    title: 'Use',
     items: [
       {
         name: 'EVM bridge',
@@ -22,6 +23,14 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
       {
         name: 'Tezos bridge',
         link: 'https://bridge.etherlink.com'
+      },
+      {
+        name: 'Status',
+        link: 'https://status.etherlink.com/'
+      },
+      {
+        name: 'Explorer',
+        link: 'https://explorer.etherlink.com/'
       }
     ]
   },
@@ -31,40 +40,44 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
     link: '/ecosystem'
   },
   {
-    dropdown: false,
-    title: 'Docs',
-    link: 'https://docs.etherlink.com/'
-  },
-  {
-    dropdown: false,
-    title: 'Faucet',
-    link: 'https://faucet.etherlink.com/'
-  },
-  {
-    dropdown: false,
-    title: 'Status',
-    link: 'https://status.etherlink.com/'
-  },
-  {
     dropdown: true,
-    title: 'Resources',
+    title: 'Build',
     items: [
       {
-        name: 'Testnet explorer',
-        link: 'https://testnet-explorer.etherlink.com/'
+        name: 'Docs',
+        link: 'https://docs.etherlink.com/'
       },
       {
-        name: 'Mainnet beta explorer',
-        link: 'https://explorer.etherlink.com/'
-      },
-      {
-        name: 'Blog',
-        link: 'https://medium.com/@etherlink'
-      },
-      {
-        name: 'Using your wallet',
+        name: 'Use your wallet',
         link: 'https://docs.etherlink.com/get-started/using-your-wallet/'
+      },
+      {
+        name: 'Tezos Bridge',
+        link: 'https://testnet.bridge.etherlink.com/',
+        subItems: [
+          {
+            name: 'Tezos Testnet',
+            link: 'https://testnet.bridge.etherlink.com/testnet'
+          },
+          {
+            name: 'Tezos Mainnet',
+            link: 'https://bridge.etherlink.com/mainnet'
+          }
+        ]
+      },
+      {
+        name: 'Faucet',
+        link: 'https://faucet.etherlink.com/'
+      },
+      {
+        name: 'Explorer',
+        link: 'https://testnet.explorer.etherlink.com/'
       }
     ]
+  },
+  {
+    dropdown: false,
+    title: 'Blog',
+    link: 'https://medium.com/@etherlink'
   }
 ]

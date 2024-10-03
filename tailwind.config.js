@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         ...colors,
         newGreen: '#38ff9c',
+        neonGreen: '#28B56F',
         lightGreen: '#b6feda',
         darkGreen: '#59ad8c',
         midGreen: '#9bfecd',
@@ -23,7 +24,12 @@ module.exports = {
         lightBlack: '#262626',
         midBlack: '#1c1c1c',
         darkBlack: '#171717',
-        white: '#ffffff'
+        white: '#ffffff',
+        grey100: '#BCBCBC',
+        grey600: '#232323',
+        grey700: '#1B1B1B',
+        grey800: '#151515',
+        grey900: '#101010'
       },
       screens: {
         'max-sm': { max: '640px' },
