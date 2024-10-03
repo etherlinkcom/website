@@ -7,13 +7,15 @@ export const PrimaryButton = ({
   onClick,
   href,
   icon,
-  className
+  className,
+  textClassName
 }: {
   text: string
   href?: string
   onClick?: () => void
   icon?: React.ReactNode
   className?: string
+  textClassName?: string
 }) => {
   const router = useRouter()
 
@@ -34,7 +36,9 @@ export const PrimaryButton = ({
       role='button'
     >
       <div className='flex justify-center gap-2'>
-        <span className='relative z-10 text-lg text-lightBlack font-semibold'>
+        <span
+          className={`relative z-10 text-lg text-lightBlack font-semibold ${textClassName}`}
+        >
           {text}
         </span>
         {icon}

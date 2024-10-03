@@ -22,6 +22,24 @@ export const TOP10PROJECTS: ProjectCardProps[] = [
     website: 'https://layerzero.network/'
   },
   {
+    image: '/img/ecosystem/Pyth-Network.jpeg',
+    title: 'Pyth Network',
+    description:
+      'Secure your smart contracts with reliable, low-latency market data from institutional sources. ',
+    categories: ['infra'],
+    twitter: 'https://x.com/PythNetwork',
+    website: 'https://pyth.network/'
+  },
+  {
+    image: '/img/ecosystem/TheGraph.jpg',
+    title: 'The Graph',
+    description:
+      'A Web3 protocol for organizing and accessing blockchain data.',
+    categories: ['infra'],
+    twitter: 'https://x.com/graphprotocol',
+    website: 'https://thegraph.com'
+  },
+  {
     image: '/img/ecosystem/Subsquid.jpeg',
     title: 'Subsquid',
     description:
@@ -82,24 +100,6 @@ export const TOP10PROJECTS: ProjectCardProps[] = [
     categories: ['defi'],
     twitter: 'https://x.com/PlendFinance',
     website: 'https://www.plend.finance/'
-  },
-  {
-    image: '/img/ecosystem/TheGraph.jpg',
-    title: 'The Graph',
-    description:
-      'A Web3 protocol for organizing and accessing blockchain data.',
-    categories: ['infra'],
-    twitter: 'https://x.com/graphprotocol',
-    website: 'https://thegraph.com'
-  },
-  {
-    image: '/img/ecosystem/Pyth-Network.jpeg',
-    title: 'Pyth Network',
-    description:
-      'Secure your smart contracts with reliable, low-latency market data from institutional sources. ',
-    categories: ['infra'],
-    twitter: 'https://x.com/PythNetwork',
-    website: 'https://pyth.network/'
   }
 ]
 
@@ -189,7 +189,7 @@ export const ExploreEcosystemCard = ({
           )}
           {!!website && (
             <Link href={website} target='_blank'>
-              <ArrowRightIcon className='hover:fill-black hover:bg-newGreen transition-colors duration-300' />
+              <ArrowRightIcon className='h-8 w-8 shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] backdrop-blur-md rounded p-[6px] hover:fill-black hover:bg-newGreen transition-colors duration-300' />
             </Link>
           )}
         </div>
