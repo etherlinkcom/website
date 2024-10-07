@@ -180,7 +180,7 @@ export const ExploreEcosystemCard = ({
           )}
           {!!website && (
             <Link href={website} target='_blank'>
-              <ArrowRightIcon className='h-8 w-8 shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] backdrop-blur-md rounded p-[6px] hover:fill-black hover:bg-newGreen transition-colors duration-300' />
+              <ArrowRightIcon className='hover:fill-black hover:bg-newGreen transition-colors duration-300' />
             </Link>
           )}
         </div>
