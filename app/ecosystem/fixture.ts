@@ -55,15 +55,6 @@ export const projects: ProjectCardProps[] = [
     website: 'https://redstone.finance/'
   },
   {
-    image: '/img/ecosystem/Plend.jpg',
-    title: 'Plend',
-    description:
-      'A platform for discovering the best rates and effortlessly bridging positions across all EVM chains.',
-    categories: ['defi'],
-    twitter: 'https://x.com/PlendFinance',
-    website: 'https://www.plend.finance/'
-  },
-  {
     image: '/img/ecosystem/Hanji.jpeg',
     title: 'Hanji',
     description: 'An on-chain central limit order book.',
@@ -318,6 +309,15 @@ export const projects: ProjectCardProps[] = [
     description:
       'Chess meets blockchain: your destination for innovative gameplay and secure transactions, reshaping the future of on-chain chess!',
     categories: ['gaming'],
+    twitter: 'https://x.com/BattleRiseGame',
+    website: 'https://www.battlerise.com/'
+  },
+  {
+    image: '/img/ecosystem/battlerise.png',
+    title: 'Battlerise',
+    description:
+      'An innovative rogue-like RPG with NFT characters and items, supported by a token which can be used to upgrade these NFTs',
+    categories: ['gaming'],
     twitter: 'https://x.com/play_chess_/',
     website: 'https://www.chessplay.live/'
   },
@@ -364,5 +364,165 @@ export const projects: ProjectCardProps[] = [
     categories: ['infra'],
     twitter: '',
     website: 'https://www.traceye.io/'
+  },
+  {
+    image: '/img/ecosystem/organicgrowth.jpg',
+    title: 'Organic Growth',
+    description:
+      'Launch memecoins on Etherlink. Trustless. Permissionless. Open-sourced.',
+    categories: ['defi'],
+    twitter: 'https://x.com/OrganicGrowth__',
+    website: 'https://www.organicgrowth.wtf/'
+  },
+  {
+    image: '/img/ecosystem/degenerator.jpg',
+    title: 'Degenerator.wtf',
+    description: 'Powering the memecoin supercycle on Etherlink.',
+    categories: ['defi'],
+    twitter: 'https://x.com/degenerator_wtf',
+    website: 'https://www.degenerator.wtf/'
+  },
+  {
+    image: '/img/ecosystem/zerodev.jpg',
+    title: 'ZeroDev',
+    description:
+      'ZeroDev is a smart, white-labeled, and modular embedded wallet for building user-friendly Web3 experiences, particularly for DeFi applications.',
+    categories: ['dev-tools'],
+    twitter: 'https://x.com/zerodev_app',
+    website: 'https://zerodev.app/'
+  },
+  {
+    image: '/img/ecosystem/pimlico.jpg',
+    title: 'Pimlico',
+    description:
+      "Pimlico is the world's most advanced ERC-4337 account abstraction infrastructure platform, offering tools to build, deploy, and manage smart accounts.",
+    categories: ['infra'],
+    twitter: 'https://x.com/pimlicoHQ',
+    website: 'https://www.pimlico.io/'
+  },
+  {
+    image: '/img/ecosystem/safe.jpg',
+    title: 'Safe',
+    description:
+      'Safe is at the forefront of modular smart account infrastructure, building universal and open contract standards for the custody of digital assets, data, and identity.',
+    categories: ['wallet'],
+    twitter: 'https://x.com/safe',
+    website: 'https://safe.global/'
+  },
+  {
+    image: '/img/ecosystem/metamask.jpg',
+    title: 'MetaMask',
+    description:
+      'MetaMask is the leading self-custodial wallet, providing a safe and simple way to access blockchain applications and Web3. Trusted by millions globally.',
+    categories: ['wallet'],
+    twitter: 'https://x.com/metamask?lang=en',
+    website: 'https://metamask.io/'
+  },
+  {
+    image: '/img/ecosystem/baanx.jpg',
+    title: 'Baanx',
+    description:
+      'Baanx is a UK-based B2B2C banking platform offering a turn-key crypto payment solution for the masses.',
+    categories: ['payment'],
+    twitter: 'https://x.com/BaanxGroup',
+    website: 'https://baanx.com/'
+  },
+  {
+    image: '/img/ecosystem/trustswap.jpg',
+    title: 'TrustSwap',
+    description:
+      'TrustSwap provides DeFi tools for token holders and businesses to buy, trade, create, and secure crypto assets with confidence.',
+    categories: ['defi'],
+    twitter: 'https://x.com/TrustSwap',
+    website: 'https://trustswap.com/'
+  },
+  {
+    image: '/img/ecosystem/teamfinance.jpg',
+    title: 'Team Finance',
+    description:
+      'Team Finance allows companies to create, vest, lock, track, and spin up staking pools for their tokens.',
+    categories: ['defi'],
+    twitter: 'https://x.com/teamfinance_',
+    website: 'https://www.team.finance/'
+  },
+  {
+    image: '/img/ecosystem/dappradar.jpg',
+    title: 'DappRadar',
+    description:
+      "Explore NFTs, NFT Marketplaces, Blockchain Games, DeFi, and Dapps on the world's leading Dapp store.",
+    categories: ['dev-tools'],
+    twitter: 'https://x.com/DappRadar',
+    website: 'https://dappradar.com/'
+  },
+  {
+    image: '/img/ecosystem/rarible.jpg',
+    title: 'Rarible',
+    description:
+      'Rarible is an aggregated NFT marketplace that enables buying, selling, and trading non-fungible tokens (NFTs).',
+    categories: ['nfts'],
+    twitter: 'https://x.com/rarible',
+    website: 'https://rarible.com/'
+  },
+  {
+    image: '/img/ecosystem/idos.jpg',
+    title: 'idOS',
+    description:
+      'An open-source, composable, and chain-agnostic solution to enable true decentralized identity across the web3 space.',
+    categories: ['kyc'],
+    twitter: 'https://x.com/idOS_network',
+    website: 'https://idos.network/'
+  },
+  {
+    image: '/img/ecosystem/arianee.jpg',
+    title: 'Arianee',
+    description:
+      'The most widely used protocol for tokenized digital product passports. Open, interoperable, and working with over 50 global brands.',
+    categories: ['nfts'],
+    twitter: 'https://x.com/ArianeeProject',
+    website: 'https://www.arianee.org/'
+  },
+  {
+    image: '/img/ecosystem/goqii.jpg',
+    title: 'GOQii',
+    description:
+      "India's leading smart preventive healthcare platform for a better future of health.",
+    categories: ['health'],
+    twitter: 'https://x.com/goqii',
+    website: 'https://goqii.com/uk-en'
+  },
+  {
+    image: '/img/ecosystem/uncx.png',
+    title: 'UNCX Network',
+    description:
+      'Fully decentralized multi-chain service provider since 2020. Creators of liquidity locking.',
+    categories: ['defi'],
+    twitter: 'https://x.com/UNCX_token',
+    website: 'https://uncx.network/'
+  },
+  {
+    image: '/img/ecosystem/madfish.jpg',
+    title: 'mad.fish',
+    description:
+      'A blockchain technology company focusing on developing open-source projects for DeFi ecosystems.',
+    categories: ['ecosystem-partner'],
+    twitter: 'https://x.com/madfishofficial',
+    website: 'https://mad.fish/'
+  },
+  {
+    image: '/img/ecosystem/iguanadex.jpg',
+    title: 'IguanaDEX',
+    description: 'One-stop decentralized trading platform on Etherlink.',
+    categories: ['defi'],
+    twitter: 'https://x.com/iguanadex',
+    website: 'https://www.iguanadex.com/?chain=etherlink'
+  },
+  {
+    image: '/img/ecosystem/superlend.jpg',
+    title: 'Superlend',
+    description:
+      'DeFi’s premier lending & borrowing aggregator. Manage cross-chain positions and optimize capital seamlessly across chains.',
+    categories: ['defi'],
+    twitter: 'https://x.com/SuperlendHQ',
+    website: 'https://www.superlend.xyz/'
   }
 ]

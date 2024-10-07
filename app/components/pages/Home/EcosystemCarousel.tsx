@@ -91,15 +91,6 @@ export const TOP10PROJECTS: ProjectCardProps[] = [
     categories: ['defi'],
     twitter: 'https://twitter.com/rivoxyz',
     website: 'https://www.rivo.xyz/'
-  },
-  {
-    image: '/img/ecosystem/Plend.jpg',
-    title: 'Plend',
-    description:
-      'A platform for discovering the best rates and effortlessly bridging positions across all EVM chains.',
-    categories: ['defi'],
-    twitter: 'https://x.com/PlendFinance',
-    website: 'https://www.plend.finance/'
   }
 ]
 
