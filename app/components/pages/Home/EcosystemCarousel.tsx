@@ -91,15 +91,6 @@ export const TOP10PROJECTS: ProjectCardProps[] = [
     categories: ['defi'],
     twitter: 'https://twitter.com/rivoxyz',
     website: 'https://www.rivo.xyz/'
-  },
-  {
-    image: '/img/ecosystem/Plend.jpg',
-    title: 'Plend',
-    description:
-      'A platform for discovering the best rates and effortlessly bridging positions across all EVM chains.',
-    categories: ['defi'],
-    twitter: 'https://x.com/PlendFinance',
-    website: 'https://www.plend.finance/'
   }
 ]
 
@@ -189,7 +180,7 @@ export const ExploreEcosystemCard = ({
           )}
           {!!website && (
             <Link href={website} target='_blank'>
-              <ArrowRightIcon className='h-8 w-8 shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] backdrop-blur-md rounded p-[6px] hover:fill-black hover:bg-newGreen transition-colors duration-300' />
+              <ArrowRightIcon className='hover:fill-black hover:bg-newGreen transition-colors duration-300' />
             </Link>
           )}
         </div>

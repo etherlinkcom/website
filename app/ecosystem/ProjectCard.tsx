@@ -19,6 +19,9 @@ type Category =
   | 'ecosystem-partner'
   | 'launchpad'
   | 'rwa'
+  | 'wallet'
+  | 'kyc'
+  | 'health'
 
 export interface ProjectCardProps {
   image: string
@@ -115,6 +118,12 @@ const convertCategory = (category: Category) => {
       return 'Launchpad'
     case 'rwa':
       return 'RWA'
+    case 'wallet':
+      return 'Wallet'
+    case 'kyc':
+      return 'KYC'
+    case 'health':
+      return 'Health'
   }
 }
 
