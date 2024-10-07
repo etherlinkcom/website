@@ -12,7 +12,7 @@ export const ExperienceSection = () => {
       <SectionBgGradient />
       <div className='mb-[104px] md:mb-[204px]'>
         <h2 className='text-white font-bold text-3xl md:text-6xl text-center mb-3 -tracking-[1.1px]'>
-          Experience an Exploitation
+          Experience an exploitation
         </h2>
         <h2 className='text-newGreen font-bold text-3xl md:text-6xl text-center -tracking-[1.1px]'>
           Free EVM Environment
@@ -39,7 +39,7 @@ export const ExperienceSection = () => {
           }
           title='EVM'
           subTitle='Compatible'
-          desc='Smoothly deploy any EVM codebase and migrate your users and assets from Ethereum 1, and other interoperable chains, enabling seamless interaction and asset transfers across different networks.'
+          desc='Smoothly deploy any EVM codebase and migrate your users and assets from Ethereum, and other interoperable chains, enabling seamless interaction and asset transfers across different networks.'
         />
         <CustomFlex
           flexReverse={true}
