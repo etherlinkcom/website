@@ -6,9 +6,14 @@ import 'swiper/css/pagination'
 import './react-swiper.css'
 import { Pagination } from 'swiper/modules'
 import Link from 'next/link'
-import { ExploreEcosystemCard, TOP10PROJECTS } from './EcosystemCarousel'
+import { ExploreEcosystemCard } from './EcosystemCarousel'
+import { Project } from '../../../../utils/airtable/ecosystem'
 
-export const EcosystemCarouselMobile = () => {
+export const EcosystemCarouselMobile = ({
+  projects
+}: {
+  projects: Project[]
+}) => {
   return (
     <div>
       <div className='mb-10'>
@@ -24,7 +29,7 @@ export const EcosystemCarouselMobile = () => {
             clickable: true
           }}
         >
-          {TOP10PROJECTS.map((data, index) => (
+          {projects.map((data, index) => (
             <SwiperSlide key={index}>
               <ExploreEcosystemCard {...data} />
             </SwiperSlide>

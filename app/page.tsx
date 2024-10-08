@@ -7,6 +7,11 @@ import { DeveloperExperience } from './components/pages/Home/DeveloperExperience
 import { ExploreEcosystem } from './components/pages/Home/ExploreEcosystem'
 import Cta from './components/cta'
 import type { Metadata } from 'next'
+import {
+  fetchAirtableData,
+  mapToProject,
+  RawProject
+} from '../utils/airtable/ecosystem'
 
 export const metadata: Metadata = {
   title:
@@ -15,11 +20,21 @@ export const metadata: Metadata = {
     'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.'
 }
 
-const Home = () => {
+// Set the default revalidation time for this page to 24 hours in seconds
+export const revalidate = 86400
+
+const Home = async () => {
+  const airtableData = await fetchAirtableData(
+    `?filterByFormula=NOT({rank} = '')&sort[0][field]=rank`
+  )
+
+  const rawProjects = airtableData?.records || []
   return (
     <>
       <Main />
-      <ExploreEcosystem />
+      <ExploreEcosystem
+        projects={rawProjects.map((table: RawProject) => mapToProject(table))}
+      />
       <ExperienceSection />
       <DeveloperExperience />
       <Container>
