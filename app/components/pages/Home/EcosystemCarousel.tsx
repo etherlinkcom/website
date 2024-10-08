@@ -4,97 +4,16 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { ProjectCardProps, CategoryBox } from '../../../ecosystem/ProjectCard'
+import { ProjectCardProps } from '../../../ecosystem/ProjectCard'
 import Link from 'next/link'
 import Image from 'next/image'
 import { CheveronIcon } from '../../Icons/CheveronIcon'
 import { TwitterIcon } from '../../Icons/TwitterIcon'
 import { ArrowRightIcon } from '../../Icons/ArrowRightIcon'
+import { Project, TAGS_MAP } from '../../../../utils/airtable/ecosystem'
 
-export const TOP10PROJECTS: ProjectCardProps[] = [
-  {
-    image: '/img/ecosystem/LayerZero.jpeg',
-    title: 'LayerZero',
-    description:
-      'An omnichain interoperability protocol that allows different blockchains to communicate with each other.',
-    categories: ['bridge'],
-    twitter: 'https://twitter.com/LayerZero_Labs',
-    website: 'https://layerzero.network/'
-  },
-  {
-    image: '/img/ecosystem/Pyth-Network.jpeg',
-    title: 'Pyth Network',
-    description:
-      'Secure your smart contracts with reliable, low-latency market data from institutional sources. ',
-    categories: ['infra'],
-    twitter: 'https://x.com/PythNetwork',
-    website: 'https://pyth.network/'
-  },
-  {
-    image: '/img/ecosystem/TheGraph.jpg',
-    title: 'The Graph',
-    description:
-      'A Web3 protocol for organizing and accessing blockchain data.',
-    categories: ['infra'],
-    twitter: 'https://x.com/graphprotocol',
-    website: 'https://thegraph.com'
-  },
-  {
-    image: '/img/ecosystem/Subsquid.jpeg',
-    title: 'Subsquid',
-    description:
-      'A peer-to-peer network to batch query and aggregate terabytes of on-chain and off-chain data.',
-    categories: ['data-science'],
-    twitter: 'https://twitter.com/subsquid',
-    website: 'https://subsquid.io/'
-  },
-  {
-    image: '/img/ecosystem/Layer3.jpg',
-    title: 'Layer3',
-    description:
-      'Discover the world of crypto like never before with interactive quests that make learning and exploring crypto fun, engaging, and rewarding.',
-    categories: ['social'],
-    twitter: 'https://x.com/layer3xyz',
-    website: 'https://layer3.xyz/'
-  },
-  {
-    image: '/img/ecosystem/Thirdweb.jpg',
-    title: 'Thirdweb',
-    description:
-      'A platform that provides a suite of tools for developers to build, launch, and manage their Web3 projects.',
-    categories: ['dev-tools'],
-    twitter: 'https://twitter.com/thirdweb',
-    website: 'https://thirdweb.com/'
-  },
-  {
-    image: '/img/ecosystem/Redstone.png',
-    title: 'Redstone',
-    description:
-      'Cross-chain data oracle providing pricing data for Smart Contracts & DeFi protocols.',
-    categories: ['oracle'],
-    twitter: 'https://twitter.com/redstone_defi',
-    website: 'https://redstone.finance/'
-  },
-  {
-    image: '/img/ecosystem/Hanji.jpeg',
-    title: 'Hanji',
-    description: 'An on-chain central limit order book.',
-    categories: ['defi'],
-    twitter: 'https://twitter.com/HanjiProtocol',
-    website: 'https://hanji.io/'
-  },
-  {
-    image: '/img/ecosystem/Rivo.jpeg',
-    title: 'Rivo',
-    description:
-      'A self-custodial yield marketplace designed for earning passive income.',
-    categories: ['defi'],
-    twitter: 'https://twitter.com/rivoxyz',
-    website: 'https://www.rivo.xyz/'
-  }
-]
-
-export const EcosystemCarousel = () => {
+export const EcosystemCarousel = ({ projects }: { projects: Project[] }) => {
+  console.log(projects)
   const swiperInfoRef = useRef<any>()
 
   return (
@@ -109,7 +28,7 @@ export const EcosystemCarousel = () => {
           spaceBetween={24}
           slidesPerView={3}
         >
-          {TOP10PROJECTS.map((data, index) => (
+          {projects.map((data, index) => (
             <SwiperSlide key={index}>
               <ExploreEcosystemCard {...data} />
             </SwiperSlide>
@@ -149,12 +68,12 @@ export const EcosystemCarousel = () => {
 }
 
 export const ExploreEcosystemCard = ({
-  image,
-  title,
-  description,
-  categories,
-  twitter,
-  website
+  Logo,
+  Project,
+  Description,
+  Tags,
+  Twitter,
+  Website
 }: ProjectCardProps) => {
   return (
     <div
@@ -165,32 +84,37 @@ export const ExploreEcosystemCard = ({
         <div className='flex items-center gap-1'>
           <Image
             className='w-[30px] h-[30px] object-contain rounded-xl'
-            src={image}
-            alt={title}
+            src={Logo[0].url}
+            alt={Project + ' Logo'}
             width={30}
             height={30}
           />
-          <p className='font-bold text-white text-xl'>{title}</p>
+          <p className='font-bold text-white text-xl pl-2'>{Project}</p>
         </div>
         <div className='flex items-center gap-2 z-50'>
-          {!!twitter && (
-            <Link href={twitter} target='_blank'>
+          {!!Twitter && (
+            <Link href={Twitter} target='_blank'>
               <TwitterIcon className='hover:fill-black hover:bg-newGreen transition-colors duration-300' />
             </Link>
           )}
-          {!!website && (
-            <Link href={website} target='_blank'>
+          {!!Website && (
+            <Link href={Website} target='_blank'>
               <ArrowRightIcon className='hover:fill-black hover:bg-newGreen transition-colors duration-300' />
             </Link>
           )}
         </div>
       </div>
       <p className='w-full text-gray-300 text-sm mb-[24px] h-full'>
-        {description}
+        {Description}
       </p>
       <div className='flex items-center gap-2 h-full'>
-        {categories.map((category, index) => (
-          <CategoryBox category={category} key={index} />
+        {Tags.map((category, index) => (
+          <div
+            key={index}
+            className='bg-darkBlack text-gray-300 text-xs rounded p-2 text-center'
+          >
+            {TAGS_MAP[category]}
+          </div>
         ))}
       </div>
       {/* <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling' /> */}

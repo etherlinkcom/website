@@ -3,10 +3,11 @@ import Container from '../../container'
 import { EcosystemCarousel } from './EcosystemCarousel'
 import { EcosystemCarouselMobile } from './EcosystemCarouselMobile'
 import { SectionBgGradient } from './SectionBgGradient'
+import { Project } from '../../../../utils/airtable/ecosystem'
 
 const CATEGORIES = ['Defi', 'Web 3 Gaming', 'SocialFi', 'NFTs', 'DAOs']
 
-export const ExploreEcosystem = () => {
+export const ExploreEcosystem = ({ projects }: { projects: Project[] }) => {
   return (
     <Container className='relative mb-[104px]'>
       <SectionBgGradient />
@@ -24,10 +25,10 @@ export const ExploreEcosystem = () => {
         ))}
       </div> */}
       <div className='hidden md:block'>
-        <EcosystemCarousel />
+        <EcosystemCarousel projects={projects} />
       </div>
       <div className='block md:hidden'>
-        <EcosystemCarouselMobile />
+        <EcosystemCarouselMobile projects={projects} />
       </div>
     </Container>
   )

@@ -2,9 +2,9 @@
 import React, { useState } from 'react'
 import Container from '../components/container'
 import { ProjectCard } from './ProjectCard'
-import { projects } from './fixture'
+import { Project } from '../../utils/airtable/ecosystem'
 
-export const ProjectList = () => {
+export const ProjectList = ({ projects }: { projects: Project[] }) => {
   const [numToShow, setNumToShow] = useState(18)
 
   const totalProjects = projects.length
