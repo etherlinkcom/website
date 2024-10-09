@@ -7,7 +7,6 @@ import {
   mapToProject,
   RawProject,
   RawProjectStatus,
-  TAGS_MAP,
   updateAirtableRecords
 } from '../../utils/airtable/ecosystem'
 

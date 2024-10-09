@@ -33,7 +33,6 @@ export interface Project {
     size: number
     type: string
   }>
-  Logline: string
   Email: string
   Twitter: string
   rank: number
@@ -151,7 +150,6 @@ export const mapToProject = (rawProject: RawProject): Project => {
     Slug: fields.Slug,
     Date: fields.Date,
     Project: fields.Project,
-    Logline: fields.Logline,
     Logo: fields.Logo,
     Tags: fields.Tags,
     Email: fields.Email,
