@@ -1,5 +1,4 @@
 import axios from 'axios'
-import isReachable from 'is-reachable'
 
 export type ProjectStatus = Pick<Project, 'Status'>
 export type RawProjectStatus = Omit<RawProject, 'createdTime' | 'fields'> & {
@@ -72,8 +71,12 @@ export const checkUrlStatus = async (urls: string[]) => {
 
   for (const url of urls) {
     try {
-      const isUrlReachable = await isReachable(url, { timeout: 10000 })
-      results.push(isUrlReachable)
+      const response = await fetch(url, {
+        headers: {
+          'Cache-Control': 'no-cache'
+        }
+      })
+      results.push(response.ok)
     } catch (error) {
       console.error(`Error checking URL: ${url}`, error)
       results.push(false)
