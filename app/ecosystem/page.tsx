@@ -19,7 +19,7 @@ export const maxDuration = 1000
 const Ecosystem = async () => {
   const airtableData = await fetchAirtableData()
 
-  const rawProjects = airtableData?.records || []
+  const rawProjects: RawProject[] = airtableData?.records || []
 
   const recordsToUpdate: RawProjectStatus[] = []
   const updatedProjects: RawProject[] = []
@@ -31,12 +31,15 @@ const Ecosystem = async () => {
     recordsToUpdate.push({
       id: rawProject.id,
       fields: {
-        Status: isReachableStatus[0] ? 'active' : 'inactive'
+        Status:
+          isReachableStatus[0] || rawProject.fields.bypass_url_check
+            ? 'active'
+            : 'inactive'
       }
     })
 
     if (
-      isReachableStatus[0] &&
+      (isReachableStatus[0] || rawProject.fields.bypass_url_check) &&
       rawProject.fields.approval_status === 'approved'
     ) {
       updatedProjects.push(rawProject)

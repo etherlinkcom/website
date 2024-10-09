@@ -31,6 +31,7 @@ export interface Project {
   Email: string
   Twitter: string
   rank: number
+  bypass_url_check: boolean
 }
 
 export const TAGS_MAP: Record<string, string> = {
@@ -71,7 +72,7 @@ export const checkUrlStatus = async (urls: string[]) => {
 
   for (const url of urls) {
     try {
-      const isUrlReachable = await isReachable(url)
+      const isUrlReachable = await isReachable(url, { timeout: 10000 })
       results.push(isUrlReachable)
     } catch (error) {
       console.error(`Error checking URL: ${url}`, error)
@@ -106,7 +107,7 @@ export const updateAirtableRecords = async (
 ) => {
   if (recordsToUpdate.length === 0) return
 
-  const airtableApiUrl = `https://api.airtable.com/v0/${process.env.BASE_ID}/${process.env.TABLE_NAME}`
+  const airtableApiUrl = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
   const batchedRecords = batchArray(recordsToUpdate, 10)
 
   for (let i = 0; i < batchedRecords.length; i++) {
@@ -153,6 +154,7 @@ export const mapToProject = (rawProject: RawProject): Project => {
     approval_status: fields.approval_status,
     Status: fields.Status,
     Twitter: fields.Twitter,
-    rank: fields.rank
+    rank: fields.rank,
+    bypass_url_check: fields.bypass_url_check
   }
 }
