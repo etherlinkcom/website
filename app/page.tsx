@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.'
 }
 
+// Airtable Image URLs expire every 2 hours, so in order to get always up to date images
+// but not having to request them at every refresh of the page we can use the revalidate option instead.
 export const revalidate = 1000
 
 const Home = async () => {
