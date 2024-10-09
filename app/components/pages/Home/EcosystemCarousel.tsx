@@ -13,7 +13,6 @@ import { ArrowRightIcon } from '../../Icons/ArrowRightIcon'
 import { Project, TAGS_MAP } from '../../../../utils/airtable/ecosystem'
 
 export const EcosystemCarousel = ({ projects }: { projects: Project[] }) => {
-  console.log(projects)
   const swiperInfoRef = useRef<any>()
 
   return (

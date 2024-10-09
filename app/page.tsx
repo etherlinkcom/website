@@ -1,9 +1,7 @@
 import Container from './components/container'
 import { Main } from './components/pages/Home/Main'
-// import { Partners } from './components/pages/Home/Partners'
 import { ExperienceSection } from './components/pages/Home/ExperienceSection'
 import { DeveloperExperience } from './components/pages/Home/DeveloperExperience'
-// import { Roadmap } from './components/pages/Home/Roadmap'
 import { ExploreEcosystem } from './components/pages/Home/ExploreEcosystem'
 import Cta from './components/cta'
 import type { Metadata } from 'next'
@@ -20,8 +18,7 @@ export const metadata: Metadata = {
     'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.'
 }
 
-// Set the default revalidation time for this page to 24 hours in seconds
-export const revalidate = 86400
+export const revalidate = 1000
 
 const Home = async () => {
   const airtableData = await fetchAirtableData(

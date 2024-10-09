@@ -11,8 +11,7 @@ import {
   updateAirtableRecords
 } from '../../utils/airtable/ecosystem'
 
-// Set the default revalidation time for this page to 24 hours in seconds
-export const revalidate = 86400
+export const revalidate = 1000
 export const maxDuration = 1000
 
 const Ecosystem = async () => {
