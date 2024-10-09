@@ -1,11 +1,6 @@
 import axios from 'axios'
 import isReachable from 'is-reachable'
 
-const BASE_ID = 'appwwoQ2MZEqD4o5T'
-const TABLE_NAME = 'Etherlink_Ecosystem_Projects'
-const AIRTABLE_ACCESS_TOKEN =
-  'patPI8ICynExoTpA7.49947c46b1c3a8c2e48432040d217950770256ae6459ae5be9ef2e67e4076fa1'
-
 export type ProjectStatus = Pick<Project, 'Status'>
 export type RawProjectStatus = Omit<RawProject, 'createdTime' | 'fields'> & {
   fields: ProjectStatus
@@ -88,11 +83,11 @@ export const checkUrlStatus = async (urls: string[]) => {
 }
 
 export const fetchAirtableData = async (filterAndSort: string = '') => {
-  const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}${filterAndSort}`
+  const url = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}${filterAndSort}`
   const options = {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${AIRTABLE_ACCESS_TOKEN}`
+      Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
     }
   }
 
@@ -111,7 +106,7 @@ export const updateAirtableRecords = async (
 ) => {
   if (recordsToUpdate.length === 0) return
 
-  const airtableApiUrl = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`
+  const airtableApiUrl = `https://api.airtable.com/v0/${process.env.BASE_ID}/${process.env.TABLE_NAME}`
   const batchedRecords = batchArray(recordsToUpdate, 10)
 
   for (let i = 0; i < batchedRecords.length; i++) {
@@ -129,7 +124,7 @@ export const updateAirtableRecords = async (
         { records: statusUpdateRecords },
         {
           headers: {
-            Authorization: `Bearer ${AIRTABLE_ACCESS_TOKEN}`,
+            Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`,
             'Content-Type': 'application/json'
           }
         }
