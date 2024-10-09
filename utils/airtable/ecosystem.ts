@@ -42,8 +42,8 @@ export interface Project {
 export const TAGS_MAP: Record<string, string> = {
   infra: 'Infrastructure',
   bridge: 'Bridges',
-  'dev-tools': 'Development Tools',
-  'etherlink-infra': 'Etherlink Infrastructure',
+  'dev-tools': 'Dev Tools',
+  'etherlink-infra': 'Etherlink Infra',
   'data-science': 'Data Science',
   'etherlink-dev-sdk': 'Etherlink Development SDK',
   oracle: 'Oracles',
