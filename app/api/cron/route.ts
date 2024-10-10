@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const deployHookUrl =
-    'https://api.vercel.com/v1/integrations/deploy/prj_FV9dNZ8DaDYz3ycwYie2lAu9GbXR/M8bfMLSkJH'
+  const deployHookUrl = process.env.VERCEL_DEPLOY_HOOK_URL
 
   if (!deployHookUrl) {
     return NextResponse.json(
