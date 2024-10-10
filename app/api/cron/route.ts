@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-export async function POST() {
+export async function GET() {
   const deployHookUrl =
     'https://api.vercel.com/v1/integrations/deploy/prj_FV9dNZ8DaDYz3ycwYie2lAu9GbXR/M8bfMLSkJH'
 
@@ -13,7 +13,7 @@ export async function POST() {
 
   try {
     const response = await fetch(deployHookUrl, {
-      method: 'POST'
+      method: 'GET'
     })
 
     if (!response.ok) {
