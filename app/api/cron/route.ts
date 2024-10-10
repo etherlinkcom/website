@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-export async function GET() {
+export async function POST() {
   const deployHookUrl =
     'https://api.vercel.com/v1/integrations/deploy/prj_FV9dNZ8DaDYz3ycwYie2lAu9GbXR/M8bfMLSkJH'
 
