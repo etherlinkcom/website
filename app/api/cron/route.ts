@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-export async function POST() {
+export async function GET() {
   const deployHookUrl = process.env.VERCEL_DEPLOY_HOOK_URL
 
   if (!deployHookUrl) {
@@ -12,7 +12,7 @@ export async function POST() {
 
   try {
     const response = await fetch(deployHookUrl, {
-      method: 'POST'
+      method: 'GET'
     })
 
     if (!response.ok) {
@@ -23,7 +23,12 @@ export async function POST() {
       )
     }
 
-    return NextResponse.json({ message: 'Deployment triggered successfully!' })
+    const jsonResponse = await response.json() // Parse the actual response body
+
+    return NextResponse.json({
+      message: 'Deployment triggered successfully!',
+      response: jsonResponse
+    })
   } catch (error: unknown) {
     const errorMessage =
       error instanceof Error ? error.message : 'Unknown error occurred'

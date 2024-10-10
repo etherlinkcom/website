@@ -15,12 +15,12 @@ export const Hero = () => {
         Gaming, Defi, DAOs and more.
       </p>
       <div className='flex flex-col md:flex-row gap-3'>
-        <ArrowButton
+        {/* <ArrowButton
           text='Submit a Project'
           link='https://tt-tezos.typeform.com/to/Z48NYwJr'
           className='bg-newGreen hover:bg-lightGreen text-black text-base font-semibold px-7 py-3 min-w-[200px]'
           arrowWidth={12}
-        />
+        /> */}
         <ArrowButton
           text='Learn more'
           link='https://docs.etherlink.com/'

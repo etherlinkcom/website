@@ -50,7 +50,7 @@ const Ecosystem = async () => {
           mapToProject(table)
         )}
       />
-      <div className='px-8'>
+      {/* <div className='px-8'>
         <Cta
           headerText='List a project on the Etherlink ecosystem'
           descriptionText='Submit your project to be listed on the Etherlink ecosystem today or request an update to an existing entry.'
@@ -59,7 +59,7 @@ const Ecosystem = async () => {
             link: 'https://tt-tezos.typeform.com/to/Z48NYwJr'
           }}
         />
-      </div>
+      </div> */}
     </div>
   )
 }
