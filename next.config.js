@@ -8,5 +8,6 @@ module.exports = {
   images: {
     unoptimized: true
   },
-  distDir: 'out'
+  distDir: 'out',
+  staticPageGenerationTimeout: 1000
 }

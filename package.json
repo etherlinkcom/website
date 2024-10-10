@@ -6,7 +6,7 @@
   "scripts": {
     "format": "prettier --write .",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scrapeImagesAirTable.js",
     "start": "npx serve@latest out"
   },
   "repository": {
@@ -21,14 +21,17 @@
     "@types/react": "^18.2.63",
     "@vercel/analytics": "^1.1.2",
     "autoprefixer": "^10.4.16",
+    "axios": "^1.7.7",
     "embla-carousel-auto-scroll": "^8.0.0",
     "embla-carousel-react": "^8.0.0",
     "ethers": "^5",
     "fathom-client": "^3.6.0",
+    "file-type": "^19.5.0",
     "flowbite-react": "^0.9.0",
     "lottie-react": "^2.4.0",
     "next": "^13.5.6",
     "next-themes": "^0.2.1",
+    "node-fetch": "^3.3.2",
     "postcss": "^8.4.23",
     "prettier": "^3.2.5",
     "react": "^18",

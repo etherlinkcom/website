@@ -1,20 +1,55 @@
-import type { Metadata } from 'next'
 import { Hero } from './Hero'
 import { ProjectList } from './ProjectList'
 import Cta from '../components/cta'
-import { FooterBanner } from './FooterBanner'
+import {
+  checkUrlStatus,
+  fetchAirtableData,
+  mapToProject,
+  RawProject,
+  RawProjectStatus,
+  updateAirtableRecords
+} from '../../utils/airtable/ecosystem'
 
-export const metadata: Metadata = {
-  title: 'Explore Our Ecosystem | Etherlink',
-  description:
-    'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.'
-}
+const Ecosystem = async () => {
+  const airtableData = await fetchAirtableData(`?sort[0][field]=rank`)
 
-const Ecosystem = () => {
+  const rawProjects: RawProject[] = airtableData?.records || []
+
+  const recordsToUpdate: RawProjectStatus[] = []
+  const updatedProjects: RawProject[] = []
+
+  for (const rawProject of rawProjects) {
+    const { Website } = rawProject.fields
+    const isReachableStatus = await checkUrlStatus([Website])
+
+    recordsToUpdate.push({
+      id: rawProject.id,
+      fields: {
+        Status:
+          isReachableStatus[0] || rawProject.fields.bypass_url_check
+            ? 'active'
+            : 'inactive'
+      }
+    })
+
+    if (
+      (isReachableStatus[0] || rawProject.fields.bypass_url_check) &&
+      rawProject.fields.approval_status === 'approved'
+    ) {
+      updatedProjects.push(rawProject)
+    }
+  }
+
+  await updateAirtableRecords(recordsToUpdate)
+
   return (
     <div>
       <Hero />
-      <ProjectList />
+      <ProjectList
+        projects={updatedProjects.map((table: RawProject) =>
+          mapToProject(table)
+        )}
+      />
       <div className='px-8'>
         <Cta
           headerText='List a project on the Etherlink ecosystem'
@@ -25,9 +60,6 @@ const Ecosystem = () => {
           }}
         />
       </div>
-      {/* <div className='px-8'>
-        <FooterBanner />
-      </div> */}
     </div>
   )
 }
