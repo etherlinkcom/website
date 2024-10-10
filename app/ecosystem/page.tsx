@@ -11,7 +11,7 @@ import {
 } from '../../utils/airtable/ecosystem'
 
 const Ecosystem = async () => {
-  const airtableData = await fetchAirtableData()
+  const airtableData = await fetchAirtableData(`?sort[0][field]=rank`)
 
   const rawProjects: RawProject[] = airtableData?.records || []
 
