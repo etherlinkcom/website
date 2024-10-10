@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-export async function POST() {
+export async function GET() {
   const deployHookUrl = process.env.VERCEL_DEPLOY_HOOK_URL
 
   if (!deployHookUrl) {
