@@ -10,12 +10,6 @@ import {
   updateAirtableRecords
 } from '../../utils/airtable/ecosystem'
 
-// Airtable Image URLs expire every 2 hours, so in order to get always up to date images
-// but not having to request them at every refresh of the page we can use the revalidate option instead.
-export const revalidate = 1000
-// Set the duration for regenerating the page to 1000 to cater for the Airtable's checkUrlStatus
-export const maxDuration = 1000
-
 const Ecosystem = async () => {
   const airtableData = await fetchAirtableData()
 
