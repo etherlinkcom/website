@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const Home = async () => {
   const airtableData = await fetchAirtableData(
-    `?filterByFormula=NOT({rank} = '')&sort[0][field]=rank`
+    `?filterByFormula=AND(NOT({rank} = 0), {rank} != '')&sort[0][field]=rank`
   )
 
   const rawProjects = airtableData?.records || []
