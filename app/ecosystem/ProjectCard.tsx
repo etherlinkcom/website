@@ -39,7 +39,7 @@ export const ProjectCard = ({
       </div>
       <p className='w-full text-gray-300 text-sm'>{Description}</p>
       <div className='flex items-center justify-between'>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 flex-wrap'>
           {Tags.map((category, index) => (
             <div
               key={index}
