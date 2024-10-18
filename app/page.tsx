@@ -12,8 +12,7 @@ import {
 } from '../utils/airtable/ecosystem'
 
 export const metadata: Metadata = {
-  title:
-    'Layer 2 Blockchain Solutions | Tezos Smart Rollups Technology | Etherlink',
+  title: 'Etherlink Ecosystem | Discover dApps and Integrations | Etherlink',
   description:
     'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.'
 }
