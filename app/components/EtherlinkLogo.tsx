@@ -5,13 +5,18 @@ import Image from 'next/image'
 export const EtherlinkLogo = () => {
   return (
     <Link className='hover:cursor-pointer' href='/'>
-      <div className='flex items-center gap-1'>
+      <div className='flex items-center gap-2'>
         <Image
-          src='/etherlink-logo-beta.svg'
-          alt='Etherlink Beta Logo'
-          width={160}
-          height={160}
-          className='w-[158px] h-[40px]'
+          width={40}
+          height={40}
+          src='/etherlink-wheel.svg'
+          alt='etherlink icon'
+        />
+        <Image
+          src='/etherlink-logo-text.svg'
+          alt='Etherlink Logo Text'
+          width={113}
+          height={21}
         />
       </div>
     </Link>

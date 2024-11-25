@@ -1,36 +1,203 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import { NAVBAR_ITEMS, Item } from './fixture'
-import Image from 'next/image'
-import Link from 'next/link'
+import React, { useState } from 'react'
+import { type NavItem, NAVBAR_ITEMS } from './fixture'
 import { X, Discord } from '../icons'
-import { Drawer, CustomFlowbiteTheme } from 'flowbite-react'
-import { isExternalLink } from '.'
-import { EtherlinkLogo } from '../EtherlinkLogo'
+import Link from 'next/link'
+import { useEffect } from 'react'
+import { HomeCta } from './HomeCta'
 
-const customDrawerTheme: CustomFlowbiteTheme['drawer'] = {
-  root: {
-    base: 'fixed z-40 overflow-y-auto bg-white p-4 transition-transform duration-300 pt-8 bg-darkBlack',
-    backdrop: '',
-    edge: 'bottom-16',
-    position: {
-      right: {
-        on: 'right-0 top-0 h-screen w-full transform-none',
-        off: 'right-0 top-0 h-screen w-80 translate-x-full'
-      }
-    }
-  },
-  header: {
-    inner: {
-      closeButton:
-        'absolute end-6 top-9 flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-white hover:bg-darkBlack',
-      closeIcon: 'h-6 w-6'
-    }
-  },
-  items: {
-    base: ''
+const SubNavItem = ({
+  item,
+  handleClose
+}: {
+  item: NavItem
+  handleClose: () => void
+}) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  if (!item.dropdown) {
+    return (
+      <Link
+        href={item.link || '#'}
+        className='flex items-center justify-between px-6 py-2.5 text-[#BCBCBC] text-sm font-bold transition-colors hover:text-white'
+        onClick={handleClose}
+        target={item.link?.startsWith('http') ? '_blank' : undefined}
+      >
+        <span>{item.name}</span>
+        {item.link?.startsWith('http') && (
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='16'
+            height='16'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            className='h-4 w-4 ml-2'
+          >
+            <path d='M7 17 17 7' />
+            <path d='M7 7h10v10' />
+          </svg>
+        )}
+      </Link>
+    )
   }
+
+  return (
+    <div className='w-full'>
+      <button
+        className={`flex items-center justify-between w-full px-6 py-3 text-sm font-bold transition-colors
+          ${isOpen ? 'text-newGreen bg-[#1B1B1B] rounded-t-xl' : 'text-[#BCBCBC] hover:text-white'}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span>{item.name}</span>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='16'
+          height='16'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          strokeWidth='2'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          className={`ml-1 h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+        >
+          <path d='m6 9 6 6 6-6' />
+        </svg>
+      </button>
+
+      <div
+        className={`space-y-1 bg-[#151515] overflow-hidden transition-all duration-200 ease-in-out
+          ${isOpen ? 'max-h-[500px] opacity-100 py-2' : 'max-h-0 opacity-0'}`}
+      >
+        {item.items?.map((subItem, index) => (
+          <Link
+            key={index}
+            href={subItem.link || '#'}
+            className='block px-8 py-2 text-[#BCBCBC] text-sm font-bold transition-colors hover:text-white'
+            onClick={handleClose}
+            target={subItem.link?.startsWith('http') ? '_blank' : undefined}
+          >
+            {subItem.name}
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
 }
+
+const NavLevel = ({
+  items,
+  handleClose,
+  goBack,
+  title,
+  isActive
+}: {
+  items: NavItem[]
+  handleClose: () => void
+  goBack: () => void
+  title?: string
+  isActive: boolean
+}) => {
+  return (
+    <div
+      className={`absolute inset-0 bg-neutral-950 transition-transform duration-300 ease-in-out ${
+        isActive ? 'translate-x-0' : 'translate-x-full'
+      }`}
+    >
+      {title && (
+        <div className='relative flex items-center justify-center py-2.5 mx-1'>
+          <button
+            onClick={goBack}
+            className='absolute left-6 text-[#BCBCBC] hover:text-white'
+          >
+            <img src='/img/nav/FiArrowLeft.svg' alt='back button' />
+          </button>
+          <p className='text-[#BCBCBC] font-bold'>{title}</p>
+          <button
+            onClick={handleClose}
+            className='absolute right-6 text-[#BCBCBC] hover:text-white'
+          >
+            <img src='/img/nav/close.svg' alt='close button' />
+          </button>
+        </div>
+      )}
+
+      <div className='mt-4 flex flex-col px-2'>
+        {items.map((item, index) => (
+          <SubNavItem key={index} item={item} handleClose={handleClose} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const MainNavItem = ({
+  item,
+  handleClose,
+  onNavigate
+}: {
+  item: NavItem
+  handleClose: () => void
+  onNavigate: (items: NavItem[], title: string) => void
+}) => {
+  if (!item.dropdown) {
+    return (
+      <Link
+        href={item.link || '#'}
+        className='flex items-center justify-between px-6 py-3 text-[#BCBCBC] text-sm font-bold transition-colors hover:text-white'
+        onClick={handleClose}
+        target={item.link?.startsWith('http') ? '_blank' : undefined}
+      >
+        <span>{item.name}</span>
+        {item.link?.startsWith('http') && (
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='16'
+            height='16'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            className='h-4 w-4 ml-2'
+          >
+            <path d='M7 17 17 7' />
+            <path d='M7 7h10v10' />
+          </svg>
+        )}
+      </Link>
+    )
+  }
+
+  return (
+    <button
+      className='flex items-center justify-between w-full px-6 py-3 text-[#BCBCBC] text-sm font-bold hover:text-white'
+      onClick={() => item.items && onNavigate(item.items, item.name || '')}
+    >
+      <span>{item.name}</span>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='16'
+        height='16'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        className='h-4 w-4'
+      >
+        <path d='M9 18l6-6-6-6' />
+      </svg>
+    </button>
+  )
+}
+
 export const MobileNavbar = ({
   isOpen,
   handleClose
@@ -38,122 +205,111 @@ export const MobileNavbar = ({
   isOpen: boolean
   handleClose: () => void
 }) => {
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) handleClose()
-    }
-    window.addEventListener('resize', handleResize)
-    handleResize()
+  const [currentMenu, setCurrentMenu] = useState<{
+    items: NavItem[]
+    title: string
+  } | null>(null)
 
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  useEffect(() => {
+    if (!isOpen) {
+      setCurrentMenu(null)
+    }
+  }, [isOpen])
+
+  useEffect(() => {
+    const checkViewport = () => {
+      if (window.innerWidth >= 1024) {
+        handleClose()
+      }
+    }
+
+    window.addEventListener('resize', checkViewport)
+    checkViewport()
+
+    return () => window.removeEventListener('resize', checkViewport)
+  }, [handleClose])
 
   return (
-    <Drawer
-      open={isOpen}
-      onClose={handleClose}
-      theme={customDrawerTheme}
-      position='right'
-    >
-      <Drawer.Header titleIcon={() => <EtherlinkLogo />} />
-      <div className='flex flex-col w-full gap-4'>
-        {NAVBAR_ITEMS.map((item, index) => {
-          if (!!item.dropdown && !!item.items) {
-            return (
-              <MobileDropdown
-                title={item.title}
-                items={item.items}
+    <>
+      <div
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity z-30 
+          ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        onClick={handleClose}
+      />
+
+      <div
+        className={`fixed bottom-0 left-0 right-0 h-[70vh] bg-neutral-950 rounded-t-3xl shadow-xl z-40 transform transition-transform duration-300 ease-in-out overflow-hidden
+          ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
+      >
+        {!currentMenu && (
+          <button
+            onClick={handleClose}
+            className='absolute right-6 top-6 text-[#BCBCBC] hover:text-white'
+          >
+            <img src='/img/nav/close.svg' alt='close button' />
+          </button>
+        )}
+
+        <div
+          className={`${currentMenu ? 'mt-3' : 'mt-14 '}relative h-full overflow-hidden`}
+        >
+          <div
+            className={`absolute inset-0 transition-transform duration-300 ease-in-out ${
+              currentMenu ? 'translate-x-[-100%]' : 'translate-x-0'
+            }`}
+          >
+            <div className='flex flex-col'>
+              {NAVBAR_ITEMS.map((item, index) => (
+                <MainNavItem
+                  key={index}
+                  item={item}
+                  handleClose={handleClose}
+                  onNavigate={(items, title) =>
+                    setCurrentMenu({ items, title })
+                  }
+                />
+              ))}
+            </div>
+            <div className='h-[1px] bg-[#262626] w-[80%] mb-6 mt-8 mx-auto' />
+            <div className='px-4 mb-6'>
+              <HomeCta />
+            </div>
+
+            <div className='flex items-center justify-center gap-8'>
+              <Link
+                href='https://twitter.com/etherlink'
+                target='_blank'
+                className='text-[#BCBCBC] hover:text-white transition-colors'
+              >
+                <X size={42} />
+              </Link>
+              <Link
+                href='https://discord.gg/etherlink'
+                target='_blank'
+                className='text-[#BCBCBC] hover:text-white transition-colors'
+              >
+                <Discord size={42} />
+              </Link>
+            </div>
+          </div>
+
+          <div
+            className={`absolute inset-0 transition-transform duration-300 ease-in-out ${
+              currentMenu ? 'translate-x-0' : 'translate-x-[100%]'
+            }`}
+          >
+            {currentMenu && (
+              <NavLevel
+                items={currentMenu.items}
                 handleClose={handleClose}
-                key={index}
+                goBack={() => setCurrentMenu(null)}
+                title={currentMenu.title}
+                isActive={!!currentMenu}
               />
-            )
-          }
-          return (
-            <Link
-              href={item.link as string}
-              className='w-full px-8 py-2 -ml-4 rounded-md text-gray-300 text-lg hover:text-white transition-all duration-500'
-              target={isExternalLink(item.link as string)}
-              rel='noopener noreferrer'
-              key={index}
-              onClick={handleClose}
-            >
-              {item.title}
-            </Link>
-          )
-        })}
-        <div className='flex flex-col gap-6 mt-4 px-2 text-gray-300 hover:text-white text-base transition-all duration-500'>
-          <Link
-            href='https://twitter.com/etherlink'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='flex items-center'
-          >
-            <X size={40} />
-            <p className='text-base'>@etherlink</p>
-          </Link>
-          <Link
-            href='https://discord.gg/etherlink'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='flex items-center gap-1'
-          >
-            <Discord size={40} />
-            <p className='text-base'>Discord</p>
-          </Link>
+            )}
+          </div>
         </div>
       </div>
-    </Drawer>
-  )
-}
-
-const MobileDropdown = ({
-  title,
-  items,
-  handleClose
-}: {
-  title: string
-  items: Item[]
-  handleClose: () => void
-}) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  return (
-    <div
-      onClick={() => setIsOpen(!isOpen)}
-      className={`${isOpen ? 'bg-midBlack' : ''} px-4 py-4 rounded-lg hover:cursor-pointer transition-all duration-500`}
-    >
-      <div className='flex items-center justify-between'>
-        <h1 className='text-gray-300 text-lg hover:text-white transition-all duration-500'>
-          {title}
-        </h1>
-        {isOpen ? (
-          <Image
-            width={22}
-            height={22}
-            src='/chevron-up.svg'
-            alt='chevron-down'
-          />
-        ) : (
-          <Image
-            width={22}
-            height={22}
-            src='/chevron-down.svg'
-            alt='chevron-down'
-          />
-        )}
-      </div>
-      <div
-        className={`${isOpen ? '' : 'hidden'} flex flex-col gap-4 mt-6`}
-        onClick={handleClose}
-      >
-        {items.map((data, index) => (
-          <Link href={data.link} target={isExternalLink(data.link)} key={index}>
-            <p className='text-base text-gray-300 hover:text-white transition-all duration-500'>
-              {data.name}
-            </p>
-          </Link>
-        ))}
-      </div>
-    </div>
+    </>
   )
 }
