@@ -32,9 +32,9 @@ export const Navbar = () => {
           <DesktopNavbar items={NAVBAR_ITEMS} />
         </div>
       </div>
-      <div className='hidden lg:flex items-center'>
+      <div className='flex items-center'>
         {/* social links */}
-        <div className='flex items-center gap-2'>
+        <div className='hidden lg:flex items-center gap-2'>
           <Link
             href='https://twitter.com/etherlink'
             target='_blank'
@@ -51,10 +51,6 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className='hidden lg:inline-block bg-[#9B9B9B] w-[1px] h-8 mx-8' />
-        <ConnectButton />
-      </div>
-
-      <div className='inline-block lg:hidden'>
         <ConnectButton />
       </div>
 

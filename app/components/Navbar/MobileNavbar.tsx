@@ -265,7 +265,7 @@ export const MobileNavbar = ({
       />
 
       <div
-        className={`fixed bottom-0 left-0 right-0 h-[75vh] bg-neutral-950 rounded-t-3xl shadow-xl z-40 transform transition-transform duration-300 ease-in-out overflow-hidden
+        className={`fixed bottom-0 left-0 right-0 h-[80vh] bg-neutral-950 rounded-t-3xl shadow-xl z-40 transform transition-transform duration-300 ease-in-out overflow-hidden
           ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
       >
         {!currentMenu && (
