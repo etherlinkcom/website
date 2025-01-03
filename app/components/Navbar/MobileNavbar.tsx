@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { type NavItem, NAVBAR_ITEMS } from './fixture'
 import { X, Discord } from '../icons'
 import Link from 'next/link'
@@ -131,6 +131,22 @@ const NavLevel = ({
           <SubNavItem key={index} item={item} handleClose={handleClose} />
         ))}
       </div>
+      <div className='flex items-center justify-center gap-8 mt-2'>
+        <Link
+          href='https://twitter.com/etherlink'
+          target='_blank'
+          className='text-[#BCBCBC] hover:text-white transition-colors'
+        >
+          <X size={42} />
+        </Link>
+        <Link
+          href='https://discord.gg/etherlink'
+          target='_blank'
+          className='text-[#BCBCBC] hover:text-white transition-colors'
+        >
+          <Discord size={42} />
+        </Link>
+      </div>
     </div>
   )
 }
@@ -210,6 +226,17 @@ export const MobileNavbar = ({
     title: string
   } | null>(null)
 
+  // To disable scroll when mobile navbar opened
+  const toggleBodyScroll = useCallback((disable: boolean) => {
+    document.documentElement.style.overflow = disable ? 'hidden' : 'auto'
+  }, [])
+
+  useEffect(() => {
+    toggleBodyScroll(isOpen)
+
+    return () => toggleBodyScroll(false)
+  }, [isOpen])
+
   useEffect(() => {
     if (!isOpen) {
       setCurrentMenu(null)
@@ -238,7 +265,7 @@ export const MobileNavbar = ({
       />
 
       <div
-        className={`fixed bottom-0 left-0 right-0 h-[70vh] bg-neutral-950 rounded-t-3xl shadow-xl z-40 transform transition-transform duration-300 ease-in-out overflow-hidden
+        className={`fixed bottom-0 left-0 right-0 h-[75vh] bg-neutral-950 rounded-t-3xl shadow-xl z-40 transform transition-transform duration-300 ease-in-out overflow-hidden
           ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
       >
         {!currentMenu && (
