@@ -1,5 +1,20 @@
 import Image from 'next/image'
 import { ToastContainer, toast } from 'react-toastify'
+import { InfoIcon } from './toastIcons/InfoIcon'
+import { CheckIcon } from './toastIcons/CheckIcon'
+
+const CustomToast = ({
+  message,
+  icon
+}: {
+  message: string
+  icon?: React.ReactNode
+}) => (
+  <div className='flex items-center gap-3'>
+    {icon || <InfoIcon />}
+    <span className='text-white font-base font-bold'>{message}</span>
+  </div>
+)
 
 const addNetwork = async () => {
   if (window.ethereum) {
@@ -21,41 +36,53 @@ const addNetwork = async () => {
           }
         ]
       })
-      toast.success('Etherlink Mainnet added successfully!', {
-        position: 'bottom-center',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'dark'
-      })
-      console.log('Etherlink Mainnet added successfully!')
+      console.log('Network added successfully!')
+      toast(
+        <CustomToast
+          message='Network added successfully!'
+          icon={<CheckIcon />}
+        />,
+        {
+          position: 'bottom-center',
+          autoClose: 3000,
+          hideProgressBar: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          closeButton: false,
+          className:
+            'rounded-xl px-4 py-3 border border-[#38A169] bg-[#38A1693D]/25 w-full'
+        }
+      )
     } catch (error) {
-      console.error('Failed to add Etherlink Mainnet:', error)
-      toast.error('Failed to add Etherlink Mainnet. Please try again.', {
-        position: 'bottom-center',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'dark'
-      })
+      console.error('Failed to add network. Please try again.', error)
+      toast(
+        <CustomToast message='Failed to add network. Please try again.' />,
+        {
+          position: 'bottom-center',
+          autoClose: 3000,
+          hideProgressBar: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          closeButton: false,
+          className:
+            'rounded-xl px-4 py-3 border border-[#E53E3E] bg-[#E53E3E3D]/25 w-full'
+        }
+      )
     }
   } else {
-    console.error('Please install an EVM compatible wallet.')
-    toast.error('Please install an EVM-compatible wallet.', {
+    console.error('Please install a web3 wallet to connect')
+    toast(<CustomToast message='Please install a web3 wallet to connect' />, {
       position: 'bottom-center',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
+      autoClose: 3000,
+      hideProgressBar: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: 'dark'
+      closeButton: false,
+      className:
+        'rounded-xl px-4 py-3 border border-[#3182CE] bg-[#3182CE]/25 w-full'
     })
   }
 }
