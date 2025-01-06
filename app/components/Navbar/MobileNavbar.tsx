@@ -233,7 +233,6 @@ export const MobileNavbar = ({
 
   useEffect(() => {
     toggleBodyScroll(isOpen)
-
     return () => toggleBodyScroll(false)
   }, [isOpen])
 
@@ -265,7 +264,7 @@ export const MobileNavbar = ({
       />
 
       <div
-        className={`fixed bottom-0 left-0 right-0 h-[80vh] bg-neutral-950 rounded-t-3xl shadow-xl z-40 transform transition-transform duration-300 ease-in-out overflow-hidden
+        className={`fixed bottom-0 left-0 right-0 max-h-[80vh] bg-neutral-950 rounded-t-3xl shadow-xl z-40 transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
       >
         {!currentMenu && (
@@ -277,11 +276,9 @@ export const MobileNavbar = ({
           </button>
         )}
 
-        <div
-          className={`${currentMenu ? 'mt-3' : 'mt-14 '}relative h-full overflow-hidden`}
-        >
+        <div className={`${currentMenu ? 'mt-3' : 'mt-14'} relative`}>
           <div
-            className={`absolute inset-0 transition-transform duration-300 ease-in-out ${
+            className={`transition-transform duration-300 ease-in-out ${
               currentMenu ? 'translate-x-[-100%]' : 'translate-x-0'
             }`}
           >
@@ -302,7 +299,7 @@ export const MobileNavbar = ({
               <HomeCta />
             </div>
 
-            <div className='flex items-center justify-center gap-8'>
+            <div className='flex items-center justify-center gap-8 pb-8'>
               <Link
                 href='https://twitter.com/etherlink'
                 target='_blank'

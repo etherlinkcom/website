@@ -17,12 +17,12 @@ export const Navbar = () => {
   const handleClose = () => setIsOpen(false)
 
   return (
-    <Container className='relative flex justify-between items-center pt-8 px-4 lg:px-7 lg:pt-[66px] z-50 md:max-w-[1536px] mx-auto'>
+    <Container className='relative flex justify-between items-center pt-8 px-4 lg:px-7 lg:pt-[36px] z-50 md:max-w-[1536px] mx-auto'>
       <div className='flex items-center'>
         <div className='flex items-center gap-2'>
           <EtherlinkLogo />
           <img
-            className='lg:hidden hover:cursor-pointer w-6 h-6'
+            className='lg:hidden hover:cursor-pointer w-4 h-4'
             src='/hamburger.svg'
             onClick={() => setIsOpen(true)}
           />

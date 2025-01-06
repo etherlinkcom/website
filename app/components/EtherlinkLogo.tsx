@@ -1,21 +1,22 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export const EtherlinkLogo = () => {
   return (
     <Link className='hover:cursor-pointer' href='/'>
       <div className='flex items-center gap-2'>
-        <Image
-          width={40}
-          height={40}
+        <img
+          width={20}
+          height={20}
+          className='w-6 h-6 md:w-8 md:h-8'
           src='/etherlink-wheel.svg'
           alt='etherlink icon'
         />
-        <Image
+        <img
+          className='w-20 h-6 md:w-28 md:h-5'
           src='/etherlink-logo-text.svg'
           alt='Etherlink Logo Text'
-          width={113}
+          width={60}
           height={21}
         />
       </div>
