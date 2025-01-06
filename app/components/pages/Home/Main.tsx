@@ -16,7 +16,7 @@ export const Main = () => {
     <Container className='relative min-h-screen flex flex-col items-center justify-center w-full mb-24 lg:mb-44 mt-24 md:mt-30 lg:mt-34 xl:mt-40'>
       {/* background image */}
       <Lottie
-        className='absolute -translate-y-[400px] md:-translate-y-[300px]  xl:inset-0 z-0 w-[260%] sm:w-full'
+        className='absolute -translate-y-[500px] md:-translate-y-[420px] z-0  w-[800px] md:w-[1800px]'
         animationData={require('./lottie/Head.json')}
       />
       <div className='z-10 w-full'>
