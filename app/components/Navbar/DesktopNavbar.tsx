@@ -67,8 +67,9 @@ const DropdownItem = ({
     return (
       <a
         href={item.link}
+        target={item?.link?.startsWith('http') ? '_blank' : '_self'}
         className={`flex items-center justify-between px-6 py-2 text-[#BCBCBC] text-sm font-bold 
-                ${item.isNestedItem ? 'pl-8 pr-6 bg-[#151515] rounded' : ''} ${item.isLastNestedItem ? 'rounded-b-3xl' : ''}
+                ${item.isNestedItem ? 'pl-8 pr-6 bg-[#151515]' : ''} ${item.isLastNestedItem ? 'rounded-b-2xl' : ''}
             `}
         onClick={closeParent}
       >
@@ -81,7 +82,7 @@ const DropdownItem = ({
   return (
     <div className='w-full'>
       <button
-        className={`flex items-center justify-between w-full px-6 py-2 text-sm font-bold rounded-t-3xl ${isOpen ? 'text-newGreen  bg-[#1B1B1B]' : 'text-[#BCBCBC]'}`}
+        className={`flex items-center justify-between w-full px-6 py-2 text-sm font-bold rounded-t-2xl ${isOpen ? 'text-[#28B56F]  bg-[#1B1B1B]' : 'text-[#BCBCBC]'}`}
         onClick={e => {
           e.stopPropagation()
           setIsOpen(!isOpen)
@@ -122,36 +123,34 @@ export const DesktopNavbar = ({ items }: { items: NavItem[] }) => {
   }, [])
 
   return (
-    <nav>
-      <div className='max-w-7xl mx-auto'>
-        <div className='flex justify-between'>
-          <div className='flex gap-2'>
-            {items.map((item, index) => (
-              <div key={index} className='relative inline-block text-left'>
-                {item.dropdown ? (
-                  <div onClick={e => e.stopPropagation()}>
-                    <DropdownMenu
-                      item={item}
-                      isOpen={openMenuIndex === index}
-                      onClick={() => {
-                        setOpenMenuIndex(openMenuIndex === index ? null : index)
-                      }}
-                    />
-                  </div>
-                ) : (
-                  <a
-                    href={item.link}
-                    className='inline-flex items-center px-6 py-2  text-[#BCBCBC] text-sm font-bold'
-                  >
-                    {item.name}
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
+    <div className='max-w-7xl mx-auto'>
+      <div className='flex justify-between'>
+        <div className='flex gap-2'>
+          {items.map((item, index) => (
+            <div key={index} className='relative inline-block text-left'>
+              {item.dropdown ? (
+                <div onClick={e => e.stopPropagation()}>
+                  <DropdownMenu
+                    item={item}
+                    isOpen={openMenuIndex === index}
+                    onClick={() => {
+                      setOpenMenuIndex(openMenuIndex === index ? null : index)
+                    }}
+                  />
+                </div>
+              ) : (
+                <a
+                  href={item.link}
+                  className='inline-flex items-center px-6 py-2  text-[#BCBCBC] text-sm font-bold'
+                >
+                  {item.name}
+                </a>
+              )}
+            </div>
+          ))}
         </div>
       </div>
-    </nav>
+    </div>
   )
 }
 
@@ -165,9 +164,9 @@ const DropdownMenu = ({
   onClick: () => void
 }) => {
   return (
-    <div className={`relative`}>
+    <div className='relative'>
       <button
-        className={`inline-flex items-center px-6 py-2 text-sm font-bold rounded-3xl ${isOpen ? 'text-newGreen  bg-[#151515]' : 'text-[#BCBCBC]'}`}
+        className={`inline-flex items-center px-6 py-2 text-sm font-bold ${isOpen ? 'text-[#28B56F]  bg-[#151515]' : 'text-[#BCBCBC]'}`}
         onClick={onClick}
       >
         {item.name}
@@ -175,7 +174,7 @@ const DropdownMenu = ({
       </button>
 
       {isOpen && item.items && (
-        <div className='absolute flex flex-col gap-2 left-0 mt-2 w-56 shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 p-2'>
+        <div className='absolute flex flex-col gap-2 left-0 mt-2 w-56 shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-950 p-2'>
           {item.items.map((subItem, index) => (
             <DropdownItem
               key={index}

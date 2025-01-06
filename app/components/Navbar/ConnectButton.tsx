@@ -19,30 +19,13 @@ const CustomToast = ({
 const addNetwork = async () => {
   if (window.ethereum) {
     try {
-      // Request to add Etherlink network
-      await window.ethereum.request({
-        method: 'wallet_addEthereumChain',
-        params: [
-          {
-            chainId: '0xa729', // 42793 in hexadecimal
-            chainName: 'Etherlink Mainnet',
-            nativeCurrency: {
-              name: 'tez',
-              symbol: 'XTZ',
-              decimals: 18
-            },
-            rpcUrls: ['https://node.mainnet.etherlink.com'],
-            blockExplorerUrls: ['https://explorer.etherlink.com/']
-          }
-        ]
+      const chainId = '0xa729'
+      const networkList = await window.ethereum.request({
+        method: 'eth_chainId'
       })
-      console.log('Network added successfully!')
-      toast(
-        <CustomToast
-          message='Network added successfully!'
-          icon={<CheckIcon />}
-        />,
-        {
+
+      if (networkList === chainId) {
+        toast(<CustomToast message='Network already added to your wallet' />, {
           position: 'bottom-center',
           autoClose: 3000,
           hideProgressBar: true,
@@ -51,9 +34,46 @@ const addNetwork = async () => {
           progress: undefined,
           closeButton: false,
           className:
-            'rounded-xl px-4 py-3 border border-[#38A169] bg-[#38A1693D]/25 w-full'
-        }
-      )
+            'rounded-xl px-4 py-3 border border-[#3182CE] bg-[#3182CE]/25 w-full'
+        })
+        return
+      } else {
+        // Request to add Etherlink network
+        await window.ethereum.request({
+          method: 'wallet_addEthereumChain',
+          params: [
+            {
+              chainId, // 42793 in hexadecimal
+              chainName: 'Etherlink Mainnet',
+              nativeCurrency: {
+                name: 'tez',
+                symbol: 'XTZ',
+                decimals: 18
+              },
+              rpcUrls: ['https://node.mainnet.etherlink.com'],
+              blockExplorerUrls: ['https://explorer.etherlink.com/']
+            }
+          ]
+        })
+
+        toast(
+          <CustomToast
+            message='Network added successfully!'
+            icon={<CheckIcon />}
+          />,
+          {
+            position: 'bottom-center',
+            autoClose: 3000,
+            hideProgressBar: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            closeButton: false,
+            className:
+              'rounded-xl px-4 py-3 border border-[#38A169] bg-[#38A1693D]/25 w-full'
+          }
+        )
+      }
     } catch (error) {
       console.error('Failed to add network. Please try again.', error)
       toast(
@@ -72,7 +92,6 @@ const addNetwork = async () => {
       )
     }
   } else {
-    console.error('Please install a web3 wallet to connect')
     toast(<CustomToast message='Please install a web3 wallet to connect' />, {
       position: 'bottom-center',
       autoClose: 3000,
