@@ -253,17 +253,6 @@ export const MobileNavbar = ({
     return () => window.removeEventListener('resize', checkViewport)
   }, [checkViewport])
 
-  useEffect(() => {
-    const handlePageShow = (event: PageTransitionEvent) => {
-      if (event.persisted && isOpen) {
-        handleClose()
-      }
-    }
-
-    window.addEventListener('pageshow', handlePageShow)
-    return () => window.removeEventListener('pageshow', handlePageShow)
-  }, [isOpen, handleClose])
-
   return (
     <>
       <div
@@ -273,8 +262,10 @@ export const MobileNavbar = ({
       />
 
       <div
-        className={`fixed bottom-0 left-0 right-0 max-h-[80vh] bg-grey-900 rounded-t-3xl shadow-xl z-40 border border-grey-600 pt-2
-          transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
+        className={`fixed bottom-0 left-0 right-0 h-[80vh] bg-grey-900 rounded-t-3xl shadow-xl z-40 border border-grey-600 pt-2
+          transform transition-transform duration-500 ease ${
+            isOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+          }`}
       >
         <h1 className='text-3xl text-white'>
           isOpen: {isOpen ? 'true' : 'false'}
