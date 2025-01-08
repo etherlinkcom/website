@@ -242,18 +242,16 @@ export const MobileNavbar = ({
     }
   }, [isOpen])
 
-  useEffect(() => {
-    const checkViewport = () => {
-      if (window.innerWidth >= 1024) {
-        handleClose()
-      }
+  const checkViewport = useCallback(() => {
+    if (window.innerWidth >= 1024 && isOpen) {
+      handleClose()
     }
+  }, [isOpen, handleClose])
 
+  useEffect(() => {
     window.addEventListener('resize', checkViewport)
-    checkViewport()
-
     return () => window.removeEventListener('resize', checkViewport)
-  }, [handleClose])
+  }, [checkViewport])
 
   return (
     <>
