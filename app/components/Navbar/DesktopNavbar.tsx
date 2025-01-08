@@ -45,6 +45,15 @@ const DropdownItem = ({
   closeParent: () => void
 }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    if (isOpen) {
+      setMounted(true)
+    } else {
+      setMounted(false)
+    }
+  }, [isOpen])
 
   if (!item.dropdown) {
     return (
@@ -84,7 +93,9 @@ const DropdownItem = ({
       </button>
 
       {isOpen && item.items && (
-        <div className='w-full'>
+        <div
+          className={`w-full transition-all duration-700 transform ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}
+        >
           {item.items.map((subItem, index) => (
             <DropdownItem
               key={index}
