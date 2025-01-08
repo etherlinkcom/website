@@ -25,10 +25,11 @@ export const Main = () => {
             <h1 className='text-center text-[36px] md:text-[69px] font-semibold leading-tight text-white -tracking-[1.38px] mb-3'>
               <span className='text-white'>
                 The{' '}
-                <span className='text-newGreen'>
+                <span className='text-neon-green-500'>
                   fast<span className='text-white'>,</span> fair{' '}
                 </span>
-                and (nearly) <span className='text-newGreen'>free</span> L2
+                and (nearly) <span className='text-neon-green-500'>free</span>{' '}
+                L2
               </span>
             </h1>
           </Fade>
@@ -89,7 +90,7 @@ export const FeatureBox = ({
   return (
     <div
       className='flex px-6 py-6 rounded-3xl h-[540px] md:h-[660px] backdrop-blur bg-[#1B1B1B] p-2
-        shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] hover:cursor-pointer border-2 border-transparent hover:border-2 hover:border-newGreen group'
+        shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] hover:cursor-pointer border-2 border-transparent hover:border-2 hover:border-neon-green-500 group'
       onClick={() => setIsClicked(!isClicked)}
     >
       <div
@@ -98,7 +99,7 @@ export const FeatureBox = ({
       >
         <div
           className='flex flex-col justify-center rounded-xl py-10 font-medium text-white
-            mb-6 bg-lightBlack group-hover:bg-[#5C72FB] transition-colors duration-300 ease-in'
+            mb-6 bg-grey-500 group-hover:bg-[#5C72FB] transition-colors duration-300 ease-in'
         >
           <Image
             draggable={false}
@@ -116,13 +117,12 @@ export const FeatureBox = ({
           </p>
           <div className='w-full h-full flex flex-col justify-end lg:items-start mt-6'>
             <GhostButton
-              className='group-hover:bg-newGreen group-hover:text-black transition-colors duration-300 -tracking-[0.36px]'
+              className='group-hover:bg-neon-green-500 group-hover:text-black transition-colors duration-300 -tracking-[0.36px]'
               text='Learn more'
               animation={false}
             />
           </div>
         </div>
-        {/* <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling'></span> */}
       </div>
 
       <div
@@ -135,7 +135,6 @@ export const FeatureBox = ({
             <BackContent flipContent={data} key={index} />
           ))}
         </div>
-        {/* <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling'></span> */}
       </div>
     </div>
   )

@@ -16,7 +16,7 @@ export const Partners = () => {
         bg-cover bg-top pb-[80px]"
     >
       <h1 className='text-white font-bold text-3xl md:text-5xl text-center mb-4'>
-        Explore the <span className='text-newGreen'>ecosystem</span>
+        Explore the <span className='text-neon-green-500'>ecosystem</span>
       </h1>
       <p className='text-base md:text-lg text-gray-300 text-center px-8 mb-8'>
         Discover what industry-leading teams are building on Etherlink and list
@@ -26,7 +26,7 @@ export const Partners = () => {
       <ArrowButton
         text='View Ecosystem'
         link='/ecosystem'
-        className='bg-newGreen hover:bg-lightGreen text-black text-base font-semibold px-7 py-3 min-w-[200px] mb-16'
+        className='bg-neon-green-500 hover:bg-lightGreen text-black text-base font-semibold px-7 py-3 min-w-[200px] mb-16'
         arrowWidth={12}
       />
 

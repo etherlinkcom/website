@@ -30,9 +30,9 @@ export const FeatureTitle = ({
 }) => {
   return (
     <h1
-      className={`text-start text-2xl sm:text-3xl border-l border-newGreen pl-4 font-semibold leading-none ${className} -tracking-[0.56px]`}
+      className={`text-start text-2xl sm:text-3xl border-l border-neon-green-500 pl-4 font-semibold leading-none ${className} -tracking-[0.56px]`}
     >
-      <span className='text-newGreen'>{title}</span>
+      <span className='text-neon-green-500'>{title}</span>
       <br />
       {subTitle}
     </h1>

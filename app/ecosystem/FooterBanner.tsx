@@ -4,7 +4,7 @@ import Container from '../components/container'
 export const FooterBanner = () => {
   return (
     <Container
-      className='flex flex-col gap-4 bg-lightBlack px-5 md:px-8 
+      className='flex flex-col gap-4 bg-grey-500 px-5 md:px-8 
       py-12 md:py-8 mt-10 rounded-lg ​'
     >
       <h1 className='text-gray-300 text-lg font-semibold'>

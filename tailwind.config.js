@@ -15,12 +15,9 @@ module.exports = {
     extend: {
       colors: {
         ...colors,
-        newGreen: '#38ff9c',
         lightGreen: '#b6feda',
         darkGreen: '#59ad8c',
         midGreen: '#9bfecd',
-        grey: '#414349',
-        lightBlack: '#262626',
         midBlack: '#1c1c1c',
         darkBlack: '#171717',
         white: '#ffffff',
@@ -35,6 +32,42 @@ module.exports = {
           700: '#1b1b1b',
           800: '#151515',
           900: '#101010'
+        },
+        'neon-green': {
+          50: '#ebfff5',
+          100: '#c1ffe0',
+          200: '#a3ffd1',
+          300: '#7affbd',
+          400: '#60ffb0',
+          500: '#38ff9c',
+          600: '#33e88e',
+          700: '#28b56f',
+          800: '#1f8c56',
+          900: '#186b42'
+        },
+        'dark-green': {
+          50: '#eaf5ef',
+          100: '#bddece',
+          200: '#9dcfb6',
+          300: '#70b994',
+          400: '#55ab80',
+          500: '#2a9660',
+          600: '#268957',
+          700: '#1e6b44',
+          800: '#175335',
+          900: '#123f28'
+        },
+        purple: {
+          50: '#efe6fd',
+          100: '#ceb0fa',
+          200: '#b78af7',
+          300: '#9654f4',
+          400: '#8133f1',
+          500: '#6200ee',
+          600: '#5900d9',
+          700: '#4600a9',
+          800: '#360083',
+          900: '#290064'
         }
       },
       screens: {

@@ -14,7 +14,7 @@ export const ExperienceSection = () => {
         <h2 className='text-white font-bold text-3xl md:text-6xl text-center mb-3 -tracking-[1.1px]'>
           Experience an exploitation
         </h2>
-        <h2 className='text-newGreen font-bold text-3xl md:text-6xl text-center -tracking-[1.1px]'>
+        <h2 className='text-neon-green-500 font-bold text-3xl md:text-6xl text-center -tracking-[1.1px]'>
           Free EVM Environment
         </h2>
         <p className='text-center mt-2 font-light md:text-[23px] text-[#9B9B9B] -tracking-[0.46px]'>
@@ -65,7 +65,7 @@ export const ExperienceSection = () => {
               <a
                 href='https://tezos.com/developers/smart-rollups/'
                 target='_blank'
-                className='underline text-newGreen'
+                className='underline text-neon-green-500'
               >
                 Smart Rollup
               </a>

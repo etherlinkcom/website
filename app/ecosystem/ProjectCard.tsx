@@ -26,7 +26,7 @@ export const ProjectCard = ({
   Website
 }: ProjectCardProps) => {
   return (
-    <div className='flex flex-col bg-lightBlack rounded-xl py-8 px-6 gap-6 justify-between'>
+    <div className='flex flex-col bg-grey-500 rounded-xl py-8 px-6 gap-6 justify-between'>
       <div className='flex items-center gap-4'>
         {Logo[0]?.url && (
           <img

@@ -9,7 +9,7 @@ export const DeveloperExperience = () => {
     <Container className='relative pb-32'>
       <SectionBgGradient />
       <div className='mb-[104px]'>
-        <h2 className='text-newGreen font-bold text-3xl md:text-6xl text-center mb-1 -tracking-[1.1px]'>
+        <h2 className='text-neon-green-500 font-bold text-3xl md:text-6xl text-center mb-1 -tracking-[1.1px]'>
           <span className='text-white'>Developer</span> Experience
         </h2>
         <p className='text-center mt-2 font-light md:text-[23px] text-[#9B9B9B] -tracking-[0.46px]'>
@@ -32,7 +32,7 @@ const Accordian = ({ title, subTitle, desc }: ExperienceProps) => {
   return (
     <div
       className='relative hover:cursor-pointer p-6 rounded-3xl shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)]
-        border border-transparent bg-[#1B1B1B] backdrop-blur-md group hover:border hover:border-newGreen'
+        border border-transparent bg-[#1B1B1B] backdrop-blur-md group hover:border hover:border-neon-green-500'
       onClick={() => setClicked(!clicked)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -76,7 +76,6 @@ const Accordian = ({ title, subTitle, desc }: ExperienceProps) => {
           </p>
         </div>
       </div>
-      {/* <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling'></span> */}
     </div>
   )
 }
@@ -93,7 +92,7 @@ const AccordianIcon = ({
   return (
     <img
       className={`shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] backdrop-blur-md 
-          rounded p-[6px] ${clasName} group-hover:bg-newGreen group-hover:shadow-[0px_0px_6px_0px_rgba(51, 232, 142, 0.80)] transition-colors duration-300`}
+          rounded p-[6px] ${clasName} group-hover:bg-neon-green-500 group-hover:shadow-[0px_0px_6px_0px_rgba(51, 232, 142, 0.80)] transition-colors duration-300`}
       src={img}
       alt={alt}
     />

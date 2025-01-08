@@ -40,7 +40,7 @@ export const EcosystemCarousel = ({ projects }: { projects: Project[] }) => {
             type='button'
             onClick={() => swiperInfoRef?.current?.swiper.slidePrev()}
             className='flex justify-center items-center shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] p-[6px] w-8 text-center
-              backdrop-blur-md rounded transition-colors duration-300 hover:bg-newGreen group z-50'
+              backdrop-blur-md rounded transition-colors duration-300 hover:bg-neon-green-500 group z-50'
           >
             <CheveronIcon className='group-hover:fill-black transition-colors duration-300 rotate-180' />
           </button>
@@ -48,15 +48,15 @@ export const EcosystemCarousel = ({ projects }: { projects: Project[] }) => {
             type='button'
             onClick={() => swiperInfoRef?.current?.swiper.slideNext()}
             className='flex justify-center items-center shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] p-[6px] w-8 text-center
-              backdrop-blur-md rounded transition-colors duration-300 hover:bg-newGreen group z-50'
+              backdrop-blur-md rounded transition-colors duration-300 hover:bg-neon-green-500 group z-50'
           >
             <CheveronIcon className='group-hover:fill-black transition-colors duration-300' />
           </button>
         </div>
         <Link href='/ecosystem' className='z-50'>
           <p
-            className='text-newGreen bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
-            rounded-3xl px-4 py-2 text-sm transition-colors duration-300 hover:text-black hover:bg-newGreen'
+            className='text-neon-green-500 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
+            rounded-3xl px-4 py-2 text-sm transition-colors duration-300 hover:text-black hover:bg-neon-green-500'
           >
             See all
           </p>
@@ -77,7 +77,7 @@ export const ExploreEcosystemCard = ({
   return (
     <div
       className='relative flex flex-col p-6 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
-      rounded-3xl h-full group border border-transparent hover:border hover:border-newGreen'
+      rounded-3xl h-full group border border-transparent hover:border hover:border-neon-green-500'
     >
       <div className='flex items-center flex-wrap justify-between mb-4 h-full gap-2'>
         <div className='flex items-center gap-1'>
@@ -93,12 +93,12 @@ export const ExploreEcosystemCard = ({
         <div className='flex items-center gap-2 z-50'>
           {!!Twitter && (
             <Link href={Twitter} target='_blank'>
-              <TwitterIcon className='hover:fill-black hover:bg-newGreen transition-colors duration-300' />
+              <TwitterIcon className='hover:fill-black hover:bg-neon-green-500 transition-colors duration-300' />
             </Link>
           )}
           {!!Website && (
             <Link href={Website} target='_blank'>
-              <ArrowRightIcon className='hover:fill-black hover:bg-newGreen transition-colors duration-300' />
+              <ArrowRightIcon className='hover:fill-black hover:bg-neon-green-500 transition-colors duration-300' />
             </Link>
           )}
         </div>
@@ -116,7 +116,6 @@ export const ExploreEcosystemCard = ({
           </div>
         ))}
       </div>
-      {/* <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling' /> */}
     </div>
   )
 }

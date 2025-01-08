@@ -49,7 +49,7 @@ const SubNavItem = ({
     <div className='w-full'>
       <button
         className={`flex items-center justify-between w-full px-6 py-3 text-sm font-bold transition-colors
-          ${isOpen ? 'text-newGreen bg-[#1B1B1B] rounded-t-xl' : 'text-grey-100 hover:text-white'}`}
+          ${isOpen ? 'text-neon-green-500 bg-grey-700 rounded-t-xl' : 'text-grey-100 hover:text-white'}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{item.name}</span>
@@ -70,7 +70,7 @@ const SubNavItem = ({
       </button>
 
       <div
-        className={`space-y-1 bg-[#151515] overflow-hidden transition-all duration-200 ease-in-out
+        className={`space-y-1 bg-grey-800 overflow-hidden transition-all duration-200 ease-in-out
           ${isOpen ? 'max-h-[500px] opacity-100 py-2' : 'max-h-0 opacity-0'}`}
       >
         {item.items?.map((subItem, index) => (
@@ -294,7 +294,7 @@ export const MobileNavbar = ({
                 />
               ))}
             </div>
-            <div className='h-[1px] bg-[#262626] w-[80%] mb-6 mt-8 mx-auto' />
+            <div className='h-[1px] bg-grey-500 w-[80%] mb-6 mt-8 mx-auto' />
             <div className='px-4 mb-6'>
               <HomeCta />
             </div>

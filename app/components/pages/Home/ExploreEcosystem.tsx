@@ -12,7 +12,7 @@ export const ExploreEcosystem = ({ projects }: { projects: Project[] }) => {
     <Container className='relative mb-[104px]'>
       <SectionBgGradient />
       <div className='mb-[32px] z-50'>
-        <h2 className='text-newGreen font-bold text-3xl md:text-6xl text-center mb-4 -tracking-[0.6px]'>
+        <h2 className='text-neon-green-500 font-bold text-3xl md:text-6xl text-center mb-4 -tracking-[0.6px]'>
           <span className='text-white'>Explore the</span> ecosystem
         </h2>
         <p className='text-center mt-2 font-light md:text-2xl text-[#9B9B9B]'>

@@ -69,7 +69,7 @@ const DropdownItem = ({
         href={item.link}
         target={item?.link?.startsWith('http') ? '_blank' : '_self'}
         className={`flex items-center justify-between px-6 py-2 text-grey-100 text-sm font-bold 
-                ${item.isNestedItem ? 'pl-8 pr-6 bg-[#151515]' : ''} ${item.isLastNestedItem ? 'rounded-b-2xl' : ''}
+                ${item.isNestedItem ? 'pl-8 pr-6 bg-grey-800' : ''} ${item.isLastNestedItem ? 'rounded-b-2xl' : ''}
             `}
         onClick={closeParent}
       >
@@ -82,7 +82,7 @@ const DropdownItem = ({
   return (
     <div className='w-full'>
       <button
-        className={`flex items-center justify-between w-full px-6 py-2 text-sm font-bold rounded-t-2xl ${isOpen ? 'text-[#28B56F]  bg-[#1B1B1B]' : 'text-grey-100'}`}
+        className={`flex items-center justify-between w-full px-6 py-2 text-sm font-bold rounded-t-2xl ${isOpen ? 'text-neon-green-700  bg-grey-700' : 'text-grey-100'}`}
         onClick={e => {
           e.stopPropagation()
           setIsOpen(!isOpen)
@@ -166,7 +166,7 @@ const DropdownMenu = ({
   return (
     <div className='relative'>
       <button
-        className={`inline-flex items-center px-6 py-2 text-sm font-bold ${isOpen ? 'text-[#28B56F]  bg-[#151515]' : 'text-grey-100'}`}
+        className={`inline-flex items-center px-6 py-2 text-sm font-bold ${isOpen ? 'text-neon-green-700  bg-grey-800' : 'text-grey-100'}`}
         onClick={onClick}
       >
         {item.name}

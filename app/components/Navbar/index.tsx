@@ -27,7 +27,7 @@ export const Navbar = () => {
             onClick={() => setIsOpen(true)}
           />
         </div>
-        <div className='hidden lg:inline-block bg-[#9B9B9B] w-[1px] h-8 mx-12' />
+        <div className='hidden lg:inline-block bg-grey-200 w-[1px] h-8 mx-12' />
         <div className='hidden lg:flex items-center pr-4 h-[30px] gap-1'>
           <DesktopNavbar items={NAVBAR_ITEMS} />
         </div>
@@ -50,7 +50,7 @@ export const Navbar = () => {
             <Discord size={40} />
           </Link>
         </div>
-        <div className='hidden lg:inline-block bg-[#9B9B9B] w-[1px] h-8 mx-8' />
+        <div className='hidden lg:inline-block bg-grey-200 w-[1px] h-8 mx-8' />
         <ConnectButton />
       </div>
 

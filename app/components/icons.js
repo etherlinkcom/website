@@ -1,7 +1,7 @@
 import React from 'react'
 
 const SOCIAL_CLASS =
-  'fill-gray-300 hover:fill-white transition-all duration-500 hover:bg-lightBlack rounded-lg p-2'
+  'fill-gray-300 hover:fill-white transition-all duration-500 hover:bg-grey-500 rounded-lg p-2'
 
 export const Discord = ({ size = 24, className = '' }) => (
   <svg
