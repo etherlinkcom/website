@@ -1,7 +1,7 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Menu">
-<path id="Vector" d="M4.75 5.75H19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_2" d="M4.75 18.25H19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_3" d="M4.75 12H19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="menu">
+<path id="Vector" d="M1.75 7.58325H12.25" stroke="#BCBCBC" stroke-width="1.11016" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M1.75 4.08325H12.25" stroke="#BCBCBC" stroke-width="1.11016" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M1.75 11.0833H12.25" stroke="#BCBCBC" stroke-width="1.11016" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>

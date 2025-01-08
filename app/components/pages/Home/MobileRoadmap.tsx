@@ -18,7 +18,7 @@ export const MobileRoadmap = () => {
     <div className='md:hidden w-full mx-auto px-6'>
       <div className='flex flex-col h-full'>
         <h1 className='block md:hidden text-white text-2xl'>
-          <span className='text-newGreen'>Q{currentPhase}</span> 2024
+          <span className='text-neon-green-500'>Q{currentPhase}</span> 2024
         </h1>
         <Swiper
           initialSlide={currentPhase - 1}
@@ -40,7 +40,7 @@ export const MobileRoadmap = () => {
                       <img src='/img/home/square.svg' alt='square icon' />
                     )}
                     <p
-                      className={`${detail.done ? 'text-newGreen' : 'text-white'} font-light text-lg`}
+                      className={`${detail.done ? 'text-neon-green-500' : 'text-white'} font-light text-lg`}
                     >
                       {detail.name}
                     </p>
@@ -52,7 +52,7 @@ export const MobileRoadmap = () => {
         </Swiper>
         <Progress
           className='block md:hidden mt-6'
-          color='newGreen'
+          color='neon-green-500'
           progress={calculateProgress(currentPhase, PHASES)}
           theme={customProgressTheme}
         />
@@ -63,7 +63,7 @@ export const MobileRoadmap = () => {
             <SwiperSlide key={index}>
               <button
                 onClick={() => swiperInfoRef?.current?.swiper.slideTo(index)}
-                className={`h-1 w-full rounded ${currentPhase - 1 === index ? 'bg-newGreen' : 'bg-white'}`}
+                className={`h-1 w-full rounded ${currentPhase - 1 === index ? 'bg-neon-green-500' : 'bg-white'}`}
                 key={index}
               />
             </SwiperSlide>

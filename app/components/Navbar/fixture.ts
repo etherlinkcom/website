@@ -1,70 +1,88 @@
-export interface Item {
-  name: string
-  link: string
-}
-
-export interface NavbarItem {
-  dropdown: boolean
-  title: string
+export interface NavItem {
+  name?: string
   link?: string
-  items?: Item[]
+  dropdown?: boolean
+  isNestedItem?: boolean
+  isLastNestedItem?: boolean
+  items?: NavItem[]
 }
 
-export const NAVBAR_ITEMS: NavbarItem[] = [
+export const NAVBAR_ITEMS: NavItem[] = [
   {
     dropdown: true,
-    title: 'Bridge',
+    name: 'Use',
     items: [
       {
-        name: 'EVM bridge',
-        link: 'https://etherlinkbridge.com'
+        name: 'Bridge',
+        dropdown: true,
+        items: [
+          {
+            name: 'EVM Bridge ',
+            link: 'https://www.etherlinkbridge.com/bridge',
+            isNestedItem: true
+          },
+          {
+            name: 'Tezos Bridge',
+            link: 'https://bridge.etherlink.com/',
+            isNestedItem: true,
+            isLastNestedItem: true
+          }
+        ]
       },
       {
-        name: 'Tezos bridge',
-        link: 'https://bridge.etherlink.com'
+        name: 'Status',
+        link: 'https://status.etherlink.com/'
+      },
+      {
+        name: 'Explorer',
+        link: 'https://explorer.etherlink.com/'
       }
     ]
   },
   {
     dropdown: false,
-    title: 'Ecosystem',
+    name: 'Ecosystem',
     link: '/ecosystem'
   },
   {
-    dropdown: false,
-    title: 'Docs',
-    link: 'https://docs.etherlink.com/'
-  },
-  {
-    dropdown: false,
-    title: 'Faucet',
-    link: 'https://faucet.etherlink.com/'
-  },
-  {
-    dropdown: false,
-    title: 'Status',
-    link: 'https://status.etherlink.com/'
-  },
-  {
     dropdown: true,
-    title: 'Resources',
+    name: 'Build',
     items: [
       {
-        name: 'Testnet explorer',
-        link: 'http://testnet.explorer.etherlink.com/'
+        name: 'Docs',
+        link: 'https://docs.etherlink.com/'
       },
       {
-        name: 'Mainnet beta explorer',
-        link: 'https://explorer.etherlink.com/'
-      },
-      {
-        name: 'Blog',
-        link: 'https://medium.com/@etherlink'
-      },
-      {
-        name: 'Using your wallet',
+        name: 'Use your wallet',
         link: 'https://docs.etherlink.com/get-started/using-your-wallet/'
+      },
+      {
+        name: 'Testnet Resources',
+        dropdown: true,
+        items: [
+          {
+            name: 'Faucet',
+            link: 'https://faucet.etherlink.com/',
+            isNestedItem: true
+          },
+          {
+            name: 'Explorer',
+            link: 'https://testnet.explorer.etherlink.com/',
+            isNestedItem: true
+          },
+          {
+            name: 'Tezos Bridge',
+            link: 'https://testnet.bridge.etherlink.com/',
+            isNestedItem: true,
+            isLastNestedItem: true
+          }
+        ]
       }
     ]
+  },
+  {
+    dropdown: false,
+    name: 'Blog',
+    link: 'https://medium.com/@etherlink'
   }
 ]

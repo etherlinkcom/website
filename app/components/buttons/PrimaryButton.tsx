@@ -29,12 +29,12 @@ export const PrimaryButton = ({
   return (
     <button
       onClick={handleClick}
-      className={`relative px-5 py-2.5 bg-newGreen shadow-[0px_0px_6px_0px_rgba(255,255,255,0.40)] 
+      className={`relative px-5 py-2.5 bg-neon-green-500 shadow-[0px_0px_6px_0px_rgba(255,255,255,0.40)] 
         rounded-3xl cursor-pointer overflow-hidden group ${className}`}
       role='button'
     >
       <div className='flex justify-center gap-2'>
-        <span className='relative z-10 text-lg text-lightBlack font-semibold'>
+        <span className='relative z-10 text-lg text-grey-500 font-semibold'>
           {text}
         </span>
         {icon}

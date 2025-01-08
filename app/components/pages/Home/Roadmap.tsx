@@ -13,7 +13,7 @@ export const customProgressTheme: CustomFlowbiteTheme['progress'] = {
   label: 'mb-1 flex justify-between font-medium dark:text-white',
   bar: 'space-x-2 rounded-full text-center font-medium leading-none text-cyan-300 dark:text-cyan-100',
   color: {
-    newGreen: 'bg-newGreen'
+    newGreen: 'bg-neon-green-500'
   },
   size: {
     sm: 'h-1.5',
@@ -56,7 +56,7 @@ export const Roadmap = () => {
     <div className='relative max-w-7xl mx-auto bg-midBlack md:px-20 py-10 md:py-20 rounded mt-4 mb-20'>
       <div className='flex items-center justify-between gap-4 mb-10 md:mb-20'>
         <h1 className='text-white font-bold text-4xl md:text-5xl lg:text-6xl mx-auto md:mx-0 text-center'>
-          Etherlink <span className='text-newGreen'>Roadmap</span>
+          Etherlink <span className='text-neon-green-500'>Roadmap</span>
         </h1>
 
         <div className='hidden md:flex gap-2'>
@@ -90,7 +90,7 @@ export const Roadmap = () => {
                         <img src='/img/home/square.svg' alt='square icon' />
                       )}
                       <p
-                        className={`${detail.done ? 'text-newGreen' : 'text-white'} font-light text-lg`}
+                        className={`${detail.done ? 'text-neon-green-500' : 'text-white'} font-light text-lg`}
                       >
                         {detail.name}
                       </p>
@@ -101,7 +101,7 @@ export const Roadmap = () => {
             </div>
 
             <div className='hidden md:flex flex-col items-end'>
-              <h1 className='text-9xl font-semibold text-newGreen'>
+              <h1 className='text-9xl font-semibold text-neon-green-500'>
                 Q{currentPhase}
               </h1>
               <p className='text-3xl'>2024</p>
@@ -135,7 +135,7 @@ const Button = ({
     <button
       className={`font-semibold text-2xl py-2 lg:py-4 px-5 lg:px-9 rounded-xl 
         ${currentPhase === phase ? 'bg-darkGreen text-black border-2 border-darkGreen' : 'border-2 text-white'} 
-        hover:bg-newGreen hover:border-newGreen hover:text-black ease-in-out duration-200`}
+        hover:bg-neon-green-500 hover:border-neon-green-500 hover:text-black ease-in-out duration-200`}
       onClick={() => setCurrentPhase(phase)}
     >
       {text}

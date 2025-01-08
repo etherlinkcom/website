@@ -31,7 +31,7 @@ export const GhostButton = ({
     <button
       onClick={handleClick}
       className={`relative px-5 py-2.5 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
-        rounded-3xl cursor-pointer overflow-hidden group ${className} text-newGreen`}
+        rounded-3xl cursor-pointer overflow-hidden group ${className} text-neon-green-500`}
       role='button'
     >
       <div className='flex justify-center gap-2'>
@@ -39,7 +39,7 @@ export const GhostButton = ({
         {icon}
       </div>
       {animation && (
-        <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling'></span>
+        <span className='absolute inset-0 border-2 border-neon-green-500 rounded-3xl opacity-0 group-hover:animate-circling'></span>
       )}
     </button>
   )

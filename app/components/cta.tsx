@@ -36,7 +36,7 @@ export default function Cta({
       </div>
       <div className='flex flex-col md:flex-row gap-6 md:gap-4 h-fit'>
         <PrimaryButton
-          className='bg-white text-black hover:bg-newGreen'
+          className='bg-white text-black hover:bg-neon-green-500'
           text={primaryButton.text}
           href={primaryButton.link}
           icon={<img src='/img/home/arrow-right.svg' alt='arrow right icon' />}
@@ -62,7 +62,7 @@ export const Button = ({ text, link }: { text: string; link: string }) => {
       <button
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
-        className='flex items-center justify-center gap-2 bg-black text-newGreen text-xl md:text-2xl font-semibold px-7 md:px-14 py-3 md:py-5 rounded-xl'
+        className='flex items-center justify-center gap-2 bg-black text-neon-green-500 text-xl md:text-2xl font-semibold px-7 md:px-14 py-3 md:py-5 rounded-xl'
       >
         {text}
         <div
