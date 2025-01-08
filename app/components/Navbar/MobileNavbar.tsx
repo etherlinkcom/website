@@ -104,7 +104,7 @@ const NavLevel = ({
 }) => {
   return (
     <div
-      className={`absolute inset-0 bg-neutral-950 transition-transform duration-300 ease-in-out ${
+      className={` bg-grey-900 transition-transform duration-300 ease-in-out border ${
         isActive ? 'translate-x-0' : 'translate-x-full'
       }`}
     >
@@ -257,87 +257,118 @@ export const MobileNavbar = ({
     <>
       <div
         className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity z-30 
-          ${isOpen ? 'opacity-0' : 'opacity-0 pointer-events-none'}`}
+          ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={handleClose}
       />
 
       <div
-        className={`fixed bottom-0 left-0 right-0 max-h-[80vh] bg-grey-900 rounded-t-3xl shadow-xl z-40 border border-grey-600 pt-2
-          transform transition-transform duration-500 ease ${
-            isOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-          }`}
+        className={`fixed left-0 right-0 bottom-0 z-40 transform transition-transform duration-500 ease
+          ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
       >
-        <h1 className='text-3xl text-white'>
-          isOpen: {isOpen ? 'true' : 'false'}
-        </h1>
-        <div className='flex justify-center items-center'>
-          <div className=' bg-grey-500 rounded-3xl w-[39px] h-[1px]' />
-        </div>
-        {!currentMenu && (
-          <button
-            onClick={handleClose}
-            className='absolute right-6 top-6 text-grey-100 hover:text-white'
-          >
-            <img src='/img/nav/close.svg' alt='close button' />
-          </button>
-        )}
+        <div className='bg-grey-900 rounded-t-3xl shadow-xl border border-grey-600'>
+          <div className='flex justify-center items-center pt-2'>
+            <div className='bg-grey-500 rounded-3xl w-[39px] h-[1px]' />
+          </div>
 
-        <div className={`${currentMenu ? 'mt-3' : 'mt-14'} relative`}>
-          <div
-            className={`transition-transform duration-300 ease-in-out ${
-              currentMenu ? 'translate-x-[-100%]' : 'translate-x-0'
-            }`}
-          >
-            <div className='flex flex-col'>
-              {NAVBAR_ITEMS.map((item, index) => (
+          {!currentMenu ? (
+            // Main menu
+            <div className='pt-14'>
+              <button
+                onClick={handleClose}
+                className='absolute right-6 top-6 text-grey-100 hover:text-white'
+              >
+                <img src='/img/nav/close.svg' alt='close button' />
+              </button>
+
+              <div className='flex flex-col'>
                 <MainNavItem
-                  key={index}
-                  item={item}
+                  item={{ name: 'Home', link: '/' }}
                   handleClose={handleClose}
                   onNavigate={(items, title) =>
                     setCurrentMenu({ items, title })
                   }
                 />
-              ))}
-            </div>
-            <div className='h-[1px] bg-grey-500 w-[80%] mb-6 mt-8 mx-auto' />
-            <div className='px-4 mb-6'>
-              <HomeCta />
-            </div>
+                {NAVBAR_ITEMS.map((item, index) => (
+                  <MainNavItem
+                    key={index}
+                    item={item}
+                    handleClose={handleClose}
+                    onNavigate={(items, title) =>
+                      setCurrentMenu({ items, title })
+                    }
+                  />
+                ))}
+              </div>
 
-            <div className='flex items-center justify-center gap-8 pb-8'>
-              <Link
-                href='https://twitter.com/etherlink'
-                target='_blank'
-                className='text-grey-100 hover:text-white transition-colors'
-              >
-                <X size={42} />
-              </Link>
-              <Link
-                href='https://discord.gg/etherlink'
-                target='_blank'
-                className='text-grey-100 hover:text-white transition-colors'
-              >
-                <Discord size={42} />
-              </Link>
-            </div>
-          </div>
+              <div className='h-[1px] bg-grey-500 w-[80%] mb-6 mt-8 mx-auto' />
+              <div className='px-4 mb-6'>
+                <HomeCta />
+              </div>
 
-          <div
-            className={`absolute inset-0 transition-transform duration-300 ease-in-out ${
-              currentMenu ? 'translate-x-0' : 'translate-x-[100%]'
-            }`}
-          >
-            {currentMenu && (
-              <NavLevel
-                items={currentMenu.items}
-                handleClose={handleClose}
-                goBack={() => setCurrentMenu(null)}
-                title={currentMenu.title}
-                isActive={!!currentMenu}
-              />
-            )}
-          </div>
+              <div className='flex items-center justify-center gap-8 pb-8'>
+                <Link
+                  href='https://twitter.com/etherlink'
+                  target='_blank'
+                  className='text-grey-100 hover:text-white transition-colors'
+                >
+                  <X size={42} />
+                </Link>
+                <Link
+                  href='https://discord.gg/etherlink'
+                  target='_blank'
+                  className='text-grey-100 hover:text-white transition-colors'
+                >
+                  <Discord size={42} />
+                </Link>
+              </div>
+            </div>
+          ) : (
+            // Sub menu
+            <div className='pt-3'>
+              <div className='relative flex items-center justify-center py-2.5 mx-1'>
+                <button
+                  onClick={() => setCurrentMenu(null)}
+                  className='absolute left-6 text-grey-100 hover:text-white'
+                >
+                  <img src='/img/nav/FiArrowLeft.svg' alt='back button' />
+                </button>
+                <p className='text-grey-100 font-bold'>{currentMenu.title}</p>
+                <button
+                  onClick={handleClose}
+                  className='absolute right-6 text-grey-100 hover:text-white'
+                >
+                  <img src='/img/nav/close.svg' alt='close button' />
+                </button>
+              </div>
+
+              <div className='mt-4 flex flex-col px-2'>
+                {currentMenu.items.map((item, index) => (
+                  <SubNavItem
+                    key={index}
+                    item={item}
+                    handleClose={handleClose}
+                  />
+                ))}
+              </div>
+
+              <div className='flex items-center justify-center gap-8 mt-2 pb-8'>
+                <Link
+                  href='https://twitter.com/etherlink'
+                  target='_blank'
+                  className='text-grey-100 hover:text-white transition-colors'
+                >
+                  <X size={42} />
+                </Link>
+                <Link
+                  href='https://discord.gg/etherlink'
+                  target='_blank'
+                  className='text-grey-100 hover:text-white transition-colors'
+                >
+                  <Discord size={42} />
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>

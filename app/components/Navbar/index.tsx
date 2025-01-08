@@ -19,9 +19,6 @@ export const Navbar = () => {
   return (
     <Container className='relative flex justify-between items-center pt-8 px-4 lg:px-7 lg:pt-[36px] z-50 md:max-w-[1536px] mx-auto'>
       <div className='flex items-center'>
-        <h1 className='text-3xl text-white'>
-          isOpen: {isOpen ? 'true' : 'false'}
-        </h1>
         <div className='flex items-center gap-2 shrink-0'>
           <EtherlinkLogo />
           <img

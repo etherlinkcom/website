@@ -1,5 +1,5 @@
 import React from 'react'
-import { PrimaryButton } from '../buttons/PrimaryButton'
+import Link from 'next/link'
 
 export const HomeCta = () => {
   return (
@@ -26,6 +26,12 @@ export const HomeCta = () => {
             Start Building
           </span>
         </div>
+        <a
+          href='https://docs.etherlink.com/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='absolute inset-0'
+        />
         <span className='absolute inset-0 border-2 border-white rounded-3xl opacity-0 group-hover:animate-circling'></span>
       </button>
     </div>
