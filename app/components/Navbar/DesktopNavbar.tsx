@@ -176,9 +176,9 @@ const DropdownMenu = ({
   }, [isOpen])
 
   return (
-    <div className='relative'>
+    <div className='relative '>
       <button
-        className={`inline-flex items-center px-6 py-2 text-sm font-bold`}
+        className={`inline-flex items-center px-6 py-2 text-sm font-bold ${isOpen ? 'bg-grey-800 rounded-[32px]' : ''}`}
         onClick={onClick}
       >
         <p
