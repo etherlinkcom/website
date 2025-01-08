@@ -17,7 +17,7 @@ export const HomeCta = () => {
       </div>
 
       <button
-        className={`relative px-6 py-2.5 bg-black text-[#BCBCBC] shadow-[0px_0px_6px_0px_rgba(255,255,255,0.40)]
+        className={`relative px-6 py-2.5 bg-black text-grey-100 shadow-[0px_0px_6px_0px_rgba(255,255,255,0.40)]
             rounded-3xl cursor-pointer overflow-hidden group w-full`}
         role='button'
       >

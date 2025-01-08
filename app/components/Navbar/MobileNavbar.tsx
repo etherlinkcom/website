@@ -19,7 +19,7 @@ const SubNavItem = ({
     return (
       <Link
         href={item.link || '#'}
-        className='flex items-center justify-between px-6 py-2.5 text-[#BCBCBC] text-sm font-bold transition-colors hover:text-white'
+        className='flex items-center justify-between px-6 py-2.5 text-grey-100 text-sm font-bold transition-colors hover:text-white'
         onClick={handleClose}
         target={item.link?.startsWith('http') ? '_blank' : undefined}
       >
@@ -49,7 +49,7 @@ const SubNavItem = ({
     <div className='w-full'>
       <button
         className={`flex items-center justify-between w-full px-6 py-3 text-sm font-bold transition-colors
-          ${isOpen ? 'text-newGreen bg-[#1B1B1B] rounded-t-xl' : 'text-[#BCBCBC] hover:text-white'}`}
+          ${isOpen ? 'text-newGreen bg-[#1B1B1B] rounded-t-xl' : 'text-grey-100 hover:text-white'}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{item.name}</span>
@@ -77,7 +77,7 @@ const SubNavItem = ({
           <Link
             key={index}
             href={subItem.link || '#'}
-            className='block px-8 py-2 text-[#BCBCBC] text-sm font-bold transition-colors hover:text-white'
+            className='block px-8 py-2 text-grey-100 text-sm font-bold transition-colors hover:text-white'
             onClick={handleClose}
             target={subItem.link?.startsWith('http') ? '_blank' : undefined}
           >
@@ -112,14 +112,14 @@ const NavLevel = ({
         <div className='relative flex items-center justify-center py-2.5 mx-1'>
           <button
             onClick={goBack}
-            className='absolute left-6 text-[#BCBCBC] hover:text-white'
+            className='absolute left-6 text-grey-100 hover:text-white'
           >
             <img src='/img/nav/FiArrowLeft.svg' alt='back button' />
           </button>
-          <p className='text-[#BCBCBC] font-bold'>{title}</p>
+          <p className='text-grey-100 font-bold'>{title}</p>
           <button
             onClick={handleClose}
-            className='absolute right-6 text-[#BCBCBC] hover:text-white'
+            className='absolute right-6 text-grey-100 hover:text-white'
           >
             <img src='/img/nav/close.svg' alt='close button' />
           </button>
@@ -135,14 +135,14 @@ const NavLevel = ({
         <Link
           href='https://twitter.com/etherlink'
           target='_blank'
-          className='text-[#BCBCBC] hover:text-white transition-colors'
+          className='text-grey-100 hover:text-white transition-colors'
         >
           <X size={42} />
         </Link>
         <Link
           href='https://discord.gg/etherlink'
           target='_blank'
-          className='text-[#BCBCBC] hover:text-white transition-colors'
+          className='text-grey-100 hover:text-white transition-colors'
         >
           <Discord size={42} />
         </Link>
@@ -164,7 +164,7 @@ const MainNavItem = ({
     return (
       <Link
         href={item.link || '#'}
-        className='flex items-center justify-between px-6 py-3 text-[#BCBCBC] text-sm font-bold transition-colors hover:text-white'
+        className='flex items-center justify-between px-6 py-3 text-grey-100 text-sm font-bold transition-colors hover:text-white'
         onClick={handleClose}
         target={item.link?.startsWith('http') ? '_blank' : undefined}
       >
@@ -192,7 +192,7 @@ const MainNavItem = ({
 
   return (
     <button
-      className='flex items-center justify-between w-full px-6 py-3 text-[#BCBCBC] text-sm font-bold hover:text-white'
+      className='flex items-center justify-between w-full px-6 py-3 text-grey-100 text-sm font-bold hover:text-white'
       onClick={() => item.items && onNavigate(item.items, item.name || '')}
     >
       <span>{item.name}</span>
@@ -270,7 +270,7 @@ export const MobileNavbar = ({
         {!currentMenu && (
           <button
             onClick={handleClose}
-            className='absolute right-6 top-6 text-[#BCBCBC] hover:text-white'
+            className='absolute right-6 top-6 text-grey-100 hover:text-white'
           >
             <img src='/img/nav/close.svg' alt='close button' />
           </button>
@@ -303,14 +303,14 @@ export const MobileNavbar = ({
               <Link
                 href='https://twitter.com/etherlink'
                 target='_blank'
-                className='text-[#BCBCBC] hover:text-white transition-colors'
+                className='text-grey-100 hover:text-white transition-colors'
               >
                 <X size={42} />
               </Link>
               <Link
                 href='https://discord.gg/etherlink'
                 target='_blank'
-                className='text-[#BCBCBC] hover:text-white transition-colors'
+                className='text-grey-100 hover:text-white transition-colors'
               >
                 <Discord size={42} />
               </Link>

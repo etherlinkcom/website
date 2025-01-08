@@ -111,7 +111,7 @@ export const ConnectButton = () => {
     <>
       <button
         onClick={addNetwork}
-        className='flex items-center gap-1 lg:gap-2 text-[#101010] rounded-3xl bg-[#38FF9C] py-2 px-3 lg:px-4 text-xs lg:text-sm font-semibold'
+        className='flex items-center gap-1 lg:gap-2 text-[#101010] rounded-3xl bg-newGreen py-2 px-3 lg:px-4 text-xs lg:text-sm font-semibold'
       >
         Add Etherlink Mainnet
         <Image

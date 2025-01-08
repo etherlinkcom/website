@@ -68,7 +68,7 @@ const DropdownItem = ({
       <a
         href={item.link}
         target={item?.link?.startsWith('http') ? '_blank' : '_self'}
-        className={`flex items-center justify-between px-6 py-2 text-[#BCBCBC] text-sm font-bold 
+        className={`flex items-center justify-between px-6 py-2 text-grey-100 text-sm font-bold 
                 ${item.isNestedItem ? 'pl-8 pr-6 bg-[#151515]' : ''} ${item.isLastNestedItem ? 'rounded-b-2xl' : ''}
             `}
         onClick={closeParent}
@@ -82,7 +82,7 @@ const DropdownItem = ({
   return (
     <div className='w-full'>
       <button
-        className={`flex items-center justify-between w-full px-6 py-2 text-sm font-bold rounded-t-2xl ${isOpen ? 'text-[#28B56F]  bg-[#1B1B1B]' : 'text-[#BCBCBC]'}`}
+        className={`flex items-center justify-between w-full px-6 py-2 text-sm font-bold rounded-t-2xl ${isOpen ? 'text-[#28B56F]  bg-[#1B1B1B]' : 'text-grey-100'}`}
         onClick={e => {
           e.stopPropagation()
           setIsOpen(!isOpen)
@@ -141,7 +141,7 @@ export const DesktopNavbar = ({ items }: { items: NavItem[] }) => {
               ) : (
                 <a
                   href={item.link}
-                  className='inline-flex items-center px-6 py-2  text-[#BCBCBC] text-sm font-bold'
+                  className='inline-flex items-center px-6 py-2  text-grey-100 text-sm font-bold'
                 >
                   {item.name}
                 </a>
@@ -166,7 +166,7 @@ const DropdownMenu = ({
   return (
     <div className='relative'>
       <button
-        className={`inline-flex items-center px-6 py-2 text-sm font-bold ${isOpen ? 'text-[#28B56F]  bg-[#151515]' : 'text-[#BCBCBC]'}`}
+        className={`inline-flex items-center px-6 py-2 text-sm font-bold ${isOpen ? 'text-[#28B56F]  bg-[#151515]' : 'text-grey-100'}`}
         onClick={onClick}
       >
         {item.name}

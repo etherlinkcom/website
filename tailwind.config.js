@@ -23,7 +23,19 @@ module.exports = {
         lightBlack: '#262626',
         midBlack: '#1c1c1c',
         darkBlack: '#171717',
-        white: '#ffffff'
+        white: '#ffffff',
+        grey: {
+          50: '#e9e9e9',
+          100: '#bcbcbc',
+          200: '#9b9b9b',
+          300: '#6e6e6e',
+          400: '#515151',
+          500: '#262626',
+          600: '#232323',
+          700: '#1b1b1b',
+          800: '#151515',
+          900: '#101010'
+        }
       },
       screens: {
         'max-sm': { max: '640px' },
