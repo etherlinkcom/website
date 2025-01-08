@@ -291,7 +291,7 @@ export const MobileNavbar = ({
             <div className='bg-grey-500 rounded-3xl w-[39px] h-[1px]' />
           </div>
 
-          <div className={`pt-${currentMenu ? '3' : '14'} `}>
+          <div>
             {!currentMenu ? (
               <div
                 className={` ${
@@ -307,7 +307,7 @@ export const MobileNavbar = ({
                   <img src='/img/nav/close.svg' alt='close button' />
                 </button>
 
-                <div className='flex flex-col'>
+                <div className='flex flex-col pt-8'>
                   <MainNavItem
                     item={{ name: 'Home', link: '/' }}
                     handleClose={handleClose}
