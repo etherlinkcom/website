@@ -273,7 +273,6 @@ export const MobileNavbar = ({
       />
 
       <div
-        key={isOpen ? 'open' : 'closed'} // Force re-render
         className={`fixed bottom-0 left-0 right-0 max-h-[80vh] bg-grey-900 rounded-t-3xl shadow-xl z-40 border border-grey-600 pt-2
           transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
       >
