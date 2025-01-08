@@ -257,12 +257,12 @@ export const MobileNavbar = ({
     <>
       <div
         className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity z-30 
-          ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          ${isOpen ? 'opacity-0' : 'opacity-0 pointer-events-none'}`}
         onClick={handleClose}
       />
 
       <div
-        className={`fixed bottom-0 left-0 right-0 h-[80vh] bg-grey-900 rounded-t-3xl shadow-xl z-40 border border-grey-600 pt-2
+        className={`fixed bottom-0 left-0 right-0 max-h-[80vh] bg-grey-900 rounded-t-3xl shadow-xl z-40 border border-grey-600 pt-2
           transform transition-transform duration-500 ease ${
             isOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
           }`}
