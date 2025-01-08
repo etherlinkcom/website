@@ -92,10 +92,28 @@ module.exports = {
           '25%': {
             clipPath: 'inset(0 0 0 95% round 24px)'
           }
+        },
+        fadeIn: {
+          '0%': {
+            opacity: '0'
+          },
+          '100%': {
+            opacity: '1'
+          }
+        },
+        fadeOut: {
+          '0%': {
+            opacity: '1'
+          },
+          '100%': {
+            opacity: '0'
+          }
         }
       },
       animation: {
-        circling: 'circling 2s linear'
+        circling: 'circling 2s linear',
+        fadeIn: 'fadeIn 0.25s ease-in',
+        fadeOut: 'fadeOut 0.25s ease-out'
       }
     },
     fontFamily: {

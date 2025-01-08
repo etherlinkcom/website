@@ -225,8 +225,11 @@ export const MobileNavbar = ({
     items: NavItem[]
     title: string
   } | null>(null)
+  const [animationState, setAnimationState] = useState<'idle' | 'fading'>(
+    'idle'
+  )
 
-  // To disable scroll when mobile navbar opened
+  // Disable body scroll
   const toggleBodyScroll = useCallback((disable: boolean) => {
     document.documentElement.style.overflow = disable ? 'hidden' : 'auto'
   }, [])
@@ -253,122 +256,150 @@ export const MobileNavbar = ({
     return () => window.removeEventListener('resize', checkViewport)
   }, [checkViewport])
 
+  const handleNavigate = (items: NavItem[], title: string) => {
+    setAnimationState('fading') // Start fade-out animation
+    setTimeout(() => {
+      setCurrentMenu({ items, title })
+      setAnimationState('idle') // Start fade-in animation
+    }, 250) // Match the fadeOut animation duration
+  }
+
+  const handleBack = () => {
+    setAnimationState('fading') // Start fade-out animation
+    setTimeout(() => {
+      setCurrentMenu(null)
+      setAnimationState('idle') // Start fade-in animation
+    }, 250) // Match the fadeOut animation duration
+  }
+
   return (
     <>
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity z-30 
-          ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity z-30 ${
+          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
         onClick={handleClose}
       />
 
       <div
-        className={`fixed left-0 right-0 bottom-0 z-40 transform transition-transform duration-500 ease
-          ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
+        className={`fixed left-0 right-0 bottom-0 z-40 transform transition-transform duration-500 ease ${
+          isOpen ? 'translate-y-0' : 'translate-y-full'
+        }`}
       >
         <div className='bg-grey-900 rounded-t-3xl shadow-xl border border-grey-600'>
           <div className='flex justify-center items-center pt-2'>
             <div className='bg-grey-500 rounded-3xl w-[39px] h-[1px]' />
           </div>
 
-          {!currentMenu ? (
-            // Main menu
-            <div className='pt-14'>
-              <button
-                onClick={handleClose}
-                className='absolute right-6 top-6 text-grey-100 hover:text-white'
+          <div className={`pt-${currentMenu ? '3' : '14'} `}>
+            {!currentMenu ? (
+              <div
+                className={` ${
+                  animationState === 'fading'
+                    ? 'animate-fadeOut'
+                    : 'animate-fadeIn'
+                }`}
               >
-                <img src='/img/nav/close.svg' alt='close button' />
-              </button>
-
-              <div className='flex flex-col'>
-                <MainNavItem
-                  item={{ name: 'Home', link: '/' }}
-                  handleClose={handleClose}
-                  onNavigate={(items, title) =>
-                    setCurrentMenu({ items, title })
-                  }
-                />
-                {NAVBAR_ITEMS.map((item, index) => (
-                  <MainNavItem
-                    key={index}
-                    item={item}
-                    handleClose={handleClose}
-                    onNavigate={(items, title) =>
-                      setCurrentMenu({ items, title })
-                    }
-                  />
-                ))}
-              </div>
-
-              <div className='h-[1px] bg-grey-500 w-[80%] mb-6 mt-8 mx-auto' />
-              <div className='px-4 mb-6'>
-                <HomeCta />
-              </div>
-
-              <div className='flex items-center justify-center gap-8 pb-8'>
-                <Link
-                  href='https://twitter.com/etherlink'
-                  target='_blank'
-                  className='text-grey-100 hover:text-white transition-colors'
-                >
-                  <X size={42} />
-                </Link>
-                <Link
-                  href='https://discord.gg/etherlink'
-                  target='_blank'
-                  className='text-grey-100 hover:text-white transition-colors'
-                >
-                  <Discord size={42} />
-                </Link>
-              </div>
-            </div>
-          ) : (
-            // Sub menu
-            <div className='pt-3'>
-              <div className='relative flex items-center justify-center py-2.5 mx-1'>
-                <button
-                  onClick={() => setCurrentMenu(null)}
-                  className='absolute left-6 text-grey-100 hover:text-white'
-                >
-                  <img src='/img/nav/FiArrowLeft.svg' alt='back button' />
-                </button>
-                <p className='text-grey-100 font-bold'>{currentMenu.title}</p>
                 <button
                   onClick={handleClose}
-                  className='absolute right-6 text-grey-100 hover:text-white'
+                  className='absolute right-6 top-6 text-grey-100 hover:text-white'
                 >
                   <img src='/img/nav/close.svg' alt='close button' />
                 </button>
-              </div>
 
-              <div className='mt-4 flex flex-col px-2'>
-                {currentMenu.items.map((item, index) => (
-                  <SubNavItem
-                    key={index}
-                    item={item}
+                <div className='flex flex-col'>
+                  <MainNavItem
+                    item={{ name: 'Home', link: '/' }}
                     handleClose={handleClose}
+                    onNavigate={(items, title) => handleNavigate(items, title)}
                   />
-                ))}
-              </div>
+                  {NAVBAR_ITEMS.map((item, index) => (
+                    <MainNavItem
+                      key={index}
+                      item={item}
+                      handleClose={handleClose}
+                      onNavigate={(items, title) =>
+                        handleNavigate(items, title)
+                      }
+                    />
+                  ))}
+                </div>
 
-              <div className='flex items-center justify-center gap-8 mt-2 pb-8'>
-                <Link
-                  href='https://twitter.com/etherlink'
-                  target='_blank'
-                  className='text-grey-100 hover:text-white transition-colors'
-                >
-                  <X size={42} />
-                </Link>
-                <Link
-                  href='https://discord.gg/etherlink'
-                  target='_blank'
-                  className='text-grey-100 hover:text-white transition-colors'
-                >
-                  <Discord size={42} />
-                </Link>
+                <div className='h-[1px] bg-grey-500 w-[80%] mb-6 mt-8 mx-auto' />
+                <div className='px-4 mb-6'>
+                  <HomeCta />
+                </div>
+
+                <div className='flex items-center justify-center gap-8 pb-8'>
+                  <Link
+                    href='https://twitter.com/etherlink'
+                    target='_blank'
+                    className='text-grey-100 hover:text-white transition-colors'
+                  >
+                    <X size={42} />
+                  </Link>
+                  <Link
+                    href='https://discord.gg/etherlink'
+                    target='_blank'
+                    className='text-grey-100 hover:text-white transition-colors'
+                  >
+                    <Discord size={42} />
+                  </Link>
+                </div>
               </div>
-            </div>
-          )}
+            ) : (
+              <div
+                className={` ${
+                  animationState === 'fading'
+                    ? 'animate-fadeOut'
+                    : 'animate-fadeIn'
+                }`}
+              >
+                <div className='relative flex items-center justify-center py-2.5 mx-1'>
+                  <button
+                    onClick={handleBack}
+                    className='absolute left-6 text-grey-100 hover:text-white'
+                  >
+                    <img src='/img/nav/FiArrowLeft.svg' alt='back button' />
+                  </button>
+                  <p className='text-grey-100 font-bold'>{currentMenu.title}</p>
+                  <button
+                    onClick={handleClose}
+                    className='absolute right-6 text-grey-100 hover:text-white'
+                  >
+                    <img src='/img/nav/close.svg' alt='close button' />
+                  </button>
+                </div>
+
+                <div className='mt-4 flex flex-col px-2'>
+                  {currentMenu.items.map((item, index) => (
+                    <SubNavItem
+                      key={index}
+                      item={item}
+                      handleClose={handleClose}
+                    />
+                  ))}
+                </div>
+
+                <div className='flex items-center justify-center gap-8 mt-2 pb-8'>
+                  <Link
+                    href='https://twitter.com/etherlink'
+                    target='_blank'
+                    className='text-grey-100 hover:text-white transition-colors'
+                  >
+                    <X size={42} />
+                  </Link>
+                  <Link
+                    href='https://discord.gg/etherlink'
+                    target='_blank'
+                    className='text-grey-100 hover:text-white transition-colors'
+                  >
+                    <Discord size={42} />
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>
