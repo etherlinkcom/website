@@ -21,6 +21,8 @@ export const GhostButton = ({
 
   const handleClick = () => {
     if (href) {
+      if (href.includes('bridge')) window.open(href, '_self')
+
       if (href.startsWith('http')) window.open(href, '_blank')
       else router.push(href)
     } else if (onClick) {

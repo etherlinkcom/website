@@ -35,7 +35,9 @@ export const NavbarList = ({ dropdown, title, link, items }: NavbarItem) => {
           <Dropdown.Item
             as='a'
             href={data.link}
-            target={isExternalLink(data.link)}
+            target={
+              data.link.includes('bridge') ? '_self' : isExternalLink(data.link)
+            }
             key={index}
           >
             {data.name}
@@ -48,7 +50,9 @@ export const NavbarList = ({ dropdown, title, link, items }: NavbarItem) => {
     <Link
       href={link as string}
       className='w-full px-6 py-3 rounded-[32px] text-gray-300 text-base hover:text-newGreen hover:bg-[#232323] transition-all duration-500'
-      target={isExternalLink(link as string)}
+      target={
+        link?.includes('bridge') ? '_self' : isExternalLink(link as string)
+      }
       rel='noopener noreferrer'
     >
       {title}

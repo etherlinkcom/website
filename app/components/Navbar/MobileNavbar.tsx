@@ -72,7 +72,11 @@ export const MobileNavbar = ({
             <Link
               href={item.link as string}
               className='w-full px-8 py-2 -ml-4 rounded-md text-gray-300 text-lg hover:text-white transition-all duration-500'
-              target={isExternalLink(item.link as string)}
+              target={
+                item.link?.includes('bridge')
+                  ? '_self'
+                  : isExternalLink(item.link as string)
+              }
               rel='noopener noreferrer'
               key={index}
               onClick={handleClose}
