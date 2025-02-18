@@ -8,7 +8,8 @@ export const GhostButton = ({
   href,
   icon,
   className,
-  animation = true
+  animation = true,
+  newTab = false
 }: {
   text: string
   href?: string
@@ -16,11 +17,14 @@ export const GhostButton = ({
   icon?: React.ReactNode
   className?: string
   animation?: boolean
+  newTab?: boolean
 }) => {
   const router = useRouter()
 
   const handleClick = () => {
     if (href) {
+      if (!newTab) window.open(href, '_self')
+
       if (href.startsWith('http')) window.open(href, '_blank')
       else router.push(href)
     } else if (onClick) {

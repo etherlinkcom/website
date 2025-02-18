@@ -50,8 +50,8 @@ export const Main = () => {
               />
               <GhostButton
                 className='w-full'
-                text='EVM bridge'
-                href='https://www.etherlinkbridge.com/bridge'
+                text='Bridge now'
+                href='https://bridge.etherlink.com/'
                 icon={<img src='/img/home/bridge-icon.svg' alt='bridge icon' />}
               />
             </Fade>
