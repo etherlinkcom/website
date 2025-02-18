@@ -40,8 +40,8 @@ const Home = async () => {
             link: 'https://docs.etherlink.com/'
           }}
           ghostButton={{
-            text: 'EVM bridge',
-            link: 'https://www.etherlinkbridge.com/bridge'
+            text: 'Bridge now',
+            link: 'https://bridge.etherlink.com'
           }}
         />
       </Container>
