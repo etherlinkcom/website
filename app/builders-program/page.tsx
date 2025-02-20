@@ -24,9 +24,8 @@ const Program = () => {
             href='https://tt-tezos.typeform.com/bp-entry'
             icon={
               <img
-                src='/img/home/arrow-right.svg'
+                src='/img/builders/arrow-up-right.svg'
                 alt='arrow right icon'
-                className='rotate-[-45deg]'
               />
             }
           />
