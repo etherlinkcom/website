@@ -13,7 +13,7 @@ const Program = () => {
         <div className='pb-16'>
           <h1 className='text-[35px] md:text-[55px] md:text-5xl font-bold text-white tracking-[-0.7px] md:tracking-[-1.1px]'>
             <span className='text-newGreen'>Etherlink</span>
-            <br /> Builders' Program
+            <br /> Builders Program
           </h1>
           <p className='mt-4 md:text-lg text-[#9B9B9B]'>
             Your gateway to decentralized innovation - applications now open.
