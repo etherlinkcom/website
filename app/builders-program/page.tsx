@@ -3,14 +3,14 @@ import { PrimaryButton } from '../components/buttons/PrimaryButton'
 
 const Program = () => {
   return (
-    <div className='relative w-full h-screen -translate-y-[104px] md:-translate-y-[138px] overflow-hidden'>
+    <div>
       <img
-        className='absolute top-0 w-[870px] h-[360px] md:w-[2320px] md:h-[960px] object-cover'
+        className='absolute top-0 w-[870px] h-[360px] md:w-[2320px] md:h-[960px] object-cover left-1/2 transform -translate-x-1/2'
         src='/img/builders/etherlink-bg.svg'
         alt='bg img'
       />
-      <div className='absolute inset-0 flex items-center justify-center'>
-        <Container className='flex flex-col items-start'>
+      <Container className='min-h-[calc(100vh-104px)] md:min-h-[calc(100vh-138px)] relative justify-center container px-8 py-24 mx-auto flex flex-col items-start'>
+        <div className='pb-16'>
           <h1 className='text-[35px] md:text-[55px] md:text-5xl font-bold text-white tracking-[-0.7px] md:tracking-[-1.1px]'>
             <span className='text-newGreen'>Etherlink</span>
             <br /> Builders' Program
@@ -29,8 +29,8 @@ const Program = () => {
               />
             }
           />
-        </Container>
-      </div>
+        </div>
+      </Container>
     </div>
   )
 }
