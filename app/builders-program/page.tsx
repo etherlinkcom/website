@@ -16,7 +16,8 @@ const Program = () => {
             <br /> Builders Program
           </h1>
           <p className='mt-4 md:text-lg text-[#9B9B9B]'>
-            Your gateway to decentralized innovation - applications now open.
+            Get mentorship from top experts, find co-founders and get funding to
+            accelerate your build.
           </p>
           <PrimaryButton
             className='mt-8 text-lg'
