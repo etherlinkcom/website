@@ -45,7 +45,7 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
         link: 'http://testnet.explorer.etherlink.com/'
       },
       {
-        name: 'Mainnet beta explorer',
+        name: 'Mainnet explorer',
         link: 'https://explorer.etherlink.com/'
       },
       {
