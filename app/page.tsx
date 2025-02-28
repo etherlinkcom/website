@@ -1,17 +1,11 @@
 import Container from './components/container'
-import { Main } from './components/pages/Home/Main'
 import { ExperienceSection } from './components/pages/Home/ExperienceSection'
 import { DeveloperExperience } from './components/pages/Home/DeveloperExperience'
-import { ExploreEcosystem } from './components/pages/Home/ExploreEcosystem'
 import Cta from './components/cta'
 import type { Metadata } from 'next'
-import {
-  fetchAirtableData,
-  mapToProject,
-  RawProject
-} from '../utils/airtable/ecosystem'
 import { NewMain } from './components/pages/RevampHome/NewMain'
 import { Partners } from './components/pages/RevampHome/Partners'
+import { GetStarted } from './components/pages/RevampHome/GetStarted'
 
 export const metadata: Metadata = {
   title: 'Etherlink Ecosystem | Discover dApps and Integrations | Etherlink',
@@ -20,18 +14,11 @@ export const metadata: Metadata = {
 }
 
 const Home = async () => {
-  const airtableData = await fetchAirtableData(
-    `?filterByFormula=AND(NOT({rank} = 0), {rank} != '')&sort[0][field]=rank`
-  )
-
-  const rawProjects = airtableData?.records || []
   return (
     <>
       <NewMain />
       <Partners />
-      {/* <ExploreEcosystem
-        projects={rawProjects.map((table: RawProject) => mapToProject(table))}
-      /> */}
+      <GetStarted />
       <ExperienceSection />
       <DeveloperExperience />
       <Container>
