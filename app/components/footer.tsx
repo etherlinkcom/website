@@ -11,6 +11,10 @@ const NAVS = [
   {
     name: 'Brand Assets',
     link: 'https://drive.google.com/drive/folders/1DUhC05bVlISJ2i77kCNP_Tw-G5b48IRT?usp=sharing'
+  },
+  {
+    name: 'Cookie Policy',
+    link: '/privacy'
   }
 ]
 
