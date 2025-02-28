@@ -12,7 +12,7 @@ const Program = () => {
       <Container className='min-h-[calc(100vh-104px)] md:min-h-[calc(100vh-138px)] relative justify-center container px-8 py-24 mx-auto flex flex-col items-start'>
         <div className='pb-16'>
           <h1 className='text-[35px] md:text-[55px] font-bold text-white tracking-[-0.7px] md:tracking-[-1.1px] leading-[1.1]'>
-            <span className='text-newGreen'>Etherlink</span>
+            <span className='text-neonGreen-500'>Etherlink</span>
             <br /> Builders Program
           </h1>
           <p className='mt-4 md:text-lg text-[#9B9B9B]'>
