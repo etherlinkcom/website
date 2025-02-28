@@ -10,6 +10,7 @@ import {
   mapToProject,
   RawProject
 } from '../utils/airtable/ecosystem'
+import { NewMain } from './components/pages/Home/NewMain'
 
 export const metadata: Metadata = {
   title: 'Etherlink Ecosystem | Discover dApps and Integrations | Etherlink',
@@ -25,7 +26,7 @@ const Home = async () => {
   const rawProjects = airtableData?.records || []
   return (
     <>
-      <Main />
+      <NewMain />
       <ExploreEcosystem
         projects={rawProjects.map((table: RawProject) => mapToProject(table))}
       />
