@@ -50,14 +50,14 @@ const CtaBox = ({ topLine, title, desc, link }: CtaBoxProps) => {
     <div className='w-full h-full'>
       <Link href={link} target={isExternalLink(link)}>
         <div
-          className='relative flex flex-1 min-h-0 lg:min-h-[200px] flex-col p-6 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
-              rounded-3xl h-full w-full group border border-transparent hover:border hover:border-neonGreen-500 hover:cursor-pointer'
+          className='border border-transparent relative flex flex-1 min-h-0 lg:min-h-[200px] flex-col p-6 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
+              rounded-3xl h-full w-full group hover:border hover:border-neonGreen-500 hover:cursor-pointer'
         >
-          <div className='flex items-center flex-wrap justify-between mb-4 h-full'>
+          <div className='flex items-center flex-wrap justify-between h-fit mb-2'>
             <p className='text-white font-light text-xs'>{topLine}</p>
             <img src='/img/icons/green-arrow-up-right.svg' alt='arrow' />
           </div>
-          <p className='w-full text-neonGreen-500 text-[23px] font-semibold'>
+          <p className='w-full text-neonGreen-500 text-[23px] font-semibold mb-4'>
             {title}
           </p>
           <p className='mt-4 text-grey-200'>{desc}</p>
