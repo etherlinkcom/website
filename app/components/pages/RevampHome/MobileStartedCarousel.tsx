@@ -8,29 +8,11 @@ import '../Home/react-swiper.css'
 import { Pagination } from 'swiper/modules'
 import Link from 'next/link'
 import { isExternalLink } from '../../Navbar'
-
-const STARTED_BOXES = [
-  {
-    topLine: 'FEATURED',
-    title: 'Explore Apple Farm',
-    desc: 'Sign up to the waitlist ',
-    link: 'https://bridge.etherlink.com/',
-    mobileImg: '/',
-    desktopImg: '/'
-  },
-  {
-    topLine: 'FEATURED',
-    title: 'Explore Apple Farm',
-    desc: 'Sign up to the waitlist ',
-    link: 'https://bridge.etherlink.com/',
-    mobileImg: '/',
-    desktopImg: '/'
-  }
-]
+import { STARTED_BOXES } from './fixture'
 
 export const MobileStartedCarousel = () => {
   return (
-    <div className='mb-10 mt-4'>
+    <div className='block md:hidden mb-10 mt-4'>
       <Swiper
         className='mobileCarousel'
         style={{
@@ -53,7 +35,7 @@ export const MobileStartedCarousel = () => {
   )
 }
 
-interface StartedBoxProps {
+export interface StartedBoxProps {
   topLine: string
   title: string
   desc: string

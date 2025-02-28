@@ -6,6 +6,7 @@ import { SectionBgGradient } from '../Home/SectionBgGradient'
 import Link from 'next/link'
 import { isExternalLink } from '../../Navbar'
 import { MobileStartedCarousel } from './MobileStartedCarousel'
+import { PanelFlex } from './PanelFlex'
 
 const STARTED_BOXES = [
   {
@@ -24,7 +25,7 @@ const STARTED_BOXES = [
     topLine: 'DEVELOPER TOOLS',
     title: 'Start building',
     desc: 'Find all the information you need to get started as a builder on Etherlink.',
-    link: '/'
+    link: '#developers'
   }
 ]
 
@@ -46,6 +47,7 @@ export const GetStarted = () => {
         ))}
       </div>
       <MobileStartedCarousel />
+      <PanelFlex />
     </Container>
   )
 }

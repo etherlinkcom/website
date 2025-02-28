@@ -132,3 +132,22 @@ export const PARTNERS = [
     image: '/img/newPartners/zeeve.png'
   }
 ]
+
+export const STARTED_BOXES = [
+  {
+    topLine: 'FEATURED',
+    title: 'Explore Apple Farm',
+    desc: 'Sign up to the waitlist ',
+    link: 'https://bridge.etherlink.com/',
+    mobileImg: '/',
+    desktopImg: '/'
+  },
+  {
+    topLine: 'FEATURED',
+    title: 'Explore Apple Farm',
+    desc: 'Sign up to the waitlist ',
+    link: 'https://bridge.etherlink.com/',
+    mobileImg: '/',
+    desktopImg: '/'
+  }
+]
