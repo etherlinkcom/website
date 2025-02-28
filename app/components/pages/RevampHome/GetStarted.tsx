@@ -3,9 +3,9 @@
 import React from 'react'
 import Container from '../../container'
 import { SectionBgGradient } from '../Home/SectionBgGradient'
-import Image from 'next/image'
 import Link from 'next/link'
 import { isExternalLink } from '../../Navbar'
+import { MobileStartedCarousel } from './MobileStartedCarousel'
 
 const STARTED_BOXES = [
   {
@@ -45,6 +45,7 @@ export const GetStarted = () => {
           <StartedBox key={index} {...box} />
         ))}
       </div>
+      <MobileStartedCarousel />
     </Container>
   )
 }
@@ -58,20 +59,22 @@ interface StartedBoxProps {
 
 const StartedBox = ({ topLine, title, desc, link }: StartedBoxProps) => {
   return (
-    <div
-      className='relative flex flex-1 min-h-0 lg:min-h-[200px] flex-col p-6 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
-        rounded-3xl h-full w-full group border border-transparent hover:border hover:border-neonGreen-500 hover:cursor-pointer'
-    >
-      <div className='flex items-center flex-wrap justify-between mb-4 h-full'>
-        <p className='text-grey-50 font-light text-xs'>{topLine}</p>
-        <Link href={link} target={isExternalLink(link)}>
-          <img src='/img/icons/green-arrow-up-right.svg' alt='arrow' />
-        </Link>
-      </div>
-      <p className='w-full text-neonGreen-500 text-[23px] font-semibold'>
-        {title}
-      </p>
-      <p className='py-3 text-grey-200'>{desc}</p>
+    <div className='w-full'>
+      <Link href={link} target={isExternalLink(link)}>
+        <div
+          className='relative flex flex-1 min-h-0 lg:min-h-[200px] flex-col p-6 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
+            rounded-3xl h-full w-full group border border-transparent hover:border hover:border-neonGreen-500 hover:cursor-pointer'
+        >
+          <div className='flex items-center flex-wrap justify-between mb-4 h-full'>
+            <p className='text-grey-50 font-light text-xs'>{topLine}</p>
+            <img src='/img/icons/green-arrow-up-right.svg' alt='arrow' />
+          </div>
+          <p className='w-full text-neonGreen-500 text-[23px] font-semibold'>
+            {title}
+          </p>
+          <p className='py-3 text-grey-200'>{desc}</p>
+        </div>
+      </Link>
     </div>
   )
 }
