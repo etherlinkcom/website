@@ -2,7 +2,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import Container from '../../container'
-import { FeatureTitle } from './constants'
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 import { SectionBgGradient } from './SectionBgGradient'
 
@@ -11,14 +10,16 @@ export const ExperienceSection = () => {
     <Container className='relative pb-32'>
       <SectionBgGradient />
       <div className='mb-[104px] md:mb-[204px]'>
-        <h2 className='text-white font-bold text-3xl md:text-6xl text-center mb-3 -tracking-[1.1px]'>
-          Experience an exploitation
+        <h2 className='text-neonGreen-500 font-bold text-3xl md:text-6xl text-center mb-3 -tracking-[1.1px]'>
+          Future-proof,
+          <br />
+          <span className='text-white font-bold text-3xl md:text-6xl text-center -tracking-[1.1px]'>
+            open, and scalable
+          </span>
         </h2>
-        <h2 className='text-newGreen font-bold text-3xl md:text-6xl text-center -tracking-[1.1px]'>
-          Free EVM Environment
-        </h2>
-        <p className='text-center mt-2 font-light md:text-[23px] text-[#9B9B9B] -tracking-[0.46px]'>
-          Building towards a secure, decentralized and permissionless network
+
+        <p className='text-center mt-2 font-light md:text-[23px] text-grey-200 -tracking-[0.46px]'>
+          Build with confidence on an upgradable, permissionless network.
         </p>
       </div>
 
@@ -38,42 +39,11 @@ export const ExperienceSection = () => {
             />
           }
           title='EVM'
-          subTitle='Compatible'
-          desc='Smoothly deploy any EVM codebase and migrate your users and assets from Ethereum, and other interoperable chains, enabling seamless interaction and asset transfers across different networks.'
+          subTitle='compatible'
+          desc='Smoothly deploy any EVM codebase and migrate your users and assets from Ethereum 1, and other interoperable chains, enabling seamless interaction and asset transfers across different networks.'
         />
         <CustomFlex
           flexReverse={true}
-          lottie={
-            <Lottie
-              className='max-w-[342px]'
-              animationData={require('./lottie/evm.json')}
-            />
-          }
-          className='mb-20 md:mb-0'
-          blockImg={
-            <img
-              className='absolute -top-16 md:-top-32'
-              src='/img/home/block2.svg'
-              alt='block line'
-            />
-          }
-          title='Smart Rollup'
-          subTitle='Technology'
-          desc={
-            <p className='text-[#9B9B9B] text-sm md:text-lg -tracking-[0.36px] font-normal'>
-              Etherlink is powered by a{' '}
-              <a
-                href='https://tezos.com/developers/smart-rollups/'
-                target='_blank'
-                className='underline text-newGreen'
-              >
-                Smart Rollup
-              </a>
-              , an enshrined, optimistic rollup technology implemented by Tezos.
-            </p>
-          }
-        />
-        <CustomFlex
           lottie={
             <Lottie
               className='max-w-[342px]'
@@ -88,9 +58,29 @@ export const ExperienceSection = () => {
             />
           }
           title='Open and'
-          subTitle='Permissionless'
-          desc='Users retain full ownership of assets. This non-custodial architecture is resistant to censorship.'
+          subTitle='permissionless'
+          desc='Users retain full ownership of assets. This non-custodial architecture Is resistant to censorship'
         />
+        <CustomFlex
+          lottie={
+            <Lottie
+              className='max-w-[342px]'
+              animationData={require('./lottie/evm.json')}
+            />
+          }
+          className='mb-20 md:mb-0'
+          blockImg={
+            <img
+              className='absolute -top-16 md:-top-32'
+              src='/img/home/block2.svg'
+              alt='block line'
+            />
+          }
+          title='Future-proof'
+          subTitle='network'
+          desc="Etherlink's upgradability is facilitated through Tezos' established on-chain governance system, enabling community-drivendevelopmentand progression"
+        />
+
         <CustomFlex
           lottie={
             <Lottie
@@ -106,9 +96,9 @@ export const ExperienceSection = () => {
               alt='block line'
             />
           }
-          title='Future-proof'
-          subTitle='Network'
-          desc="Etherlink's upgradability is facilitated through Tezos' established on-chain governance system, enabling community-driven development and progression"
+          title='Comprehensive'
+          subTitle='toolkit'
+          desc='Leverage familiar tools like Metamask, Hardhat, and Foundry. Access a wide range of integrations, including Subsquid, Fireblocks, Thirdweb,and The Graph'
         />
       </div>
     </Container>
@@ -141,11 +131,11 @@ const CustomFlex = ({
         <img src='/img/home/grid.svg' alt='bg grid' />
 
         <div className='absolute top-1/2 -translate-y-1/2 flex flex-col w-full px-7 md:px-16 pt-4'>
-          <FeatureTitle
-            title={title}
-            subTitle={subTitle}
-            className='mb-2 text-md md:text-3xl'
-          />
+          <h3
+            className={`text-start text-2xl sm:text-3xl border-l border-newGreen pl-4 font-semibold leading-none -tracking-[0.56px] mb-3`}
+          >
+            <span className='text-newGreen'>{title}</span> {subTitle}
+          </h3>
           {typeof desc === 'string' ? (
             <p className='text-[#9B9B9B] text-sm md:text-lg -tracking-[0.36px] font-normal'>
               {desc}
