@@ -11,7 +11,9 @@ interface PanelFlexProps {
   className?: string
 }
 
-export const PanelFlex: React.FC<PanelFlexProps> = ({ className }) => {
+export const DesktopStartedCarousel: React.FC<PanelFlexProps> = ({
+  className
+}) => {
   const [emblaRef] = useEmblaCarousel({
     loop: false,
     align: 'start',
@@ -22,7 +24,6 @@ export const PanelFlex: React.FC<PanelFlexProps> = ({ className }) => {
   return (
     <div className='relative flex flex-col items-center mb-[60px] md:mb-[100px] w-full'>
       <div className='relative py-10 w-full' ref={emblaRef}>
-        {/* Embla Container */}
         <div className='flex items-center gap-x-8 embla__container'>
           {STARTED_BOXES.map((data, index) => (
             <div key={index} className='embla__slide shrink-0 w-full'>

@@ -6,7 +6,7 @@ import { SectionBgGradient } from '../Home/SectionBgGradient'
 import Link from 'next/link'
 import { isExternalLink } from '../../Navbar'
 import { MobileStartedCarousel } from './MobileStartedCarousel'
-import { PanelFlex } from './PanelFlex'
+import { DesktopStartedCarousel } from './DesktopStartedCarousel'
 
 const STARTED_BOXES = [
   {
@@ -47,7 +47,7 @@ export const GetStarted = () => {
         ))}
       </div>
       <MobileStartedCarousel />
-      <PanelFlex />
+      <DesktopStartedCarousel />
     </Container>
   )
 }
