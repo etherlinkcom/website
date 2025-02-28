@@ -31,7 +31,7 @@ const STARTED_BOXES = [
 
 export const GetStarted = () => {
   return (
-    <Container className='relative mb-[104px]'>
+    <Container className='relative'>
       <SectionBgGradient />
       <div className='mb-[100px]'>
         <h2 className='text-white font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px]'>

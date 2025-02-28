@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 import { NewMain } from './components/pages/RevampHome/NewMain'
 import { Partners } from './components/pages/RevampHome/Partners'
 import { GetStarted } from './components/pages/RevampHome/GetStarted'
+import { Speed } from './components/pages/RevampHome/Speed'
 
 export const metadata: Metadata = {
   title: 'Etherlink Ecosystem | Discover dApps and Integrations | Etherlink',
@@ -19,6 +20,7 @@ const Home = async () => {
       <NewMain />
       <Partners />
       <GetStarted />
+      <Speed />
       <ExperienceSection />
       <DeveloperExperience />
       <Container>
