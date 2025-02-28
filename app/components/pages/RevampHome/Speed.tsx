@@ -4,6 +4,7 @@ import React from 'react'
 import Container from '../../container'
 import { SPEED_BOXES } from './fixture'
 import { Fade } from 'react-awesome-reveal'
+import { MobileSpeed } from './MobileSpeed'
 
 export const Speed = () => {
   return (
@@ -32,6 +33,7 @@ export const Speed = () => {
           </Fade>
         ))}
       </div>
+      <MobileSpeed />
     </Container>
   )
 }
