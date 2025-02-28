@@ -1,56 +1,8 @@
 'use client'
 import React from 'react'
-import Image from 'next/image'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoscroll from 'embla-carousel-auto-scroll'
-import { ArrowButton } from '../../buttons/ArrowButton'
-
-const PARTNERS = [
-  {
-    alt: 'blockscout',
-    image: '/img/newPartners/blockscout.jpeg'
-  },
-  {
-    alt: 'groupfi',
-    image: '/img/newPartners/groupfi.jpeg'
-  },
-  {
-    alt: 'hanji',
-    image: '/img/newPartners/hanji.jpeg'
-  },
-  {
-    alt: 'idos',
-    image: '/img/newPartners/idos.jpeg'
-  },
-  {
-    alt: 'Layer3',
-    image: '/img/newPartners/Layer3.jpeg'
-  },
-  {
-    alt: 'layerZero',
-    image: '/img/newPartners/layerZero.jpeg'
-  },
-  {
-    alt: 'pyth',
-    image: '/img/newPartners/pyth.jpeg'
-  },
-  {
-    alt: 'redstone',
-    image: '/img/newPartners/redstone.png'
-  },
-  {
-    alt: 'theGraph',
-    image: '/img/newPartners/theGraph.jpeg'
-  },
-  {
-    alt: 'thirdweb',
-    image: '/img/newPartners/thirdweb.jpeg'
-  },
-  {
-    alt: '',
-    image: '/img/newPartners/'
-  }
-]
+import { PARTNERS } from './fixture'
 
 export const Partners = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoscroll({})])
