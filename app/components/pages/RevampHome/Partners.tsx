@@ -8,13 +8,22 @@ export const Partners = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoscroll({})])
 
   return (
-    <div className='relative flex flex-col items-center pb-[80px]'>
-      <div className='relative overflow-hidden' ref={emblaRef}>
-        <div className='flex items-center bg-neutral gap-3 embla__container'>
+    <div className='relative flex flex-col items-center mb-[60px] md:mb-[100px]'>
+      <div className='absolute top-0 max-w-[1300px] w-full h-0.5 rounded-lg opacity-60'>
+        <div className='w-full h-full bg-gradient-to-r from-[#38FF9C00] from-10% via-[#35ec91] via-38% to-[#38FF9C00] to-100%'></div>
+      </div>
+      <div className='absolute bottom-0 max-w-[1300px] w-full h-0.5 rounded-lg opacity-60'>
+        <div className='w-full h-full bg-gradient-to-r from-[#38FF9C00] from-10% via-[#35ec91] via-38% to-[#38FF9C00] to-100%'></div>
+      </div>
+      <div
+        className='relative py-10 md:mx-[104px] overflow-hidden max-w-[1300px]'
+        ref={emblaRef}
+      >
+        <div className='flex items-center bg-neutral gap-1 embla__container'>
           {PARTNERS.map((data, index) => (
             <div className='flex-none embla__slide' key={index}>
               <img
-                className='object-contain rounded-lg w-12 h-12'
+                className='object-contain rounded-lg mx-2 w-12 h-12'
                 src={data.image}
                 alt={data.alt}
               />
