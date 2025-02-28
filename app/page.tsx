@@ -7,6 +7,7 @@ import { NewMain } from './components/pages/RevampHome/NewMain'
 import { Partners } from './components/pages/RevampHome/Partners'
 import { GetStarted } from './components/pages/RevampHome/GetStarted'
 import { Speed } from './components/pages/RevampHome/Speed'
+import { Evm } from './components/pages/RevampHome/Evm'
 
 export const metadata: Metadata = {
   title: 'Etherlink Ecosystem | Discover dApps and Integrations | Etherlink',
@@ -21,6 +22,7 @@ const Home = async () => {
       <Partners />
       <GetStarted />
       <Speed />
+      <Evm />
       <ExperienceSection />
       <DeveloperExperience />
       <Container>

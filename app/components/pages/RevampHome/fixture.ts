@@ -184,3 +184,20 @@ export const SPEED_BOXES = [
     desc: 'Anyone can run a node, post commitments, challenge, and secure the network.'
   }
 ]
+
+export const EVM_BOXES = [
+  {
+    topLine: 'LEARN MORE',
+    title: 'Tezos smart rollups',
+    desc: 'Etherlink is powered by a Smart Rollup, an enshrined, optimistic rollup technology implemented by Tezos.',
+    link: '/',
+    img: '/'
+  },
+  {
+    topLine: 'LEARN MORE',
+    title: 'The road to Tezos X',
+    desc: 'Etherlink is the first smart rollup on the Tezos X journey, offering a scalable, cloud-like backend for applications',
+    link: '/',
+    img: '/'
+  }
+]
