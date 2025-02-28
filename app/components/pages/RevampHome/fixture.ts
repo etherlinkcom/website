@@ -201,3 +201,30 @@ export const EVM_BOXES = [
     img: '/'
   }
 ]
+
+export const BOTTOM_CTA = [
+  {
+    topLine: 'DOCS & GUIDES',
+    title: 'Read docs',
+    desc: 'Get started with Etherlink’s developer docs',
+    link: 'https://docs.etherlink.com/'
+  },
+  {
+    topLine: 'EXPLORE',
+    title: 'View explorer',
+    desc: 'Track transactions and network activity',
+    link: 'https://explorer.etherlink.com/'
+  },
+  {
+    topLine: 'GOVERNANCE',
+    title: 'Check status',
+    desc: 'View the network’s performance and health',
+    link: ''
+  },
+  {
+    topLine: 'TESTNET READY',
+    title: 'Testnet faucet',
+    desc: 'Get testnet tokens to start deployment',
+    link: 'https://faucet.etherlink.com/'
+  }
+]
