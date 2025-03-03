@@ -30,7 +30,7 @@ module.exports = {
         neonGreen: {
           50: '#eaffff',
           100: '#cffef0',
-          200: '#a3f7ff',
+          200: '#A3FFD1',
           300: '#77ffdb',
           400: '#57ffbd',
           500: '#38ff9c',
