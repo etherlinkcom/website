@@ -138,17 +138,17 @@ export const STARTED_BOXES = [
     topLine: 'FEATURED',
     title: 'Explore Apple Farm',
     desc: 'Sign up to the waitlist ',
-    link: 'https://bridge.etherlink.com/',
-    mobileImg: '/',
-    desktopImg: '/'
+    link: 'https://www.applefarm.xyz/waitlist',
+    mobileImg: '/img/home/getStarted/applefarm-mobile.png',
+    desktopImg: '/img/home/getStarted/applefarm-desktop.png'
   },
   {
     topLine: 'FEATURED',
     title: 'Explore Apple Farm',
     desc: 'Sign up to the waitlist ',
-    link: 'https://bridge.etherlink.com/',
-    mobileImg: '/',
-    desktopImg: '/'
+    link: 'https://www.applefarm.xyz/waitlist',
+    mobileImg: '/img/home/getStarted/applefarm-mobile.png',
+    desktopImg: '/img/home/getStarted/applefarm-desktop.png'
   }
 ]
 

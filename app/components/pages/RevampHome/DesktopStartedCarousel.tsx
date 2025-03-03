@@ -30,14 +30,20 @@ export const DesktopStartedCarousel = () => {
   )
 }
 
-const PanelBox = ({ topLine, title, desc, link }: StartedBoxProps) => {
+const PanelBox = ({
+  topLine,
+  title,
+  desc,
+  link,
+  desktopImg
+}: StartedBoxProps) => {
   return (
-    <div className='h-[250px] bg-neonGreen-500 rounded-3xl'>
+    <div className='h-[350px] rounded-3xl shadow-[0_0_6px_0_rgba(56,255,156,0.4)]'>
       <Link href={link} target={isExternalLink(link)}>
-        <div className='relative shadow-lg h-full'>
+        <div className='relative h-full w-full'>
           <div
             className='absolute rounded-l-3xl bg-[rgba(27,27,27,0.85)] backdrop-blur-[12px]
-             left-0 h-full flex flex-col justify-between p-6'
+             left-0 h-full flex flex-col justify-between p-6 z-10'
           >
             <div>
               <p className='text-grey-50 text-xs font-light mb-2'>{topLine}</p>
@@ -47,6 +53,11 @@ const PanelBox = ({ topLine, title, desc, link }: StartedBoxProps) => {
             </div>
             <p className='text-grey-200'>{desc}</p>
           </div>
+          <img
+            className='absolute right-0 object-cover h-full w-full z-0 rounded-3xl'
+            src={desktopImg}
+            alt='bg img'
+          />
         </div>
       </Link>
     </div>

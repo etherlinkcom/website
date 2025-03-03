@@ -44,12 +44,22 @@ export interface StartedBoxProps {
   desktopImg: string
 }
 
-const StartedBox = ({ topLine, title, desc, link }: StartedBoxProps) => {
+const StartedBox = ({
+  topLine,
+  title,
+  desc,
+  link,
+  mobileImg
+}: StartedBoxProps) => {
   return (
     <Link href={link} target={isExternalLink(link)}>
-      <div className='relative flex flex-col rounded-xl h-[340px] bg-[#38ff9c] backdrop-blur-[12px]'>
-        <img src='' alt='' />
-        <div className='absolute flex flex-col bottom-0 p-6 w-full bg-[rgba(27,27,27,0.85)]'>
+      <div className='relative flex flex-col rounded-xl h-[340px] shadow-[0_0_6px_0_rgba(56,255,156,0.4)]'>
+        <img
+          className='absolute inset-0 object-cover h-full w-full z-0 rounded-3xl'
+          src={mobileImg}
+          alt='bg img'
+        />
+        <div className='absolute flex flex-col bottom-0 p-6 w-full bg-[rgba(27,27,27,0.85)] backdrop-blur-[12px] rounded-b-3xl'>
           <div className='flex items-center flex-wrap justify-between mb-4 h-full'>
             <p className='text-grey-50 font-light text-xs'>{topLine}</p>
             <img src='/img/icons/green-arrow-up-right.svg' alt='arrow' />
