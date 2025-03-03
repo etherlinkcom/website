@@ -7,13 +7,7 @@ import Link from 'next/link'
 import { isExternalLink } from '../../Navbar'
 import useEmblaCarousel from 'embla-carousel-react'
 
-interface PanelFlexProps {
-  className?: string
-}
-
-export const DesktopStartedCarousel: React.FC<PanelFlexProps> = ({
-  className
-}) => {
+export const DesktopStartedCarousel = () => {
   const [emblaRef] = useEmblaCarousel({
     loop: false,
     align: 'start',
@@ -22,7 +16,7 @@ export const DesktopStartedCarousel: React.FC<PanelFlexProps> = ({
   })
 
   return (
-    <div className='relative flex flex-col items-center mb-[60px] md:mb-[100px] w-full'>
+    <div className='none md:block relative flex flex-col items-center mb-[60px] md:mb-[100px] w-full'>
       <div className='relative py-10 w-full' ref={emblaRef}>
         <div className='flex items-center gap-x-8 embla__container'>
           {STARTED_BOXES.map((data, index) => (

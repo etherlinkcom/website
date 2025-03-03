@@ -4,6 +4,7 @@ import FathomComponent from './components/fathom'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/footer'
 import { GoogleTagManager } from '@next/third-parties/google'
+import { CookieBanner } from './components/CookieBanner'
 
 export const metadata = {
   metadataBase: new URL('https://etherlink.com')
@@ -30,6 +31,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <CookieBanner />
         </ClientLayout>
       </body>
     </html>
