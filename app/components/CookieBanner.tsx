@@ -12,23 +12,23 @@ export const CookieBanner = () => {
     const cookieConsent = Cookies.get('cookie_consent')
     if (!cookieConsent) {
       setIsVisible(true)
-      document.documentElement.classList.add('overflow-hidden') // Disable scrolling
+      document.documentElement.classList.add('overflow-hidden')
     }
     return () => {
-      document.documentElement.classList.remove('overflow-hidden') // Restore scrolling
+      document.documentElement.classList.remove('overflow-hidden')
     }
   }, [])
 
   const handleAccept = () => {
     Cookies.set('cookie_consent', 'accepted', { expires: 365 })
     setIsVisible(false)
-    document.documentElement.classList.remove('overflow-hidden') // Restore scrolling
+    document.documentElement.classList.remove('overflow-hidden')
   }
 
   const handleNecessaryOnly = () => {
     Cookies.set('cookie_consent', 'necessary', { expires: 365 })
     setIsVisible(false)
-    document.documentElement.classList.remove('overflow-hidden') // Restore scrolling
+    document.documentElement.classList.remove('overflow-hidden')
   }
 
   return isVisible ? (
