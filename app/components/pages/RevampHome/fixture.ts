@@ -191,14 +191,14 @@ export const EVM_BOXES = [
     title: 'Tezos smart rollups',
     desc: 'Etherlink is powered by a Smart Rollup, an enshrined, optimistic rollup technology implemented by Tezos.',
     link: '/',
-    img: '/'
+    img: '/img/home/EVM/smart-rollups.jpg'
   },
   {
     topLine: 'LEARN MORE',
     title: 'The road to Tezos X',
     desc: 'Etherlink is the first smart rollup on the Tezos X journey, offering a scalable, cloud-like backend for applications',
     link: '/',
-    img: '/'
+    img: '/img/home/EVM/tezos-x.jpg'
   }
 ]
 

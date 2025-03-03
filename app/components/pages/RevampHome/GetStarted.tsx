@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { isExternalLink } from '../../Navbar'
 import { MobileStartedCarousel } from './MobileStartedCarousel'
 import { DesktopStartedCarousel } from './DesktopStartedCarousel'
+import { Fade } from 'react-awesome-reveal'
 
 const STARTED_BOXES = [
   {
@@ -41,9 +42,16 @@ export const GetStarted = () => {
           Explore apps, bridge assets, and start building on Etherlink today.
         </p>
       </div>
-      <div className='flex flex-col lg:flex-row gap-4 lg:gap-8 items-stretch justify-center w-full h-full'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 w-full h-full'>
         {STARTED_BOXES.map((box, index) => (
-          <StartedBox key={index} {...box} />
+          <Fade
+            triggerOnce
+            direction='down'
+            delay={100 + index * 100}
+            key={index}
+          >
+            <StartedBox {...box} />
+          </Fade>
         ))}
       </div>
       <MobileStartedCarousel />

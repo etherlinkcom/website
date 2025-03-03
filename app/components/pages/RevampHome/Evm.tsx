@@ -53,9 +53,12 @@ interface EvmCardProps {
 const EvmCard = ({ topLine, title, desc, link, img }: EvmCardProps) => {
   return (
     <Link href={link} target={isExternalLink(link)}>
-      {/* waiting for img */}
-      {/* <img src={img} alt='bg img' /> */}
-      <div className='relative rounded-3xl shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] backdrop-blur-[6px] h-[300px]'>
+      <div className='relative rounded-3xl shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] backdrop-blur-[6px] h-[400px] overflow-hidden'>
+        <img
+          className='absolute inset-0 object-cover w-full h-full rounded-3xl'
+          src={img}
+          alt='bg img'
+        />
         <div className='absolute bottom-0 rounded-b-3xl p-6 bg-[rgba(27,27,27,0.85)] backdrop-blur-[12px]'>
           <div className='flex items-center flex-wrap justify-between mb-4 h-full'>
             <p className='text-grey-50 font-light text-xs'>{topLine}</p>
