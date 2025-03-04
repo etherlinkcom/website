@@ -8,6 +8,7 @@ import { isExternalLink } from '../../Navbar'
 import { MobileStartedCarousel } from './MobileStartedCarousel'
 import { DesktopStartedCarousel } from './DesktopStartedCarousel'
 import { Fade } from 'react-awesome-reveal'
+import { FeaturedProject } from '../../../../utils/airtable/homeFeatured'
 
 const STARTED_BOXES = [
   {
@@ -30,7 +31,11 @@ const STARTED_BOXES = [
   }
 ]
 
-export const GetStarted = () => {
+export const FeaturedSection = ({
+  featuredProjects
+}: {
+  featuredProjects: FeaturedProject[]
+}) => {
   return (
     <Container className='relative'>
       <SectionBgGradient />
@@ -54,8 +59,8 @@ export const GetStarted = () => {
           </Fade>
         ))}
       </div>
-      <MobileStartedCarousel />
-      <DesktopStartedCarousel />
+      <MobileStartedCarousel featuredProjects={featuredProjects} />
+      <DesktopStartedCarousel featuredProjects={featuredProjects} />
     </Container>
   )
 }

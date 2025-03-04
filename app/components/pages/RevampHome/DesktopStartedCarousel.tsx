@@ -1,13 +1,18 @@
 'use client'
 
 import React from 'react'
-import { STARTED_BOXES } from './fixture'
-import { StartedBoxProps } from './MobileStartedCarousel'
+import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 import Link from 'next/link'
 import { isExternalLink } from '../../Navbar'
 import useEmblaCarousel from 'embla-carousel-react'
+import { FeaturedProject } from '../../../../utils/airtable/homeFeatured'
 
-export const DesktopStartedCarousel = () => {
+export const DesktopStartedCarousel = ({
+  featuredProjects
+}: {
+  featuredProjects: FeaturedProject[]
+}) => {
   const [emblaRef] = useEmblaCarousel({
     loop: false,
     align: 'start',
@@ -16,12 +21,12 @@ export const DesktopStartedCarousel = () => {
   })
 
   return (
-    <div className='none md:block relative flex flex-col items-center mb-[60px] md:mb-[100px] w-full'>
+    <div className='hidden md:flex relative flex-col items-center mb-[60px] md:mb-[100px] w-full'>
       <div className='relative py-10 w-full' ref={emblaRef}>
         <div className='flex items-center gap-x-8 embla__container'>
-          {STARTED_BOXES.map((data, index) => (
+          {featuredProjects.map((data, index) => (
             <div key={index} className='embla__slide shrink-0 w-full'>
-              <PanelBox {...data} />
+              <FeaturedBox {...data} />
             </div>
           ))}
         </div>
@@ -30,32 +35,56 @@ export const DesktopStartedCarousel = () => {
   )
 }
 
-const PanelBox = ({
-  topLine,
-  title,
-  desc,
-  link,
-  desktopImg
-}: StartedBoxProps) => {
+export interface FeaturedBoxProps {
+  Title: string
+  Description: string
+  Short_Description: string
+  Project_Link: string
+  Desktop_Image: Array<{
+    id: string
+    url: string
+    filename: string
+    size: number
+    type: string
+  }>
+  Mobile_Image: Array<{
+    id: string
+    url: string
+    filename: string
+    size: number
+    type: string
+  }>
+}
+
+const FeaturedBox = ({
+  Title,
+  Description,
+  Project_Link,
+  Desktop_Image
+}: FeaturedBoxProps) => {
   return (
-    <div className='h-[350px] rounded-3xl shadow-[0_0_6px_0_rgba(56,255,156,0.4)]'>
-      <Link href={link} target={isExternalLink(link)}>
+    <div className='h-[420px] rounded-3xl shadow-[0_0_6px_0_rgba(56,255,156,0.4)]'>
+      <Link href={Project_Link} target={isExternalLink(Project_Link)}>
         <div className='relative h-full w-full'>
           <div
             className='absolute rounded-l-3xl bg-[rgba(27,27,27,0.85)] backdrop-blur-[12px]
-             left-0 h-full flex flex-col justify-between p-6 z-10'
+             left-0 h-full flex flex-col justify-between p-6 z-10 max-w-[400px]'
           >
             <div>
-              <p className='text-grey-50 text-xs font-light mb-2'>{topLine}</p>
+              <p className='text-grey-50 text-xs font-light mb-2'>FEATURED</p>
               <p className='text-neonGreen-500 font-semibold text-[23px]'>
-                {title}
+                {Title}
               </p>
             </div>
-            <p className='text-grey-200'>{desc}</p>
+            <p className='text-grey-200 '>
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {Description}
+              </ReactMarkdown>
+            </p>
           </div>
           <img
             className='absolute right-0 object-cover h-full w-full z-0 rounded-3xl'
-            src={desktopImg}
+            src={Desktop_Image[0].url}
             alt='bg img'
           />
         </div>
