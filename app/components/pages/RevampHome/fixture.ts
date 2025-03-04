@@ -133,25 +133,6 @@ export const PARTNERS = [
   }
 ]
 
-export const STARTED_BOXES = [
-  {
-    topLine: 'FEATURED',
-    title: 'Explore Apple Farm',
-    desc: 'Sign up to the waitlist ',
-    link: 'https://www.applefarm.xyz/waitlist',
-    mobileImg: '/img/home/getStarted/applefarm-mobile.png',
-    desktopImg: '/img/home/getStarted/applefarm-desktop.png'
-  },
-  {
-    topLine: 'FEATURED',
-    title: 'Explore Apple Farm',
-    desc: 'Sign up to the waitlist ',
-    link: 'https://www.applefarm.xyz/waitlist',
-    mobileImg: '/img/home/getStarted/applefarm-mobile.png',
-    desktopImg: '/img/home/getStarted/applefarm-desktop.png'
-  }
-]
-
 export const SPEED_BOXES = [
   {
     icon: '/img/icons/s1.svg',
