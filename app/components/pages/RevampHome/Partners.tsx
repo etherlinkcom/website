@@ -7,7 +7,9 @@ import { PARTNERS } from './fixture'
 import Link from 'next/link'
 
 export const Partners = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoscroll({})])
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoscroll({ stopOnInteraction: false })
+  ])
 
   return (
     <Link href='/ecosystem'>
