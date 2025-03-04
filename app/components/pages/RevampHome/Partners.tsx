@@ -7,7 +7,7 @@ import { PARTNERS } from './fixture'
 import Link from 'next/link'
 
 export const Partners = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+  const [emblaRef] = useEmblaCarousel({ loop: true, watchDrag: false }, [
     Autoscroll({ stopOnInteraction: false })
   ])
 
