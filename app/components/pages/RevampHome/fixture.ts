@@ -137,12 +137,12 @@ export const SPEED_BOXES = [
   {
     icon: '/img/icons/s1.svg',
     title: 'Ultrafast transactions',
-    desc: 'Soft confirmations in less than 500ms'
+    desc: 'Soft confirmations in less than 500ms.'
   },
   {
     icon: '/img/icons/s2.svg',
     title: 'Decentralized governance ',
-    desc: 'Stakeholders can propose, vote, and shape the network'
+    desc: 'Stakeholders can propose, vote, and shape the network.'
   },
   {
     icon: '/img/icons/s3.svg',
@@ -152,12 +152,12 @@ export const SPEED_BOXES = [
   {
     icon: '/img/icons/s4.svg',
     title: 'Non-custodial rollup  ',
-    desc: 'No exclusive or irreversible third-party control'
+    desc: 'No exclusive or irreversible third-party control.'
   },
   {
     icon: '/img/icons/s5.svg',
     title: 'Robust security',
-    desc: 'Tezos-enshrined for ultimate Layer 1 security'
+    desc: 'Tezos-enshrined for ultimate Layer 1 security.'
   },
   {
     icon: '/img/icons/s6.svg',
