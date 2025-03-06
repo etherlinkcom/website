@@ -13,7 +13,7 @@ export const Partners = () => {
 
   return (
     <Link href='/ecosystem'>
-      <div className='relative flex flex-col items-center mb-[60px] md:mb-[100px]'>
+      <div className='relative flex flex-col items-center mb-[60px] md:mb-[100px] z-10'>
         <GraditentLine className='top-0' />
         <GraditentLine className='bottom-0' />
         <div
