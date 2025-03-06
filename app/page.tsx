@@ -15,13 +15,13 @@ export const metadata: Metadata = {
 }
 
 const Home = async () => {
-  const featuredProjects = await fetchFeaturedProjects()
+  const activeFeaturedProjects = await fetchFeaturedProjects()
 
   return (
     <>
       <NewMain />
       <Partners />
-      <FeaturedSection featuredProjects={featuredProjects} />
+      <FeaturedSection featuredProjects={activeFeaturedProjects} />
       <Speed />
       <Evm />
       <ExperienceSection />

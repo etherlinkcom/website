@@ -1,3 +1,5 @@
+import { isAfter, isBefore, parseISO } from 'date-fns'
+
 interface FeaturedRawProject {
   id: string
   createdTime: string
@@ -46,7 +48,26 @@ export const fetchFeaturedProjects = async () => {
 
     const airtableData = await response.json()
 
-    return airtableData.records.map(mapToFeaturedProject)
+    const today = new Date()
+
+    const activeProjects = airtableData.records
+      .map(mapToFeaturedProject)
+      .filter((project: FeaturedProject) => {
+        const { Start_Date, End_Date } = project
+
+        if (!Start_Date) return false
+
+        const startDate = parseISO(Start_Date)
+        const endDate = End_Date ? parseISO(End_Date) : null
+
+        const hasStarted =
+          isBefore(startDate, today) || isAfter(startDate, today)
+        const isStillActive = !endDate || isAfter(endDate, today)
+
+        return hasStarted && isStillActive
+      })
+
+    return activeProjects
   } catch (error) {
     console.error('Error fetching featured projects:', error)
     throw error

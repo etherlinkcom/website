@@ -9,7 +9,6 @@ import { MobileStartedCarousel } from './MobileStartedCarousel'
 import { DesktopStartedCarousel } from './DesktopStartedCarousel'
 import { Fade } from 'react-awesome-reveal'
 import { FeaturedProject } from '../../../../utils/airtable/homeFeatured'
-import { isAfter, isBefore, parseISO } from 'date-fns'
 
 const STARTED_BOXES = [
   {
@@ -37,22 +36,6 @@ export const FeaturedSection = ({
 }: {
   featuredProjects: FeaturedProject[]
 }) => {
-  const today = new Date()
-
-  const activeProjects = featuredProjects.filter(project => {
-    const { Start_Date, End_Date } = project
-
-    if (!Start_Date) return false // Ignore projects without a start date
-
-    const startDate = parseISO(Start_Date)
-    const endDate = End_Date ? parseISO(End_Date) : null
-
-    const hasStarted = isBefore(startDate, today) || isAfter(startDate, today) // Ensure project has started
-    const isStillActive = !endDate || isAfter(endDate, today) // Stay active if no End_Date
-
-    return hasStarted && isStillActive
-  })
-
   return (
     <Container className='relative'>
       <SectionBgGradient />
@@ -76,8 +59,8 @@ export const FeaturedSection = ({
           </Fade>
         ))}
       </div>
-      <MobileStartedCarousel featuredProjects={activeProjects} />
-      <DesktopStartedCarousel featuredProjects={activeProjects} />
+      <MobileStartedCarousel featuredProjects={featuredProjects} />
+      <DesktopStartedCarousel featuredProjects={featuredProjects} />
     </Container>
   )
 }
