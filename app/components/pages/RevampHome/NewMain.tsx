@@ -11,7 +11,7 @@ export const NewMain = () => {
         src='/img/builders/etherlink-bg.svg'
         alt='bg img'
       />
-      <Container className='min-h-[calc(100vh-104px)] md:min-h-[calc(100vh-138px)] relative justify-center container px-8 py-24 mx-auto flex flex-col items-start'>
+      <Container className='min-h-[calc(100vh-104px)] md:min-h-[calc(100vh-138px)] relative justify-center px-8 py-24 mx-auto flex flex-col items-start'>
         <div className='pb-16 text-center md:text-left'>
           <h1 className='text-4xl md:text-[69px] font-bold text-white tracking-[-0.7px] md:tracking-[-1.1px] leading-[1.1]'>
             The <span className='text-neonGreen-500'>fast, fair</span>
