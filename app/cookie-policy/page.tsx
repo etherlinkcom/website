@@ -2,8 +2,12 @@ import Container from '../components/container'
 import { Header } from './Header'
 import { Content } from './Content'
 import { Cta } from './Cta'
+import { notFound } from 'next/navigation'
 
-const Privacy = async () => {
+const Privacy = () => {
+  // waiting for final copy, hide for now
+  return notFound()
+
   return (
     <Container className='max-w-[600px]'>
       <p className='text-neonGreen-500 text-sm mb-3'>
