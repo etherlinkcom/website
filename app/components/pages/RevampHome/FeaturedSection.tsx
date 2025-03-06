@@ -37,9 +37,9 @@ export const FeaturedSection = ({
   featuredProjects: FeaturedProject[]
 }) => {
   return (
-    <Container className='relative'>
+    <Container className='relative z-10'>
       <SectionBgGradient />
-      <div className='mb-[100px] z-10'>
+      <div className='mb-[100px]'>
         <h2 className='text-white font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px]'>
           <span className='text-neonGreen-500'>Get started</span> on Etherlink
         </h2>
