@@ -70,7 +70,8 @@ const EvmCard = ({
       >
         <img
           className={`absolute top-0 w-full h-full object-cover xl:hidden 
-              ${mobileImg?.includes('tezos') ? '-translate-y-8' : ''}`}
+              ${mobileImg?.includes('tezos') ? '-translate-y-8' : ''} 
+              ${mobileImg?.includes('tezos') ? 'md:-translate-y-3' : ''}`}
           src={mobileImg}
           alt='mobile bg img'
         />
