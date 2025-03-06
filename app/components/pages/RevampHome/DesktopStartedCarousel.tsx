@@ -76,11 +76,11 @@ const FeaturedBox = ({
                 {Title}
               </p>
             </div>
-            <p className='text-grey-200 '>
+            <span className='text-grey-200'>
               <ReactMarkdown rehypePlugins={[rehypeRaw]}>
                 {Description}
               </ReactMarkdown>
-            </p>
+            </span>
           </div>
           <img
             className='absolute right-0 object-cover h-full w-full z-0 rounded-3xl'

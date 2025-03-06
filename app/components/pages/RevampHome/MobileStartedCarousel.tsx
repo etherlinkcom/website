@@ -64,11 +64,11 @@ const StartedBox = ({
           <p className='text-neonGreen-500 text-[23px] font-semibold'>
             {Title}
           </p>
-          <p className='text-grey-200 text-sm mt-4'>
+          <span className='text-grey-200 text-sm mt-4'>
             <ReactMarkdown rehypePlugins={[rehypeRaw]}>
               {Short_Description}
             </ReactMarkdown>
-          </p>
+          </span>
         </div>
       </div>
     </Link>
