@@ -37,7 +37,8 @@ export const fetchFeaturedProjects = async () => {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
-    }
+    },
+    cache: 'no-cache' as RequestCache
   }
 
   try {

@@ -16,6 +16,7 @@ const CustomToast = ({
   </div>
 )
 
+// if wallet has etherlink testnet, the toast will show Failed to add network. Please try again.
 const addNetwork = async () => {
   if (window.ethereum) {
     try {
