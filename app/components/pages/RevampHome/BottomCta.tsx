@@ -24,7 +24,7 @@ export const BottomCta = () => {
           Useful resources to get started building on Etherlink
         </p>
       </div>
-      <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+      <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full'>
         {BOTTOM_CTA.map((box, index) => (
           <Fade
             triggerOnce
@@ -49,7 +49,7 @@ interface CtaBoxProps {
 
 const CtaBox = ({ topLine, title, desc, link }: CtaBoxProps) => {
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-full col-span-full'>
       <Link href={link} target={isExternalLink(link)}>
         <div
           className='border border-transparent relative flex flex-1 min-h-0 lg:min-h-[200px] flex-col p-6 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 

@@ -48,11 +48,11 @@ export interface SpeedBoxProps {
 
 export const SpeedBox = ({ icon, title, desc }: SpeedBoxProps) => {
   return (
-    <div className='rounded-3xl shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] backdrop-blur-[6px] h-full'>
+    <div className='flex flex-col rounded-3xl shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] backdrop-blur-[6px] h-full'>
       <div className='relative flex items-center justify-center bg-grey-500 rounded-t-3xl backdrop-blur-[6px] pt-8 pb-12'>
-        <img className='w-[120px] h-[115px]' src={icon} alt='icon' />
+        <img className='w-[120px] h-[130px]' src={icon} alt='icon' />
       </div>
-      <div className='p-6 bg-[rgba(27, 27, 27, 0.70)]'>
+      <div className='p-6 bg-[#1e1e1e] backdrop-blur-[12px] h-full rounded-b-3xl'>
         <p className='text-[23px] text-neonGreen-500 font-semibold'>{title}</p>
         <p className='py-3 text-grey-200 tracking-[-0.32px]'>{desc}</p>
       </div>

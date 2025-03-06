@@ -1,9 +1,11 @@
 'use client'
+
 import React from 'react'
 import dynamic from 'next/dynamic'
 import Container from '../../container'
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 import { SectionBgGradient } from './SectionBgGradient'
+import { Fade } from 'react-awesome-reveal'
 
 export const ExperienceSection = () => {
   return (
@@ -24,82 +26,89 @@ export const ExperienceSection = () => {
       </div>
 
       <div className='flex flex-col gap-[104px] lg:gap-72'>
-        <CustomFlex
-          blockImg={
-            <img
-              className='absolute -top-12'
-              src='/img/home/block1.svg'
-              alt='block line'
-            />
-          }
-          lottie={
-            <Lottie
-              className='max-w-[342px]'
-              animationData={require('./lottie/eth.json')}
-            />
-          }
-          title='EVM'
-          subTitle='compatible'
-          desc='Smoothly deploy any EVM codebase and migrate your users and assets from Ethereum 1, and other interoperable chains, enabling seamless interaction and asset transfers across different networks.'
-        />
-        <CustomFlex
-          flexReverse={true}
-          lottie={
-            <Lottie
-              className='max-w-[342px]'
-              animationData={require('./lottie/open.json')}
-            />
-          }
-          blockImg={
-            <img
-              className='absolute -top-32 md:-top-48'
-              src='/img/home/block3.svg'
-              alt='block line'
-            />
-          }
-          title='Open and'
-          subTitle='permissionless'
-          desc='Users retain full ownership of assets. This non-custodial architecture Is resistant to censorship'
-        />
-        <CustomFlex
-          lottie={
-            <Lottie
-              className='max-w-[342px]'
-              animationData={require('./lottie/evm.json')}
-            />
-          }
-          className='mb-20 md:mb-0'
-          blockImg={
-            <img
-              className='absolute -top-16 md:-top-32'
-              src='/img/home/block2.svg'
-              alt='block line'
-            />
-          }
-          title='Future-proof'
-          subTitle='network'
-          desc="Etherlink's upgradability is facilitated through Tezos' established on-chain governance system, enabling community-drivendevelopmentand progression"
-        />
-
-        <CustomFlex
-          lottie={
-            <Lottie
-              className='max-w-[342px]'
-              animationData={require('./lottie/rollup.json')}
-            />
-          }
-          flexReverse={true}
-          blockImg={
-            <img
-              className='absolute -top-0'
-              src='/img/home/block4.svg'
-              alt='block line'
-            />
-          }
-          title='Comprehensive'
-          subTitle='toolkit'
-          desc='Leverage familiar tools like Metamask, Hardhat, and Foundry. Access a wide range of integrations, including Subsquid, Fireblocks, Thirdweb,and The Graph'
-        />
+        <Fade triggerOnce direction='up' delay={100}>
+          <CustomFlex
+            blockImg={
+              <img
+                className='absolute -top-12'
+                src='/img/home/block1.svg'
+                alt='block line'
+              />
+            }
+            lottie={
+              <Lottie
+                className='max-w-[342px]'
+                animationData={require('./lottie/eth.json')}
+              />
+            }
+            title='EVM'
+            subTitle='compatible'
+            desc='Smoothly deploy any EVM codebase and migrate your users and assets from Ethereum 1, and other interoperable chains, enabling seamless interaction and asset transfers across different networks.'
+          />
+        </Fade>
+        <Fade triggerOnce direction='up' delay={200}>
+          <CustomFlex
+            flexReverse={true}
+            lottie={
+              <Lottie
+                className='max-w-[342px]'
+                animationData={require('./lottie/open.json')}
+              />
+            }
+            blockImg={
+              <img
+                className='absolute -top-32 md:-top-48'
+                src='/img/home/block3.svg'
+                alt='block line'
+              />
+            }
+            title='Open and'
+            subTitle='permissionless'
+            desc='Users retain full ownership of assets. This non-custodial architecture Is resistant to censorship'
+          />
+        </Fade>
+        <Fade triggerOnce direction='up' delay={300}>
+          <CustomFlex
+            lottie={
+              <Lottie
+                className='max-w-[342px]'
+                animationData={require('./lottie/evm.json')}
+              />
+            }
+            className='mb-20 md:mb-0'
+            blockImg={
+              <img
+                className='absolute -top-16 md:-top-32'
+                src='/img/home/block2.svg'
+                alt='block line'
+              />
+            }
+            title='Future-proof'
+            subTitle='network'
+            desc="Etherlink's upgradability is facilitated through Tezos' established on-chain governance system, enabling community-driven development and progression"
+          />
+        </Fade>
+        <Fade triggerOnce direction='up' delay={400}>
+          <CustomFlex
+            lottie={
+              <Lottie
+                className='max-w-[342px]'
+                animationData={require('./lottie/rollup.json')}
+              />
+            }
+            flexReverse={true}
+            blockImg={
+              <img
+                className='absolute -top-0'
+                src='/img/home/block4.svg'
+                alt='block line'
+              />
+            }
+            title='Comprehensive'
+            subTitle='toolkit'
+            desc='Leverage familiar tools like Metamask, Hardhat, and Foundry. Access a wide range of integrations, including Subsquid, Fireblocks, Thirdweb,and The Graph'
+          />
+        </Fade>
       </div>
     </Container>
   )

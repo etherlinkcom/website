@@ -22,7 +22,7 @@ export const Evm = () => {
           Unlocking unparalleled scalability for next-gen applications.
         </p>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+      <div className='grid grid-cols-1 xl:grid-cols-2 gap-4'>
         {EVM_BOXES.map((box, index) => (
           <Fade
             triggerOnce
@@ -60,11 +60,11 @@ const EvmCard = ({ topLine, title, desc, link, img }: EvmCardProps) => {
           w-full h-[400px] md:h-[500px] overflow-hidden border border-transparent hover:border hover:border-neonGreen-500'
       >
         <img
-          className='absolute top-0 w-full h-full object-cover max-h-[200px] md:max-h-[300px]'
+          className='absolute top-0 w-full h-full object-cover'
           src={img}
           alt='bg img'
         />
-        <div className='absolute bottom-0 rounded-b-3xl p-6 bg-[rgba(27,27,27,0.85)] backdrop-blur-[12px]'>
+        <div className='absolute bottom-0 rounded-b-3xl p-6 bg-[rgba(27,27,27,0.85)] backdrop-blur-[12px] w-full'>
           <div className='flex items-center flex-wrap justify-between mb-4 h-full'>
             <p className='text-grey-50 font-light text-xs'>{topLine}</p>
             <img src='/img/icons/green-arrow-up-right.svg' alt='arrow' />
