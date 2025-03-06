@@ -20,22 +20,22 @@ export const Navbar = () => {
   return (
     <Container className='relative flex justify-between items-center pt-8 px-4 lg:px-7 lg:pt-[36px] z-50 md:max-w-[1536px] mx-auto'>
       <div className='flex items-center'>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 shrink-0'>
           <EtherlinkLogo />
           <img
-            className='lg:hidden hover:cursor-pointer w-4 h-4'
+            className='xl:hidden hover:cursor-pointer w-4 h-4'
             src='/hamburger.svg'
             onClick={() => setIsOpen(true)}
           />
         </div>
-        <div className='hidden lg:inline-block bg-grey-200 w-[1px] h-8 ml-6' />
-        <div className='hidden lg:flex items-center pr-4 h-[30px] gap-1'>
+        <div className='hidden xl:inline-block bg-grey-200 w-[1px] h-8 ml-6 mr-4' />
+        <div className='hidden xl:flex items-center pr-4 h-[30px] gap-1'>
           <DesktopNavbar items={NAVBAR_ITEMS} />
         </div>
       </div>
       <div className='flex items-center'>
         {/* social links */}
-        <div className='hidden lg:flex items-center gap-2'>
+        <div className='hidden xl:flex items-center gap-2'>
           <Link
             href='https://twitter.com/etherlink'
             target='_blank'
@@ -51,7 +51,7 @@ export const Navbar = () => {
             <Discord size={40} />
           </Link>
         </div>
-        <div className='hidden lg:inline-block bg-grey-200 w-[1px] h-8 mx-8' />
+        <div className='hidden xl:inline-block bg-grey-200 w-[1px] h-8 mx-8' />
         <ConnectButton />
       </div>
 
