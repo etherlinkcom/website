@@ -84,10 +84,10 @@ const StartedBox = ({ topLine, title, desc, link }: StartedBoxProps) => {
             <p className='text-grey-50 font-light text-xs'>{topLine}</p>
             <img src='/img/icons/green-arrow-up-right.svg' alt='arrow' />
           </div>
-          <p className='w-full text-neonGreen-500 text-[23px] font-semibold'>
+          <p className='w-full text-neonGreen-500 text-[23px] font-semibold mb-3'>
             {title}
           </p>
-          <p className='py-3 text-grey-200'>{desc}</p>
+          <p className='text-grey-200'>{desc}</p>
         </div>
       </Link>
     </div>

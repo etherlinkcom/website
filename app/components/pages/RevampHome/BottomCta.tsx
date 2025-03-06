@@ -59,10 +59,10 @@ const CtaBox = ({ topLine, title, desc, link }: CtaBoxProps) => {
             <p className='text-white font-light text-xs'>{topLine}</p>
             <img src='/img/icons/green-arrow-up-right.svg' alt='arrow' />
           </div>
-          <p className='w-full text-neonGreen-500 text-[23px] font-semibold mb-4'>
+          <p className='w-full text-neonGreen-500 text-[23px] font-semibold mb-3'>
             {title}
           </p>
-          <p className='mt-4 text-grey-200'>{desc}</p>
+          <p className='text-grey-200'>{desc}</p>
         </div>
       </Link>
     </div>
