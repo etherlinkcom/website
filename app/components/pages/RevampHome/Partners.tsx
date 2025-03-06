@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export const Partners = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true, watchDrag: false }, [
-    Autoscroll({ stopOnInteraction: false, speed: 1.5 })
+    Autoscroll({ stopOnInteraction: false, speed: 0.9 })
   ])
 
   return (
