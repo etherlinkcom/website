@@ -1,4 +1,4 @@
-import { isAfter, isBefore, parseISO } from 'date-fns'
+import { isAfter, isBefore, isSameDay, parseISO } from 'date-fns'
 
 interface FeaturedRawProject {
   id: string
@@ -61,7 +61,8 @@ export const fetchFeaturedProjects = async () => {
         const endDate = End_Date ? parseISO(End_Date) : null
 
         const hasStarted =
-          isBefore(startDate, today) || isAfter(startDate, today)
+          isBefore(startDate, today) || isSameDay(startDate, today)
+
         const isStillActive = !endDate || isAfter(endDate, today)
 
         return hasStarted && isStillActive

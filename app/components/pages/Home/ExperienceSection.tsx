@@ -57,8 +57,8 @@ export const ExperienceSection = () => {
             }
             blockImg={
               <img
-                className='absolute -top-32 md:-top-48'
-                src='/img/home/block3.svg'
+                className='absolute -top-12'
+                src='/img/home/block1.svg'
                 alt='block line'
               />
             }
@@ -78,8 +78,8 @@ export const ExperienceSection = () => {
             className='mb-20 md:mb-0'
             blockImg={
               <img
-                className='absolute -top-16 md:-top-32'
-                src='/img/home/block2.svg'
+                className='absolute -top-12'
+                src='/img/home/block1.svg'
                 alt='block line'
               />
             }
@@ -99,8 +99,8 @@ export const ExperienceSection = () => {
             flexReverse={true}
             blockImg={
               <img
-                className='absolute -top-0'
-                src='/img/home/block4.svg'
+                className='absolute -top-12'
+                src='/img/home/block1.svg'
                 alt='block line'
               />
             }
