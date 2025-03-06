@@ -23,6 +23,8 @@ export interface FeaturedProject {
     size: number
     type: string
   }>
+  Start_Date: string
+  End_Date: string
 }
 
 export const fetchFeaturedProjects = async () => {
@@ -62,6 +64,8 @@ const mapToFeaturedProject = (
     Short_Description: fields.Short_Description,
     Project_Link: fields.Project_Link,
     Desktop_Image: fields.Desktop_Image,
-    Mobile_Image: fields.Mobile_Image
+    Mobile_Image: fields.Mobile_Image,
+    Start_Date: fields.Start_Date,
+    End_Date: fields.End_Date
   }
 }

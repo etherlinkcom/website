@@ -22,6 +22,7 @@
     "@vercel/analytics": "^1.1.2",
     "autoprefixer": "^10.4.16",
     "axios": "^1.7.7",
+    "date-fns": "^4.1.0",
     "embla-carousel-auto-scroll": "^8.0.0",
     "embla-carousel-react": "^8.0.0",
     "ethers": "^5",
