@@ -19,24 +19,6 @@ const ChevronDown = ({ className }: { className?: string }) => (
   </svg>
 )
 
-const ArrowUpRight = () => (
-  <svg
-    xmlns='http://www.w3.org/2000/svg'
-    width='16'
-    height='16'
-    viewBox='0 0 24 24'
-    fill='none'
-    stroke='currentColor'
-    strokeWidth='2'
-    strokeLinecap='round'
-    strokeLinejoin='round'
-    className='h-4 w-4 ml-2'
-  >
-    <path d='M7 17 17 7' />
-    <path d='M7 7h10v10' />
-  </svg>
-)
-
 const DropdownItem = ({
   item,
   closeParent
@@ -66,7 +48,6 @@ const DropdownItem = ({
         onClick={closeParent}
       >
         <span>{item.name}</span>
-        {/* {item.link?.startsWith('http') && <ArrowUpRight />} */}
       </a>
     )
   }

@@ -23,13 +23,13 @@ export const Navbar = () => {
         <div className='flex items-center gap-2 shrink-0'>
           <EtherlinkLogo />
           <img
-            className='lg:hidden hover:cursor-pointer w-4 h-4'
+            className='xl:hidden hover:cursor-pointer w-4 h-4'
             src='/hamburger.svg'
             onClick={() => setIsOpen(true)}
           />
         </div>
-        <div className='hidden lg:inline-block bg-grey-200 w-[1px] h-8 mx-12' />
-        <div className='hidden lg:flex items-center pr-4 h-[30px] gap-1'>
+        <div className='hidden xl:inline-block bg-grey-200 w-[1px] h-8 mx-12' />
+        <div className='hidden xl:flex items-center pr-4 h-[30px] gap-1'>
           <DesktopNavbar items={NAVBAR_ITEMS} />
         </div>
       </div>

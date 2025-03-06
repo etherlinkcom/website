@@ -89,68 +89,6 @@ const SubNavItem = ({
   )
 }
 
-const NavLevel = ({
-  items,
-  handleClose,
-  goBack,
-  title,
-  isActive
-}: {
-  items: NavItem[]
-  handleClose: () => void
-  goBack: () => void
-  title?: string
-  isActive: boolean
-}) => {
-  return (
-    <div
-      className={` bg-grey-900 transition-transform duration-300 ease-in-out border ${
-        isActive ? 'translate-x-0' : 'translate-x-full'
-      }`}
-    >
-      {title && (
-        <div className='relative flex items-center justify-center py-2.5 mx-1'>
-          <button
-            onClick={goBack}
-            className='absolute left-6 text-grey-100 hover:text-white'
-          >
-            <img src='/img/icons/FiArrowLeft.svg' alt='back button' />
-          </button>
-          <p className='text-grey-100 font-bold'>{title}</p>
-          <button
-            onClick={handleClose}
-            className='absolute right-6 text-grey-100 hover:text-white'
-          >
-            <img src='/img/icons/close.svg' alt='close button' />
-          </button>
-        </div>
-      )}
-
-      <div className='mt-4 flex flex-col px-2'>
-        {items.map((item, index) => (
-          <SubNavItem key={index} item={item} handleClose={handleClose} />
-        ))}
-      </div>
-      <div className='flex items-center justify-center gap-8 mt-2'>
-        <Link
-          href='https://twitter.com/etherlink'
-          target='_blank'
-          className='text-grey-100 hover:text-white transition-colors'
-        >
-          <X size={42} />
-        </Link>
-        <Link
-          href='https://discord.gg/etherlink'
-          target='_blank'
-          className='text-grey-100 hover:text-white transition-colors'
-        >
-          <Discord size={42} />
-        </Link>
-      </div>
-    </div>
-  )
-}
-
 const MainNavItem = ({
   item,
   handleClose,
