@@ -74,13 +74,13 @@ interface StartedBoxProps {
 
 const StartedBox = ({ topLine, title, desc, link }: StartedBoxProps) => {
   return (
-    <div className='w-full'>
+    <div className='w-full h-full'>
       <Link href={link} target={isExternalLink(link)}>
         <div
-          className='relative flex flex-1 min-h-0 lg:min-h-[200px] flex-col p-6 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
+          className='relative flex min-h-0 lg:min-h-[200px] flex-col p-6 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)]
             rounded-3xl h-full w-full group border border-transparent hover:border hover:border-neonGreen-500 hover:cursor-pointer'
         >
-          <div className='flex items-center flex-wrap justify-between mb-4 h-full'>
+          <div className='flex items-start flex-wrap justify-between mb-4'>
             <p className='text-grey-50 font-light text-xs'>{topLine}</p>
             <img src='/img/icons/green-arrow-up-right.svg' alt='arrow' />
           </div>

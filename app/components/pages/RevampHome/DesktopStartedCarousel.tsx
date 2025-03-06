@@ -63,7 +63,7 @@ const FeaturedBox = ({
   Desktop_Image
 }: FeaturedBoxProps) => {
   return (
-    <div className='h-[420px] rounded-3xl shadow-[0_0_6px_0_rgba(56,255,156,0.4)] border border-transparent hover:border hover:border-neonGreen-500 z-10'>
+    <div className='h-[420px] xl:h-[460px] rounded-3xl shadow-[0_0_6px_0_rgba(56,255,156,0.4)] border border-transparent hover:border hover:border-neonGreen-500 z-10'>
       <Link href={Project_Link} target={isExternalLink(Project_Link)}>
         <div className='relative h-full w-full'>
           <div
