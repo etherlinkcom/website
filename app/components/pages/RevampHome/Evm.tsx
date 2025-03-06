@@ -14,12 +14,13 @@ export const Evm = () => {
       <SectionBgGradient />
       <div className='mb-[100px]'>
         <h2 className='text-white font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px] md:leading-[65px]'>
-          <span className='text-neonGreen-500'>EVM Compatibility meets </span>
+          <span className='text-neonGreen-500'>Built on Tezos,</span>
           <br />
-          Tezos performance
+          Designed to Evolve
         </h2>
-        <p className='text-center text-base md:text-[23px] text-grey-200'>
-          Unlocking unparalleled scalability for next-gen applications.
+        <p className='text-center text-base md:text-[23px] text-grey-200 max-w-[600px] mx-auto'>
+          Etherlink runs on Tezos’ advanced rollup technology, built for
+          security, speed, and decentralization.
         </p>
       </div>
       <div className='grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-8'>
