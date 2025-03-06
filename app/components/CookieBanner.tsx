@@ -37,7 +37,7 @@ export const CookieBanner = () => {
         <div className='flex flex-col md:flex-row justify-between items-center gap-6'>
           <div className='text-center md:text-left text-white-50'>
             <p>This site uses cookies to make your experience better.</p>
-            {/* <a href='/privacy' className='block font-bold underline'>
+            {/* <a href='/cookie-policy' className='block font-bold underline'>
               Cookie Policy
             </a> */}
           </div>
