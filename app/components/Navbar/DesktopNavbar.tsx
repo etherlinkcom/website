@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavItem } from './fixture'
 
-// SVG icons as components
 const ChevronDown = ({ className }: { className?: string }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
@@ -30,11 +29,7 @@ const DropdownItem = ({
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    if (isOpen) {
-      setMounted(true)
-    } else {
-      setMounted(false)
-    }
+    setMounted(isOpen)
   }, [isOpen])
 
   if (!item.dropdown) {
@@ -149,11 +144,7 @@ const DropdownMenu = ({
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    if (isOpen) {
-      setMounted(true)
-    } else {
-      setMounted(false)
-    }
+    setMounted(isOpen)
   }, [isOpen])
 
   return (
