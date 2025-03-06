@@ -41,6 +41,7 @@
     "react-dom": "^18",
     "react-google-recaptcha": "^3.1.0",
     "react-markdown": "^10.0.1",
+    "react-toastify": "^11.0.5",
     "rehype-raw": "^7.0.0",
     "remark-breaks": "^4.0.0",
     "swiper": "^11.1.3",
