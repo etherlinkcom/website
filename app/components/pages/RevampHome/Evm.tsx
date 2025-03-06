@@ -22,7 +22,7 @@ export const Evm = () => {
           Unlocking unparalleled scalability for next-gen applications.
         </p>
       </div>
-      <div className='grid grid-cols-1 xl:grid-cols-2 gap-4'>
+      <div className='grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-8'>
         {EVM_BOXES.map((box, index) => (
           <Fade
             triggerOnce
