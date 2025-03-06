@@ -51,7 +51,7 @@ export const FeaturedSection = ({
         {STARTED_BOXES.map((box, index) => (
           <Fade
             triggerOnce
-            direction='down'
+            direction='up'
             delay={100 + index * 100}
             key={index}
           >

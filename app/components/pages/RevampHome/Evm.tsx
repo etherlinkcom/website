@@ -24,7 +24,7 @@ export const Evm = () => {
         {EVM_BOXES.map((box, index) => (
           <Fade
             triggerOnce
-            direction='down'
+            direction='up'
             delay={100 + index * 100}
             key={index}
           >
@@ -55,7 +55,7 @@ const EvmCard = ({ topLine, title, desc, link, img }: EvmCardProps) => {
     <Link href={link} target={isExternalLink(link)}>
       <div
         className='relative rounded-3xl shadow-[0px_0px_6px_0px_rgba(56,255,156,0.40)] backdrop-blur-[6px] 
-          w-full h-[400px] md:h-[500px] overflow-hidden hover:border hover:border-neonGreen-500'
+          w-full h-[400px] md:h-[500px] overflow-hidden border border-transparent hover:border hover:border-neonGreen-500'
       >
         <img
           className='absolute top-0 w-full h-full object-cover max-h-[200px] md:max-h-[300px]'

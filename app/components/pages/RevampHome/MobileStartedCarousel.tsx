@@ -50,7 +50,7 @@ const StartedBox = ({
 }: FeaturedBoxProps) => {
   return (
     <Link href={Project_Link} target={isExternalLink(Project_Link)}>
-      <div className='relative flex flex-col rounded-xl h-[340px] shadow-[0_0_6px_0_rgba(56,255,156,0.4)] hover:border hover:border-neonGreen-500'>
+      <div className='relative flex flex-col rounded-xl h-[340px] shadow-[0_0_6px_0_rgba(56,255,156,0.4)] border border-transparent hover:border hover:border-neonGreen-500'>
         <img
           className='absolute inset-0 object-cover h-full w-full z-0 rounded-xl'
           src={Mobile_Image[0].url}
