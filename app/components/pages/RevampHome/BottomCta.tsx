@@ -6,10 +6,12 @@ import { Fade } from 'react-awesome-reveal'
 import { BOTTOM_CTA } from './fixture'
 import Link from 'next/link'
 import { isExternalLink } from '../../Navbar'
+import { SectionBgGradient } from '../Home/SectionBgGradient'
 
 export const BottomCta = () => {
   return (
     <Container className='relative mb-[104px]'>
+      <SectionBgGradient />
       <div className='mb-[100px]' id='developers'>
         <h2 className='text-white font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px] md:leading-[65px]'>
           <span className='text-neonGreen-500'>Ready to</span>{' '}

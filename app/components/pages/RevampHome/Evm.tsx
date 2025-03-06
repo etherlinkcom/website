@@ -6,10 +6,12 @@ import { Fade } from 'react-awesome-reveal'
 import { EVM_BOXES } from './fixture'
 import { isExternalLink } from '../../Navbar'
 import Link from 'next/link'
+import { SectionBgGradient } from '../Home/SectionBgGradient'
 
 export const Evm = () => {
   return (
     <Container className='relative mb-[104px]'>
+      <SectionBgGradient />
       <div className='mb-[100px]'>
         <h2 className='text-white font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px] md:leading-[65px]'>
           <span className='text-neonGreen-500'>EVM Compatibility meets </span>

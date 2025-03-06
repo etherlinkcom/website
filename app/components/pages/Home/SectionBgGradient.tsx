@@ -1,15 +1,12 @@
 import React from 'react'
-import Image from 'next/image'
 
 export const SectionBgGradient = ({ className }: { className?: string }) => {
   return (
-    <Image
+    <img
       src='/img/home/gradient.svg'
-      className={`block absolute left-1/2 -translate-x-1/2 
-        object-cover md:w-[500px] md:h-[500px] -top-20 md:-top-28 ${className}`}
+      className={`block absolute left-1/2 -translate-x-1/2 opacity-[0.7]
+        object-contain w-ful md:w-[1300px] md:h-[1300px] -top-20 sm:-top-40 md:-top-96 ${className}`}
       alt='gradient bg'
-      width={100}
-      height={100}
     />
   )
 }

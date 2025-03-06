@@ -132,7 +132,7 @@ const CustomFlex = ({
 
         <div className='absolute top-1/2 -translate-y-1/2 flex flex-col w-full px-7 md:px-16 pt-4'>
           <h3
-            className={`text-start text-2xl sm:text-3xl border-l border-newGreen pl-4 font-semibold leading-none -tracking-[0.56px] mb-3`}
+            className={`text-start text-2xl sm:text-3xl font-semibold leading-none -tracking-[0.56px] mb-3`}
           >
             <span className='text-newGreen'>{title}</span> {subTitle}
           </h3>
