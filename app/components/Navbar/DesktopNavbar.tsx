@@ -103,7 +103,7 @@ export const DesktopNavbar = ({ items }: { items: NavItem[] }) => {
   return (
     <div className='max-w-7xl mx-auto'>
       <div className='flex justify-between'>
-        <div className='flex gap-2'>
+        <div className='flex '>
           {items.map((item, index) => (
             <div key={index} className='relative inline-block text-left'>
               {item.dropdown ? (

@@ -20,16 +20,16 @@ export const Navbar = () => {
   return (
     <Container className='relative flex justify-between items-center pt-8 px-4 lg:px-7 lg:pt-[36px] z-50 md:max-w-[1536px] mx-auto'>
       <div className='flex items-center'>
-        <div className='flex items-center gap-2 shrink-0'>
+        <div className='flex items-center gap-2'>
           <EtherlinkLogo />
           <img
-            className='xl:hidden hover:cursor-pointer w-4 h-4'
+            className='lg:hidden hover:cursor-pointer w-4 h-4'
             src='/hamburger.svg'
             onClick={() => setIsOpen(true)}
           />
         </div>
-        <div className='hidden xl:inline-block bg-grey-200 w-[1px] h-8 mx-12' />
-        <div className='hidden xl:flex items-center pr-4 h-[30px] gap-1'>
+        <div className='hidden lg:inline-block bg-grey-200 w-[1px] h-8 ml-6' />
+        <div className='hidden lg:flex items-center pr-4 h-[30px] gap-1'>
           <DesktopNavbar items={NAVBAR_ITEMS} />
         </div>
       </div>
