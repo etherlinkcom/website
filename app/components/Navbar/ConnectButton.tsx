@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { ToastContainer, toast } from 'react-toastify'
 import { InfoIcon } from './toastIcons/InfoIcon'
@@ -108,13 +111,55 @@ const addNetwork = async () => {
 }
 
 export const ConnectButton = () => {
+  const [walletAddress, setWalletAddress] = useState<string | null>(null)
+  const chainId = '0xa729'
+
+  const checkNetworkAndAddress = async () => {
+    if (window.ethereum) {
+      try {
+        const currentChainId = await window.ethereum.request({
+          method: 'eth_chainId'
+        })
+
+        if (currentChainId === chainId) {
+          const accounts = await window.ethereum.request({
+            method: 'eth_accounts'
+          })
+          if (accounts.length > 0) setWalletAddress(accounts[0])
+        }
+      } catch (error) {
+        console.error('Error checking network & address:', error)
+      }
+    }
+  }
+
+  useEffect(() => {
+    checkNetworkAndAddress()
+
+    if (typeof window.ethereum !== 'undefined') {
+      window.ethereum.on('accountsChanged', (accounts: string[]) => {
+        setWalletAddress(accounts.length > 0 ? accounts[0] : null)
+      })
+
+      window.ethereum.on('chainChanged', (chainId: string) => {
+        if (chainId === '0xa729') {
+          checkNetworkAndAddress() // Recheck wallet when switching to Etherlink
+        } else {
+          setWalletAddress(null)
+        }
+      })
+    }
+  }, [])
+
   return (
     <>
       <button
         onClick={addNetwork}
         className='flex items-center gap-1 lg:gap-2 text-grey-900 rounded-3xl bg-neonGreen-500 py-2 px-3 lg:px-4 text-xs lg:text-sm font-semibold'
       >
-        Add Etherlink Mainnet
+        {walletAddress
+          ? walletAddress.slice(0, 6) + '...' + walletAddress.slice(-4)
+          : 'Add Etherlink Mainnet'}
         <Image
           width={16}
           height={16}
