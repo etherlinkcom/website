@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import { ToastContainer, toast } from 'react-toastify'
 import { InfoIcon } from './toastIcons/InfoIcon'
@@ -136,18 +136,6 @@ export const ConnectButton = () => {
       })
     }
   }
-
-  useEffect(() => {
-    getWalletAddress()
-
-    window.ethereum.on('accountsChanged', (accounts: string[]) => {
-      setWalletAddress(accounts.length > 0 ? accounts[0] : null)
-    })
-
-    window.ethereum.on('chainChanged', () => {
-      void getWalletAddress()
-    })
-  }, [])
 
   return (
     <>
