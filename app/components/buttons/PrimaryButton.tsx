@@ -19,6 +19,8 @@ export const PrimaryButton = ({
 
   const handleClick = () => {
     if (href) {
+      if (href.includes('etherlink.com')) window.open(href, '_self')
+
       if (href.startsWith('http')) window.open(href, '_blank')
       else router.push(href)
     } else if (onClick) {

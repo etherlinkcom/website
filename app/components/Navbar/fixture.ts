@@ -36,7 +36,7 @@ export const NAVBAR_ITEMS: NavItem[] = [
         link: 'https://docs.etherlink.com/'
       },
       {
-        name: 'Builder',
+        name: 'Games',
         link: 'https://build.etherlink.com/landing'
       },
       {

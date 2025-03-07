@@ -1,5 +1,8 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 import { NavItem } from './fixture'
+import { isExternalLink } from '.'
 
 const ChevronDown = ({ className }: { className?: string }) => (
   <svg
@@ -36,7 +39,7 @@ const DropdownItem = ({
     return (
       <a
         href={item.link}
-        target={item?.link?.startsWith('http') ? '_blank' : '_self'}
+        target={isExternalLink(item.link!)}
         className={`flex items-center justify-between px-6 py-2 text-grey-100 text-sm font-bold hover:text-neon-green-500 transition-colors duration-200 hover:bg-grey-700 hover:text-neonGreen-500
                 ${item.isNestedItem ? 'pl-8 pr-6 bg-grey-800' : 'hover:rounded-[32px]'} ${item.isLastNestedItem ? 'rounded-b-2xl' : ''}
             `}
@@ -120,6 +123,7 @@ export const DesktopNavbar = ({ items }: { items: NavItem[] }) => {
               ) : (
                 <a
                   href={item.link}
+                  target={isExternalLink(item.link!)}
                   className='inline-flex items-center px-6 py-2  text-grey-100 text-sm font-bold
                     hover:text-neonGreen-500 hover:bg-grey-800 rounded-[32px] transition-colors duration-200'
                 >

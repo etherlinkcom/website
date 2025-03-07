@@ -11,7 +11,11 @@ import { ConnectButton } from './ConnectButton'
 import { MobileNavbar } from './MobileNavbar'
 
 export const isExternalLink = (link: string) =>
-  link.startsWith('http') ? '_blank' : '_self'
+  link.includes('etherlink.com')
+    ? '_self'
+    : link.startsWith('http')
+      ? '_blank'
+      : '_self'
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)

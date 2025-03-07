@@ -28,7 +28,6 @@ export const HomeCta = () => {
         </div>
         <a
           href='https://docs.etherlink.com/'
-          target='_blank'
           rel='noopener noreferrer'
           className='absolute inset-0'
         />

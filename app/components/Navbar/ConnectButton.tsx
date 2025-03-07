@@ -112,46 +112,27 @@ const addNetwork = async () => {
 
 export const ConnectButton = () => {
   const [walletAddress, setWalletAddress] = useState<string | null>(null)
-  const chainId = '0xa729'
 
-  const checkNetworkAndAddress = async () => {
-    if (window.ethereum) {
-      try {
-        const currentChainId = await window.ethereum.request({
-          method: 'eth_chainId'
-        })
-
-        if (currentChainId === chainId) {
-          const accounts = await window.ethereum.request({
-            method: 'eth_accounts'
-          })
-          if (accounts.length > 0) setWalletAddress(accounts[0])
-        }
-      } catch (error) {
-        console.error('Error checking network & address:', error)
-      }
+  const getWalletAddress = async () => {
+    try {
+      const accounts = await window.ethereum.request({ method: 'eth_accounts' })
+      if (accounts.length > 0) setWalletAddress(accounts[0])
+    } catch (error) {
+      console.error('Error fetching wallet address:', error)
     }
   }
 
   useEffect(() => {
-    checkNetworkAndAddress()
+    getWalletAddress()
 
-    if (typeof window.ethereum !== 'undefined') {
-      window.ethereum.on('accountsChanged', (accounts: string[]) => {
-        setWalletAddress(accounts.length > 0 ? accounts[0] : null)
-      })
+    window.ethereum.on('accountsChanged', (accounts: string[]) => {
+      setWalletAddress(accounts.length > 0 ? accounts[0] : null)
+    })
 
-      window.ethereum.on('chainChanged', (chainId: string) => {
-        if (chainId === '0xa729') {
-          checkNetworkAndAddress() // Recheck wallet when switching to Etherlink
-        } else {
-          setWalletAddress(null)
-        }
-      })
-    }
+    window.ethereum.on('chainChanged', () => {
+      getWalletAddress()
+    })
   }, [])
-
-  console.log('test walletAddress:', walletAddress)
 
   return (
     <>

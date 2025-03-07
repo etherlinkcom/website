@@ -1,10 +1,12 @@
 'use client'
+
 import React, { useCallback, useState } from 'react'
 import { type NavItem, NAVBAR_ITEMS } from './fixture'
 import { X, Discord } from '../icons'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { HomeCta } from './HomeCta'
+import { isExternalLink } from '.'
 
 const SubNavItem = ({
   item,
@@ -21,7 +23,7 @@ const SubNavItem = ({
         href={item.link || '#'}
         className='flex items-center justify-between px-6 py-2.5 text-grey-100 text-sm font-bold transition-colors hover:text-white'
         onClick={handleClose}
-        target={item.link?.startsWith('http') ? '_blank' : undefined}
+        target={isExternalLink(item.link!)}
       >
         <span>{item.name}</span>
         {item.link?.startsWith('http') && (
@@ -79,7 +81,7 @@ const SubNavItem = ({
             href={subItem.link || '#'}
             className='block px-8 py-2 text-grey-100 text-sm font-bold transition-colors hover:text-white'
             onClick={handleClose}
-            target={subItem.link?.startsWith('http') ? '_blank' : undefined}
+            target={isExternalLink(subItem.link!)}
           >
             {subItem.name}
           </Link>
