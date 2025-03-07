@@ -19,16 +19,12 @@ const CustomToast = ({
   </div>
 )
 
-// if wallet has etherlink testnet, the toast will show Failed to add network. Please try again.
-
 export const ConnectButton = () => {
   const [walletAddress, setWalletAddress] = useState<string | null>(null)
 
   const getWalletAddress = async () => {
     try {
       let accounts = await window.ethereum.request({ method: 'eth_accounts' })
-
-      console.log('get wallet address accounts:', accounts)
 
       if (accounts.length === 0) {
         // 🔥 If `eth_accounts` fails, request explicit connection
