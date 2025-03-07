@@ -1,9 +1,12 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Container from './container'
 import { EtherlinkLogo } from './EtherlinkLogo'
 import { X, Discord, GitHub } from './icons'
+import { isExternalLink } from './Navbar'
 
 const NAVS = [
   { name: 'Blog', link: 'https://medium.com/@etherlink' },
@@ -11,6 +14,10 @@ const NAVS = [
   {
     name: 'Brand Assets',
     link: 'https://drive.google.com/drive/folders/1DUhC05bVlISJ2i77kCNP_Tw-G5b48IRT?usp=sharing'
+  },
+  {
+    name: 'Cookie Policy',
+    link: '/cookies'
   }
 ]
 
@@ -29,7 +36,7 @@ export const Footer = () => {
             {NAVS.map((nav, index) => {
               if (index === NAVS.length - 1) {
                 return (
-                  <Link href={nav.link} target='_blank'>
+                  <Link href={nav.link} target={isExternalLink(nav.link)}>
                     <p className='text-white hover:text-newGreen transition-colors duration-300'>
                       {nav.name}
                     </p>
@@ -38,7 +45,7 @@ export const Footer = () => {
               }
               return (
                 <>
-                  <Link href={nav.link} target='_blank'>
+                  <Link href={nav.link} target={isExternalLink(nav.link)}>
                     <p className='text-white hover:text-newGreen transition-colors duration-300'>
                       {nav.name}
                     </p>

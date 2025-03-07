@@ -97,9 +97,9 @@ export const fetchAirtableData = async (filterAndSort: string = '') => {
 
   const responseAirtable = await fetch(url, options)
 
-  // if (!responseAirtable.ok) {
-  //   throw new Error('The Airtable response was not ok')
-  // }
+  if (!responseAirtable.ok) {
+    throw new Error('The Airtable response was not ok')
+  }
 
   const airtableData = await responseAirtable.json()
   return airtableData

@@ -1,15 +1,12 @@
-import Container from './components/container'
-import { Main } from './components/pages/Home/Main'
 import { ExperienceSection } from './components/pages/Home/ExperienceSection'
-import { DeveloperExperience } from './components/pages/Home/DeveloperExperience'
-import { ExploreEcosystem } from './components/pages/Home/ExploreEcosystem'
-import Cta from './components/cta'
 import type { Metadata } from 'next'
-import {
-  fetchAirtableData,
-  mapToProject,
-  RawProject
-} from '../utils/airtable/ecosystem'
+import { NewMain } from './components/pages/RevampHome/NewMain'
+import { Partners } from './components/pages/RevampHome/Partners'
+import { FeaturedSection } from './components/pages/RevampHome/FeaturedSection'
+import { Speed } from './components/pages/RevampHome/Speed'
+import { Evm } from './components/pages/RevampHome/Evm'
+import { BottomCta } from './components/pages/RevampHome/BottomCta'
+import { fetchFeaturedProjects } from '../utils/airtable/homeFeatured'
 
 export const metadata: Metadata = {
   title: 'Etherlink Ecosystem | Discover dApps and Integrations | Etherlink',
@@ -18,33 +15,17 @@ export const metadata: Metadata = {
 }
 
 const Home = async () => {
-  const airtableData = await fetchAirtableData(
-    `?filterByFormula=AND(NOT({rank} = 0), {rank} != '')&sort[0][field]=rank`
-  )
+  const activeFeaturedProjects = await fetchFeaturedProjects()
 
-  const rawProjects = airtableData?.records || []
   return (
     <>
-      <Main />
-      <ExploreEcosystem
-        projects={rawProjects.map((table: RawProject) => mapToProject(table))}
-      />
+      <NewMain />
+      <Partners />
+      <FeaturedSection featuredProjects={activeFeaturedProjects} />
+      <Speed />
+      <Evm />
       <ExperienceSection />
-      <DeveloperExperience />
-      <Container>
-        <Cta
-          headerText='Ready to get started?'
-          descriptionText='Useful resources to get started building and bridging on Etherlink'
-          primaryButton={{
-            text: 'Start building',
-            link: 'https://docs.etherlink.com/'
-          }}
-          ghostButton={{
-            text: 'Bridge now',
-            link: 'https://bridge.etherlink.com'
-          }}
-        />
-      </Container>
+      <BottomCta />
     </>
   )
 }

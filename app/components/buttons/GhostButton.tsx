@@ -21,6 +21,7 @@ export const GhostButton = ({
 
   const handleClick = () => {
     if (href) {
+      if (href.includes('etherlink.com')) window.open(href, '_self')
       if (href.includes('bridge')) window.open(href, '_self')
 
       if (href.startsWith('http')) window.open(href, '_blank')
