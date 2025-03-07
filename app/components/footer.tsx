@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Container from './container'
 import { EtherlinkLogo } from './EtherlinkLogo'
 import { X, Discord, GitHub } from './icons'
+import { isExternalLink } from './Navbar'
 
 const NAVS = [
   { name: 'Blog', link: 'https://medium.com/@etherlink' },
@@ -33,7 +34,10 @@ export const Footer = () => {
             {NAVS.map((nav, index) => {
               if (index === NAVS.length - 1) {
                 return (
-                  <Link href={nav.link} target='_blank'>
+                  <Link
+                    href={nav.link}
+                    target={nav.link.startsWith('http') ? '_blank' : '_self'}
+                  >
                     <p className='text-white hover:text-newGreen transition-colors duration-300'>
                       {nav.name}
                     </p>
@@ -42,7 +46,10 @@ export const Footer = () => {
               }
               return (
                 <>
-                  <Link href={nav.link} target='_blank'>
+                  <Link
+                    href={nav.link}
+                    target={nav.link.startsWith('http') ? '_blank' : '_self'}
+                  >
                     <p className='text-white hover:text-newGreen transition-colors duration-300'>
                       {nav.name}
                     </p>
