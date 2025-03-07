@@ -60,7 +60,7 @@ export const NAVBAR_ITEMS: NavItem[] = [
           },
           {
             name: 'Tezos Bridge',
-            link: 'https://testnet.bridge.etherlink.com/',
+            link: 'https://testnet.bridge.etherlink.com/tezos',
             isNestedItem: true,
             isLastNestedItem: true
           }

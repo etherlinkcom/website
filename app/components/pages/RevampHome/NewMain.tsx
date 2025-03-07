@@ -27,7 +27,7 @@ export const NewMain = () => {
             Bridge assets, swap instantly, and explore apps all with low fees
             and fast transactions
           </p>
-          <div className='flex items-center flex-col md:flex-row gap-6 w-full mt-[104px] md:mt-[30px]'>
+          <div className='flex items-center flex-col md:flex-row gap-6 w-full mt-[104px] md:mt-[48px]'>
             <PrimaryButton
               className='w-full md:w-auto'
               text='Bridge now'
