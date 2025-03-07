@@ -151,6 +151,8 @@ export const ConnectButton = () => {
     }
   }, [])
 
+  console.log('test walletAddress:', walletAddress)
+
   return (
     <>
       <button
