@@ -20,51 +20,99 @@ const CustomToast = ({
 )
 
 // if wallet has etherlink testnet, the toast will show Failed to add network. Please try again.
-const addNetwork = async () => {
-  if (window.ethereum) {
+
+export const ConnectButton = () => {
+  const [walletAddress, setWalletAddress] = useState<string | null>(null)
+
+  const getWalletAddress = async () => {
     try {
-      const chainId = '0xa729'
-      const networkList = await window.ethereum.request({
-        method: 'eth_chainId'
-      })
+      let accounts = await window.ethereum.request({ method: 'eth_accounts' })
 
-      if (networkList === chainId) {
-        toast(<CustomToast message='Network already added to your wallet' />, {
-          position: 'bottom-center',
-          autoClose: 3000,
-          hideProgressBar: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          closeButton: false,
-          className:
-            'rounded-xl px-4 py-3 border border-[#3182CE] bg-[#3182CE]/25 w-full'
+      console.log('get wallet address accounts:', accounts)
+
+      if (accounts.length === 0) {
+        // 🔥 If `eth_accounts` fails, request explicit connection
+        accounts = await window.ethereum.request({
+          method: 'eth_requestAccounts'
         })
-        return
-      } else {
-        // Request to add Etherlink network
-        await window.ethereum.request({
-          method: 'wallet_addEthereumChain',
-          params: [
+      }
+
+      if (accounts.length > 0) {
+        setWalletAddress(accounts[0]) // ✅ Store wallet address
+      }
+    } catch (error) {
+      console.error('Error fetching wallet address:', error)
+    }
+  }
+
+  const addNetwork = async () => {
+    if (window.ethereum) {
+      try {
+        const chainId = '0xa729'
+        const networkList = await window.ethereum.request({
+          method: 'eth_chainId'
+        })
+
+        if (networkList === chainId) {
+          toast(
+            <CustomToast message='Network already added to your wallet' />,
             {
-              chainId, // 42793 in hexadecimal
-              chainName: 'Etherlink Mainnet',
-              nativeCurrency: {
-                name: 'tez',
-                symbol: 'XTZ',
-                decimals: 18
-              },
-              rpcUrls: ['https://node.mainnet.etherlink.com'],
-              blockExplorerUrls: ['https://explorer.etherlink.com/']
+              position: 'bottom-center',
+              autoClose: 3000,
+              hideProgressBar: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              closeButton: false,
+              className:
+                'rounded-xl px-4 py-3 border border-[#3182CE] bg-[#3182CE]/25 w-full'
             }
-          ]
-        })
+          )
+          await getWalletAddress()
+          return
+        } else {
+          // Request to add Etherlink network
+          await window.ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [
+              {
+                chainId, // 42793 in hexadecimal
+                chainName: 'Etherlink Mainnet',
+                nativeCurrency: {
+                  name: 'tez',
+                  symbol: 'XTZ',
+                  decimals: 18
+                },
+                rpcUrls: ['https://node.mainnet.etherlink.com'],
+                blockExplorerUrls: ['https://explorer.etherlink.com/']
+              }
+            ]
+          })
 
+          await getWalletAddress()
+
+          toast(
+            <CustomToast
+              message='Network added successfully!'
+              icon={<CheckIcon />}
+            />,
+            {
+              position: 'bottom-center',
+              autoClose: 3000,
+              hideProgressBar: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              closeButton: false,
+              className:
+                'rounded-xl px-4 py-3 border border-[#38A169] bg-[#38A1693D]/25 w-full'
+            }
+          )
+        }
+      } catch (error) {
+        console.error('Failed to add network. Please try again.', error)
         toast(
-          <CustomToast
-            message='Network added successfully!'
-            icon={<CheckIcon />}
-          />,
+          <CustomToast message='Failed to add network. Please try again.' />,
           {
             position: 'bottom-center',
             autoClose: 3000,
@@ -74,68 +122,33 @@ const addNetwork = async () => {
             progress: undefined,
             closeButton: false,
             className:
-              'rounded-xl px-4 py-3 border border-[#38A169] bg-[#38A1693D]/25 w-full'
+              'rounded-xl px-4 py-3 border border-[#E53E3E] bg-[#E53E3E3D]/25 w-full'
           }
         )
       }
-    } catch (error) {
-      console.error('Failed to add network. Please try again.', error)
-      toast(
-        <CustomToast message='Failed to add network. Please try again.' />,
-        {
-          position: 'bottom-center',
-          autoClose: 3000,
-          hideProgressBar: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          closeButton: false,
-          className:
-            'rounded-xl px-4 py-3 border border-[#E53E3E] bg-[#E53E3E3D]/25 w-full'
-        }
-      )
-    }
-  } else {
-    toast(<CustomToast message='Please install a web3 wallet to connect' />, {
-      position: 'bottom-center',
-      autoClose: 3000,
-      hideProgressBar: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      closeButton: false,
-      className:
-        'rounded-xl px-4 py-3 border border-[#3182CE] bg-[#3182CE]/25 w-full'
-    })
-  }
-}
-
-export const ConnectButton = () => {
-  const [walletAddress, setWalletAddress] = useState<string | null>(null)
-
-  const getWalletAddress = async () => {
-    try {
-      const accounts = await window.ethereum.request({ method: 'eth_accounts' })
-      console.log('get wallet address accounts', accounts)
-
-      if (accounts.length > 0) setWalletAddress(accounts[0])
-    } catch (error) {
-      console.error('Error fetching wallet address:', error)
+    } else {
+      toast(<CustomToast message='Please install a web3 wallet to connect' />, {
+        position: 'bottom-center',
+        autoClose: 3000,
+        hideProgressBar: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        closeButton: false,
+        className:
+          'rounded-xl px-4 py-3 border border-[#3182CE] bg-[#3182CE]/25 w-full'
+      })
     }
   }
 
   useEffect(() => {
-    void getWalletAddress()
+    getWalletAddress()
 
     window.ethereum.on('accountsChanged', (accounts: string[]) => {
-      console.log('accountsChanged', accounts)
-
       setWalletAddress(accounts.length > 0 ? accounts[0] : null)
     })
 
     window.ethereum.on('chainChanged', () => {
-      console.log('chainChanged')
-
       void getWalletAddress()
     })
   }, [])
