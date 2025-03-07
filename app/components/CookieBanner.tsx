@@ -28,7 +28,7 @@ export const CookieBanner = () => {
   return isVisible ? (
     <div
       className={`flex justify-center items-end z-50
-          ${path === '/cookies' ? 'absolute bottom-0 w-full' : 'fixed inset-0 bg-black/50 backdrop-blur-[5px] z-50'}`}
+          ${path === '/cookies' ? 'fixed bottom-0 w-full' : 'fixed inset-0 bg-black/50 backdrop-blur-[5px] z-50'}`}
     >
       <div className='w-full max-w-[1200px] p-10 md:p-6 bg-grey-700 rounded-3xl shadow-[0_0_6px_0_rgba(56,255,156,0.4)] mb-0 md:mb-10 mx-0 md:mx-10'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-6'>

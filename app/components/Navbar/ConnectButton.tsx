@@ -116,6 +116,8 @@ export const ConnectButton = () => {
   const getWalletAddress = async () => {
     try {
       const accounts = await window.ethereum.request({ method: 'eth_accounts' })
+      console.log('get wallet address accounts', accounts)
+
       if (accounts.length > 0) setWalletAddress(accounts[0])
     } catch (error) {
       console.error('Error fetching wallet address:', error)
@@ -123,14 +125,18 @@ export const ConnectButton = () => {
   }
 
   useEffect(() => {
-    getWalletAddress()
+    void getWalletAddress()
 
     window.ethereum.on('accountsChanged', (accounts: string[]) => {
+      console.log('accountsChanged', accounts)
+
       setWalletAddress(accounts.length > 0 ? accounts[0] : null)
     })
 
     window.ethereum.on('chainChanged', () => {
-      getWalletAddress()
+      console.log('chainChanged')
+
+      void getWalletAddress()
     })
   }, [])
 
