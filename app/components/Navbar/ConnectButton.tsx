@@ -155,7 +155,9 @@ export const ConnectButton = () => {
     <>
       <button
         onClick={addNetwork}
-        className='flex items-center gap-1 lg:gap-2 text-grey-900 rounded-3xl bg-neonGreen-500 py-2 px-3 lg:px-4 text-xs lg:text-sm font-semibold'
+        className='flex items-center gap-1 lg:gap-2 text-grey-900 rounded-3xl 
+          bg-neonGreen-500 hover:bg-neonGreen-700 transition-colors duration-200
+          py-2 px-3 lg:px-4 text-xs lg:text-sm font-semibold'
       >
         {walletAddress
           ? walletAddress.slice(0, 6) + '...' + walletAddress.slice(-4)
