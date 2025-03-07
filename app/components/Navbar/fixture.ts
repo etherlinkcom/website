@@ -28,17 +28,16 @@ export const NAVBAR_ITEMS: NavItem[] = [
     ]
   },
   {
-    dropdown: false,
-    name: 'Ecosystem',
-    link: '/ecosystem'
-  },
-  {
     dropdown: true,
     name: 'Build',
     items: [
       {
         name: 'Docs',
         link: 'https://docs.etherlink.com/'
+      },
+      {
+        name: 'Builder',
+        link: 'https://build.etherlink.com/landing'
       },
       {
         name: 'Use your wallet',
@@ -67,6 +66,11 @@ export const NAVBAR_ITEMS: NavItem[] = [
         ]
       }
     ]
+  },
+  {
+    dropdown: false,
+    name: 'Ecosystem',
+    link: '/ecosystem'
   },
   {
     dropdown: false,

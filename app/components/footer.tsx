@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Container from './container'
 import { EtherlinkLogo } from './EtherlinkLogo'
 import { X, Discord, GitHub } from './icons'
-import { isExternalLink } from './Navbar'
 
 const NAVS = [
   { name: 'Blog', link: 'https://medium.com/@etherlink' },
