@@ -37,7 +37,7 @@ const DropdownItem = ({
       <a
         href={item.link}
         target={item?.link?.startsWith('http') ? '_blank' : '_self'}
-        className={`flex items-center justify-between px-6 py-2 text-grey-100 text-sm font-bold hover:text-neon-green-500 transition-colors duration-200 hover:bg-grey-800 hover:rounded-[32px]
+        className={`flex items-center justify-between px-6 py-2 text-grey-100 text-sm font-bold hover:text-neon-green-500 transition-colors duration-200 hover:bg-grey-800 hover:rounded-[32px] hover:text-neonGreen-500
                 ${item.isNestedItem ? 'pl-8 pr-6 bg-grey-800' : ''} ${item.isLastNestedItem ? 'rounded-b-2xl' : ''}
             `}
         onClick={closeParent}
@@ -50,7 +50,8 @@ const DropdownItem = ({
   return (
     <div className='w-full hover:bg-grey-800 hover:rounded-[32px]'>
       <button
-        className={`flex items-center justify-between w-full px-6 py-2 text-sm font-bold rounded-t-2xl group ${isOpen ? 'text-neon-green-700  bg-grey-700' : 'text-grey-100'}`}
+        className={`group flex items-center justify-between w-full px-6 py-2 text-sm font-bold rounded-t-2xl hover:text-neonGreen-500
+            ${isOpen ? 'text-neonGreen-700  bg-grey-700' : 'text-grey-100'}`}
         onClick={e => {
           e.stopPropagation()
           setIsOpen(!isOpen)
@@ -119,7 +120,8 @@ export const DesktopNavbar = ({ items }: { items: NavItem[] }) => {
               ) : (
                 <a
                   href={item.link}
-                  className='inline-flex items-center px-6 py-2  text-grey-100 text-sm font-bold hover:text-neon-green-500 transition-colors duration-200'
+                  className='inline-flex items-center px-6 py-2  text-grey-100 text-sm font-bold
+                    hover:text-neonGreen-500 hover:bg-grey-800 rounded-[32px] transition-colors duration-200'
                 >
                   {item.name}
                 </a>
@@ -148,13 +150,13 @@ const DropdownMenu = ({
   }, [isOpen])
 
   return (
-    <div className='relative '>
+    <div className='relative'>
       <button
-        className={`inline-flex items-center px-6 py-2 text-sm font-bold ${isOpen ? 'bg-grey-800 rounded-[32px]' : ''}`}
+        className={`group inline-flex items-center px-6 py-2 text-sm font-bold hover:bg-grey-800  rounded-[32px] ${isOpen ? 'bg-grey-800' : ''}`}
         onClick={onClick}
       >
         <p
-          className={`${isOpen ? 'text-neon-green-700  bg-grey-800' : 'text-grey-100 hover:text-neon-green-500 transition-colors duration-200'}`}
+          className={`${isOpen ? 'text-neonGreen-700  bg-grey-800' : 'text-grey-100 group-hover:text-neonGreen-500 transition-colors duration-200'}`}
         >
           {item.name}
         </p>
