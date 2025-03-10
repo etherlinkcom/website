@@ -8,13 +8,19 @@ import { isExternalLink } from '../../Navbar'
 import useEmblaCarousel from 'embla-carousel-react'
 import { FeaturedProject } from '../../../../utils/airtable/homeFeatured'
 import styles from './featuredSection.module.css'
+import {
+  PrevButton,
+  NextButton,
+  usePrevNextButtons
+} from './EmblaCarouselButtons'
+import { useDotButton, DotButton } from './EmblaDots'
 
 export const DesktopStartedCarousel = ({
   featuredProjects
 }: {
   featuredProjects: FeaturedProject[]
 }) => {
-  const [emblaRef] = useEmblaCarousel({
+  const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: 'start',
     slidesToScroll: 1,
@@ -22,10 +28,20 @@ export const DesktopStartedCarousel = ({
     containScroll: false
   })
 
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick
+  } = usePrevNextButtons(emblaApi)
+
+  const { selectedIndex, scrollSnaps, onDotButtonClick } =
+    useDotButton(emblaApi)
+
   return (
-    <div className='hidden md:flex relative flex-col items-center mb-[60px] md:mb-[100px] w-full z-10'>
+    <div className='relative hidden md:flex flex-col items-center mb-[60px] md:mb-[100px] w-full z-10'>
       <div
-        className={`relative py-10 px-1 w-full overflow-auto overscroll-contain scrollbar-none overscroll-container ${styles.overscrollContainer}`}
+        className={`relative pt-10 pb-5 px-1 w-full overflow-auto overscroll-contain scrollbar-none overscroll-container z-10 ${styles.overscrollContainer}`}
         ref={emblaRef}
       >
         <div className='flex items-center gap-x-8 embla__container'>
@@ -35,6 +51,23 @@ export const DesktopStartedCarousel = ({
             </div>
           ))}
         </div>
+      </div>
+
+      <div className='absolute top-1/2 w-[calc(100%+100px)] lg:w-[calc(100%+130px)] z-0'>
+        <div className='flex justify-between items-cenetr embla__buttons'>
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        </div>
+      </div>
+
+      <div className='embla__dots flex justify-center items-center gap-2'>
+        {scrollSnaps.map((_, index) => (
+          <DotButton
+            key={index}
+            isSelected={index === selectedIndex}
+            onClick={() => onDotButtonClick(index)}
+          />
+        ))}
       </div>
     </div>
   )
