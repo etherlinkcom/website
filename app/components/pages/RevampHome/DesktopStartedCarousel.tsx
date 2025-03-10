@@ -8,19 +8,16 @@ import { isExternalLink } from '../../Navbar'
 import useEmblaCarousel from 'embla-carousel-react'
 import { FeaturedProject } from '../../../../utils/airtable/homeFeatured'
 import styles from './featuredSection.module.css'
-import {
-  PrevButton,
-  NextButton,
-  usePrevNextButtons
-} from './EmblaCarouselButtons'
+import { usePrevNextButtons } from './usePrevNextButtons'
 import { DotButton } from './EmblaDots'
+import { EmblaNavButton } from './EmblaNavButton'
 
 export const DesktopStartedCarousel = ({
   featuredProjects
 }: {
   featuredProjects: FeaturedProject[]
 }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
+  const [emblaRef] = useEmblaCarousel({
     loop: false,
     align: 'start',
     slidesToScroll: 1,
@@ -82,8 +79,15 @@ export const DesktopStartedCarousel = ({
 
       <div className='absolute top-1/2 w-[calc(100%+100px)] lg:w-[calc(100%+130px)] z-0'>
         <div className='flex justify-between items-cenetr embla__buttons'>
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+          <EmblaNavButton
+            onClick={onPrevButtonClick}
+            disabled={prevBtnDisabled}
+          />
+          <EmblaNavButton
+            className='rotate-180'
+            onClick={onNextButtonClick}
+            disabled={nextBtnDisabled}
+          />
         </div>
       </div>
 
