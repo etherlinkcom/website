@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useRef, useState, useCallback } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import Link from 'next/link'
@@ -13,7 +13,7 @@ import {
   NextButton,
   usePrevNextButtons
 } from './EmblaCarouselButtons'
-import { useDotButton, DotButton } from './EmblaDots'
+import { DotButton } from './EmblaDots'
 
 export const DesktopStartedCarousel = ({
   featuredProjects
@@ -28,25 +28,52 @@ export const DesktopStartedCarousel = ({
     containScroll: false
   })
 
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null)
+  const slideRef = useRef<HTMLDivElement | null>(null)
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const scrollSnaps = featuredProjects.map((_, index) => index)
+
+  const trackScrollPosition = useCallback(() => {
+    if (!scrollContainerRef.current || !slideRef.current) return
+
+    const { scrollLeft } = scrollContainerRef.current
+    const slideWidth = slideRef.current?.offsetWidth
+    const newIndex = Math.round(scrollLeft / slideWidth)
+
+    setSelectedIndex(newIndex)
+  }, [])
+
+  useEffect(() => {
+    if (!scrollContainerRef.current) return
+    const container = scrollContainerRef.current
+
+    container.addEventListener('scroll', trackScrollPosition)
+    return () => container.removeEventListener('scroll', trackScrollPosition)
+  }, [trackScrollPosition])
+
   const {
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
     onNextButtonClick
-  } = usePrevNextButtons(emblaApi)
-
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi)
+  } = usePrevNextButtons(scrollContainerRef, slideRef)
 
   return (
     <div className='relative hidden md:flex flex-col items-center mb-[60px] md:mb-[100px] w-full z-10'>
       <div
-        className={`relative pt-10 pb-5 px-1 w-full overflow-auto overscroll-contain scrollbar-none overscroll-container z-10 ${styles.overscrollContainer}`}
-        ref={emblaRef}
+        className={`relative pt-10 px-1 pb-5 w-full overflow-auto overscroll-contain scrollbar-none overscroll-container z-10 ${styles.overscrollContainer}`}
+        ref={node => {
+          emblaRef(node)
+          scrollContainerRef.current = node
+        }}
       >
         <div className='flex items-center gap-x-8 embla__container'>
           {featuredProjects.map((data, index) => (
-            <div key={index} className='embla__slide shrink-0 w-full z-10'>
+            <div
+              ref={index === 0 ? slideRef : null}
+              key={index}
+              className='embla__slide shrink-0 w-full z-10'
+            >
               <FeaturedBox {...data} />
             </div>
           ))}
@@ -65,7 +92,14 @@ export const DesktopStartedCarousel = ({
           <DotButton
             key={index}
             isSelected={index === selectedIndex}
-            onClick={() => onDotButtonClick(index)}
+            onClick={() => {
+              if (!scrollContainerRef.current || !slideRef.current) return
+              const slideWidth = slideRef.current.offsetWidth + 32 // Account for gap
+              scrollContainerRef.current.scrollTo({
+                left: index * slideWidth,
+                behavior: 'smooth'
+              })
+            }}
           />
         ))}
       </div>
@@ -101,7 +135,7 @@ const FeaturedBox = ({
   Desktop_Image
 }: FeaturedBoxProps) => {
   return (
-    <div className='h-[420px] xl:h-[460px] rounded-3xl shadow-[0_0_6px_0_rgba(56,255,156,0.4)] border border-transparent hover:border hover:border-neonGreen-500 z-10'>
+    <div className='h-[420px] xl:h-[460px] rounded-3xl shadow-[0_0_6px_0_rgba(56,255,156,0.4)] border border-transparent hover:border hover:border-neonGreen-500 z-10 w-[99%]'>
       <Link href={Project_Link} target={isExternalLink(Project_Link)}>
         <div className='relative h-full w-full'>
           <div

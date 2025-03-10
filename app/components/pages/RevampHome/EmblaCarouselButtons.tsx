@@ -4,7 +4,6 @@ import React, {
   useEffect,
   useState
 } from 'react'
-import { EmblaCarouselType } from 'embla-carousel'
 
 type UsePrevNextButtonsType = {
   prevBtnDisabled: boolean
@@ -14,32 +13,50 @@ type UsePrevNextButtonsType = {
 }
 
 export const usePrevNextButtons = (
-  emblaApi: EmblaCarouselType | undefined
+  containerRef: React.RefObject<HTMLDivElement>,
+  slideRef: React.RefObject<HTMLDivElement>
 ): UsePrevNextButtonsType => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
 
-  const onPrevButtonClick = useCallback(() => {
-    if (!emblaApi) return
-    emblaApi.scrollPrev()
-  }, [emblaApi])
+  const updateButtons = useCallback(() => {
+    if (!containerRef.current) return
 
-  const onNextButtonClick = useCallback(() => {
-    if (!emblaApi) return
-    emblaApi.scrollNext()
-  }, [emblaApi])
+    const { scrollLeft, scrollWidth, clientWidth } = containerRef.current
 
-  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setPrevBtnDisabled(!emblaApi.canScrollPrev())
-    setNextBtnDisabled(!emblaApi.canScrollNext())
+    setPrevBtnDisabled(scrollLeft <= 0) // Disable when at the start
+    setNextBtnDisabled(scrollLeft + clientWidth >= scrollWidth) // Disable when at the end
   }, [])
 
   useEffect(() => {
-    if (!emblaApi) return
+    if (!containerRef.current) return
+    const container = containerRef.current
 
-    onSelect(emblaApi)
-    emblaApi.on('reInit', onSelect).on('select', onSelect)
-  }, [emblaApi, onSelect])
+    container.addEventListener('scroll', updateButtons)
+    updateButtons()
+
+    return () => container.removeEventListener('scroll', updateButtons)
+  }, [updateButtons])
+
+  const onPrevButtonClick = useCallback(() => {
+    if (!containerRef.current || !slideRef.current) return
+
+    const slideWidth = slideRef.current.offsetWidth + 32
+    containerRef.current.scrollBy({
+      left: -slideWidth,
+      behavior: 'smooth'
+    })
+  }, [])
+
+  const onNextButtonClick = useCallback(() => {
+    if (!containerRef.current || !slideRef.current) return
+
+    const slideWidth = slideRef.current.offsetWidth + 32
+    containerRef.current.scrollBy({
+      left: slideWidth,
+      behavior: 'smooth'
+    })
+  }, [])
 
   return {
     prevBtnDisabled,
