@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { isExternalLink } from '../../Navbar'
 import useEmblaCarousel from 'embla-carousel-react'
 import { FeaturedProject } from '../../../../utils/airtable/homeFeatured'
+import styles from './featuredSection.module.css'
 
 export const DesktopStartedCarousel = ({
   featuredProjects
@@ -16,13 +17,17 @@ export const DesktopStartedCarousel = ({
   const [emblaRef] = useEmblaCarousel({
     loop: false,
     align: 'start',
-    containScroll: 'trimSnaps',
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    axis: 'x',
+    containScroll: false
   })
 
   return (
     <div className='hidden md:flex relative flex-col items-center mb-[60px] md:mb-[100px] w-full z-10'>
-      <div className='relative py-10 w-full' ref={emblaRef}>
+      <div
+        className={`relative py-10 px-1 w-full overflow-auto overscroll-contain scrollbar-none overscroll-container ${styles.overscrollContainer}`}
+        ref={emblaRef}
+      >
         <div className='flex items-center gap-x-8 embla__container'>
           {featuredProjects.map((data, index) => (
             <div key={index} className='embla__slide shrink-0 w-full z-10'>

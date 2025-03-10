@@ -106,7 +106,7 @@ export const ExperienceSection = () => {
             }
             title='Comprehensive'
             subTitle='toolkit'
-            desc='Leverage familiar tools like Metamask, Hardhat, and Foundry. Access a wide range of integrations, including Subsquid, Fireblocks, Thirdweb,and The Graph'
+            desc='Leverage familiar tools like Metamask, Hardhat, and Foundry. Access a wide range of integrations, including Subsquid, Fireblocks, Thirdweb, and The Graph'
           />
         </Fade>
       </div>
