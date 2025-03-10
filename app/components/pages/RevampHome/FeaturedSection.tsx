@@ -37,7 +37,7 @@ export const FeaturedSection = ({
   featuredProjects: FeaturedProject[]
 }) => {
   return (
-    <Container className='relative z-10'>
+    <Container className='relative px-6 md:px-[60px] lg:px-[104px] z-10'>
       <SectionBgGradient />
       <div className='mb-[100px]'>
         <h2 className='text-white font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px]'>

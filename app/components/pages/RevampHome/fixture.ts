@@ -169,7 +169,7 @@ export const SPEED_BOXES = [
 export const EVM_BOXES = [
   {
     topLine: 'LEARN MORE',
-    title: 'Tezos smart rollups',
+    title: 'Tezos Smart Rollups',
     desc: 'Etherlink is powered by a Smart Rollup, an enshrined, optimistic rollup technology implemented by Tezos.',
     link: 'https://tezos.com/developers/smart-rollups/',
     img: '/img/home/EVM/smart-rollups.webp',
@@ -199,7 +199,7 @@ export const BOTTOM_CTA = [
     link: 'https://explorer.etherlink.com/'
   },
   {
-    topLine: 'GOVERNANCE',
+    topLine: 'SERVICES',
     title: 'Check status',
     desc: 'View the network’s performance and health',
     link: 'https://status.etherlink.com/'
