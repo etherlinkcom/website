@@ -58,7 +58,7 @@ export const DesktopStartedCarousel = ({
   return (
     <div className='relative hidden md:flex flex-col items-center mb-[60px] md:mb-[100px] w-full z-10'>
       <div
-        className={`relative pt-10 px-1 pb-5 w-full overflow-auto overscroll-contain scrollbar-none overscroll-container z-10 ${styles.overscrollContainer}`}
+        className={`relative pt-10 px-1 pb-5 w-full overflow-auto scrollbar-none overscroll-container z-10 ${styles.overscrollContainer}`}
         ref={node => {
           emblaRef(node)
           scrollContainerRef.current = node
