@@ -18,6 +18,10 @@ const NAVS = [
   {
     name: 'Cookie Policy',
     link: '/cookies'
+  },
+  {
+    name: 'Privacy Policy',
+    link: '/Etherlink-Website-Privacy-Notice.docx'
   }
 ]
 
