@@ -11,17 +11,17 @@ export const CookieBanner = () => {
   const path = usePathname()
 
   useEffect(() => {
-    const cookieConsent = Cookies.get('cookie_consent')
+    const cookieConsent = Cookies.get('etherlink_cookie_consent')
     setIsVisible(!cookieConsent)
   }, [])
 
   const handleAccept = () => {
-    Cookies.set('cookie_consent', 'accepted', { expires: 365 })
+    Cookies.set('etherlink_cookie_consent', 'accepted', { expires: 365 })
     setIsVisible(false)
   }
 
   const handleNecessaryOnly = () => {
-    Cookies.set('cookie_consent', 'necessary', { expires: 365 })
+    Cookies.set('etherlink_cookie_consent', 'necessary', { expires: 365 })
     setIsVisible(false)
   }
 
