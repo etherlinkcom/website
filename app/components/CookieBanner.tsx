@@ -16,12 +16,18 @@ export const CookieBanner = () => {
   }, [])
 
   const handleAccept = () => {
-    Cookies.set('etherlink_cookie_consent', 'accepted', { expires: 365 })
+    Cookies.set('etherlink_cookie_consent', 'accepted', {
+      expires: 365,
+      domain: '.etherlink.com'
+    })
     setIsVisible(false)
   }
 
   const handleNecessaryOnly = () => {
-    Cookies.set('etherlink_cookie_consent', 'necessary', { expires: 365 })
+    Cookies.set('etherlink_cookie_consent', 'necessary', {
+      expires: 365,
+      domain: '.etherlink.com'
+    })
     setIsVisible(false)
   }
 
