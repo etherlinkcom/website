@@ -56,7 +56,7 @@ const StartedBox = ({
           src={Mobile_Image[0].url}
           alt='bg img'
         />
-        <div className='absolute flex flex-col bottom-0 p-6 w-full bg-[rgba(27,27,27,0.85)] backdrop-blur-[12px] rounded-b-3xl'>
+        <div className='absolute flex flex-col bottom-0 p-6 w-full bg-[rgba(27,27,27,0.85)] backdrop-blur-[12px] rounded-b-xl'>
           <div className='flex items-center flex-wrap justify-between mb-4 h-full'>
             <p className='text-grey-50 font-light text-xs'>FEATURED</p>
             <img src='/img/icons/green-arrow-up-right.svg' alt='arrow' />
