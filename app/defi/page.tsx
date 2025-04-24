@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Hero } from './Hero'
+import { Tutorials } from './Tutorials'
 
 export const metadata: Metadata = {
   title: 'Etherlink DeFi',
@@ -11,6 +12,7 @@ const DefiPage = async () => {
   return (
     <>
       <Hero />
+      <Tutorials />
     </>
   )
 }

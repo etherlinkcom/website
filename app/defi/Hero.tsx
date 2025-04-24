@@ -2,11 +2,12 @@ import React from 'react'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { GhostButton } from '../components/buttons/GhostButton'
 import Container from '../components/container'
+import { GraditentLine } from '../components/pages/RevampHome/Partners'
 
 export const Hero = () => {
   return (
     <div>
-      <Container className='py-24'>
+      <Container className='pt-24 pb-10 md:py-48'>
         <div className='relative'>
           {/* text and buttons */}
           <p className='text-neonGreen-500 text-xs md:text-sm font-semibold md:font-bold mb-4 md:mb-2'>
@@ -34,6 +35,7 @@ export const Hero = () => {
         </div>
         <div>{/* icons */}</div>
       </Container>
+      <GraditentLine className='left-[50%] -translate-x-[50%]' />
     </div>
   )
 }
