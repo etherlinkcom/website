@@ -15,7 +15,7 @@ export const ExperienceSection = () => {
         <h2 className='text-neonGreen-500 font-bold text-3xl md:text-6xl text-center mb-3 -tracking-[1.1px]'>
           Future-proof,
           <br />
-          <span className='text-white font-bold text-3xl md:text-6xl text-center -tracking-[1.1px]'>
+          <span className='text-white-50 font-bold text-3xl md:text-6xl text-center -tracking-[1.1px]'>
             open, and scalable
           </span>
         </h2>

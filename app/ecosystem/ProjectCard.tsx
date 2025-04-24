@@ -35,7 +35,7 @@ export const ProjectCard = ({
             alt={Project + ' Logo'}
           />
         )}
-        <h1 className='font-bold text-white text-xl'>{Project}</h1>
+        <h1 className='font-bold text-white-50 text-xl'>{Project}</h1>
       </div>
       <p className='w-full text-gray-300 text-sm'>{Description}</p>
       <div className='flex items-center justify-between'>

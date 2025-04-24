@@ -13,7 +13,7 @@ export const Evm = () => {
     <Container className='relative mb-[104px] z-10'>
       <SectionBgGradient />
       <div className='mb-[100px]'>
-        <h2 className='text-white font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px] md:leading-[65px]'>
+        <h2 className='text-white-50 font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px] md:leading-[65px]'>
           <span className='text-neonGreen-500'>Built on Tezos,</span>
           <br />
           Designed to Evolve

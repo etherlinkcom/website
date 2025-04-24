@@ -15,7 +15,7 @@ export default function SectionTitle(props) {
       )}
 
       {props.title && (
-        <h2 className='max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white'>
+        <h2 className='max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white-50'>
           {props.title}
         </h2>
       )}

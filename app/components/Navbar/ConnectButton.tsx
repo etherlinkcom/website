@@ -15,7 +15,7 @@ const CustomToast = ({
 }) => (
   <div className='flex items-center gap-3'>
     {icon || <InfoIcon />}
-    <span className='text-white font-base font-bold'>{message}</span>
+    <span className='text-white-50 font-base font-bold'>{message}</span>
   </div>
 )
 

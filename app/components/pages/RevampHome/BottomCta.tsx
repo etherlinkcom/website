@@ -13,7 +13,7 @@ export const BottomCta = () => {
     <Container className='relative mb-[104px]'>
       <SectionBgGradient />
       <div className='mb-[100px]' id='developers'>
-        <h2 className='text-white font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px] md:leading-[65px]'>
+        <h2 className='text-white-50 font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px] md:leading-[65px]'>
           <span className='text-neonGreen-500'>Ready to</span>{' '}
           <span className='inline md:hidden'>
             <br />
@@ -56,7 +56,7 @@ const CtaBox = ({ topLine, title, desc, link }: CtaBoxProps) => {
               rounded-3xl h-full w-full group hover:border hover:border-neonGreen-500 hover:cursor-pointer'
         >
           <div className='flex items-center flex-wrap justify-between h-fit mb-2'>
-            <p className='text-white font-light text-xs'>{topLine}</p>
+            <p className='text-white-50 font-light text-xs'>{topLine}</p>
             <img src='/img/icons/green-arrow-up-right.svg' alt='arrow' />
           </div>
           <p className='w-full text-neonGreen-500 text-[23px] font-semibold mb-3'>

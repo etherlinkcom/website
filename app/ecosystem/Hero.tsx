@@ -24,7 +24,7 @@ export const Hero = () => {
         <ArrowButton
           text='Learn more'
           link='https://docs.etherlink.com/'
-          className='bg-transparent hover:bg- border border-white text-white text-base font-semibold px-7 py-3 min-w-[200px]'
+          className='bg-transparent hover:bg- border border-white-50 text-white-50 text-base font-semibold px-7 py-3 min-w-[200px]'
           arrowWidth={12}
           arrowColor='white'
         />

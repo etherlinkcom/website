@@ -21,7 +21,7 @@ const SubNavItem = ({
     return (
       <Link
         href={item.link || '#'}
-        className='flex items-center justify-between px-6 py-2.5 text-grey-100 text-sm font-bold transition-colors hover:text-white'
+        className='flex items-center justify-between px-6 py-2.5 text-grey-100 text-sm font-bold transition-colors hover:text-white-50'
         onClick={handleClose}
         target={isExternalLink(item.link!)}
       >
@@ -51,7 +51,7 @@ const SubNavItem = ({
     <div className='w-full'>
       <button
         className={`flex items-center justify-between w-full px-6 py-3 text-sm font-bold transition-colors
-          ${isOpen ? 'text-neon-green-500 bg-grey-700 rounded-t-xl' : 'text-grey-100 hover:text-white'}`}
+          ${isOpen ? 'text-neon-green-500 bg-grey-700 rounded-t-xl' : 'text-grey-100 hover:text-white-50'}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{item.name}</span>
@@ -79,7 +79,7 @@ const SubNavItem = ({
           <Link
             key={index}
             href={subItem.link || '#'}
-            className='block px-8 py-2 text-grey-100 text-sm font-bold transition-colors hover:text-white'
+            className='block px-8 py-2 text-grey-100 text-sm font-bold transition-colors hover:text-white-50'
             onClick={handleClose}
             target={isExternalLink(subItem.link!)}
           >
@@ -104,7 +104,7 @@ const MainNavItem = ({
     return (
       <Link
         href={item.link || '#'}
-        className='flex items-center justify-between px-6 py-3 text-grey-100 text-sm font-bold transition-colors hover:text-white'
+        className='flex items-center justify-between px-6 py-3 text-grey-100 text-sm font-bold transition-colors hover:text-white-50'
         onClick={handleClose}
         target={item.link?.startsWith('http') ? '_blank' : undefined}
       >
@@ -132,7 +132,7 @@ const MainNavItem = ({
 
   return (
     <button
-      className='flex items-center justify-between w-full px-6 py-3 text-grey-100 text-sm font-bold hover:text-white'
+      className='flex items-center justify-between w-full px-6 py-3 text-grey-100 text-sm font-bold hover:text-white-50'
       onClick={() => item.items && onNavigate(item.items, item.name || '')}
     >
       <span>{item.name}</span>
@@ -242,7 +242,7 @@ export const MobileNavbar = ({
               >
                 <button
                   onClick={handleClose}
-                  className='absolute right-6 top-6 text-grey-100 hover:text-white'
+                  className='absolute right-6 top-6 text-grey-100 hover:text-white-50'
                 >
                   <img src='/img/icons/close.svg' alt='close button' />
                 </button>
@@ -274,14 +274,14 @@ export const MobileNavbar = ({
                   <Link
                     href='https://twitter.com/etherlink'
                     target='_blank'
-                    className='text-grey-100 hover:text-white transition-colors'
+                    className='text-grey-100 hover:text-white-50 transition-colors'
                   >
                     <X size={42} />
                   </Link>
                   <Link
                     href='https://discord.gg/etherlink'
                     target='_blank'
-                    className='text-grey-100 hover:text-white transition-colors'
+                    className='text-grey-100 hover:text-white-50 transition-colors'
                   >
                     <Discord size={42} />
                   </Link>
@@ -298,14 +298,14 @@ export const MobileNavbar = ({
                 <div className='relative flex items-center justify-center py-2.5 mx-1'>
                   <button
                     onClick={handleBack}
-                    className='absolute left-6 text-grey-100 hover:text-white'
+                    className='absolute left-6 text-grey-100 hover:text-white-50'
                   >
                     <img src='/img/icons/FiArrowLeft.svg' alt='back button' />
                   </button>
                   <p className='text-grey-100 font-bold'>{currentMenu.title}</p>
                   <button
                     onClick={handleClose}
-                    className='absolute right-6 text-grey-100 hover:text-white'
+                    className='absolute right-6 text-grey-100 hover:text-white-50'
                   >
                     <img src='/img/icons/close.svg' alt='close button' />
                   </button>
@@ -325,14 +325,14 @@ export const MobileNavbar = ({
                   <Link
                     href='https://twitter.com/etherlink'
                     target='_blank'
-                    className='text-grey-100 hover:text-white transition-colors'
+                    className='text-grey-100 hover:text-white-50 transition-colors'
                   >
                     <X size={42} />
                   </Link>
                   <Link
                     href='https://discord.gg/etherlink'
                     target='_blank'
-                    className='text-grey-100 hover:text-white transition-colors'
+                    className='text-grey-100 hover:text-white-50 transition-colors'
                   >
                     <Discord size={42} />
                   </Link>

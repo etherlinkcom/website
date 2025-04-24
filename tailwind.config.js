@@ -51,12 +51,23 @@ module.exports = {
           800: '#151515',
           900: '#101010'
         },
+        white: {
+          50: '#ffffff',
+          100: '#ffffff',
+          200: '#ffffff',
+          300: '#ffffff',
+          400: '#ffffff',
+          500: '#ffffff',
+          600: '#e8e8e8',
+          700: '#b5b5b5',
+          800: '#8c8c8c',
+          900: '#6b6b6b'
+        },
         newGreen: '#38ff9c',
         lightGreen: '#b6feda',
         lightBlack: '#262626',
         midBlack: '#1c1c1c',
-        darkBlack: '#171717',
-        white: '#ffffff'
+        darkBlack: '#171717'
       },
       screens: {
         'max-sm': { max: '640px' },

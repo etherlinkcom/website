@@ -55,7 +55,7 @@ export const Roadmap = () => {
   return (
     <div className='relative max-w-7xl mx-auto bg-midBlack md:px-20 py-10 md:py-20 rounded mt-4 mb-20'>
       <div className='flex items-center justify-between gap-4 mb-10 md:mb-20'>
-        <h1 className='text-white font-bold text-4xl md:text-5xl lg:text-6xl mx-auto md:mx-0 text-center'>
+        <h1 className='text-white-50 font-bold text-4xl md:text-5xl lg:text-6xl mx-auto md:mx-0 text-center'>
           Etherlink <span className='text-newGreen'>Roadmap</span>
         </h1>
 
@@ -90,7 +90,7 @@ export const Roadmap = () => {
                         <img src='/img/home/square.svg' alt='square icon' />
                       )}
                       <p
-                        className={`${detail.done ? 'text-newGreen' : 'text-white'} font-light text-lg`}
+                        className={`${detail.done ? 'text-newGreen' : 'text-white-50'} font-light text-lg`}
                       >
                         {detail.name}
                       </p>
@@ -134,7 +134,7 @@ const Button = ({
   return (
     <button
       className={`font-semibold text-2xl py-2 lg:py-4 px-5 lg:px-9 rounded-xl 
-        ${currentPhase === phase ? 'bg-darkGreen text-black border-2 border-darkGreen' : 'border-2 text-white'} 
+        ${currentPhase === phase ? 'bg-darkGreen text-black border-2 border-darkGreen' : 'border-2 text-white-50'} 
         hover:bg-newGreen hover:border-newGreen hover:text-black ease-in-out duration-200`}
       onClick={() => setCurrentPhase(phase)}
     >

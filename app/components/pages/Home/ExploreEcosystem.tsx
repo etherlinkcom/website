@@ -13,7 +13,7 @@ export const ExploreEcosystem = ({ projects }: { projects: Project[] }) => {
       <SectionBgGradient />
       <div className='mb-[32px] z-50'>
         <h2 className='text-newGreen font-bold text-3xl md:text-6xl text-center mb-4 -tracking-[0.6px]'>
-          <span className='text-white'>Explore the</span> ecosystem
+          <span className='text-white-50'>Explore the</span> ecosystem
         </h2>
         <p className='text-center mt-2 font-light md:text-2xl text-[#9B9B9B]'>
           Discover what industry-leading teams are building on Etherlink
@@ -37,7 +37,7 @@ export const ExploreEcosystem = ({ projects }: { projects: Project[] }) => {
 const PillBox = ({ text }: { text: string }) => {
   return (
     <div className='rounded-3xl px-4 py-2 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] z-50'>
-      <p className='text-white text-center'>{text}</p>
+      <p className='text-white-50 text-center'>{text}</p>
     </div>
   )
 }

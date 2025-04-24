@@ -22,11 +22,11 @@ export const Main = () => {
       <div className='z-10 w-full'>
         <div className='mx-auto'>
           <Fade triggerOnce direction='down' delay={200}>
-            <h1 className='text-center text-[36px] md:text-[69px] font-semibold leading-tight text-white -tracking-[1.38px] mb-3'>
-              <span className='text-white'>
+            <h1 className='text-center text-[36px] md:text-[69px] font-semibold leading-tight text-white-50 -tracking-[1.38px] mb-3'>
+              <span className='text-white-50'>
                 The{' '}
                 <span className='text-newGreen'>
-                  fast<span className='text-white'>,</span> fair{' '}
+                  fast<span className='text-white-50'>,</span> fair{' '}
                 </span>
                 and (nearly) <span className='text-newGreen'>free</span> L2
               </span>
@@ -97,7 +97,7 @@ export const FeatureBox = ({
           ${isClicked ? 'opacity-0 w-0 h-0' : 'opacity-100 w-full'}`}
       >
         <div
-          className='flex flex-col justify-center rounded-xl py-10 font-medium text-white
+          className='flex flex-col justify-center rounded-xl py-10 font-medium text-white-50
             mb-6 bg-lightBlack group-hover:bg-[#5C72FB] transition-colors duration-300 ease-in'
         >
           <Image

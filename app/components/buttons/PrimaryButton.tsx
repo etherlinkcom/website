@@ -41,7 +41,7 @@ export const PrimaryButton = ({
         </span>
         {icon}
       </div>
-      <span className='absolute inset-0 border-2 border-white rounded-3xl opacity-0 group-hover:animate-circling'></span>
+      <span className='absolute inset-0 border-2 border-white-50 rounded-3xl opacity-0 group-hover:animate-circling'></span>
     </button>
   )
 }

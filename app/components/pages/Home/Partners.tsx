@@ -15,7 +15,7 @@ export const Partners = () => {
         bg-[url('/img/ecosystem/hero-bg.svg')] bg-no-repeat 
         bg-cover bg-top pb-[80px]"
     >
-      <h1 className='text-white font-bold text-3xl md:text-5xl text-center mb-4'>
+      <h1 className='text-white-50 font-bold text-3xl md:text-5xl text-center mb-4'>
         Explore the <span className='text-newGreen'>ecosystem</span>
       </h1>
       <p className='text-base md:text-lg text-gray-300 text-center px-8 mb-8'>

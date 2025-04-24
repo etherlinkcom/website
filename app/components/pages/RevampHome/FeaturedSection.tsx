@@ -40,7 +40,7 @@ export const FeaturedSection = ({
     <Container className='relative px-6 md:px-[60px] lg:px-[104px] z-10'>
       <SectionBgGradient />
       <div className='mb-[100px]'>
-        <h2 className='text-white font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px]'>
+        <h2 className='text-white-50 font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px]'>
           <span className='text-neonGreen-500'>Get started</span> on Etherlink
         </h2>
         <p className='text-center text-base md:text-[23px] text-grey-200'>
