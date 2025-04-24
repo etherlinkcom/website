@@ -7,7 +7,7 @@ export const Hero = () => {
   return (
     <div>
       <Container className='py-24'>
-        <div className=''>
+        <div className='relative'>
           {/* text and buttons */}
           <p className='text-neonGreen-500 text-xs md:text-sm font-semibold md:font-bold mb-4 md:mb-2'>
             $11,000,000 bridged to Etherlink to date
@@ -18,6 +18,19 @@ export const Hero = () => {
           >
             Make money with DeFi on Etherlink
           </h1>
+          <p className='text-white-700 text-lg md:text-xl leading-[26px] md:max-w-[600px] mb-[80px] md:mb-[40px]'>
+            Explore the best ways to grow your portfolio with simple DeFi
+            strategies for every risk level.
+          </p>
+          <div className='flex flex-col md:flex-row gap-4'>
+            <PrimaryButton text='View strategies' />
+            <GhostButton text='Stats' />
+          </div>
+          <img
+            className='absolute -bottom-[500px] -left-[150px] max-w-[960px] max-h-[960px] opacity-80 z-0 hidden md:block'
+            src='/img/defi/gradient.svg'
+            alt='bg gradient'
+          />
         </div>
         <div>{/* icons */}</div>
       </Container>
