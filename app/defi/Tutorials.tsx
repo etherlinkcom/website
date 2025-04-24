@@ -17,6 +17,14 @@ export const Tutorials = () => {
   return (
     <div className='relative'>
       <Container className='py-10 md:py-24'>
+        <div className='pb-14 text-center'>
+          <p className='text-4xl font-bold leading-[48px] text-neonGreen-500 mb-2'>
+            Start earning <span className='text-white-50'>in a few clicks</span>
+          </p>
+          <p className='text-grey-200 text-xl -tracking-[0.4px]'>
+            Step-by-step guides to the top strategies on Etherlink
+          </p>
+        </div>
         {/* tutorials table */}
         <div
           className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full`}
