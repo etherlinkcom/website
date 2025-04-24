@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Hero } from './Hero'
 import { Tutorials } from './Tutorials'
+import { OnBoard } from './OnBoard'
 
 export const metadata: Metadata = {
   title: 'Etherlink DeFi',
@@ -13,6 +14,7 @@ const DefiPage = async () => {
     <div className=''>
       <Hero />
       <Tutorials />
+      <OnBoard />
     </div>
   )
 }
