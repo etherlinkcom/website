@@ -9,7 +9,9 @@ import {
 
 export const DesktopTutorialTable = () => {
   return (
-    <div className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full`}>
+    <div
+      className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full hidden md:block`}
+    >
       {/* titles */}
       <div
         className={`flex items-center gap-6 py-3 px-6 border-b ${TABLE_BORDER_COLOR}`}
@@ -77,8 +79,12 @@ export const DesktopTutorialTable = () => {
           </div>
         </div>
         {/* right image */}
-        <div className='w-full h-full'>
-          <img className='' src='/img/defi/stepCard.jpg' alt='card' />
+        <div className='flex justify-center items-center '>
+          <img
+            className='object-contain'
+            src='/img/defi/stepCard.jpg'
+            alt='card'
+          />
         </div>
       </div>
     </div>

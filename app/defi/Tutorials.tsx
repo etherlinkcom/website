@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from '../components/container'
 import { DesktopTutorialTable } from './DesktopTutorialTable'
+import { MobileTutorialTable } from './MobileTutorialTable'
 
 export const STRATEGIES = [
   'Basis Trade',
@@ -22,16 +23,17 @@ export const Tutorials = () => {
   return (
     <div className='relative'>
       <Container className='py-10 md:py-24'>
-        <div className='pb-14 text-center'>
-          <p className='text-4xl font-bold leading-[48px] text-neonGreen-500 mb-2'>
+        <div className='pb-14 text-start md:text-center'>
+          <p className='text-[28px] md:text-4xl font-bold leading-[48px] text-neonGreen-500 mb-1 md:mb-2'>
             Start earning <span className='text-white-50'>in a few clicks</span>
           </p>
-          <p className='text-grey-200 text-xl -tracking-[0.4px]'>
+          <p className='text-grey-200 text-lg md:text-xl -tracking-[0.4px]'>
             Step-by-step guides to the top strategies on Etherlink
           </p>
         </div>
         {/* tutorials table */}
         <DesktopTutorialTable />
+        <MobileTutorialTable />
       </Container>
     </div>
   )
@@ -43,7 +45,7 @@ interface StrategyPillProps {
 
 export const StrategyPill = ({ strategy }: StrategyPillProps) => {
   return (
-    <div className='px-3 py-1.5 text-center rounded-lg border border-black-400 hover:cursor-pointer'>
+    <div className='flex items-center justify-center shrink-0 px-3 py-1.5 text-center rounded-lg border border-black-400 hover:cursor-pointer '>
       <p className='text-sm font-semibold text-grey-200'>{strategy}</p>
     </div>
   )
