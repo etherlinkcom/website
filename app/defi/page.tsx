@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 
 const DefiPage = async () => {
   return (
-    <>
+    <div className=''>
       <Hero />
       <Tutorials />
-    </>
+    </div>
   )
 }
 
