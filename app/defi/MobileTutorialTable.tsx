@@ -27,8 +27,16 @@ export const MobileTutorialTable = () => {
         <img className='' src='/img/defi/stepCard.jpg' alt='card' />
       </div>
       {/* tutorial steps */}
-      <div className={`p-3 border-b ${TABLE_BORDER_COLOR}`}>
-        <TutorialStepCard step={1} />
+      <div
+        className={`p-3 flex gap-2 overflow-auto border-b ${TABLE_BORDER_COLOR}`}
+      >
+        {Array(3)
+          .fill(0)
+          .map((_, index) => (
+            <div className='w-[96%] shrink-0' key={index}>
+              <TutorialStepCard step={index + 1} />
+            </div>
+          ))}
       </div>
       {/* projects */}
       <div
