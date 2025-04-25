@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, ComponentPropsWithRef } from 'react'
+import React, { ComponentPropsWithRef } from 'react'
 import {
   STRATEGIES,
   FAKE_IMAGES,
@@ -19,8 +19,6 @@ export const DesktopTutorialTable = () => {
     axis: 'x',
     containScroll: false
   })
-  const scrollContainerRef = useRef<HTMLDivElement | null>(null)
-  const slideRef = useRef<HTMLDivElement | null>(null)
 
   const {
     prevBtnDisabled,
@@ -74,11 +72,7 @@ export const DesktopTutorialTable = () => {
               {Array(3)
                 .fill(0)
                 .map((_, index) => (
-                  <div
-                    ref={index === 0 ? slideRef : null}
-                    key={index}
-                    className='embla__slide shrink-0 w-full z-0'
-                  >
+                  <div key={index} className='embla__slide shrink-0 w-full z-0'>
                     <TutorialStepCard step={index + 1} />
                   </div>
                 ))}
