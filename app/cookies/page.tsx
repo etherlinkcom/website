@@ -182,6 +182,7 @@ const Cookies = () => {
           text: 'Join our Discord',
           link: 'https://discord.com/invite/etherlink'
         }}
+        icon={<img src='/img/icons/green-discord.svg' alt='discord icon' />}
       />
     </Container>
   )

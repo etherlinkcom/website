@@ -4,14 +4,16 @@ import Link from 'next/link'
 export const Cta = ({
   title,
   desc,
-  btn
+  btn,
+  icon
 }: {
   title: string
   desc: string
-  btn: {
+  btn?: {
     text: string
     link: string
   }
+  icon?: React.ReactNode
 }) => {
   return (
     <div
@@ -28,13 +30,16 @@ export const Cta = ({
             rounded-3xl cursor-pointer overflow-hidden group w-full`}
         role='button'
       >
-        <Link href='https://discord.com/invite/etherlink' target='_blank'>
+        <Link
+          href={btn ? btn.link : 'https://discord.com/invite/etherlink'}
+          target='_blank'
+        >
           <div className='flex justify-center items-center gap-2'>
-            <img src='/img/icons/green-discord.svg' alt='discord icon' />
+            {icon}
             <span className='relative z-10 text-lg font-semibold text-neonGreen-200'>
-              Join our Discord
+              {btn ? btn.text : 'Join our Discord'}
             </span>
-            <img src='/img/icons/green-discord.svg' alt='discord icon' />
+            {icon}
           </div>
           <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling'></span>
         </Link>
