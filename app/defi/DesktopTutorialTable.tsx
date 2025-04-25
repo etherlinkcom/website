@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import {
   STRATEGIES,
   FAKE_IMAGES,
@@ -6,8 +8,27 @@ import {
   StrategyPill,
   TutorialStepCard
 } from './Tutorials'
+import useEmblaCarousel from 'embla-carousel-react'
+import { usePrevNextButtons } from './usePrevNextButtons'
 
 export const DesktopTutorialTable = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: 'start',
+    slidesToScroll: 1,
+    axis: 'x',
+    containScroll: false
+  })
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null)
+  const slideRef = useRef<HTMLDivElement | null>(null)
+
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick
+  } = usePrevNextButtons(emblaApi)
+
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full hidden md:block`}
@@ -37,17 +58,34 @@ export const DesktopTutorialTable = () => {
                 className='px-3 py-2 hover:cursor-pointer'
                 src='/img/defi/FiArrowLeft.svg'
                 alt='arrow icon'
+                onClick={onPrevButtonClick}
               />
               <img
                 className='px-3 py-2 hover:cursor-pointer'
                 src='/img/defi/FiArrowRight.svg'
                 alt='arrow icon'
+                onClick={onNextButtonClick}
               />
             </div>
           </div>
           {/* tutorials steps */}
-          <div className={`p-3 h-[300px] border-b ${TABLE_BORDER_COLOR}`}>
-            <TutorialStepCard />
+          <div
+            ref={emblaRef}
+            className={`p-3 h-[300px] border-b embla__viewport overflow-hidden ${TABLE_BORDER_COLOR}`}
+          >
+            <div className='flex gap-4 embla__container'>
+              {Array(3)
+                .fill(0)
+                .map((_, index) => (
+                  <div
+                    ref={index === 0 ? slideRef : null}
+                    key={index}
+                    className='embla__slide shrink-0 w-full z-0'
+                  >
+                    <TutorialStepCard step={index + 1} />
+                  </div>
+                ))}
+            </div>
           </div>
           {/* details */}
           {/* 1st row */}

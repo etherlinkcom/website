@@ -51,11 +51,15 @@ export const StrategyPill = ({ strategy }: StrategyPillProps) => {
   )
 }
 
-export const TutorialStepCard = () => {
+interface TutorialStepCardProps {
+  step: number
+}
+
+export const TutorialStepCard = ({ step }: TutorialStepCardProps) => {
   return (
     <div className='flex items-center gap-4 py-4 px-6 bg-lightBlack border border-neonGreen-900 rounded-lg'>
       <div className='flex items-center justify-center text-black-900 text-sm font-semibold bg-neonGreen-500 rounded-full h-6 w-6'>
-        1
+        {step}
       </div>
       <div>
         <p className='text-neonGreen-500 font-semibold'>Bridge</p>

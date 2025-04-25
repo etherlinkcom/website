@@ -28,7 +28,7 @@ export const MobileTutorialTable = () => {
       </div>
       {/* tutorial steps */}
       <div className={`p-3 border-b ${TABLE_BORDER_COLOR}`}>
-        <TutorialStepCard />
+        <TutorialStepCard step={1} />
       </div>
       {/* projects */}
       <div

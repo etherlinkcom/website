@@ -28,9 +28,10 @@ export const Hero = () => {
             <GhostButton text='Stats' />
           </div>
           <img
-            className='absolute -bottom-[500px] -left-[150px] max-w-[960px] max-h-[960px] opacity-80 z-0 hidden md:block'
+            className='absolute -bottom-[500px] -left-[150px] max-w-[960px] max-h-[960px] opacity-70 z-0 hidden md:block pointer-events-none'
             src='/img/defi/gradient.svg'
             alt='bg gradient'
+            draggable={false}
           />
         </div>
         <div>{/* icons */}</div>
