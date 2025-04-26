@@ -16,7 +16,7 @@ const FEATURE_CONTENT = [
   },
   {
     title: 'Network Turbocharged',
-    text: 'Mulitple in-person networking opportunities will be hosted for the benefit of the cohort, including an evening together with leading Asia-based Web3 investors, and meetups with the Web3 community in Singapore.'
+    text: 'Multiple in-person networking opportunities will be hosted for the benefit of the cohort, including an evening together with leading Asia-based Web3 investors, and meetups with the Web3 community in Singapore.'
   }
 ]
 
