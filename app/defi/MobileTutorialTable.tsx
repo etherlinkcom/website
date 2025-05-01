@@ -4,10 +4,14 @@ import {
   FAKE_IMAGES,
   TABLE_BORDER_COLOR,
   StrategyPill,
-  TutorialStepCard
+  TutorialStepCard,
+  TutorialProps
 } from './Tutorials'
 
-export const MobileTutorialTable = () => {
+export const MobileTutorialTable = ({
+  selectedStrategy,
+  setSelectedStrategy
+}: TutorialProps) => {
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full block md:hidden`}
@@ -18,7 +22,12 @@ export const MobileTutorialTable = () => {
       >
         <div className='flex items-center gap-2 hover:cursor-pointer z-10 overflow-auto'>
           {STRATEGIES.map(strategy => (
-            <StrategyPill key={strategy} strategy={strategy} />
+            <StrategyPill
+              strategy={strategy}
+              isSelected={strategy === selectedStrategy}
+              onSelect={() => setSelectedStrategy(strategy)}
+              key={strategy}
+            />
           ))}
         </div>
       </div>

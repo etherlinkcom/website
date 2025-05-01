@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Container from '../components/container'
 import { DesktopTutorialTable } from './DesktopTutorialTable'
 import { MobileTutorialTable } from './MobileTutorialTable'
@@ -19,7 +21,15 @@ export const FAKE_IMAGES = [
 
 export const TABLE_BORDER_COLOR = 'border-black-400'
 
+export interface TutorialProps {
+  selectedStrategy: string
+  setSelectedStrategy: (s: string) => void
+}
+
 export const Tutorials = () => {
+  const [selectedStrategy, setSelectedStrategy] =
+    useState<string>('Basis Trade')
+
   return (
     <div className='relative'>
       <Container className='py-10 md:py-24'>
@@ -32,8 +42,14 @@ export const Tutorials = () => {
           </p>
         </div>
         {/* tutorials table */}
-        <DesktopTutorialTable />
-        <MobileTutorialTable />
+        <DesktopTutorialTable
+          selectedStrategy={selectedStrategy}
+          setSelectedStrategy={setSelectedStrategy}
+        />
+        <MobileTutorialTable
+          selectedStrategy={selectedStrategy}
+          setSelectedStrategy={setSelectedStrategy}
+        />
       </Container>
     </div>
   )
@@ -41,12 +57,26 @@ export const Tutorials = () => {
 
 interface StrategyPillProps {
   strategy: string
+  isSelected: boolean
+  onSelect: () => void
 }
 
-export const StrategyPill = ({ strategy }: StrategyPillProps) => {
+export const StrategyPill = ({
+  strategy,
+  isSelected,
+  onSelect
+}: StrategyPillProps) => {
   return (
-    <div className='flex items-center justify-center shrink-0 px-3 py-1.5 text-center rounded-lg border border-black-400 hover:cursor-pointer '>
-      <p className='text-sm font-semibold text-grey-200'>{strategy}</p>
+    <div
+      className={`flex items-center justify-center shrink-0 px-3 py-1.5 text-center rounded-lg ${isSelected ? 'bg-grey-500' : 'bg-grey-700'}
+          border ${isSelected ? 'border-neonGreen-900' : 'border-black-400'} hover:cursor-pointer`}
+      onClick={onSelect}
+    >
+      <p
+        className={`text-sm font-semibold ${isSelected ? 'text-neonGreen-500' : 'text-grey-200'}`}
+      >
+        {strategy}
+      </p>
     </div>
   )
 }

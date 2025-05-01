@@ -1,17 +1,19 @@
-'use client'
-
 import React, { ComponentPropsWithRef } from 'react'
 import {
   STRATEGIES,
   FAKE_IMAGES,
   TABLE_BORDER_COLOR,
   StrategyPill,
-  TutorialStepCard
+  TutorialStepCard,
+  TutorialProps
 } from './Tutorials'
 import useEmblaCarousel from 'embla-carousel-react'
 import { usePrevNextButtons } from './usePrevNextButtons'
 
-export const DesktopTutorialTable = () => {
+export const DesktopTutorialTable = ({
+  selectedStrategy,
+  setSelectedStrategy
+}: TutorialProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: 'start',
@@ -33,12 +35,17 @@ export const DesktopTutorialTable = () => {
     >
       {/* titles */}
       <div
-        className={`flex items-center gap-6 py-3 px-6 border-b ${TABLE_BORDER_COLOR}`}
+        className={`flex overflow-auto items-center gap-6 py-3 px-6 border-b ${TABLE_BORDER_COLOR}`}
       >
         <p className='text-grey-100 text-lg font-semibold'>Strategies</p>
-        <div className='flex items-center gap-2 hover:cursor-pointer z-10'>
+        <div className='flex overflow-auto items-center gap-2 hover:cursor-pointer z-10'>
           {STRATEGIES.map(strategy => (
-            <StrategyPill key={strategy} strategy={strategy} />
+            <StrategyPill
+              strategy={strategy}
+              isSelected={strategy === selectedStrategy}
+              onSelect={() => setSelectedStrategy(strategy)}
+              key={strategy}
+            />
           ))}
         </div>
       </div>
