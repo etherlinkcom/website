@@ -7,6 +7,7 @@ import Container from './container'
 import { EtherlinkLogo } from './EtherlinkLogo'
 import { X, Discord, GitHub } from './icons'
 import { isExternalLink } from './Navbar'
+import { usePathname } from 'next/navigation'
 
 const NAVS = [
   { name: 'Blog', link: 'https://medium.com/@etherlink' },
@@ -26,8 +27,13 @@ const NAVS = [
 ]
 
 export const Footer = () => {
+  const pathname = usePathname()
+  const isDefiPage = pathname === '/defi'
+
   return (
-    <Container className='relative flex flex-col pb-6 pt-[104px]'>
+    <Container
+      className={`relative flex flex-col pb-6 pt-[104px] ${isDefiPage ? 'bg-grey-900' : ''}`}
+    >
       <div
         className="block absolute top-0 left-1/2 -translate-x-1/2
           w-full h-full bg-[url('/img/home/gradient.svg')] bg-no-repeat bg-cover bg-top"

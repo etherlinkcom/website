@@ -173,7 +173,7 @@ const DropdownMenu = ({
 
       {isOpen && item.items && (
         <div
-          className={`absolute flex flex-col gap-1 left-0 mt-2 w-[274px] shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-950 p-2 transition-all duration-500 transform ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}
+          className={`absolute flex flex-col gap-1 left-0 mt-2 w-[274px] shadow-lg ring-black ring-opacity-5 overflow-hidden rounded-3xl border border-grey-500 bg-neutral-950 p-2 transition-all duration-500 transform ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}
         >
           {item.items.map((subItem, index) => (
             <DropdownItem

@@ -24,6 +24,10 @@ export const NAVBAR_ITEMS: NavItem[] = [
       {
         name: 'Explorer',
         link: 'https://explorer.etherlink.com/'
+      },
+      {
+        name: 'DeFi',
+        link: '/defi'
       }
     ]
   },

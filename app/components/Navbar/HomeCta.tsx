@@ -7,7 +7,7 @@ export const HomeCta = () => {
       className="flex flex-col flex-wrap w-full gap-5 mx-auto items-center justify-center
         px-2 pt-4 pb-2 rounded-3xl bg-[url('/CTA-Mobile.png')] bg-cover"
     >
-      <div className='flex-grow text-center text-black max-w-[560px]'>
+      <div className='flex-grow text-center text-black-900 max-w-[560px]'>
         <h2 className='text-lg font-bold -tracking-[0.36px]'>
           Ready to get Started?
         </h2>
@@ -17,7 +17,7 @@ export const HomeCta = () => {
       </div>
 
       <button
-        className={`relative px-6 py-2.5 bg-black text-grey-100 shadow-[0px_0px_6px_0px_rgba(255,255,255,0.40)]
+        className={`relative px-6 py-2.5 bg-black-900 text-grey-100 shadow-[0px_0px_6px_0px_rgba(255,255,255,0.40)]
             rounded-3xl cursor-pointer overflow-hidden group w-full`}
         role='button'
       >
