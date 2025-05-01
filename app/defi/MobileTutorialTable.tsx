@@ -20,7 +20,7 @@ export const MobileTutorialTable = ({
     align: 'start',
     slidesToScroll: 1,
     axis: 'x',
-    containScroll: false
+    containScroll: 'trimSnaps'
   })
 
   const {
@@ -36,13 +36,13 @@ export const MobileTutorialTable = ({
     >
       {/* title */}
       <div
-        className={`flex items-center py-3 px-6 border-b  ${TABLE_BORDER_COLOR}`}
+        className={`flex items-center py-3 px-6 border-b ${TABLE_BORDER_COLOR}`}
       >
         <EmblaNavButton
           onClick={onPrevButtonClick}
           disabled={prevBtnDisabled}
         />
-        <div ref={emblaRef} className='embla__viewport overflow-hidden '>
+        <div ref={emblaRef} className='embla__viewport overflow-hidden'>
           <div className='flex items-center gap-2 hover:cursor-pointer z-10 embla__container'>
             {STRATEGIES.map(strategy => (
               <div className='embla__slide shrink-0' key={strategy}>
