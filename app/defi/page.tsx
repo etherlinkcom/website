@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const DefiPage = async () => {
   return (
-    <div className=''>
+    <div className='bg-grey-900'>
       <Hero />
       <Tutorials />
       <OnBoard />
