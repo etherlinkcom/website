@@ -131,12 +131,12 @@ type PropType = ComponentPropsWithRef<'button'> & {
   className?: string
 }
 
-const EmblaNavButton: React.FC<PropType> = props => {
+export const EmblaNavButton: React.FC<PropType> = props => {
   const { className, disabled, children, ...restProps } = props
 
   return (
     <button
-      className={`embla__button embla__button--prev bg-grey-700 backdrop-blur-[10px] rounded-[8px] p-2 ${className}`}
+      className={`embla__button embla__button--prev bg-grey-900 backdrop-blur-[10px] rounded-[8px] p-2 ${className}`}
       type='button'
       disabled={disabled}
       {...restProps}

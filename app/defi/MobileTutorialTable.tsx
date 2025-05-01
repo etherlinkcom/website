@@ -7,29 +7,59 @@ import {
   TutorialStepCard,
   TutorialProps
 } from './Tutorials'
+import useEmblaCarousel from 'embla-carousel-react'
+import { usePrevNextButtons } from './usePrevNextButtons'
+import { EmblaNavButton } from './DesktopTutorialTable'
 
 export const MobileTutorialTable = ({
   selectedStrategy,
   setSelectedStrategy
 }: TutorialProps) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: 'start',
+    slidesToScroll: 1,
+    axis: 'x',
+    containScroll: false
+  })
+
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick
+  } = usePrevNextButtons(emblaApi)
+
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full block md:hidden`}
     >
       {/* title */}
       <div
-        className={`flex items-center py-3 px-6 border-b ${TABLE_BORDER_COLOR}`}
+        className={`flex items-center py-3 px-6 border-b  ${TABLE_BORDER_COLOR}`}
       >
-        <div className='flex items-center gap-2 hover:cursor-pointer z-10 overflow-auto'>
-          {STRATEGIES.map(strategy => (
-            <StrategyPill
-              strategy={strategy}
-              isSelected={strategy === selectedStrategy}
-              onSelect={() => setSelectedStrategy(strategy)}
-              key={strategy}
-            />
-          ))}
+        <EmblaNavButton
+          onClick={onPrevButtonClick}
+          disabled={prevBtnDisabled}
+        />
+        <div ref={emblaRef} className='embla__viewport overflow-hidden '>
+          <div className='flex items-center gap-2 hover:cursor-pointer z-10 embla__container'>
+            {STRATEGIES.map(strategy => (
+              <div className='embla__slide shrink-0' key={strategy}>
+                <StrategyPill
+                  strategy={strategy}
+                  isSelected={strategy === selectedStrategy}
+                  onSelect={() => setSelectedStrategy(strategy)}
+                />
+              </div>
+            ))}
+          </div>
         </div>
+        <EmblaNavButton
+          className='rotate-180'
+          onClick={onNextButtonClick}
+          disabled={nextBtnDisabled}
+        />
       </div>
       {/* image */}
       <div>
