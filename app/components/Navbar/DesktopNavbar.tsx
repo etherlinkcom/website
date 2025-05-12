@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavItem } from './fixture'
 import { isExternalLink } from '.'
+import { usePathname } from 'next/navigation'
 
 const ChevronDown = ({ className }: { className?: string }) => (
   <svg
@@ -30,6 +31,7 @@ const DropdownItem = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const pathName = usePathname()
 
   useEffect(() => {
     setMounted(isOpen)
@@ -41,7 +43,7 @@ const DropdownItem = ({
         href={item.link}
         target={isExternalLink(item.link!)}
         className={`flex items-center justify-between px-6 py-2 text-grey-100 text-sm font-bold hover:text-neon-green-500 transition-colors duration-200 hover:bg-grey-700 hover:text-neonGreen-500
-                ${item.isNestedItem ? 'pl-8 pr-6 bg-grey-800' : 'hover:rounded-[32px]'} ${item.isLastNestedItem ? 'rounded-b-2xl' : ''}
+                ${item.isNestedItem ? 'pl-8 pr-6 bg-grey-800' : 'hover:rounded-[32px]'} ${item.isLastNestedItem ? 'rounded-b-2xl' : ''} ${pathName === item.link ? 'bg-grey-700 rounded-[32px]' : ''}
             `}
         onClick={closeParent}
       >
