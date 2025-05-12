@@ -4,14 +4,15 @@ import { GhostButton } from '../components/buttons/GhostButton'
 import Container from '../components/container'
 import { GraditentLine } from '../components/pages/RevampHome/Partners'
 import { DesktopPartner } from './DesktopPartner'
-import { PARTNERS } from './fixture'
+import {
+  PARTNERS,
+  DT_1ST_ROW,
+  DT_2ND_ROW,
+  DT_3RD_ROW,
+  DT_4TH_ROW
+} from './fixture'
 
 export const Hero = () => {
-  const randomPartners = PARTNERS.sort(() => Math.random() - 0.5).slice(0, 6)
-  const randomPartners2 = PARTNERS.sort(() => Math.random() - 0.5).slice(0, 6)
-  const randomPartners3 = PARTNERS.sort(() => Math.random() - 0.5).slice(6, 12)
-  const randomPartners4 = PARTNERS.sort(() => Math.random() - 0.5).slice(6, 12)
-
   const randomPartnersMobile = PARTNERS.sort(() => Math.random() - 0.5).slice(0)
 
   return (
@@ -46,17 +47,17 @@ export const Hero = () => {
           </div>
           <div className='hidden lg:flex flex-col gap-3 mt-10'>
             <DesktopPartner
-              partners={randomPartners}
+              partners={DT_1ST_ROW}
               speed={0.6}
               className='translate-x-[40px]'
             />
-            <DesktopPartner partners={randomPartners3} speed={-0.6} />
+            <DesktopPartner partners={DT_3RD_ROW} speed={-0.6} />
             <DesktopPartner
-              partners={randomPartners2}
+              partners={DT_2ND_ROW}
               speed={0.6}
               className='translate-x-[40px]'
             />
-            <DesktopPartner partners={randomPartners4} speed={-0.6} />
+            <DesktopPartner partners={DT_4TH_ROW} speed={-0.6} />
           </div>
         </div>
         <div className='flex lg:hidden flex-col gap-3 mt-16 mb-6 justify-center items-center'>
