@@ -8,7 +8,6 @@ import { X, Discord } from '../icons'
 import Container from '../container'
 import { DesktopNavbar } from './DesktopNavbar'
 import { MobileNavbar } from './MobileNavbar'
-import { usePathname } from 'next/navigation'
 
 export const isExternalLink = (link: string) =>
   link.includes('etherlink.com')
@@ -20,13 +19,9 @@ export const isExternalLink = (link: string) =>
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const handleClose = () => setIsOpen(false)
-  const pathname = usePathname()
-  const isDefiPage = pathname === '/defi'
 
   return (
-    <Container
-      className={`relative flex justify-between items-center pt-8 lg:pt-[36px] z-50 mx-auto ${isDefiPage ? 'bg-grey-900' : ''}`}
-    >
+    <Container className='relative flex justify-between items-center pt-8 lg:pt-[36px] z-50 mx-auto'>
       <div className='flex items-center'>
         <div className='flex items-center gap-2 shrink-0'>
           <EtherlinkLogo />
