@@ -45,10 +45,11 @@ export const Tutorials = () => {
           setSelectedStrategyId={setSelectedStrategyId}
           selectedStrategy={selectedStrategy}
         />
-        {/* <MobileTutorialTable
+        <MobileTutorialTable
+          selectedStrategyId={selectedStrategyId}
+          setSelectedStrategyId={setSelectedStrategyId}
           selectedStrategy={selectedStrategy}
-          setSelectedStrategy={setSelectedStrategy}
-        /> */}
+        />
       </Container>
     </div>
   )

@@ -30,8 +30,6 @@ export const DesktopTutorialTable = ({
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
 
-  const [currentStep, setCurrentStep] = useState(1)
-
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full hidden md:block`}
@@ -75,6 +73,7 @@ export const DesktopTutorialTable = ({
           </div>
           {/* tutorials steps */}
           <div
+            key={selectedStrategyId}
             ref={emblaRef}
             className={`p-3 h-[300px] border-b embla__viewport overflow-hidden ${TABLE_BORDER_COLOR}`}
           >
