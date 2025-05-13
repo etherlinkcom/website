@@ -42,8 +42,9 @@ const Cta = () => {
       </div>
 
       <button
-        className={`relative px-5 py-2.5 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
-            rounded-3xl cursor-pointer overflow-hidden group w-full md:w-auto`}
+        className={`relative px-5 py-2.5 bg-grey-700 shadow-[0px_0px_6px_rgba(51,232,142,0.4)] 
+            rounded-[24px] cursor-pointer overflow-hidden group w-full md:w-auto  hover:bg-grey-600
+            hover:shadow-[0px_0px_6px_rgba(51,232,142,0.8)]`}
         role='button'
       >
         <Link href='/defi#strategies'>
@@ -52,7 +53,6 @@ const Cta = () => {
               View strategies
             </span>
           </div>
-          {/* <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling'></span> */}
         </Link>
       </button>
     </div>
