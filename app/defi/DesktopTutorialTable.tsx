@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithRef } from 'react'
+import React, { ComponentPropsWithRef, useState } from 'react'
 import {
   TABLE_BORDER_COLOR,
   StrategyPill,
@@ -29,6 +29,8 @@ export const DesktopTutorialTable = ({
     onPrevButtonClick,
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
+
+  const [currentStep, setCurrentStep] = useState(1)
 
   return (
     <div
@@ -77,13 +79,11 @@ export const DesktopTutorialTable = ({
             className={`p-3 h-[300px] border-b embla__viewport overflow-hidden ${TABLE_BORDER_COLOR}`}
           >
             <div className='flex gap-4 embla__container'>
-              {Array(3)
-                .fill(0)
-                .map((_, index) => (
-                  <div key={index} className='embla__slide shrink-0 w-full z-0'>
-                    <TutorialStepCard step={index + 1} />
-                  </div>
-                ))}
+              {selectedStrategy.tutorials.map((tutorial, index) => (
+                <div key={index} className='embla__slide shrink-0 w-full z-0'>
+                  <TutorialStepCard {...tutorial} />
+                </div>
+              ))}
             </div>
           </div>
           {/* details */}
@@ -112,7 +112,9 @@ export const DesktopTutorialTable = ({
               ))}
             </div>
             <div className='px-6 py-2 w-1/2'>
-              <p className='font-semibold text-neonGreen-500'>310% APR</p>
+              <p className='font-semibold text-neonGreen-500'>
+                {selectedStrategy.earning}
+              </p>
             </div>
           </div>
         </div>

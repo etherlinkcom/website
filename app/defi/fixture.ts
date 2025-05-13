@@ -77,7 +77,7 @@ export type StrategyId =
   | 'community-speculation'
   | 'market-making'
 
-type Tutorial = {
+export type Tutorial = {
   step: number
   title: string
   description: string
@@ -131,7 +131,7 @@ export const STRATEGIES_DATA: Strategy[] = [
         step: 5,
         title: 'Swap',
         description:
-          'Description: Swap mTBILL on IguanaDEX with the borrowed USDC/USDT and then repeat step 2-4 until you reach the limit (borrow rate exceeds mTBILL yield or hit the limit given by LTV)',
+          'Swap mTBILL on IguanaDEX with the borrowed USDC/USDT and then repeat step 2-4 until you reach the limit (borrow rate exceeds mTBILL yield or hit the limit given by LTV)',
         image: ''
       }
     ],

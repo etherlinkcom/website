@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Container from '../components/container'
 import { DesktopTutorialTable } from './DesktopTutorialTable'
 import { MobileTutorialTable } from './MobileTutorialTable'
-import { STRATEGIES_DATA, StrategyId, Strategy } from './fixture'
+import { STRATEGIES_DATA, StrategyId, Strategy, Tutorial } from './fixture'
 
 export const TABLE_BORDER_COLOR = 'border-black-400'
 
@@ -80,19 +80,15 @@ export const StrategyPill = ({
   )
 }
 
-interface TutorialStepCardProps {
-  step: number
-}
-
-export const TutorialStepCard = ({ step }: TutorialStepCardProps) => {
+export const TutorialStepCard = ({ step, title, description }: Tutorial) => {
   return (
     <div className='flex items-center gap-4 py-4 px-6 bg-lightBlack border border-neonGreen-900 rounded-lg'>
-      <div className='flex items-center justify-center text-black-900 text-sm font-semibold bg-neonGreen-500 rounded-full h-6 w-6'>
+      <div className='flex items-center flex-shrink-0 justify-center text-black-900 text-sm font-semibold bg-neonGreen-500 rounded-full h-6 w-6'>
         {step}
       </div>
       <div>
-        <p className='text-neonGreen-500 font-semibold'>Bridge</p>
-        <p className='text-grey-200'>Bridge in USDC using Etherlink Bridge</p>
+        <p className='text-neonGreen-500 font-semibold'>{title}</p>
+        <p className='text-grey-200'>{description}</p>
       </div>
     </div>
   )
