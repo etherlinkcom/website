@@ -42,6 +42,7 @@ export const MobileTutorialTable = ({
         <EmblaNavButton
           onClick={onPrevButtonClick}
           disabled={prevBtnDisabled}
+          isMobile
         />
         <div ref={emblaRef} className='embla__viewport overflow-hidden'>
           <div className='flex items-center gap-2 hover:cursor-pointer z-10 embla__container'>
@@ -60,6 +61,7 @@ export const MobileTutorialTable = ({
           className='rotate-180'
           onClick={onNextButtonClick}
           disabled={nextBtnDisabled}
+          isMobile
         />
       </div>
       {/* image */}

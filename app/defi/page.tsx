@@ -52,7 +52,7 @@ const Cta = () => {
               View strategies
             </span>
           </div>
-          <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling'></span>
+          {/* <span className='absolute inset-0 border-2 border-newGreen rounded-3xl opacity-0 group-hover:animate-circling'></span> */}
         </Link>
       </button>
     </div>
