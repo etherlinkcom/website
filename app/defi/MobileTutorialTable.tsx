@@ -68,6 +68,7 @@ export const MobileTutorialTable = ({
       </div>
       {/* tutorial steps */}
       <div
+        key={selectedStrategyId}
         className={`p-3 flex gap-2 overflow-auto border-b ${TABLE_BORDER_COLOR}`}
       >
         {selectedStrategy.tutorials.map((tutorial, index) => (
