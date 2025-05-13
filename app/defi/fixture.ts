@@ -119,21 +119,21 @@ export const STRATEGIES_DATA: Strategy[] = [
         title: 'Supply',
         description: 'Supply mTBILL on Superlend',
         image: ''
-      },
-      {
-        step: 4,
-        title: 'Borrow',
-        description:
-          'Borrow USDC and/or USDT on Superlend for the cheapest rate',
-        image: ''
-      },
-      {
-        step: 5,
-        title: 'Swap',
-        description:
-          'Swap mTBILL on IguanaDEX with the borrowed USDC/USDT and then repeat step 2-4 until you reach the limit (borrow rate exceeds mTBILL yield or hit the limit given by LTV)',
-        image: ''
       }
+      // {
+      //   step: 4,
+      //   title: 'Borrow',
+      //   description:
+      //     'Borrow USDC and/or USDT on Superlend for the cheapest rate',
+      //   image: ''
+      // },
+      // {
+      //   step: 5,
+      //   title: 'Swap',
+      //   description:
+      //     'Swap mTBILL on IguanaDEX with the borrowed USDC/USDT and then repeat step 2-4 until you reach the limit (borrow rate exceeds mTBILL yield or hit the limit given by LTV)',
+      //   image: ''
+      // }
     ],
     projectInvolved: [
       {
@@ -175,21 +175,21 @@ export const STRATEGIES_DATA: Strategy[] = [
         title: 'Supply',
         description: 'Supply mBASIS on Superlend',
         image: ''
-      },
-      {
-        step: 4,
-        title: 'Borrow',
-        description:
-          'Borrow USDC and/or USDT on Superlend for the cheapest rate',
-        image: ''
-      },
-      {
-        step: 5,
-        title: 'Swap',
-        description:
-          'Description: Buy mBASIS on IguanaDEX with the borrowed USDC/USDT and then repeat step 2-4 until you reach the limit (borrow rate exceeds mBASIS yield or hit the limit given by LTV)',
-        image: ''
       }
+      // {
+      //   step: 4,
+      //   title: 'Borrow',
+      //   description:
+      //     'Borrow USDC and/or USDT on Superlend for the cheapest rate',
+      //   image: ''
+      // },
+      // {
+      //   step: 5,
+      //   title: 'Swap',
+      //   description:
+      //     'Description: Buy mBASIS on IguanaDEX with the borrowed USDC/USDT and then repeat step 2-4 until you reach the limit (borrow rate exceeds mBASIS yield or hit the limit given by LTV)',
+      //   image: ''
+      // }
     ],
     projectInvolved: [
       {
@@ -226,27 +226,27 @@ export const STRATEGIES_DATA: Strategy[] = [
         title: 'Supply',
         description: 'Supply WBTC on Superlend',
         image: ''
-      },
-      {
-        step: 3,
-        title: 'Borrow',
-        description: ' Borrow USDC/USDT on Superlend for the cheapest rate',
-        image: ''
-      },
-      {
-        step: 4,
-        title: 'Swap',
-        description:
-          'Buy mTBILL on IguanaDEX with the borrowed USDC/USDT, if you’re ok with slightly higher risk with the potential for higher rewards, go for mBASIS instead!',
-        image: ''
-      },
-      {
-        step: 5,
-        title: 'Supply',
-        description:
-          'Supply mBASIS/mTBILL on Superlend and then repeat step 3-5 until you reach the limit (borrow rate exceeds mBASIS/mTBILL yield or hit the limit given by LTV)',
-        image: ''
       }
+      // {
+      //   step: 3,
+      //   title: 'Borrow',
+      //   description: ' Borrow USDC/USDT on Superlend for the cheapest rate',
+      //   image: ''
+      // },
+      // {
+      //   step: 4,
+      //   title: 'Swap',
+      //   description:
+      //     'Buy mTBILL on IguanaDEX with the borrowed USDC/USDT, if you’re ok with slightly higher risk with the potential for higher rewards, go for mBASIS instead!',
+      //   image: ''
+      // },
+      // {
+      //   step: 5,
+      //   title: 'Supply',
+      //   description:
+      //     'Supply mBASIS/mTBILL on Superlend and then repeat step 3-5 until you reach the limit (borrow rate exceeds mBASIS/mTBILL yield or hit the limit given by LTV)',
+      //   image: ''
+      // }
     ],
     projectInvolved: [
       {

@@ -20,7 +20,7 @@ export const PartnerCarousel = ({
 
   return (
     <div
-      className={`relative flex flex-col items-center z-20 bg-grey-900  w-full md:w-[500px] ${className}`}
+      className={`relative flex flex-col items-center z-20 bg-grey-900 w-full md:w-fit md:max-w-[calc(100%-65px)] ${className}`}
     >
       <div
         className='relative md:mx-[104px] overflow-hidden max-w-[1300px]'
