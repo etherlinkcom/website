@@ -138,7 +138,7 @@ export const STRATEGIES_DATA: Strategy[] = [
     projectInvolved: [
       {
         name: 'IguanaDEX',
-        icon: '/img/defi/icons/Iguana.svg',
+        icon: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
@@ -194,7 +194,7 @@ export const STRATEGIES_DATA: Strategy[] = [
     projectInvolved: [
       {
         name: 'IguanaDEX',
-        icon: '/img/defi/icons/Iguana.svg',
+        icon: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
@@ -251,7 +251,7 @@ export const STRATEGIES_DATA: Strategy[] = [
     projectInvolved: [
       {
         name: 'IguanaDEX',
-        icon: '/img/defi/icons/Iguana.svg',
+        icon: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
@@ -352,7 +352,7 @@ export const STRATEGIES_DATA: Strategy[] = [
       },
       {
         name: 'IguanaDEX',
-        icon: '/img/defi/icons/Iguana.svg',
+        icon: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
