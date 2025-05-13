@@ -71,7 +71,7 @@ const OnBoardCard = ({
 }: OnBoardCardProps) => {
   return (
     <Link href={link} target={link.includes('bridge') ? '_self' : '_blank'}>
-      <div className='border border-black-400 h-full rounded-lg hover:border-neonGreen-500 group hover:cursor-pointer flex flex-col'>
+      <div className='border border-black-400 h-full rounded-lg hover:border-neonGreen-900 group hover:cursor-pointer flex flex-col'>
         <div className='rounded-t-lg'>
           <img className='rounded-t-lg' src={image} alt='card' />
         </div>
