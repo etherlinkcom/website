@@ -75,11 +75,11 @@ export const StrategyPill = ({
   return (
     <div
       className={`flex items-center justify-center shrink-0 px-3 py-1.5 text-center rounded-lg ${isSelected ? 'bg-grey-500' : 'bg-grey-700'}
-          border ${isSelected ? 'border-neonGreen-900' : 'border-black-400'} hover:cursor-pointer`}
+          border ${isSelected ? 'border-neonGreen-900' : 'border-black-400'} hover:cursor-pointer hover:bg-grey-500 hover:border-neonGreen-900 group`}
       onClick={onSelect}
     >
       <p
-        className={`text-sm font-semibold ${isSelected ? 'text-neonGreen-500' : 'text-grey-200'}`}
+        className={`text-sm font-semibold ${isSelected ? 'text-neonGreen-500' : 'text-grey-200'} group-hover:text-neonGreen-500`}
       >
         {strategy}
       </p>
