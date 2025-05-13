@@ -15,7 +15,7 @@ import {
 
 export const Hero = () => {
   return (
-    <div>
+    <div className='relative'>
       <Container className='pt-24 pb-10 md:py-48'>
         <div className='flex justify-between'>
           <div className='relative'>
@@ -64,7 +64,35 @@ export const Hero = () => {
           <PartnerCarousel partners={MB_2ND_ROW} speed={-0.6} />
         </div>
       </Container>
-      <GraditentLine className='left-[50%] -translate-x-[50%]' />
+      <GraditentLine className='left-[50%] -translate-x-[56%]' />
     </div>
   )
 }
+
+// const strategy = [
+//   {
+//     name: 'Basis Trade',
+//     tutorials: [
+//       {
+//         step: 1,
+//         title: 'Bridge',
+//         description: 'Bridge in USDC using Etherlink Bridge',
+//         image: '/img'
+//       },
+//        {
+//         step: 2,
+//         title: 'something else',
+//         description: 'lorem...',
+//         image: '/img2'
+//       }
+//     ],
+//     projectInvolved: [
+//       {
+//         name: 'thirdweb',
+//         icon: 'thirdweb.svg'
+//       },
+//       ...
+//     ],
+//     earning: '310% APR'
+//   }
+// ]
