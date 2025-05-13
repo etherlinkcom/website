@@ -5,7 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoscroll from 'embla-carousel-auto-scroll'
 import { Partner } from './fixture'
 
-export const DesktopPartner = ({
+export const PartnerCarousel = ({
   partners,
   speed,
   className
@@ -20,7 +20,7 @@ export const DesktopPartner = ({
 
   return (
     <div
-      className={`relative flex flex-col items-center z-20 bg-grey-900 w-[500px] ${className}`}
+      className={`relative flex flex-col items-center z-20 bg-grey-900  w-full md:w-[500px] ${className}`}
     >
       <div
         className='relative md:mx-[104px] overflow-hidden max-w-[1300px]'

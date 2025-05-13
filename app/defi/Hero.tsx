@@ -3,9 +3,10 @@ import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { GhostButton } from '../components/buttons/GhostButton'
 import Container from '../components/container'
 import { GraditentLine } from '../components/pages/RevampHome/Partners'
-import { DesktopPartner } from './DesktopPartner'
+import { PartnerCarousel } from './PartnerCarousel'
 import {
-  PARTNERS,
+  MB_1ST_ROW,
+  MB_2ND_ROW,
   DT_1ST_ROW,
   DT_2ND_ROW,
   DT_3RD_ROW,
@@ -13,8 +14,6 @@ import {
 } from './fixture'
 
 export const Hero = () => {
-  const randomPartnersMobile = PARTNERS.sort(() => Math.random() - 0.5).slice(0)
-
   return (
     <div>
       <Container className='pt-24 pb-10 md:py-48'>
@@ -45,24 +44,24 @@ export const Hero = () => {
               draggable={false}
             />
           </div>
-          <div className='hidden lg:flex flex-col gap-3 mt-10'>
-            <DesktopPartner
+          <div className='hidden md:flex flex-col gap-3 mt-10'>
+            <PartnerCarousel
               partners={DT_1ST_ROW}
               speed={0.6}
               className='translate-x-[40px]'
             />
-            <DesktopPartner partners={DT_3RD_ROW} speed={-0.6} />
-            <DesktopPartner
+            <PartnerCarousel partners={DT_3RD_ROW} speed={-0.6} />
+            <PartnerCarousel
               partners={DT_2ND_ROW}
               speed={0.6}
               className='translate-x-[40px]'
             />
-            <DesktopPartner partners={DT_4TH_ROW} speed={-0.6} />
+            <PartnerCarousel partners={DT_4TH_ROW} speed={-0.6} />
           </div>
         </div>
-        <div className='flex lg:hidden flex-col gap-3 mt-16 mb-6 justify-center items-center'>
-          <DesktopPartner partners={randomPartnersMobile} speed={0.6} />
-          <DesktopPartner partners={randomPartnersMobile} speed={-0.6} />
+        <div className='flex md:hidden flex-col gap-3 mt-16 mb-6 justify-center items-center'>
+          <PartnerCarousel partners={MB_1ST_ROW} speed={0.6} />
+          <PartnerCarousel partners={MB_2ND_ROW} speed={-0.6} />
         </div>
       </Container>
       <GraditentLine className='left-[50%] -translate-x-[50%]' />
