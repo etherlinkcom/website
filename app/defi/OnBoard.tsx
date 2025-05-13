@@ -66,10 +66,10 @@ const OnBoardCard = ({
   return (
     <Link href={link} target={link.includes('bridge') ? '_self' : '_blank'}>
       <div className='border border-black-400 rounded-lg hover:border-neonGreen-500 group hover:cursor-pointer'>
-        <div className='rounded-lg'>
-          <img className='rounded-lg' src={image} alt='card' />
+        <div className='rounded-t-lg'>
+          <img className='rounded-t-lg' src={image} alt='card' />
         </div>
-        <div className='p-6 bg-grey-700 group-hover:bg-grey-500 rounded-lg'>
+        <div className='p-6 bg-grey-700 group-hover:bg-grey-500 rounded-b-lg'>
           <div className='flex justify-between mb-1'>
             <p className='text-grey-50 text-xs font-light uppercase'>{org}</p>
             <img src='/img/defi/greenArrow.svg' alt='arrow' />
