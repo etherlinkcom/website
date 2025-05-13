@@ -1,7 +1,5 @@
 import React, { ComponentPropsWithRef } from 'react'
 import {
-  STRATEGIES,
-  FAKE_IMAGES,
   TABLE_BORDER_COLOR,
   StrategyPill,
   TutorialStepCard,
@@ -9,10 +7,13 @@ import {
 } from './Tutorials'
 import useEmblaCarousel from 'embla-carousel-react'
 import { usePrevNextButtons } from './usePrevNextButtons'
+import { STRATEGIES_DATA } from './fixture'
+import Link from 'next/link'
 
 export const DesktopTutorialTable = ({
-  selectedStrategy,
-  setSelectedStrategy
+  selectedStrategyId,
+  setSelectedStrategyId,
+  selectedStrategy
 }: TutorialProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
@@ -39,12 +40,12 @@ export const DesktopTutorialTable = ({
       >
         <p className='text-grey-100 text-lg font-semibold'>Strategies</p>
         <div className='flex overflow-auto items-center gap-2 hover:cursor-pointer z-10'>
-          {STRATEGIES.map(strategy => (
+          {STRATEGIES_DATA.map(strategy => (
             <StrategyPill
-              strategy={strategy}
-              isSelected={strategy === selectedStrategy}
-              onSelect={() => setSelectedStrategy(strategy)}
-              key={strategy}
+              strategy={strategy.name}
+              isSelected={strategy.id === selectedStrategyId}
+              onSelect={() => setSelectedStrategyId(strategy.id)}
+              key={strategy.id}
             />
           ))}
         </div>
@@ -100,13 +101,14 @@ export const DesktopTutorialTable = ({
             <div
               className={`flex items-center gap-2 px-6 py-2 border-r ${TABLE_BORDER_COLOR} w-1/2`}
             >
-              {FAKE_IMAGES.map((image, index) => (
-                <img
-                  key={index}
-                  className='w-6 h-6 rounded-lg'
-                  src={image}
-                  alt='project image'
-                />
+              {selectedStrategy.projectInvolved.map(p => (
+                <Link href={p.link} target='_blank' key={p.name}>
+                  <img
+                    className='w-6 h-6 rounded-lg'
+                    src={p.icon}
+                    alt='project image'
+                  />
+                </Link>
               ))}
             </div>
             <div className='px-6 py-2 w-1/2'>

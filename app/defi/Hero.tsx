@@ -71,31 +71,3 @@ export const Hero = () => {
     </div>
   )
 }
-
-// const strategy = [
-//   {
-//     name: 'Basis Trade',
-//     tutorials: [
-//       {
-//         step: 1,
-//         title: 'Bridge',
-//         description: 'Bridge in USDC using Etherlink Bridge',
-//         image: '/img'
-//       },
-//        {
-//         step: 2,
-//         title: 'something else',
-//         description: 'lorem...',
-//         image: '/img2'
-//       }
-//     ],
-//     projectInvolved: [
-//       {
-//         name: 'thirdweb',
-//         icon: 'thirdweb.svg'
-//       },
-//       ...
-//     ],
-//     earning: '310% APR'
-//   }
-// ]

@@ -4,31 +4,23 @@ import React, { useState } from 'react'
 import Container from '../components/container'
 import { DesktopTutorialTable } from './DesktopTutorialTable'
 import { MobileTutorialTable } from './MobileTutorialTable'
-
-export const STRATEGIES = [
-  'Basis Trade',
-  'BTC Fi',
-  'Nuclear Speculation',
-  'Community Speculation',
-  'Market Making'
-]
-
-export const FAKE_IMAGES = [
-  '/img/defi/p1.jpg',
-  '/img/defi/p2.jpg',
-  '/img/defi/p3.jpg'
-]
+import { STRATEGIES_DATA, StrategyId, Strategy } from './fixture'
 
 export const TABLE_BORDER_COLOR = 'border-black-400'
 
 export interface TutorialProps {
-  selectedStrategy: string
-  setSelectedStrategy: (s: string) => void
+  selectedStrategyId: StrategyId
+  setSelectedStrategyId: (s: StrategyId) => void
+  selectedStrategy: Strategy
 }
 
 export const Tutorials = () => {
-  const [selectedStrategy, setSelectedStrategy] =
-    useState<string>('Basis Trade')
+  const [selectedStrategyId, setSelectedStrategyId] =
+    useState<StrategyId>('t-bill-savings')
+
+  const selectedStrategy = STRATEGIES_DATA.find(
+    strategy => strategy.id === selectedStrategyId
+  ) as Strategy
 
   return (
     <div className='relative' id='strategies'>
@@ -49,13 +41,14 @@ export const Tutorials = () => {
         </div>
         {/* tutorials table */}
         <DesktopTutorialTable
+          selectedStrategyId={selectedStrategyId}
+          setSelectedStrategyId={setSelectedStrategyId}
+          selectedStrategy={selectedStrategy}
+        />
+        {/* <MobileTutorialTable
           selectedStrategy={selectedStrategy}
           setSelectedStrategy={setSelectedStrategy}
-        />
-        <MobileTutorialTable
-          selectedStrategy={selectedStrategy}
-          setSelectedStrategy={setSelectedStrategy}
-        />
+        /> */}
       </Container>
     </div>
   )

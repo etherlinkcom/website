@@ -8,21 +8,21 @@ const ONBOARD_DATA = [
     title: 'Centralized Exchange',
     description: 'Buy and transfer $XTZ to Etherlink',
     link: 'https://www.gate.io/',
-    image: '/img/defi/stepCard.jpg'
+    image: '/img/defi/Gate.webp'
   },
   {
     org: 'Tezos & Etherlink',
     title: 'Bridge',
     description: 'Bridge your assets to Etherlink',
     link: 'https://bridge.etherlink.com/',
-    image: '/img/defi/stepCard.jpg'
+    image: '/img/defi/Bridge.webp'
   },
   {
     org: 'Transak',
     title: 'Onramp',
     description: 'Buy $XTZ using fiat',
     link: 'https://global.transak.com/',
-    image: '/img/defi/stepCard.jpg'
+    image: '/img/defi/Transak.webp'
   }
 ]
 
@@ -65,11 +65,11 @@ const OnBoardCard = ({
 }: OnBoardCardProps) => {
   return (
     <Link href={link} target={link.includes('bridge') ? '_self' : '_blank'}>
-      <div className='border border-black-400 rounded-lg hover:border-neonGreen-500 group hover:cursor-pointer'>
+      <div className='border border-black-400 h-full rounded-lg hover:border-neonGreen-500 group hover:cursor-pointer flex flex-col'>
         <div className='rounded-t-lg'>
           <img className='rounded-t-lg' src={image} alt='card' />
         </div>
-        <div className='p-6 bg-grey-700 group-hover:bg-grey-500 rounded-b-lg'>
+        <div className='flex flex-col flex-grow p-6 bg-grey-700 group-hover:bg-grey-500 rounded-b-lg'>
           <div className='flex justify-between mb-1'>
             <p className='text-grey-50 text-xs font-light uppercase'>{org}</p>
             <img src='/img/defi/greenArrow.svg' alt='arrow' />
