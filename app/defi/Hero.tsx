@@ -34,8 +34,11 @@ export const Hero = () => {
               strategies for every risk level.
             </p>
             <div className='flex flex-col md:flex-row gap-4'>
-              <PrimaryButton text='View strategies' />
-              <GhostButton text='Stats' />
+              <PrimaryButton text='View strategies' href='#strategies' />
+              <GhostButton
+                text='Stats'
+                href='https://defillama.com/chain/etherlink'
+              />
             </div>
             <img
               className='absolute -bottom-[200px] md:-bottom-[500px] -left-[200px] md:-left-[150px] max-w-[960px] max-h-[960px] md:opacity-70 z-[50] pointer-events-none'

@@ -31,7 +31,7 @@ export const Tutorials = () => {
     useState<string>('Basis Trade')
 
   return (
-    <div className='relative'>
+    <div className='relative' id='strategies'>
       <Container className='relative py-10 md:py-24'>
         <img
           className='absolute hidden md:block top-4 max-h-[230px] w-[80%] object-cover opacity-60
