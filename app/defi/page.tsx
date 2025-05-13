@@ -17,7 +17,7 @@ const DefiPage = async () => {
       <Hero />
       <Tutorials />
       <OnBoard />
-      <Container className='pt-10'>
+      <Container className='pt-10 py-28'>
         <Cta />
       </Container>
     </div>
@@ -30,7 +30,7 @@ const Cta = () => {
   return (
     <div
       className="flex flex-col md:flex-row w-full gap-6 mx-auto items-center px-12 py-10
-            lg:flex-nowrap rounded-[32px] bg-[url('/CTA-Mobile.png')] md:bg-[url('/CTA-bg.png')] bg-cover"
+            lg:flex-nowrap rounded-[12px] bg-[url('/CTA-Mobile.png')] md:bg-[url('/CTA-bg.png')] bg-cover"
     >
       <div className='flex-grow text-grey-900'>
         <h2 className='font-bold -tracking-[0.48px] text-[28px] md:text-[35px]'>
@@ -46,7 +46,7 @@ const Cta = () => {
             rounded-3xl cursor-pointer overflow-hidden group w-full md:w-auto`}
         role='button'
       >
-        <Link href={'/'} target='_blank'>
+        <Link href='/defi#strategies'>
           <div className='flex justify-center items-center gap-2'>
             <span className='relative z-10 text-lg font-semibold text-neonGreen-200'>
               View strategies
