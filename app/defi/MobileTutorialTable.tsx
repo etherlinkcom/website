@@ -74,7 +74,7 @@ export const MobileTutorialTable = ({
     >
       {/* title */}
       <div
-        className={`flex items-center py-3 px-6 border-b ${TABLE_BORDER_COLOR}`}
+        className={`flex items-center py-3 px-4 border-b ${TABLE_BORDER_COLOR}`}
       >
         <EmblaNavButton
           onClick={onPrevButtonClick}
