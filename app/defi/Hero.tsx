@@ -50,7 +50,7 @@ export const Hero = () => {
           <div className='hidden md:flex flex-col gap-3 mt-10'>
             <PartnerCarousel
               partners={DT_1ST_ROW}
-              speed={0.6}
+              speed={-0.6}
               className='translate-x-[40px]'
             />
             <PartnerCarousel partners={DT_3RD_ROW} speed={-0.6} />
@@ -59,7 +59,7 @@ export const Hero = () => {
               speed={0.6}
               className='translate-x-[40px]'
             />
-            <PartnerCarousel partners={DT_4TH_ROW} speed={-0.6} />
+            <PartnerCarousel partners={DT_4TH_ROW} speed={0.6} />
           </div>
         </div>
         <div className='flex md:hidden flex-col gap-3 mt-16 mb-6 justify-center items-center'>

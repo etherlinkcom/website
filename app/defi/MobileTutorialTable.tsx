@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import {
   TABLE_BORDER_COLOR,
   StrategyPill,
@@ -32,6 +32,41 @@ export const MobileTutorialTable = ({
     onPrevButtonClick,
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
+
+  const viewportRef = useRef<HTMLDivElement | null>(null)
+  const slideRefs = useRef<HTMLDivElement[]>([])
+
+  useEffect(() => {
+    const root = viewportRef.current
+    if (!root) return
+
+    const io = new IntersectionObserver(
+      entries => {
+        // pick the entry with the greatest visibility that is intersecting
+        const visible = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+
+        if (!visible) return
+
+        const index = slideRefs.current.findIndex(el => el === visible.target)
+        const step = selectedStrategy.tutorials[index]?.step
+        if (step && step !== currentStep) setCurrentStep(step)
+      },
+      {
+        root, // observe relative to the scroll viewport
+        threshold: 0.6 // “in view” means at least 60 % visible
+      }
+    )
+
+    slideRefs.current.forEach(el => io.observe(el))
+    return () => io.disconnect()
+  }, [
+    selectedStrategyId,
+    selectedStrategy.tutorials,
+    currentStep,
+    setCurrentStep
+  ])
 
   return (
     <div
@@ -68,15 +103,35 @@ export const MobileTutorialTable = ({
       </div>
       {/* image */}
       <div>
-        <img className='' src='/img/defi/stepCard.jpg' alt='card' />
+        {selectedStrategy.tutorials
+          .filter(t => t.step === currentStep)
+          .map(t => (
+            <img
+              className='h-full w-full object-fill'
+              key={t.step}
+              src={t.image}
+              alt={t.title}
+            />
+          ))}
       </div>
       {/* tutorial steps */}
       <div
+        ref={viewportRef}
         key={selectedStrategyId}
         className={`p-3 flex gap-2 overflow-auto border-b ${TABLE_BORDER_COLOR}`}
       >
         {selectedStrategy.tutorials.map((tutorial, index) => (
-          <div className='w-[96%] shrink-0' key={index}>
+          <div
+            ref={el => {
+              if (el) {
+                slideRefs.current[index] = el // add on mount
+              } else {
+                delete slideRefs.current[index] // remove on unmount
+              }
+            }}
+            className='w-[96%] shrink-0'
+            key={tutorial.title}
+          >
             <TutorialStepCard currentStep={currentStep} {...tutorial} />
           </div>
         ))}
