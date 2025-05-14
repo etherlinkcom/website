@@ -131,7 +131,7 @@ export const DesktopTutorialTable = ({
             .filter(t => t.step === currentStep)
             .map(t => (
               <img
-                className='h-full w-full object-fill'
+                className='h-full w-full object-cover'
                 key={t.step}
                 src={t.image}
                 alt={t.title}

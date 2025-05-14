@@ -106,19 +106,19 @@ export const STRATEGIES_DATA: Strategy[] = [
         step: 1,
         title: 'Bridge',
         description: 'Bridge in USDC using Etherlink Bridge',
-        image: '/img/defi/strategies/t-bill-savings/step1.png'
+        image: '/img/defi/strategies/t-bill-savings/step1.webp'
       },
       {
         step: 2,
         title: 'Swap',
         description: 'Swap USDC for mTBILL on IguanaDEX',
-        image: '/img/defi/strategies/t-bill-savings/step2.png'
+        image: '/img/defi/strategies/t-bill-savings/step2.webp'
       },
       {
         step: 3,
         title: 'Supply',
         description: 'Supply mTBILL on Superlend',
-        image: '/img/defi/strategies/t-bill-savings/step3.png'
+        image: '/img/defi/strategies/t-bill-savings/step3.webp'
       }
       // {
       //   step: 4,
@@ -162,19 +162,19 @@ export const STRATEGIES_DATA: Strategy[] = [
         step: 1,
         title: 'Bridge',
         description: 'Bridge in USDC using Etherlink Bridge',
-        image: '/img/defi/strategies/basis-trade/step1.png'
+        image: '/img/defi/strategies/basis-trade/step1.webp'
       },
       {
         step: 2,
         title: 'Swap',
         description: 'Buy mBASIS on IguanaDEX',
-        image: '/img/defi/strategies/basis-trade/step2.png'
+        image: '/img/defi/strategies/basis-trade/step2.webp'
       },
       {
         step: 3,
         title: 'Supply',
         description: 'Supply mBASIS on Superlend',
-        image: '/img/defi/strategies/basis-trade/step3.png'
+        image: '/img/defi/strategies/basis-trade/step3.webp'
       }
       // {
       //   step: 4,
@@ -219,13 +219,13 @@ export const STRATEGIES_DATA: Strategy[] = [
         title: 'Bridge',
         description:
           'Bridge WBTC on the Etherlink Bridge, or if you already have funds on Etherlink, you can buy WBTC on Hanji or IguanaDEX',
-        image: '/img/defi/strategies/btc-fi/step1.png'
+        image: '/img/defi/strategies/btc-fi/step1.webp'
       },
       {
         step: 2,
         title: 'Supply',
         description: 'Supply WBTC on Superlend',
-        image: '/img/defi/strategies/btc-fi/step2.png'
+        image: '/img/defi/strategies/btc-fi/step2.webp'
       }
       // {
       //   step: 3,
@@ -281,13 +281,13 @@ export const STRATEGIES_DATA: Strategy[] = [
         title: 'Deposit USDC',
         description:
           'If you already have a wallet with funds, you can bridge USDC into Etherlink via the Etherlink Bridge, otherwise, you can create an account directly at uranium.io and deposit USDC using Transak',
-        image: '/img/defi/strategies/nuclear-speculation/step1.png'
+        image: '/img/defi/strategies/nuclear-speculation/step1.webp'
       },
       {
         step: 2,
         title: 'Buy',
         description: 'Buy xU3O8 with USDC',
-        image: '/img/defi/strategies/nuclear-speculation/step2.png'
+        image: '/img/defi/strategies/nuclear-speculation/step2.webp'
       }
     ],
     projectInvolved: [
@@ -317,26 +317,26 @@ export const STRATEGIES_DATA: Strategy[] = [
         step: 1,
         title: 'Bridge',
         description: 'Bridge tokens into Etherlink using Etherlink Bridge',
-        image: '/img/defi/strategies/community-speculation/step1.png'
+        image: '/img/defi/strategies/community-speculation/step1.webp'
       },
       {
         step: 2,
         title: 'Buy',
         description: 'Buy XTZ on Hanji or IguanaDEX',
-        image: '/img/defi/strategies/community-speculation/step2.png'
+        image: '/img/defi/strategies/community-speculation/step2.webp'
       },
       {
         step: 3,
         title: 'Explore memecoins',
         description:
           'Go on OrganicGrowth’s website and look for some promising memecoin communities',
-        image: '/img/defi/strategies/community-speculation/step3.png'
+        image: '/img/defi/strategies/community-speculation/step3.webp'
       },
       {
         step: 4,
         title: 'Buy',
         description: 'Buy memecoins on OrganicGrowth using XTZ',
-        image: '/img/defi/strategies/community-speculation/step4.png'
+        image: '/img/defi/strategies/community-speculation/step4.webp'
       }
     ],
     projectInvolved: [
@@ -372,14 +372,14 @@ export const STRATEGIES_DATA: Strategy[] = [
         title: 'Bridge',
         description:
           'Bridge USDC, WETH, or WBTC into Etherlink using Etherlink Bridge',
-        image: '/img/defi/strategies/market-making/step1.png'
+        image: '/img/defi/strategies/market-making/step1.webp'
       },
       {
         step: 2,
         title: 'Supply',
         description:
           'Supply your combination of USDC/XTZ/WETH/WBTC in Hanji’s LP vault',
-        image: '/img/defi/strategies/market-making/step2.png'
+        image: '/img/defi/strategies/market-making/step2.webp'
       }
     ],
     projectInvolved: [
