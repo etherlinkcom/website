@@ -30,12 +30,6 @@ export const OnBoard = () => {
   return (
     <div className='relative'>
       <Container className='py-10 md:py-24'>
-        <img
-          className='absolute hidden md:block top-16 max-h-[140px] w-[80%] object-cover opacity-60
-            left-[50%] -translate-x-[50%] z-0 pointer-events-none'
-          src='/img/defi/dt-grid.svg'
-          alt='grid img'
-        />
         <div className='pb-14 text-start md:text-center'>
           <p className='text-[28px] md:text-4xl font-bold leading-[48px] text-neonGreen-500 mb-1 md:mb-2'>
             Three easy <span className='text-white-50'>ways to onboard</span>
