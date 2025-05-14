@@ -150,7 +150,7 @@ export const MobileTutorialTable = ({
           {selectedStrategy.projectInvolved.map(p => (
             <Link href={p.link} target='_blank' key={p.name}>
               <img
-                className='w-6 h-6 rounded-lg'
+                className='w-6 h-6 rounded-[4px]'
                 src={p.icon}
                 alt='project image'
               />
