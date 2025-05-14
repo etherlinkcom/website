@@ -102,7 +102,7 @@ export const MobileTutorialTable = ({
         />
       </div>
       {/* image */}
-      <div>
+      <div className='min-h-[200px]'>
         {selectedStrategy.tutorials
           .filter(t => t.step === currentStep)
           .map(t => (
