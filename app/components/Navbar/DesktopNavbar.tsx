@@ -43,7 +43,7 @@ const DropdownItem = ({
         href={item.link}
         target={isExternalLink(item.link!)}
         className={`flex items-center justify-between px-6 py-2 text-grey-100 text-sm font-bold hover:text-neon-green-500 transition-colors duration-200 hover:bg-grey-700 hover:text-neonGreen-500
-                ${item.isNestedItem ? 'pl-8 pr-6 bg-grey-800' : 'hover:rounded-[32px]'} ${item.isLastNestedItem ? 'rounded-b-2xl' : ''} ${pathName === item.link ? 'bg-grey-700 rounded-[32px]' : ''}
+                ${item.isNestedItem ? 'pl-8 pr-6 bg-grey-800' : 'hover:rounded-[32px]'} ${item.isLastNestedItem ? 'rounded-b-2xl' : ''} ${pathName === item.link ? 'bg-grey-700 rounded-[32px] text-neonGreen-700' : ''}
             `}
         onClick={closeParent}
       >
