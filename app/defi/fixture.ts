@@ -293,7 +293,7 @@ export const STRATEGIES_DATA: Strategy[] = [
     projectInvolved: [
       {
         name: 'xU3O8',
-        icon: '/img/defi/icons/U308.svg',
+        icon: '/img/defi/icons/u308.svg',
         link: 'https://www.uranium.io/en'
       },
       {
