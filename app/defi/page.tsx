@@ -49,7 +49,7 @@ const Cta = () => {
       >
         <Link href='/defi#strategies'>
           <div className='flex justify-center items-center gap-2'>
-            <span className='relative z-10 text-lg font-semibold text-neonGreen-200'>
+            <span className='relative z-10 text-lg font-semibold text-neonGreen-200 hover:text-neonGreen-500'>
               View strategies
             </span>
           </div>
