@@ -102,17 +102,20 @@ export const MobileTutorialTable = ({
         />
       </div>
       {/* image */}
-      <div className='min-h-[200px]'>
-        {selectedStrategy.tutorials
-          .filter(t => t.step === currentStep)
-          .map(t => (
-            <img
-              className='h-full w-full object-fill'
-              key={t.step}
-              src={t.image}
-              alt={t.title}
-            />
-          ))}
+      <div className='relative w-full aspect-[4/3]'>
+        {selectedStrategy.tutorials.map(t => (
+          <img
+            key={t.step}
+            src={t.image}
+            alt={t.title}
+            loading='lazy'
+            className={`
+              absolute inset-0 w-full h-full object-cover
+              transition-opacity duration-300
+              ${t.step === currentStep ? 'opacity-100' : 'opacity-0'}
+            `}
+          />
+        ))}
       </div>
       {/* tutorial steps */}
       <div
