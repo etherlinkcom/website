@@ -30,6 +30,12 @@ export const OnBoard = () => {
   return (
     <div className='relative'>
       <Container className='py-10 md:py-24'>
+        <img
+          className='absolute bottom-[900px] md:bottom-[220px] -left-[200px] md:left-[200px] max-w-[960px] max-h-[560px] md:opacity-100 z-[50] pointer-events-none'
+          src='/img/defi/gradient.svg'
+          alt='bg gradient'
+          draggable={false}
+        />
         <div className='pb-14 text-start md:text-center'>
           <p className='text-[28px] md:text-4xl font-bold leading-[48px] text-neonGreen-500 mb-1 md:mb-2'>
             Three easy <span className='text-white-50'>ways to onboard</span>
