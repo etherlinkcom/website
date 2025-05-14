@@ -135,17 +135,20 @@ export const DesktopTutorialTable = ({
           </div>
         </div>
         {/* right image */}
-        <div className='flex justify-center items-center w-2/3 max-h-[430px]'>
-          {selectedStrategy.tutorials
-            .filter(t => t.step === currentStep)
-            .map(t => (
-              <img
-                className='h-full w-full object-cover'
-                key={t.step}
-                src={t.image}
-                alt={t.title}
-              />
-            ))}
+        <div className='relative w-2/3 '>
+          {selectedStrategy.tutorials.map(t => (
+            <img
+              key={t.step}
+              src={t.image}
+              alt={t.title}
+              loading='lazy' /* pre-fetch quietly */
+              className={`
+                absolute inset-0 w-full h-full object-cover
+                transition-opacity duration-300
+                ${t.step === currentStep ? 'opacity-100' : 'opacity-0'}
+              `}
+            />
+          ))}
         </div>
       </div>
     </div>
