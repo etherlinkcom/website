@@ -167,7 +167,7 @@ export const STRATEGIES_DATA: Strategy[] = [
       {
         step: 2,
         title: 'Swap',
-        description: 'Buy mBASIS on IguanaDEX',
+        description: 'Swap USDC for mBASIS on IguanaDEX',
         image: '/img/defi/strategies/basis-trade/step2.webp'
       },
       {
@@ -280,7 +280,7 @@ export const STRATEGIES_DATA: Strategy[] = [
         step: 1,
         title: 'Deposit USDC',
         description:
-          'If you already have a wallet with funds, you can bridge USDC into Etherlink via the Etherlink Bridge, otherwise, you can create an account directly at uranium.io and deposit USDC using Transak',
+          'Bridge USDC into Etherlink or create an account at [uranium.io](https://uranium.io/en) and deposit via Transak.',
         image: '/img/defi/strategies/nuclear-speculation/step1.webp'
       },
       {
@@ -321,8 +321,8 @@ export const STRATEGIES_DATA: Strategy[] = [
       },
       {
         step: 2,
-        title: 'Buy',
-        description: 'Buy XTZ on Hanji or IguanaDEX',
+        title: 'Swap',
+        description: 'Swap for XTZ on Hanji or IguanaDEX',
         image: '/img/defi/strategies/community-speculation/step2.webp'
       },
       {

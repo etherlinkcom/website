@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithRef } from 'react'
+import React, { ComponentPropsWithRef, useEffect } from 'react'
 import {
   TABLE_BORDER_COLOR,
   StrategyPill,
@@ -32,6 +32,21 @@ export const DesktopTutorialTable = ({
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
 
+  useEffect(() => {
+    if (!emblaApi) return
+
+    const onSelect = () => {
+      setCurrentStep(emblaApi.selectedScrollSnap() + 1)
+    }
+
+    emblaApi.on('select', onSelect)
+    onSelect()
+
+    return () => {
+      emblaApi.off('select', onSelect)
+    }
+  }, [emblaApi, setCurrentStep])
+
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full hidden md:block`}
@@ -63,18 +78,12 @@ export const DesktopTutorialTable = ({
             <p className='text-grey-100 font-semibold pl-3'>Tutorial Steps</p>
             <div className='flex items-center'>
               <EmblaNavButton
-                onClick={() => {
-                  onPrevButtonClick()
-                  setCurrentStep(prev => prev - 1)
-                }}
+                onClick={onPrevButtonClick}
                 disabled={prevBtnDisabled}
               />
               <EmblaNavButton
                 className='rotate-180'
-                onClick={() => {
-                  onNextButtonClick()
-                  setCurrentStep(prev => prev + 1)
-                }}
+                onClick={onNextButtonClick}
                 disabled={nextBtnDisabled}
               />
             </div>
@@ -83,11 +92,11 @@ export const DesktopTutorialTable = ({
           <div
             key={selectedStrategyId}
             ref={emblaRef}
-            className={`p-3 h-[300px] border-b embla__viewport overflow-hidden pointer-events-none ${TABLE_BORDER_COLOR}`}
+            className={`p-3 h-[300px] border-b embla__viewport overflow-hidden ${TABLE_BORDER_COLOR}`}
           >
             <div className='flex gap-4 embla__container'>
               {selectedStrategy.tutorials.map((tutorial, index) => (
-                <div key={index} className='embla__slide shrink-0 w-full z-0'>
+                <div key={index} className='embla__slide shrink-0 w-full'>
                   <TutorialStepCard currentStep={currentStep} {...tutorial} />
                 </div>
               ))}

@@ -5,6 +5,8 @@ import Container from '../components/container'
 import { DesktopTutorialTable } from './DesktopTutorialTable'
 import { MobileTutorialTable } from './MobileTutorialTable'
 import { STRATEGIES_DATA, StrategyId, Strategy, Tutorial } from './fixture'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 export const TABLE_BORDER_COLOR = 'border-black-400'
 
@@ -112,7 +114,25 @@ export const TutorialStepCard = ({
       </div>
       <div>
         <p className='text-neonGreen-500 font-semibold'>{title}</p>
-        <p className='text-grey-200'>{description}</p>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            p: ({ children }) => <p className='text-grey-200'>{children}</p>,
+            a: ({ children, href, ...props }) => (
+              <a
+                href={href}
+                {...props}
+                className='text-neonGreen-500'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                {children} {/* ← put the link text inside */}
+              </a>
+            )
+          }}
+        >
+          {description}
+        </ReactMarkdown>
       </div>
     </div>
   )
