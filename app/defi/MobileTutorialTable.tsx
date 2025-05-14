@@ -14,7 +14,9 @@ import Link from 'next/link'
 export const MobileTutorialTable = ({
   selectedStrategyId,
   setSelectedStrategyId,
-  selectedStrategy
+  selectedStrategy,
+  currentStep,
+  setCurrentStep
 }: TutorialProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
@@ -75,7 +77,7 @@ export const MobileTutorialTable = ({
       >
         {selectedStrategy.tutorials.map((tutorial, index) => (
           <div className='w-[96%] shrink-0' key={index}>
-            <TutorialStepCard {...tutorial} />
+            <TutorialStepCard currentStep={currentStep} {...tutorial} />
           </div>
         ))}
       </div>

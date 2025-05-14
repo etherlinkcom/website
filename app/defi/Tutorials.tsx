@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Container from '../components/container'
 import { DesktopTutorialTable } from './DesktopTutorialTable'
 import { MobileTutorialTable } from './MobileTutorialTable'
@@ -12,11 +12,19 @@ export interface TutorialProps {
   selectedStrategyId: StrategyId
   setSelectedStrategyId: (s: StrategyId) => void
   selectedStrategy: Strategy
+  currentStep: number
+  setCurrentStep: React.Dispatch<React.SetStateAction<number>>
 }
 
 export const Tutorials = () => {
   const [selectedStrategyId, setSelectedStrategyId] =
     useState<StrategyId>('t-bill-savings')
+  const [currentStep, setCurrentStep] = useState<number>(1)
+
+  // Reset current step
+  useEffect(() => {
+    setCurrentStep(1)
+  }, [selectedStrategyId])
 
   const selectedStrategy = STRATEGIES_DATA.find(
     strategy => strategy.id === selectedStrategyId
@@ -44,11 +52,15 @@ export const Tutorials = () => {
           selectedStrategyId={selectedStrategyId}
           setSelectedStrategyId={setSelectedStrategyId}
           selectedStrategy={selectedStrategy}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
         />
         <MobileTutorialTable
           selectedStrategyId={selectedStrategyId}
           setSelectedStrategyId={setSelectedStrategyId}
           selectedStrategy={selectedStrategy}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
         />
       </Container>
     </div>
@@ -81,9 +93,20 @@ export const StrategyPill = ({
   )
 }
 
-export const TutorialStepCard = ({ step, title, description }: Tutorial) => {
+interface TutorialCardProps extends Tutorial {
+  currentStep: number
+}
+
+export const TutorialStepCard = ({
+  step,
+  title,
+  description,
+  currentStep
+}: TutorialCardProps) => {
   return (
-    <div className='flex items-center gap-4 py-4 px-6 bg-lightBlack border border-neonGreen-900 rounded-lg'>
+    <div
+      className={`flex items-center gap-4 py-4 px-6 bg-lightBlack border ${currentStep === step ? 'border-neonGreen-900' : 'border-grey-400'} rounded-lg`}
+    >
       <div className='flex items-center flex-shrink-0 justify-center text-black-900 text-sm font-semibold bg-neonGreen-500 rounded-full h-6 w-6'>
         {step}
       </div>

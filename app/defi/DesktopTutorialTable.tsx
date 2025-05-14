@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithRef, useState } from 'react'
+import React, { ComponentPropsWithRef } from 'react'
 import {
   TABLE_BORDER_COLOR,
   StrategyPill,
@@ -13,7 +13,9 @@ import Link from 'next/link'
 export const DesktopTutorialTable = ({
   selectedStrategyId,
   setSelectedStrategyId,
-  selectedStrategy
+  selectedStrategy,
+  currentStep,
+  setCurrentStep
 }: TutorialProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
@@ -53,7 +55,7 @@ export const DesktopTutorialTable = ({
       {/* body */}
       <div className='flex'>
         {/* left */}
-        <div className={`max-w-[440px] w-full border-r ${TABLE_BORDER_COLOR}`}>
+        <div className={`w-1/3 border-r ${TABLE_BORDER_COLOR}`}>
           {/* tutorials title */}
           <div
             className={`flex justify-between items-center py-2 px-3 border-b ${TABLE_BORDER_COLOR}`}
@@ -61,12 +63,18 @@ export const DesktopTutorialTable = ({
             <p className='text-grey-100 font-semibold pl-3'>Tutorial Steps</p>
             <div className='flex items-center'>
               <EmblaNavButton
-                onClick={onPrevButtonClick}
+                onClick={() => {
+                  onPrevButtonClick()
+                  setCurrentStep(prev => prev - 1)
+                }}
                 disabled={prevBtnDisabled}
               />
               <EmblaNavButton
                 className='rotate-180'
-                onClick={onNextButtonClick}
+                onClick={() => {
+                  onNextButtonClick()
+                  setCurrentStep(prev => prev + 1)
+                }}
                 disabled={nextBtnDisabled}
               />
             </div>
@@ -75,12 +83,12 @@ export const DesktopTutorialTable = ({
           <div
             key={selectedStrategyId}
             ref={emblaRef}
-            className={`p-3 h-[300px] border-b embla__viewport overflow-hidden ${TABLE_BORDER_COLOR}`}
+            className={`p-3 h-[300px] border-b embla__viewport overflow-hidden pointer-events-none ${TABLE_BORDER_COLOR}`}
           >
             <div className='flex gap-4 embla__container'>
               {selectedStrategy.tutorials.map((tutorial, index) => (
                 <div key={index} className='embla__slide shrink-0 w-full z-0'>
-                  <TutorialStepCard {...tutorial} />
+                  <TutorialStepCard currentStep={currentStep} {...tutorial} />
                 </div>
               ))}
             </div>
@@ -118,12 +126,17 @@ export const DesktopTutorialTable = ({
           </div>
         </div>
         {/* right image */}
-        <div className='flex justify-center items-center '>
-          <img
-            className='object-contain'
-            src='/img/defi/stepCard.jpg'
-            alt='card'
-          />
+        <div className='flex justify-center items-center w-2/3'>
+          {selectedStrategy.tutorials
+            .filter(t => t.step === currentStep)
+            .map(t => (
+              <img
+                className='h-full w-full object-fill'
+                key={t.step}
+                src={t.image}
+                alt={t.title}
+              />
+            ))}
         </div>
       </div>
     </div>
