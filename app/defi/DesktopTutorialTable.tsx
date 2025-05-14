@@ -135,7 +135,7 @@ export const DesktopTutorialTable = ({
           </div>
         </div>
         {/* right image */}
-        <div className='flex justify-center items-center w-2/3'>
+        <div className='flex justify-center items-center w-2/3 max-h-[430px]'>
           {selectedStrategy.tutorials
             .filter(t => t.step === currentStep)
             .map(t => (
