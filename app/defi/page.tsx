@@ -17,7 +17,7 @@ const DefiPage = async () => {
       <Hero />
       <Tutorials />
       <OnBoard />
-      <Container className='pt-10 py-28'>
+      <Container className='pt-10 pb-16'>
         <Cta />
       </Container>
     </div>

@@ -27,7 +27,7 @@ const NAVS = [
 
 export const Footer = () => {
   return (
-    <Container className='relative flex flex-col pb-6 pt-[104px'>
+    <Container className='relative flex flex-col pb-6 pt-[104px]'>
       <div
         className="block absolute top-0 left-1/2 -translate-x-1/2
           w-full h-full bg-[url('/img/home/gradient.svg')] bg-no-repeat bg-cover bg-top"
