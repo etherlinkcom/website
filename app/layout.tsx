@@ -31,7 +31,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
-          {/* <CookieBanner /> */}
+          <CookieBanner />
         </ClientLayout>
       </body>
     </html>
