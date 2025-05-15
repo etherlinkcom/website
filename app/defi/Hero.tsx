@@ -53,9 +53,9 @@ export const Hero = () => {
               speed={-0.6}
               className='translate-x-[40px]'
             />
-            <PartnerCarousel partners={DT_3RD_ROW} speed={-0.6} />
+            <PartnerCarousel partners={DT_2ND_ROW} speed={-0.6} />
             <PartnerCarousel
-              partners={DT_2ND_ROW}
+              partners={DT_3RD_ROW}
               speed={0.6}
               className='translate-x-[40px]'
             />

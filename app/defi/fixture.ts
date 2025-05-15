@@ -17,7 +17,7 @@ export const DT_2ND_ROW = [
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'bnb', image: '/img/defi/icons/bnb.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'bnb', image: '/img/defi/icons/bnb.svg' },
+  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
   { alt: 'midas', image: '/img/defi/icons/midas.svg' }
 ]
 
@@ -33,10 +33,10 @@ export const DT_3RD_ROW = [
 export const DT_4TH_ROW = [
   { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
   { alt: 'arbitrum', image: '/img/defi/icons/arbitrum.svg' },
+  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
   { alt: 'ethereum', image: '/img/defi/icons/ethereum.svg' },
-  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
+  { alt: 'u308', image: '/img/defi/icons/u308.svg' }
 ]
 
 export const MB_1ST_ROW = [
