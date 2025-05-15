@@ -31,7 +31,7 @@ export const OnBoard = () => {
     <div className='relative'>
       <Container className='py-10 md:py-24'>
         <img
-          className='absolute bottom-[900px] md:bottom-[220px] -left-[200px] md:left-[200px] max-w-[960px] max-h-[560px] md:opacity-100 z-[50] pointer-events-none'
+          className='absolute bottom-[850px] md:bottom-[220px] -left-[250px] md:-left-[250px] max-w-[960px] max-h-[560px] md:opacity-80 z-[50] pointer-events-none'
           src='/img/defi/gradient.svg'
           alt='bg gradient'
           draggable={false}
