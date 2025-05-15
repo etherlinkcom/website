@@ -26,7 +26,8 @@ export const DT_3RD_ROW = [
   { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
   { alt: 'ethereum', image: '/img/defi/icons/ethereum.svg' },
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
-  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' }
+  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
+  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' }
 ]
 
 export const DT_4TH_ROW = [
