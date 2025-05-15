@@ -23,7 +23,7 @@ export const DefiClient = async () => {
         gsap.from(section, {
           opacity: 0,
           y: 30,
-          duration: 0.8,
+          duration: 1,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: section,
@@ -48,9 +48,11 @@ export const DefiClient = async () => {
       <div data-section>
         <OnBoard />
       </div>
-      <Container className='pt-10 pb-16'>
-        <Cta />
-      </Container>
+      <div data-section>
+        <Container className='pt-10 pb-16'>
+          <Cta />
+        </Container>
+      </div>
     </div>
   )
 }
