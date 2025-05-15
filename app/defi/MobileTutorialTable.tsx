@@ -140,9 +140,7 @@ export const MobileTutorialTable = ({
         ))}
       </div>
       {/* projects */}
-      <div
-        className={`flex items-center justify-between py-3 px-6 border-b ${TABLE_BORDER_COLOR}`}
-      >
+      <div className={`flex items-center justify-between py-3 px-6`}>
         <p className='font-semibold text-grey-100'>Projects</p>
         {/* hide this for now */}
         {/* <div className='flex items-center gap-1'>
@@ -162,12 +160,13 @@ export const MobileTutorialTable = ({
         </div>
       </div>
       {/* earning */}
-      <div className={`flex items-center justify-between py-3 px-6`}>
+      {/* hide this for now */}
+      {/* <div className={`flex items-center justify-between py-3 px-6`}>
         <p className='font-semibold text-grey-100'>Earning Potential</p>
         <p className='font-semibold text-neonGreen-500'>
           {selectedStrategy.earning}
         </p>
-      </div>
+      </div> */}
     </div>
   )
 }

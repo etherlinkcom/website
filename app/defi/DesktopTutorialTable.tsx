@@ -105,18 +105,17 @@ export const DesktopTutorialTable = ({
           {/* details */}
           {/* 1st row */}
           <div className={`flex border-b ${TABLE_BORDER_COLOR}`}>
-            <div className={`px-6 py-2 border-r ${TABLE_BORDER_COLOR} w-1/2`}>
+            <div className={`px-6 py-2 `}>
               <p className='font-semibold text-grey-100'>Projects involved</p>
             </div>
-            <div className='px-6 py-2 w-1/2'>
+            {/* hide this for now */}
+            {/* <div className='px-6 py-2 w-1/2'>
               <p className='font-semibold text-grey-100'>Earning Potential</p>
-            </div>
+            </div> */}
           </div>
           {/* 2nd row */}
           <div className={`flex`}>
-            <div
-              className={`flex items-center gap-2 px-6 py-2 border-r ${TABLE_BORDER_COLOR} w-1/2`}
-            >
+            <div className={`flex items-center gap-2 px-6 py-2`}>
               {selectedStrategy.projectInvolved.map(p => (
                 <Link href={p.link} target='_blank' key={p.name}>
                   <img
@@ -127,11 +126,12 @@ export const DesktopTutorialTable = ({
                 </Link>
               ))}
             </div>
-            <div className='px-6 py-2 w-1/2'>
+            {/* hide this for now */}
+            {/* <div className='px-6 py-2 w-1/2'>
               <p className='font-semibold text-neonGreen-500'>
                 {selectedStrategy.earning}
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* right image */}
@@ -144,7 +144,7 @@ export const DesktopTutorialTable = ({
               loading='lazy' /* pre-fetch quietly */
               className={`
                 absolute inset-0 w-full h-full object-cover
-                transition-opacity duration-300
+                transition-opacity duration-300 rounded-br-xl
                 ${t.step === currentStep ? 'opacity-100' : 'opacity-0'}
               `}
             />
