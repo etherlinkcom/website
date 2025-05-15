@@ -126,7 +126,7 @@ export const TutorialStepCard = ({
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                {children} {/* ← put the link text inside */}
+                {children}
               </a>
             )
           }}
