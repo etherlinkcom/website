@@ -15,7 +15,7 @@ const ONBOARD_DATA = [
     title: 'Bridge',
     description: 'Bridge your assets to Etherlink',
     link: 'https://bridge.etherlink.com/',
-    image: '/img/defi/EtherlinkBridge.webp'
+    image: '/img/defi/etherlink-b.webp'
   },
   {
     org: 'Transak',
