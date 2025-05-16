@@ -41,7 +41,7 @@ export const Footer = () => {
               if (index === NAVS.length - 1) {
                 return (
                   <Link href={nav.link} target={isExternalLink(nav.link)}>
-                    <p className='text-white hover:text-newGreen transition-colors duration-300'>
+                    <p className='text-white-50 hover:text-newGreen transition-colors duration-300'>
                       {nav.name}
                     </p>
                   </Link>
@@ -50,7 +50,7 @@ export const Footer = () => {
               return (
                 <>
                   <Link href={nav.link} target={isExternalLink(nav.link)}>
-                    <p className='text-white hover:text-newGreen transition-colors duration-300'>
+                    <p className='text-white-50 hover:text-newGreen transition-colors duration-300'>
                       {nav.name}
                     </p>
                   </Link>

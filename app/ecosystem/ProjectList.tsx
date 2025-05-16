@@ -46,7 +46,7 @@ const LoadMoreButton = ({ onClick }: { onClick: () => void }) => {
   return (
     <button
       onClick={onClick}
-      className='flex items-center gap-1 border border-white rounded-xl px-5 py-2 h-[48px]
+      className='flex items-center gap-1 border border-white-50 rounded-xl px-5 py-2 h-[48px]
         text-base font-semibold hover:bg-lightGreen hover:text-black hover:border-lightGreen transition-all duration-300'
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}

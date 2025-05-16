@@ -28,7 +28,7 @@ export default function Main() {
           <Link
             href='#schedule'
             rel='noopener'
-            className='flex items-center justify-center py-3 w-full text-lg font-medium text-center text-white border-solid border-2 border-white rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black mt-3'
+            className='flex items-center justify-center py-3 w-full text-lg font-medium text-center text-white-50 border-solid border-2 border-white-50 rounded-md px-7 lg:px-6 lg:py-4 hover:bg-darkGreen hover:border-darkGreen hover:text-black mt-3'
           >
             Schedule
           </Link>

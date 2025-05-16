@@ -5,7 +5,7 @@
 @layer base {
   html,
   body {
-    @apply bg-neutral-900;
+    @apply bg-grey-900;
     overflow-x: hidden;
   }
 }

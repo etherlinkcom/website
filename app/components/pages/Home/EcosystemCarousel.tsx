@@ -88,7 +88,7 @@ export const ExploreEcosystemCard = ({
             width={30}
             height={30}
           />
-          <p className='font-bold text-white text-xl pl-2'>{Project}</p>
+          <p className='font-bold text-white-50 text-xl pl-2'>{Project}</p>
         </div>
         <div className='flex items-center gap-2 z-50'>
           {!!Twitter && (

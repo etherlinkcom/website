@@ -39,7 +39,7 @@ export const Partners = () => {
   )
 }
 
-const GraditentLine = ({ className }: { className?: string }) => {
+export const GraditentLine = ({ className }: { className?: string }) => {
   return (
     <div
       className={`absolute max-w-[1300px] w-[80%] h-0.5 rounded-lg opacity-60 ${className}`}

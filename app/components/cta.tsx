@@ -36,7 +36,7 @@ export default function Cta({
       </div>
       <div className='flex flex-col md:flex-row gap-6 md:gap-4 h-fit'>
         <PrimaryButton
-          className='bg-white text-black hover:bg-newGreen'
+          className='bg-white-50 text-black hover:bg-newGreen'
           text={primaryButton.text}
           href={primaryButton.link}
           icon={<img src='/img/home/arrow-right.svg' alt='arrow right icon' />}

@@ -10,7 +10,7 @@ export const DeveloperExperience = () => {
       <SectionBgGradient />
       <div className='mb-[104px]'>
         <h2 className='text-newGreen font-bold text-3xl md:text-6xl text-center mb-1 -tracking-[1.1px]'>
-          <span className='text-white'>Developer</span> Experience
+          <span className='text-white-50'>Developer</span> Experience
         </h2>
         <p className='text-center mt-2 font-light md:text-[23px] text-[#9B9B9B] -tracking-[0.46px]'>
           Effortless Deployment, Maximum Impact

@@ -12,7 +12,7 @@ export const Speed = () => {
     <Container className='relative mb-[104px]'>
       <SectionBgGradient />
       <div className='mb-[100px]'>
-        <h2 className='text-white font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px] md:leading-[65px]'>
+        <h2 className='text-white-50 font-bold text-3xl md:text-[55px] text-center mb-6 -tracking-[0.6px] md:leading-[65px]'>
           <span className='text-neonGreen-500'>Speed meets</span>{' '}
           <span className='inline md:hidden'>
             <br />
