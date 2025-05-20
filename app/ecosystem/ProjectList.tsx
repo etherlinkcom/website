@@ -19,10 +19,13 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
   return (
     <Container>
       <div className='flex items-center justify-between mb-8'>
-        <h1 className='text-xl md:text-2xl font-bold'>All Projects</h1>
-        <p className='text-sm text-gray-300'>
-          <span className='font-semibold'>{totalProjects}</span> results
-        </p>
+        <h1 className='text-[23px] md:text-[35px] font-bold text-white-50'>
+          All Projects
+        </h1>
+        <div className='flex gap-[12px] md:gap-[10px]'>
+          <FilterButton onClick={() => {}} />
+          <SortButton onClick={() => {}} />
+        </div>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mb-8'>
         {projects.slice(0, numToShow).map((p, index) => (
@@ -37,6 +40,45 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
         {numToShow < totalProjects && <LoadMoreButton onClick={handleClick} />}
       </div>
     </Container>
+  )
+}
+
+const FilterButton = ({ onClick }: { onClick: () => void }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`relative p-3 md:px-4 md:py-3 bg-newGreen shadow-[0px_0px_6px_0px_rgba(255,255,255,0.40)] 
+        rounded-3xl cursor-pointer overflow-hidden group `}
+      role='button'
+    >
+      <div className='flex justify-center gap-2 md:gap-2.5'>
+        <span className='block md:hidden relative z-10 text-grey-500 font-semibold -tracking-[0.32px]'>
+          Filters
+        </span>
+        <span className='hidden md:block relative z-10 text-grey-500 font-semibold -tracking-[0.32px]'>
+          Project filters
+        </span>
+        <img src='/img/ecosystem/BiSliderAlt.svg' alt='filter icon' />
+      </div>
+    </button>
+  )
+}
+
+const SortButton = ({ onClick }: { onClick: () => void }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`relative p-3 md:px-4 md:py-3 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
+        rounded-3xl cursor-pointer overflow-hidden group`}
+      role='button'
+    >
+      <div className='flex justify-center gap-2'>
+        <span className='hidden md:block relative z-10 text-lg font-semibold text-neonGreen-500'>
+          Sort
+        </span>
+        <img src='/img/ecosystem/sort-icon.svg' alt='sort icon' />
+      </div>
+    </button>
   )
 }
 
