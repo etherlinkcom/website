@@ -13,7 +13,7 @@ const NAVS = [
   { name: 'Documentation', link: 'https://docs.etherlink.com' },
   {
     name: 'Brand Assets',
-    link: 'https://drive.google.com/drive/folders/1DUhC05bVlISJ2i77kCNP_Tw-G5b48IRT?usp=sharing'
+    link: '/EtherlinkBrandAssets.zip'
   },
   {
     name: 'Cookie Policy',
