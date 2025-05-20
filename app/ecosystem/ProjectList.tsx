@@ -19,7 +19,7 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
   return (
     <Container>
       <div className='flex items-center justify-between mb-8'>
-        <h1 className='text-xl md:text-2xl font-bold'>Projects</h1>
+        <h1 className='text-xl md:text-2xl font-bold'>All Projects</h1>
         <p className='text-sm text-gray-300'>
           <span className='font-semibold'>{totalProjects}</span> results
         </p>
