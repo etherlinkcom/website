@@ -43,8 +43,10 @@ const Ecosystem = async () => {
   // await updateAirtableRecords(recordsToUpdate)
 
   return (
-    <div>
-      <Hero />
+    <div className='pt-28'>
+      <div className='mb-[20px] md:mb-[60px]'>
+        <Hero />
+      </div>
       <ProjectList
         projects={updatedProjects.map((table: RawProject) =>
           mapToProject(table)

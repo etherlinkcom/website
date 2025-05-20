@@ -39,12 +39,12 @@ export const ProjectCard = ({
           />
         )}
         <div className='flex flex-col gap-2'>
-          <h1 className='font-bold text-grey-50 text-2xl'>{Project}</h1>
+          <h1 className='font-semibold text-grey-50 text-2xl'>{Project}</h1>
           <div className='flex items-center gap-2 flex-wrap'>
             {Tags.map((category, index) => (
               <div
                 key={index}
-                className='bg-grey-400 rounded-[44px] text-white text-xs p-2 text-center'
+                className='bg-grey-400 text-white-50 rounded-[44px] text-white text-xs p-2 text-center'
               >
                 {TAGS_MAP[category]}
               </div>
@@ -52,7 +52,7 @@ export const ProjectCard = ({
           </div>
         </div>
       </div>
-      <p className='w-full text-gray-300 text-sm'>{Description}</p>
+      <p className='w-full text-black-100'>{Description}</p>
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-4'>
           {!!Twitter && (
