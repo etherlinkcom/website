@@ -53,7 +53,9 @@ export const TAGS_MAP: Record<string, string> = {
   rwa: 'Real World Assets',
   wallet: 'Wallets',
   kyc: 'KYC',
-  health: 'Healthcare'
+  health: 'Healthcare',
+  community: 'Community',
+  payments: 'Payments'
 }
 
 export type TagKeys = keyof typeof TAGS_MAP
