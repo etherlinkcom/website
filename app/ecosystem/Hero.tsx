@@ -37,8 +37,10 @@ const icons = [
 ]
 
 export const Hero = () => {
+  const words = ['Discover', 'Build']
   const [showAlt, setShowAlt] = useState(false)
-  const [phase, setPhase] = useState<'idle' | 'shrinking' | 'growing'>('idle')
+  const [phase, setPhase] = useState<'shrinking' | 'growing'>('growing')
+  const [highlight, setHighlight] = useState(0)
 
   useEffect(() => {
     let t1: number, t2: number
@@ -46,10 +48,13 @@ export const Hero = () => {
     function cycle() {
       setPhase('shrinking')
       t1 = window.setTimeout(() => {
+        // swap icons + move highlight
         setShowAlt(v => !v)
+        setHighlight(i => (i + 1) % words.length)
         setPhase('growing')
-        t2 = window.setTimeout(cycle, 500)
-      }, 1000)
+        // wait 1s before next cycle
+        t2 = window.setTimeout(cycle, 1000)
+      }, 1000) // 1s shrink
     }
 
     cycle()
@@ -57,7 +62,8 @@ export const Hero = () => {
       clearTimeout(t1)
       clearTimeout(t2)
     }
-  }, [])
+  }, [words.length])
+
   return (
     <div className='flex flex-col justify-center mx-auto px-8'>
       <nav className='flex text-sm text-grey-100 mb-6 space-x-4 md:hidden'>
@@ -77,20 +83,34 @@ export const Hero = () => {
             src={showAlt ? altSrc : origSrc}
             alt=''
             className={`
-            hidden xl:block
-            ${position}
-            w-10 h-10 rounded-lg
-            transform
-            transition-transform duration-950 ease-in-out
-            ${phase === 'shrinking' ? 'scale-0' : 'scale-100'}
-          `}
+              hidden xl:block
+              ${position}
+              w-10 h-10 rounded-lg
+              transform
+              transition-transform duration-1000 ease-in-out
+              ${phase === 'shrinking' ? 'scale-0' : 'scale-100'}
+            `}
           />
         ))}
 
-        <h1 className='text-[32px] md:text-[35px] text-start md:text-center font-bold mb-2 text-neonGreen-50'>
-          Discover, Build & Trade on Etherlink
+        <h1 className='text-[32px] md:text-[35px] text-start md:text-center font-bold mb-2'>
+          {words.map((w, i) => (
+            <span
+              key={w}
+              className={`${
+                i === highlight ? 'xl:text-neonGreen-600' : 'text-neonGreen-50'
+              } ${i < words.length - 1 ? 'mr-2' : ''}`}
+            >
+              {w}
+            </span>
+          ))}{' '}
+          & Trade{' '}
+          <span className='text-neonGreen-50 xl:text-neonGreen-600'>
+            on Etherlink
+          </span>
         </h1>
       </div>
+
       <p className='hidden md:block text-[23px] text-center text-white-700 -tracking-[0.46px]'>
         A growing ecosystem of innovative projects, from DeFi to gaming and
         beyond.
