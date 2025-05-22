@@ -6,7 +6,7 @@ import Link from 'next/link'
 const icons = [
   {
     origSrc: '/img/ecosystem/rarible.jpg',
-    altSrc: '/img/ecosystem/thirdweb.jpg',
+    altSrc: '/img/ecosystem/superlend.jpg',
     position: 'absolute -top-6 left-[100px] -rotate-[18deg]'
   },
   {
@@ -21,7 +21,7 @@ const icons = [
   },
   {
     origSrc: '/img/ecosystem/animated-icons/icon1.png',
-    altSrc: '/img/ecosystem/thirdweb.jpg',
+    altSrc: '/img/ecosystem/superlend.jpg',
     position: 'absolute -top-6 right-[220px] -rotate-[27deg]'
   },
   {
