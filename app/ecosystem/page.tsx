@@ -40,7 +40,7 @@ const Ecosystem = async () => {
     }
   }
 
-  // await updateAirtableRecords(recordsToUpdate)
+  await updateAirtableRecords(recordsToUpdate)
 
   return (
     <div className='pt-28'>
