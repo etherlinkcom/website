@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 
 export type SortOrder = 'asc' | 'desc'
 const SORT_OPTIONS: { value: SortOrder; label: string }[] = [
@@ -14,6 +14,15 @@ type SortButtonProps = {
 export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+
+  const toggleBodyScroll = useCallback((disable: boolean) => {
+    document.documentElement.style.overflow = disable ? 'hidden' : 'auto'
+  }, [])
+
+  useEffect(() => {
+    toggleBodyScroll(isOpen)
+    return () => toggleBodyScroll(false)
+  }, [isOpen])
 
   // close on outside click
   useEffect(() => {

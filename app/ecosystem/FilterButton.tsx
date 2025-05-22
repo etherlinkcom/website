@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react'
+import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react'
 import { TagKeys, TAGS_MAP } from '../../utils/airtable/ecosystem'
 
 type FilterButtonProps = {
@@ -22,6 +22,15 @@ export const FilterButton = ({
       return next
     })
   }
+
+  const toggleBodyScroll = useCallback((disable: boolean) => {
+    document.documentElement.style.overflow = disable ? 'hidden' : 'auto'
+  }, [])
+
+  useEffect(() => {
+    toggleBodyScroll(isOpen)
+    return () => toggleBodyScroll(false)
+  }, [isOpen])
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
