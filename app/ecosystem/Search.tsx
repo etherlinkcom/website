@@ -156,6 +156,11 @@ export const Search = ({
       {/* MOBILE DRAWER */}
       {drawerOpen && (
         <div className='fixed inset-0 z-[1000] md:hidden flex overflow-y-scroll bg-grey-900'>
+          <img
+            className='fixed bottom-0 right-0'
+            src='/img/ecosystem/Etherlink-Globe.svg'
+            alt='globe img'
+          />
           <div className='relative inset-y-0 right-0 w-full p-4 transition-transform duration-300'>
             <button
               onClick={() => {
@@ -226,6 +231,11 @@ export const Search = ({
                 </div>
               </div>
             )}
+            <div className='pb-10'>
+              <p className='text-grey-300 font-bold text-[23px] max-w-[200px] -tracking-[0.46px]'>
+                Discover, Build & Trade on Etherlink
+              </p>
+            </div>
           </div>
         </div>
       )}
