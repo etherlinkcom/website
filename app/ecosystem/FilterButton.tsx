@@ -74,6 +74,7 @@ export const FilterButton = ({ selected, onSelect }: FilterButtonProps) => {
               /* desktop dropdown overlay, left-aligned */
               md:absolute md:left-0 md:bottom-auto md:mt-6
               md:w-[250px] md:p-2 md:rounded-[24px] md:border md:border-grey-400
+              md:-translate-x-[100px]
 
               z-50
             `}
