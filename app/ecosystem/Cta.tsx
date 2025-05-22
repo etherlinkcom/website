@@ -4,9 +4,14 @@ import { PrimaryButton } from '../components/buttons/PrimaryButton'
 export const Cta = () => {
   return (
     <div
-      className='flex flex-col md:flex-row flex-wrap w-full gap-5 mx-auto md:items-center justify-between
-            pt-16 px-12 pb-14 lg:flex-nowrap rounded-xl  bg-[linear-gradient(225deg,_#262626_7.3%,_#101010_87.03%)]'
+      className='relative flex flex-col md:flex-row flex-wrap w-full gap-5 mx-auto md:items-center justify-between
+            pt-16 px-12 pb-14 lg:flex-nowrap rounded-xl bg-[linear-gradient(225deg,_#262626_7.3%,_#101010_87.03%)]'
     >
+      <img
+        className='absolute top-0 right-0  rounded-tr-xl'
+        src='/img/ecosystem/Banner SVG top.svg'
+        alt='bg img'
+      />
       <div className='flex-grow text-left'>
         <h2 className='text-white-50 text-[35px] font-bold -tracking-[0.7px]'>
           Make money with DeFi on Etherlink
@@ -21,6 +26,11 @@ export const Cta = () => {
         text='Learn more'
         href='/defi'
         icon={<img src='/img/ecosystem/snake.svg' alt='icon' />}
+      />
+      <img
+        className='absolute bottom-0 left-0'
+        src='/img/ecosystem/Banner SVG bottom.svg'
+        alt='bg img'
       />
     </div>
   )
