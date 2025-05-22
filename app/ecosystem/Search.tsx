@@ -21,15 +21,16 @@ export const Search = ({ search, updateSearch }: SearchProps) => {
           placeholder='What projects are you looking for?'
           className='
             w-full
-            bg-transparent 
-            border border-white-50 
-            rounded-full py-3 px-4 pl-10
-            text-white placeholder-gray-400
-            focus:outline-none focus:ring-2 focus:ring-green-500
+            bg-transparent
+            border-[2px] border-grey-200
+            rounded-full
+            py-[13px] px-[24px]
+            text-white placeholder-grey-200
+            focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 focus:border-grey-200
             transition
           '
         />
-        <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
+        <div className='absolute inset-y-0 right-6 flex items-center pointer-events-none'>
           <svg
             className='w-5 h-5 text-gray-400'
             fill='none'
@@ -46,19 +47,22 @@ export const Search = ({ search, updateSearch }: SearchProps) => {
         </div>
       </div>
 
-      <div className='mt-4'>
-        <h3 className='text-white font-semibold mb-2'>Trending searches</h3>
-        <div className='flex flex-wrap gap-2'>
+      <div className='flex gap-10 items-center mt-4'>
+        <h3 className='text-grey-100 text-lg font-semibold'>
+          Trending searches
+        </h3>
+        <div className='flex flex-wrap gap-3'>
           {TRENDING.map(term => (
             <button
               key={term}
               onClick={() => updateSearch(term)}
-              className={`
-                text-sm text-white px-3 py-1.5 rounded-full
-                bg-gray-700 hover:bg-gray-600
+              className='
+                text-sm text-grey-50
+                px-4 py-3
+                rounded-full
+                bg-grey-400 hover:bg-grey-500
                 transition
-                ${search === term ? 'ring-2 ring-green-400' : ''}
-              `}
+              '
             >
               {term}
             </button>
