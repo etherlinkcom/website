@@ -7,7 +7,7 @@ import { Search } from './Search'
 import { FilterButton } from './FilterButton'
 import { SortButton, SortOrder } from './SortButton'
 import { Project, TagKeys, TAGS_MAP } from '../../utils/airtable/ecosystem'
-import Cta from '../components/cta'
+import { Cta } from './Cta'
 
 export const ProjectList = ({ projects }: { projects: Project[] }) => {
   const router = useRouter()
@@ -111,14 +111,7 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
             ))}
 
             <div className='col-span-1 sm:col-span-2 xl:col-span-3'>
-              <Cta
-                headerText='List a project on the Etherlink ecosystem'
-                descriptionText='Submit your project to be listed on the Etherlink ecosystem today or request an update to an existing entry.'
-                primaryButton={{
-                  text: 'Submit a Project',
-                  link: 'https://tt-tezos.typeform.com/to/Z48NYwJr'
-                }}
-              />
+              <Cta />
             </div>
 
             {secondBatch.map((p, i) => (
