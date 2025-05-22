@@ -1,6 +1,6 @@
 import { Hero } from './Hero'
 import { ProjectList } from './ProjectList'
-import Cta from '../components/cta'
+
 import {
   checkUrlStatus,
   fetchAirtableData,
@@ -52,16 +52,6 @@ const Ecosystem = async () => {
           mapToProject(table)
         )}
       />
-      {/* <div className='px-8'>
-        <Cta
-          headerText='List a project on the Etherlink ecosystem'
-          descriptionText='Submit your project to be listed on the Etherlink ecosystem today or request an update to an existing entry.'
-          primaryButton={{
-            text: 'Submit a Project',
-            link: 'https://tt-tezos.typeform.com/to/Z48NYwJr'
-          }}
-        />
-      </div> */}
     </div>
   )
 }

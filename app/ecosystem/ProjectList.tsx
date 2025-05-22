@@ -1,11 +1,5 @@
 'use client'
-import React, {
-  ChangeEvent,
-  useState,
-  useEffect,
-  useRef,
-  KeyboardEvent
-} from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Container from '../components/container'
 import { ProjectCard } from './ProjectCard'
@@ -13,6 +7,7 @@ import { Search } from './Search'
 import { FilterButton } from './FilterButton'
 import { SortButton, SortOrder } from './SortButton'
 import { Project, TagKeys, TAGS_MAP } from '../../utils/airtable/ecosystem'
+import Cta from '../components/cta'
 
 export const ProjectList = ({ projects }: { projects: Project[] }) => {
   const router = useRouter()
@@ -23,24 +18,25 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
   const [sortOrder, setSortOrder] = useState<SortOrder | null>(null)
   const [filterOpen, setFilterOpen] = useState(false)
   const [inited, setInited] = useState(false)
-  const [visibleCount, setVisibleCount] = useState(6)
+  const [visibleCount, setVisibleCount] = useState(9)
   const sentinelRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const q = params.get('search') ?? ''
     setSearch(q)
     setInited(true)
-  }, [])
+  }, [params])
 
   useEffect(() => {
     if (!inited) return
     const sp = new URLSearchParams()
     if (search) sp.set('search', search)
-    const qs = sp.toString()
-    router.replace(`/ecosystem${qs ? `?${qs}` : ''}`, { scroll: false })
+    router.replace(`/ecosystem${sp.toString() ? `?${sp.toString()}` : ''}`, {
+      scroll: false
+    })
   }, [search, inited, router])
 
-  const searched = React.useMemo(() => {
+  const searched = useMemo(() => {
     if (!search.trim()) return projects
     const term = search.toLowerCase()
     return projects.filter(
@@ -51,12 +47,12 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
     )
   }, [projects, search])
 
-  const filtered = React.useMemo(() => {
+  const filtered = useMemo(() => {
     if (!selectedTags.length) return searched
     return searched.filter(p => p.Tags.some(t => selectedTags.includes(t)))
   }, [searched, selectedTags])
 
-  const sorted = React.useMemo(() => {
+  const sorted = useMemo(() => {
     const arr = [...filtered]
     if (sortOrder === 'asc')
       return arr.sort((a, b) => a.Project.localeCompare(b.Project))
@@ -66,7 +62,7 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
   }, [filtered, sortOrder])
 
   useEffect(() => {
-    setVisibleCount(6)
+    setVisibleCount(9)
   }, [search, selectedTags, sortOrder])
 
   useEffect(() => {
@@ -82,6 +78,9 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
     obs.observe(sentinelRef.current)
     return () => obs.disconnect()
   }, [sorted, visibleCount])
+
+  const firstBatch = sorted.slice(0, Math.min(visibleCount, 9))
+  const secondBatch = visibleCount > 9 ? sorted.slice(9, visibleCount) : []
 
   return (
     <>
@@ -105,11 +104,28 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
               </div>
             </div>
           </div>
+
           <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6'>
-            {sorted.slice(0, visibleCount).map((p, i) => (
+            {firstBatch.map((p, i) => (
               <ProjectCard key={p.Slug || i} {...p} />
             ))}
+
+            <div className='col-span-1 sm:col-span-2 xl:col-span-3'>
+              <Cta
+                headerText='List a project on the Etherlink ecosystem'
+                descriptionText='Submit your project to be listed on the Etherlink ecosystem today or request an update to an existing entry.'
+                primaryButton={{
+                  text: 'Submit a Project',
+                  link: 'https://tt-tezos.typeform.com/to/Z48NYwJr'
+                }}
+              />
+            </div>
+
+            {secondBatch.map((p, i) => (
+              <ProjectCard key={p.Slug || 9 + i} {...p} />
+            ))}
           </div>
+
           <div ref={sentinelRef} />
         </Container>
       </div>
