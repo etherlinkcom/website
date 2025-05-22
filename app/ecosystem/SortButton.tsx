@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
-export type SortOrder = 'asc' | 'desc'
+export type SortOrder = 'featured' | 'asc' | 'desc'
 const SORT_OPTIONS: { value: SortOrder; label: string }[] = [
+  { value: 'featured', label: 'Featured First' },
   { value: 'asc', label: 'A → Z' },
   { value: 'desc', label: 'Z → A' }
 ]
@@ -25,16 +26,11 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
       document.documentElement.style.overflow = ''
     }
 
-    if (isOpen && window.innerWidth < 768) {
-      lock()
-    } else {
-      unlock()
-    }
+    if (isOpen && window.innerWidth < 768) lock()
+    else unlock()
 
     const onResize = () => {
-      if (window.innerWidth >= 768) {
-        unlock()
-      }
+      if (window.innerWidth >= 768) unlock()
     }
     window.addEventListener('resize', onResize)
     return () => {
@@ -43,7 +39,6 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
     }
   }, [isOpen])
 
-  // close on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -56,7 +51,6 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
 
   return (
     <div ref={ref} className='relative inline-block text-left z-30'>
-      {/* trigger */}
       <button
         onClick={() => setIsOpen(v => !v)}
         className={`
@@ -82,23 +76,22 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
         <>
           <div
             onClick={() => setIsOpen(false)}
-            className='fixed inset-0 bg-[rgba(0,0,0,0.8)] md:hidden z-40'
+            className='fixed inset-0 bg-[rgba(0,0,0,0.8)] md:hidden z-[1000]'
           />
 
           <div
             className={`
-              /* mobile drawer */
               fixed inset-x-0 bottom-0
               bg-grey-900 p-4
               rounded-t-[24px]
               border-t border-grey-400
               flex flex-col items-start
 
-              /* desktop dropdown overlay, left-aligned */
               md:absolute md:left-0 md:bottom-auto md:mt-6
-              md:w-[250px] md:p-2 md:rounded-[24px] md:border md:border-grey-400  md:-translate-x-[150px]
+              md:w-[250px] md:p-2 md:rounded-[24px]
+              md:border md:border-grey-400 md:-translate-x-[150px]
 
-              z-50
+              z-[1000]
             `}
           >
             <div className='w-full flex items-center justify-between mb-4 md:hidden'>
@@ -115,10 +108,7 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
               {SORT_OPTIONS.map(opt => (
                 <button
                   key={opt.value}
-                  onClick={() => {
-                    onSelect(opt.value)
-                    // no longer closing the panel here
-                  }}
+                  onClick={() => onSelect(opt.value)}
                   className={`
                     w-full text-left flex justify-between items-center
                     text-gray-100 text-sm
@@ -138,7 +128,8 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
                     >
                       <path
                         fillRule='evenodd'
-                        d='M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z'
+                        d='M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 
+                           1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z'
                         clipRule='evenodd'
                       />
                     </svg>

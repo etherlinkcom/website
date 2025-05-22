@@ -53,11 +53,17 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
   }, [searched, selectedTags])
 
   const sorted = useMemo(() => {
-    const arr = [...filtered]
-    if (sortOrder === 'asc')
-      return arr.sort((a, b) => a.Project.localeCompare(b.Project))
-    if (sortOrder === 'desc')
-      return arr.sort((a, b) => b.Project.localeCompare(a.Project))
+    let arr = [...filtered]
+    if (sortOrder === 'featured') {
+      arr = arr.sort((a, b) => {
+        if (a.Featured === b.Featured) return a.Project.localeCompare(b.Project)
+        return a.Featured ? -1 : 1
+      })
+    } else if (sortOrder === 'asc') {
+      arr.sort((a, b) => a.Project.localeCompare(b.Project))
+    } else if (sortOrder === 'desc') {
+      arr.sort((a, b) => b.Project.localeCompare(a.Project))
+    }
     return arr
   }, [filtered, sortOrder])
 

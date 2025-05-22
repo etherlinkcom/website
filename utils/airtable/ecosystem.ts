@@ -31,6 +31,7 @@ export interface Project {
   Twitter: string
   rank: number
   bypass_url_check: boolean
+  Featured: boolean
 }
 
 export const TAGS_MAP: Record<string, string> = {
@@ -151,6 +152,7 @@ export const mapToProject = (rawProject: RawProject): Project => {
     Status: fields.Status,
     Twitter: fields.Twitter,
     rank: fields.rank,
-    bypass_url_check: fields.bypass_url_check
+    bypass_url_check: fields.bypass_url_check,
+    Featured: fields.Featured
   }
 }

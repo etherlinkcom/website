@@ -15,6 +15,7 @@ export interface ProjectCardProps {
   Tags: TagKeys[]
   Twitter?: string
   Website?: string
+  Featured: boolean
 }
 
 export const ProjectCard = ({
@@ -23,7 +24,8 @@ export const ProjectCard = ({
   Description,
   Tags,
   Twitter,
-  Website
+  Website,
+  Featured
 }: ProjectCardProps) => {
   return (
     <div
@@ -41,6 +43,11 @@ export const ProjectCard = ({
         <div className='flex flex-col gap-2'>
           <h1 className='font-semibold text-grey-50 text-2xl'>{Project}</h1>
           <div className='flex items-center gap-2 flex-wrap'>
+            {Featured && (
+              <div className='bg-neonGreen-800 text-white-50 rounded-[44px] text-white text-xs p-2 text-center'>
+                Featured
+              </div>
+            )}
             {Tags.map((category, index) => (
               <div
                 key={index}
