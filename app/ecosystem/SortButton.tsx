@@ -39,22 +39,24 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
         aria-expanded={isOpen}
       >
         <div className='flex justify-center gap-2 items-center'>
-          <span className='hidden md:block relative z-10 text-lg font-semibold text-neonGreen-500'>
+          <span className='hidden md:block relative z-10 font-semibold text-neonGreen-500'>
             Sort
           </span>
-          <img src='/img/ecosystem/sort-icon.svg' alt='sort icon' />
+          <img
+            className='w-4 h-4'
+            src='/img/ecosystem/sort-icon.svg'
+            alt='sort icon'
+          />
         </div>
       </button>
 
       {isOpen && (
         <>
-          {/* mobile backdrop */}
           <div
             onClick={() => setIsOpen(false)}
             className='fixed inset-0 bg-[rgba(0,0,0,0.8)] md:hidden z-40'
           />
 
-          {/* drawer / dropdown */}
           <div
             className={`
               /* mobile drawer */
@@ -71,18 +73,16 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
               z-50
             `}
           >
-            {/* header on mobile only */}
             <div className='w-full flex items-center justify-between mb-4 md:hidden'>
               <button onClick={() => setIsOpen(false)}>
                 <span className='block w-6 h-6'>&#8592;</span>
               </button>
-              <h2 className='text-lg font-semibold text-white'>Sort</h2>
+              <h2 className='font-semibold text-white'>Sort</h2>
               <button onClick={() => setIsOpen(false)}>
                 <span className='block w-6 h-6'>×</span>
               </button>
             </div>
 
-            {/* sort options */}
             <div className='w-full flex flex-col'>
               {SORT_OPTIONS.map(opt => (
                 <button
