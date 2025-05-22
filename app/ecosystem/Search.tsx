@@ -1,5 +1,11 @@
 'use client'
-import React, { ChangeEvent } from 'react'
+import React, {
+  ChangeEvent,
+  useState,
+  useEffect,
+  useRef,
+  KeyboardEvent
+} from 'react'
 
 type SearchProps = {
   search: string
@@ -9,25 +15,51 @@ type SearchProps = {
 const TRENDING = ['Dev tools', 'Infrastructure', 'Gaming', 'Payments', 'NFTs']
 
 export const Search = ({ search, updateSearch }: SearchProps) => {
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  const drawerInputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (drawerOpen) {
+      drawerInputRef.current?.focus()
+    }
+  }, [drawerOpen])
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 768) {
+        setDrawerOpen(false)
+      }
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  const handleDrawerKey = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      setDrawerOpen(false)
+    }
+  }
+
+  const handleTrendingClick = (term: string) => {
+    updateSearch(term)
+    setDrawerOpen(false)
+  }
+
   return (
-    <div className='w-full'>
-      <div className='relative w-full'>
+    <>
+      {/* MOBILE: readonly trigger */}
+      <div className='relative w-full md:hidden my-[20px]'>
         <input
-          type='text'
+          readOnly
           value={search}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            updateSearch(e.target.value)
-          }
           placeholder='What projects are you looking for?'
+          onClick={() => setDrawerOpen(true)}
           className='
-            w-full
-            bg-transparent
+            w-full bg-transparent
             border-[2px] border-grey-200
-            rounded-full
-            py-[13px] px-[24px]
+            rounded-full py-[13px] px-[24px]
             text-white placeholder-grey-200
-            focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 focus:border-grey-200
-            transition
+            focus:outline-none transition
           '
         />
         <div className='absolute inset-y-0 right-6 flex items-center pointer-events-none'>
@@ -41,34 +73,135 @@ export const Search = ({ search, updateSearch }: SearchProps) => {
               strokeWidth={2}
               strokeLinecap='round'
               strokeLinejoin='round'
-              d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 3.5a7.5 7.5 0 0013.15 13.15z'
+              d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 
+                 103.5 3.5a7.5 7.5 0 0013.15 13.15z'
             />
           </svg>
         </div>
       </div>
 
-      <div className='flex gap-10 items-center mt-4'>
-        <h3 className='text-grey-100 text-lg font-semibold'>
-          Trending searches
-        </h3>
-        <div className='flex flex-wrap gap-3'>
-          {TRENDING.map(term => (
-            <button
-              key={term}
-              onClick={() => updateSearch(term)}
-              className='
-                text-sm text-grey-50
-                px-4 py-3
-                rounded-full
-                bg-grey-400 hover:bg-grey-500
-                transition
-              '
+      {/* DESKTOP: inline input + trending */}
+      <div className='hidden md:block'>
+        <div className='relative w-full'>
+          <input
+            type='text'
+            value={search}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              updateSearch(e.target.value)
+            }
+            placeholder='What projects are you looking for?'
+            className='
+              w-full bg-transparent
+              border-[2px] border-grey-200
+              rounded-full py-[13px] px-[24px]
+              text-white placeholder-grey-200
+              focus:outline-none focus:border-grey-200 focus:ring-0 focus-visible:ring-0
+            '
+          />
+          <div className='absolute inset-y-0 right-6 flex items-center pointer-events-none'>
+            <svg
+              className='w-5 h-5 text-gray-400'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
             >
-              {term}
-            </button>
-          ))}
+              <path
+                strokeWidth={2}
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 
+                   103.5 3.5a7.5 7.5 0 0013.15 13.15z'
+              />
+            </svg>
+          </div>
+        </div>
+        <div className='flex gap-10 items-center mt-4'>
+          <h3 className='text-grey-100 text-lg font-semibold'>
+            Trending searches
+          </h3>
+          <div className='flex flex-wrap gap-3'>
+            {TRENDING.map(term => (
+              <button
+                key={term}
+                onClick={() => updateSearch(term)}
+                className='
+                  text-sm text-grey-50 px-4 py-3
+                  rounded-full bg-grey-400 hover:bg-grey-500 transition
+                '
+              >
+                {term}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* MOBILE DRAWER */}
+      {drawerOpen && (
+        <div className='fixed inset-0 z-[999] md:hidden flex'>
+          <div
+            onClick={() => setDrawerOpen(false)}
+            className='absolute inset-0 bg-[rgba(0,0,0,0.8)]'
+          />
+          <div className='relative inset-y-0 right-0 w-full bg-grey-900 p-4 transition-transform duration-300'>
+            <button
+              onClick={() => setDrawerOpen(false)}
+              className='absolute top-4 right-4 text-white text-2xl leading-none'
+            >
+              ×
+            </button>
+            <div className='relative w-full mb-6'>
+              <input
+                ref={drawerInputRef}
+                type='text'
+                value={search}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  updateSearch(e.target.value)
+                }
+                onKeyDown={handleDrawerKey}
+                placeholder='What projects are you looking for?'
+                className='
+                  w-full bg-transparent
+                  border-[2px] border-grey-200 mt-[40px]
+                  rounded-full py-[13px] px-[24px]
+                  text-white placeholder-grey-200
+                  focus:outline-none focus:border-grey-200 focus:ring-0 focus-visible:ring-0
+                '
+              />
+              <div className='absolute inset-y-0 right-6 top-9 flex items-center pointer-events-none'>
+                <svg
+                  className='w-5 h-5 text-gray-400'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeWidth={2}
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 
+                       103.5 3.5a7.5 7.5 0 0013.15 13.15z'
+                  />
+                </svg>
+              </div>
+            </div>
+            <h3 className='text-[#EDEDED] font-bold px-[13px] py-[13px]'>
+              Trending searches
+            </h3>
+            <div className='flex flex-col flex-wrap gap-3'>
+              {TRENDING.map(term => (
+                <button
+                  key={term}
+                  onClick={() => handleTrendingClick(term)}
+                  className='text-[#EDEDED] px-[13px] py-[13px] text-start text-sm'
+                >
+                  {term}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
