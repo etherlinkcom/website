@@ -4,22 +4,35 @@ import { TagKeys, TAGS_MAP } from '../../utils/airtable/ecosystem'
 type FilterButtonProps = {
   selected: TagKeys[]
   onSelect: (tags: TagKeys[]) => void
+  onOpenChange?: (open: boolean) => void
 }
 
-export const FilterButton = ({ selected, onSelect }: FilterButtonProps) => {
+export const FilterButton = ({
+  selected,
+  onSelect,
+  onOpenChange
+}: FilterButtonProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
-  // close on outside click
+  const toggleOpen = () => {
+    setIsOpen(prev => {
+      const next = !prev
+      onOpenChange?.(next)
+      return next
+    })
+  }
+
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
         setIsOpen(false)
+        onOpenChange?.(false)
       }
     }
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
-  }, [])
+  }, [onOpenChange])
 
   const items = useMemo(
     () =>
@@ -33,9 +46,8 @@ export const FilterButton = ({ selected, onSelect }: FilterButtonProps) => {
 
   return (
     <div ref={ref} className='relative inline-block text-left z-[999]'>
-      {/* trigger */}
       <button
-        onClick={() => setIsOpen(v => !v)}
+        onClick={toggleOpen}
         className={`
           relative p-3 md:px-4 md:py-3 bg-newGreen
           shadow-[0px_0px_6px_0px_rgba(255,255,255,0.40)]
@@ -58,7 +70,10 @@ export const FilterButton = ({ selected, onSelect }: FilterButtonProps) => {
         <>
           {/* mobile backdrop */}
           <div
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false)
+              onOpenChange?.(false)
+            }}
             className='fixed inset-0 bg-[rgba(0,0,0,0.8)] md:hidden z-40'
           />
 
@@ -74,25 +89,33 @@ export const FilterButton = ({ selected, onSelect }: FilterButtonProps) => {
               /* desktop dropdown overlay, left-aligned */
               md:absolute md:left-0 md:bottom-auto md:mt-6
               md:w-[250px] md:p-2 md:rounded-[24px] md:border md:border-grey-400
-              md:-translate-x-[100px]
 
               z-50
             `}
           >
             {/* header only on mobile */}
             <div className='w-full flex items-center justify-between mb-4 md:hidden'>
-              <button onClick={() => setIsOpen(false)}>
+              <button
+                onClick={() => {
+                  setIsOpen(false)
+                  onOpenChange?.(false)
+                }}
+              >
                 <span className='block w-6 h-6'>&#8592;</span>
               </button>
-              <h2 className='text-lg font-semibold text-white'>
+              <h2 className='text-sm font-semibold text-grey-100 -tracking-[0.28px]'>
                 Project filters
               </h2>
-              <button onClick={() => setIsOpen(false)}>
+              <button
+                onClick={() => {
+                  setIsOpen(false)
+                  onOpenChange?.(false)
+                }}
+              >
                 <span className='block w-6 h-6'>×</span>
               </button>
             </div>
 
-            {/* filter items */}
             <div className='w-full flex flex-col gap-1'>
               {items.map(item => (
                 <button
@@ -123,7 +146,9 @@ export const FilterButton = ({ selected, onSelect }: FilterButtonProps) => {
                     >
                       <path
                         fillRule='evenodd'
-                        d='M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z'
+                        d='M16.707 5.293a1 1 0 00-1.414 0L8 12.586 
+                           4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 
+                           001.414 0l8-8a1 1 0 000-1.414z'
                         clipRule='evenodd'
                       />
                     </svg>
