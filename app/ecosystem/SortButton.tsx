@@ -27,7 +27,7 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
   }, [])
 
   return (
-    <div ref={ref} className='relative inline-block text-left z-[999]'>
+    <div ref={ref} className='relative inline-block text-left z-30'>
       {/* trigger */}
       <button
         onClick={() => setIsOpen(v => !v)}

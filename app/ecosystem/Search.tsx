@@ -4,7 +4,8 @@ import React, {
   useState,
   useEffect,
   useRef,
-  KeyboardEvent
+  KeyboardEvent,
+  useCallback
 } from 'react'
 
 type SearchProps = {
@@ -17,6 +18,15 @@ const TRENDING = ['Dev tools', 'Infrastructure', 'Gaming', 'Payments', 'NFTs']
 export const Search = ({ search, updateSearch }: SearchProps) => {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const drawerInputRef = useRef<HTMLInputElement>(null)
+
+  const toggleBodyScroll = useCallback((disable: boolean) => {
+    document.documentElement.style.overflow = disable ? 'hidden' : 'auto'
+  }, [])
+
+  useEffect(() => {
+    toggleBodyScroll(drawerOpen)
+    return () => toggleBodyScroll(false)
+  }, [drawerOpen])
 
   useEffect(() => {
     if (drawerOpen) {
@@ -138,15 +148,18 @@ export const Search = ({ search, updateSearch }: SearchProps) => {
 
       {/* MOBILE DRAWER */}
       {drawerOpen && (
-        <div className='fixed inset-0 z-[999] md:hidden flex'>
-          <div
+        <div className='fixed inset-0 z-[1000] md:hidden flex'>
+          {/* <div
             onClick={() => setDrawerOpen(false)}
             className='absolute inset-0 bg-[rgba(0,0,0,0.8)]'
-          />
+          /> */}
           <div className='relative inset-y-0 right-0 w-full bg-grey-900 p-4 transition-transform duration-300'>
             <button
-              onClick={() => setDrawerOpen(false)}
-              className='absolute top-4 right-4 text-white text-2xl leading-none'
+              onClick={() => {
+                setDrawerOpen(false)
+                console.log('click')
+              }}
+              className='absolute top-4 right-4 text-white text-2xl leading-none z-10'
             >
               ×
             </button>
@@ -162,13 +175,13 @@ export const Search = ({ search, updateSearch }: SearchProps) => {
                 placeholder='What projects are you looking for?'
                 className='
                   w-full bg-transparent
-                  border-[2px] border-grey-200 mt-[40px]
+                  border-[2px] border-grey-200 mt-[60px]
                   rounded-full py-[13px] px-[24px]
                   text-white placeholder-grey-200
                   focus:outline-none focus:border-grey-200 focus:ring-0 focus-visible:ring-0
                 '
               />
-              <div className='absolute inset-y-0 right-6 top-9 flex items-center pointer-events-none'>
+              <div className='absolute inset-y-0 right-6 top-14 flex items-center pointer-events-none'>
                 <svg
                   className='w-5 h-5 text-gray-400'
                   fill='none'
