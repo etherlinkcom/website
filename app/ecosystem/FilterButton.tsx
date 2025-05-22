@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react'
+import React, { useState, useRef, useEffect, useMemo } from 'react'
 import { TagKeys, TAGS_MAP } from '../../utils/airtable/ecosystem'
 
 type FilterButtonProps = {
@@ -23,13 +23,33 @@ export const FilterButton = ({
     })
   }
 
-  const toggleBodyScroll = useCallback((disable: boolean) => {
-    document.documentElement.style.overflow = disable ? 'hidden' : 'auto'
-  }, [])
-
+  // disable body scroll only when mobile drawer is open
   useEffect(() => {
-    toggleBodyScroll(isOpen)
-    return () => toggleBodyScroll(false)
+    const lock = () => {
+      document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
+    }
+    const unlock = () => {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+
+    if (isOpen && window.innerWidth < 768) {
+      lock()
+    } else {
+      unlock()
+    }
+
+    const onResize = () => {
+      if (window.innerWidth >= 768) {
+        unlock()
+      }
+    }
+    window.addEventListener('resize', onResize)
+    return () => {
+      unlock()
+      window.removeEventListener('resize', onResize)
+    }
   }, [isOpen])
 
   useEffect(() => {
@@ -77,7 +97,6 @@ export const FilterButton = ({
 
       {isOpen && (
         <>
-          {/* mobile backdrop */}
           <div
             onClick={() => {
               setIsOpen(false)
@@ -88,21 +107,16 @@ export const FilterButton = ({
 
           <div
             className={`
-              /* mobile drawer */
               fixed inset-x-0 bottom-0
               bg-grey-900 p-4
               rounded-t-[24px]
               border-t border-grey-400
               flex flex-col items-start
-
-              /* desktop dropdown overlay, left-aligned */
               md:absolute md:left-0 md:bottom-auto md:mt-6
               md:w-[250px] md:p-2 md:rounded-[24px] md:border md:border-grey-400
-
               z-50
             `}
           >
-            {/* header only on mobile */}
             <div className='w-full flex items-center justify-between mb-4 md:hidden'>
               <button
                 onClick={() => {
@@ -138,7 +152,6 @@ export const FilterButton = ({
                   className={`
                     w-full text-left flex justify-between items-center
                     text-gray-100 text-sm
-
                     ${
                       item.checked
                         ? 'rounded-[100px] bg-grey-700 py-3 px-3 md:rounded-none md:bg-transparent md:py-3 md:px-3 font-bold'

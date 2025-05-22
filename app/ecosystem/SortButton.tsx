@@ -15,13 +15,32 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
-  const toggleBodyScroll = useCallback((disable: boolean) => {
-    document.documentElement.style.overflow = disable ? 'hidden' : 'auto'
-  }, [])
-
   useEffect(() => {
-    toggleBodyScroll(isOpen)
-    return () => toggleBodyScroll(false)
+    const lock = () => {
+      document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
+    }
+    const unlock = () => {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+
+    if (isOpen && window.innerWidth < 768) {
+      lock()
+    } else {
+      unlock()
+    }
+
+    const onResize = () => {
+      if (window.innerWidth >= 768) {
+        unlock()
+      }
+    }
+    window.addEventListener('resize', onResize)
+    return () => {
+      unlock()
+      window.removeEventListener('resize', onResize)
+    }
   }, [isOpen])
 
   // close on outside click
