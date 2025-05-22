@@ -7,15 +7,22 @@ import React, {
   KeyboardEvent,
   useCallback
 } from 'react'
+import { Project } from '../../utils/airtable/ecosystem'
+import { ProjectCard } from './ProjectCard'
 
 type SearchProps = {
   search: string
   updateSearch: (newTerm: string) => void
+  featuredProjects?: Project[]
 }
 
 const TRENDING = ['Dev tools', 'Infrastructure', 'Gaming', 'Payments', 'NFTs']
 
-export const Search = ({ search, updateSearch }: SearchProps) => {
+export const Search = ({
+  search,
+  updateSearch,
+  featuredProjects
+}: SearchProps) => {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const drawerInputRef = useRef<HTMLInputElement>(null)
 
@@ -148,12 +155,8 @@ export const Search = ({ search, updateSearch }: SearchProps) => {
 
       {/* MOBILE DRAWER */}
       {drawerOpen && (
-        <div className='fixed inset-0 z-[1000] md:hidden flex'>
-          {/* <div
-            onClick={() => setDrawerOpen(false)}
-            className='absolute inset-0 bg-[rgba(0,0,0,0.8)]'
-          /> */}
-          <div className='relative inset-y-0 right-0 w-full bg-grey-900 p-4 transition-transform duration-300'>
+        <div className='fixed inset-0 z-[1000] md:hidden flex overflow-y-scroll bg-grey-900'>
+          <div className='relative inset-y-0 right-0 w-full p-4 transition-transform duration-300'>
             <button
               onClick={() => {
                 setDrawerOpen(false)
@@ -172,7 +175,6 @@ export const Search = ({ search, updateSearch }: SearchProps) => {
                   updateSearch(e.target.value)
                 }
                 onKeyDown={handleDrawerKey}
-                placeholder='What projects are you looking for?'
                 className='
                   w-full bg-transparent
                   border-[2px] border-grey-200 mt-[60px]
@@ -212,6 +214,18 @@ export const Search = ({ search, updateSearch }: SearchProps) => {
                 </button>
               ))}
             </div>
+            {featuredProjects?.length && (
+              <div className='mt-4 pb-10'>
+                <h3 className='text-[#EDEDED] font-bold px-[13px] pt-[13px] mb-[30px]'>
+                  Featured projects
+                </h3>
+                <div className='flex flex-col gap-4'>
+                  {featuredProjects.map(p => (
+                    <ProjectCard {...p} hideLogo key={p.Project} />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}

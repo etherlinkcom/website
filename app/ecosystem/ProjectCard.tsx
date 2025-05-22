@@ -16,6 +16,7 @@ export interface ProjectCardProps {
   Twitter?: string
   Website?: string
   Featured: boolean
+  hideLogo?: boolean
 }
 
 export const ProjectCard = ({
@@ -25,7 +26,8 @@ export const ProjectCard = ({
   Tags,
   Twitter,
   Website,
-  Featured
+  Featured,
+  hideLogo
 }: ProjectCardProps) => {
   return (
     <div
@@ -33,12 +35,16 @@ export const ProjectCard = ({
         focus:border focus:border-neonGreen-900 focus:bg-grey-500 hover:shadow-[0px_4px_52px_0px_rgba(0,0,0,0.41)]'
     >
       <div className='flex items-center gap-4'>
-        {Logo[0]?.url && (
-          <img
-            className='w-[60px] h-[60px] object-contain rounded-xl'
-            src={Logo[0].url}
-            alt={Project + ' Logo'}
-          />
+        {hideLogo ? (
+          <></>
+        ) : (
+          Logo[0]?.url && (
+            <img
+              className='w-[60px] h-[60px] object-contain rounded-xl'
+              src={Logo[0].url}
+              alt={Project + ' Logo'}
+            />
+          )
         )}
         <div className='flex flex-col gap-2'>
           <h1 className='font-semibold text-grey-50 text-2xl'>{Project}</h1>

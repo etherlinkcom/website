@@ -100,7 +100,11 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
   return (
     <>
       <Container className='mb-6 md:mb-14'>
-        <Search search={search} updateSearch={setSearch} />
+        <Search
+          search={search}
+          updateSearch={setSearch}
+          featuredProjects={projects.filter(p => p.Featured)}
+        />
       </Container>
       <div className='bg-grey-800 rounded-tl-[60px] rounded-tr-[60px] py-8 md:py-12'>
         <Container>
