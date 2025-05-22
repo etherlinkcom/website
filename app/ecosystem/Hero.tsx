@@ -1,7 +1,63 @@
-import React from 'react'
+'use client'
+
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 
+const icons = [
+  {
+    origSrc: '/img/ecosystem/rarible.jpg',
+    altSrc: '/img/ecosystem/thirdweb.jpg',
+    position: 'absolute -top-6 left-[100px] -rotate-[18deg]'
+  },
+  {
+    origSrc: '/img/ecosystem/thirdweb.png',
+    altSrc: '/img/ecosystem/icon.png',
+    position: 'absolute -top-2 left-[200px] rotate-[28deg]'
+  },
+  {
+    origSrc: '/img/ecosystem/icon.png',
+    altSrc: '/img/ecosystem/rarible.jpg',
+    position: 'absolute -bottom-10 left-[140px] -rotate-[28deg]'
+  },
+  {
+    origSrc: '/img/ecosystem/animated-icons/icon1.png',
+    altSrc: '/img/ecosystem/thirdweb.jpg',
+    position: 'absolute -top-6 right-[220px] -rotate-[27deg]'
+  },
+  {
+    origSrc: '/img/ecosystem/thirdweb.png',
+    altSrc: '/img/defi/icons/Hanji.svg',
+    position: 'absolute -top-2 right-[120px] rotate-[28deg]'
+  },
+  {
+    origSrc: '/img/ecosystem/superlend.jpg',
+    altSrc: '/img/ecosystem/rarible.jpg',
+    position: 'absolute -bottom-10 right-[170px] rotate-[14deg]'
+  }
+]
+
 export const Hero = () => {
+  const [showAlt, setShowAlt] = useState(false)
+  const [phase, setPhase] = useState<'idle' | 'shrinking' | 'growing'>('idle')
+
+  useEffect(() => {
+    let t1: number, t2: number
+
+    function cycle() {
+      setPhase('shrinking')
+      t1 = window.setTimeout(() => {
+        setShowAlt(v => !v)
+        setPhase('growing')
+        t2 = window.setTimeout(cycle, 500)
+      }, 1000)
+    }
+
+    cycle()
+    return () => {
+      clearTimeout(t1)
+      clearTimeout(t2)
+    }
+  }, [])
   return (
     <div className='flex flex-col justify-center mx-auto px-8'>
       <nav className='flex text-sm text-grey-100 mb-6 space-x-4 md:hidden'>
@@ -13,9 +69,28 @@ export const Hero = () => {
         <span>&gt;</span>
         <span>Ecosystem</span>
       </nav>
-      <h1 className='text-[32px] md:text-[35px] text-start md:text-center font-bold mb-2 text-neonGreen-50'>
-        Discover, Build & Trade on Etherlink
-      </h1>
+
+      <div className='relative mt-4'>
+        {icons.map(({ origSrc, altSrc, position }, i) => (
+          <img
+            key={i}
+            src={showAlt ? altSrc : origSrc}
+            alt=''
+            className={`
+            hidden xl:block
+            ${position}
+            w-10 h-10 rounded-lg
+            transform
+            transition-transform duration-950 ease-in-out
+            ${phase === 'shrinking' ? 'scale-0' : 'scale-100'}
+          `}
+          />
+        ))}
+
+        <h1 className='text-[32px] md:text-[35px] text-start md:text-center font-bold mb-2 text-neonGreen-50'>
+          Discover, Build & Trade on Etherlink
+        </h1>
+      </div>
       <p className='hidden md:block text-[23px] text-center text-white-700 -tracking-[0.46px]'>
         A growing ecosystem of innovative projects, from DeFi to gaming and
         beyond.
