@@ -23,7 +23,14 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
 
   useEffect(() => {
     const q = params.get('search') ?? ''
+    const fParam = params.get('filters')
+    const f = fParam
+      ? (fParam.split(',') as TagKeys[]).filter(t => TAGS_MAP[t])
+      : []
+    const s = params.get('sort')
     setSearch(q)
+    setSelectedTags(f)
+    setSortOrder(s === 'asc' || s === 'desc' || s === 'featured' ? s : null)
     setInited(true)
   }, [params])
 
@@ -31,10 +38,12 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
     if (!inited) return
     const sp = new URLSearchParams()
     if (search) sp.set('search', search)
+    if (selectedTags.length) sp.set('filters', selectedTags.join(','))
+    if (sortOrder) sp.set('sort', sortOrder)
     router.replace(`/ecosystem${sp.toString() ? `?${sp.toString()}` : ''}`, {
       scroll: false
     })
-  }, [search, inited, router])
+  }, [search, selectedTags, sortOrder, inited, router])
 
   const searched = useMemo(() => {
     if (!search.trim()) return projects
@@ -55,7 +64,7 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
   const sorted = useMemo(() => {
     let arr = [...filtered]
     if (sortOrder === 'featured') {
-      arr = arr.sort((a, b) => {
+      arr.sort((a, b) => {
         if (a.Featured === b.Featured) return a.Project.localeCompare(b.Project)
         return a.Featured ? -1 : 1
       })

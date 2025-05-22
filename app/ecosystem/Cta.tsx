@@ -9,17 +9,17 @@ export const Cta = () => {
     >
       <div className='flex-grow text-left'>
         <h2 className='text-white-50 text-[35px] font-bold -tracking-[0.7px]'>
-          Tools for every stage of development
+          Make money with DeFi on Etherlink
         </h2>
         <p className='text-lg -tracking-[0.36px] text-grey-50'>
-          Start building on etherlink
+          Grow your portfolio with simple DeFi strategies for every risk level.
         </p>
       </div>
 
       <PrimaryButton
         className='text-grey-700 hover:bg-newGreen'
         text='Learn more'
-        href=''
+        href='/defi'
         icon={<img src='/img/ecosystem/snake.svg' alt='icon' />}
       />
     </div>
