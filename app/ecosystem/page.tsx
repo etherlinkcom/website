@@ -16,29 +16,29 @@ const Ecosystem = async () => {
   const rawProjects: RawProject[] = airtableData?.records || []
 
   const recordsToUpdate: RawProjectStatus[] = []
-  const updatedProjects: RawProject[] = []
+  const updatedProjects: RawProject[] = rawProjects
 
-  for (const rawProject of rawProjects) {
-    const { Website } = rawProject.fields
-    const isReachableStatus = await checkUrlStatus([Website])
+  // for (const rawProject of rawProjects) {
+  //   const { Website } = rawProject.fields
+  //   const isReachableStatus = await checkUrlStatus([Website])
 
-    recordsToUpdate.push({
-      id: rawProject.id,
-      fields: {
-        Status:
-          isReachableStatus[0] || rawProject.fields.bypass_url_check
-            ? 'active'
-            : 'inactive'
-      }
-    })
+  //   recordsToUpdate.push({
+  //     id: rawProject.id,
+  //     fields: {
+  //       Status:
+  //         isReachableStatus[0] || rawProject.fields.bypass_url_check
+  //           ? 'active'
+  //           : 'inactive'
+  //     }
+  //   })
 
-    if (
-      (isReachableStatus[0] || rawProject.fields.bypass_url_check) &&
-      rawProject.fields.approval_status === 'approved'
-    ) {
-      updatedProjects.push(rawProject)
-    }
-  }
+  //   if (
+  //     (isReachableStatus[0] || rawProject.fields.bypass_url_check) &&
+  //     rawProject.fields.approval_status === 'approved'
+  //   ) {
+  //     updatedProjects.push(rawProject)
+  //   }
+  // }
 
   // await updateAirtableRecords(recordsToUpdate)
 

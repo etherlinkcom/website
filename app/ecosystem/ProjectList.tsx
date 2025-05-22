@@ -30,28 +30,30 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
   }, [filteredProjects, sortOrder])
 
   return (
-    <Container>
-      <div className='flex items-center justify-between mb-8'>
-        <h1 className='text-[23px] md:text-[35px] font-bold text-white-50'>
-          All Projects
-        </h1>
-        <div className='relative flex gap-[12px] md:gap-[10px]'>
-          <FilterButton
-            selected={selectedTags}
-            onSelect={setSelectedTags}
-            onOpenChange={setFilterOpen}
-          />
-          <div className={`${filterOpen ? 'hidden' : 'block'} md:block`}>
-            <SortButton selected={sortOrder} onSelect={setSortOrder} />
+    <div className='bg-grey-800 rounded-tl-[60px] rounded-tr-[60px] py-8 md:py-12'>
+      <Container>
+        <div className='flex items-center justify-between mb-8 '>
+          <h1 className='text-[23px] md:text-[35px] font-bold text-white-50'>
+            All Projects
+          </h1>
+          <div className='relative flex gap-[12px] md:gap-[10px]'>
+            <FilterButton
+              selected={selectedTags}
+              onSelect={setSelectedTags}
+              onOpenChange={setFilterOpen}
+            />
+            <div className={`${filterOpen ? 'hidden' : 'block'} md:block`}>
+              <SortButton selected={sortOrder} onSelect={setSortOrder} />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mb-8'>
-        {sortedProjects.map((p, index) => (
-          <ProjectCard {...p} key={index} />
-        ))}
-      </div>
-    </Container>
+        <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mb-8'>
+          {sortedProjects.map((p, index) => (
+            <ProjectCard {...p} key={index} />
+          ))}
+        </div>
+      </Container>
+    </div>
   )
 }
