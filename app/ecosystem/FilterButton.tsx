@@ -154,8 +154,8 @@ export const FilterButton = ({
                     text-gray-100 text-sm
                     ${
                       item.checked
-                        ? 'rounded-[100px] bg-grey-700 py-3 px-3 md:rounded-none md:bg-transparent md:py-3 md:px-3 font-bold'
-                        : 'py-3 px-3'
+                        ? 'rounded-[100px] bg-grey-700 py-2.5 px-3 md:rounded-none md:bg-transparent md:py-3 md:px-3 font-bold'
+                        : 'py-2.5 px-3'
                     }
                   `}
                 >
