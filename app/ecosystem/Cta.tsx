@@ -12,7 +12,7 @@ export const Cta = () => {
         src='/img/ecosystem/Banner SVG top.svg'
         alt='bg img'
       />
-      <div className='flex-grow text-left'>
+      <div className='text-left'>
         <h2 className='text-white-50 text-[35px] font-bold -tracking-[0.7px]'>
           Make money with DeFi on Etherlink
         </h2>
@@ -22,7 +22,7 @@ export const Cta = () => {
       </div>
 
       <PrimaryButton
-        className='text-grey-700 hover:bg-newGreen'
+        className='text-grey-700 hover:bg-newGreen flex-shrink-0'
         text='Learn more'
         href='/defi'
         icon={<img src='/img/ecosystem/snake.svg' alt='icon' />}
