@@ -71,8 +71,6 @@ export const Hero = () => {
           <span>Home</span>
         </Link>
         <span>&gt;</span>
-        <span>Use</span>
-        <span>&gt;</span>
         <span>Ecosystem</span>
       </nav>
 
