@@ -40,7 +40,7 @@ export const ProjectCard = ({
         ) : (
           Logo[0]?.url && (
             <img
-              className='w-[60px] h-[60px] object-contain rounded-xl'
+              className='w-[60px] h-[60px] object-contain rounded-xl self-start'
               src={Logo[0].url}
               alt={Project + ' Logo'}
             />
