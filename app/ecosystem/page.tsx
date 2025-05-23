@@ -16,7 +16,7 @@ const Ecosystem = async () => {
   const rawProjects: RawProject[] = airtableData?.records || []
 
   const recordsToUpdate: RawProjectStatus[] = []
-  const updatedProjects: RawProject[] = airtableData
+  const updatedProjects: RawProject[] = []
 
   for (const rawProject of rawProjects) {
     const { Website } = rawProject.fields
