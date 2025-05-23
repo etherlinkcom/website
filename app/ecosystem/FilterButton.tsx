@@ -124,7 +124,7 @@ export const FilterButton = ({
                   onOpenChange?.(false)
                 }}
               >
-                <span className='block w-6 h-6'>&#8592;</span>
+                <span className='block w-4 h-4'>&#8592;</span>
               </button>
               <h2 className='text-sm font-semibold text-grey-100 -tracking-[0.28px]'>
                 Project filters
@@ -135,7 +135,7 @@ export const FilterButton = ({
                   onOpenChange?.(false)
                 }}
               >
-                <span className='block w-6 h-6'>×</span>
+                <span className='block w-4 h-4'>×</span>
               </button>
             </div>
 
