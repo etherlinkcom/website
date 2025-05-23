@@ -108,11 +108,11 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
       </Container>
       <div className='bg-grey-800 rounded-tl-[60px] rounded-tr-[60px] py-8 md:py-12'>
         <Container>
-          <div className='flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4'>
+          <div className='flex items-center justify-between mb-4 gap-4'>
             <h1 className='text-[23px] md:text-[35px] font-bold text-white-50'>
               All Projects
             </h1>
-            <div className='flex gap-[12px] md:gap-[10px]'>
+            <div className='flex items-center gap-[12px] md:gap-[10px]'>
               <FilterButton
                 selected={selectedTags}
                 onSelect={setSelectedTags}
