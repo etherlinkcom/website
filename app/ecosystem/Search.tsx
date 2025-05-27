@@ -5,25 +5,30 @@ import React, {
   useEffect,
   useRef,
   KeyboardEvent,
-  useCallback
+  useCallback,
+  Dispatch,
+  SetStateAction
 } from 'react'
-import { Project } from '../../utils/airtable/ecosystem'
+import { Project, TagKeys, TAGS_MAP } from '../../utils/airtable/ecosystem'
 import { ProjectCard } from './ProjectCard'
 
 type SearchProps = {
   search: string
   updateSearch: (newTerm: string) => void
   featuredProjects?: Project[]
+  setSelectedTags: Dispatch<SetStateAction<TagKeys[]>>
 }
 
-const TRENDING = ['Dev tools', 'Infrastructure', 'Gaming', 'Payments', 'NFTs']
+const TRENDING: TagKeys[] = ['dev-tools', 'infra', 'gaming', 'payments', 'nfts']
 
 export const Search = ({
   search,
   updateSearch,
-  featuredProjects
+  featuredProjects,
+  setSelectedTags
 }: SearchProps) => {
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const [currentTrending, setCurrentTrending] = useState<TagKeys | null>(null)
   const drawerInputRef = useRef<HTMLInputElement>(null)
 
   const toggleBodyScroll = useCallback((disable: boolean) => {
@@ -57,11 +62,22 @@ export const Search = ({
     }
   }
 
-  const handleTrendingClick = (term: string) => {
-    updateSearch(term)
+  const handleTrendingSelect = (tag: TagKeys) => {
+    if (currentTrending === tag) {
+      return
+    }
+    const label = TAGS_MAP[tag]
+    updateSearch(label)
+    setSelectedTags(prev => {
+      const withoutOld = currentTrending
+        ? prev.filter(t => t !== currentTrending)
+        : prev
+
+      return withoutOld.includes(tag) ? withoutOld : [...withoutOld, tag]
+    })
+    setCurrentTrending(tag)
     setDrawerOpen(false)
   }
-
   return (
     <>
       {/* MOBILE: readonly trigger */}
@@ -80,20 +96,29 @@ export const Search = ({
           '
         />
         <div className='absolute inset-y-0 right-6 flex items-center pointer-events-none'>
-          <svg
-            className='w-5 h-5 text-gray-400'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
-          >
-            <path
-              strokeWidth={2}
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 
-                 103.5 3.5a7.5 7.5 0 0013.15 13.15z'
+          {search ? (
+            <img
+              className='w-5 h-5 hover:cursor-pointer'
+              src='/img/icons/close.svg'
+              alt='close icon'
+              onClick={() => updateSearch('')}
             />
-          </svg>
+          ) : (
+            <svg
+              className='w-5 h-5 text-gray-400'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeWidth={2}
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M21 21l-4.35-4.35m0 0A7.5 7.5 0
+                 103.5 3.5a7.5 7.5 0 0013.15 13.15z'
+              />
+            </svg>
+          )}
         </div>
       </div>
 
@@ -115,21 +140,30 @@ export const Search = ({
               focus:outline-none focus:border-grey-200 focus:ring-0 focus-visible:ring-0
             '
           />
-          <div className='absolute inset-y-0 right-6 flex items-center pointer-events-none'>
-            <svg
-              className='w-5 h-5 text-gray-400'
-              fill='none'
-              stroke='currentColor'
-              viewBox='0 0 24 24'
-            >
-              <path
-                strokeWidth={2}
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 
-                   103.5 3.5a7.5 7.5 0 0013.15 13.15z'
+          <div className='absolute inset-y-0 right-6 flex items-center'>
+            {search ? (
+              <img
+                className='w-5 h-5 hover:cursor-pointer'
+                src='/img/icons/close.svg'
+                alt='close icon'
+                onClick={() => updateSearch('')}
               />
-            </svg>
+            ) : (
+              <svg
+                className='w-5 h-5 text-gray-400'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+              >
+                <path
+                  strokeWidth={2}
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  d='M21 21l-4.35-4.35m0 0A7.5 7.5 0
+                 103.5 3.5a7.5 7.5 0 0013.15 13.15z'
+                />
+              </svg>
+            )}
           </div>
         </div>
         <div className='flex gap-10 items-center mt-4 justify-center'>
@@ -137,16 +171,16 @@ export const Search = ({
             Trending searches
           </h3>
           <div className='flex flex-wrap gap-3'>
-            {TRENDING.map(term => (
+            {TRENDING.map(tag => (
               <button
-                key={term}
-                onClick={() => updateSearch(term)}
+                key={tag}
+                onClick={() => handleTrendingSelect(tag)}
                 className='
                   text-sm text-grey-50 px-4 py-3
                   rounded-full bg-grey-400 hover:bg-grey-500 transition
                 '
               >
-                {term}
+                {TAGS_MAP[tag]}
               </button>
             ))}
           </div>
@@ -188,34 +222,42 @@ export const Search = ({
                   focus:outline-none focus:border-grey-200 focus:ring-0 focus-visible:ring-0
                 '
               />
-              <div className='absolute inset-y-0 right-6 top-14 flex items-center pointer-events-none'>
-                <svg
-                  className='w-5 h-5 text-gray-400'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeWidth={2}
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 
-                       103.5 3.5a7.5 7.5 0 0013.15 13.15z'
+              <div className='absolute inset-y-0 right-6 top-14 flex items-center'>
+                {search ? (
+                  <img
+                    className='w-5 h-5 hover:cursor-pointer'
+                    src='/img/icons/close.svg'
+                    alt='close icon'
+                    onClick={() => updateSearch('')}
                   />
-                </svg>
+                ) : (
+                  <svg
+                    className='w-5 h-5 text-gray-400'
+                    fill='none'
+                    stroke='currentColor'
+                    viewBox='0 0 24 24'
+                  >
+                    <path
+                      strokeWidth={2}
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 3.5a7.5 7.5 0 0013.15 13.15z'
+                    />
+                  </svg>
+                )}
               </div>
             </div>
             <h3 className='text-[#EDEDED] font-bold px-[13px] py-[13px]'>
               Trending searches
             </h3>
             <div className='flex flex-col flex-wrap gap-3'>
-              {TRENDING.map(term => (
+              {TRENDING.map(tag => (
                 <button
-                  key={term}
-                  onClick={() => handleTrendingClick(term)}
+                  key={tag}
+                  onClick={() => handleTrendingSelect(tag)}
                   className='text-[#EDEDED] px-[13px] py-[13px] text-start text-sm'
                 >
-                  {term}
+                  {TAGS_MAP[tag]}
                 </button>
               ))}
             </div>
