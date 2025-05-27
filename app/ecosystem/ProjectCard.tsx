@@ -31,7 +31,7 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div
-      className='flex flex-col bg-grey-600 rounded-[28px] p-6 gap-4 justify-between border border-grey-500 backdrop-blur-md 
+      className='flex flex-col bg-grey-600 rounded-[28px] p-6 gap-4 border border-grey-500 backdrop-blur-md 
         focus:border focus:border-neonGreen-900 focus:bg-grey-500 hover:shadow-[0px_4px_52px_0px_rgba(0,0,0,0.41)]'
     >
       <div className='flex items-center gap-4'>
@@ -66,7 +66,7 @@ export const ProjectCard = ({
         </div>
       </div>
       <p className='w-full text-black-100'>{Description}</p>
-      <div className='flex items-center justify-between'>
+      <div className='flex items-end justify-between flex-1'>
         <div className='flex items-center gap-4'>
           {!!Twitter && (
             <Link href={Twitter} target='_blank'>

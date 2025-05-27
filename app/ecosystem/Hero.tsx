@@ -37,7 +37,7 @@ const icons = [
 ]
 
 export const Hero = () => {
-  const words = ['Discover', 'Build']
+  const words = ['Discover', 'Build', 'Trade']
   const [showAlt, setShowAlt] = useState(false)
   const [phase, setPhase] = useState<'shrinking' | 'growing'>('growing')
   const [highlight, setHighlight] = useState(0)
@@ -48,13 +48,12 @@ export const Hero = () => {
     function cycle() {
       setPhase('shrinking')
       t1 = window.setTimeout(() => {
-        // swap icons + move highlight
         setShowAlt(v => !v)
         setHighlight(i => (i + 1) % words.length)
         setPhase('growing')
-        // wait 1s before next cycle
+
         t2 = window.setTimeout(cycle, 1000)
-      }, 1000) // 1s shrink
+      }, 1000)
     }
 
     cycle()
@@ -93,16 +92,19 @@ export const Hero = () => {
 
         <h1 className='text-[32px] md:text-[35px] text-start md:text-center font-bold mb-2'>
           {words.map((w, i) => (
-            <span
-              key={w}
-              className={`${
-                i === highlight ? 'xl:text-neonGreen-600' : 'text-neonGreen-50'
-              } ${i < words.length - 1 ? 'mr-2' : ''}`}
-            >
-              {w}
+            <span key={w} className={`${i < words.length - 1 ? 'mr-2' : ''}`}>
+              {i === 2 && <span className='text-neonGreen-50'>&amp;</span>}{' '}
+              <span
+                className={`${
+                  i === highlight
+                    ? 'xl:text-neonGreen-600'
+                    : 'text-neonGreen-50'
+                }`}
+              >
+                {w}
+              </span>
             </span>
           ))}{' '}
-          & Trade{' '}
           <span className='text-neonGreen-50 xl:text-neonGreen-600'>
             on Etherlink
           </span>

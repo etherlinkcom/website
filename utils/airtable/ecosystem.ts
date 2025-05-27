@@ -86,7 +86,8 @@ export const fetchAirtableData = async (filterAndSort: string = '') => {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
-    }
+    },
+    next: { revalidate: 100 }
   }
 
   const responseAirtable = await fetch(url, options)

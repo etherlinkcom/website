@@ -65,7 +65,7 @@ export const Search = ({
   return (
     <>
       {/* MOBILE: readonly trigger */}
-      <div className='relative w-full md:hidden my-[20px]'>
+      <div className='relative w-full md:hidden my-[20px] max-w-[786px]'>
         <input
           readOnly
           value={search}
@@ -98,7 +98,7 @@ export const Search = ({
       </div>
 
       {/* DESKTOP: inline input + trending */}
-      <div className='hidden md:block'>
+      <div className='hidden md:block max-w-[786px] mx-auto'>
         <div className='relative w-full'>
           <input
             type='text'
@@ -132,7 +132,7 @@ export const Search = ({
             </svg>
           </div>
         </div>
-        <div className='flex gap-10 items-center mt-4'>
+        <div className='flex gap-10 items-center mt-4 justify-center'>
           <h3 className='text-grey-100 text-lg font-semibold'>
             Trending searches
           </h3>

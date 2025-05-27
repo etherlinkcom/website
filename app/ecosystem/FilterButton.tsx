@@ -91,6 +91,17 @@ export const FilterButton = ({
           <span className='hidden md:block relative z-10 text-grey-500 font-semibold -tracking-[0.32px]'>
             Project filters
           </span>
+          {selected.length > 0 && (
+            <>
+              <span className='text-grey-500 font-semibold -tracking-[0.32px]'>
+                {selected.length && '• '}
+              </span>
+              <span className='text-grey-500 font-semibold -tracking-[0.32px]'>
+                {selected.length && selected.length}
+              </span>
+            </>
+          )}
+
           <img src='/img/ecosystem/BiSliderAlt.svg' alt='filter icon' />
         </div>
       </button>
