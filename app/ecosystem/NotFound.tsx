@@ -3,16 +3,16 @@ import Container from '../components/container'
 
 export const NotFound = ({ search }: { search: string }) => {
   return (
-    <Container className='relative max-w-[768px] mx-auto text-center mt-24'>
+    <Container className='relative text-center mt-24'>
       <div className='relative flex justify-center mb-6 z-0'>
         <img
-          src='/img/home/gradient-bg.svg'
-          className='absolute inset-0 -translate-y-[100px] object-cover pointer-events-none'
+          src='/img/ecosystem/bg-grid.svg'
+          className='hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none'
           alt='gradient bg'
           draggable={false}
         />
         <img
-          className='object-contain'
+          className='object-contain max-w-[215px]'
           src='/img/ecosystem/Etherlink-Globe 1.png'
           alt='globe'
           draggable={false}
