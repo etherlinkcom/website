@@ -25,7 +25,6 @@ export const Cta = () => {
         className='text-grey-700 hover:bg-newGreen flex-shrink-0'
         text='Learn more'
         href='/defi'
-        icon={<img src='/img/ecosystem/snake.svg' alt='icon' />}
       />
       <img
         className='absolute bottom-0 left-0'

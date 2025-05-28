@@ -50,14 +50,14 @@ export const ProjectCard = ({
           <h1 className='font-semibold text-grey-50 text-2xl'>{Project}</h1>
           <div className='flex items-center gap-2 flex-wrap'>
             {Featured && (
-              <div className='bg-neonGreen-800 text-white-50 rounded-[44px] text-white text-xs p-1 text-center'>
+              <div className='bg-neonGreen-800 text-white-50 rounded-[44px] text-white text-xs py-1 px-2 text-center'>
                 Featured
               </div>
             )}
             {Tags.map((category, index) => (
               <div
                 key={index}
-                className='bg-grey-400 text-white-50 rounded-[44px] text-white text-xs p-1 text-center'
+                className='bg-grey-400 text-white-50 rounded-[44px] text-white text-xs py-1 px-2 text-center'
               >
                 {TAGS_MAP[category]}
               </div>
@@ -68,21 +68,21 @@ export const ProjectCard = ({
       <p className='w-full text-black-100'>{Description}</p>
       <div className='flex items-end justify-between flex-1'>
         <div className='flex items-center gap-4'>
-          {!!Twitter && (
-            <Link href={Twitter} target='_blank'>
-              <img
-                className='rounded-lg p-2 bg-grey-900 hover:bg-[#373737]'
-                src='/img/ecosystem/X.svg'
-                alt='twitter'
-              />
-            </Link>
-          )}
           {!!Website && (
             <Link href={Website} target='_blank'>
               <img
                 className='rounded-lg p-2 bg-grey-900 hover:bg-[#373737]'
-                src='/img/ecosystem/external-icon.svg'
+                src='/img/ecosystem/website.svg'
                 alt='website'
+              />
+            </Link>
+          )}
+          {!!Twitter && (
+            <Link href={Twitter} target='_blank'>
+              <img
+                className='rounded-lg p-2 bg-grey-900 hover:bg-[#373737]'
+                src='/img/ecosystem/X - White.svg'
+                alt='twitter'
               />
             </Link>
           )}

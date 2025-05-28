@@ -42,7 +42,7 @@ export const Hero = () => {
   const [phase, setPhase] = useState<'shrinking' | 'growing'>('growing')
   const [highlight, setHighlight] = useState(0)
 
-  const ANIM_DURATION = 600
+  const ANIM_DURATION = 800
 
   useEffect(() => {
     let shrinkTimeout: number, nextCycleTimeout: number
