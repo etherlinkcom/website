@@ -67,14 +67,6 @@ export const Hero = () => {
 
   return (
     <div className='flex flex-col justify-center mx-auto px-8'>
-      <nav className='flex text-sm text-grey-100 mb-6 space-x-4 md:hidden'>
-        <Link href='/'>
-          <span>Home</span>
-        </Link>
-        <span>&gt;</span>
-        <span>Ecosystem</span>
-      </nav>
-
       <div className='relative mt-4'>
         {icons.map(({ origSrc, altSrc, position }, i) => (
           <img
