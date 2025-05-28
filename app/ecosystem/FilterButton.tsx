@@ -84,15 +84,21 @@ export const FilterButton = ({
         `}
         aria-expanded={isOpen}
       >
-        <div className='flex justify-center gap-2 md:gap-2.5 items-center'>
-          <span className='block md:hidden relative z-10 text-grey-500 font-semibold -tracking-[0.32px]'>
+        <div className='flex justify-center items-center'>
+          <span
+            className={`block md:hidden relative z-10 text-grey-500 font-semibold -tracking-[0.32px] ${selected.length > 0 ? '' : 'mr-2'}`}
+          >
             Filters
           </span>
-          <span className='hidden md:block relative z-10 text-grey-500 font-semibold -tracking-[0.32px]'>
+          <span
+            className={`hidden md:block relative z-10 text-grey-500 font-semibold -tracking-[0.32px] ${selected.length > 0 ? '' : 'mr-2'}`}
+          >
             Project filters
           </span>
           {selected.length > 0 && (
-            <span className='text-grey-500 font-semibold -tracking-[0.32px] w-7'>
+            <span
+              className={`text-grey-500 font-semibold -tracking-[0.32px] w-7 ${selected.length > 0 ? 'mr-1 md:mr-2' : ''}`}
+            >
               {selected.length && `• ${selected.length}`}
             </span>
           )}
