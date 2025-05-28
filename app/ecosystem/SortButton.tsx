@@ -108,7 +108,10 @@ export const SortButton = ({ selected, onSelect }: SortButtonProps) => {
               {SORT_OPTIONS.map(opt => (
                 <button
                   key={opt.value}
-                  onClick={() => onSelect(opt.value)}
+                  onClick={() => {
+                    onSelect(opt.value)
+                    setIsOpen(false)
+                  }}
                   className={`
                     w-full text-left flex justify-between items-center
                     text-gray-100 text-sm
