@@ -84,7 +84,7 @@ export const Hero = () => {
               ${position}
               w-10 h-10 rounded-lg
               transform
-              transition-transform duration-1000 ease-in-out
+              transition-transform duration-950 ease-in-out
               ${phase === 'shrinking' ? 'scale-0' : 'scale-100'}
             `}
           />
