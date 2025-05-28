@@ -33,7 +33,7 @@ export const Footer = () => {
           w-full h-full bg-[url('/img/home/gradient.svg')] bg-no-repeat bg-cover bg-top"
       />
       {/* top */}
-      <div className='flex flex-col md:flex-row justify-between md:items-end border-b border-[#515151] pb-10 md:pb-6 z-50'>
+      <div className='flex flex-col md:flex-row justify-between md:items-end border-b border-[#515151] pb-10 md:pb-6 z-0'>
         <div className='flex flex-col justify-start items-center md:items-start'>
           <EtherlinkLogo />
           <div className='flex flex-col md:flex-row mt-6 text-center gap-6 md:gap-0 hover:cursor-pointer'>
@@ -85,7 +85,7 @@ export const Footer = () => {
         </div>
       </div>
       {/* bottom */}
-      <div className='flex items-center flex-col-reverse md:flex-row justify-between pt-10 md:pt-6 gap-6 z-50'>
+      <div className='flex items-center flex-col-reverse md:flex-row justify-between pt-10 md:pt-6 gap-6 z-0'>
         <p className='text-[#9B9B9B] text-sm text-center max-w-64 md:max-w-full mx-auto md:mx-0'>
           © Copyright Tezos Foundation 2024. All Rights Reserved.
         </p>

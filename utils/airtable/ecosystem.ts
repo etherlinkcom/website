@@ -31,31 +31,23 @@ export interface Project {
   Twitter: string
   rank: number
   bypass_url_check: boolean
+  Featured: boolean
 }
 
 export const TAGS_MAP: Record<string, string> = {
   infra: 'Infrastructure',
-  bridge: 'Bridges',
   'dev-tools': 'Dev Tools',
-  'etherlink-infra': 'Etherlink Infra',
-  'data-science': 'Data Science',
-  'etherlink-dev-sdk': 'Etherlink Development SDK',
-  oracle: 'Oracles',
   defi: 'DeFi',
   gaming: 'Gaming',
-  payment: 'Payments',
-  dapp: 'DApps',
-  gamefi: 'GameFi',
+  payments: 'Payments',
   nfts: 'NFTs',
   social: 'Social',
   'ecosystem-partner': 'Ecosystem Partners',
   launchpad: 'Launchpads',
-  rwa: 'Real World Assets',
   wallet: 'Wallets',
   kyc: 'KYC',
   health: 'Healthcare',
-  community: 'Community',
-  payments: 'Payments'
+  community: 'Community'
 }
 
 export type TagKeys = keyof typeof TAGS_MAP
@@ -94,7 +86,8 @@ export const fetchAirtableData = async (filterAndSort: string = '') => {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
-    }
+    },
+    next: { revalidate: 100 }
   }
 
   const responseAirtable = await fetch(url, options)
@@ -160,6 +153,7 @@ export const mapToProject = (rawProject: RawProject): Project => {
     Status: fields.Status,
     Twitter: fields.Twitter,
     rank: fields.rank,
-    bypass_url_check: fields.bypass_url_check
+    bypass_url_check: fields.bypass_url_check,
+    Featured: fields.Featured
   }
 }

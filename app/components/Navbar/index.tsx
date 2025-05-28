@@ -21,7 +21,7 @@ export const Navbar = () => {
   const handleClose = () => setIsOpen(false)
 
   return (
-    <Container className='relative flex justify-between items-center pt-8 lg:pt-[36px] z-50 mx-auto'>
+    <Container className='relative flex justify-between items-center pt-8 lg:pt-[36px] z-30 mx-auto'>
       <div className='flex items-center'>
         <div className='flex items-center gap-2 shrink-0'>
           <EtherlinkLogo />
