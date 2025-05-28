@@ -97,7 +97,7 @@ export const FilterButton = ({
           </span>
           {selected.length > 0 && (
             <span
-              className={`text-grey-500 font-semibold -tracking-[0.32px] w-7 ${selected.length > 0 ? 'mr-1 md:mr-2' : ''}`}
+              className={`text-grey-500 font-semibold -tracking-[0.32px] w-10 ${selected.length > 0 ? 'mr-1 md:mr-2' : ''}`}
             >
               {selected.length && `• ${selected.length}`}
             </span>

@@ -43,7 +43,7 @@ const Ecosystem = async () => {
   await updateAirtableRecords(recordsToUpdate)
 
   return (
-    <div className='pt-28 min-h-[70vh]'>
+    <div className='pt-6 md:pt-28 min-h-[70vh]'>
       <div className='mb-[20px] md:mb-[60px]'>
         <Hero />
       </div>
