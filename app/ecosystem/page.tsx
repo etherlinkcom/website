@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title:
     'Etherlink Ecosystem | Discover dApps and integrations across DeFi, Gaming and NFTs',
-  description: ''
+  description: 'Discover dApps and integrations across DeFi, Gaming and NFTs'
 }
 
 import {
