@@ -42,24 +42,26 @@ export const Hero = () => {
   const [phase, setPhase] = useState<'shrinking' | 'growing'>('growing')
   const [highlight, setHighlight] = useState(0)
 
+  const ANIM_DURATION = 600
+
   useEffect(() => {
-    let t1: number, t2: number
+    let shrinkTimeout: number, nextCycleTimeout: number
 
     function cycle() {
       setPhase('shrinking')
-      t1 = window.setTimeout(() => {
+      shrinkTimeout = window.setTimeout(() => {
         setShowAlt(v => !v)
         setHighlight(i => (i + 1) % words.length)
         setPhase('growing')
 
-        t2 = window.setTimeout(cycle, 1000)
-      }, 1000)
+        nextCycleTimeout = window.setTimeout(cycle, ANIM_DURATION)
+      }, ANIM_DURATION)
     }
 
     cycle()
     return () => {
-      clearTimeout(t1)
-      clearTimeout(t2)
+      clearTimeout(shrinkTimeout)
+      clearTimeout(nextCycleTimeout)
     }
   }, [words.length])
 
@@ -84,7 +86,7 @@ export const Hero = () => {
               ${position}
               w-10 h-10 rounded-lg
               transform
-              transition-transform duration-950 ease-in-out
+              transition-transform duration-${ANIM_DURATION} ease-in-out
               ${phase === 'shrinking' ? 'scale-0' : 'scale-100'}
             `}
           />
