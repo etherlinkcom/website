@@ -70,6 +70,7 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
 
   const sorted = useMemo(() => {
     const arr = [...combined]
+
     if (sortOrder === 'featured') {
       arr.sort((a, b) => {
         if (a.Featured === b.Featured) return a.Project.localeCompare(b.Project)
@@ -80,8 +81,33 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
     } else if (sortOrder === 'desc') {
       arr.sort((a, b) => b.Project.localeCompare(a.Project))
     }
+
+    const term = search.trim().toLowerCase()
+    if (term.length > 0) {
+      const matchesSearch = (p: Project) =>
+        p.Project.toLowerCase().includes(term) ||
+        p.Description.toLowerCase().includes(term) ||
+        p.Tags.some(t => TAGS_MAP[t].toLowerCase().includes(term))
+
+      const searchMatches: Project[] = []
+      const tagMatchesOnly: Project[] = []
+
+      arr.forEach(p => {
+        if (matchesSearch(p)) {
+          searchMatches.push(p)
+        } else if (
+          selectedTags.length > 0 &&
+          p.Tags.some(t => selectedTags.includes(t))
+        ) {
+          tagMatchesOnly.push(p)
+        }
+      })
+
+      return [...searchMatches, ...tagMatchesOnly]
+    }
+
     return arr
-  }, [combined, sortOrder])
+  }, [combined, sortOrder, search, selectedTags])
 
   useEffect(() => {
     setVisibleCount(9)
