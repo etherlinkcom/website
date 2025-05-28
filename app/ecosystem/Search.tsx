@@ -37,12 +37,13 @@ export const Search = ({
 
   useEffect(() => {
     toggleBodyScroll(drawerOpen)
-    return () => toggleBodyScroll(false)
-  }, [drawerOpen])
 
-  useEffect(() => {
     if (drawerOpen) {
       drawerInputRef.current?.focus()
+    }
+
+    return () => {
+      toggleBodyScroll(false)
     }
   }, [drawerOpen])
 
