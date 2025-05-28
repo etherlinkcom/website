@@ -50,14 +50,14 @@ export const ProjectCard = ({
           <h1 className='font-semibold text-grey-50 text-2xl'>{Project}</h1>
           <div className='flex items-center gap-2 flex-wrap'>
             {Featured && (
-              <div className='bg-neonGreen-800 text-white-50 rounded-[44px] text-white text-xs p-2 text-center'>
+              <div className='bg-neonGreen-800 text-white-50 rounded-[44px] text-white text-xs p-1 text-center'>
                 Featured
               </div>
             )}
             {Tags.map((category, index) => (
               <div
                 key={index}
-                className='bg-grey-400 text-white-50 rounded-[44px] text-white text-xs p-2 text-center'
+                className='bg-grey-400 text-white-50 rounded-[44px] text-white text-xs p-1 text-center'
               >
                 {TAGS_MAP[category]}
               </div>
