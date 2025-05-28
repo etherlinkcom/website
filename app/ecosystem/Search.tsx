@@ -19,7 +19,7 @@ type SearchProps = {
   setSelectedTags: Dispatch<SetStateAction<TagKeys[]>>
 }
 
-const TRENDING: TagKeys[] = ['defi', 'dev-tools', 'infra', 'gaming', 'payments']
+const TRENDING: TagKeys[] = ['defi', 'dev-tools', 'infra']
 
 export const Search = ({
   search,

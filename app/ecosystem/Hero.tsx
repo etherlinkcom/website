@@ -86,7 +86,8 @@ export const Hero = () => {
 
         <h1 className='text-[32px] md:text-[35px] text-start md:text-center font-bold mb-2'>
           {words.map((w, i) => (
-            <span key={w} className={`${i < words.length - 1 ? 'mr-2' : ''}`}>
+            <span key={w}>
+              {i === 1 && <span className='text-neonGreen-50'>,</span>}{' '}
               {i === 2 && <span className='text-neonGreen-50'>&amp;</span>}{' '}
               <span
                 className={`${
