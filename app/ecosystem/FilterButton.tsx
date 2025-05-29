@@ -74,7 +74,7 @@ export const FilterButton = ({
   )
 
   return (
-    <div ref={ref} className='relative inline-block text-left z-30'>
+    <div ref={ref} className='relative inline-block text-left'>
       <button
         onClick={toggleOpen}
         className={`
