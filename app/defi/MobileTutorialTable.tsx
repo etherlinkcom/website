@@ -35,14 +35,14 @@ export const MobileTutorialTable = ({
 
   useEffect(() => {
     if (!emblaApi) return
-    const index = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)
-    if (index >= 0) {
-      emblaApi.scrollTo(index)
-    }
+    const strategyIndex = STRATEGIES_DATA.findIndex(
+      s => s.id === selectedStrategyId
+    )
+    if (strategyIndex >= 0) emblaApi.scrollTo(strategyIndex)
   }, [selectedStrategyId, emblaApi])
 
   const viewportRef = useRef<HTMLDivElement | null>(null)
-  const slideRefs = useRef<HTMLDivElement[]>([])
+  const slideRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     const root = viewportRef.current
@@ -50,25 +50,47 @@ export const MobileTutorialTable = ({
 
     const io = new IntersectionObserver(
       entries => {
-        // pick the entry with the greatest visibility that is intersecting
         const visible = entries
           .filter(e => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
-
         if (!visible) return
 
         const index = slideRefs.current.findIndex(el => el === visible.target)
-        const step = selectedStrategy.tutorials[index]?.step
-        if (step && step !== currentStep) setCurrentStep(step)
+
+        const lastTutorialIndex = selectedStrategy.tutorials.length - 1
+        if (index >= 0 && index <= lastTutorialIndex) {
+          const step = selectedStrategy.tutorials[index].step
+          if (step && step !== currentStep) {
+            setCurrentStep(step)
+          }
+          return
+        }
+
+        if (index === selectedStrategy.tutorials.length) {
+          const strategyIndex = STRATEGIES_DATA.findIndex(
+            s => s.id === selectedStrategyId
+          )
+          if (
+            strategyIndex >= 0 &&
+            strategyIndex < STRATEGIES_DATA.length - 1
+          ) {
+            const nextId = STRATEGIES_DATA[strategyIndex + 1].id
+            setSelectedStrategyId(nextId)
+          }
+        }
       },
       {
-        root, // observe relative to the scroll viewport
-        threshold: 0.6 // “in view” means at least 60 % visible
+        root, // observe relative to the scrollable div
+        threshold: 0.6 // “in view” = at least 60% visible
       }
     )
 
-    slideRefs.current.forEach(el => io.observe(el))
-    return () => io.disconnect()
+    slideRefs.current.forEach(el => {
+      if (el) io.observe(el)
+    })
+    return () => {
+      io.disconnect()
+    }
   }, [
     selectedStrategyId,
     selectedStrategy.tutorials,
@@ -127,20 +149,22 @@ export const MobileTutorialTable = ({
           />
         ))}
       </div>
-      {/* tutorial steps */}
+      {/* ── TUTORIAL STEPS (with sentinel) ──────────────────────────────────────── */}
       <div
         ref={viewportRef}
         key={selectedStrategyId}
-        className={`px-3 py-3 flex gap-2 overflow-x-auto snap-x snap-mandatory scroll-pl-3 border-b ${TABLE_BORDER_COLOR}`}
+        className={`
+          px-3 py-3
+          flex gap-2
+          overflow-x-auto snap-x snap-mandatory scroll-pl-3
+          border-b ${TABLE_BORDER_COLOR}
+        `}
       >
         {selectedStrategy.tutorials.map((tutorial, index) => (
           <div
             ref={el => {
-              if (el) {
-                slideRefs.current[index] = el // add on mount
-              } else {
-                delete slideRefs.current[index] // remove on unmount
-              }
+              if (el) slideRefs.current[index] = el
+              else delete slideRefs.current[index]
             }}
             className='w-[96%] shrink-0 snap-start'
             key={tutorial.title}
@@ -148,15 +172,20 @@ export const MobileTutorialTable = ({
             <TutorialStepCard currentStep={currentStep} {...tutorial} />
           </div>
         ))}
+        {/* Invisible sentinel—same dimensions, but no content */}
+        <div
+          ref={el => {
+            const sentinelIndex = selectedStrategy.tutorials.length
+            if (el) slideRefs.current[sentinelIndex] = el
+            else delete slideRefs.current[selectedStrategy.tutorials.length]
+          }}
+          className='w-[96%] shrink-0 snap-start'
+          aria-hidden='true'
+        />
       </div>
-      {/* projects */}
+      {/* ── PROJECTS ROW ─────────────────────────────────────────────────────────── */}
       <div className={`flex items-center justify-between py-3 px-6`}>
         <p className='font-semibold text-grey-100'>Projects</p>
-        {/* hide this for now */}
-        {/* <div className='flex items-center gap-1'>
-          <img className='h-6' src='/img/defi/p-mobile.jpg' alt='icons' />
-          <img src='/img/defi/chevron-down.svg' alt='arrow icon' />
-        </div> */}
         <div className={`flex items-center gap-2`}>
           {selectedStrategy.projectInvolved.map(p => (
             <Link href={p.link} target='_blank' key={p.name}>
@@ -169,14 +198,6 @@ export const MobileTutorialTable = ({
           ))}
         </div>
       </div>
-      {/* earning */}
-      {/* hide this for now */}
-      {/* <div className={`flex items-center justify-between py-3 px-6`}>
-        <p className='font-semibold text-grey-100'>Earning Potential</p>
-        <p className='font-semibold text-neonGreen-500'>
-          {selectedStrategy.earning}
-        </p>
-      </div> */}
     </div>
   )
 }
