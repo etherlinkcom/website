@@ -123,7 +123,7 @@ export const MobileTutorialTable = ({
       <div
         ref={viewportRef}
         key={selectedStrategyId}
-        className={`p-3 flex gap-2 overflow-auto border-b ${TABLE_BORDER_COLOR}`}
+        className={`px-3 py-3 flex gap-2 overflow-x-auto snap-x snap-mandatory scroll-pl-3 border-b ${TABLE_BORDER_COLOR}`}
       >
         {selectedStrategy.tutorials.map((tutorial, index) => (
           <div
@@ -134,7 +134,7 @@ export const MobileTutorialTable = ({
                 delete slideRefs.current[index] // remove on unmount
               }
             }}
-            className='w-[96%] shrink-0'
+            className='w-[96%] shrink-0 snap-start'
             key={tutorial.title}
           >
             <TutorialStepCard currentStep={currentStep} {...tutorial} />
