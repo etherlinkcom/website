@@ -90,6 +90,13 @@ export const DesktopTutorialTable = ({
     }
   }, [selectedStrategyId])
 
+  const currentStrategyIndex = STRATEGIES_DATA.findIndex(
+    s => s.id === selectedStrategyId
+  )
+  const hasNextStrategy =
+    currentStrategyIndex >= 0 &&
+    currentStrategyIndex < STRATEGIES_DATA.length - 1
+
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full hidden md:block`}
@@ -137,7 +144,6 @@ export const DesktopTutorialTable = ({
               />
             </div>
           </div>
-
           {/* ── Embla viewport for tutorial slides ───────────────────────────────── */}
           <div
             key={selectedStrategyId}
@@ -154,11 +160,12 @@ export const DesktopTutorialTable = ({
                 </div>
               ))}
 
-              {/* ── Invisible sentinel slide at index N ────────────────────────── */}
-              <div
-                className='embla__slide shrink-0 w-full'
-                aria-hidden='true'
-              />
+              {hasNextStrategy && (
+                <div
+                  className='embla__slide shrink-0 w-full'
+                  aria-hidden='true'
+                />
+              )}
             </div>
           </div>
           {/* Projects involved section */}
@@ -181,6 +188,8 @@ export const DesktopTutorialTable = ({
             </div>
           </div>
         </div>
+
+        {/* ── RIGHT COLUMN: Image for the current tutorial step ─────────────────── */}
         <div className='relative w-2/3'>
           {selectedStrategy.tutorials.map(t => (
             <img
