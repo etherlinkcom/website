@@ -102,7 +102,9 @@ export const MobileTutorialTable = ({
         />
       </div>
       {/* image */}
-      <div className='relative w-full aspect-[4/3]'>
+      <div
+        className={`relative w-full aspect-[4/3] border-b ${TABLE_BORDER_COLOR}`}
+      >
         {selectedStrategy.tutorials.map(t => (
           <img
             key={t.step}
