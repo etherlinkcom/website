@@ -33,6 +33,14 @@ export const MobileTutorialTable = ({
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
 
+  useEffect(() => {
+    if (!emblaApi) return
+    const index = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)
+    if (index >= 0) {
+      emblaApi.scrollTo(index)
+    }
+  }, [selectedStrategyId, emblaApi])
+
   const viewportRef = useRef<HTMLDivElement | null>(null)
   const slideRefs = useRef<HTMLDivElement[]>([])
 

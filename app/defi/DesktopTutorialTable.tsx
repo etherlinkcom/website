@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithRef, useEffect } from 'react'
+import React, { ComponentPropsWithRef, useEffect, useRef } from 'react'
 import {
   TABLE_BORDER_COLOR,
   StrategyPill,
@@ -32,6 +32,22 @@ export const DesktopTutorialTable = ({
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
 
+  const pillsContainerRef = useRef<HTMLDivElement | null>(null)
+  const pillRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  useEffect(() => {
+    const index = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)
+    const pillEl = pillRefs.current[index]
+    if (pillEl) {
+      // Scroll so that the pill is fully visible (nearest keeps it from jumping too far)
+      pillEl.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'nearest',
+        block: 'nearest'
+      })
+    }
+  }, [selectedStrategyId])
+
   useEffect(() => {
     if (!emblaApi) return
 
@@ -54,16 +70,25 @@ export const DesktopTutorialTable = ({
       {/* titles */}
       <div
         className={`flex overflow-auto items-center gap-6 py-3 px-6 border-b ${TABLE_BORDER_COLOR}`}
+        ref={pillsContainerRef}
       >
         <p className='text-grey-100 text-lg font-semibold'>Strategies</p>
         <div className='flex overflow-auto items-center gap-2 hover:cursor-pointer z-10'>
-          {STRATEGIES_DATA.map(strategy => (
-            <StrategyPill
-              strategy={strategy.name}
-              isSelected={strategy.id === selectedStrategyId}
-              onSelect={() => setSelectedStrategyId(strategy.id)}
+          {STRATEGIES_DATA.map((strategy, index) => (
+            <div
               key={strategy.id}
-            />
+              ref={el => {
+                if (el) pillRefs.current[index] = el
+                else pillRefs.current[index] = null
+              }}
+              className='shrink-0'
+            >
+              <StrategyPill
+                strategy={strategy.name}
+                isSelected={strategy.id === selectedStrategyId}
+                onSelect={() => setSelectedStrategyId(strategy.id)}
+              />
+            </div>
           ))}
         </div>
       </div>
