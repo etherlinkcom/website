@@ -95,8 +95,6 @@ export const MobileTutorialTable = ({
     setSelectedStrategyId
   ])
 
-  console.log('selectedStrategyId', selectedStrategyId)
-
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full block md:hidden`}
