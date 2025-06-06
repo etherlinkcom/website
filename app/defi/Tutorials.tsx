@@ -107,7 +107,7 @@ export const TutorialStepCard = ({
 }: TutorialCardProps) => {
   return (
     <div
-      className={`flex items-center gap-4 py-4 px-6 bg-lightBlack border ${currentStep === step ? 'border-neonGreen-900' : 'border-grey-400'} rounded-lg`}
+      className={`flex items-center gap-4 py-4 px-6 border ${currentStep === step ? 'border-neonGreen-900 bg-grey-500' : 'border-grey-400 bg-grey-700'} rounded-lg`}
     >
       <div className='flex items-center flex-shrink-0 justify-center text-black-900 text-sm font-semibold bg-neonGreen-500 rounded-full h-6 w-6'>
         {step}
