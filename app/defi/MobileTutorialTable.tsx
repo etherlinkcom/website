@@ -95,6 +95,8 @@ export const MobileTutorialTable = ({
     setSelectedStrategyId
   ])
 
+  console.log('selectedStrategyId', selectedStrategyId)
+
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full block md:hidden`}
@@ -111,7 +113,11 @@ export const MobileTutorialTable = ({
         <div ref={pillsRef} className='embla__viewport overflow-hidden'>
           <div className='flex items-center gap-2 hover:cursor-pointer z-10 embla__container'>
             {STRATEGIES_DATA.map(strategy => (
-              <div className='embla__slide shrink-0' key={strategy.id}>
+              <div
+                className='embla__slide shrink-0'
+                key={strategy.id}
+                id={selectedStrategyId}
+              >
                 <StrategyPill
                   strategy={strategy.name}
                   isSelected={strategy.id === selectedStrategyId}
