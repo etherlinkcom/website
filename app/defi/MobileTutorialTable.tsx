@@ -6,7 +6,6 @@ import {
   TutorialProps
 } from './Tutorials'
 import useEmblaCarousel from 'embla-carousel-react'
-import { usePrevNextButtons } from './usePrevNextButtons'
 import { EmblaNavButton } from './DesktopTutorialTable'
 import { STRATEGIES_DATA } from './fixture'
 import Link from 'next/link'
@@ -21,6 +20,7 @@ export const MobileTutorialTable = ({
   const pillsContainerRef = useRef<HTMLDivElement | null>(null)
   const pillRefs = useRef<(HTMLDivElement | null)[]>([])
 
+  // Scroll the selected pill into view whenever the selected strategy changes
   useEffect(() => {
     const idx = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)
     const pillEl = pillRefs.current[idx]
@@ -41,13 +41,6 @@ export const MobileTutorialTable = ({
     containScroll: 'trimSnaps'
   })
 
-  const {
-    prevBtnDisabled: stepsPrevDisabled,
-    nextBtnDisabled: stepsNextDisabled,
-    onPrevButtonClick: onStepsPrev,
-    onNextButtonClick: onStepsNext
-  } = usePrevNextButtons(tutorialsApi)
-
   const currentStrategyIndex = STRATEGIES_DATA.findIndex(
     s => s.id === selectedStrategyId
   )
@@ -56,12 +49,13 @@ export const MobileTutorialTable = ({
     currentStrategyIndex >= 0 &&
     currentStrategyIndex < STRATEGIES_DATA.length - 1
 
+  // Whenever strategy or step changes, scroll the carousel to the correct slide
   useEffect(() => {
     if (!tutorialsApi) return
     const tutorials = selectedStrategy.tutorials
     const realIdx = tutorials.findIndex(t => t.step === currentStep)
     if (realIdx < 0) return
-    const emblaTarget = hasPrevStrategy ? realIdx + 1 : realIdx
+    const emblaTarget = realIdx + (hasPrevStrategy ? 1 : 0)
     tutorialsApi.scrollTo(emblaTarget)
   }, [
     selectedStrategyId,
@@ -71,32 +65,32 @@ export const MobileTutorialTable = ({
     hasPrevStrategy
   ])
 
+  // Handle carousel snap events to change step/strategy
   useEffect(() => {
     if (!tutorialsApi) return
 
     const onTutorialSelect = () => {
       const idx = tutorialsApi.selectedScrollSnap()
       const tutorials = selectedStrategy.tutorials
-      const lastRealIndex = tutorials.length - 1
-      const frontIdx = hasPrevStrategy ? 0 : -1
-      const firstReal = hasPrevStrategy ? 1 : 0
-      const lastReal = firstReal + lastRealIndex
-      const backIdx = hasNextStrategy ? lastReal + 1 : -1
+      const count = tutorials.length
+      const offset = hasPrevStrategy ? 1 : 0
+      const relative = idx - offset
 
-      if (idx === frontIdx && hasPrevStrategy) {
-        const prevStrategy = STRATEGIES_DATA[currentStrategyIndex - 1]
-        const prevTutorials = prevStrategy.tutorials
-        const prevLastStep = prevTutorials[prevTutorials.length - 1].step
-        setCurrentStep(prevLastStep)
-        setSelectedStrategyId(prevStrategy.id)
-      } else if (idx === backIdx && hasNextStrategy) {
-        const nextStrategy = STRATEGIES_DATA[currentStrategyIndex + 1]
-        const nextFirstStep = nextStrategy.tutorials[0].step
-        setCurrentStep(nextFirstStep)
-        setSelectedStrategyId(nextStrategy.id)
-      } else if (idx >= firstReal && idx <= lastReal) {
-        const realIdx = idx - firstReal
-        const step = tutorials[realIdx].step
+      if (relative < 0 && hasPrevStrategy) {
+        // moved before first slide: go to previous strategy
+        const prev = STRATEGIES_DATA[currentStrategyIndex - 1]
+        const lastStep = prev.tutorials[prev.tutorials.length - 1].step
+        setSelectedStrategyId(prev.id)
+        setCurrentStep(lastStep)
+      } else if (relative >= count && hasNextStrategy) {
+        // moved beyond last slide: go to next strategy
+        const next = STRATEGIES_DATA[currentStrategyIndex + 1]
+        const firstStep = next.tutorials[0].step
+        setSelectedStrategyId(next.id)
+        setCurrentStep(firstStep)
+      } else if (relative >= 0 && relative < count) {
+        // within current strategy
+        const step = tutorials[relative].step
         if (step !== currentStep) {
           setCurrentStep(step)
         }
@@ -127,32 +121,36 @@ export const MobileTutorialTable = ({
       >
         <EmblaNavButton
           onClick={() => {
-            if (pillsContainerRef.current) {
-              pillsContainerRef.current.scrollBy({
-                left: -100,
-                behavior: 'smooth'
-              })
-            }
+            pillsContainerRef.current?.scrollBy({
+              left: -100,
+              behavior: 'smooth'
+            })
           }}
           disabled={false}
           isMobile
         />
+        {/* Keyed container forces remount on strategy change to update pill selection UI */}
         <div
           ref={pillsContainerRef}
           className='flex overflow-x-auto items-center gap-2 hover:cursor-pointer'
         >
           {STRATEGIES_DATA.map((strategy, idx) => (
             <div
-              key={strategy.id}
               ref={el => {
                 pillRefs.current[idx] = el
               }}
               className='shrink-0'
             >
               <StrategyPill
+                key={selectedStrategyId}
                 strategy={strategy.name}
                 isSelected={strategy.id === selectedStrategyId}
-                onSelect={() => setSelectedStrategyId(strategy.id)}
+                onSelect={() => {
+                  setSelectedStrategyId(strategy.id)
+                  const first = STRATEGIES_DATA.find(s => s.id === strategy.id)
+                    ?.tutorials[0].step
+                  if (first != null) setCurrentStep(first)
+                }}
               />
             </div>
           ))}
@@ -160,12 +158,10 @@ export const MobileTutorialTable = ({
         <EmblaNavButton
           className='rotate-180'
           onClick={() => {
-            if (pillsContainerRef.current) {
-              pillsContainerRef.current.scrollBy({
-                left: 100,
-                behavior: 'smooth'
-              })
-            }
+            pillsContainerRef.current?.scrollBy({
+              left: 100,
+              behavior: 'smooth'
+            })
           }}
           disabled={false}
           isMobile
@@ -194,10 +190,10 @@ export const MobileTutorialTable = ({
         ref={tutorialsRef}
         key={selectedStrategyId}
         className={`
-          px-3 py-3
-          embla__viewport overflow-hidden
-          border-b ${TABLE_BORDER_COLOR}
-        `}
+            px-3 py-3
+            embla__viewport overflow-hidden
+            border-b ${TABLE_BORDER_COLOR}
+          `}
       >
         <div className='flex gap-2 embla__container'>
           {hasPrevStrategy && (
