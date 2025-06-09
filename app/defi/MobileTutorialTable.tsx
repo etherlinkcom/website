@@ -20,15 +20,6 @@ export const MobileTutorialTable = ({
   const pillsContainerRef = useRef<HTMLDivElement | null>(null)
   const pillRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  // Helper to change strategy & step, then blur any focused pill to clear mobile :focus/:active styles
-  const changeStrategy = (id: StrategyId, step: number) => {
-    setSelectedStrategyId(id)
-    setCurrentStep(step)
-    if (document.activeElement instanceof HTMLElement) {
-      document.activeElement.blur()
-    }
-  }
-
   // Scroll the selected pill into view only if it's outside the visible area
   useEffect(() => {
     const idx = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)
@@ -99,12 +90,12 @@ export const MobileTutorialTable = ({
 
       if (relative < 0 && hasPrevStrategy) {
         const prev = STRATEGIES_DATA[currentStrategyIndex - 1]
-        const lastStep = prev.tutorials[prev.tutorials.length - 1].step
-        changeStrategy(prev.id, lastStep)
+
+        setSelectedStrategyId(prev.id)
       } else if (relative >= count && hasNextStrategy) {
         const next = STRATEGIES_DATA[currentStrategyIndex + 1]
-        const first = next.tutorials[0].step
-        changeStrategy(next.id, first)
+
+        setSelectedStrategyId(next.id)
       } else if (relative >= 0 && relative < count) {
         const step = tutorials[relative].step
         if (step !== currentStep) {
@@ -149,7 +140,7 @@ export const MobileTutorialTable = ({
         >
           {STRATEGIES_DATA.map((strategy, idx) => {
             const isSelected = strategy.id === selectedStrategyId
-            const firstStep = strategy.tutorials[0].step
+
             return (
               <div
                 key={strategy.id}
@@ -159,9 +150,10 @@ export const MobileTutorialTable = ({
                 className='shrink-0'
               >
                 <StrategyPill
+                  key={selectedStrategyId}
                   strategy={strategy.name}
                   isSelected={isSelected}
-                  onSelect={() => changeStrategy(strategy.id, firstStep)}
+                  onSelect={() => setSelectedStrategyId(strategy.id)}
                 />
               </div>
             )
