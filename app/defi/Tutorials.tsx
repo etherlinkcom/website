@@ -82,12 +82,13 @@ export const StrategyPill = ({
 }: StrategyPillProps) => {
   return (
     <div
-      className={`flex items-center justify-center shrink-0 px-3 py-1.5 text-center rounded-lg ${isSelected ? 'bg-grey-500' : 'bg-grey-700'}
-          border ${isSelected ? 'border-neonGreen-900' : 'border-black-400'} hover:cursor-pointer hover:bg-grey-500 hover:border-neonGreen-900 group`}
+      className={`flex items-center justify-center shrink-0 px-3 py-1.5 text-center rounded-lg border
+          ${isSelected ? 'bg-grey-500 border-neonGreen-900' : 'bg-grey-700 border-black-400'}
+          md:hover:cursor-pointer md:hover:bg-grey-500 md:hover:border-neonGreen-900 group`}
       onClick={onSelect}
     >
       <p
-        className={`text-sm font-semibold ${isSelected ? 'text-neonGreen-500' : 'text-grey-200'} group-hover:text-neonGreen-500`}
+        className={`text-sm font-semibold ${isSelected ? 'text-neonGreen-500' : 'text-grey-200'} md:group-hover:text-neonGreen-500`}
       >
         {strategy}
       </p>
@@ -107,7 +108,7 @@ export const TutorialStepCard = ({
 }: TutorialCardProps) => {
   return (
     <div
-      className={`flex items-center gap-4 py-4 px-6 bg-lightBlack border ${currentStep === step ? 'border-neonGreen-900' : 'border-grey-400'} rounded-lg`}
+      className={`flex items-center gap-4 py-4 px-6 border ${currentStep === step ? 'border-neonGreen-900 bg-grey-500' : 'border-grey-400 bg-grey-700'} rounded-lg`}
     >
       <div className='flex items-center flex-shrink-0 justify-center text-black-900 text-sm font-semibold bg-neonGreen-500 rounded-full h-6 w-6'>
         {step}

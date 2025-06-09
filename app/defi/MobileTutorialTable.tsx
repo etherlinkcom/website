@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import {
   TABLE_BORDER_COLOR,
   StrategyPill,
@@ -6,9 +6,8 @@ import {
   TutorialProps
 } from './Tutorials'
 import useEmblaCarousel from 'embla-carousel-react'
-import { usePrevNextButtons } from './usePrevNextButtons'
 import { EmblaNavButton } from './DesktopTutorialTable'
-import { STRATEGIES_DATA } from './fixture'
+import { STRATEGIES_DATA, StrategyId } from './fixture'
 import Link from 'next/link'
 
 export const MobileTutorialTable = ({
@@ -18,7 +17,32 @@ export const MobileTutorialTable = ({
   currentStep,
   setCurrentStep
 }: TutorialProps) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
+  const pillsContainerRef = useRef<HTMLDivElement | null>(null)
+  const pillRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  // Scroll the selected pill into view only if it's outside the visible area
+  useEffect(() => {
+    const idx = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)
+    const pillEl = pillRefs.current[idx]
+    const container = pillsContainerRef.current
+    if (pillEl && container) {
+      const pillRect = pillEl.getBoundingClientRect()
+      const containerRect = container.getBoundingClientRect()
+      if (
+        pillRect.left < containerRect.left ||
+        pillRect.right > containerRect.right
+      ) {
+        pillEl.scrollIntoView({
+          behavior: 'smooth',
+          inline: 'nearest',
+          block: 'nearest'
+        })
+      }
+    }
+  }, [selectedStrategyId])
+
+  // Embla carousel setup
+  const [tutorialsRef, tutorialsApi] = useEmblaCarousel({
     loop: false,
     align: 'start',
     slidesToScroll: 1,
@@ -26,128 +50,174 @@ export const MobileTutorialTable = ({
     containScroll: 'trimSnaps'
   })
 
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick
-  } = usePrevNextButtons(emblaApi)
+  const currentStrategyIndex = STRATEGIES_DATA.findIndex(
+    s => s.id === selectedStrategyId
+  )
+  const hasPrevStrategy = currentStrategyIndex > 0
+  const hasNextStrategy =
+    currentStrategyIndex >= 0 &&
+    currentStrategyIndex < STRATEGIES_DATA.length - 1
 
-  const viewportRef = useRef<HTMLDivElement | null>(null)
-  const slideRefs = useRef<HTMLDivElement[]>([])
-
+  // Whenever strategy or step changes, scroll the carousel to the correct slide
   useEffect(() => {
-    const root = viewportRef.current
-    if (!root) return
-
-    const io = new IntersectionObserver(
-      entries => {
-        // pick the entry with the greatest visibility that is intersecting
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
-
-        if (!visible) return
-
-        const index = slideRefs.current.findIndex(el => el === visible.target)
-        const step = selectedStrategy.tutorials[index]?.step
-        if (step && step !== currentStep) setCurrentStep(step)
-      },
-      {
-        root, // observe relative to the scroll viewport
-        threshold: 0.6 // “in view” means at least 60 % visible
-      }
-    )
-
-    slideRefs.current.forEach(el => io.observe(el))
-    return () => io.disconnect()
+    if (!tutorialsApi) return
+    const tutorials = selectedStrategy.tutorials
+    const realIdx = tutorials.findIndex(t => t.step === currentStep)
+    if (realIdx < 0) return
+    const emblaTarget = realIdx + (hasPrevStrategy ? 1 : 0)
+    tutorialsApi.scrollTo(emblaTarget)
   }, [
     selectedStrategyId,
-    selectedStrategy.tutorials,
     currentStep,
-    setCurrentStep
+    tutorialsApi,
+    selectedStrategy.tutorials,
+    hasPrevStrategy
+  ])
+
+  // Handle carousel snap events: always return a cleanup function
+  useEffect(() => {
+    if (!tutorialsApi) {
+      // still return a destructor to satisfy EffectCallback signature
+      return () => {}
+    }
+
+    const onTutorialSelect = () => {
+      const idx = tutorialsApi.selectedScrollSnap()
+      const tutorials = selectedStrategy.tutorials
+      const count = tutorials.length
+      const offset = hasPrevStrategy ? 1 : 0
+      const relative = idx - offset
+
+      if (relative < 0 && hasPrevStrategy) {
+        const prev = STRATEGIES_DATA[currentStrategyIndex - 1]
+
+        setSelectedStrategyId(prev.id)
+      } else if (relative >= count && hasNextStrategy) {
+        const next = STRATEGIES_DATA[currentStrategyIndex + 1]
+
+        setSelectedStrategyId(next.id)
+      } else if (relative >= 0 && relative < count) {
+        const step = tutorials[relative].step
+        if (step !== currentStep) {
+          setCurrentStep(step)
+        }
+      }
+    }
+
+    tutorialsApi.on('select', onTutorialSelect)
+    return () => {
+      tutorialsApi.off('select', onTutorialSelect)
+    }
+  }, [
+    tutorialsApi,
+    selectedStrategy,
+    currentStep,
+    hasPrevStrategy,
+    hasNextStrategy,
+    currentStrategyIndex
   ])
 
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full block md:hidden`}
     >
-      {/* title */}
       <div
         className={`flex items-center py-3 px-4 border-b ${TABLE_BORDER_COLOR}`}
       >
         <EmblaNavButton
-          onClick={onPrevButtonClick}
-          disabled={prevBtnDisabled}
+          onClick={() =>
+            pillsContainerRef.current?.scrollBy({
+              left: -100,
+              behavior: 'smooth'
+            })
+          }
+          disabled={false}
           isMobile
         />
-        <div ref={emblaRef} className='embla__viewport overflow-hidden'>
-          <div className='flex items-center gap-2 hover:cursor-pointer z-10 embla__container'>
-            {STRATEGIES_DATA.map(strategy => (
-              <div className='embla__slide shrink-0' key={strategy.id}>
+        <div
+          ref={pillsContainerRef}
+          className='flex overflow-x-auto items-center gap-2 hover:cursor-pointer'
+        >
+          {STRATEGIES_DATA.map((strategy, idx) => {
+            const isSelected = strategy.id === selectedStrategyId
+
+            return (
+              <div
+                key={strategy.id}
+                ref={el => {
+                  pillRefs.current[idx] = el
+                }}
+                className='shrink-0'
+              >
                 <StrategyPill
+                  key={selectedStrategyId}
                   strategy={strategy.name}
-                  isSelected={strategy.id === selectedStrategyId}
+                  isSelected={isSelected}
                   onSelect={() => setSelectedStrategyId(strategy.id)}
                 />
               </div>
-            ))}
-          </div>
+            )
+          })}
         </div>
         <EmblaNavButton
           className='rotate-180'
-          onClick={onNextButtonClick}
-          disabled={nextBtnDisabled}
+          onClick={() =>
+            pillsContainerRef.current?.scrollBy({
+              left: 100,
+              behavior: 'smooth'
+            })
+          }
+          disabled={false}
           isMobile
         />
       </div>
-      {/* image */}
-      <div className='relative w-full aspect-[4/3]'>
+
+      <div
+        className={`relative w-full aspect-[4/3] border-b ${TABLE_BORDER_COLOR}`}
+      >
         {selectedStrategy.tutorials.map(t => (
           <img
             key={t.step}
             src={t.image}
             alt={t.title}
             loading='lazy'
-            className={`
-              absolute inset-0 w-full h-full object-cover
-              transition-opacity duration-300
-              ${t.step === currentStep ? 'opacity-100' : 'opacity-0'}
-            `}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${t.step === currentStep ? 'opacity-100' : 'opacity-0'}`}
           />
         ))}
       </div>
-      {/* tutorial steps */}
+
       <div
-        ref={viewportRef}
+        ref={tutorialsRef}
         key={selectedStrategyId}
-        className={`p-3 flex gap-2 overflow-auto border-b ${TABLE_BORDER_COLOR}`}
+        className={`px-3 py-3 embla__viewport overflow-hidden border-b ${TABLE_BORDER_COLOR}`}
       >
-        {selectedStrategy.tutorials.map((tutorial, index) => (
-          <div
-            ref={el => {
-              if (el) {
-                slideRefs.current[index] = el // add on mount
-              } else {
-                delete slideRefs.current[index] // remove on unmount
-              }
-            }}
-            className='w-[96%] shrink-0'
-            key={tutorial.title}
-          >
-            <TutorialStepCard currentStep={currentStep} {...tutorial} />
-          </div>
-        ))}
+        <div className='flex gap-2 embla__container'>
+          {hasPrevStrategy && (
+            <div
+              className='embla__slide shrink-0 w-[calc(100%-12px)]'
+              aria-hidden='true'
+            />
+          )}
+          {selectedStrategy.tutorials.map(tutorial => (
+            <div
+              key={tutorial.title}
+              className='embla__slide shrink-0 w-[calc(100%-12px)]'
+            >
+              <TutorialStepCard currentStep={currentStep} {...tutorial} />
+            </div>
+          ))}
+          {hasNextStrategy && (
+            <div
+              className='embla__slide shrink-0 w-[calc(100%-12px)]'
+              aria-hidden='true'
+            />
+          )}
+        </div>
       </div>
-      {/* projects */}
-      <div className={`flex items-center justify-between py-3 px-6`}>
+
+      <div className='flex items-center justify-between py-3 px-6'>
         <p className='font-semibold text-grey-100'>Projects</p>
-        {/* hide this for now */}
-        {/* <div className='flex items-center gap-1'>
-          <img className='h-6' src='/img/defi/p-mobile.jpg' alt='icons' />
-          <img src='/img/defi/chevron-down.svg' alt='arrow icon' />
-        </div> */}
-        <div className={`flex items-center gap-2`}>
+        <div className='flex items-center gap-2'>
           {selectedStrategy.projectInvolved.map(p => (
             <Link href={p.link} target='_blank' key={p.name}>
               <img
@@ -159,14 +229,6 @@ export const MobileTutorialTable = ({
           ))}
         </div>
       </div>
-      {/* earning */}
-      {/* hide this for now */}
-      {/* <div className={`flex items-center justify-between py-3 px-6`}>
-        <p className='font-semibold text-grey-100'>Earning Potential</p>
-        <p className='font-semibold text-neonGreen-500'>
-          {selectedStrategy.earning}
-        </p>
-      </div> */}
     </div>
   )
 }
