@@ -109,7 +109,8 @@ export const MobileTutorialTable = ({
     hasNextStrategy,
     currentStrategyIndex,
     setCurrentStep,
-    setSelectedStrategyId
+    setSelectedStrategyId,
+    selectedStrategyId
   ])
 
   return (
