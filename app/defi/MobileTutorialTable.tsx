@@ -69,9 +69,7 @@ export const MobileTutorialTable = ({
 
   // Whenever strategy or step changes, scroll the carousel to the correct slide
   useEffect(() => {
-    if (!tutorialsApi) {
-      return
-    }
+    if (!tutorialsApi) return
     const tutorials = selectedStrategy.tutorials
     const realIdx = tutorials.findIndex(t => t.step === currentStep)
     if (realIdx < 0) return
@@ -85,10 +83,11 @@ export const MobileTutorialTable = ({
     hasPrevStrategy
   ])
 
-  // Handle carousel snap events to change step/strategy and blur previous pill
+  // Handle carousel snap events: always return a cleanup function
   useEffect(() => {
     if (!tutorialsApi) {
-      return
+      // still return a destructor to satisfy EffectCallback signature
+      return () => {}
     }
 
     const onTutorialSelect = () => {
@@ -117,7 +116,6 @@ export const MobileTutorialTable = ({
     tutorialsApi.on('select', onTutorialSelect)
     return () => {
       tutorialsApi.off('select', onTutorialSelect)
-      // no return value ensures cleanup callback returns void
     }
   }, [
     tutorialsApi,
