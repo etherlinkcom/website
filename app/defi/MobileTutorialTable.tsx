@@ -7,7 +7,7 @@ import {
 } from './Tutorials'
 import useEmblaCarousel from 'embla-carousel-react'
 import { EmblaNavButton } from './DesktopTutorialTable'
-import { STRATEGIES_DATA } from './fixture'
+import { STRATEGIES_DATA, StrategyId } from './fixture'
 import Link from 'next/link'
 
 export const MobileTutorialTable = ({
@@ -19,6 +19,15 @@ export const MobileTutorialTable = ({
 }: TutorialProps) => {
   const pillsContainerRef = useRef<HTMLDivElement | null>(null)
   const pillRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  // Helper to change strategy & step, then blur any focused pill to clear mobile :focus/:active styles
+  const changeStrategy = (id: StrategyId, step: number) => {
+    setSelectedStrategyId(id)
+    setCurrentStep(step)
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur()
+    }
+  }
 
   // Scroll the selected pill into view only if it's outside the visible area
   useEffect(() => {
@@ -60,7 +69,9 @@ export const MobileTutorialTable = ({
 
   // Whenever strategy or step changes, scroll the carousel to the correct slide
   useEffect(() => {
-    if (!tutorialsApi) return
+    if (!tutorialsApi) {
+      return
+    }
     const tutorials = selectedStrategy.tutorials
     const realIdx = tutorials.findIndex(t => t.step === currentStep)
     if (realIdx < 0) return
@@ -74,9 +85,11 @@ export const MobileTutorialTable = ({
     hasPrevStrategy
   ])
 
-  // Handle carousel snap events to change step/strategy
+  // Handle carousel snap events to change step/strategy and blur previous pill
   useEffect(() => {
-    if (!tutorialsApi) return
+    if (!tutorialsApi) {
+      return
+    }
 
     const onTutorialSelect = () => {
       const idx = tutorialsApi.selectedScrollSnap()
@@ -88,13 +101,11 @@ export const MobileTutorialTable = ({
       if (relative < 0 && hasPrevStrategy) {
         const prev = STRATEGIES_DATA[currentStrategyIndex - 1]
         const lastStep = prev.tutorials[prev.tutorials.length - 1].step
-        setSelectedStrategyId(prev.id)
-        setCurrentStep(lastStep)
+        changeStrategy(prev.id, lastStep)
       } else if (relative >= count && hasNextStrategy) {
         const next = STRATEGIES_DATA[currentStrategyIndex + 1]
-        const firstStep = next.tutorials[0].step
-        setSelectedStrategyId(next.id)
-        setCurrentStep(firstStep)
+        const first = next.tutorials[0].step
+        changeStrategy(next.id, first)
       } else if (relative >= 0 && relative < count) {
         const step = tutorials[relative].step
         if (step !== currentStep) {
@@ -104,9 +115,9 @@ export const MobileTutorialTable = ({
     }
 
     tutorialsApi.on('select', onTutorialSelect)
-    // cleanup must return void: wrap off call
     return () => {
       tutorialsApi.off('select', onTutorialSelect)
+      // no return value ensures cleanup callback returns void
     }
   }, [
     tutorialsApi,
@@ -114,9 +125,7 @@ export const MobileTutorialTable = ({
     currentStep,
     hasPrevStrategy,
     hasNextStrategy,
-    currentStrategyIndex,
-    setCurrentStep,
-    setSelectedStrategyId
+    currentStrategyIndex
   ])
 
   return (
@@ -142,9 +151,10 @@ export const MobileTutorialTable = ({
         >
           {STRATEGIES_DATA.map((strategy, idx) => {
             const isSelected = strategy.id === selectedStrategyId
+            const firstStep = strategy.tutorials[0].step
             return (
               <div
-                key={`${strategy.id}-${isSelected}`}
+                key={strategy.id}
                 ref={el => {
                   pillRefs.current[idx] = el
                 }}
@@ -153,13 +163,7 @@ export const MobileTutorialTable = ({
                 <StrategyPill
                   strategy={strategy.name}
                   isSelected={isSelected}
-                  onSelect={() => {
-                    setSelectedStrategyId(strategy.id)
-                    const first = STRATEGIES_DATA.find(
-                      s => s.id === strategy.id
-                    )?.tutorials[0].step
-                    if (first != null) setCurrentStep(first)
-                  }}
+                  onSelect={() => changeStrategy(strategy.id, firstStep)}
                 />
               </div>
             )
