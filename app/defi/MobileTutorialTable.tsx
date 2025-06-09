@@ -141,7 +141,6 @@ export const MobileTutorialTable = ({
                 pillRefs.current[idx] = el
               }}
               className='shrink-0'
-              key={selectedStrategyId}
             >
               <StrategyPill
                 key={selectedStrategyId}
