@@ -14,6 +14,8 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
   const router = useRouter()
   const params = useSearchParams()
 
+  const [projectCardSelectedTag, setProjectCardSelectedTag] =
+    useState<TagKeys | null>(null)
   const [search, setSearch] = useState('')
   const [selectedTags, setSelectedTags] = useState<TagKeys[]>([])
   const [sortOrder, setSortOrder] = useState<SortOrder | null>(null)
@@ -161,7 +163,13 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
 
             <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6'>
               {firstBatch.map((p, i) => (
-                <ProjectCard key={p.Slug || i} {...p} />
+                <ProjectCard
+                  key={p.Slug || i}
+                  {...p}
+                  setSelectedTags={setSelectedTags}
+                  projectCardSelectedTag={projectCardSelectedTag}
+                  setProjectCardSelectedTag={setProjectCardSelectedTag}
+                />
               ))}
 
               <div className='col-span-1 sm:col-span-2 xl:col-span-3'>
@@ -169,7 +177,13 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
               </div>
 
               {secondBatch.map((p, i) => (
-                <ProjectCard key={p.Slug || 9 + i} {...p} />
+                <ProjectCard
+                  key={p.Slug || 9 + i}
+                  {...p}
+                  setSelectedTags={setSelectedTags}
+                  projectCardSelectedTag={projectCardSelectedTag}
+                  setProjectCardSelectedTag={setProjectCardSelectedTag}
+                />
               ))}
             </div>
 

@@ -40,7 +40,11 @@ export const Footer = () => {
             {NAVS.map((nav, index) => {
               if (index === NAVS.length - 1) {
                 return (
-                  <Link href={nav.link} target={isExternalLink(nav.link)}>
+                  <Link
+                    href={nav.link}
+                    target={isExternalLink(nav.link)}
+                    key={nav.name}
+                  >
                     <p className='text-white-50 hover:text-newGreen transition-colors duration-300'>
                       {nav.name}
                     </p>
@@ -48,14 +52,14 @@ export const Footer = () => {
                 )
               }
               return (
-                <>
+                <React.Fragment key={nav.name}>
                   <Link href={nav.link} target={isExternalLink(nav.link)}>
                     <p className='text-white-50 hover:text-newGreen transition-colors duration-300'>
                       {nav.name}
                     </p>
                   </Link>
                   <p className='px-4 text-[#515151] hidden md:block'>|</p>
-                </>
+                </React.Fragment>
               )
             })}
           </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction, useCallback } from 'react'
 import Link from 'next/link'
 import { TagKeys, TAGS_MAP } from '../../utils/airtable/ecosystem'
 
@@ -17,6 +17,9 @@ export interface ProjectCardProps {
   Website?: string
   Featured: boolean
   hideLogo?: boolean
+  setSelectedTags?: Dispatch<SetStateAction<TagKeys[]>>
+  projectCardSelectedTag?: TagKeys | null
+  setProjectCardSelectedTag?: Dispatch<SetStateAction<TagKeys | null>>
 }
 
 export const ProjectCard = ({
@@ -27,8 +30,33 @@ export const ProjectCard = ({
   Twitter,
   Website,
   Featured,
-  hideLogo
+  hideLogo,
+  setSelectedTags,
+  projectCardSelectedTag,
+  setProjectCardSelectedTag
 }: ProjectCardProps) => {
+  const handleTagSelect = useCallback(
+    (tag: TagKeys) => {
+      if (
+        projectCardSelectedTag === tag ||
+        !setSelectedTags ||
+        !setProjectCardSelectedTag
+      ) {
+        return
+      }
+
+      setSelectedTags(prev => {
+        const withoutOld = projectCardSelectedTag
+          ? prev.filter(t => t !== projectCardSelectedTag)
+          : prev
+
+        return withoutOld.includes(tag) ? withoutOld : [...withoutOld, tag]
+      })
+      setProjectCardSelectedTag(tag)
+    },
+    [projectCardSelectedTag, setSelectedTags, setProjectCardSelectedTag]
+  )
+
   return (
     <div
       className='flex flex-col bg-grey-600 rounded-[28px] p-6 gap-4 border border-grey-500 backdrop-blur-md 
@@ -57,7 +85,8 @@ export const ProjectCard = ({
             {Tags.map((category, index) => (
               <div
                 key={index}
-                className='bg-grey-400 text-white-50 rounded-[44px] text-white text-xs py-1 px-2 text-center'
+                className='bg-grey-400 text-white-50 rounded-[44px] text-white text-xs py-1 px-2 text-center hover:cursor-pointer'
+                onClick={() => handleTagSelect(category)}
               >
                 {TAGS_MAP[category]}
               </div>
