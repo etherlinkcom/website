@@ -98,12 +98,7 @@ export const Search = ({
         />
         <div className='absolute inset-y-0 right-6 flex items-center pointer-events-none'>
           {search ? (
-            <img
-              className='w-5 h-5 hover:cursor-pointer'
-              src='/img/icons/close.svg'
-              alt='close icon'
-              onClick={() => updateSearch('')}
-            />
+            <></>
           ) : (
             <svg
               className='w-5 h-5 text-gray-400'
@@ -147,7 +142,15 @@ export const Search = ({
                 className='w-5 h-5 hover:cursor-pointer'
                 src='/img/icons/close.svg'
                 alt='close icon'
-                onClick={() => updateSearch('')}
+                onClick={() => {
+                  updateSearch('')
+                  setSelectedTags(prev =>
+                    currentTrending
+                      ? prev.filter(t => t !== currentTrending)
+                      : prev
+                  )
+                  setCurrentTrending(null)
+                }}
               />
             ) : (
               <svg
@@ -200,7 +203,6 @@ export const Search = ({
             <button
               onClick={() => {
                 setDrawerOpen(false)
-                console.log('click')
               }}
               className='absolute top-4 right-4 text-white text-2xl leading-none z-10'
             >
@@ -229,7 +231,15 @@ export const Search = ({
                     className='w-5 h-5 hover:cursor-pointer'
                     src='/img/icons/close.svg'
                     alt='close icon'
-                    onClick={() => updateSearch('')}
+                    onClick={() => {
+                      updateSearch('')
+                      setSelectedTags(prev =>
+                        currentTrending
+                          ? prev.filter(t => t !== currentTrending)
+                          : prev
+                      )
+                      setCurrentTrending(null)
+                    }}
                   />
                 ) : (
                   <svg

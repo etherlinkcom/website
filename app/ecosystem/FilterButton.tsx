@@ -1,16 +1,20 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react'
-import { TagKeys, TAGS_MAP } from '../../utils/airtable/ecosystem'
+import { TagKeys, TAGS_MAP, keyForTag } from '../../utils/airtable/ecosystem'
 
 type FilterButtonProps = {
   selected: TagKeys[]
   onSelect: (tags: TagKeys[]) => void
   onOpenChange?: (open: boolean) => void
+  search: string
+  updateSearch: (newTerm: string) => void
 }
 
 export const FilterButton = ({
   selected,
   onSelect,
-  onOpenChange
+  onOpenChange,
+  search,
+  updateSearch
 }: FilterButtonProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -158,6 +162,12 @@ export const FilterButton = ({
                     const next = item.checked
                       ? selected.filter(v => v !== item.value)
                       : [...selected, item.value]
+
+                    // clean search when we deselect the searchKey in the list
+                    const searchKey = keyForTag(search)
+                    if (item.checked && searchKey === item.value)
+                      updateSearch('')
+
                     onSelect(next)
                   }}
                   className={`

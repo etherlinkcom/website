@@ -50,6 +50,11 @@ export const TAGS_MAP: Record<string, string> = {
   community: 'Community'
 }
 
+export const keyForTag = (value: TagKeys) => {
+  const entry = Object.entries(TAGS_MAP).find(([key, val]) => val === value)
+  return entry?.[0] ?? value.toLowerCase()
+}
+
 export type TagKeys = keyof typeof TAGS_MAP
 
 const batchArray = (array: RawProjectStatus[], batchSize: number) => {
