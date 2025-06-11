@@ -46,6 +46,11 @@ export const ProjectCard = ({
       }
 
       setSelectedTags(prev => {
+        // if the tag is already selected, do nothing
+        if (prev.includes(tag)) {
+          return [...prev]
+        }
+
         const withoutOld = projectCardSelectedTag
           ? prev.filter(t => t !== projectCardSelectedTag)
           : prev
