@@ -154,6 +154,8 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
                   selected={selectedTags}
                   onSelect={setSelectedTags}
                   onOpenChange={open => setFilterOpen(open)}
+                  search={search}
+                  updateSearch={setSearch}
                 />
                 <div className={`${filterOpen ? 'hidden' : 'block'} md:block`}>
                   <SortButton selected={sortOrder} onSelect={setSortOrder} />
