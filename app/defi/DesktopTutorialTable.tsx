@@ -1,4 +1,9 @@
-import React, { ComponentPropsWithRef, useEffect, useRef } from 'react'
+import React, {
+  ComponentPropsWithRef,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import {
   TABLE_BORDER_COLOR,
   StrategyPill,
@@ -9,6 +14,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { usePrevNextButtons } from './usePrevNextButtons'
 import { STRATEGIES_DATA } from './fixture'
 import Link from 'next/link'
+import ReactPlayer from 'react-player'
 
 export const DesktopTutorialTable = ({
   selectedStrategyId,
@@ -31,6 +37,13 @@ export const DesktopTutorialTable = ({
     onPrevButtonClick,
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
+
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  // If user switches steps, reset playing
+  useEffect(() => {
+    setIsPlaying(false)
+  }, [currentStep])
 
   useEffect(() => {
     if (selectedStrategy.tutorials.length > 0) {
@@ -190,20 +203,37 @@ export const DesktopTutorialTable = ({
         </div>
 
         {/* ── RIGHT COLUMN: Image for the current tutorial step ─────────────────── */}
-        <div className='relative w-2/3'>
-          {selectedStrategy.tutorials.map(t => (
-            <img
-              key={t.step}
-              src={t.image}
-              alt={t.title}
-              loading='lazy'
-              className={`
-                absolute inset-0 w-full h-full object-cover
-                transition-opacity duration-300 rounded-br-xl
-                ${t.step === currentStep ? 'opacity-100' : 'opacity-0'}
-              `}
-            />
-          ))}
+        <div className='relative w-2/3 rounded-br-xl overflow-hidden'>
+          {selectedStrategy.tutorials.map(t => {
+            const isActive = t.step === currentStep
+            return (
+              <div
+                key={t.step}
+                className={`
+                  absolute inset-0 transition-opacity duration-300
+                  ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+            `}
+              >
+                {t.video ? (
+                  <ReactPlayer
+                    src={t.video}
+                    controls
+                    playing={isPlaying}
+                    width='100%'
+                    height='100%'
+                    className='absolute inset-0 z-10'
+                  />
+                ) : (
+                  <img
+                    src={t.image}
+                    alt={t.title}
+                    loading='lazy'
+                    className='w-full h-full object-cover'
+                  />
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>

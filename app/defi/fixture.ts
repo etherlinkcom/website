@@ -82,6 +82,7 @@ export type Tutorial = {
   title: string
   description: string
   image: string
+  video?: string
 }
 
 type Project = {
@@ -106,13 +107,15 @@ export const STRATEGIES_DATA: Strategy[] = [
         step: 1,
         title: 'Bridge',
         description: 'Bridge in USDC using Etherlink Bridge',
-        image: '/img/defi/strategies/t-bill-savings/step1.webp'
+        image: '/img/defi/strategies/t-bill-savings/step1.webp',
+        video: 'https://www.youtube.com/watch?v=fPqw36IKiCU'
       },
       {
         step: 2,
         title: 'Swap',
         description: 'Swap USDC for mTBILL on IguanaDEX',
-        image: '/img/defi/strategies/t-bill-savings/step2.webp'
+        image: '/img/defi/strategies/t-bill-savings/step2.webp',
+        video: 'https://www.youtube.com/watch?v=fPqw36IKiCU'
       },
       {
         step: 3,
