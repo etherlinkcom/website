@@ -180,8 +180,8 @@ export const Search = ({
                 key={tag}
                 onClick={() => handleTrendingSelect(tag)}
                 className='
-                  text-sm text-grey-50 px-4 py-3
-                  rounded-full bg-grey-400 hover:bg-grey-500 transition
+                  text-sm text-grey-50 px-4 py-3 border border-grey-200
+                  rounded-full bg-grey-500 hover:bg-grey-400 active:border active:border-transparent transition
                 '
               >
                 {TAGS_MAP[tag]}
