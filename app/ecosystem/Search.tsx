@@ -179,10 +179,9 @@ export const Search = ({
               <button
                 key={tag}
                 onClick={() => handleTrendingSelect(tag)}
-                className='
-                  text-sm text-grey-50 px-4 py-3 border border-grey-200
-                  rounded-full bg-grey-500 hover:bg-grey-400 active:border active:border-transparent transition
-                '
+                className={`text-sm text-grey-50 px-4 py-3 border border-grey-200 rounded-full 
+                  hover:bg-grey-400 active:border active:border-transparent transition 
+                  ${currentTrending === tag ? 'border-transparent bg-grey-400' : 'bg-grey-500 '}`}
               >
                 {TAGS_MAP[tag]}
               </button>
