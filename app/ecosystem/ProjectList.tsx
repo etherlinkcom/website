@@ -62,7 +62,7 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
         searchActive &&
         (p.Project.toLowerCase().includes(term) ||
           p.Description.toLowerCase().includes(term) ||
-          p.Tags.some(t => TAGS_MAP[t].toLowerCase().includes(term)))
+          p.Tags.some(t => TAGS_MAP[t]?.toLowerCase().includes(term)))
       const matchesTags =
         tagsActive && p.Tags.some(t => selectedTags.includes(t))
 
@@ -89,7 +89,7 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
       const matchesSearch = (p: Project) =>
         p.Project.toLowerCase().includes(term) ||
         p.Description.toLowerCase().includes(term) ||
-        p.Tags.some(t => TAGS_MAP[t].toLowerCase().includes(term))
+        p.Tags.some(t => TAGS_MAP[t]?.toLowerCase().includes(term))
 
       const searchMatches: Project[] = []
       const tagMatchesOnly: Project[] = []
