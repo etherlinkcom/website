@@ -43,7 +43,7 @@ export const ExperienceSection = () => {
             }
             title='EVM'
             subTitle='compatible'
-            desc='Smoothly deploy any EVM codebase and migrate your users and assets from Ethereum 1, and other interoperable chains, enabling seamless interaction and asset transfers across different networks.'
+            desc='Smoothly deploy any EVM codebase and migrate your users and assets from Ethereum L1, and other interoperable chains, enabling seamless interaction and asset transfers across different networks.'
           />
         </Fade>
         <Fade triggerOnce direction='up' delay={200}>
