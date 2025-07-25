@@ -6,7 +6,7 @@ const fetch = (...args) =>
 const buildOutFolder = './out'
 const mirrorFolderName = 'img-airtable'
 const graphAssetUrlRegex =
-  /https?:\/\/[^\"\'\s]+airtableusercontent.com[^\"\'\s]*/g
+  /https?:\/\/[^\s"'\\]+airtableusercontent\.com[^\s"'\\]*(?<![\/\\])/g
 
 const mirrorFolderPath = `${buildOutFolder}/${mirrorFolderName}`
 const filesToParse = ['html', 'js', 'json']
