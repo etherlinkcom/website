@@ -34,28 +34,68 @@ export interface Project {
   Featured: boolean
 }
 
-export const TAGS_MAP: Record<string, string> = {
-  infra: 'Infrastructure',
-  'dev-tools': 'Dev Tools',
-  defi: 'DeFi',
-  gaming: 'Gaming',
-  payments: 'Payments',
-  nfts: 'NFTs',
-  social: 'Social',
-  'ecosystem-partner': 'Ecosystem Partners',
-  launchpad: 'Launchpads',
-  wallet: 'Wallets',
-  kyc: 'KYC',
-  health: 'Healthcare',
-  community: 'Community'
-}
-
-export const keyForTag = (value: TagKeys) => {
-  const entry = Object.entries(TAGS_MAP).find(([key, val]) => val === value)
+/**
+ * Given a tags‑map and a human label,
+ * find its slug key (or fallback to lowercased label).
+ */
+export const keyForTag = (
+  tagsMap: Record<string, string>,
+  value: string
+): string => {
+  const entry = Object.entries(tagsMap).find(([, label]) => label === value)
   return entry?.[0] ?? value.toLowerCase()
 }
 
-export type TagKeys = keyof typeof TAGS_MAP
+export type TagKeys = string
+
+/**
+ * - Special-case “nfts” → “NFTs”
+ * - Hyphenated → Title Case each word
+ * - Single word ≤3 chars → UPPERCASE
+ * - Single word >3 chars → Capitalize first letter only
+ */
+const normalizeLabel = (key: string): string =>
+  key === 'nfts'
+    ? 'NFTs'
+    : key.includes('-')
+      ? key
+          .split('-')
+          .map(
+            part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()
+          )
+          .join(' ')
+      : key.length <= 3
+        ? key.toUpperCase()
+        : key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()
+
+export const getDynamicTagsMap = async () => {
+  const url = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
+  const options = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
+    }
+  }
+
+  const responseAirtable = await fetch(url, options)
+
+  if (!responseAirtable.ok) {
+    throw new Error('The Airtable response was not ok')
+  }
+
+  const { records } = await responseAirtable.json()
+
+  let dynamicTagsMap: Record<string, string> = {}
+
+  for (const record of records) {
+    for (const label of record.fields.Tags ?? []) {
+      const key = label
+      dynamicTagsMap[key] = normalizeLabel(key)
+    }
+  }
+
+  return dynamicTagsMap
+}
 
 const batchArray = (array: RawProjectStatus[], batchSize: number) => {
   const batches = []
