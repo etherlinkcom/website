@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction, useCallback } from 'react'
 import Link from 'next/link'
-import { TagKeys, TAGS_MAP } from '../../utils/airtable/ecosystem'
+import { TagKeys } from '../../utils/airtable/ecosystem'
+import { useTagsMap } from '../../utils/airtable/TagsContext'
 
 export interface ProjectCardProps {
   Logo: Array<{
@@ -35,6 +36,8 @@ export const ProjectCard = ({
   projectCardSelectedTag,
   setProjectCardSelectedTag
 }: ProjectCardProps) => {
+  const TAGS_MAP = useTagsMap()
+
   const handleTagSelect = useCallback(
     (tag: TagKeys) => {
       if (

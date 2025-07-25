@@ -2,11 +2,14 @@
 
 import { ThemeProvider } from 'next-themes'
 import './global.css'
+import { TagsContext } from '../utils/airtable/TagsContext'
 
-export default function ClientLayout({ children }) {
+export default async function ClientLayout({ children, tagsMap }) {
   return (
-    <ThemeProvider attribute='class' defaultTheme='dark'>
-      {children}
-    </ThemeProvider>
+    <TagsContext.Provider value={tagsMap}>
+      <ThemeProvider attribute='class' defaultTheme='dark'>
+        {children}
+      </ThemeProvider>
+    </TagsContext.Provider>
   )
 }
