@@ -9,8 +9,9 @@ import React, {
   Dispatch,
   SetStateAction
 } from 'react'
-import { Project, TagKeys, TAGS_MAP } from '../../utils/airtable/ecosystem'
+import { Project, TagKeys } from '../../utils/airtable/ecosystem'
 import { ProjectCard } from './ProjectCard'
+import { useTagsMap } from '../../utils/airtable/TagsContext'
 
 type SearchProps = {
   search: string
@@ -30,6 +31,7 @@ export const Search = ({
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [currentTrending, setCurrentTrending] = useState<TagKeys | null>(null)
   const drawerInputRef = useRef<HTMLInputElement>(null)
+  const TAGS_MAP = useTagsMap()
 
   const toggleBodyScroll = useCallback((disable: boolean) => {
     document.documentElement.style.overflow = disable ? 'hidden' : 'auto'

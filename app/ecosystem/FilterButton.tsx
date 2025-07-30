@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react'
-import { TagKeys, TAGS_MAP, keyForTag } from '../../utils/airtable/ecosystem'
+import { TagKeys, keyForTag } from '../../utils/airtable/ecosystem'
+import { useTagsMap } from '../../utils/airtable/TagsContext'
 
 type FilterButtonProps = {
   selected: TagKeys[]
@@ -18,6 +19,7 @@ export const FilterButton = ({
 }: FilterButtonProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  const TAGS_MAP = useTagsMap()
 
   const toggleOpen = () => {
     setIsOpen(prev => {
@@ -164,7 +166,7 @@ export const FilterButton = ({
                       : [...selected, item.value]
 
                     // clean search when we deselect the searchKey in the list
-                    const searchKey = keyForTag(search)
+                    const searchKey = keyForTag(TAGS_MAP, search)
                     if (item.checked && searchKey === item.value)
                       updateSearch('')
 

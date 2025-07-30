@@ -10,7 +10,8 @@ import Image from 'next/image'
 import { CheveronIcon } from '../../Icons/CheveronIcon'
 import { TwitterIcon } from '../../Icons/TwitterIcon'
 import { ArrowRightIcon } from '../../Icons/ArrowRightIcon'
-import { Project, TAGS_MAP } from '../../../../utils/airtable/ecosystem'
+import { Project } from '../../../../utils/airtable/ecosystem'
+import { useTagsMap } from '../../../../utils/airtable/TagsContext'
 
 export const EcosystemCarousel = ({ projects }: { projects: Project[] }) => {
   const swiperInfoRef = useRef<any>()
@@ -74,6 +75,8 @@ export const ExploreEcosystemCard = ({
   Twitter,
   Website
 }: ProjectCardProps) => {
+  const TAGS_MAP = useTagsMap()
+
   return (
     <div
       className='relative flex flex-col p-6 bg-[#1B1B1B] shadow-[0px_0px_6px_0px_rgba(51,232,142,0.40)] 
