@@ -4,11 +4,13 @@ export interface NavItem {
   dropdown?: boolean
   isNestedItem?: boolean
   isLastNestedItem?: boolean
+  publishedAt?: string
   items?: NavItem[]
 }
 
 export const NAVBAR_ITEMS: NavItem[] = [
   {
+    publishedAt: '2025-08-11',
     dropdown: true,
     name: 'Use',
     items: [
@@ -31,7 +33,8 @@ export const NAVBAR_ITEMS: NavItem[] = [
       },
       {
         name: 'DeFi',
-        link: '/defi'
+        link: '/defi',
+        publishedAt: '2025-08-11'
       }
     ]
   },

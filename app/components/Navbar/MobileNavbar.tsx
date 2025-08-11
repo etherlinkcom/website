@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import { HomeCta } from './HomeCta'
 import { isExternalLink } from '.'
+import { isNewByPublishedAt } from '../../../utils/isNewPage'
 
 const SubNavItem = ({
   item,
@@ -26,6 +27,11 @@ const SubNavItem = ({
         target={isExternalLink(item.link!)}
       >
         <span>{item.name}</span>
+        {isNewByPublishedAt(item.publishedAt) && (
+          <span className='bg-neonGreen-500 text-[8px] text-darkGreen-900 font-bold rounded-[12px] px-2 py-0.5'>
+            New
+          </span>
+        )}
         {item.link?.startsWith('http') && (
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -135,7 +141,13 @@ const MainNavItem = ({
       className='flex items-center justify-between w-full px-6 py-3 text-grey-100 text-sm font-bold hover:text-white-50'
       onClick={() => item.items && onNavigate(item.items, item.name || '')}
     >
-      <span>{item.name}</span>
+      <div className='flex items-center gap-1.5'>
+        <div>{item.name} </div>
+        {isNewByPublishedAt(item.publishedAt) && (
+          <div className='bg-red-500 w-1.5 h-1.5 rounded-full z-10' />
+        )}
+      </div>
+
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='16'
