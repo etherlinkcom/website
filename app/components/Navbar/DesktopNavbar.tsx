@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { NavItem } from './fixture'
 import { isExternalLink } from '.'
 import { usePathname } from 'next/navigation'
+import { isNewByPublishedAt } from '../../../utils/isNewPage'
 
 const ChevronDown = ({ className }: { className?: string }) => (
   <svg
@@ -48,6 +49,11 @@ const DropdownItem = ({
         onClick={closeParent}
       >
         <span>{item.name}</span>
+        {isNewByPublishedAt(item.publishedAt) && (
+          <span className='bg-neonGreen-500 text-[8px] text-darkGreen-900 font-bold rounded-[12px] px-2 py-0.5'>
+            New
+          </span>
+        )}
       </a>
     )
   }
@@ -113,7 +119,13 @@ export const DesktopNavbar = ({ items }: { items: NavItem[] }) => {
           {items.map((item, index) => (
             <div key={index} className='relative inline-block text-left'>
               {item.dropdown ? (
-                <div onClick={e => e.stopPropagation()}>
+                <div
+                  className='flex items-center'
+                  onClick={e => e.stopPropagation()}
+                >
+                  {isNewByPublishedAt(item.publishedAt) && (
+                    <div className='bg-red-500 w-1.5 h-1.5 rounded-full translate-x-[18px] z-10' />
+                  )}
                   <DropdownMenu
                     item={item}
                     isOpen={openMenuIndex === index}
