@@ -17,7 +17,7 @@ export const isExternalLink = (link: string) =>
       : '_self'
 
 export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const handleClose = () => setIsOpen(false)
 
   return (
