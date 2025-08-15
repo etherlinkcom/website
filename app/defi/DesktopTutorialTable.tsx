@@ -217,6 +217,7 @@ export const DesktopTutorialTable = ({
                 {t.video ? (
                   <ReactPlayer
                     src={t.video}
+                    light={t.image}
                     controls
                     playing={isPlaying}
                     width='100%'
