@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {
   TABLE_BORDER_COLOR,
   StrategyPill,
@@ -9,6 +9,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { EmblaNavButton } from './DesktopTutorialTable'
 import { STRATEGIES_DATA, StrategyId } from './fixture'
 import Link from 'next/link'
+import ReactPlayer from 'react-player'
 
 export const MobileTutorialTable = ({
   selectedStrategyId,
@@ -19,6 +20,13 @@ export const MobileTutorialTable = ({
 }: TutorialProps) => {
   const pillsContainerRef = useRef<HTMLDivElement | null>(null)
   const pillRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  // If user switches steps, reset playing
+  useEffect(() => {
+    setIsPlaying(false)
+  }, [currentStep])
 
   // Scroll the selected pill into view only if it's outside the visible area
   useEffect(() => {
@@ -175,15 +183,36 @@ export const MobileTutorialTable = ({
       <div
         className={`relative w-full aspect-[4/3] border-b ${TABLE_BORDER_COLOR}`}
       >
-        {selectedStrategy.tutorials.map(t => (
-          <img
-            key={t.step}
-            src={t.image}
-            alt={t.title}
-            loading='lazy'
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${t.step === currentStep ? 'opacity-100' : 'opacity-0'}`}
-          />
-        ))}
+        {selectedStrategy.tutorials.map(t => {
+          const isActive = t.step === currentStep
+          return (
+            <div
+              key={t.step}
+              className={`
+                  absolute inset-0 transition-opacity duration-300
+                  ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+            `}
+            >
+              {t.video ? (
+                <ReactPlayer
+                  src={t.video}
+                  controls
+                  playing={isPlaying}
+                  width='100%'
+                  height='100%'
+                  className='absolute inset-0 z-10'
+                />
+              ) : (
+                <img
+                  src={t.image}
+                  alt={t.title}
+                  loading='lazy'
+                  className='w-full h-full object-cover'
+                />
+              )}
+            </div>
+          )
+        })}
       </div>
 
       <div
