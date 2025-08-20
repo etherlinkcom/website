@@ -39,10 +39,45 @@ export const DesktopTutorialTable = ({
   } = usePrevNextButtons(emblaApi)
 
   const [isPlaying, setIsPlaying] = useState(false)
+  const [inView, setInView] = useState(false)
+  const [playerResetId, setPlayerResetId] = useState(0)
 
-  // If user switches steps, reset playing
+  const activeWrapperRef = useRef<HTMLDivElement | null>(null)
+
+  const resetFromStart = () => setPlayerResetId(id => id + 1)
+
   useEffect(() => {
     setIsPlaying(false)
+    resetFromStart()
+    if (inView) {
+      setIsPlaying(true)
+    }
+  }, [currentStep])
+
+  useEffect(() => {
+    const el = activeWrapperRef.current
+    if (!el) return
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        const visible = entry.isIntersecting && entry.intersectionRatio >= 0.5
+        setInView(visible)
+
+        if (visible) {
+          // restart from beginning and play
+          resetFromStart()
+          setIsPlaying(true)
+        } else {
+          // pause and reset so next time it starts from 0
+          setIsPlaying(false)
+          resetFromStart()
+        }
+      },
+      { threshold: [0, 0.5, 1] }
+    )
+
+    io.observe(el)
+    return () => io.disconnect()
   }, [currentStep])
 
   useEffect(() => {
@@ -114,7 +149,7 @@ export const DesktopTutorialTable = ({
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full hidden md:block`}
     >
-      {/* ── TITLES ROW: Strategy Pills ─────────────────────────────────────────────── */}
+      {/* ── TITLES ROW: Strategy Pills ─────────────────────────────────────────── */}
       <div
         className={`flex overflow-auto items-center gap-6 py-3 px-6 border-b ${TABLE_BORDER_COLOR}`}
         ref={pillsContainerRef}
@@ -125,8 +160,7 @@ export const DesktopTutorialTable = ({
             <div
               key={strategy.id}
               ref={el => {
-                if (el) pillRefs.current[idx] = el
-                else pillRefs.current[idx] = null
+                pillRefs.current[idx] = el
               }}
               className='shrink-0'
             >
@@ -139,6 +173,7 @@ export const DesktopTutorialTable = ({
           ))}
         </div>
       </div>
+
       <div className='flex'>
         <div className={`w-1/3 border-r ${TABLE_BORDER_COLOR}`}>
           <div
@@ -157,14 +192,15 @@ export const DesktopTutorialTable = ({
               />
             </div>
           </div>
-          {/* ── Embla viewport for tutorial slides ───────────────────────────────── */}
+
+          {/* ── Embla viewport for tutorial slides ─────────────────────────────── */}
           <div
             key={selectedStrategyId}
             ref={emblaRef}
             className={`p-3 h-[300px] border-b embla__viewport overflow-hidden ${TABLE_BORDER_COLOR}`}
           >
             <div className='flex gap-4 embla__container'>
-              {selectedStrategy.tutorials.map((tutorial, index) => (
+              {selectedStrategy.tutorials.map(tutorial => (
                 <div
                   key={tutorial.step}
                   className='embla__slide shrink-0 w-full'
@@ -181,6 +217,7 @@ export const DesktopTutorialTable = ({
               )}
             </div>
           </div>
+
           {/* Projects involved section */}
           <div className={`flex border-b ${TABLE_BORDER_COLOR}`}>
             <div className={`px-6 py-2`}>
@@ -202,26 +239,28 @@ export const DesktopTutorialTable = ({
           </div>
         </div>
 
-        {/* ── RIGHT COLUMN: Image for the current tutorial step ─────────────────── */}
+        {/* ── RIGHT COLUMN: Media for the current tutorial step ─────────────────── */}
         <div className='relative w-2/3 rounded-br-xl overflow-hidden'>
           {selectedStrategy.tutorials.map(t => {
             const isActive = t.step === currentStep
             return (
               <div
                 key={t.step}
+                ref={isActive ? activeWrapperRef : null} // observe only the active one
                 className={`
                   absolute inset-0 transition-opacity duration-300
                   ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
-            `}
+                `}
               >
                 {t.video ? (
                   <ReactPlayer
+                    key={`${t.step}-${isActive ? playerResetId : 'idle'}`}
                     src={t.video}
-                    light={t.image}
-                    controls
-                    playing={isPlaying}
+                    playing={isActive && isPlaying}
+                    muted
                     width='100%'
                     height='100%'
+                    loop
                     className='absolute inset-0 z-10'
                   />
                 ) : (

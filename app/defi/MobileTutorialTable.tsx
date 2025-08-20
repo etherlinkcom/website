@@ -7,7 +7,7 @@ import {
 } from './Tutorials'
 import useEmblaCarousel from 'embla-carousel-react'
 import { EmblaNavButton } from './DesktopTutorialTable'
-import { STRATEGIES_DATA, StrategyId } from './fixture'
+import { STRATEGIES_DATA } from './fixture'
 import Link from 'next/link'
 import ReactPlayer from 'react-player'
 
@@ -22,13 +22,42 @@ export const MobileTutorialTable = ({
   const pillRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const [isPlaying, setIsPlaying] = useState(false)
+  const [inView, setInView] = useState(false)
+  const [playerResetId, setPlayerResetId] = useState(0)
+  const activeWrapperRef = useRef<HTMLDivElement | null>(null)
 
-  // If user switches steps, reset playing
+  const resetFromStart = () => setPlayerResetId(id => id + 1)
+
   useEffect(() => {
     setIsPlaying(false)
+    resetFromStart()
+    if (inView) setIsPlaying(true)
+  }, [currentStep, inView])
+
+  // Observe only the currently active media wrapper
+  useEffect(() => {
+    const el = activeWrapperRef.current
+    if (!el) return
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        const visible = entry.isIntersecting && entry.intersectionRatio >= 0.5
+        setInView(visible)
+        if (visible) {
+          resetFromStart()
+          setIsPlaying(true)
+        } else {
+          setIsPlaying(false)
+          resetFromStart()
+        }
+      },
+      { threshold: [0, 0.5, 1] }
+    )
+
+    io.observe(el)
+    return () => io.disconnect()
   }, [currentStep])
 
-  // Scroll the selected pill into view only if it's outside the visible area
   useEffect(() => {
     const idx = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)
     const pillEl = pillRefs.current[idx]
@@ -82,12 +111,8 @@ export const MobileTutorialTable = ({
     hasPrevStrategy
   ])
 
-  // Handle carousel snap events: always return a cleanup function
   useEffect(() => {
-    if (!tutorialsApi) {
-      // still return a destructor to satisfy EffectCallback signature
-      return () => {}
-    }
+    if (!tutorialsApi) return
 
     const onTutorialSelect = () => {
       const idx = tutorialsApi.selectedScrollSnap()
@@ -98,11 +123,9 @@ export const MobileTutorialTable = ({
 
       if (relative < 0 && hasPrevStrategy) {
         const prev = STRATEGIES_DATA[currentStrategyIndex - 1]
-
         setSelectedStrategyId(prev.id)
       } else if (relative >= count && hasNextStrategy) {
         const next = STRATEGIES_DATA[currentStrategyIndex + 1]
-
         setSelectedStrategyId(next.id)
       } else if (relative >= 0 && relative < count) {
         const step = tutorials[relative].step
@@ -148,7 +171,6 @@ export const MobileTutorialTable = ({
         >
           {STRATEGIES_DATA.map((strategy, idx) => {
             const isSelected = strategy.id === selectedStrategyId
-
             return (
               <div
                 key={strategy.id}
@@ -188,16 +210,19 @@ export const MobileTutorialTable = ({
           return (
             <div
               key={t.step}
+              ref={isActive ? activeWrapperRef : null}
               className={`
-                  absolute inset-0 transition-opacity duration-300
-                  ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
-            `}
+                absolute inset-0 transition-opacity duration-300
+                ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+              `}
             >
               {t.video ? (
                 <ReactPlayer
+                  key={`${t.step}-${isActive ? playerResetId : 'idle'}`}
                   src={t.video}
-                  controls
-                  playing={isPlaying}
+                  playing={isActive && isPlaying}
+                  muted
+                  loop
                   width='100%'
                   height='100%'
                   className='absolute inset-0 z-10'
