@@ -56,8 +56,6 @@ export const MobileTutorialTable = ({
 
             const selectedVideo = videoRefs.current[currentStep - 1]
 
-            console.log('Playing video:', selectedVideo)
-
             if (selectedVideo) {
               videoRefs.current.forEach(video => {
                 if (video) {
