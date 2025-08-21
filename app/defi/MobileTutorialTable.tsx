@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {
   TABLE_BORDER_COLOR,
   StrategyPill,
@@ -7,7 +7,7 @@ import {
 } from './Tutorials'
 import useEmblaCarousel from 'embla-carousel-react'
 import { EmblaNavButton } from './DesktopTutorialTable'
-import { STRATEGIES_DATA, StrategyId } from './fixture'
+import { STRATEGIES_DATA } from './fixture'
 import Link from 'next/link'
 
 export const MobileTutorialTable = ({
@@ -20,7 +20,6 @@ export const MobileTutorialTable = ({
   const pillsContainerRef = useRef<HTMLDivElement | null>(null)
   const pillRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  // Scroll the selected pill into view only if it's outside the visible area
   useEffect(() => {
     const idx = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)
     const pillEl = pillRefs.current[idx]
@@ -74,12 +73,8 @@ export const MobileTutorialTable = ({
     hasPrevStrategy
   ])
 
-  // Handle carousel snap events: always return a cleanup function
   useEffect(() => {
-    if (!tutorialsApi) {
-      // still return a destructor to satisfy EffectCallback signature
-      return () => {}
-    }
+    if (!tutorialsApi) return
 
     const onTutorialSelect = () => {
       const idx = tutorialsApi.selectedScrollSnap()
@@ -90,11 +85,9 @@ export const MobileTutorialTable = ({
 
       if (relative < 0 && hasPrevStrategy) {
         const prev = STRATEGIES_DATA[currentStrategyIndex - 1]
-
         setSelectedStrategyId(prev.id)
       } else if (relative >= count && hasNextStrategy) {
         const next = STRATEGIES_DATA[currentStrategyIndex + 1]
-
         setSelectedStrategyId(next.id)
       } else if (relative >= 0 && relative < count) {
         const step = tutorials[relative].step
@@ -140,7 +133,6 @@ export const MobileTutorialTable = ({
         >
           {STRATEGIES_DATA.map((strategy, idx) => {
             const isSelected = strategy.id === selectedStrategyId
-
             return (
               <div
                 key={strategy.id}
@@ -175,15 +167,47 @@ export const MobileTutorialTable = ({
       <div
         className={`relative w-full aspect-[4/3] border-b ${TABLE_BORDER_COLOR}`}
       >
-        {selectedStrategy.tutorials.map(t => (
-          <img
-            key={t.step}
-            src={t.image}
-            alt={t.title}
-            loading='lazy'
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${t.step === currentStep ? 'opacity-100' : 'opacity-0'}`}
-          />
-        ))}
+        {selectedStrategy.tutorials.map(t => {
+          const isActive = t.step === currentStep
+          return (
+            <div
+              key={t.step}
+              className={`
+                absolute inset-0 transition-opacity duration-300
+                ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+              `}
+            >
+              {t.video ? (
+                <div className='relative w-full h-full'>
+                  {/* Thumbnail placeholder */}
+                  <img
+                    src={t.image}
+                    alt='video thumbnail'
+                    className='absolute inset-0 w-full h-full object-cover z-0'
+                  />
+
+                  <video
+                    controls
+                    src={t.video}
+                    poster={t.image}
+                    loop
+                    muted
+                    playsInline
+                    preload='auto'
+                    className='absolute inset-0 w-full h-full object-cover z-10'
+                  />
+                </div>
+              ) : (
+                <img
+                  src={t.image}
+                  alt={t.title}
+                  loading='lazy'
+                  className='w-full h-full object-cover'
+                />
+              )}
+            </div>
+          )
+        })}
       </div>
 
       <div

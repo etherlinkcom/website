@@ -1,4 +1,9 @@
-import React, { ComponentPropsWithRef, useEffect, useRef } from 'react'
+import React, {
+  ComponentPropsWithRef,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import {
   TABLE_BORDER_COLOR,
   StrategyPill,
@@ -101,7 +106,7 @@ export const DesktopTutorialTable = ({
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full hidden md:block`}
     >
-      {/* ── TITLES ROW: Strategy Pills ─────────────────────────────────────────────── */}
+      {/* ── TITLES ROW: Strategy Pills ─────────────────────────────────────────── */}
       <div
         className={`flex overflow-auto items-center gap-6 py-3 px-6 border-b ${TABLE_BORDER_COLOR}`}
         ref={pillsContainerRef}
@@ -112,8 +117,7 @@ export const DesktopTutorialTable = ({
             <div
               key={strategy.id}
               ref={el => {
-                if (el) pillRefs.current[idx] = el
-                else pillRefs.current[idx] = null
+                pillRefs.current[idx] = el
               }}
               className='shrink-0'
             >
@@ -126,6 +130,7 @@ export const DesktopTutorialTable = ({
           ))}
         </div>
       </div>
+
       <div className='flex'>
         <div className={`w-1/3 border-r ${TABLE_BORDER_COLOR}`}>
           <div
@@ -144,14 +149,15 @@ export const DesktopTutorialTable = ({
               />
             </div>
           </div>
-          {/* ── Embla viewport for tutorial slides ───────────────────────────────── */}
+
+          {/* ── Embla viewport for tutorial slides ─────────────────────────────── */}
           <div
             key={selectedStrategyId}
             ref={emblaRef}
             className={`p-3 h-[300px] border-b embla__viewport overflow-hidden ${TABLE_BORDER_COLOR}`}
           >
             <div className='flex gap-4 embla__container'>
-              {selectedStrategy.tutorials.map((tutorial, index) => (
+              {selectedStrategy.tutorials.map(tutorial => (
                 <div
                   key={tutorial.step}
                   className='embla__slide shrink-0 w-full'
@@ -168,6 +174,7 @@ export const DesktopTutorialTable = ({
               )}
             </div>
           </div>
+
           {/* Projects involved section */}
           <div className={`flex border-b ${TABLE_BORDER_COLOR}`}>
             <div className={`px-6 py-2`}>
@@ -189,21 +196,49 @@ export const DesktopTutorialTable = ({
           </div>
         </div>
 
-        {/* ── RIGHT COLUMN: Image for the current tutorial step ─────────────────── */}
-        <div className='relative w-2/3'>
-          {selectedStrategy.tutorials.map(t => (
-            <img
-              key={t.step}
-              src={t.image}
-              alt={t.title}
-              loading='lazy'
-              className={`
-                absolute inset-0 w-full h-full object-cover
-                transition-opacity duration-300 rounded-br-xl
-                ${t.step === currentStep ? 'opacity-100' : 'opacity-0'}
-              `}
-            />
-          ))}
+        {/* ── RIGHT COLUMN: Media for the current tutorial step ─────────────────── */}
+        <div className='relative w-2/3 rounded-br-xl overflow-hidden'>
+          {selectedStrategy.tutorials.map(t => {
+            const isActive = t.step === currentStep
+            return (
+              <div
+                key={t.step}
+                className={`
+                  absolute inset-0 transition-opacity duration-300
+                  ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+                `}
+              >
+                {t.video ? (
+                  <div className='relative w-full h-full'>
+                    {/* Thumbnail placeholder */}
+                    <img
+                      src={t.image}
+                      alt='video thumbnail'
+                      className='absolute inset-0 w-full h-full object-cover z-0'
+                    />
+
+                    <video
+                      src={t.video}
+                      poster={t.image}
+                      controls
+                      loop
+                      muted
+                      playsInline
+                      preload='auto'
+                      className='absolute inset-0 w-full h-full object-cover z-10'
+                    />
+                  </div>
+                ) : (
+                  <img
+                    src={t.image}
+                    alt={t.title}
+                    loading='lazy'
+                    className='w-full h-full object-cover'
+                  />
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>
