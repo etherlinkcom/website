@@ -246,19 +246,28 @@ export const MobileTutorialTable = ({
               `}
             >
               {t.video ? (
-                <video
-                  ref={(el: HTMLVideoElement | null) => {
-                    videoRefs.current[index] = el
-                    return undefined
-                  }}
-                  src={t.video}
-                  poster={t.image}
-                  loop
-                  muted
-                  playsInline
-                  preload='auto'
-                  className='w-full h-full object-cover'
-                />
+                <div className='relative w-full h-full'>
+                  {/* Thumbnail placeholder */}
+                  <img
+                    src={t.image}
+                    alt='video thumbnail'
+                    className='absolute inset-0 w-full h-full object-cover z-0'
+                  />
+
+                  <video
+                    ref={(el: HTMLVideoElement | null) => {
+                      videoRefs.current[index] = el
+                      return undefined
+                    }}
+                    src={t.video}
+                    poster={t.image}
+                    loop
+                    muted
+                    playsInline
+                    preload='auto'
+                    className='absolute inset-0 w-full h-full object-cover z-10'
+                  />
+                </div>
               ) : (
                 <img
                   src={t.image}
