@@ -19,73 +19,6 @@ export const MobileTutorialTable = ({
 }: TutorialProps) => {
   const pillsContainerRef = useRef<HTMLDivElement | null>(null)
   const pillRefs = useRef<(HTMLDivElement | null)[]>([])
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  const [shouldLoadVideos, setShouldLoadVideos] = useState(false)
-
-  // Lazy load videos when section is near viewport
-  useEffect(() => {
-    if (!sectionRef.current) return
-
-    const observer = new IntersectionObserver(
-      entries => {
-        if (entries[0]?.isIntersecting) {
-          setShouldLoadVideos(true)
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '200px' }
-    )
-
-    observer.observe(sectionRef.current)
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
-
-  useEffect(() => {
-    if (!sectionRef.current || !shouldLoadVideos) return
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Section is in viewport, play the selected video based on device
-
-            const selectedVideo = videoRefs.current[currentStep - 1]
-
-            if (selectedVideo) {
-              videoRefs.current.forEach(video => {
-                if (video) {
-                  video.currentTime = 0
-                }
-              })
-              selectedVideo
-                .play()
-                .catch(e => console.log('Desktop video play error:', e))
-            }
-          } else {
-            // Section is out of viewport, pause and reset all videos
-            videoRefs.current.forEach(video => {
-              if (video) {
-                video.pause()
-                video.currentTime = 0
-              }
-            })
-          }
-        })
-      },
-      { threshold: 0.2 }
-    )
-
-    observer.observe(sectionRef.current)
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [currentStep, selectedStrategyId, shouldLoadVideos])
 
   useEffect(() => {
     const idx = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)
@@ -180,7 +113,6 @@ export const MobileTutorialTable = ({
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full block md:hidden`}
-      ref={sectionRef}
     >
       <div
         className={`flex items-center py-3 px-4 border-b ${TABLE_BORDER_COLOR}`}
@@ -235,7 +167,7 @@ export const MobileTutorialTable = ({
       <div
         className={`relative w-full aspect-[4/3] border-b ${TABLE_BORDER_COLOR}`}
       >
-        {selectedStrategy.tutorials.map((t, index) => {
+        {selectedStrategy.tutorials.map(t => {
           const isActive = t.step === currentStep
           return (
             <div
@@ -255,10 +187,7 @@ export const MobileTutorialTable = ({
                   />
 
                   <video
-                    ref={(el: HTMLVideoElement | null) => {
-                      videoRefs.current[index] = el
-                      return undefined
-                    }}
+                    controls
                     src={t.video}
                     poster={t.image}
                     loop

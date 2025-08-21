@@ -37,74 +37,6 @@ export const DesktopTutorialTable = ({
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
 
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  const [shouldLoadVideos, setShouldLoadVideos] = useState(false)
-
-  // Lazy load videos when section is near viewport
-  useEffect(() => {
-    if (!sectionRef.current) return
-
-    const observer = new IntersectionObserver(
-      entries => {
-        if (entries[0]?.isIntersecting) {
-          setShouldLoadVideos(true)
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '200px' }
-    )
-
-    observer.observe(sectionRef.current)
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
-
-  useEffect(() => {
-    if (!sectionRef.current || !shouldLoadVideos) return
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Section is in viewport, play the selected video based on device
-
-            const selectedVideo = videoRefs.current[currentStep - 1]
-
-            if (selectedVideo) {
-              videoRefs.current.forEach(video => {
-                if (video) {
-                  video.currentTime = 0
-                }
-              })
-              selectedVideo
-                .play()
-                .catch(e => console.log('Desktop video play error:', e))
-            }
-          } else {
-            // Section is out of viewport, pause and reset all videos
-            videoRefs.current.forEach(video => {
-              if (video) {
-                video.pause()
-                video.currentTime = 0
-              }
-            })
-          }
-        })
-      },
-      { threshold: 0.2 }
-    )
-
-    observer.observe(sectionRef.current)
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [currentStep, selectedStrategyId, shouldLoadVideos])
-
   useEffect(() => {
     if (selectedStrategy.tutorials.length > 0) {
       setCurrentStep(selectedStrategy.tutorials[0].step)
@@ -173,7 +105,6 @@ export const DesktopTutorialTable = ({
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full hidden md:block`}
-      ref={sectionRef}
     >
       {/* ── TITLES ROW: Strategy Pills ─────────────────────────────────────────── */}
       <div
@@ -267,7 +198,7 @@ export const DesktopTutorialTable = ({
 
         {/* ── RIGHT COLUMN: Media for the current tutorial step ─────────────────── */}
         <div className='relative w-2/3 rounded-br-xl overflow-hidden'>
-          {selectedStrategy.tutorials.map((t, index) => {
+          {selectedStrategy.tutorials.map(t => {
             const isActive = t.step === currentStep
             return (
               <div
@@ -287,12 +218,9 @@ export const DesktopTutorialTable = ({
                     />
 
                     <video
-                      ref={(el: HTMLVideoElement | null) => {
-                        videoRefs.current[index] = el
-                        return undefined
-                      }}
                       src={t.video}
                       poster={t.image}
+                      controls
                       loop
                       muted
                       playsInline
