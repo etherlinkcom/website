@@ -9,7 +9,6 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { EmblaNavButton } from './DesktopTutorialTable'
 import { STRATEGIES_DATA } from './fixture'
 import Link from 'next/link'
-import ReactPlayer from 'react-player'
 
 export const MobileTutorialTable = ({
   selectedStrategyId,
@@ -20,43 +19,76 @@ export const MobileTutorialTable = ({
 }: TutorialProps) => {
   const pillsContainerRef = useRef<HTMLDivElement | null>(null)
   const pillRefs = useRef<(HTMLDivElement | null)[]>([])
-
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [inView, setInView] = useState(false)
-  const [playerResetId, setPlayerResetId] = useState(0)
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
   const activeWrapperRef = useRef<HTMLDivElement | null>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
-  const resetFromStart = () => setPlayerResetId(id => id + 1)
+  const [shouldLoadVideos, setShouldLoadVideos] = useState(false)
 
+  // Lazy load videos when section is near viewport
   useEffect(() => {
-    setIsPlaying(false)
-    resetFromStart()
-    if (inView) setIsPlaying(true)
-  }, [currentStep, inView])
+    if (!sectionRef.current) return
 
-  // Observe only the currently active media wrapper
-  useEffect(() => {
-    const el = activeWrapperRef.current
-    if (!el) return
-
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        const visible = entry.isIntersecting && entry.intersectionRatio >= 0.5
-        setInView(visible)
-        if (visible) {
-          resetFromStart()
-          setIsPlaying(true)
-        } else {
-          setIsPlaying(false)
-          resetFromStart()
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0]?.isIntersecting) {
+          setShouldLoadVideos(true)
+          observer.disconnect()
         }
       },
-      { threshold: [0, 0.5, 1] }
+      { rootMargin: '200px' }
     )
 
-    io.observe(el)
-    return () => io.disconnect()
-  }, [currentStep])
+    observer.observe(sectionRef.current)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!sectionRef.current || !shouldLoadVideos) return
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Section is in viewport, play the selected video based on device
+
+            const selectedVideo = videoRefs.current[currentStep - 1]
+
+            console.log('Playing video:', selectedVideo)
+
+            if (selectedVideo) {
+              videoRefs.current.forEach(video => {
+                if (video) {
+                  video.currentTime = 0
+                }
+              })
+              selectedVideo
+                .play()
+                .catch(e => console.log('Desktop video play error:', e))
+            }
+          } else {
+            // Section is out of viewport, pause and reset all videos
+            videoRefs.current.forEach(video => {
+              if (video) {
+                video.pause()
+                video.currentTime = 0
+              }
+            })
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    observer.observe(sectionRef.current)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [currentStep, shouldLoadVideos])
 
   useEffect(() => {
     const idx = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)
@@ -151,6 +183,7 @@ export const MobileTutorialTable = ({
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full block md:hidden`}
+      ref={sectionRef}
     >
       <div
         className={`flex items-center py-3 px-4 border-b ${TABLE_BORDER_COLOR}`}
@@ -205,7 +238,7 @@ export const MobileTutorialTable = ({
       <div
         className={`relative w-full aspect-[4/3] border-b ${TABLE_BORDER_COLOR}`}
       >
-        {selectedStrategy.tutorials.map(t => {
+        {selectedStrategy.tutorials.map((t, index) => {
           const isActive = t.step === currentStep
           return (
             <div
@@ -217,16 +250,16 @@ export const MobileTutorialTable = ({
               `}
             >
               {t.video ? (
-                <ReactPlayer
-                  key={`${t.step}-${isActive ? playerResetId : 'idle'}`}
+                <video
+                  ref={(el: HTMLVideoElement | null) => {
+                    videoRefs.current[index] = el
+                    return undefined
+                  }}
                   src={t.video}
-                  playing={isActive && isPlaying}
-                  controls={false}
-                  muted
                   loop
-                  width='100%'
-                  height='100%'
-                  className='absolute inset-0 z-10'
+                  muted
+                  playsInline
+                  style={{ width: '100%', height: '100%' }}
                 />
               ) : (
                 <img

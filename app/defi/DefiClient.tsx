@@ -12,7 +12,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export const DefiClient = async () => {
+export const DefiClient = () => {
   const pageRef = useRef<HTMLDivElement | null>(null)
 
   useLayoutEffect(() => {
