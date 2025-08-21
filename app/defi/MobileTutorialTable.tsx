@@ -256,6 +256,7 @@ export const MobileTutorialTable = ({
                     return undefined
                   }}
                   src={t.video}
+                  poster={t.image}
                   loop
                   muted
                   playsInline
