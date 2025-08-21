@@ -217,13 +217,13 @@ export const MobileTutorialTable = ({
               `}
             >
               {t.video ? (
-                <video
+                <ReactPlayer
                   key={`${t.step}-${isActive ? playerResetId : 'idle'}`}
                   src={t.video}
-                  loop
+                  playing={isActive && isPlaying}
+                  controls={false}
                   muted
-                  playsInline
-                  autoPlay={isPlaying}
+                  loop
                   width='100%'
                   height='100%'
                   className='absolute inset-0 z-10'
