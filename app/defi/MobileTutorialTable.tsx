@@ -85,7 +85,7 @@ export const MobileTutorialTable = ({
     return () => {
       observer.disconnect()
     }
-  }, [currentStep, shouldLoadVideos])
+  }, [currentStep, selectedStrategyId, shouldLoadVideos])
 
   useEffect(() => {
     const idx = STRATEGIES_DATA.findIndex(s => s.id === selectedStrategyId)

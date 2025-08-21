@@ -14,7 +14,6 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { usePrevNextButtons } from './usePrevNextButtons'
 import { STRATEGIES_DATA } from './fixture'
 import Link from 'next/link'
-import ReactPlayer from 'react-player'
 
 export const DesktopTutorialTable = ({
   selectedStrategyId,
@@ -104,7 +103,7 @@ export const DesktopTutorialTable = ({
     return () => {
       observer.disconnect()
     }
-  }, [currentStep, shouldLoadVideos])
+  }, [currentStep, selectedStrategyId, shouldLoadVideos])
 
   useEffect(() => {
     if (selectedStrategy.tutorials.length > 0) {
