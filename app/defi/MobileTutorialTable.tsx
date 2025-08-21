@@ -20,7 +20,6 @@ export const MobileTutorialTable = ({
   const pillsContainerRef = useRef<HTMLDivElement | null>(null)
   const pillRefs = useRef<(HTMLDivElement | null)[]>([])
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
-  const activeWrapperRef = useRef<HTMLDivElement | null>(null)
   const sectionRef = useRef<HTMLDivElement>(null)
 
   const [shouldLoadVideos, setShouldLoadVideos] = useState(false)
@@ -243,7 +242,6 @@ export const MobileTutorialTable = ({
           return (
             <div
               key={t.step}
-              ref={isActive ? activeWrapperRef : null}
               className={`
                 absolute inset-0 transition-opacity duration-300
                 ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}

@@ -38,47 +38,75 @@ export const DesktopTutorialTable = ({
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
 
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [inView, setInView] = useState(false)
-  const [playerResetId, setPlayerResetId] = useState(0)
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+  const sectionRef = useRef<HTMLDivElement>(null)
 
-  const activeWrapperRef = useRef<HTMLDivElement | null>(null)
+  const [shouldLoadVideos, setShouldLoadVideos] = useState(false)
 
-  const resetFromStart = () => setPlayerResetId(id => id + 1)
-
+  // Lazy load videos when section is near viewport
   useEffect(() => {
-    setIsPlaying(false)
-    resetFromStart()
-    if (inView) {
-      setIsPlaying(true)
-    }
-  }, [currentStep])
+    if (!sectionRef.current) return
 
-  useEffect(() => {
-    const el = activeWrapperRef.current
-    if (!el) return
-
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        const visible = entry.isIntersecting && entry.intersectionRatio >= 0.5
-        setInView(visible)
-
-        if (visible) {
-          // restart from beginning and play
-          resetFromStart()
-          setIsPlaying(true)
-        } else {
-          // pause and reset so next time it starts from 0
-          setIsPlaying(false)
-          resetFromStart()
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0]?.isIntersecting) {
+          setShouldLoadVideos(true)
+          observer.disconnect()
         }
       },
-      { threshold: [0, 0.5, 1] }
+      { rootMargin: '200px' }
     )
 
-    io.observe(el)
-    return () => io.disconnect()
-  }, [currentStep])
+    observer.observe(sectionRef.current)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!sectionRef.current || !shouldLoadVideos) return
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Section is in viewport, play the selected video based on device
+
+            const selectedVideo = videoRefs.current[currentStep - 1]
+
+            console.log('Playing video:', selectedVideo)
+
+            if (selectedVideo) {
+              videoRefs.current.forEach(video => {
+                if (video) {
+                  video.currentTime = 0
+                }
+              })
+              selectedVideo
+                .play()
+                .catch(e => console.log('Desktop video play error:', e))
+            }
+          } else {
+            // Section is out of viewport, pause and reset all videos
+            videoRefs.current.forEach(video => {
+              if (video) {
+                video.pause()
+                video.currentTime = 0
+              }
+            })
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    observer.observe(sectionRef.current)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [currentStep, shouldLoadVideos])
 
   useEffect(() => {
     if (selectedStrategy.tutorials.length > 0) {
@@ -148,6 +176,7 @@ export const DesktopTutorialTable = ({
   return (
     <div
       className={`border ${TABLE_BORDER_COLOR} rounded-xl w-full h-full hidden md:block`}
+      ref={sectionRef}
     >
       {/* ── TITLES ROW: Strategy Pills ─────────────────────────────────────────── */}
       <div
@@ -241,27 +270,28 @@ export const DesktopTutorialTable = ({
 
         {/* ── RIGHT COLUMN: Media for the current tutorial step ─────────────────── */}
         <div className='relative w-2/3 rounded-br-xl overflow-hidden'>
-          {selectedStrategy.tutorials.map(t => {
+          {selectedStrategy.tutorials.map((t, index) => {
             const isActive = t.step === currentStep
             return (
               <div
                 key={t.step}
-                ref={isActive ? activeWrapperRef : null} // observe only the active one
                 className={`
                   absolute inset-0 transition-opacity duration-300
                   ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
                 `}
               >
                 {t.video ? (
-                  <ReactPlayer
-                    key={`${t.step}-${isActive ? playerResetId : 'idle'}`}
+                  <video
+                    ref={(el: HTMLVideoElement | null) => {
+                      videoRefs.current[index] = el
+                      return undefined
+                    }}
                     src={t.video}
-                    playing={isActive && isPlaying}
-                    muted
-                    width='100%'
-                    height='100%'
+                    poster={t.image}
                     loop
-                    className='absolute inset-0 z-10'
+                    muted
+                    playsInline
+                    style={{ width: '100%', height: '100%' }}
                   />
                 ) : (
                   <img
