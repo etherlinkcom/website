@@ -3,13 +3,12 @@
 import { useRef, useLayoutEffect } from 'react'
 
 import { Hero } from './Hero'
-import { Tutorials } from './Tutorials'
 import { OnBoard } from './OnBoard'
 import Link from 'next/link'
 import Container from '../components/container'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ProjectCard } from './ProjectCard'
+import { ProjectSection } from './ProjectSection'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -43,17 +42,8 @@ export const DefiClient = () => {
       <div data-section>
         <Hero />
       </div>
-      <div className='flex justify-center items-center mt-10'>
-        <ProjectCard
-          link='/'
-          title='T-Bill Savings'
-          description='Stable savings on Etherlink.'
-          image='/img/defi/projects/1.png'
-          tags='Supply'
-        />
-      </div>
       <div data-section>
-        <Tutorials />
+        <ProjectSection />
       </div>
       <div data-section>
         <OnBoard />
