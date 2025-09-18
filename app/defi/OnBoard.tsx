@@ -8,21 +8,21 @@ const ONBOARD_DATA = [
     title: 'Centralized Exchange',
     description: 'Buy and transfer $XTZ to Etherlink',
     link: 'https://www.gate.io/',
-    image: '/img/defi/Gate.webp'
+    image: '/img/defi/onboard/cex.webp'
   },
   {
     org: 'Tezos & Etherlink',
     title: 'Bridge',
     description: 'Bridge your assets to Etherlink',
     link: 'https://bridge.etherlink.com/',
-    image: '/img/defi/etherlink-b.webp'
+    image: '/img/defi/onboard/bridge.webp'
   },
   {
     org: 'Transak',
     title: 'Onramp',
     description: 'Buy $XTZ using fiat',
     link: 'https://global.transak.com/',
-    image: '/img/defi/Transak.webp'
+    image: '/img/defi/onboard/onramp.webp'
   }
 ]
 
