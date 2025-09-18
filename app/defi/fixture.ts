@@ -9,7 +9,7 @@ export const DT_1ST_ROW = [
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' }
+  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' }
 ]
 
 export const DT_2ND_ROW = [
@@ -26,7 +26,7 @@ export const DT_3RD_ROW = [
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
   { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
+  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' }
 ]
 
@@ -44,13 +44,13 @@ export const MB_1ST_ROW = [
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
+  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
   { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
   { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
+  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' }
 ]
 
@@ -60,7 +60,7 @@ export const MB_2ND_ROW = [
   { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
+  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
   { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
   { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
