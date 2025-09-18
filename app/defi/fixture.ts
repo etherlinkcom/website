@@ -9,16 +9,16 @@ export const DT_1ST_ROW = [
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'bnb', image: '/img/defi/icons/bnb.svg' }
+  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' }
 ]
 
 export const DT_2ND_ROW = [
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
-  { alt: 'bnb', image: '/img/defi/icons/bnb.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
   { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' }
+  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
+  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
 ]
 
 export const DT_3RD_ROW = [
@@ -45,13 +45,13 @@ export const MB_1ST_ROW = [
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'bnb', image: '/img/defi/icons/bnb.svg' },
   { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
   { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'bnb', image: '/img/defi/icons/bnb.svg' }
+  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
+  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' }
 ]
 
 export const MB_2ND_ROW = [
