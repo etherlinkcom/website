@@ -69,6 +69,51 @@ export const MB_2ND_ROW = [
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
 ]
 
+export const PROJECTS = [
+  {
+    title: 'T-Bill Savings',
+    description: 'Stable savings on Etherlink.',
+    image: '/img/defi/projects/t-bill.webp',
+    tag: 'Supply',
+    link: '/defi/t-bill-savings'
+  },
+  {
+    title: 'Basis Trade',
+    description: 'Higher risk stable savings, higher rewards.',
+    image: '/img/defi/projects/basis-trade.webp',
+    tag: 'Supply',
+    link: '/defi/basis-trade'
+  },
+  {
+    title: 'BTC Fi',
+    description: 'Leverage your BTC to earn.',
+    image: '/img/defi/projects/btc-fi.webp',
+    tag: 'Supply',
+    link: '/defi/btc-fi'
+  },
+  {
+    title: 'Nuclear Speculation',
+    description: 'Tokenized uranium unique to Etherlink',
+    image: '/img/defi/projects/nuclear.webp',
+    tag: 'Buy',
+    link: '/defi/nuclear-speculation'
+  },
+  {
+    title: 'Community Speculation',
+    description: 'These are highly risky and speculative assets.',
+    image: '/img/defi/projects/community.webp',
+    tag: 'Buy',
+    link: '/defi/community-speculation'
+  },
+  {
+    title: 'Market Making',
+    description: 'Buy $XTZ using fiat ',
+    image: '/img/defi/projects/market-making.webp',
+    tag: 'Supply',
+    link: '/defi/market-making'
+  }
+]
+
 export type StrategyId =
   | 't-bill-savings'
   | 'basis-trade'

@@ -1,58 +1,7 @@
 import React from 'react'
 import { ProjectCard } from './ProjectCard'
 import Container from '../components/container'
-
-const PROJECTS = [
-  {
-    title: 'T-Bill Savings',
-    description: 'Stable savings on Etherlink.',
-    images: '/img/defi/projects/t-bill.webp',
-    tag: 'Supply',
-    link: '/defi/t-bill-savings'
-  },
-  {
-    title: '',
-    description: '',
-    images: '',
-    tag: '',
-    link: ''
-  },
-  {
-    title: '',
-    description: '',
-    images: '',
-    tag: '',
-    link: ''
-  },
-  {
-    title: '',
-    description: '',
-    images: '',
-    tag: '',
-    link: ''
-  },
-  {
-    title: '',
-    description: '',
-    images: '',
-    tag: '',
-    link: ''
-  },
-  {
-    title: '',
-    description: '',
-    images: '',
-    tag: '',
-    link: ''
-  },
-  {
-    title: '',
-    description: '',
-    images: '',
-    tag: '',
-    link: ''
-  }
-]
+import { PROJECTS } from './fixture'
 
 export const ProjectSection = () => {
   return (
@@ -66,6 +15,11 @@ export const ProjectSection = () => {
           <p className='text-grey-200 text-lg md:text-xl -tracking-[0.4px]'>
             Step-by-step guides to the top strategies on Etherlink
           </p>
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          {PROJECTS.map(project => (
+            <ProjectCard key={project.title} {...project} />
+          ))}
         </div>
       </Container>
     </div>

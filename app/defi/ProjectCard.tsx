@@ -6,7 +6,7 @@ interface ProjectCardProps {
   title: string
   description: string
   image: string
-  tags: string
+  tag: string
 }
 
 export const ProjectCard = (props: ProjectCardProps) => {
@@ -23,7 +23,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
           </div>
           <p className='text-grey-200 mb-4'>{props.description}</p>
           <span className='text-sm text-grey-50 px-2 py-1 rounded-full bg-grey-400'>
-            {props.tags}
+            {props.tag}
           </span>
         </div>
       </div>
