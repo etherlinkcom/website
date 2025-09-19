@@ -74,6 +74,7 @@ export const PROJECTS = [
     title: 'T-Bill Savings',
     description: 'Stable savings on Etherlink.',
     image: '/img/defi/projects/t-bill.webp',
+    video: '/img/defi/strategies/t-bill-savings/step1.mp4',
     tag: 'Supply',
     link: '/defi/t-bill-savings'
   },
@@ -81,6 +82,7 @@ export const PROJECTS = [
     title: 'Basis Trade',
     description: 'Higher risk stable savings, higher rewards.',
     image: '/img/defi/projects/basis-trade.webp',
+    video: '/img/defi/strategies/basis-trade/step1.mp4',
     tag: 'Supply',
     link: '/defi/basis-trade'
   },
@@ -88,6 +90,7 @@ export const PROJECTS = [
     title: 'BTC Fi',
     description: 'Leverage your BTC to earn.',
     image: '/img/defi/projects/btc-fi.webp',
+    video: '/img/defi/strategies/btc-fi/step1.mp4',
     tag: 'Supply',
     link: '/defi/btc-fi'
   },
@@ -95,6 +98,7 @@ export const PROJECTS = [
     title: 'Nuclear Speculation',
     description: 'Tokenized uranium unique to Etherlink',
     image: '/img/defi/projects/nuclear.webp',
+    video: '/img/defi/strategies/nuclear-speculation/step1.mp4',
     tag: 'Buy',
     link: '/defi/nuclear-speculation'
   },
@@ -102,6 +106,7 @@ export const PROJECTS = [
     title: 'Community Speculation',
     description: 'These are highly risky and speculative assets.',
     image: '/img/defi/projects/community.webp',
+    video: '/img/defi/strategies/community-speculation/step1.mp4',
     tag: 'Buy',
     link: '/defi/community-speculation'
   },
@@ -109,6 +114,7 @@ export const PROJECTS = [
     title: 'Market Making',
     description: 'Buy $XTZ using fiat ',
     image: '/img/defi/projects/market-making.webp',
+    video: '/img/defi/strategies/market-making/step1.mp4',
     tag: 'Supply',
     link: '/defi/market-making'
   }
