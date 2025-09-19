@@ -10,6 +10,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ProjectSection } from './ProjectSection'
 import { Faqs } from './Faqs'
+import { PageInitTracker } from './PageInitTracker'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -39,25 +40,28 @@ export const DefiClient = () => {
   }, [])
 
   return (
-    <div ref={pageRef} className='bg-grey-900'>
-      <div data-section>
-        <Hero />
+    <>
+      <PageInitTracker />
+      <div ref={pageRef} className='bg-grey-900'>
+        <div data-section>
+          <Hero />
+        </div>
+        <div data-section>
+          <ProjectSection />
+        </div>
+        <div data-section>
+          <OnBoard />
+        </div>
+        <div data-section>
+          <Faqs />
+        </div>
+        <div data-section>
+          <Container className='pt-10 pb-16'>
+            <Cta />
+          </Container>
+        </div>
       </div>
-      <div data-section>
-        <ProjectSection />
-      </div>
-      <div data-section>
-        <OnBoard />
-      </div>
-      <div data-section>
-        <Faqs />
-      </div>
-      <div data-section>
-        <Container className='pt-10 pb-16'>
-          <Cta />
-        </Container>
-      </div>
-    </div>
+    </>
   )
 }
 
