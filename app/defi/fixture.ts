@@ -120,7 +120,46 @@ export const PROJECTS = [
   }
 ]
 
-// will need to clean up below constants
+type FaqItem = { title: string; description: string }
+
+export const FAQS = [
+  {
+    title: 'What is DeFi on Etherlink?',
+    description:
+      'It’s a set of strategies and apps built on Etherlink (a Tezos Layer 2) that give you different ways to put your crypto to work, whether that’s earning steady yield, trading, or interacting with dApps.'
+  },
+  {
+    title: 'How does DeFi on Etherlink work?',
+    description:
+      'Just like any other chain, you bridge assets into Etherlink, connect your wallet, and choose a strategy or app to start earning.'
+  },
+  {
+    title: 'Who provides DeFi on Etherlink?',
+    description:
+      'Independent teams build and run the protocols. Etherlink is the fast, low fee network they run on, it doesn’t manage the individual dApps.'
+  },
+  {
+    title: 'What strategies can I use on Etherlink?',
+    description: `
+- T-Bill Savings – steady, treasury style yield
+- Basis Trade – earn from market spreads
+- BTC Fi – exposure to BTC yield
+- Nuclear Speculation – earn with real world assets
+- Community Speculation – community driven allocations
+- Market Making – provide liquidity and earn fees
+    `
+  },
+  {
+    title: 'Is DeFi on Etherlink safe?',
+    description:
+      'Every DeFi strategy carries some risk, from smart contracts to market moves. Some are steadier, others more speculative. Always do your own research and only deposit what you’re comfortable with.'
+  },
+  {
+    title: 'How do I get help if I’m stuck?',
+    description:
+      'Start with the individual strategy guides above, or head to Etherlink docs for more about Etherlink network. If you still have questions, join the community Discord to chat with other users and the tech team.'
+  }
+]
 
 export type StrategyId =
   | 't-bill-savings'

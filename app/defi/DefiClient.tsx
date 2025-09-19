@@ -9,6 +9,7 @@ import Container from '../components/container'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ProjectSection } from './ProjectSection'
+import { Faqs } from './Faqs'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -47,6 +48,9 @@ export const DefiClient = () => {
       </div>
       <div data-section>
         <OnBoard />
+      </div>
+      <div data-section>
+        <Faqs />
       </div>
       <div data-section>
         <Container className='pt-10 pb-16'>
