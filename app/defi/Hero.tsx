@@ -12,6 +12,7 @@ import {
   DT_3RD_ROW,
   DT_4TH_ROW
 } from './fixture'
+import { EventAction, trackPostHog } from '../../utils/trackPostHog'
 
 export const Hero = () => {
   return (
@@ -34,7 +35,17 @@ export const Hero = () => {
               strategies for every risk level.
             </p>
             <div className='flex flex-col md:flex-row gap-4'>
-              <PrimaryButton text='View strategies' href='#strategies' />
+              <PrimaryButton
+                text='View strategies'
+                href='#strategies'
+                onClick={() =>
+                  trackPostHog('view_strategies', {
+                    button_label: 'View strategies',
+                    action: EventAction.BUTTON_CLICK,
+                    section: 'hero'
+                  })
+                }
+              />
               <GhostButton
                 text='Stats'
                 href='https://defillama.com/chain/etherlink'

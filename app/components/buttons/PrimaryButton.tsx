@@ -23,7 +23,8 @@ export const PrimaryButton = ({
 
       if (href.startsWith('http')) window.open(href, '_blank')
       else router.push(href)
-    } else if (onClick) {
+    }
+    if (onClick) {
       onClick()
     }
   }

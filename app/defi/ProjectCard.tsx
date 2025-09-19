@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import Link from 'next/link'
+import { EventProps, trackPostHog } from '../../utils/trackPostHog'
 
 interface ProjectCardProps {
   link: string
@@ -8,6 +9,7 @@ interface ProjectCardProps {
   image: string
   video: string
   tag: string
+  event: EventProps
 }
 
 export const ProjectCard = (props: ProjectCardProps) => {
@@ -27,7 +29,11 @@ export const ProjectCard = (props: ProjectCardProps) => {
   }
 
   return (
-    <Link href={props.link} passHref>
+    <Link
+      href={props.link}
+      passHref
+      onClick={() => trackPostHog(props.event.name, props.event.props)}
+    >
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

@@ -69,6 +69,8 @@ export const MB_2ND_ROW = [
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
 ]
 
+import { EventAction } from '../../utils/trackPostHog'
+
 export const PROJECTS = [
   {
     title: 'T-Bill Savings',
@@ -76,7 +78,15 @@ export const PROJECTS = [
     image: '/img/defi/projects/t-bill.webp',
     video: '/img/defi/strategies/t-bill-savings/step1.mp4',
     tag: 'Supply',
-    link: '/defi/t-bill-savings'
+    link: '/defi/t-bill-savings',
+    event: {
+      name: 'tbill_savings',
+      props: {
+        button_label: 'T-Bill Savings',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
   },
   {
     title: 'Basis Trade',
@@ -84,7 +94,15 @@ export const PROJECTS = [
     image: '/img/defi/projects/basis-trade.webp',
     video: '/img/defi/strategies/basis-trade/step1.mp4',
     tag: 'Supply',
-    link: '/defi/basis-trade'
+    link: '/defi/basis-trade',
+    event: {
+      name: 'basis_trade',
+      props: {
+        button_label: 'Basis Trade',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
   },
   {
     title: 'BTC Fi',
@@ -92,7 +110,15 @@ export const PROJECTS = [
     image: '/img/defi/projects/btc-fi.webp',
     video: '/img/defi/strategies/btc-fi/step1.mp4',
     tag: 'Supply',
-    link: '/defi/btc-fi'
+    link: '/defi/btc-fi',
+    event: {
+      name: 'btc_fi',
+      props: {
+        button_label: 'BTC Fi',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
   },
   {
     title: 'Nuclear Speculation',
@@ -100,7 +126,15 @@ export const PROJECTS = [
     image: '/img/defi/projects/nuclear.webp',
     video: '/img/defi/strategies/nuclear-speculation/step1.mp4',
     tag: 'Buy',
-    link: '/defi/nuclear-speculation'
+    link: '/defi/nuclear-speculation',
+    event: {
+      name: 'uranium',
+      props: {
+        button_label: 'Nuclear Speculation',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
   },
   {
     title: 'Community Speculation',
@@ -108,7 +142,15 @@ export const PROJECTS = [
     image: '/img/defi/projects/community.webp',
     video: '/img/defi/strategies/community-speculation/step1.mp4',
     tag: 'Buy',
-    link: '/defi/community-speculation'
+    link: '/defi/community-speculation',
+    event: {
+      name: 'community_speculation',
+      props: {
+        button_label: 'Community Speculation',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
   },
   {
     title: 'Market Making',
@@ -116,13 +158,21 @@ export const PROJECTS = [
     image: '/img/defi/projects/market-making.webp',
     video: '/img/defi/strategies/market-making/step1.mp4',
     tag: 'Supply',
-    link: '/defi/market-making'
+    link: '/defi/market-making',
+    event: {
+      name: 'market_making',
+      props: {
+        button_label: 'Market Making',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
   }
 ]
 
 type FaqItem = { title: string; description: string }
 
-export const FAQS = [
+export const FAQS: FaqItem[] = [
   {
     title: 'What is DeFi on Etherlink?',
     description:
