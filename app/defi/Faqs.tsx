@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { FAQS } from './fixture'
+import Container from '../components/container'
 
 export function Faqs() {
   const [open, setOpen] = useState<Record<number, boolean>>({})
@@ -8,7 +9,7 @@ export function Faqs() {
   const toggle = (i: number) => setOpen(prev => ({ ...prev, [i]: !prev[i] }))
 
   return (
-    <section className='mx-auto max-w-3xl p-4 sm:p-6'>
+    <Container className='mx-auto max-w-[768px]'>
       <div className='overflow-hidden rounded-2xl border border-grey-500'>
         <div className='p-6 border-b border-grey-500'>
           <h2 className='text-2xl font-bold text-grey-50'>FAQs</h2>
@@ -53,13 +54,30 @@ export function Faqs() {
                 }`}
               >
                 <div className='min-h-0 overflow-hidden prose prose-invert prose-sm max-w-none'>
-                  <ReactMarkdown>{item.description}</ReactMarkdown>
+                  <ReactMarkdown
+                    components={{
+                      ul: ({ node, ...props }) => (
+                        <ul
+                          className='list-disc list-inside space-y-1'
+                          {...props}
+                        />
+                      ),
+                      ol: ({ node, ...props }) => (
+                        <ol
+                          className='list-decimal list-inside space-y-1'
+                          {...props}
+                        />
+                      )
+                    }}
+                  >
+                    {item.description}
+                  </ReactMarkdown>
                 </div>
               </div>
             </div>
           )
         })}
       </div>
-    </section>
+    </Container>
   )
 }
