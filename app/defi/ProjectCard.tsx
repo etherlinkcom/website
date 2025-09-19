@@ -12,7 +12,10 @@ interface ProjectCardProps {
 export const ProjectCard = (props: ProjectCardProps) => {
   return (
     <Link href={props.link} passHref>
-      <div className='hover:cursor-pointer flex flex-col h-full'>
+      <div
+        className='hover:cursor-pointer flex flex-col h-full hover:rounded-lg
+        hover:bg-grey-500 hover:shadow-[0_0_6px_0_rgba(56,255,156,0.40)] hover:backdrop-blur-[6px]'
+      >
         <img
           src={props.image}
           alt={props.title}
