@@ -19,12 +19,12 @@ export function Faqs() {
           return (
             <div
               key={i}
-              className='border-b border-grey-500 last:border-0 px-6 py-8 '
+              className='flex flex-col gap-4 border-b border-grey-500 last:border-0 px-6 py-8 hover:cursor-pointer'
+              onClick={() => toggle(i)}
             >
               <button
-                onClick={() => toggle(i)}
                 aria-expanded={isOpen}
-                className='w-full flex items-center justify-between gap-4 mb-4 text-left'
+                className='w-full flex items-center justify-between gap-4 text-left'
               >
                 <span className='text-base font-semibold text-grey-100'>
                   {item.title}
