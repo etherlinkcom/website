@@ -11,6 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ProjectSection } from './ProjectSection'
 import { Faqs } from './Faqs'
 import { PageInitTracker } from './PageInitTracker'
+import { EventAction, trackPostHog } from '../../utils/trackPostHog'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -86,7 +87,16 @@ const Cta = () => {
             hover:shadow-[0px_0px_6px_rgba(51,232,142,0.8)]`}
         role='button'
       >
-        <Link href='/defi#strategies'>
+        <Link
+          href='/defi#strategies'
+          onClick={() =>
+            trackPostHog('getxtz', {
+              button_label: 'Get XTZ',
+              action: EventAction.BUTTON_CLICK,
+              section: 'get xtz'
+            })
+          }
+        >
           <div className='flex justify-center items-center gap-2'>
             <span className='relative z-10 text-lg font-semibold text-neonGreen-200 hover:text-neonGreen-500'>
               Get XTZ
