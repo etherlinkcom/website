@@ -29,7 +29,7 @@ const ONBOARD_DATA = [
 export const OnBoard = () => {
   return (
     <div className='relative'>
-      <Container className='py-10 md:py-24'>
+      <Container className='pb-10 md:pb-24'>
         <img
           className='absolute bottom-[850px] md:bottom-[220px] -left-[250px] md:-left-[250px] max-w-[960px] max-h-[560px] md:opacity-80 z-[50] pointer-events-none'
           src='/img/defi/gradient.svg'
