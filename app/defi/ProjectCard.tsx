@@ -1,18 +1,9 @@
 import React, { useRef } from 'react'
 import Link from 'next/link'
-import { EventProps, trackPostHog } from '../../utils/trackPostHog'
+import { trackPostHog } from '../../utils/trackPostHog'
+import { ProjectCard as ProjectCardType } from './fixture'
 
-interface ProjectCardProps {
-  link: string
-  title: string
-  description: string
-  image: string
-  video: string
-  tag: string
-  event: EventProps
-}
-
-export const ProjectCard = (props: ProjectCardProps) => {
+export const ProjectCard = (props: ProjectCardType) => {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const handleMouseEnter = () => {
@@ -30,7 +21,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
 
   return (
     <Link
-      href={props.link}
+      href={`/defi/${props.id}`}
       passHref
       onClick={() => trackPostHog(props.event.name, props.event.props)}
     >

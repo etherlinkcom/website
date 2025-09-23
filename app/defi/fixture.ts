@@ -69,16 +69,26 @@ export const MB_2ND_ROW = [
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
 ]
 
-import { EventAction } from '../../utils/trackPostHog'
+import { EventAction, EventProps } from '../../utils/trackPostHog'
 
-export const PROJECTS = [
+export interface ProjectCard {
+  id: string
+  title: string
+  description: string
+  image: string
+  video: string
+  tag: string
+  event: EventProps
+}
+
+export const PROJECTS: ProjectCard[] = [
   {
+    id: 't-bill-savings',
     title: 'T-Bill Savings',
     description: 'Stable savings on Etherlink.',
     image: '/img/defi/projects/t-bill.webp',
     video: '/img/defi/strategies/t-bill-savings/step1.mp4',
     tag: 'Supply',
-    link: '/defi/t-bill-savings',
     event: {
       name: 'tbill_savings',
       props: {
@@ -89,12 +99,12 @@ export const PROJECTS = [
     }
   },
   {
+    id: 'basis-trade',
     title: 'Basis Trade',
     description: 'Higher risk stable savings, higher rewards.',
     image: '/img/defi/projects/basis-trade.webp',
     video: '/img/defi/strategies/basis-trade/step1.mp4',
     tag: 'Supply',
-    link: '/defi/basis-trade',
     event: {
       name: 'basis_trade',
       props: {
@@ -105,12 +115,12 @@ export const PROJECTS = [
     }
   },
   {
+    id: 'btc-fi',
     title: 'BTC Fi',
     description: 'Leverage your BTC to earn.',
     image: '/img/defi/projects/btc-fi.webp',
     video: '/img/defi/strategies/btc-fi/step1.mp4',
     tag: 'Supply',
-    link: '/defi/btc-fi',
     event: {
       name: 'btc_fi',
       props: {
@@ -121,12 +131,12 @@ export const PROJECTS = [
     }
   },
   {
+    id: 'nuclear-speculation',
     title: 'Nuclear Speculation',
     description: 'Tokenized uranium unique to Etherlink',
     image: '/img/defi/projects/nuclear.webp',
     video: '/img/defi/strategies/nuclear-speculation/step1.mp4',
     tag: 'Buy',
-    link: '/defi/nuclear-speculation',
     event: {
       name: 'uranium',
       props: {
@@ -137,12 +147,12 @@ export const PROJECTS = [
     }
   },
   {
+    id: 'community-speculation',
     title: 'Community Speculation',
     description: 'These are highly risky and speculative assets.',
     image: '/img/defi/projects/community.webp',
     video: '/img/defi/strategies/community-speculation/step1.mp4',
     tag: 'Buy',
-    link: '/defi/community-speculation',
     event: {
       name: 'community_speculation',
       props: {
@@ -153,12 +163,12 @@ export const PROJECTS = [
     }
   },
   {
+    id: 'market-making',
     title: 'Market Making',
     description: 'Buy $XTZ using fiat ',
     image: '/img/defi/projects/market-making.webp',
     video: '/img/defi/strategies/market-making/step1.mp4',
     tag: 'Supply',
-    link: '/defi/market-making',
     event: {
       name: 'market_making',
       props: {
@@ -224,8 +234,6 @@ type Button = {
   link: string
 }
 
-type StrategyType = 'Supply' | 'Buy'
-
 export type Tutorial = {
   step: number
   title: string
@@ -247,7 +255,7 @@ type TokenUsed = {
 }
 export interface Strategy {
   id: StrategyId
-  strategyType: StrategyType
+  strategyType: 'Supply' | 'Buy'
   name: string
   description: string
   tutorials: Tutorial[]
