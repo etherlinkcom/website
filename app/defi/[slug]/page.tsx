@@ -49,7 +49,7 @@ export default function StrategyPage({ params }: Props) {
           <h1 className='text-4xl text-grey-50 md:text-[56px] font-bold -tracking-[0.72px] md:-tracking-[1.12px] mb-2 md:mb-4'>
             {strategy.name}
           </h1>
-          <p className='text-grey-200 text-lg md:text-xl leading-[26px] mb-[140px] md:mb-20'>
+          <p className='text-grey-200 text-lg md:text-xl leading-[26px] mb-[140px] md:mb-20 max-w-[560px]'>
             {strategy.description}
           </p>
           <PrimaryButton
