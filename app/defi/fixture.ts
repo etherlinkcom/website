@@ -219,7 +219,7 @@ export type StrategyId =
   | 'community-speculation'
   | 'market-making'
 
-interface Button {
+type Button = {
   text: string
   link: string
 }
@@ -238,6 +238,11 @@ type Project = {
   icon: string
   link: string
 }
+
+type TokenUsed = {
+  img: string
+  alt: string
+}
 export interface Strategy {
   id: StrategyId
   name: string
@@ -247,6 +252,7 @@ export interface Strategy {
     img: string
     alt: string
   }
+  tokenUsed: TokenUsed[]
 }
 
 export const STRATEGIES_DATA: Strategy[] = [
@@ -257,6 +263,16 @@ export const STRATEGIES_DATA: Strategy[] = [
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
     },
+    tokenUsed: [
+      {
+        img: '/img/defi/token/USDC.svg',
+        alt: 'USDC'
+      },
+      {
+        img: '/img/defi/token/mTBILL.webp',
+        alt: 'mTBILL'
+      }
+    ],
     tutorials: [
       {
         step: 1,
@@ -317,6 +333,16 @@ export const STRATEGIES_DATA: Strategy[] = [
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
     },
+    tokenUsed: [
+      {
+        img: '/img/defi/token/USDC.svg',
+        alt: 'USDC'
+      },
+      {
+        img: '/img/defi/token/mbasis.svg',
+        alt: 'mBASIS'
+      }
+    ],
     tutorials: [
       {
         step: 1,
@@ -377,6 +403,12 @@ export const STRATEGIES_DATA: Strategy[] = [
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
     },
+    tokenUsed: [
+      {
+        img: '/img/defi/token/wbtc.svg',
+        alt: 'WBTC'
+      }
+    ],
     tutorials: [
       {
         step: 1,
@@ -432,6 +464,16 @@ export const STRATEGIES_DATA: Strategy[] = [
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
     },
+    tokenUsed: [
+      {
+        img: '/img/defi/token/USDC.svg',
+        alt: 'USDC'
+      },
+      {
+        img: '/img/defi/token/x3o8.svg',
+        alt: 'xU3O8'
+      }
+    ],
     tutorials: [
       // {
       //   step: 1,
@@ -494,6 +536,12 @@ export const STRATEGIES_DATA: Strategy[] = [
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
     },
+    tokenUsed: [
+      {
+        img: '/img/defi/token/USDC.svg',
+        alt: 'USDC'
+      }
+    ],
     tutorials: [
       {
         step: 1,
@@ -570,6 +618,20 @@ export const STRATEGIES_DATA: Strategy[] = [
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
     },
+    tokenUsed: [
+      {
+        img: '/img/defi/token/USDC.svg',
+        alt: 'USDC'
+      },
+      {
+        img: '/img/defi/token/wbtc.svg',
+        alt: 'WBTC'
+      },
+      {
+        img: '/img/defi/token/weth.svg',
+        alt: 'WETH'
+      }
+    ],
     tutorials: [
       {
         step: 1,
