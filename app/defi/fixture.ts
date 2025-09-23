@@ -249,6 +249,7 @@ export interface Strategy {
   id: StrategyId
   strategyType: StrategyType
   name: string
+  description: string
   tutorials: Tutorial[]
   projectInvolved: Project[]
   yieldProvider: {
@@ -263,6 +264,7 @@ export const STRATEGIES_DATA: Strategy[] = [
     id: 't-bill-savings',
     strategyType: 'Supply',
     name: 'T-Bill Savings',
+    description: 'The most stable savings account on Etherlink.',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
@@ -334,6 +336,8 @@ export const STRATEGIES_DATA: Strategy[] = [
     id: 'basis-trade',
     strategyType: 'Supply',
     name: 'Basis Trade',
+    description:
+      'Slightly higher risk than stable savings, but with the potential for higher rewards!',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
@@ -405,6 +409,7 @@ export const STRATEGIES_DATA: Strategy[] = [
     id: 'btc-fi',
     strategyType: 'Supply',
     name: 'BTC Fi',
+    description: 'Leverage your BTC to earn money!',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
@@ -467,6 +472,8 @@ export const STRATEGIES_DATA: Strategy[] = [
     id: 'nuclear-speculation',
     strategyType: 'Buy',
     name: 'Nuclear Speculation',
+    description:
+      'Uranium is the asset powering the nuclear energy revolution! You can find it tokenized uniquely on Etherlink.',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
@@ -540,6 +547,8 @@ export const STRATEGIES_DATA: Strategy[] = [
     id: 'community-speculation',
     strategyType: 'Buy',
     name: 'Community Speculation',
+    description:
+      'The attention economy is alive and well on Etherlink, and anyone can get involved! These are highly risky and speculative assets.',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
@@ -623,6 +632,8 @@ export const STRATEGIES_DATA: Strategy[] = [
     id: 'market-making',
     strategyType: 'Supply',
     name: 'Market Making',
+    description:
+      'A simple way to get exposure to the same type of yield earned by market makers on Etherlink.',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
       alt: 'Superlend'
