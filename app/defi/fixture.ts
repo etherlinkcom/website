@@ -224,6 +224,8 @@ type Button = {
   link: string
 }
 
+type StrategyType = 'Supply' | 'Buy'
+
 export type Tutorial = {
   step: number
   title: string
@@ -245,6 +247,7 @@ type TokenUsed = {
 }
 export interface Strategy {
   id: StrategyId
+  strategyType: StrategyType
   name: string
   tutorials: Tutorial[]
   projectInvolved: Project[]
@@ -258,6 +261,7 @@ export interface Strategy {
 export const STRATEGIES_DATA: Strategy[] = [
   {
     id: 't-bill-savings',
+    strategyType: 'Supply',
     name: 'T-Bill Savings',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
@@ -328,6 +332,7 @@ export const STRATEGIES_DATA: Strategy[] = [
   },
   {
     id: 'basis-trade',
+    strategyType: 'Supply',
     name: 'Basis Trade',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
@@ -398,6 +403,7 @@ export const STRATEGIES_DATA: Strategy[] = [
   },
   {
     id: 'btc-fi',
+    strategyType: 'Supply',
     name: 'BTC Fi',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
@@ -459,6 +465,7 @@ export const STRATEGIES_DATA: Strategy[] = [
   },
   {
     id: 'nuclear-speculation',
+    strategyType: 'Buy',
     name: 'Nuclear Speculation',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
@@ -531,6 +538,7 @@ export const STRATEGIES_DATA: Strategy[] = [
   },
   {
     id: 'community-speculation',
+    strategyType: 'Buy',
     name: 'Community Speculation',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
@@ -613,6 +621,7 @@ export const STRATEGIES_DATA: Strategy[] = [
   },
   {
     id: 'market-making',
+    strategyType: 'Supply',
     name: 'Market Making',
     yieldProvider: {
       img: '/img/defi/icons/Superlend.svg',
