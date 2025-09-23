@@ -219,12 +219,18 @@ export type StrategyId =
   | 'community-speculation'
   | 'market-making'
 
+interface Button {
+  text: string
+  link: string
+}
+
 export type Tutorial = {
   step: number
   title: string
   description: string
   image: string
   video?: string
+  button: Button
 }
 
 type Project = {
@@ -237,7 +243,6 @@ export interface Strategy {
   name: string
   tutorials: Tutorial[]
   projectInvolved: Project[]
-  earning: string
 }
 
 export const STRATEGIES_DATA: Strategy[] = [
@@ -250,21 +255,33 @@ export const STRATEGIES_DATA: Strategy[] = [
         title: 'Bridge',
         description: 'Bridge in USDC using Etherlink Bridge',
         image: '/img/defi/strategies/t-bill-savings/1.png',
-        video: '/img/defi/strategies/t-bill-savings/step1.mp4'
+        video: '/img/defi/strategies/t-bill-savings/step1.mp4',
+        button: {
+          text: 'Bridge now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
         step: 2,
         title: 'Swap',
         description: 'Swap USDC for mTBILL on IguanaDEX',
         image: '/img/defi/strategies/t-bill-savings/2.png',
-        video: '/img/defi/strategies/t-bill-savings/step2.mp4'
+        video: '/img/defi/strategies/t-bill-savings/step2.mp4',
+        button: {
+          text: 'Swap now',
+          link: 'https://www.iguanadex.com/?chain=etherlink'
+        }
       },
       {
         step: 3,
         title: 'Supply',
         description: 'Supply mTBILL on Superlend',
         image: '/img/defi/strategies/t-bill-savings/3.png',
-        video: '/img/defi/strategies/t-bill-savings/step3.mp4'
+        video: '/img/defi/strategies/t-bill-savings/step3.mp4',
+        button: {
+          text: 'Supply now',
+          link: 'https://markets.superlend.xyz'
+        }
       }
     ],
     projectInvolved: [
@@ -283,8 +300,7 @@ export const STRATEGIES_DATA: Strategy[] = [
         icon: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   },
   {
     id: 'basis-trade',
@@ -295,21 +311,33 @@ export const STRATEGIES_DATA: Strategy[] = [
         title: 'Bridge',
         description: 'Bridge in USDC using Etherlink Bridge',
         image: '/img/defi/strategies/basis-trade/1.png',
-        video: '/img/defi/strategies/basis-trade/step1.mp4'
+        video: '/img/defi/strategies/basis-trade/step1.mp4',
+        button: {
+          text: 'Bridge now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
         step: 2,
         title: 'Swap',
         description: 'Swap USDC for mBASIS on IguanaDEX',
         image: '/img/defi/strategies/basis-trade/2.png',
-        video: '/img/defi/strategies/basis-trade/step2.mp4'
+        video: '/img/defi/strategies/basis-trade/step2.mp4',
+        button: {
+          text: 'Swap now',
+          link: 'https://www.iguanadex.com/?chain=etherlink'
+        }
       },
       {
         step: 3,
         title: 'Supply',
         description: 'Supply mBASIS on Superlend',
         image: '/img/defi/strategies/basis-trade/3.png',
-        video: '/img/defi/strategies/basis-trade/step3.mp4'
+        video: '/img/defi/strategies/basis-trade/step3.mp4',
+        button: {
+          text: 'Supply now',
+          link: 'https://markets.superlend.xyz'
+        }
       }
     ],
     projectInvolved: [
@@ -328,8 +356,7 @@ export const STRATEGIES_DATA: Strategy[] = [
         icon: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   },
   {
     id: 'btc-fi',
@@ -341,14 +368,22 @@ export const STRATEGIES_DATA: Strategy[] = [
         description:
           'Bridge WBTC on the Etherlink Bridge, or if you already have funds on Etherlink, you can buy WBTC on Hanji or IguanaDEX',
         image: '/img/defi/strategies/btc-fi/1.png',
-        video: '/img/defi/strategies/btc-fi/step1.mp4'
+        video: '/img/defi/strategies/btc-fi/step1.mp4',
+        button: {
+          text: 'Bridge now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
         step: 2,
         title: 'Supply',
         description: 'Supply WBTC on Superlend',
         image: '/img/defi/strategies/btc-fi/2.png',
-        video: '/img/defi/strategies/btc-fi/step2.mp4'
+        video: '/img/defi/strategies/btc-fi/step2.mp4',
+        button: {
+          text: 'Supply now',
+          link: 'https://markets.superlend.xyz'
+        }
       }
     ],
     projectInvolved: [
@@ -372,35 +407,46 @@ export const STRATEGIES_DATA: Strategy[] = [
         icon: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   },
   {
     id: 'nuclear-speculation',
     name: 'Nuclear Speculation',
     tutorials: [
+      // {
+      //   step: 1,
+      //   title: 'Sign Up',
+      //   description:
+      //     'Create an account at [uranium.io](https://uranium.io/en).',
+      //   image: '/img/defi/strategies/nuclear-speculation/1.png',
+      //   video: '/img/defi/strategies/nuclear-speculation/step1.mp4',
+      //   button: {
+      //     text: 'Deposit now',
+      //     link: 'https://bridge.etherlink.com/evm'
+      //   }
+      // },
       {
         step: 1,
-        title: 'Sign Up',
-        description:
-          'Create an account at [uranium.io](https://uranium.io/en).',
-        image: '/img/defi/strategies/nuclear-speculation/1.png',
-        video: '/img/defi/strategies/nuclear-speculation/step1.mp4'
-      },
-      {
-        step: 2,
         title: 'Deposit USDC',
         description:
           'Bridge USDC into Etherlink or create an account at [uranium.io](https://uranium.io/en) and deposit via Transak.',
         image: '/img/defi/strategies/nuclear-speculation/2.png',
-        video: '/img/defi/strategies/nuclear-speculation/step2.mp4'
+        video: '/img/defi/strategies/nuclear-speculation/step2.mp4',
+        button: {
+          text: 'Deposit now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
-        step: 3,
+        step: 2,
         title: 'Buy',
         description: 'Buy xU3O8 with USDC',
         image: '/img/defi/strategies/nuclear-speculation/3.png',
-        video: '/img/defi/strategies/nuclear-speculation/step3.mp4'
+        video: '/img/defi/strategies/nuclear-speculation/step3.mp4',
+        button: {
+          text: 'Buy now',
+          link: 'https://uranium.io'
+        }
       }
     ],
     projectInvolved: [
@@ -419,8 +465,7 @@ export const STRATEGIES_DATA: Strategy[] = [
         icon: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   },
   {
     id: 'community-speculation',
@@ -431,14 +476,22 @@ export const STRATEGIES_DATA: Strategy[] = [
         title: 'Bridge',
         description: 'Bridge tokens into Etherlink using Etherlink Bridge',
         image: '/img/defi/strategies/community-speculation/1.png',
-        video: '/img/defi/strategies/community-speculation/step1.mp4'
+        video: '/img/defi/strategies/community-speculation/step1.mp4',
+        button: {
+          text: 'Bridge now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
         step: 2,
         title: 'Swap',
         description: 'Swap for XTZ on Hanji or IguanaDEX',
         image: '/img/defi/strategies/community-speculation/2.png',
-        video: '/img/defi/strategies/community-speculation/step2.mp4'
+        video: '/img/defi/strategies/community-speculation/step2.mp4',
+        button: {
+          text: 'Swap now',
+          link: 'iguanadex.com/?chain=etherlink'
+        }
       },
       {
         step: 3,
@@ -446,13 +499,21 @@ export const STRATEGIES_DATA: Strategy[] = [
         description:
           'Go on OrganicGrowth’s website and look for some promising memecoin communities',
         image: '/img/defi/strategies/community-speculation/3.png',
-        video: '/img/defi/strategies/community-speculation/step3.mp4'
+        video: '/img/defi/strategies/community-speculation/step3.mp4',
+        button: {
+          text: 'Explore now',
+          link: 'https://www.organicgrowth.wtf/'
+        }
       },
       {
         step: 4,
         title: 'Buy',
         description: 'Buy memecoins on OrganicGrowth using XTZ',
-        image: '/img/defi/strategies/community-speculation/step4.webp'
+        image: '/img/defi/strategies/community-speculation/step4.webp',
+        button: {
+          text: 'Buy now',
+          link: 'https://www.organicgrowth.wtf/'
+        }
       }
     ],
     projectInvolved: [
@@ -476,8 +537,7 @@ export const STRATEGIES_DATA: Strategy[] = [
         icon: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   },
   {
     id: 'market-making',
@@ -489,7 +549,11 @@ export const STRATEGIES_DATA: Strategy[] = [
         description:
           'Bridge USDC, WETH, or WBTC into Etherlink using Etherlink Bridge',
         image: '/img/defi/strategies/market-making/1.png',
-        video: '/img/defi/strategies/market-making/step1.mp4'
+        video: '/img/defi/strategies/market-making/step1.mp4',
+        button: {
+          text: 'Bridge now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
         step: 2,
@@ -497,7 +561,11 @@ export const STRATEGIES_DATA: Strategy[] = [
         description:
           'Supply your combination of USDC/XTZ/WETH/WBTC in Hanji’s LP vault',
         image: '/img/defi/strategies/market-making/2.png',
-        video: '/img/defi/strategies/market-making/step2.mp4'
+        video: '/img/defi/strategies/market-making/step2.mp4',
+        button: {
+          text: 'Swap now',
+          link: 'https://app.hanji.io/trade/0x65ea4dd7f789c71c0f57ed84b3bdc3062898d3cb'
+        }
       }
     ],
     projectInvolved: [
@@ -511,7 +579,6 @@ export const STRATEGIES_DATA: Strategy[] = [
         icon: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   }
 ]
