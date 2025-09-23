@@ -243,12 +243,20 @@ export interface Strategy {
   name: string
   tutorials: Tutorial[]
   projectInvolved: Project[]
+  yieldProvider: {
+    img: string
+    alt: string
+  }
 }
 
 export const STRATEGIES_DATA: Strategy[] = [
   {
     id: 't-bill-savings',
     name: 'T-Bill Savings',
+    yieldProvider: {
+      img: '/img/defi/icons/Superlend.svg',
+      alt: 'Superlend'
+    },
     tutorials: [
       {
         step: 1,
@@ -305,6 +313,10 @@ export const STRATEGIES_DATA: Strategy[] = [
   {
     id: 'basis-trade',
     name: 'Basis Trade',
+    yieldProvider: {
+      img: '/img/defi/icons/Superlend.svg',
+      alt: 'Superlend'
+    },
     tutorials: [
       {
         step: 1,
@@ -361,6 +373,10 @@ export const STRATEGIES_DATA: Strategy[] = [
   {
     id: 'btc-fi',
     name: 'BTC Fi',
+    yieldProvider: {
+      img: '/img/defi/icons/Superlend.svg',
+      alt: 'Superlend'
+    },
     tutorials: [
       {
         step: 1,
@@ -412,6 +428,10 @@ export const STRATEGIES_DATA: Strategy[] = [
   {
     id: 'nuclear-speculation',
     name: 'Nuclear Speculation',
+    yieldProvider: {
+      img: '/img/defi/icons/Superlend.svg',
+      alt: 'Superlend'
+    },
     tutorials: [
       // {
       //   step: 1,
@@ -470,6 +490,10 @@ export const STRATEGIES_DATA: Strategy[] = [
   {
     id: 'community-speculation',
     name: 'Community Speculation',
+    yieldProvider: {
+      img: '/img/defi/icons/Superlend.svg',
+      alt: 'Superlend'
+    },
     tutorials: [
       {
         step: 1,
@@ -542,6 +566,10 @@ export const STRATEGIES_DATA: Strategy[] = [
   {
     id: 'market-making',
     name: 'Market Making',
+    yieldProvider: {
+      img: '/img/defi/icons/Superlend.svg',
+      alt: 'Superlend'
+    },
     tutorials: [
       {
         step: 1,
