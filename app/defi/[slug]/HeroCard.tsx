@@ -19,11 +19,11 @@ export const HeroCard = ({ title, images }: HeroCardProps) => {
       <div className='flex items-center gap-3'>
         {images.map(img =>
           img.link ? (
-            <Link href={img.link}>
+            <Link href={img.link} target='_blank' key={img.alt}>
               <img src={img.src} alt={img.alt} />
             </Link>
           ) : (
-            <img src={img.src} alt={img.alt} />
+            <img src={img.src} alt={img.alt} key={img.alt} />
           )
         )}
       </div>
