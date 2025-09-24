@@ -8,6 +8,7 @@ import { Hero } from './Hero'
 import { Tutorials } from './Tutorials'
 import { MoreStrategies } from './MoreStrategies'
 import { Faqs } from '../Faqs'
+import { Cta } from '../DefiClient'
 
 const Breadcrumbs = ({ strategy }: { strategy: string }) => {
   return (
@@ -35,6 +36,7 @@ export const ClientPage = ({ strategy }: { strategy: Strategy }) => {
       <Tutorials tutorials={strategy.tutorials} />
       <MoreStrategies id={strategy.id} />
       <Faqs />
+      <Cta />
     </Container>
   )
 }

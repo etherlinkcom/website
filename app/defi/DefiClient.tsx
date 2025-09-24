@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef, useLayoutEffect } from 'react'
-
 import { Hero } from './Hero'
 import { OnBoard } from './OnBoard'
 import Link from 'next/link'
@@ -66,7 +65,7 @@ export const DefiClient = () => {
   )
 }
 
-const Cta = () => {
+export const Cta = () => {
   return (
     <div
       className="flex flex-col md:flex-row w-full gap-6 mx-auto items-center px-12 py-10
@@ -88,7 +87,7 @@ const Cta = () => {
         role='button'
       >
         <Link
-          href='/defi#strategies'
+          href='#onboard'
           onClick={() =>
             trackPostHog('getxtz', {
               button_label: 'Get XTZ',
