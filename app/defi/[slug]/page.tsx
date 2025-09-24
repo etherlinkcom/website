@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { STRATEGIES_DATA } from '../fixture'
 import Container from '../../components/container'
 import { Hero } from './Hero'
+import { Tutorials } from './Tutorials'
 
 type Props = { params: { slug: string } }
 
@@ -41,6 +42,7 @@ export default function StrategyPage({ params }: Props) {
     <Container className='pt-10 md:pt-24'>
       <Breadcrumbs strategy={strategy.name} />
       <Hero strategy={strategy} />
+      <Tutorials tutorials={strategy.tutorials} />
     </Container>
   )
 }
