@@ -244,13 +244,13 @@ export type Tutorial = {
 }
 
 type Project = {
-  name: string
-  icon: string
+  alt: string
+  src: string
   link: string
 }
 
 type TokenUsed = {
-  img: string
+  src: string
   alt: string
 }
 export interface Strategy {
@@ -261,9 +261,9 @@ export interface Strategy {
   tutorials: Tutorial[]
   projectInvolved: Project[]
   yieldProvider: {
-    img: string
+    src: string
     alt: string
-  }
+  }[]
   tokenUsed: TokenUsed[]
 }
 
@@ -273,17 +273,19 @@ export const STRATEGIES_DATA: Strategy[] = [
     strategyType: 'Supply',
     name: 'T-Bill Savings',
     description: 'The most stable savings account on Etherlink.',
-    yieldProvider: {
-      img: '/img/defi/icons/Superlend.svg',
-      alt: 'Superlend'
-    },
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
     tokenUsed: [
       {
-        img: '/img/defi/token/USDC.svg',
+        src: '/img/defi/token/USDC.svg',
         alt: 'USDC'
       },
       {
-        img: '/img/defi/token/mTBILL.webp',
+        src: '/img/defi/token/mTBILL.webp',
         alt: 'mTBILL'
       }
     ],
@@ -324,18 +326,18 @@ export const STRATEGIES_DATA: Strategy[] = [
     ],
     projectInvolved: [
       {
-        name: 'IguanaDEX',
-        icon: '/img/defi/icons/iguana.svg',
+        alt: 'IguanaDEX',
+        src: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
-        name: 'Superlend',
-        icon: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend',
+        src: '/img/defi/icons/Superlend.svg',
         link: 'https://markets.superlend.xyz/'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
     ]
@@ -346,17 +348,19 @@ export const STRATEGIES_DATA: Strategy[] = [
     name: 'Basis Trade',
     description:
       'Slightly higher risk than stable savings, but with the potential for higher rewards!',
-    yieldProvider: {
-      img: '/img/defi/icons/Superlend.svg',
-      alt: 'Superlend'
-    },
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
     tokenUsed: [
       {
-        img: '/img/defi/token/USDC.svg',
+        src: '/img/defi/token/USDC.svg',
         alt: 'USDC'
       },
       {
-        img: '/img/defi/token/mbasis.svg',
+        src: '/img/defi/token/mbasis.svg',
         alt: 'mBASIS'
       }
     ],
@@ -397,18 +401,18 @@ export const STRATEGIES_DATA: Strategy[] = [
     ],
     projectInvolved: [
       {
-        name: 'IguanaDEX',
-        icon: '/img/defi/icons/iguana.svg',
+        alt: 'IguanaDEX',
+        src: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
-        name: 'Superlend',
-        icon: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend',
+        src: '/img/defi/icons/Superlend.svg',
         link: 'https://markets.superlend.xyz/'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
     ]
@@ -418,13 +422,15 @@ export const STRATEGIES_DATA: Strategy[] = [
     strategyType: 'Supply',
     name: 'BTC Fi',
     description: 'Leverage your BTC to earn money!',
-    yieldProvider: {
-      img: '/img/defi/icons/Superlend.svg',
-      alt: 'Superlend'
-    },
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
     tokenUsed: [
       {
-        img: '/img/defi/token/wbtc.svg',
+        src: '/img/defi/token/wbtc.svg',
         alt: 'WBTC'
       }
     ],
@@ -455,23 +461,23 @@ export const STRATEGIES_DATA: Strategy[] = [
     ],
     projectInvolved: [
       {
-        name: 'IguanaDEX',
-        icon: '/img/defi/icons/iguana.svg',
+        alt: 'IguanaDEX',
+        src: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
-        name: 'Hanji',
-        icon: '/img/defi/icons/Hanji.svg',
+        alt: 'Hanji',
+        src: '/img/defi/icons/Hanji.svg',
         link: 'https://hanji.io/'
       },
       {
-        name: 'Superlend',
-        icon: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend',
+        src: '/img/defi/icons/Superlend.svg',
         link: 'https://markets.superlend.xyz/'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
     ]
@@ -482,17 +488,19 @@ export const STRATEGIES_DATA: Strategy[] = [
     name: 'Nuclear Speculation',
     description:
       'Uranium is the asset powering the nuclear energy revolution! You can find it tokenized uniquely on Etherlink.',
-    yieldProvider: {
-      img: '/img/defi/icons/Superlend.svg',
-      alt: 'Superlend'
-    },
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
     tokenUsed: [
       {
-        img: '/img/defi/token/USDC.svg',
+        src: '/img/defi/token/USDC.svg',
         alt: 'USDC'
       },
       {
-        img: '/img/defi/token/x3o8.svg',
+        src: '/img/defi/token/x3o8.svg',
         alt: 'xU3O8'
       }
     ],
@@ -535,18 +543,18 @@ export const STRATEGIES_DATA: Strategy[] = [
     ],
     projectInvolved: [
       {
-        name: 'xU3O8',
-        icon: '/img/defi/icons/u308.svg',
+        alt: 'xU3O8',
+        src: '/img/defi/icons/u308.svg',
         link: 'https://www.uranium.io/en'
       },
       {
-        name: 'Transak',
-        icon: '/img/defi/icons/Transak.svg',
+        alt: 'Transak',
+        src: '/img/defi/icons/Transak.svg',
         link: 'https://global.transak.com/'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
     ]
@@ -557,13 +565,15 @@ export const STRATEGIES_DATA: Strategy[] = [
     name: 'Community Speculation',
     description:
       'The attention economy is alive and well on Etherlink, and anyone can get involved! These are highly risky and speculative assets.',
-    yieldProvider: {
-      img: '/img/defi/icons/Superlend.svg',
-      alt: 'Superlend'
-    },
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
     tokenUsed: [
       {
-        img: '/img/defi/token/USDC.svg',
+        src: '/img/defi/token/USDC.svg',
         alt: 'USDC'
       }
     ],
@@ -615,23 +625,23 @@ export const STRATEGIES_DATA: Strategy[] = [
     ],
     projectInvolved: [
       {
-        name: 'OrganicGrowth',
-        icon: '/img/defi/icons/organic-growth.svg',
+        alt: 'OrganicGrowth',
+        src: '/img/defi/icons/organic-growth.svg',
         link: 'https://www.organicgrowth.wtf/'
       },
       {
-        name: 'Hanji',
-        icon: '/img/defi/icons/Hanji.svg',
+        alt: 'Hanji',
+        src: '/img/defi/icons/Hanji.svg',
         link: 'https://hanji.io/'
       },
       {
-        name: 'IguanaDEX',
-        icon: '/img/defi/icons/iguana.svg',
+        alt: 'IguanaDEX',
+        src: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
     ]
@@ -642,21 +652,23 @@ export const STRATEGIES_DATA: Strategy[] = [
     name: 'Market Making',
     description:
       'A simple way to get exposure to the same type of yield earned by market makers on Etherlink.',
-    yieldProvider: {
-      img: '/img/defi/icons/Superlend.svg',
-      alt: 'Superlend'
-    },
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
     tokenUsed: [
       {
-        img: '/img/defi/token/USDC.svg',
+        src: '/img/defi/token/USDC.svg',
         alt: 'USDC'
       },
       {
-        img: '/img/defi/token/wbtc.svg',
+        src: '/img/defi/token/wbtc.svg',
         alt: 'WBTC'
       },
       {
-        img: '/img/defi/token/weth.svg',
+        src: '/img/defi/token/weth.svg',
         alt: 'WETH'
       }
     ],
@@ -688,13 +700,13 @@ export const STRATEGIES_DATA: Strategy[] = [
     ],
     projectInvolved: [
       {
-        name: 'Hanji',
-        icon: '/img/defi/icons/Hanji.svg',
+        alt: 'Hanji',
+        src: '/img/defi/icons/Hanji.svg',
         link: 'https://hanji.io/'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
     ]
