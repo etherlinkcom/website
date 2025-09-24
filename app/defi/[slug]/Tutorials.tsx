@@ -32,7 +32,7 @@ const TutorialCard = ({
 }) => {
   return (
     <div
-      className={`flex flex-col-reverse md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} gap-6 md:gap-20 md:items-center justify-center`}
+      className={`flex flex-col-reverse md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} gap-6 md:gap-20 md:items-center justify-center md:px-[80px]`}
       id={`step${step}`}
     >
       <div className='flex flex-col flex-1 min-w-0'>
