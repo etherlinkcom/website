@@ -1,19 +1,23 @@
 import React from 'react'
 import { Tutorial } from '../fixture'
 import { PrimaryButton } from '../../components/buttons/PrimaryButton'
+import { GraditentLine } from '../../components/pages/RevampHome/Partners'
 
 export const Tutorials = ({ tutorials }: { tutorials: Tutorial[] }) => {
   return (
-    <div className='flex flex-col gap-[50px] md:gap-[100px] py-14 md:py-[144px]'>
-      {tutorials.map((t, i) => (
-        <div
-          key={t.title}
-          className={`mb-20 last:mb-0 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
-        >
-          <TutorialCard tutorial={t} step={i + 1} reverse={i % 2 === 1} />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className='flex flex-col gap-[50px] md:gap-[100px] py-14 md:py-[144px]'>
+        {tutorials.map((t, i) => (
+          <div
+            key={t.title}
+            className={`mb-20 last:mb-0 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+          >
+            <TutorialCard tutorial={t} step={i + 1} reverse={i % 2 === 1} />
+          </div>
+        ))}
+      </div>
+      <GraditentLine className='left-[50%] -translate-x-[56%]' />
+    </>
   )
 }
 
