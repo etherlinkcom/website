@@ -35,19 +35,20 @@ const TutorialCard = ({
       className={`flex flex-col-reverse md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} gap-6 md:gap-20 md:items-center justify-center`}
       id={`step${step}`}
     >
-      <div className='flex flex-col shrink-0'>
+      <div className='flex flex-col flex-1 min-w-0'>
         <h3 className='text-2xl md:text-4xl font-bold text-neonGreen-500 leading-[32px] md:leading-[48px] mb-2'>
           <span className='text-white-500'>Step {step}:</span> {tutorial.title}
         </h3>
-        <p className='text-grey-200 mb-6 md:mb-8'>{tutorial.description}</p>
+        <p className='text-grey-200 mb-6 md:mb-8 md:max-w-[412px]'>
+          {tutorial.description}
+        </p>
         <PrimaryButton
           text={tutorial.button.text}
           href={tutorial.button.link}
           className='w-full md:w-fit'
         />
       </div>
-
-      <div className='w-full max-w-[572px]'>
+      <div className='flex-1 min-w-0'>
         <video
           src={tutorial.video}
           controls
