@@ -2,6 +2,7 @@ import React from 'react'
 import { Tutorial } from '../fixture'
 import { PrimaryButton } from '../../components/buttons/PrimaryButton'
 import { GraditentLine } from '../../components/pages/RevampHome/Partners'
+import ReactMarkdown from 'react-markdown'
 
 export const Tutorials = ({ tutorials }: { tutorials: Tutorial[] }) => {
   return (
@@ -39,9 +40,22 @@ const TutorialCard = ({
         <h3 className='text-2xl md:text-4xl font-bold text-neonGreen-500 leading-[32px] md:leading-[48px] mb-2'>
           <span className='text-white-500'>Step {step}:</span> {tutorial.title}
         </h3>
-        <p className='text-grey-200 mb-6 md:mb-8 md:max-w-[412px]'>
-          {tutorial.description}
-        </p>
+        <div className='text-grey-200 mb-6 md:mb-8 md:max-w-[412px]'>
+          <ReactMarkdown
+            components={{
+              a: ({ node, ...props }) => (
+                <a
+                  {...props}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='underline'
+                />
+              )
+            }}
+          >
+            {tutorial.description}
+          </ReactMarkdown>
+        </div>
         <PrimaryButton
           text={tutorial.button.text}
           href={tutorial.button.link}

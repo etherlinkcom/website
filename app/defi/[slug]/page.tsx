@@ -45,6 +45,7 @@ export default function StrategyPage({ params }: Props) {
       <Hero strategy={strategy} />
       <Tutorials tutorials={strategy.tutorials} />
       <MoreStrategies id={strategy.id} />
+      {/* <Faqs /> */}
     </Container>
   )
 }
