@@ -4,6 +4,7 @@ import { STRATEGIES_DATA } from '../fixture'
 import Container from '../../components/container'
 import { Hero } from './Hero'
 import { Tutorials } from './Tutorials'
+import { MoreStrategies } from './MoreStrategies'
 
 type Props = { params: { slug: string } }
 
@@ -43,6 +44,7 @@ export default function StrategyPage({ params }: Props) {
       <Breadcrumbs strategy={strategy.name} />
       <Hero strategy={strategy} />
       <Tutorials tutorials={strategy.tutorials} />
+      <MoreStrategies id={strategy.id} />
     </Container>
   )
 }
