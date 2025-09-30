@@ -9,16 +9,16 @@ export const DT_1ST_ROW = [
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'bnb', image: '/img/defi/icons/bnb.svg' }
+  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' }
 ]
 
 export const DT_2ND_ROW = [
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
-  { alt: 'bnb', image: '/img/defi/icons/bnb.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
   { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' }
+  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
+  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
 ]
 
 export const DT_3RD_ROW = [
@@ -26,7 +26,7 @@ export const DT_3RD_ROW = [
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
   { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
+  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' }
 ]
 
@@ -44,14 +44,14 @@ export const MB_1ST_ROW = [
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'bnb', image: '/img/defi/icons/bnb.svg' },
+  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
   { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
   { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'bnb', image: '/img/defi/icons/bnb.svg' }
+  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
+  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' }
 ]
 
 export const MB_2ND_ROW = [
@@ -60,13 +60,155 @@ export const MB_2ND_ROW = [
   { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
+  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
   { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
   { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
+]
+
+import { EventAction } from '../../utils/trackPostHog'
+
+export const PROJECTS = [
+  {
+    title: 'T-Bill Savings',
+    description: 'Stable savings on Etherlink.',
+    image: '/img/defi/projects/t-bill.webp',
+    video: '/img/defi/strategies/t-bill-savings/step1.mp4',
+    tag: 'Supply',
+    link: '/defi/t-bill-savings',
+    event: {
+      name: 'tbill_savings',
+      props: {
+        button_label: 'T-Bill Savings',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
+  },
+  {
+    title: 'Basis Trade',
+    description: 'Higher risk stable savings, higher rewards.',
+    image: '/img/defi/projects/basis-trade.webp',
+    video: '/img/defi/strategies/basis-trade/step1.mp4',
+    tag: 'Supply',
+    link: '/defi/basis-trade',
+    event: {
+      name: 'basis_trade',
+      props: {
+        button_label: 'Basis Trade',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
+  },
+  {
+    title: 'BTC Fi',
+    description: 'Leverage your BTC to earn.',
+    image: '/img/defi/projects/btc-fi.webp',
+    video: '/img/defi/strategies/btc-fi/step1.mp4',
+    tag: 'Supply',
+    link: '/defi/btc-fi',
+    event: {
+      name: 'btc_fi',
+      props: {
+        button_label: 'BTC Fi',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
+  },
+  {
+    title: 'Nuclear Speculation',
+    description: 'Tokenized uranium unique to Etherlink',
+    image: '/img/defi/projects/nuclear.webp',
+    video: '/img/defi/strategies/nuclear-speculation/step1.mp4',
+    tag: 'Buy',
+    link: '/defi/nuclear-speculation',
+    event: {
+      name: 'uranium',
+      props: {
+        button_label: 'Nuclear Speculation',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
+  },
+  {
+    title: 'Community Speculation',
+    description: 'These are highly risky and speculative assets.',
+    image: '/img/defi/projects/community.webp',
+    video: '/img/defi/strategies/community-speculation/step1.mp4',
+    tag: 'Buy',
+    link: '/defi/community-speculation',
+    event: {
+      name: 'community_speculation',
+      props: {
+        button_label: 'Community Speculation',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
+  },
+  {
+    title: 'Market Making',
+    description: 'Buy $XTZ using fiat ',
+    image: '/img/defi/projects/market-making.webp',
+    video: '/img/defi/strategies/market-making/step1.mp4',
+    tag: 'Supply',
+    link: '/defi/market-making',
+    event: {
+      name: 'market_making',
+      props: {
+        button_label: 'Market Making',
+        action: EventAction.BUTTON_CLICK,
+        section: 'start earning'
+      }
+    }
+  }
+]
+
+type FaqItem = { title: string; description: string }
+
+export const FAQS: FaqItem[] = [
+  {
+    title: 'What is DeFi on Etherlink?',
+    description:
+      'It’s a set of strategies and apps built on Etherlink (a Tezos Layer 2) that give you different ways to put your crypto to work, whether that’s earning steady yield, trading, or interacting with dApps.'
+  },
+  {
+    title: 'How does DeFi on Etherlink work?',
+    description:
+      'Just like any other chain, you bridge assets into Etherlink, connect your wallet, and choose a strategy or app to start earning.'
+  },
+  {
+    title: 'Who provides DeFi on Etherlink?',
+    description:
+      'Independent teams build and run the protocols. Etherlink is the fast, low fee network they run on, it doesn’t manage the individual dApps.'
+  },
+  {
+    title: 'What strategies can I use on Etherlink?',
+    description: `
+- T-Bill Savings – steady, treasury style yield
+- Basis Trade – earn from market spreads
+- BTC Fi – exposure to BTC yield
+- Nuclear Speculation – earn with real world assets
+- Community Speculation – community driven allocations
+- Market Making – provide liquidity and earn fees
+    `
+  },
+  {
+    title: 'Is DeFi on Etherlink safe?',
+    description:
+      'Every DeFi strategy carries some risk, from smart contracts to market moves. Some are steadier, others more speculative. Always do your own research and only deposit what you’re comfortable with.'
+  },
+  {
+    title: 'How do I get help if I’m stuck?',
+    description:
+      'Start with the individual strategy guides above, or head to Etherlink docs for more about Etherlink network. If you still have questions, join the community Discord to chat with other users and the tech team.'
+  }
 ]
 
 export type StrategyId =
