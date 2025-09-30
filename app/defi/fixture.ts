@@ -521,12 +521,12 @@ export const STRATEGIES_DATA: Strategy[] = [
         step: 1,
         title: 'Deposit USDC',
         description:
-          'Bridge USDC into Etherlink or create an account at [uranium.io](https://uranium.io/en) and deposit via Transak.',
+          '[Bridge USDC](https://bridge.etherlink.com) into Etherlink or create an account at uranium.io and deposit via Transak.',
         image: '/img/defi/strategies/nuclear-speculation/2.png',
         video: '/img/defi/strategies/nuclear-speculation/step2.mp4',
         button: {
           text: 'Deposit now',
-          link: 'https://uranium.io'
+          link: 'https://app.uranium.io/en'
         }
       },
       {
