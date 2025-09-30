@@ -88,7 +88,7 @@ const Cta = () => {
         role='button'
       >
         <Link
-          href='/defi#strategies'
+          href='/defi#onboard'
           onClick={() =>
             trackPostHog('getxtz', {
               button_label: 'Get XTZ',
