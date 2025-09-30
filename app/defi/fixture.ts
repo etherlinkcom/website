@@ -13,60 +13,60 @@ export const DT_1ST_ROW = [
 ]
 
 export const DT_2ND_ROW = [
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
+  { alt: 'LTBC', image: '/img/defi/icons/LTBC.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
-  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
+  { alt: 'GEARBOX', image: '/img/defi/icons/GEARBOX.svg' },
+  { alt: 'crv', image: '/img/defi/icons/CRV.svg' },
+  { alt: 'OKU', image: '/img/defi/icons/OKU.svg' },
+  { alt: 'STACYFI', image: '/img/defi/icons/STACYFI.svg' }
 ]
 
 export const DT_3RD_ROW = [
-  { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
-  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
   { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
-  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' }
+  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
+  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
+  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
+  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
+  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' }
 ]
 
 export const DT_4TH_ROW = [
-  { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
+  { alt: 'STACYFI', image: '/img/defi/icons/STACYFI.svg' },
+  { alt: 'OKU', image: '/img/defi/icons/OKU.svg' },
+  { alt: 'crv', image: '/img/defi/icons/CRV.svg' },
+  { alt: 'GEARBOX', image: '/img/defi/icons/GEARBOX.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'transak', image: '/img/defi/icons/Transak.svg' }
+  { alt: 'LTBC', image: '/img/defi/icons/LTBC.svg' }
 ]
 
 export const MB_1ST_ROW = [
-  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
+  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
-  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
-  { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
-  { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
-  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
+  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
   { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' }
+  { alt: 'LTBC', image: '/img/defi/icons/LTBC.svg' },
+  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
+  { alt: 'GEARBOX', image: '/img/defi/icons/GEARBOX.svg' },
+  { alt: 'crv', image: '/img/defi/icons/CRV.svg' },
+  { alt: 'OKU', image: '/img/defi/icons/OKU.svg' },
+  { alt: 'STACYFI', image: '/img/defi/icons/STACYFI.svg' }
 ]
 
 export const MB_2ND_ROW = [
+  { alt: 'STACYFI', image: '/img/defi/icons/STACYFI.svg' },
+  { alt: 'OKU', image: '/img/defi/icons/OKU.svg' },
+  { alt: 'crv', image: '/img/defi/icons/CRV.svg' },
+  { alt: 'GEARBOX', image: '/img/defi/icons/GEARBOX.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
-  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
+  { alt: 'LTBC', image: '/img/defi/icons/LTBC.svg' },
   { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
-  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
-  { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
-  { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
+  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
+  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
+  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
+  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' }
 ]
 
 import { EventAction, EventProps } from '../../utils/trackPostHog'
