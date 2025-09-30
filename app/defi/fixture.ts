@@ -285,7 +285,7 @@ export const STRATEGIES_DATA: Strategy[] = [
         alt: 'USDC'
       },
       {
-        src: '/img/defi/token/mTBILL.webp',
+        src: '/img/defi/token/mTBILL.svg',
         alt: 'mTBILL'
       }
     ],
