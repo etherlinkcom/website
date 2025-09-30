@@ -526,7 +526,7 @@ export const STRATEGIES_DATA: Strategy[] = [
         video: '/img/defi/strategies/nuclear-speculation/step2.mp4',
         button: {
           text: 'Deposit now',
-          link: 'https://bridge.etherlink.com/evm'
+          link: 'https://uranium.io'
         }
       },
       {
@@ -597,7 +597,7 @@ export const STRATEGIES_DATA: Strategy[] = [
         video: '/img/defi/strategies/community-speculation/step2.mp4',
         button: {
           text: 'Swap now',
-          link: 'iguanadex.com/?chain=etherlink'
+          link: 'https://www.iguanadex.com/?chain=etherlink'
         }
       },
       {
