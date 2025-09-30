@@ -33,14 +33,14 @@ const TutorialCard = ({
 }) => {
   return (
     <div
-      className={`flex flex-col-reverse md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} gap-6 md:gap-20 md:items-center justify-center md:px-[80px]`}
       id={`step${step}`}
+      className={`mx-auto w-full max-w-[1064px] flex flex-col-reverse md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-start md:items-center gap-6 md:gap-20`}
     >
-      <div className='flex flex-col flex-1 min-w-0'>
+      <div className='flex flex-col w-full md:w-[412px] md:flex-none'>
         <h3 className='text-2xl md:text-4xl font-bold text-neonGreen-500 leading-[32px] md:leading-[48px] mb-2'>
           <span className='text-white-500'>Step {step}:</span> {tutorial.title}
         </h3>
-        <div className='text-grey-200 mb-6 md:mb-8 md:max-w-[412px]'>
+        <div className='text-grey-200 mb-6 md:mb-8'>
           <ReactMarkdown
             components={{
               a: ({ node, ...props }) => (
@@ -67,12 +67,14 @@ const TutorialCard = ({
           className='w-full md:w-fit'
         />
       </div>
-      <div className='flex-1 min-w-0'>
-        <video
-          src={tutorial.video}
-          controls
-          className='w-full h-auto rounded-xl overflow-hidden'
-        />
+      <div className='w-full md:max-w-[572px] md:flex-1 min-w-0'>
+        <div className='aspect-[16/9] w-full md:max-w-[572px] md:max-h-[322px]'>
+          <video
+            src={tutorial.video}
+            controls
+            className='w-full h-full rounded-xl overflow-hidden object-cover'
+          />
+        </div>
       </div>
     </div>
   )
