@@ -59,6 +59,11 @@ const TutorialCard = ({
         <PrimaryButton
           text={tutorial.button.text}
           href={tutorial.button.link}
+          icon={
+            tutorial.button.link.includes('http') ? (
+              <img src='/img/defi/FiArrowUpRight.svg' alt='external link' />
+            ) : undefined
+          }
           className='w-full md:w-fit'
         />
       </div>
