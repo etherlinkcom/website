@@ -9,7 +9,7 @@ export function Faqs() {
   const toggle = (i: number) => setOpen(prev => ({ ...prev, [i]: !prev[i] }))
 
   return (
-    <Container className='mx-auto max-w-[768px] pb-10 md:pb-24'>
+    <div className='mx-auto max-w-[768px] pb-10 md:pb-24'>
       <div className='overflow-hidden rounded-2xl border border-grey-500'>
         <div className='p-6 border-b border-grey-500'>
           <h2 className='text-2xl font-bold text-grey-50'>FAQs</h2>
@@ -78,6 +78,6 @@ export function Faqs() {
           )
         })}
       </div>
-    </Container>
+    </div>
   )
 }
