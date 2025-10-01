@@ -87,7 +87,11 @@ export const Cta = () => {
         role='button'
       >
         <Link
+<<<<<<< HEAD
           href='#onboard'
+=======
+          href='/defi#onboard'
+>>>>>>> 91c06172a42ba8d8fc2419b9051486e4c167c908
           onClick={() =>
             trackPostHog('getxtz', {
               button_label: 'Get XTZ',
