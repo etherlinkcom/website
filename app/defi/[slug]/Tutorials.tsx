@@ -3,6 +3,7 @@ import { Tutorial } from '../fixture'
 import { PrimaryButton } from '../../components/buttons/PrimaryButton'
 import { GraditentLine } from '../../components/pages/RevampHome/Partners'
 import ReactMarkdown from 'react-markdown'
+import { SectionBgGradient } from '../../components/pages/Home/SectionBgGradient'
 
 export const Tutorials = ({ tutorials }: { tutorials: Tutorial[] }) => {
   return (
@@ -40,7 +41,10 @@ const TutorialCard = ({
         <h3 className='text-2xl md:text-4xl font-bold text-neonGreen-500 leading-[32px] md:leading-[48px] mb-2'>
           <span className='text-white-500'>Step {step}:</span> {tutorial.title}
         </h3>
-        <div className='text-grey-200 mb-6 md:mb-8'>
+        <div className='relative text-grey-200 mb-6 md:mb-8'>
+          <div className='relative -top-[100px]'>
+            <SectionBgGradient />
+          </div>
           <ReactMarkdown
             components={{
               a: ({ node, ...props }) => (
@@ -59,6 +63,7 @@ const TutorialCard = ({
         <PrimaryButton
           text={tutorial.button.text}
           href={tutorial.button.link}
+          newTab
           icon={
             tutorial.button.link.includes('http') ? (
               <img src='/img/defi/FiArrowUpRight.svg' alt='external link' />

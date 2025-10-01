@@ -30,8 +30,15 @@ const Breadcrumbs = ({ strategy }: { strategy: string }) => {
 
 export const ClientPage = ({ strategy }: { strategy: Strategy }) => {
   return (
-    <Container className='pt-10 md:pt-24'>
+    <Container className='relative pt-10 md:pt-24'>
       <Breadcrumbs strategy={strategy.name} />
+      <img
+        src='/img/defi/BGgradient.svg'
+        alt=''
+        aria-hidden='true'
+        className='pointer-events-none select-none absolute -top-[250px] -right-[180px] md:-top-52 md:right-0 w-auto min-w-[600px] md:min-w-[1064px] max-w-none opacity-[0.8]'
+      />
+
       <Hero strategy={strategy} />
       <Tutorials tutorials={strategy.tutorials} />
       <MoreStrategies id={strategy.id} />
