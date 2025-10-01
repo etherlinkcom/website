@@ -38,7 +38,7 @@ const ONBOARD_DATA = [
     org: 'Transak',
     title: 'Onramp',
     description: 'Buy $XTZ using fiat',
-    link: 'https://transak.com/buy/xtz',
+    link: 'https://global.transak.com/',
     image: '/img/defi/onboard/onramp.webp',
     event: {
       name: 'onramp',
