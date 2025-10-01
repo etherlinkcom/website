@@ -74,7 +74,7 @@ export const Footer = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <Discord className='rounded bg-[#262626]' size={38} />
+            <Discord className='rounded-lg bg-[#262626]' size={38} />
           </Link>
           <Link
             href='https://github.com/etherlinkcom'
