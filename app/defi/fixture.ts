@@ -252,6 +252,7 @@ type Project = {
 type TokenUsed = {
   src: string
   alt: string
+  tooltip?: string
 }
 export interface Strategy {
   id: StrategyId
@@ -573,8 +574,13 @@ export const STRATEGIES_DATA: Strategy[] = [
     ],
     tokenUsed: [
       {
-        src: '/img/defi/token/USDC.svg',
+        src: '/img/defi/token/xtz.svg',
         alt: 'USDC'
+      },
+      {
+        src: '/img/defi/token/meme-plus.svg',
+        alt: 'meme token',
+        tooltip: 'Tezos Memecoins'
       }
     ],
     tutorials: [
