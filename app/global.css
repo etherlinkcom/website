@@ -7,6 +7,7 @@
   body {
     @apply bg-grey-900;
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 }
 
