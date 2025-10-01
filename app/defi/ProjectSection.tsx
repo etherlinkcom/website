@@ -6,6 +6,11 @@ import { PROJECTS } from './fixture'
 export const ProjectSection = () => {
   return (
     <div className='relative' id='strategies'>
+      <img
+        src='/img/defi/grid.svg'
+        alt='bg grid'
+        className='absolute hidden md:block inset-0 left-1/2 -translate-x-1/2 -z-10 pointer-events-none select-none object-cover'
+      />
       <Container className='relative py-10 md:py-24'>
         <div className='flex flex-col justify-center items-start md:items-center mb-10'>
           <h2 className='text-[28px] md:text-4xl font-bold mb-2 text-grey-50'>
