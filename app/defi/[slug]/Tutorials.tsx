@@ -74,11 +74,19 @@ const TutorialCard = ({
       </div>
       <div className='w-full md:max-w-[572px] md:flex-1 min-w-0'>
         <div className='aspect-[16/9] w-full md:max-w-[572px] md:max-h-[322px]'>
-          <video
-            src={tutorial.video}
-            controls
-            className='w-full h-full rounded-xl overflow-hidden object-cover'
-          />
+          {tutorial.video ? (
+            <video
+              src={tutorial.video}
+              controls
+              className='w-full h-full rounded-xl overflow-hidden object-cover'
+            />
+          ) : (
+            <img
+              src={tutorial.image}
+              alt={tutorial.title}
+              className='w-full h-full rounded-xl overflow-hidden object-cover'
+            />
+          )}
         </div>
       </div>
     </div>
