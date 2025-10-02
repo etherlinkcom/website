@@ -12,7 +12,7 @@ const Privacy = () => {
   return (
     <Container className='max-w-[800px] mt-[40px] md:mt-[60px]'>
       <h1 className='text-neonGreen-500 font-semibold mb-[40px] text-4xl'>
-        <span className='text-grey-50'>Website</span> Privacy Notice
+        Privacy Notice
       </h1>
 
       <p className='text-neonGreen-500 text-2xl font-semibold -tracking-[0.48px] mb-3'>
