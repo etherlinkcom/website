@@ -7,7 +7,6 @@
   body {
     @apply bg-grey-900;
     overflow-x: hidden;
-    scroll-behavior: smooth;
   }
 }
 
@@ -37,4 +36,8 @@
 
 .no-scrollbar::-webkit-scrollbar-thumb {
   background-color: transparent;
+}
+
+.html {
+  scroll-behavior: smooth;
 }
