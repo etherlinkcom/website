@@ -8,6 +8,9 @@
     @apply bg-grey-900;
     overflow-x: hidden;
   }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .spin-logo {
@@ -36,8 +39,4 @@
 
 .no-scrollbar::-webkit-scrollbar-thumb {
   background-color: transparent;
-}
-
-.html {
-  scroll-behavior: smooth;
 }
