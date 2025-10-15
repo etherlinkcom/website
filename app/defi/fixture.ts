@@ -69,7 +69,7 @@ export const MB_2ND_ROW = [
   { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' }
 ]
 
-import { EventAction, EventProps } from '../../utils/trackPostHog'
+import { EventProps } from '../../utils/trackPostHog'
 
 export interface ProjectCard {
   id: string
@@ -90,12 +90,7 @@ export const PROJECTS: ProjectCard[] = [
     video: '/img/defi/strategies/t-bill-savings/step1.mp4',
     tag: 'Supply',
     event: {
-      name: 'tbill_savings',
-      props: {
-        button_label: 'T-Bill Savings',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:tbill_savings:click'
     }
   },
   {
@@ -106,12 +101,7 @@ export const PROJECTS: ProjectCard[] = [
     video: '/img/defi/strategies/basis-trade/step1.mp4',
     tag: 'Supply',
     event: {
-      name: 'basis_trade',
-      props: {
-        button_label: 'Basis Trade',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:basis_trade:click'
     }
   },
   {
@@ -122,12 +112,7 @@ export const PROJECTS: ProjectCard[] = [
     video: '/img/defi/strategies/btc-fi/step1.mp4',
     tag: 'Supply',
     event: {
-      name: 'btc_fi',
-      props: {
-        button_label: 'BTC Fi',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:btc_fi:click'
     }
   },
   {
@@ -138,12 +123,7 @@ export const PROJECTS: ProjectCard[] = [
     video: '/img/defi/strategies/nuclear-speculation/step1.mp4',
     tag: 'Buy',
     event: {
-      name: 'uranium',
-      props: {
-        button_label: 'Nuclear Speculation',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:uranium:click'
     }
   },
   {
@@ -154,12 +134,7 @@ export const PROJECTS: ProjectCard[] = [
     video: '/img/defi/strategies/community-speculation/step1.mp4',
     tag: 'Buy',
     event: {
-      name: 'community_speculation',
-      props: {
-        button_label: 'Community Speculation',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:comm_spec:click'
     }
   },
   {
@@ -170,12 +145,7 @@ export const PROJECTS: ProjectCard[] = [
     video: '/img/defi/strategies/market-making/step1.mp4',
     tag: 'Supply',
     event: {
-      name: 'market_making',
-      props: {
-        button_label: 'Market Making',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:market_making:click'
     }
   }
 ]

@@ -10,7 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ProjectSection } from './ProjectSection'
 import { Faqs } from './Faqs'
 import { PageInitTracker } from './PageInitTracker'
-import { EventAction, trackPostHog } from '../../utils/trackPostHog'
+import { trackPostHog } from '../../utils/trackPostHog'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -88,13 +88,7 @@ export const Cta = () => {
       >
         <Link
           href='#onboard'
-          onClick={() =>
-            trackPostHog('getxtz', {
-              button_label: 'Get XTZ',
-              action: EventAction.BUTTON_CLICK,
-              section: 'get xtz'
-            })
-          }
+          onClick={() => trackPostHog('onboard:getxtz:click')}
         >
           <div className='flex justify-center items-center gap-2'>
             <span className='relative z-10 text-lg font-semibold text-neonGreen-200 hover:text-neonGreen-500'>
