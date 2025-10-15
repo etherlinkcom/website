@@ -23,7 +23,7 @@ export const ProjectCard = (props: ProjectCardType) => {
     <Link
       href={`/defi/${props.id}`}
       passHref
-      onClick={() => trackPostHog(props.event.name, props.event.props)}
+      onClick={() => trackPostHog(props.event.name)}
     >
       <div
         onMouseEnter={handleMouseEnter}
