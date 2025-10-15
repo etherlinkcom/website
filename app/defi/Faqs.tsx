@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { FAQS } from './fixture'
+import rehypeRaw from 'rehype-raw'
 
 export function Faqs() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -62,7 +63,14 @@ export function Faqs() {
               >
                 <div className='min-h-0 overflow-hidden prose prose-invert prose-sm max-w-none'>
                   <ReactMarkdown
+                    rehypePlugins={[rehypeRaw]}
                     components={{
+                      a: ({ node, ...props }) => (
+                        <a
+                          {...props}
+                          className='text-neonGreen-600 underline' // optional styling
+                        />
+                      ),
                       ul: ({ node, ...props }) => (
                         <ul
                           className='list-disc list-inside space-y-1'
