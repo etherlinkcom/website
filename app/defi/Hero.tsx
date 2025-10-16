@@ -12,7 +12,7 @@ import {
   DT_3RD_ROW,
   DT_4TH_ROW
 } from './fixture'
-import { EventAction, trackPostHog } from '../../utils/trackPostHog'
+import { trackPostHog } from '../../utils/trackPostHog'
 import Link from 'next/link'
 
 const Breadcrumbs = () => {
@@ -57,13 +57,7 @@ export const Hero = () => {
                 <PrimaryButton
                   text='View strategies'
                   href='#strategies'
-                  onClick={() =>
-                    trackPostHog('view_strategies', {
-                      button_label: 'View strategies',
-                      action: EventAction.BUTTON_CLICK,
-                      section: 'hero'
-                    })
-                  }
+                  onClick={() => trackPostHog('hero:view_strategies:click')}
                 />
                 <GhostButton
                   text='Stats'

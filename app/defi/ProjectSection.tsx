@@ -6,6 +6,11 @@ import { PROJECTS } from './fixture'
 export const ProjectSection = () => {
   return (
     <div className='relative' id='strategies'>
+      <img
+        src='/img/defi/grid.svg'
+        alt='bg grid'
+        className='absolute hidden md:block inset-0 left-1/2 -translate-x-1/2 -z-10 pointer-events-none select-none object-cover'
+      />
       <Container className='relative py-10 md:py-24'>
         <div className='flex flex-col justify-center items-start md:items-center mb-10'>
           <h2 className='text-[28px] md:text-4xl font-bold mb-2 text-grey-50'>
@@ -18,7 +23,7 @@ export const ProjectSection = () => {
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch'>
           {PROJECTS.map(project => (
-            <ProjectCard key={project.title} {...project} />
+            <ProjectCard key={project.id} {...project} />
           ))}
         </div>
       </Container>

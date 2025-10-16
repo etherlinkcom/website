@@ -1,21 +1,23 @@
 import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { FAQS } from './fixture'
-import Container from '../components/container'
+import rehypeRaw from 'rehype-raw'
 
 export function Faqs() {
-  const [open, setOpen] = useState<Record<number, boolean>>({})
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-  const toggle = (i: number) => setOpen(prev => ({ ...prev, [i]: !prev[i] }))
+  const toggle = (i: number) => setOpenIndex(prev => (prev === i ? null : i))
 
   return (
-    <Container className='mx-auto max-w-[768px] pb-10 md:pb-24'>
+    <div className='mx-auto max-w-[768px] pb-10 md:pb-24'>
       <div className='overflow-hidden rounded-2xl border border-grey-500'>
         <div className='p-6 border-b border-grey-500'>
           <h2 className='text-2xl font-bold text-grey-50'>FAQs</h2>
         </div>
         {FAQS.map((item, i) => {
-          const isOpen = !!open[i]
+          const isOpen = openIndex === i
+          const panelId = `faq-panel-${i}`
+          const buttonId = `faq-button-${i}`
           return (
             <div
               key={i}
@@ -23,8 +25,11 @@ export function Faqs() {
               onClick={() => toggle(i)}
             >
               <button
+                id={buttonId}
                 aria-expanded={isOpen}
+                aria-controls={panelId}
                 className='w-full flex items-center justify-between gap-4 text-left'
+                type='button'
               >
                 <span className='text-base font-semibold text-grey-100'>
                   {item.title}
@@ -47,6 +52,9 @@ export function Faqs() {
 
               {/* Content */}
               <div
+                id={panelId}
+                role='region'
+                aria-labelledby={buttonId}
                 className={`text-sm text-grey-200 -tracking-[0.32px] transition-[grid-template-rows] duration-200 grid ${
                   isOpen
                     ? 'grid-rows-[1fr] opacity-100'
@@ -55,7 +63,14 @@ export function Faqs() {
               >
                 <div className='min-h-0 overflow-hidden prose prose-invert prose-sm max-w-none'>
                   <ReactMarkdown
+                    rehypePlugins={[rehypeRaw]}
                     components={{
+                      a: ({ node, ...props }) => (
+                        <a
+                          {...props}
+                          className='text-neonGreen-600 underline' // optional styling
+                        />
+                      ),
                       ul: ({ node, ...props }) => (
                         <ul
                           className='list-disc list-inside space-y-1'
@@ -78,6 +93,6 @@ export function Faqs() {
           )
         })}
       </div>
-    </Container>
+    </div>
   )
 }

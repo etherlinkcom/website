@@ -8,6 +8,9 @@
     @apply bg-grey-900;
     overflow-x: hidden;
   }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .spin-logo {
