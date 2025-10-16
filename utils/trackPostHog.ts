@@ -5,5 +5,7 @@ export type EventProps = {
 }
 
 export const trackPostHog = (event: string) => {
+  console.log('event', event)
+
   posthog.capture(event)
 }
