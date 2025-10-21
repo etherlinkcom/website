@@ -3,7 +3,10 @@ import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Etherlink Builders Program'
+  title: 'Etherlink Builders Program',
+  alternates: {
+    canonical: '/builders-program'
+  }
 }
 
 const Program = () => {
