@@ -17,8 +17,21 @@ module.exports = {
     if (!isPage) return {}
 
     let hasMeta = false
+    let usesRedirect = false
 
     return {
+      ImportDeclaration(node) {
+        // Detect import { redirect } from 'next/navigation'
+        if (
+          node.source?.value === 'next/navigation' &&
+          node.specifiers?.some(
+            s => s.imported?.name === 'redirect' || s.local?.name === 'redirect'
+          )
+        ) {
+          usesRedirect = true
+        }
+      },
+
       ExportNamedDeclaration(node) {
         // export const metadata = ...
         if (node.declaration?.type === 'VariableDeclaration') {
@@ -47,6 +60,8 @@ module.exports = {
         }
       },
       'Program:exit'() {
+        if (usesRedirect) return
+
         if (!hasMeta) {
           ctx.report({
             loc: { line: 1, column: 0 },
