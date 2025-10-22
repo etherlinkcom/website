@@ -1,5 +1,15 @@
 import Container from '../components/container'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Etherlink Builders Program',
+  description:
+    'Join the Etherlink Builders Program to get mentorship, find co-founders, and secure funding to accelerate your project.',
+  alternates: {
+    canonical: '/builders-program'
+  }
+}
 
 const Program = () => {
   return (

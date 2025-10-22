@@ -11,7 +11,10 @@ import { fetchFeaturedProjects } from '../utils/airtable/homeFeatured'
 export const metadata: Metadata = {
   title: 'Etherlink Ecosystem | Discover dApps and Integrations | Etherlink',
   description:
-    'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.'
+    'A decentralized & EVM compatible Layer-2 blockchain that looks after its users.',
+  alternates: {
+    canonical: '/'
+  }
 }
 
 const Home = async () => {
