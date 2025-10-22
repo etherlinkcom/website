@@ -1,15 +1,29 @@
+/**
+ * ESLint rule:
+ * - Requires every Next.js `app/.../page.tsx` file to export `metadata` or `generateMetadata`.
+ * - Skips pages that import `redirect()` from 'next/navigation'.
+ * - If static `metadata` exists, verifies it includes:
+ *     - title
+ *     - description
+ *     - alternates.canonical
+ */
+
 module.exports = {
   meta: {
     type: 'problem',
     docs: {
       description:
-        'Require metadata or generateMetadata export in Next.js App Router pages'
+        'Require metadata or generateMetadata in pages; ensure title, description, and canonical exist; skip redirect-only pages.'
     },
     schema: [],
     messages: {
-      missing: 'Page is missing `metadata` or `generateMetadata` export.'
+      missingExport:
+        'Page is missing `metadata` or `generateMetadata` export (unless it only redirects).',
+      missingField:
+        'metadata must include `title`, `description`, and `alternates.canonical`.'
     }
   },
+
   create(ctx) {
     const filename = ctx.getFilename()
     const isPage =
@@ -18,6 +32,7 @@ module.exports = {
 
     let hasMeta = false
     let usesRedirect = false
+    let metaNode = null // store the metadata AST node
 
     return {
       ImportDeclaration(node) {
@@ -33,14 +48,15 @@ module.exports = {
       },
 
       ExportNamedDeclaration(node) {
-        // export const metadata = ...
         if (node.declaration?.type === 'VariableDeclaration') {
           for (const decl of node.declaration.declarations || []) {
-            if (decl.id?.name === 'metadata') hasMeta = true
+            if (decl.id?.name === 'metadata') {
+              hasMeta = true
+              metaNode = decl.init
+            }
           }
         }
 
-        // export async function generateMetadata() { ... }
         if (
           node.declaration?.type === 'FunctionDeclaration' &&
           node.declaration.id?.name === 'generateMetadata'
@@ -48,25 +64,53 @@ module.exports = {
           hasMeta = true
         }
 
-        // export { metadata } from './x'
-        if (node.specifiers?.length) {
-          if (
-            node.specifiers.some(s =>
-              ['metadata', 'generateMetadata'].includes(s.exported?.name)
-            )
-          ) {
-            hasMeta = true
-          }
+        if (
+          node.specifiers?.some(s =>
+            ['metadata', 'generateMetadata'].includes(s.exported?.name)
+          )
+        ) {
+          hasMeta = true
         }
       },
+
       'Program:exit'() {
         if (usesRedirect) return
 
         if (!hasMeta) {
           ctx.report({
             loc: { line: 1, column: 0 },
-            messageId: 'missing'
+            messageId: 'missingExport'
           })
+          return
+        }
+
+        if (metaNode && metaNode.type === 'ObjectExpression') {
+          const props = new Map()
+          for (const prop of metaNode.properties) {
+            if (prop.key?.name) {
+              props.set(prop.key.name, prop)
+            }
+          }
+
+          const hasTitle = props.has('title')
+          const hasDescription = props.has('description')
+          const alternates = props.get('alternates')
+          let hasCanonical = false
+
+          if (alternates && alternates.value?.type === 'ObjectExpression') {
+            for (const sub of alternates.value.properties) {
+              if (sub.key?.name === 'canonical') {
+                hasCanonical = true
+              }
+            }
+          }
+
+          if (!(hasTitle && hasDescription && hasCanonical)) {
+            ctx.report({
+              node: metaNode,
+              messageId: 'missingField'
+            })
+          }
         }
       }
     }

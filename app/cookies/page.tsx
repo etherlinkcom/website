@@ -5,7 +5,11 @@ import { Cta } from './Cta'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Etherlink Cookie Policy'
+  title: 'Etherlink Cookie Policy',
+  description: 'Learn about our use of cookies and how we handle your data.',
+  alternates: {
+    canonical: '/cookies'
+  }
 }
 
 const startStyle =
