@@ -11,5 +11,5 @@ To run the dev: `bun dev`
 
 ## Automated Rebuild
 
-An hourly rebuild is automatically triggered using [cron-job.org](https://console.cron-job.org/).
-More details in [notion](https://www.notion.so/tezosfoundation/Etherlink-CRON-294b402b7f6080b2bee1e9a1f8308096)
+An automated rebuild of the project runs **every hour**, managed through [cron-job.org](https://console.cron-job.org/).  
+You can find configuration details and access information in the [Notion documentation](https://www.notion.so/tezosfoundation/Etherlink-CRON-294b402b7f6080b2bee1e9a1f8308096).
