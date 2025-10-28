@@ -66,7 +66,7 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
     org: 'Onramp',
     title: 'Banxa',
     description: 'Buy $XTZ using fiat',
-    link: 'https://global.banxa.com/',
+    link: 'https://checkout.banxa.com/',
     image: '/img/defi/banxa-logo.png'
   }
 ]
