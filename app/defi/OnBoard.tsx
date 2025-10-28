@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../components/container'
 import Link from 'next/link'
-import { EventAction, EventProps, trackPostHog } from '../../utils/trackPostHog'
+import { EventProps, trackPostHog } from '../../utils/trackPostHog'
 
 const ONBOARD_DATA = [
   {
@@ -11,12 +11,7 @@ const ONBOARD_DATA = [
     link: 'https://www.gate.io/',
     image: '/img/defi/onboard/cex.webp',
     event: {
-      name: 'cex',
-      props: {
-        button_label: 'Centralized Exchange',
-        action: EventAction.BUTTON_CLICK,
-        section: 'onboard'
-      }
+      name: 'onboard:cex:click'
     }
   },
   {
@@ -26,27 +21,17 @@ const ONBOARD_DATA = [
     link: 'https://bridge.etherlink.com/',
     image: '/img/defi/onboard/bridge.webp',
     event: {
-      name: 'bridge',
-      props: {
-        button_label: 'Bridge',
-        action: EventAction.BUTTON_CLICK,
-        section: 'onboard'
-      }
+      name: 'onboard:bridge:click'
     }
   },
   {
     org: 'Transak',
     title: 'Onramp',
     description: 'Buy $XTZ using fiat',
-    link: 'https://transak.com/buy/xtz',
+    link: 'https://global.transak.com/',
     image: '/img/defi/onboard/onramp.webp',
     event: {
-      name: 'onramp',
-      props: {
-        button_label: 'Onramp',
-        action: EventAction.BUTTON_CLICK,
-        section: 'onboard'
-      }
+      name: 'onboard:onramp:click'
     }
   }
 ]
@@ -100,7 +85,7 @@ const OnBoardCard = ({
     <Link
       href={link}
       target={link.includes('bridge') ? '_self' : '_blank'}
-      onClick={() => trackPostHog(event.name, event.props)}
+      onClick={() => trackPostHog(event.name)}
     >
       <div className='border border-black-400 h-full rounded-lg hover:border-neonGreen-900 group hover:cursor-pointer flex flex-col'>
         <div className='rounded-t-lg'>

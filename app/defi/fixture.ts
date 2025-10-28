@@ -13,159 +13,139 @@ export const DT_1ST_ROW = [
 ]
 
 export const DT_2ND_ROW = [
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
+  { alt: 'LTBC', image: '/img/defi/icons/LTBC.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
-  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
+  { alt: 'GEARBOX', image: '/img/defi/icons/GEARBOX.svg' },
+  { alt: 'crv', image: '/img/defi/icons/CRV.svg' },
+  { alt: 'OKU', image: '/img/defi/icons/OKU.svg' },
+  { alt: 'STACYFI', image: '/img/defi/icons/STACYFI.svg' }
 ]
 
 export const DT_3RD_ROW = [
-  { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
-  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
   { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
-  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' }
+  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
+  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
+  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
+  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
+  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' }
 ]
 
 export const DT_4TH_ROW = [
-  { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
+  { alt: 'STACYFI', image: '/img/defi/icons/STACYFI.svg' },
+  { alt: 'OKU', image: '/img/defi/icons/OKU.svg' },
+  { alt: 'crv', image: '/img/defi/icons/CRV.svg' },
+  { alt: 'GEARBOX', image: '/img/defi/icons/GEARBOX.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'transak', image: '/img/defi/icons/Transak.svg' }
+  { alt: 'LTBC', image: '/img/defi/icons/LTBC.svg' }
 ]
 
 export const MB_1ST_ROW = [
-  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
+  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
   { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
-  { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
-  { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
-  { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
-  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
   { alt: 'midas', image: '/img/defi/icons/midas.svg' },
+  { alt: 'u308', image: '/img/defi/icons/u308.svg' },
   { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' }
+  { alt: 'LTBC', image: '/img/defi/icons/LTBC.svg' },
+  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
+  { alt: 'GEARBOX', image: '/img/defi/icons/GEARBOX.svg' },
+  { alt: 'crv', image: '/img/defi/icons/CRV.svg' },
+  { alt: 'OKU', image: '/img/defi/icons/OKU.svg' },
+  { alt: 'STACYFI', image: '/img/defi/icons/STACYFI.svg' }
 ]
 
 export const MB_2ND_ROW = [
+  { alt: 'STACYFI', image: '/img/defi/icons/STACYFI.svg' },
+  { alt: 'OKU', image: '/img/defi/icons/OKU.svg' },
+  { alt: 'crv', image: '/img/defi/icons/CRV.svg' },
+  { alt: 'GEARBOX', image: '/img/defi/icons/GEARBOX.svg' },
   { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
-  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
-  { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
-  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' },
+  { alt: 'LTBC', image: '/img/defi/icons/LTBC.svg' },
   { alt: 'jumper', image: '/img/defi/icons/jumper.svg' },
-  { alt: 'organic growth', image: '/img/defi/icons/organic-growth.svg' },
-  { alt: 'transak', image: '/img/defi/icons/Transak.svg' },
-  { alt: 'Hanji', image: '/img/defi/icons/Hanji.svg' },
-  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
   { alt: 'u308', image: '/img/defi/icons/u308.svg' },
-  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' }
+  { alt: 'midas', image: '/img/defi/icons/midas.svg' },
+  { alt: 'Superlend', image: '/img/defi/icons/Superlend.svg' },
+  { alt: 'iguana', image: '/img/defi/icons/iguana.svg' },
+  { alt: 'spiko', image: '/img/defi/icons/spiko.jpeg' }
 ]
 
-import { EventAction } from '../../utils/trackPostHog'
+import { EventProps } from '../../utils/trackPostHog'
 
-export const PROJECTS = [
+export interface ProjectCard {
+  id: string
+  title: string
+  description: string
+  image: string
+  video: string
+  tag: string
+  event: EventProps
+}
+
+export const PROJECTS: ProjectCard[] = [
   {
+    id: 't-bill-savings',
     title: 'T-Bill Savings',
     description: 'Stable savings on Etherlink.',
     image: '/img/defi/projects/t-bill.webp',
     video: '/img/defi/strategies/t-bill-savings/step1.mp4',
     tag: 'Supply',
-    link: '/defi/t-bill-savings',
     event: {
-      name: 'tbill_savings',
-      props: {
-        button_label: 'T-Bill Savings',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:tbill_savings:click'
     }
   },
   {
+    id: 'basis-trade',
     title: 'Basis Trade',
     description: 'Higher risk stable savings, higher rewards.',
     image: '/img/defi/projects/basis-trade.webp',
     video: '/img/defi/strategies/basis-trade/step1.mp4',
     tag: 'Supply',
-    link: '/defi/basis-trade',
     event: {
-      name: 'basis_trade',
-      props: {
-        button_label: 'Basis Trade',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:basis_trade:click'
     }
   },
   {
+    id: 'btc-fi',
     title: 'BTC Fi',
     description: 'Leverage your BTC to earn.',
     image: '/img/defi/projects/btc-fi.webp',
     video: '/img/defi/strategies/btc-fi/step1.mp4',
     tag: 'Supply',
-    link: '/defi/btc-fi',
     event: {
-      name: 'btc_fi',
-      props: {
-        button_label: 'BTC Fi',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:btc_fi:click'
     }
   },
   {
+    id: 'nuclear-speculation',
     title: 'Nuclear Speculation',
     description: 'Tokenized uranium unique to Etherlink',
     image: '/img/defi/projects/nuclear.webp',
     video: '/img/defi/strategies/nuclear-speculation/step1.mp4',
     tag: 'Buy',
-    link: '/defi/nuclear-speculation',
     event: {
-      name: 'uranium',
-      props: {
-        button_label: 'Nuclear Speculation',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:uranium:click'
     }
   },
   {
+    id: 'community-speculation',
     title: 'Community Speculation',
     description: 'These are highly risky and speculative assets.',
     image: '/img/defi/projects/community.webp',
     video: '/img/defi/strategies/community-speculation/step1.mp4',
     tag: 'Buy',
-    link: '/defi/community-speculation',
     event: {
-      name: 'community_speculation',
-      props: {
-        button_label: 'Community Speculation',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:comm_spec:click'
     }
   },
   {
+    id: 'market-making',
     title: 'Market Making',
     description: 'Buy $XTZ using fiat ',
     image: '/img/defi/projects/market-making.webp',
     video: '/img/defi/strategies/market-making/step1.mp4',
     tag: 'Supply',
-    link: '/defi/market-making',
     event: {
-      name: 'market_making',
-      props: {
-        button_label: 'Market Making',
-        action: EventAction.BUTTON_CLICK,
-        section: 'start earning'
-      }
+      name: 'start_earning:market_making:click'
     }
   }
 ]
@@ -176,38 +156,17 @@ export const FAQS: FaqItem[] = [
   {
     title: 'What is DeFi on Etherlink?',
     description:
-      'It’s a set of strategies and apps built on Etherlink (a Tezos Layer 2) that give you different ways to put your crypto to work, whether that’s earning steady yield, trading, or interacting with dApps.'
+      'DeFi, short for Decentralized Finance, is a way to do financial activities like lending, borrowing, and trading using blockchain technology instead of traditional banks. There’s a broad set of DeFi strategies across Etherlink - & using DeFi on Etherlink means your assets don’t just sit there, they earn.'
   },
   {
     title: 'How does DeFi on Etherlink work?',
     description:
-      'Just like any other chain, you bridge assets into Etherlink, connect your wallet, and choose a strategy or app to start earning.'
-  },
-  {
-    title: 'Who provides DeFi on Etherlink?',
-    description:
-      'Independent teams build and run the protocols. Etherlink is the fast, low fee network they run on, it doesn’t manage the individual dApps.'
-  },
-  {
-    title: 'What strategies can I use on Etherlink?',
-    description: `
-- T-Bill Savings – steady, treasury style yield
-- Basis Trade – earn from market spreads
-- BTC Fi – exposure to BTC yield
-- Nuclear Speculation – earn with real world assets
-- Community Speculation – community driven allocations
-- Market Making – provide liquidity and earn fees
-    `
+      'Once you’ve bridged assets onto Etherlink you can participate in DeFi and put your funds to work. You can explore tailored strategies, or the entire Etherlink DeFi <a href="/ecosystem">ecosystem</a> to get started.'
   },
   {
     title: 'Is DeFi on Etherlink safe?',
     description:
-      'Every DeFi strategy carries some risk, from smart contracts to market moves. Some are steadier, others more speculative. Always do your own research and only deposit what you’re comfortable with.'
-  },
-  {
-    title: 'How do I get help if I’m stuck?',
-    description:
-      'Start with the individual strategy guides above, or head to Etherlink docs for more about Etherlink network. If you still have questions, join the community Discord to chat with other users and the tech team.'
+      'Every DeFi strategy and protocol carries some risk, from smart contracts to market moves. Some are steadier, others more speculative. Always do your own research and only deposit what you’re comfortable with.'
   }
 ]
 
@@ -219,121 +178,212 @@ export type StrategyId =
   | 'community-speculation'
   | 'market-making'
 
+type Button = {
+  text: string
+  link: string
+}
+
 export type Tutorial = {
   step: number
   title: string
   description: string
   image: string
   video?: string
+  button: Button
 }
 
 type Project = {
-  name: string
-  icon: string
+  alt: string
+  src: string
   link: string
+}
+
+type TokenUsed = {
+  src: string
+  alt: string
+  tooltip?: string
 }
 export interface Strategy {
   id: StrategyId
+  strategyType: 'Supply' | 'Buy'
   name: string
+  description: string
   tutorials: Tutorial[]
   projectInvolved: Project[]
-  earning: string
+  yieldProvider: {
+    src: string
+    alt: string
+  }[]
+  tokenUsed: TokenUsed[]
 }
 
 export const STRATEGIES_DATA: Strategy[] = [
   {
     id: 't-bill-savings',
+    strategyType: 'Supply',
     name: 'T-Bill Savings',
+    description: 'The most stable savings account on Etherlink.',
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
+    tokenUsed: [
+      {
+        src: '/img/defi/token/USDC.svg',
+        alt: 'USDC'
+      },
+      {
+        src: '/img/defi/token/mTBILL.svg',
+        alt: 'mTBILL'
+      }
+    ],
     tutorials: [
       {
         step: 1,
         title: 'Bridge',
         description: 'Bridge in USDC using Etherlink Bridge',
         image: '/img/defi/strategies/t-bill-savings/1.png',
-        video: '/img/defi/strategies/t-bill-savings/step1.mp4'
+        video: '/img/defi/strategies/t-bill-savings/step1.mp4',
+        button: {
+          text: 'Bridge now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
         step: 2,
         title: 'Swap',
         description: 'Swap USDC for mTBILL on IguanaDEX',
         image: '/img/defi/strategies/t-bill-savings/2.png',
-        video: '/img/defi/strategies/t-bill-savings/step2.mp4'
+        video: '/img/defi/strategies/t-bill-savings/step2.mp4',
+        button: {
+          text: 'Swap now',
+          link: 'https://www.iguanadex.com/?chain=etherlink'
+        }
       },
       {
         step: 3,
         title: 'Supply',
         description: 'Supply mTBILL on Superlend',
         image: '/img/defi/strategies/t-bill-savings/3.png',
-        video: '/img/defi/strategies/t-bill-savings/step3.mp4'
+        video: '/img/defi/strategies/t-bill-savings/step3.mp4',
+        button: {
+          text: 'Supply now',
+          link: 'https://markets.superlend.xyz'
+        }
       }
     ],
     projectInvolved: [
       {
-        name: 'IguanaDEX',
-        icon: '/img/defi/icons/iguana.svg',
+        alt: 'IguanaDEX',
+        src: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
-        name: 'Superlend',
-        icon: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend',
+        src: '/img/defi/icons/Superlend.svg',
         link: 'https://markets.superlend.xyz/'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   },
   {
     id: 'basis-trade',
+    strategyType: 'Supply',
     name: 'Basis Trade',
+    description:
+      'Slightly higher risk than stable savings, but with the potential for higher rewards!',
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
+    tokenUsed: [
+      {
+        src: '/img/defi/token/USDC.svg',
+        alt: 'USDC'
+      },
+      {
+        src: '/img/defi/token/mbasis.svg',
+        alt: 'mBASIS'
+      }
+    ],
     tutorials: [
       {
         step: 1,
         title: 'Bridge',
         description: 'Bridge in USDC using Etherlink Bridge',
         image: '/img/defi/strategies/basis-trade/1.png',
-        video: '/img/defi/strategies/basis-trade/step1.mp4'
+        video: '/img/defi/strategies/basis-trade/step1.mp4',
+        button: {
+          text: 'Bridge now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
         step: 2,
         title: 'Swap',
         description: 'Swap USDC for mBASIS on IguanaDEX',
         image: '/img/defi/strategies/basis-trade/2.png',
-        video: '/img/defi/strategies/basis-trade/step2.mp4'
+        video: '/img/defi/strategies/basis-trade/step2.mp4',
+        button: {
+          text: 'Swap now',
+          link: 'https://www.iguanadex.com/?chain=etherlink'
+        }
       },
       {
         step: 3,
         title: 'Supply',
         description: 'Supply mBASIS on Superlend',
         image: '/img/defi/strategies/basis-trade/3.png',
-        video: '/img/defi/strategies/basis-trade/step3.mp4'
+        video: '/img/defi/strategies/basis-trade/step3.mp4',
+        button: {
+          text: 'Supply now',
+          link: 'https://markets.superlend.xyz'
+        }
       }
     ],
     projectInvolved: [
       {
-        name: 'IguanaDEX',
-        icon: '/img/defi/icons/iguana.svg',
+        alt: 'IguanaDEX',
+        src: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
-        name: 'Superlend',
-        icon: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend',
+        src: '/img/defi/icons/Superlend.svg',
         link: 'https://markets.superlend.xyz/'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   },
   {
     id: 'btc-fi',
+    strategyType: 'Supply',
     name: 'BTC Fi',
+    description: 'Leverage your BTC to earn money!',
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
+    tokenUsed: [
+      {
+        src: '/img/defi/token/wbtc.svg',
+        alt: 'WBTC'
+      }
+    ],
     tutorials: [
       {
         step: 1,
@@ -341,104 +391,169 @@ export const STRATEGIES_DATA: Strategy[] = [
         description:
           'Bridge WBTC on the Etherlink Bridge, or if you already have funds on Etherlink, you can buy WBTC on Hanji or IguanaDEX',
         image: '/img/defi/strategies/btc-fi/1.png',
-        video: '/img/defi/strategies/btc-fi/step1.mp4'
+        video: '/img/defi/strategies/btc-fi/step1.mp4',
+        button: {
+          text: 'Bridge now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
         step: 2,
         title: 'Supply',
         description: 'Supply WBTC on Superlend',
         image: '/img/defi/strategies/btc-fi/2.png',
-        video: '/img/defi/strategies/btc-fi/step2.mp4'
+        video: '/img/defi/strategies/btc-fi/step2.mp4',
+        button: {
+          text: 'Supply now',
+          link: 'https://markets.superlend.xyz'
+        }
       }
     ],
     projectInvolved: [
       {
-        name: 'IguanaDEX',
-        icon: '/img/defi/icons/iguana.svg',
+        alt: 'IguanaDEX',
+        src: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
-        name: 'Hanji',
-        icon: '/img/defi/icons/Hanji.svg',
+        alt: 'Hanji',
+        src: '/img/defi/icons/Hanji.svg',
         link: 'https://hanji.io/'
       },
       {
-        name: 'Superlend',
-        icon: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend',
+        src: '/img/defi/icons/Superlend.svg',
         link: 'https://markets.superlend.xyz/'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   },
   {
     id: 'nuclear-speculation',
+    strategyType: 'Buy',
     name: 'Nuclear Speculation',
+    description:
+      'Uranium is the asset powering the nuclear energy revolution! You can find it tokenized uniquely on Etherlink.',
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
+    tokenUsed: [
+      {
+        src: '/img/defi/token/USDC.svg',
+        alt: 'USDC'
+      },
+      {
+        src: '/img/defi/token/x3o8.svg',
+        alt: 'xU3O8'
+      }
+    ],
     tutorials: [
+      // {
+      //   step: 1,
+      //   title: 'Sign Up',
+      //   description:
+      //     'Create an account at [uranium.io](https://uranium.io/en).',
+      //   image: '/img/defi/strategies/nuclear-speculation/1.png',
+      //   video: '/img/defi/strategies/nuclear-speculation/step1.mp4',
+      //   button: {
+      //     text: 'Deposit now',
+      //     link: 'https://bridge.etherlink.com/evm'
+      //   }
+      // },
       {
         step: 1,
-        title: 'Sign Up',
+        title: 'Deposit USDC',
         description:
-          'Create an account at [uranium.io](https://uranium.io/en).',
-        image: '/img/defi/strategies/nuclear-speculation/1.png',
-        video: '/img/defi/strategies/nuclear-speculation/step1.mp4'
+          '[Bridge USDC](https://bridge.etherlink.com) into Etherlink or create an account at uranium.io and deposit via Transak.',
+        image: '/img/defi/strategies/nuclear-speculation/2.png',
+        video: '/img/defi/strategies/nuclear-speculation/step2.mp4',
+        button: {
+          text: 'Deposit now',
+          link: 'https://app.uranium.io/en'
+        }
       },
       {
         step: 2,
-        title: 'Deposit USDC',
-        description:
-          'Bridge USDC into Etherlink or create an account at [uranium.io](https://uranium.io/en) and deposit via Transak.',
-        image: '/img/defi/strategies/nuclear-speculation/2.png',
-        video: '/img/defi/strategies/nuclear-speculation/step2.mp4'
-      },
-      {
-        step: 3,
         title: 'Buy',
         description: 'Buy xU3O8 with USDC',
         image: '/img/defi/strategies/nuclear-speculation/3.png',
-        video: '/img/defi/strategies/nuclear-speculation/step3.mp4'
+        video: '/img/defi/strategies/nuclear-speculation/step3.mp4',
+        button: {
+          text: 'Buy now',
+          link: 'https://uranium.io'
+        }
       }
     ],
     projectInvolved: [
       {
-        name: 'xU3O8',
-        icon: '/img/defi/icons/u308.svg',
+        alt: 'xU3O8',
+        src: '/img/defi/icons/u308.svg',
         link: 'https://www.uranium.io/en'
       },
       {
-        name: 'Transak',
-        icon: '/img/defi/icons/Transak.svg',
+        alt: 'Transak',
+        src: '/img/defi/icons/Transak.svg',
         link: 'https://global.transak.com/'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   },
   {
     id: 'community-speculation',
+    strategyType: 'Buy',
     name: 'Community Speculation',
+    description:
+      'The attention economy is alive and well on Etherlink, and anyone can get involved! These are highly risky and speculative assets.',
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
+    tokenUsed: [
+      {
+        src: '/img/defi/token/xtz.svg',
+        alt: 'USDC'
+      },
+      {
+        src: '/img/defi/token/meme-plus.svg',
+        alt: 'meme token',
+        tooltip: 'Tezos Memecoins'
+      }
+    ],
     tutorials: [
       {
         step: 1,
         title: 'Bridge',
         description: 'Bridge tokens into Etherlink using Etherlink Bridge',
         image: '/img/defi/strategies/community-speculation/1.png',
-        video: '/img/defi/strategies/community-speculation/step1.mp4'
+        video: '/img/defi/strategies/community-speculation/step1.mp4',
+        button: {
+          text: 'Bridge now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
         step: 2,
         title: 'Swap',
         description: 'Swap for XTZ on Hanji or IguanaDEX',
         image: '/img/defi/strategies/community-speculation/2.png',
-        video: '/img/defi/strategies/community-speculation/step2.mp4'
+        video: '/img/defi/strategies/community-speculation/step2.mp4',
+        button: {
+          text: 'Swap now',
+          link: 'https://www.iguanadex.com/?chain=etherlink'
+        }
       },
       {
         step: 3,
@@ -446,42 +561,72 @@ export const STRATEGIES_DATA: Strategy[] = [
         description:
           'Go on OrganicGrowth’s website and look for some promising memecoin communities',
         image: '/img/defi/strategies/community-speculation/3.png',
-        video: '/img/defi/strategies/community-speculation/step3.mp4'
+        video: '/img/defi/strategies/community-speculation/step3.mp4',
+        button: {
+          text: 'Explore now',
+          link: 'https://www.organicgrowth.wtf/'
+        }
       },
       {
         step: 4,
         title: 'Buy',
         description: 'Buy memecoins on OrganicGrowth using XTZ',
-        image: '/img/defi/strategies/community-speculation/step4.webp'
+        image: '/img/defi/strategies/community-speculation/step4.webp',
+        button: {
+          text: 'Buy now',
+          link: 'https://www.organicgrowth.wtf/'
+        }
       }
     ],
     projectInvolved: [
       {
-        name: 'OrganicGrowth',
-        icon: '/img/defi/icons/organic-growth.svg',
+        alt: 'OrganicGrowth',
+        src: '/img/defi/icons/organic-growth.svg',
         link: 'https://www.organicgrowth.wtf/'
       },
       {
-        name: 'Hanji',
-        icon: '/img/defi/icons/Hanji.svg',
+        alt: 'Hanji',
+        src: '/img/defi/icons/Hanji.svg',
         link: 'https://hanji.io/'
       },
       {
-        name: 'IguanaDEX',
-        icon: '/img/defi/icons/iguana.svg',
+        alt: 'IguanaDEX',
+        src: '/img/defi/icons/iguana.svg',
         link: 'https://www.iguanadex.com/?chain=etherlink'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   },
   {
     id: 'market-making',
+    strategyType: 'Supply',
     name: 'Market Making',
+    description:
+      'A simple way to get exposure to the same type of yield earned by market makers on Etherlink.',
+    yieldProvider: [
+      {
+        src: '/img/defi/icons/Superlend.svg',
+        alt: 'Superlend'
+      }
+    ],
+    tokenUsed: [
+      {
+        src: '/img/defi/token/USDC.svg',
+        alt: 'USDC'
+      },
+      {
+        src: '/img/defi/token/wbtc.svg',
+        alt: 'WBTC'
+      },
+      {
+        src: '/img/defi/token/weth.svg',
+        alt: 'WETH'
+      }
+    ],
     tutorials: [
       {
         step: 1,
@@ -489,7 +634,11 @@ export const STRATEGIES_DATA: Strategy[] = [
         description:
           'Bridge USDC, WETH, or WBTC into Etherlink using Etherlink Bridge',
         image: '/img/defi/strategies/market-making/1.png',
-        video: '/img/defi/strategies/market-making/step1.mp4'
+        video: '/img/defi/strategies/market-making/step1.mp4',
+        button: {
+          text: 'Bridge now',
+          link: 'https://bridge.etherlink.com/evm'
+        }
       },
       {
         step: 2,
@@ -497,21 +646,24 @@ export const STRATEGIES_DATA: Strategy[] = [
         description:
           'Supply your combination of USDC/XTZ/WETH/WBTC in Hanji’s LP vault',
         image: '/img/defi/strategies/market-making/2.png',
-        video: '/img/defi/strategies/market-making/step2.mp4'
+        video: '/img/defi/strategies/market-making/step2.mp4',
+        button: {
+          text: 'Swap now',
+          link: 'https://app.hanji.io/trade/0x65ea4dd7f789c71c0f57ed84b3bdc3062898d3cb'
+        }
       }
     ],
     projectInvolved: [
       {
-        name: 'Hanji',
-        icon: '/img/defi/icons/Hanji.svg',
+        alt: 'Hanji',
+        src: '/img/defi/icons/Hanji.svg',
         link: 'https://hanji.io/'
       },
       {
-        name: 'Etherlink Bridge',
-        icon: '/img/defi/icons/Etherlink.svg',
+        alt: 'Etherlink Bridge',
+        src: '/img/defi/icons/Etherlink.svg',
         link: 'https://bridge.etherlink.com/'
       }
-    ],
-    earning: '310% APR'
+    ]
   }
 ]
