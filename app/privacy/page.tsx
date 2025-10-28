@@ -1,12 +1,21 @@
 import Container from '../components/container'
 import { Header } from '../cookies/Header'
 import { Content } from '../cookies/Content'
+import { Metadata } from 'next'
 
 const startStyle =
   'text-grey-50 text-lg font-light leading-[28px] -tracking-[0.36px]'
 const olStyle =
   'list-decimal space-y-4 font-light text-grey-50 mb-[40px] md:mb-[80px]'
 const olItemStyle = 'grid grid-cols-[2rem_1fr] gap-4'
+
+export const metadata: Metadata = {
+  title: 'Privacy Notice | Etherlink',
+  description: '',
+  alternates: {
+    canonical: '/privacy'
+  }
+}
 
 const Privacy = () => {
   return (

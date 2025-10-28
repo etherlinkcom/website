@@ -7,7 +7,10 @@
     "format": "prettier --write .",
     "dev": "next dev",
     "build": "next build && node scrapeImagesAirTable.js",
-    "start": "npx serve@latest out"
+    "start": "npx serve@latest out",
+    "prepare": "husky",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -55,6 +58,12 @@
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "eslint": "^9.38.0",
+    "eslint-config-next": "^15.5.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.5",
     "lorem-ipsum": "^2.0.8"
   },
   "prettier": {
@@ -64,5 +73,10 @@
     "jsxSingleQuote": true,
     "arrowParens": "avoid",
     "semi": false
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "bun run lint:fix"
+    ]
   }
 }

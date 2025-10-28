@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     images: [
       `${process.env.NEXT_PUBLIC_WEBSITE_URL}/img/defi/twitter-card.webp`
     ]
+  },
+  alternates: {
+    canonical: '/defi'
   }
 }
 

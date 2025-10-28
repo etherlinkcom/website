@@ -6,7 +6,10 @@ import Cta from '../../components/cta'
 
 export const metadata = {
   title: 'Etherlink',
-  description: 'Build Web3 on Etherlink'
+  description: 'Build Web3 on Etherlink',
+  alternates: {
+    canonical: '/events/defi-catalyst-accelerator'
+  }
 }
 
 const Home = () => {

@@ -2,6 +2,15 @@ import Container from '../components/container'
 import { Header } from './Header'
 import { Content } from './Content'
 import { Cta } from './Cta'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Etherlink Cookie Policy',
+  description: 'Learn about our use of cookies and how we handle your data.',
+  alternates: {
+    canonical: '/cookies'
+  }
+}
 
 const startStyle =
   'text-grey-50 text-lg font-light leading-[28px] -tracking-[0.36px]'
