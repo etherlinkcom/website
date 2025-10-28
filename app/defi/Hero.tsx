@@ -41,7 +41,7 @@ export const Hero = () => {
             <div className='relative'>
               {/* text and buttons */}
               <p className='text-neonGreen-500 text-xs md:text-sm font-semibold md:font-bold mb-4 md:mb-2'>
-                $30,000,000+ bridged to Etherlink to date
+                $80,000,000+ bridged to Etherlink to date
               </p>
               <h1
                 className='grey-50 text-4xl md:text-[56px] font-bold leading-[48px] md:leading-[68px] 
