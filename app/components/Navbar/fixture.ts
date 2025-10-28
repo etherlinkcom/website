@@ -20,6 +20,11 @@ export const NAVBAR_ITEMS: NavItem[] = [
         link: 'https://bridge.etherlink.com/'
       },
       {
+        name: 'Onramp',
+        link: '/onramp',
+        publishedAt: '2025-10-27'
+      },
+      {
         name: 'Status',
         link: 'https://status.etherlink.com/'
       },
