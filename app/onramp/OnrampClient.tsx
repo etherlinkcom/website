@@ -96,8 +96,8 @@ export const OnrampClient = () => {
             <OnBoardCard {...item} key={item.org} />
           ))}
         </div>
-        <div className='mt-14 pb-14 text-start md:text-left'>
-          <p className='text-xs leading-normal text-white-50 mb-1 md:mb-2'>
+        <div className='mt-12 pb-14 text-start md:text-center'>
+          <p className='text-xs leading-normal text-grey-200 mb-1 md:mb-2'>
             Please check each site for the applicable terms of use and privacy policy details.
             One or more of the following limitations may apply &mdash; identity verification, transaction fees, purchase limits, country restrictions.
           </p>
