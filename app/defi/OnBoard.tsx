@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from '../components/container'
 import Link from 'next/link'
+import { EventProps, trackPostHog } from '../../utils/trackPostHog'
 
 const ONBOARD_DATA = [
   {
@@ -8,28 +9,37 @@ const ONBOARD_DATA = [
     title: 'Centralized Exchange',
     description: 'Buy and transfer $XTZ to Etherlink',
     link: 'https://www.gate.io/',
-    image: '/img/defi/Gate.webp'
+    image: '/img/defi/onboard/cex.webp',
+    event: {
+      name: 'onboard:cex:click'
+    }
   },
   {
     org: 'Tezos & Etherlink',
     title: 'Bridge',
     description: 'Bridge your assets to Etherlink',
     link: 'https://bridge.etherlink.com/',
-    image: '/img/defi/etherlink-b.webp'
+    image: '/img/defi/onboard/bridge.webp',
+    event: {
+      name: 'onboard:bridge:click'
+    }
   },
   {
     org: 'Transak',
     title: 'Onramp',
     description: 'Buy $XTZ using fiat',
     link: 'https://global.transak.com/',
-    image: '/img/defi/Transak.webp'
+    image: '/img/defi/onboard/onramp.webp',
+    event: {
+      name: 'onboard:onramp:click'
+    }
   }
 ]
 
 export const OnBoard = () => {
   return (
-    <div className='relative'>
-      <Container className='py-10 md:py-24'>
+    <div className='relative' id='onboard'>
+      <Container className='pb-10 md:pb-24'>
         <img
           className='absolute bottom-[850px] md:bottom-[220px] -left-[250px] md:-left-[250px] max-w-[960px] max-h-[560px] md:opacity-80 z-[50] pointer-events-none'
           src='/img/defi/gradient.svg'
@@ -60,6 +70,7 @@ interface OnBoardCardProps {
   description: string
   link: string
   image: string
+  event: EventProps
 }
 
 const OnBoardCard = ({
@@ -67,10 +78,15 @@ const OnBoardCard = ({
   title,
   description,
   link,
-  image
+  image,
+  event
 }: OnBoardCardProps) => {
   return (
-    <Link href={link} target={link.includes('bridge') ? '_self' : '_blank'}>
+    <Link
+      href={link}
+      target={link.includes('bridge') ? '_self' : '_blank'}
+      onClick={() => trackPostHog(event.name)}
+    >
       <div className='border border-black-400 h-full rounded-lg hover:border-neonGreen-900 group hover:cursor-pointer flex flex-col'>
         <div className='rounded-t-lg'>
           <img className='rounded-t-lg' src={image} alt='card' />

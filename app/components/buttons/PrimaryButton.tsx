@@ -7,23 +7,27 @@ export const PrimaryButton = ({
   onClick,
   href,
   icon,
-  className
+  className,
+  newTab
 }: {
   text: string
   href?: string
   onClick?: () => void
   icon?: React.ReactNode
   className?: string
+  newTab?: boolean
 }) => {
   const router = useRouter()
 
   const handleClick = () => {
     if (href) {
-      if (href.includes('etherlink.com')) window.open(href, '_self')
+      if (newTab) window.open(href, '_blank')
+      else if (href.includes('etherlink.com')) window.open(href, '_self')
 
       if (href.startsWith('http')) window.open(href, '_blank')
       else router.push(href)
-    } else if (onClick) {
+    }
+    if (onClick) {
       onClick()
     }
   }

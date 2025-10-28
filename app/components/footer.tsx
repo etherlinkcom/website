@@ -6,10 +6,9 @@ import Image from 'next/image'
 import Container from './container'
 import { EtherlinkLogo } from './EtherlinkLogo'
 import { X, Discord, GitHub } from './icons'
-import { isExternalLink } from './Navbar'
 
 const NAVS = [
-  { name: 'Blog', link: 'https://medium.com/@etherlink' },
+  { name: 'Blog', link: 'https://medium.com/@etherlink', newTab: true },
   { name: 'Documentation', link: 'https://docs.etherlink.com' },
   {
     name: 'Brand Assets',
@@ -17,11 +16,13 @@ const NAVS = [
   },
   {
     name: 'Cookie Policy',
-    link: '/cookies'
+    link: '/cookies',
+    newTab: true
   },
   {
     name: 'Privacy Policy',
-    link: '/Etherlink-Website-Privacy-Notice.docx'
+    link: '/privacy',
+    newTab: true
   }
 ]
 
@@ -42,7 +43,7 @@ export const Footer = () => {
                 return (
                   <Link
                     href={nav.link}
-                    target={isExternalLink(nav.link)}
+                    target={nav.newTab ? '_blank' : '_self'}
                     key={nav.name}
                   >
                     <p className='text-white-50 hover:text-newGreen transition-colors duration-300'>
@@ -53,7 +54,10 @@ export const Footer = () => {
               }
               return (
                 <React.Fragment key={nav.name}>
-                  <Link href={nav.link} target={isExternalLink(nav.link)}>
+                  <Link
+                    href={nav.link}
+                    target={nav.newTab ? '_blank' : '_self'}
+                  >
                     <p className='text-white-50 hover:text-newGreen transition-colors duration-300'>
                       {nav.name}
                     </p>
@@ -70,7 +74,7 @@ export const Footer = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <Discord className='rounded bg-[#262626]' size={38} />
+            <Discord className='rounded-lg bg-[#262626]' size={38} />
           </Link>
           <Link
             href='https://github.com/etherlinkcom'
