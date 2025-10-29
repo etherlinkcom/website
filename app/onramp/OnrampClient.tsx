@@ -11,63 +11,90 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
     title: 'Gate',
     description: 'Buy and transfer $XTZ to Etherlink',
     link: 'https://www.gate.io/',
-    image: '/img/defi/Gate.webp'
+    image: '/img/onramp/Gate.webp',
+    event: {
+      name: 'onboard:cex:gate:click'
+    },
   },
   {
     org: 'Centralized Exchange',
     title: 'KuCoin',
     description: 'Buy and transfer $XTZ to Etherlink',
     link: 'https://www.kucoin.com/',
-    image: '/img/defi/kucoin-logo.svg'
+    image: '/img/onramp/kucoin-logo.svg',
+    event: {
+      name: 'onboard:cex:kucoin:click'
+    },
   },
   {
     org: 'Centralized Exchange',
     title: 'AscendEX',
     description: 'Buy and transfer $XTZ to Etherlink',
     link: 'https://www.ascendex.com/',
-    image: '/img/defi/ascendex-logo.webp'
+    image: '/img/onramp/ascendex-logo.webp',
+    event: {
+      name: 'onboard:cex:ascendex:click'
+    },
   },
   {
     org: 'Tezos',
     title: 'Tezos Bridge',
     description: 'Bridge your assets to Etherlink from Tezos L1',
     link: 'https://bridge.etherlink.com/tezos/',
-    image: '/img/defi/etherlink-b.webp'
+    image: '/img/defi/EtherlinkBridge.webp',
+    event: {
+      name: 'onboard:bridge:tezos:click'
+    },
   },
   {
     org: 'EVM Bridge',
     description: 'Bridge your assets to Etherlink from other EVM chains',
     title: 'Etherlink EVM Bridge',
     link: 'https://bridge.etherlink.com/evm/',
-    image: '/img/defi/etherlink-b.webp'
+    image: '/img/defi/EtherlinkBridge.webp',
+    event: {
+      name: 'onboard:bridge:evm:click'
+    },
   },
   {
     org: 'Swap Bridge',
     title: 'Jumper',
     description: 'User-friendly cross-chain swap and bridge aggregator built on Li.Fi, supporting 25+ networks and major DEXs',
     link: 'https://jumper.exchange/',
-    image: '/img/defi/jumper-logo.png'
+    image: '/img/onramp/jumper-logo.png',
+    event: {
+      name: 'onboard:bridge:jumper:click'
+    },
   },
   {
     org: 'Swap Bridge',
     title: 'KyberSwap',
     description: 'Cross-chain decentralized trading solution that helps users find the best swap rates',
     link: 'https://kyberswap.com/cross-chain?from=1&to=42793&tokenIn=eth&tokenOut=xtz',
-    image: '/img/defi/kyberswap-logo.png'
+    image: '/img/onramp/kyberswap-logo.png',
+    event: {
+      name: 'onboard:bridge:kyberswap:click'
+    },
   },
   {
     org: 'Onramp',
     title: 'Transak',
     description: 'Buy $XTZ using fiat',
     link: 'https://global.transak.com/',
-    image: '/img/defi/Transak.webp'
+    image: '/img/onramp/Transak.webp',
+    event: {
+      name: 'onboard:onramp:transak:click'
+    },
   },
   {
     org: 'Onramp',
     title: 'Banxa',
     description: 'Buy $XTZ using fiat',
     link: 'https://checkout.banxa.com/',
-    image: '/img/defi/banxa-logo.png'
+    image: '/img/onramp/banxa-logo.png',
+    event: {
+      name: 'onboard:onramp:banxa:click'
+    },
   }
 ]
 
