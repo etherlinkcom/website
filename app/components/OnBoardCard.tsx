@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { EventProps, trackPostHog } from '../../utils/trackPostHog'
 
 export interface OnBoardCardProps {
   org: string
@@ -7,6 +8,7 @@ export interface OnBoardCardProps {
   description: string
   link: string
   image: string
+  event: EventProps
 }
 
 export const OnBoardCard = ({
@@ -14,10 +16,15 @@ export const OnBoardCard = ({
   title,
   description,
   link,
-  image
+  image,
+  event
 }: OnBoardCardProps) => {
   return (
-    <Link href={link} target={link.includes('bridge') ? '_self' : '_blank'}>
+    <Link 
+      href={link}
+      target={link.includes('bridge') ? '_self' : '_blank'}
+      onClick={() => trackPostHog(event.name)}
+    >
       <div className='border border-black-400 h-full rounded-lg hover:border-neonGreen-900 group hover:cursor-pointer flex flex-col'>
         <div className='rounded-t-lg'>
           <img className='rounded-t-lg' src={image} alt='card' />
