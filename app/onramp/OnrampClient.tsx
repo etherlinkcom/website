@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef, useLayoutEffect } from 'react'
-import Link from 'next/link'
 import Container from '../components/container'
 import { OnBoardCard, OnBoardCardProps } from '../components/OnBoardCard'
 
