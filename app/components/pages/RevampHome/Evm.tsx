@@ -23,7 +23,7 @@ export const Evm = () => {
           security, speed, and decentralization.
         </p>
       </div>
-      <div className='grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-8'>
+      <div className='grid grid-cols-1 gap-4 md:gap-8'>
         {EVM_BOXES.map((box, index) => (
           <Fade
             triggerOnce
