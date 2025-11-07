@@ -10,7 +10,7 @@ export interface NavItem {
 
 export const NAVBAR_ITEMS: NavItem[] = [
   {
-    publishedAt: '2025-08-11',
+    publishedAt: '2025-10-27',
     dropdown: true,
     name: 'Use',
     items: [
@@ -18,6 +18,11 @@ export const NAVBAR_ITEMS: NavItem[] = [
         name: 'Bridge',
         dropdown: false,
         link: 'https://bridge.etherlink.com/'
+      },
+      {
+        name: 'Onramp',
+        link: '/onramp',
+        publishedAt: '2025-10-27'
       },
       {
         name: 'Status',
