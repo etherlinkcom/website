@@ -27,6 +27,26 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
   },
   {
     org: 'Centralized Exchange',
+    title: 'MEXC',
+    description: 'Buy and transfer $XTZ to Etherlink',
+    link: 'https://www.mexc.com/',
+    image: '/img/onramp/mexc-logo-blue.svg',
+    event: {
+      name: 'onboard:cex:mexc:click'
+    },
+  },
+  {
+    org: 'Centralized Exchange',
+    title: 'BitMart',
+    description: 'Buy and transfer $XTZ to Etherlink',
+    link: 'https://www.bitmart.com/',
+    image: '/img/onramp/bitmart-logo.svg',
+    event: {
+      name: 'onboard:cex:bitmart:click'
+    },
+  },
+  {
+    org: 'Centralized Exchange',
     title: 'AscendEX',
     description: 'Buy and transfer $XTZ to Etherlink',
     link: 'https://www.ascendex.com/',
