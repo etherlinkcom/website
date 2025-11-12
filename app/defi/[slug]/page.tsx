@@ -10,7 +10,15 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: Props) {
   const s = STRATEGIES_DATA.find(s => s.id === params.slug)
-  return s ? { title: `${s.name} — DeFi`, description: s.description } : {}
+  return s
+    ? {
+        title: `${s.name} — DeFi`,
+        description: s.description,
+        alternates: {
+          canonical: `/defi/${s.id}`
+        }
+      }
+    : {}
 }
 
 export default function StrategyPage({ params }: Props) {
