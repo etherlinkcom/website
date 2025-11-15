@@ -9,7 +9,7 @@ import { getDynamicTagsMap } from '../utils/airtable/ecosystem'
 import PHProvider from './PHProvider'
 
 export const metadata = {
-  metadataBase: new URL('https://etherlink.com')
+  metadataBase: new URL('https://www.etherlink.com')
 }
 
 export default async function RootLayout({
