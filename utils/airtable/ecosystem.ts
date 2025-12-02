@@ -81,10 +81,9 @@ export const getDynamicTagsMap = async () => {
     const responseAirtable = await fetch(url, options)
 
     if (!responseAirtable.ok) {
-      console.warn(
-        `Airtable API returned ${responseAirtable.status}: ${responseAirtable.statusText}. Returning empty tags map.`
+      throw new Error(
+        `Airtable API returned ${responseAirtable.status}: ${responseAirtable.statusText}`
       )
-      return {}
     }
 
     const { records } = await responseAirtable.json()
@@ -100,11 +99,7 @@ export const getDynamicTagsMap = async () => {
 
     return dynamicTagsMap
   } catch (error) {
-    console.warn(
-      'Failed to fetch tags map from Airtable during build. Returning empty tags map.',
-      error instanceof Error ? error.message : error
-    )
-    return {}
+    throw error
   }
 }
 
@@ -162,20 +157,15 @@ export const fetchAirtableData = async (filterAndSort: string = '') => {
     const responseAirtable = await fetch(url, options)
 
     if (!responseAirtable.ok) {
-      console.warn(
-        `Airtable API returned ${responseAirtable.status}: ${responseAirtable.statusText}. Returning empty data.`
+      throw new Error(
+        `Airtable API returned ${responseAirtable.status}: ${responseAirtable.statusText}`
       )
-      return { records: [] }
     }
 
     const airtableData = await responseAirtable.json()
     return airtableData
   } catch (error) {
-    console.warn(
-      'Failed to fetch Airtable data during build. Returning empty data.',
-      error instanceof Error ? error.message : error
-    )
-    return { records: [] }
+    throw error
   }
 }
 
