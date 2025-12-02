@@ -118,17 +118,28 @@ const batchArray = (array: RawProjectStatus[], batchSize: number) => {
 
 export const checkUrlStatus = async (urls: string[]) => {
   const results: boolean[] = []
+  const TIMEOUT_MS = 5000 // 5 second timeout per URL
 
   for (const url of urls) {
     try {
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS)
+
       const response = await fetch(url, {
         headers: {
           'Cache-Control': 'no-cache'
-        }
+        },
+        signal: controller.signal
       })
+
+      clearTimeout(timeoutId)
       results.push(response.ok)
     } catch (error) {
-      console.error(`Error checking URL: ${url}`, error)
+      // Silently handle errors during build - URL checks are non-critical
+      // Only log in development to avoid build log noise
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`Error checking URL: ${url}`, error)
+      }
       results.push(false)
     }
   }
