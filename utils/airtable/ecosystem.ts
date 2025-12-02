@@ -69,38 +69,34 @@ const normalizeLabel = (key: string): string =>
         : key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()
 
 export const getDynamicTagsMap = async () => {
-  try {
-    const url = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
-    const options = {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
-      }
+  const url = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
+  const options = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
     }
-
-    const responseAirtable = await fetch(url, options)
-
-    if (!responseAirtable.ok) {
-      throw new Error(
-        `Airtable API returned ${responseAirtable.status}: ${responseAirtable.statusText}`
-      )
-    }
-
-    const { records } = await responseAirtable.json()
-
-    let dynamicTagsMap: Record<string, string> = {}
-
-    for (const record of records) {
-      for (const label of record.fields.Tags ?? []) {
-        const key = label
-        dynamicTagsMap[key] = normalizeLabel(key)
-      }
-    }
-
-    return dynamicTagsMap
-  } catch (error) {
-    throw error
   }
+
+  const responseAirtable = await fetch(url, options)
+
+  if (!responseAirtable.ok) {
+    throw new Error(
+      `Airtable API returned ${responseAirtable.status}: ${responseAirtable.statusText}`
+    )
+  }
+
+  const { records } = await responseAirtable.json()
+
+  let dynamicTagsMap: Record<string, string> = {}
+
+  for (const record of records) {
+    for (const label of record.fields.Tags ?? []) {
+      const key = label
+      dynamicTagsMap[key] = normalizeLabel(key)
+    }
+  }
+
+  return dynamicTagsMap
 }
 
 const batchArray = (array: RawProjectStatus[], batchSize: number) => {
@@ -144,29 +140,25 @@ export const checkUrlStatus = async (urls: string[]) => {
 }
 
 export const fetchAirtableData = async (filterAndSort: string = '') => {
-  try {
-    const url = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}${filterAndSort}`
-    const options = {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
-      },
-      next: { revalidate: 100 }
-    }
-
-    const responseAirtable = await fetch(url, options)
-
-    if (!responseAirtable.ok) {
-      throw new Error(
-        `Airtable API returned ${responseAirtable.status}: ${responseAirtable.statusText}`
-      )
-    }
-
-    const airtableData = await responseAirtable.json()
-    return airtableData
-  } catch (error) {
-    throw error
+  const url = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}${filterAndSort}`
+  const options = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
+    },
+    next: { revalidate: 100 }
   }
+
+  const responseAirtable = await fetch(url, options)
+
+  if (!responseAirtable.ok) {
+    throw new Error(
+      `Airtable API returned ${responseAirtable.status}: ${responseAirtable.statusText}`
+    )
+  }
+
+  const airtableData = await responseAirtable.json()
+  return airtableData
 }
 
 export const updateAirtableRecords = async (
