@@ -68,8 +68,10 @@ const normalizeLabel = (key: string): string =>
         ? key.toUpperCase()
         : key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()
 
+const airtableBaseUrl = 'https://api.airtable.com/v0'
+
 export const getDynamicTagsMap = async () => {
-  const url = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
+  const url = `${airtableBaseUrl}/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
   const options = {
     method: 'GET',
     headers: {
@@ -140,7 +142,7 @@ export const checkUrlStatus = async (urls: string[]) => {
 }
 
 export const fetchAirtableData = async (filterAndSort: string = '') => {
-  const url = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}${filterAndSort}`
+  const url = `${airtableBaseUrl}/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}${filterAndSort}`
   const options = {
     method: 'GET',
     headers: {
@@ -166,7 +168,7 @@ export const updateAirtableRecords = async (
 ) => {
   if (recordsToUpdate.length === 0) return
 
-  const airtableApiUrl = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
+  const airtableApiUrl = `${airtableBaseUrl}/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
   const batchedRecords = batchArray(recordsToUpdate, 10)
 
   for (let i = 0; i < batchedRecords.length; i++) {
