@@ -118,7 +118,7 @@ const batchArray = (array: RawProjectStatus[], batchSize: number) => {
 
 export const checkUrlStatus = async (urls: string[]) => {
   const results: boolean[] = []
-  const TIMEOUT_MS = 5000 // 5 second timeout per URL
+  const TIMEOUT_MS = 5000
 
   for (const url of urls) {
     try {
@@ -129,7 +129,8 @@ export const checkUrlStatus = async (urls: string[]) => {
         headers: {
           'Cache-Control': 'no-cache'
         },
-        signal: controller.signal
+        signal: controller.signal,
+        cache: 'no-store'
       })
 
       clearTimeout(timeoutId)
