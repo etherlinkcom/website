@@ -111,22 +111,16 @@ const batchArray = (array: RawProjectStatus[], batchSize: number) => {
 
 export const checkUrlStatus = async (urls: string[]) => {
   const results: boolean[] = []
-  const TIMEOUT_MS = 5000
 
   for (const url of urls) {
     try {
-      const controller = new AbortController()
-      const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS)
-
       const response = await fetch(url, {
         headers: {
           'Cache-Control': 'no-cache'
         },
-        signal: controller.signal,
         cache: 'no-store'
       })
 
-      clearTimeout(timeoutId)
       results.push(response.ok)
     } catch (error) {
       // Silently handle errors during build - URL checks are non-critical

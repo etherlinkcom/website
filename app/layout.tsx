@@ -17,12 +17,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  let tagsMap = {}
-  try {
-    tagsMap = await getDynamicTagsMap()
-  } catch (error) {
-    console.error('Failed to fetch tags map from Airtable:', error)
-  }
+  const tagsMap = await getDynamicTagsMap()
 
   return (
     <html lang='en' className='scroll-smooth'>
