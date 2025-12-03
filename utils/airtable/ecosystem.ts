@@ -68,8 +68,10 @@ const normalizeLabel = (key: string): string =>
         ? key.toUpperCase()
         : key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()
 
+const airtableBaseUrl = 'https://api.airtable.com/v0'
+
 export const getDynamicTagsMap = async () => {
-  const url = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
+  const url = `${airtableBaseUrl}/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
   const options = {
     method: 'GET',
     headers: {
@@ -80,7 +82,9 @@ export const getDynamicTagsMap = async () => {
   const responseAirtable = await fetch(url, options)
 
   if (!responseAirtable.ok) {
-    throw new Error('The Airtable response was not ok')
+    throw new Error(
+      `Airtable API returned ${responseAirtable.status}: ${responseAirtable.statusText}`
+    )
   }
 
   const { records } = await responseAirtable.json()
@@ -107,17 +111,29 @@ const batchArray = (array: RawProjectStatus[], batchSize: number) => {
 
 export const checkUrlStatus = async (urls: string[]) => {
   const results: boolean[] = []
+  const TIMEOUT_MS = 5000
 
   for (const url of urls) {
     try {
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS)
+
       const response = await fetch(url, {
         headers: {
           'Cache-Control': 'no-cache'
-        }
+        },
+        signal: controller.signal,
+        cache: 'no-store'
       })
+
+      clearTimeout(timeoutId)
       results.push(response.ok)
     } catch (error) {
-      console.error(`Error checking URL: ${url}`, error)
+      // Silently handle errors during build - URL checks are non-critical
+      // Only log in development to avoid build log noise
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`Error checking URL: ${url}`, error)
+      }
       results.push(false)
     }
   }
@@ -126,7 +142,7 @@ export const checkUrlStatus = async (urls: string[]) => {
 }
 
 export const fetchAirtableData = async (filterAndSort: string = '') => {
-  const url = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}${filterAndSort}`
+  const url = `${airtableBaseUrl}/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}${filterAndSort}`
   const options = {
     method: 'GET',
     headers: {
@@ -138,7 +154,9 @@ export const fetchAirtableData = async (filterAndSort: string = '') => {
   const responseAirtable = await fetch(url, options)
 
   if (!responseAirtable.ok) {
-    throw new Error('The Airtable response was not ok')
+    throw new Error(
+      `Airtable API returned ${responseAirtable.status}: ${responseAirtable.statusText}`
+    )
   }
 
   const airtableData = await responseAirtable.json()
@@ -150,7 +168,7 @@ export const updateAirtableRecords = async (
 ) => {
   if (recordsToUpdate.length === 0) return
 
-  const airtableApiUrl = `https://api.airtable.com/v0/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
+  const airtableApiUrl = `${airtableBaseUrl}/${process.env.ECOSYSTEM_BASE_ID}/${process.env.ECOSYSTEM_TABLE_NAME}`
   const batchedRecords = batchArray(recordsToUpdate, 10)
 
   for (let i = 0; i < batchedRecords.length; i++) {
