@@ -31,15 +31,7 @@ const Ecosystem = async () => {
   for (const rawProject of rawProjects) {
     const { Website, bypass_url_check } = rawProject.fields
 
-    // Skip URL checking if bypass_url_check is true
-    let isReachable = false
-    if (!bypass_url_check) {
-      const isReachableStatus = await checkUrlStatus([Website])
-      isReachable = isReachableStatus[0]
-    } else {
-      // If bypass_url_check is true, skip URL check and treat as active
-      isReachable = true
-    }
+    const isReachable = bypass_url_check || (await checkUrlStatus([Website]))[0]
 
     recordsToUpdate.push({
       id: rawProject.id,
