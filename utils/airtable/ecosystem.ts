@@ -117,8 +117,7 @@ export const checkUrlStatus = async (urls: string[]) => {
       const response = await fetch(url, {
         headers: {
           'Cache-Control': 'no-cache'
-        },
-        cache: 'no-store'
+        }
       })
 
       results.push(response.ok)
