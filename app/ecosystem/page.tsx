@@ -29,23 +29,18 @@ const Ecosystem = async () => {
   const updatedProjects: RawProject[] = []
 
   for (const rawProject of rawProjects) {
-    const { Website } = rawProject.fields
-    const isReachableStatus = await checkUrlStatus([Website])
+    const { Website, bypass_url_check } = rawProject.fields
+
+    const isReachable = bypass_url_check || (await checkUrlStatus([Website]))[0]
 
     recordsToUpdate.push({
       id: rawProject.id,
       fields: {
-        Status:
-          isReachableStatus[0] || rawProject.fields.bypass_url_check
-            ? 'active'
-            : 'inactive'
+        Status: isReachable ? 'active' : 'inactive'
       }
     })
 
-    if (
-      (isReachableStatus[0] || rawProject.fields.bypass_url_check) &&
-      rawProject.fields.approval_status === 'approved'
-    ) {
+    if (isReachable && rawProject.fields.approval_status === 'approved') {
       updatedProjects.push(rawProject)
     }
   }

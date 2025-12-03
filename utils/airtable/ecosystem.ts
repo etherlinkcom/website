@@ -122,8 +122,7 @@ export const checkUrlStatus = async (urls: string[]) => {
         headers: {
           'Cache-Control': 'no-cache'
         },
-        signal: controller.signal,
-        cache: 'no-store'
+        signal: controller.signal
       })
 
       clearTimeout(timeoutId)
