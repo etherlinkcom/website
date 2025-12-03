@@ -118,21 +118,31 @@ export const checkUrlStatus = async (urls: string[]) => {
       const controller = new AbortController()
       const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS)
 
-      const response = await fetch(url, {
-        headers: {
-          'Cache-Control': 'no-cache'
-        },
-        signal: controller.signal
-      })
+      try {
+        const response = await fetch(url, {
+          headers: {
+            'Cache-Control': 'no-cache',
+            'User-Agent': 'Mozilla/5.0 (compatible; EtherlinkBot/1.0)'
+          },
+          signal: controller.signal
+        })
 
-      clearTimeout(timeoutId)
-      results.push(response.ok)
-    } catch (error) {
-      // Silently handle errors during build - URL checks are non-critical
-      // Only log in development to avoid build log noise
-      if (process.env.NODE_ENV === 'development') {
-        console.warn(`Error checking URL: ${url}`, error)
+        clearTimeout(timeoutId)
+        results.push(response.ok)
+      } catch (fetchError: any) {
+        clearTimeout(timeoutId)
+        // Handle abort errors silently (timeouts are expected)
+        if (fetchError.name === 'AbortError') {
+          results.push(false)
+        } else {
+          // Re-throw to outer catch for other errors
+          throw fetchError
+        }
       }
+    } catch (error) {
+      // Silently handle all fetch errors - they're expected for unreachable URLs
+      // or sites that block automated requests
+      // The "Failed to set fetch cache" warnings from Next.js are non-fatal
       results.push(false)
     }
   }
