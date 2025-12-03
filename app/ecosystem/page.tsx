@@ -21,7 +21,13 @@ import {
 } from '../../utils/airtable/ecosystem'
 
 const Ecosystem = async () => {
-  const airtableData = await fetchAirtableData(`?sort[0][field]=rank`)
+  let airtableData
+  try {
+    airtableData = await fetchAirtableData(`?sort[0][field]=rank`)
+  } catch (error) {
+    console.error('Failed to fetch Airtable data:', error)
+    airtableData = { records: [] }
+  }
 
   const rawProjects: RawProject[] = airtableData?.records || []
 
