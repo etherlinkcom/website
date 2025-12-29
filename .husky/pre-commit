@@ -1,2 +1,4 @@
+#!/usr/bin/env sh
+
 echo "🔍 Running ESLint on staged files..."
 bunx lint-staged

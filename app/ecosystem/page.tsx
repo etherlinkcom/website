@@ -2,8 +2,6 @@ import { Hero } from './Hero'
 import { ProjectList } from './ProjectList'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {}
-
 import {
   checkUrlStatus,
   fetchAirtableData,
