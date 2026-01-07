@@ -60,22 +60,22 @@ export const NAVBAR_ITEMS: NavItem[] = [
         link: 'https://docs.etherlink.com/get-started/using-your-wallet/'
       },
       {
-        name: 'Testnet Resources',
+        name: 'Shadownet Resources',
         dropdown: true,
         items: [
           {
             name: 'Faucet',
-            link: 'https://faucet.etherlink.com/',
+            link: 'https://shadownet.faucet.etherlink.com/',
             isNestedItem: true
           },
           {
             name: 'Explorer',
-            link: 'https://testnet.explorer.etherlink.com/',
+            link: 'https://shadownet.explorer.etherlink.com/',
             isNestedItem: true
           },
           {
             name: 'Tezos Bridge',
-            link: 'https://testnet.bridge.etherlink.com/tezos',
+            link: 'https://shadownet.bridge.etherlink.com/',
             isNestedItem: true,
             isLastNestedItem: true
           }
