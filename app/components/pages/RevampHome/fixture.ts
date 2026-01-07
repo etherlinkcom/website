@@ -205,9 +205,9 @@ export const BOTTOM_CTA = [
     link: 'https://status.etherlink.com/'
   },
   {
-    topLine: 'TESTNET READY',
-    title: 'Testnet faucet',
-    desc: 'Get testnet tokens to start deployment',
-    link: 'https://faucet.etherlink.com/'
+    topLine: 'SHADOWNET READY',
+    title: 'Shadownet faucet',
+    desc: 'Get shadownet tokens to start deployment',
+    link: 'https://shadownet.faucet.etherlink.com/'
   }
 ]
