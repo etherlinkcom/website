@@ -66,6 +66,16 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
     },
   },
   {
+    org: 'Centralized Exchange',
+    title: 'Bitrue',
+    description: 'Buy and transfer $XTZ to Etherlink',
+    link: 'https://www.bitrue.com/',
+    image: '/img/onramp/bitrue-logo.png',
+    event: {
+      name: 'onboard:cex:bitrue:click'
+    },
+  },
+  {
     org: 'Tezos',
     title: 'Tezos Bridge',
     description: 'Bridge your assets to Etherlink from Tezos L1',
