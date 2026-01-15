@@ -56,6 +56,16 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
     },
   },
   {
+    org: 'Centralized Exchange',
+    title: 'LBank',
+    description: 'Buy and transfer $XTZ to Etherlink',
+    link: 'https://www.lbank.com/',
+    image: '/img/onramp/lbank-logo-color.png',
+    event: {
+      name: 'onboard:cex:lbank:click'
+    },
+  },
+  {
     org: 'Tezos',
     title: 'Tezos Bridge',
     description: 'Bridge your assets to Etherlink from Tezos L1',
