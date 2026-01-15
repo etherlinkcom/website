@@ -134,7 +134,17 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
     event: {
       name: 'onboard:onramp:banxa:click'
     },
-  }
+  },
+  {
+    org: 'Onramp',
+    title: 'Rampnow',
+    description: 'Buy $XTZ using fiat',
+    link: 'https://rampnow.io/',
+    image: '/img/onramp/rampnow-logo.png',
+    event: {
+      name: 'onboard:onramp:moonpay:click'
+    },
+  },
 ]
 
 export const OnrampClient = () => {
