@@ -56,6 +56,26 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
     },
   },
   {
+    org: 'Centralized Exchange',
+    title: 'LBank',
+    description: 'Buy and transfer $XTZ to Etherlink',
+    link: 'https://www.lbank.com/',
+    image: '/img/onramp/lbank-logo-color.png',
+    event: {
+      name: 'onboard:cex:lbank:click'
+    },
+  },
+  {
+    org: 'Centralized Exchange',
+    title: 'Bitrue',
+    description: 'Buy and transfer $XTZ to Etherlink',
+    link: 'https://www.bitrue.com/',
+    image: '/img/onramp/bitrue-logo.png',
+    event: {
+      name: 'onboard:cex:bitrue:click'
+    },
+  },
+  {
     org: 'Tezos',
     title: 'Tezos Bridge',
     description: 'Bridge your assets to Etherlink from Tezos L1',
@@ -114,7 +134,17 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
     event: {
       name: 'onboard:onramp:banxa:click'
     },
-  }
+  },
+  {
+    org: 'Onramp',
+    title: 'Rampnow',
+    description: 'Buy $XTZ using fiat',
+    link: 'https://rampnow.io/',
+    image: '/img/onramp/rampnow-logo.png',
+    event: {
+      name: 'onboard:onramp:moonpay:click'
+    },
+  },
 ]
 
 export const OnrampClient = () => {
