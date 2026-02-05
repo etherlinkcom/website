@@ -9,7 +9,7 @@ export function Faqs() {
   const toggle = (i: number) => setOpenIndex(prev => (prev === i ? null : i))
 
   return (
-    <div className='mx-auto max-w-[768px] pb-10 md:pb-24'>
+    <div className='mx-auto max-w-[768px] pt-10 md:pt-0 pb-10 md:pb-24 px-6'>
       <div className='overflow-hidden rounded-2xl border border-grey-500'>
         <div className='p-6 border-b border-grey-500'>
           <h2 className='text-2xl font-bold text-grey-50'>FAQs</h2>
@@ -35,9 +35,8 @@ export function Faqs() {
                   {item.title}
                 </span>
                 <svg
-                  className={`h-4 w-4 shrink-0 text-neutral-300 transition-transform duration-200 ${
-                    isOpen ? 'rotate-180' : 'rotate-0'
-                  }`}
+                  className={`h-4 w-4 shrink-0 text-neutral-300 transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'
+                    }`}
                   viewBox='0 0 20 20'
                   fill='currentColor'
                   aria-hidden='true'
@@ -55,11 +54,10 @@ export function Faqs() {
                 id={panelId}
                 role='region'
                 aria-labelledby={buttonId}
-                className={`text-sm text-grey-200 -tracking-[0.32px] transition-[grid-template-rows] duration-200 grid ${
-                  isOpen
-                    ? 'grid-rows-[1fr] opacity-100'
-                    : 'grid-rows-[0fr] opacity-90'
-                }`}
+                className={`text-sm text-grey-200 -tracking-[0.32px] transition-[grid-template-rows] duration-200 grid ${isOpen
+                  ? 'grid-rows-[1fr] opacity-100'
+                  : 'grid-rows-[0fr] opacity-90'
+                  }`}
               >
                 <div className='min-h-0 overflow-hidden prose prose-invert prose-sm max-w-none'>
                   <ReactMarkdown
