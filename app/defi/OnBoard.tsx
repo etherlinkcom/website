@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from '../components/container'
 import { OnBoardCard, OnBoardCardProps } from '../components/OnBoardCard'
+import { GhostButton } from '../components/buttons/GhostButton'
 
 const ONBOARD_DATA: OnBoardCardProps[] = [
   {
@@ -47,7 +48,7 @@ export const OnBoard = () => {
         />
         <div className='pb-14 text-start md:text-center'>
           <p className='text-[28px] md:text-4xl font-bold leading-[48px] text-neonGreen-500 mb-1 md:mb-2'>
-            Three easy <span className='text-white-50'>ways to onboard</span>
+            Ways <span className='text-white-50'>to onboard</span>
           </p>
           <p className='text-grey-200 text-lg md:text-xl -tracking-[0.4px]'>
             Transfer from a CEX, bridge assets, or use fiat
@@ -57,6 +58,9 @@ export const OnBoard = () => {
           {ONBOARD_DATA.map(item => (
             <OnBoardCard {...item} key={item.org} />
           ))}
+        </div>
+        <div className="flex justify-center mt-10 md:mt-16">
+          <GhostButton className='w-full md:w-auto' text='See more' href='/onramp' />
         </div>
       </Container>
     </div>
