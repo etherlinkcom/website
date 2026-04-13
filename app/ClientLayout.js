@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from 'next-themes'
 import './global.css'
-import { TagsContext } from '../utils/airtable/TagsContext'
+import { TagsContext } from '../utils/strapi/TagsContext'
 
 export default function ClientLayout({ children, tagsMap }) {
   return (

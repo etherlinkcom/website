@@ -10,8 +10,8 @@ import Image from 'next/image'
 import { CheveronIcon } from '../../Icons/CheveronIcon'
 import { TwitterIcon } from '../../Icons/TwitterIcon'
 import { ArrowRightIcon } from '../../Icons/ArrowRightIcon'
-import { Project } from '../../../../utils/airtable/ecosystem'
-import { useTagsMap } from '../../../../utils/airtable/TagsContext'
+import { Project } from '../../../../utils/strapi/ecosystem'
+import { useTagsMap } from '../../../../utils/strapi/TagsContext'
 
 export const EcosystemCarousel = ({ projects }: { projects: Project[] }) => {
   const swiperInfoRef = useRef<any>()

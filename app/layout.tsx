@@ -5,7 +5,7 @@ import { Navbar } from './components/Navbar'
 import { Footer } from './components/footer'
 import { GoogleTagManager } from '@next/third-parties/google'
 import { CookieBanner } from './components/CookieBanner'
-import { getDynamicTagsMap } from '../utils/airtable/ecosystem'
+import { getDynamicTagsMap } from '../utils/strapi/ecosystem'
 import PHProvider from './PHProvider'
 
 export const metadata = {
