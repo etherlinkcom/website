@@ -52,13 +52,13 @@ interface StrapiTagsResponse {
   etherlinkProjectTags: Tag[]
 }
 
-function mapStrapiToProject(sp: StrapiProject): Project {
-  const strapiUrl = process.env.STRAPI_URL?.replace(/\/$/, '') ?? ''
+const STRAPI_URL = process.env.STRAPI_URL?.replace(/\/$/, '') ?? ''
 
+function mapStrapiToProject(sp: StrapiProject): Project {
   const logoUrl = sp.logo?.url
     ? sp.logo.url.startsWith('http')
       ? sp.logo.url
-      : `${strapiUrl}${sp.logo.url}`
+      : `${STRAPI_URL}${sp.logo.url}`
     : ''
 
   return {
