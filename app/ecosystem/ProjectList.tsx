@@ -6,10 +6,10 @@ import { ProjectCard } from './ProjectCard'
 import { Search } from './Search'
 import { FilterButton } from './FilterButton'
 import { SortButton, SortOrder } from './SortButton'
-import { Project, TagKeys } from '../../utils/airtable/ecosystem'
+import { Project, TagKeys } from '../../utils/strapi/ecosystem'
 import { Cta } from './Cta'
 import { NotFound } from './NotFound'
-import { useTagsMap } from '../../utils/airtable/TagsContext'
+import { useTagsMap } from '../../utils/strapi/TagsContext'
 
 export const ProjectList = ({ projects }: { projects: Project[] }) => {
   const router = useRouter()

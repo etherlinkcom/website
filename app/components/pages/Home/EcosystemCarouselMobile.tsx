@@ -7,7 +7,7 @@ import './react-swiper.css'
 import { Pagination } from 'swiper/modules'
 import Link from 'next/link'
 import { ExploreEcosystemCard } from './EcosystemCarousel'
-import { Project } from '../../../../utils/airtable/ecosystem'
+import { Project } from '../../../../utils/strapi/ecosystem'
 
 export const EcosystemCarouselMobile = ({
   projects

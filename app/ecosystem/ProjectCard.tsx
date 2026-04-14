@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useCallback } from 'react'
 import Link from 'next/link'
-import { TagKeys } from '../../utils/airtable/ecosystem'
-import { useTagsMap } from '../../utils/airtable/TagsContext'
+import { TagKeys } from '../../utils/strapi/ecosystem'
+import { useTagsMap } from '../../utils/strapi/TagsContext'
 
 export interface ProjectCardProps {
   Logo: Array<{

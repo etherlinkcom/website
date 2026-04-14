@@ -9,9 +9,9 @@ import React, {
   Dispatch,
   SetStateAction
 } from 'react'
-import { Project, TagKeys } from '../../utils/airtable/ecosystem'
+import { Project, TagKeys } from '../../utils/strapi/ecosystem'
 import { ProjectCard } from './ProjectCard'
-import { useTagsMap } from '../../utils/airtable/TagsContext'
+import { useTagsMap } from '../../utils/strapi/TagsContext'
 
 type SearchProps = {
   search: string

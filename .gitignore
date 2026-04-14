@@ -29,6 +29,13 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# typescript build cache
+*.tsbuildinfo
+
+# migration data
+/data/
+/scripts/
+
 # vercel
 .vercel
 .env*.local

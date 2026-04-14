@@ -3,7 +3,7 @@ import Container from '../../container'
 import { EcosystemCarousel } from './EcosystemCarousel'
 import { EcosystemCarouselMobile } from './EcosystemCarouselMobile'
 import { SectionBgGradient } from './SectionBgGradient'
-import { Project } from '../../../../utils/airtable/ecosystem'
+import { Project } from '../../../../utils/strapi/ecosystem'
 
 const CATEGORIES = ['Defi', 'Web 3 Gaming', 'SocialFi', 'NFTs', 'DAOs']
 

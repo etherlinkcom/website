@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react'
-import { TagKeys, keyForTag } from '../../utils/airtable/ecosystem'
-import { useTagsMap } from '../../utils/airtable/TagsContext'
+import { TagKeys, keyForTag } from '../../utils/strapi/ecosystem'
+import { useTagsMap } from '../../utils/strapi/TagsContext'
 
 type FilterButtonProps = {
   selected: TagKeys[]

@@ -6,7 +6,7 @@ import rehypeRaw from 'rehype-raw'
 import Link from 'next/link'
 import { isExternalLink } from '../../Navbar'
 import useEmblaCarousel from 'embla-carousel-react'
-import { FeaturedProject } from '../../../../utils/airtable/homeFeatured'
+import { FeaturedProject } from './FeaturedSection'
 import styles from './featuredSection.module.css'
 import { usePrevNextButtons } from './usePrevNextButtons'
 import { DotButton } from './EmblaDots'
@@ -111,25 +111,7 @@ export const DesktopStartedCarousel = ({
   )
 }
 
-export interface FeaturedBoxProps {
-  Title: string
-  Description: string
-  Short_Description: string
-  Project_Link: string
-  Desktop_Image: Array<{
-    id: string
-    url: string
-    filename: string
-    size: number
-    type: string
-  }>
-  Mobile_Image: Array<{
-    id: string
-    url: string
-    filename: string
-    size: number
-    type: string
-  }>
+export interface FeaturedBoxProps extends FeaturedProject {
   isFirstSlide?: boolean
 }
 
@@ -165,7 +147,7 @@ const FeaturedBox = ({
           </div>
           <img
             className='absolute right-0 object-cover h-full w-full z-0 rounded-3xl'
-            src={Desktop_Image[0].url}
+            src={Desktop_Image}
             alt='bg img'
           />
         </div>

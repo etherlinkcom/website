@@ -8,7 +8,27 @@ import { isExternalLink } from '../../Navbar'
 import { MobileStartedCarousel } from './MobileStartedCarousel'
 import { DesktopStartedCarousel } from './DesktopStartedCarousel'
 import { Fade } from 'react-awesome-reveal'
-import { FeaturedProject } from '../../../../utils/airtable/homeFeatured'
+
+export interface FeaturedProject {
+  Title: string
+  Description: string
+  Short_Description: string
+  Project_Link: string
+  Desktop_Image: string
+  Mobile_Image: string
+}
+
+const FEATURED_PROJECTS: FeaturedProject[] = [
+  {
+    Title: 'Make money on Etherlink',
+    Description:
+      'Explore the best ways to grow your portfolio with simple DeFi strategies for every risk level.\n',
+    Short_Description: 'Grow your portfolio.\n',
+    Project_Link: 'https://www.etherlink.com/defi',
+    Desktop_Image: '/img/featured/make-money-desktop.png',
+    Mobile_Image: '/img/featured/make-money-mobile.png'
+  }
+]
 
 const STARTED_BOXES = [
   {
@@ -31,11 +51,8 @@ const STARTED_BOXES = [
   }
 ]
 
-export const FeaturedSection = ({
-  featuredProjects
-}: {
-  featuredProjects: FeaturedProject[]
-}) => {
+export const FeaturedSection = () => {
+  const featuredProjects = FEATURED_PROJECTS
   return (
     <Container className='relative px-6 md:px-[60px] lg:px-[104px] z-10'>
       <SectionBgGradient />
