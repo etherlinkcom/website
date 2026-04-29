@@ -128,8 +128,8 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
   {
     org: 'Onramp',
     title: 'Banxa',
-    description: 'Buy $XTZ using fiat',
-    link: 'https://checkout.banxa.com/',
+    description: 'Buy $XTZ and other tokens using fiat',
+    link: 'https://etherlink.banxa.com/',
     image: '/img/onramp/banxa-logo.png',
     event: {
       name: 'onboard:onramp:banxa:click'
