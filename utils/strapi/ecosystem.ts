@@ -89,7 +89,6 @@ function mapStrapiToProject(sp: StrapiProject): Project {
 const PROJECTS_QUERY = `
   query GetEcosystemProjects($page: Int!, $pageSize: Int!) {
     etherlinkEcosystemProjects(
-      filters: { approvalStatus: { eq: "approved" } }
       sort: "rank:asc"
       pagination: { page: $page, pageSize: $pageSize }
       status: PUBLISHED
