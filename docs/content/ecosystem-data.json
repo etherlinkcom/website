@@ -1,0 +1,1500 @@
+{
+  "fetchedAt": "2026-04-17T10:05:42.899Z",
+  "tags": {
+    "AI": "AI",
+    "community": "Community",
+    "defi": "Defi",
+    "DePIN": "DePIN",
+    "dev-tools": "Dev Tools",
+    "ecosystem-partner": "Ecosystem Partner",
+    "gaming": "Gaming",
+    "infra": "Infra",
+    "kyc": "KYC",
+    "nfts": "NFTs",
+    "on-ramp": "On Ramp",
+    "payments": "Payments",
+    "rpc": "RPC",
+    "social": "Social",
+    "stablecoins": "Stablecoins",
+    "wallet": "Wallet"
+  },
+  "projects": [
+    {
+      "Project": "MIOMl GAME",
+      "Slug": "mioml-game",
+      "Description": "MIOMl GAME is an actively growing unique eSports online arena with an original MlOMl token.",
+      "Website": "https://miomi.game/",
+      "Email": "",
+      "Twitter": "https://x.com/miomi_game",
+      "Tags": [
+        "infra",
+        "social"
+      ],
+      "Logo": [
+        {
+          "id": "eikdvu9s2pnpw4n4ji1txbo2",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/miomi_logo_911a8733ee.jpg",
+          "filename": "miomi logo.jpg",
+          "size": 37.85,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2025-07-17",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Appleville",
+      "Slug": "appleville",
+      "Description": "Idle farming web-based game where players collect Apple Points, upgrade plots, and climb leaderboards for crypto rewards from seasonal pools.",
+      "Website": "https://app.appleville.xyz/",
+      "Email": "",
+      "Twitter": "https://x.com/appleville_xyz",
+      "Tags": [
+        "gaming",
+        "community"
+      ],
+      "Logo": [
+        {
+          "id": "fl2iwteogrf9zv59k7ho7p7f",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Copy_of_App_Icon_1_1833a13639.png",
+          "filename": "Copy of App Icon (1).png",
+          "size": 79.32,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-08-18",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Uranium Miner",
+      "Slug": "uranium-miner",
+      "Description": "Tap-to-earn game where players collect Uranium Shards, upgrade efficiency, and refine 100K shards for xU3O8 airdrop tokens backed by real uranium",
+      "Website": "https://www.geturanium.io/",
+      "Email": "",
+      "Twitter": "https://x.com/uranium_io",
+      "Tags": [
+        "social",
+        "gaming"
+      ],
+      "Logo": [
+        {
+          "id": "uu5j3fxjbq53bvca9nwefki0",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/uranium_miner_G96_Yj7_Ec_Th_X_9ad1340e8c.png",
+          "filename": "uranium-miner-G96Yj7Ec_ThX.png",
+          "size": 129.35,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-08-18",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Cricket Champions",
+      "Slug": "cricket-champions",
+      "Description": "Collectible strategy card game of Cricket with PVP matchups and unique NFTs.",
+      "Website": "https://play.google.com/store/apps/details?id=com.golivegames.cricketchampions2025&hl=en",
+      "Email": "",
+      "Twitter": "https://x.com/Games_Golive",
+      "Tags": [
+        "gaming"
+      ],
+      "Logo": [
+        {
+          "id": "kkfw634e0lntmah0xu1da44f",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/1008x1008_770922dfc3.jpg",
+          "filename": "1008x1008.jpg",
+          "size": 158.38,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2025-08-18",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Sugar Match",
+      "Slug": "sugar-match",
+      "Description": "Match 3 PvP: Real-time puzzle battles with $CNDY wagering and unique NFT boosters for strategic gameplay advantages.",
+      "Website": "https://www.sugarmatch.io/",
+      "Email": "",
+      "Twitter": "https://x.com/Real_Sugarverse",
+      "Tags": [
+        "gaming",
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "s8kelbyx2pr7ftpbitu7jqkz",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Sugarmatch_Promo1200x720_e70bc95f75.png",
+          "filename": "SugarmatchPromo1200x720.png",
+          "size": 290.21,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-08-18",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Reaper Actual",
+      "Slug": "reaper-actual",
+      "Description": "An open-world persistent extraction shooter with a community-driven, player-to-player ecosystem.",
+      "Website": "https://reaperactual.com/",
+      "Email": "",
+      "Twitter": "https://x.com/reaperactualw3",
+      "Tags": [
+        "gaming"
+      ],
+      "Logo": [
+        {
+          "id": "fbghrb4xmoqgg7cpbcxsvgwl",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/logo_423cd80e9f.jpg",
+          "filename": "logo.jpg",
+          "size": 32.97,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2025-09-17",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "BlockPI",
+      "Slug": "blockpi",
+      "Description": "BlockPI is a global distributed blockchain API service network. The fast, scalable, robust multichain RPC infrastructure for Web3 developers",
+      "Website": "https://blockpi.io/",
+      "Email": "",
+      "Twitter": "https://twitter.com/RealBlockPI",
+      "Tags": [
+        "infra",
+        "rpc"
+      ],
+      "Logo": [
+        {
+          "id": "mhu85q64wz7046i3sdi375dg",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Block_PI_Icon_vibrant_f1cbdf3000.png",
+          "filename": "BlockPI Icon_vibrant.png",
+          "size": 7.67,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-09-26",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Octav",
+      "Slug": "octav",
+      "Description": "Octav supports and tracks Etherlink providing users with accurate portfolio and transaction data",
+      "Website": "https://octav.fi/",
+      "Email": "",
+      "Twitter": "https://x.com/OctavFi",
+      "Tags": [
+        "dev-tools"
+      ],
+      "Logo": [
+        {
+          "id": "o3f8yyvvqzudu8ealdxbnxr0",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Octav_icon_549cbbab7e.svg",
+          "filename": "Octav-icon.svg",
+          "size": 6.62,
+          "type": "image/svg+xml"
+        }
+      ],
+      "Date": "2025-10-02",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Chainstack",
+      "Slug": "chainstack",
+      "Description": "Your cost-effective blockchain node API provider for low-latency onchain operations and deep historical data look-ups on 70+ chains",
+      "Website": "https://chainstack.com/",
+      "Email": "",
+      "Twitter": "https://twitter.com/ChainstackHQ",
+      "Tags": [
+        "infra",
+        "rpc"
+      ],
+      "Logo": [
+        {
+          "id": "a7dbvyc3gw52zmmlsxxyclq8",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/chainstack_logo_blue_a5b7e94f34.png",
+          "filename": "chainstack-logo-blue.png",
+          "size": 3.98,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-10-14",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Rampnow",
+      "Slug": "rampnow",
+      "Description": "Rampnow provides secure, compliant on-ramp and off-ramp services for Etherlink tokens, offering fast settlement across global corridors",
+      "Website": "https://rampnow.io",
+      "Email": "",
+      "Twitter": "https://x.com/OfficialRampnow",
+      "Tags": [
+        "on-ramp"
+      ],
+      "Logo": [
+        {
+          "id": "rfqe9bko3dw89zyabwbwnqmh",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/rampnow_logo_square_white_12fcbf7566.svg",
+          "filename": "rampnow-logo-square-white.svg",
+          "size": 0.54,
+          "type": "image/svg+xml"
+        }
+      ],
+      "Date": "2026-01-16",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Utila",
+      "Slug": "utila",
+      "Description": "Enterprise-grade MPC wallet platform for fintechs, PSPs, and banks to build and manage stablecoin and digital asset products",
+      "Website": "https://utila.io/",
+      "Email": "",
+      "Twitter": "https://x.com/utila_io",
+      "Tags": [
+        "wallet",
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "c3oq8i6j9p3rxwuf0vjxxrgr",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Utila_Logo_Vertical_white_2x_1ad991a918.png",
+          "filename": "Utila Logo-Vertical-white@2x.png",
+          "size": 10.12,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2026-03-13",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Blockscout",
+      "Slug": "blockscout",
+      "Description": "A tool for inspecting and analyzing EVM based blockchains.",
+      "Website": "https://www.blockscout.com/",
+      "Email": "",
+      "Twitter": "https://twitter.com/blockscoutcom",
+      "Tags": [
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "e4z0peuypxztfw4tf6l69uv6",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Blockscout_2818c58477.jpg",
+          "filename": "Blockscout.jpg",
+          "size": 5.6,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": true
+    },
+    {
+      "Project": "idOS",
+      "Slug": "idos",
+      "Description": "An open-source, composable and chain-agnostic solution to enable true decentralized identity across the web3 space.",
+      "Website": "https://idos.network/",
+      "Email": "",
+      "Twitter": "https://x.com/idOS_network",
+      "Tags": [
+        "kyc"
+      ],
+      "Logo": [
+        {
+          "id": "xywbz8i08kta1l2ff3jmpwql",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/idos_839f093fb1.jpg",
+          "filename": "idos.jpg",
+          "size": 6.62,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "DappRadar",
+      "Slug": "dappradar",
+      "Description": "Explore NFTs, NFT Marketplaces, Blockchain Games, De-Fi, Dapps On The Blockchain And More On The World's Dapp Store.",
+      "Website": "https://dappradar.com/",
+      "Email": "",
+      "Twitter": "https://x.com/DappRadar",
+      "Tags": [
+        "dev-tools"
+      ],
+      "Logo": [
+        {
+          "id": "zm3qkwffyzz335j22r5jfcau",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/dappradar_6162efa096.jpg",
+          "filename": "dappradar.jpg",
+          "size": 13.53,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "TrustSwap",
+      "Slug": "trustswap",
+      "Description": "TrustSwap provides DeFi tools for token holders & businesses to buy, trade, create, and secure crypto assets with confidence.",
+      "Website": "https://trustswap.com/",
+      "Email": "",
+      "Twitter": "https://x.com/TrustSwap",
+      "Tags": [
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "bz3buq30tl0jky01i2rfte6k",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/trustswap_82b3f398ce.jpg",
+          "filename": "trustswap.jpg",
+          "size": 18.33,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Safe",
+      "Slug": "safe",
+      "Description": "Safe brings digital ownership of accounts to everyone by building universal and open contract standards for the custody of digital assets, data, and identity.",
+      "Website": "https://safe.global/",
+      "Email": "",
+      "Twitter": "https://x.com/safe",
+      "Tags": [
+        "wallet"
+      ],
+      "Logo": [
+        {
+          "id": "zq0wu94f8dv8ll28244tnmhh",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/safe_8a5d48f035.jpg",
+          "filename": "safe.jpg",
+          "size": 6.42,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Open Ticketing Protocol",
+      "Slug": "open-ticketing-protocol",
+      "Description": "The home of onchain ticketing. Bringing accessible onchain benefits to millions of event attendees, organizers and artists around the world.",
+      "Website": "https://onopen.xyz/",
+      "Email": "",
+      "Twitter": "https://x.com/onopenxyz",
+      "Tags": [
+        "social"
+      ],
+      "Logo": [
+        {
+          "id": "mnnoan5jyr2elkemzhrtzqgb",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Open_Ticketing_Protocol_Logo_9c784956cb.jpg",
+          "filename": "Open Ticketing Protocol Logo.jpg",
+          "size": 30.17,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Superlend",
+      "Slug": "superlend",
+      "Description": "Premier lending & borrowing aggregator. Discover top rates, seamlessly manage cross-chain positions, and optimize your capital across all chains.",
+      "Website": "https://www.superlend.xyz/",
+      "Email": "",
+      "Twitter": "https://x.com/SuperlendHQ",
+      "Tags": [
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "aj74wthaazsoksr3hxid58va",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/superlend_081b0e8320.jpg",
+          "filename": "superlend.jpg",
+          "size": 7.24,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "OnChainVision Labs",
+      "Slug": "onchainvision-labs",
+      "Description": "A platform for users to build, tokenize, and manage digital assets onchain.",
+      "Website": "https://www.ocvlabs.com/",
+      "Email": "",
+      "Twitter": "https://x.com/ocvlabs?mx=2",
+      "Tags": [
+        "dev-tools"
+      ],
+      "Logo": [
+        {
+          "id": "h0ifgm3xk524j57qn734ejtz",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/On_Chain_Vision_labs_0bc113ea2c.jpeg",
+          "filename": "OnChainVision-labs.jpeg",
+          "size": 5.15,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Fireblocks",
+      "Slug": "fireblocks",
+      "Description": "The most used custody service provider in the crypto space.",
+      "Website": "https://www.fireblocks.com/",
+      "Email": "",
+      "Twitter": "https://twitter.com/FireblocksHQ",
+      "Tags": [
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "cpmhlxntichvbqurw6wsjeez",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Fireblocks_9a88764522.jpeg",
+          "filename": "Fireblocks.jpeg",
+          "size": 6.31,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Zeeve",
+      "Slug": "zeeve",
+      "Description": "An enterprise-grade automation platform providing deployment, monitoring and management of Blockchain nodes and networks.",
+      "Website": "https://www.zeeve.io/",
+      "Email": "",
+      "Twitter": "https://x.com/0xZeeve",
+      "Tags": [
+        "infra",
+        "ecosystem-partner",
+        "rpc"
+      ],
+      "Logo": [
+        {
+          "id": "x53z3zheyzg3q0fz0vts3es6",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/zeeve_a170d8e189.png",
+          "filename": "zeeve.png",
+          "size": 3.84,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Battlerise",
+      "Slug": "battlerise",
+      "Description": "An innovative rogue-like RPG with NFT characters and items, supported by a token which can be used to upgrade these NFTs.",
+      "Website": "https://www.battlerise.com/",
+      "Email": "",
+      "Twitter": "https://twitter.com/BattleRiseGame",
+      "Tags": [
+        "gaming"
+      ],
+      "Logo": [
+        {
+          "id": "hmqivh4efswqi4iu94g1t3go",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/battlerise_4fada44033.png",
+          "filename": "battlerise.png",
+          "size": 52.11,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Transak",
+      "Slug": "transak",
+      "Description": "A developer integration toolkit to let users buy/sell crypto in any app, website or web plugin.",
+      "Website": "https://transak.com/",
+      "Email": "",
+      "Twitter": "https://x.com/transak",
+      "Tags": [
+        "infra",
+        "dev-tools"
+      ],
+      "Logo": [
+        {
+          "id": "yasphstrmvffebiqazfm3qid",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Transak_f17aa5d296.jpg",
+          "filename": "Transak.jpg",
+          "size": 10.13,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Stargate",
+      "Slug": "stargate",
+      "Description": "An omnichain bridge solution built on LayerZero.",
+      "Website": "https://stargate.finance/",
+      "Email": "",
+      "Twitter": "https://twitter.com/stargatefinance?lang=en",
+      "Tags": [
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "jelr45m6tl3460ej0ozgh6ul",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Stargate_633c71a766.jpeg",
+          "filename": "Stargate.jpeg",
+          "size": 6.75,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Hanji",
+      "Slug": "hanji",
+      "Description": "An on-chain central limit order book.",
+      "Website": "https://hanji.io/",
+      "Email": "",
+      "Twitter": "https://twitter.com/HanjiProtocol",
+      "Tags": [
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "ilrx7y4i7gfdsixvqn27zq2i",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Hanji_a780033b7e.jpeg",
+          "filename": "Hanji.jpeg",
+          "size": 6.14,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Web3Auth",
+      "Slug": "web3auth",
+      "Description": "Pluggable wallet infrastructure for Web3 wallets and applications. Streamline the onboarding of both mainstream and crypto native users.",
+      "Website": "https://web3auth.io/",
+      "Email": "",
+      "Twitter": "https://x.com/web3auth",
+      "Tags": [
+        "dev-tools"
+      ],
+      "Logo": [
+        {
+          "id": "k67kogy34xqhhfdl51mu10ml",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Web3_Auth_05535c97ae.jpg",
+          "filename": "Web3Auth.jpg",
+          "size": 7.64,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Organic Growth",
+      "Slug": "organic-growth",
+      "Description": "Launch memecoins on Etherlink. Trustless. Permissionless. Open-sourced.",
+      "Website": "https://www.organicgrowth.wtf/",
+      "Email": "",
+      "Twitter": "https://x.com/OrganicGrowth__",
+      "Tags": [
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "aomg4jb5kyadradxtsxhtry5",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/organicgrowth_41f2a733df.jpg",
+          "filename": "organicgrowth.jpg",
+          "size": 35.88,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": true
+    },
+    {
+      "Project": "TaskOn",
+      "Slug": "taskon",
+      "Description": "A Web3 task collaboration platform ideal for marketing, operations and community growth.",
+      "Website": "https://taskon.xyz/",
+      "Email": "",
+      "Twitter": "https://x.com/taskonxyz",
+      "Tags": [
+        "social"
+      ],
+      "Logo": [
+        {
+          "id": "aq9rjiwmo3n8jgxvef9zw6nw",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/taskon_2bb191e11f.png",
+          "filename": "taskon.png",
+          "size": 2.78,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Metamask",
+      "Slug": "metamask",
+      "Description": "MetaMask is the leading self-custodial wallet. Trusted by millions of users worldwide.",
+      "Website": "https://metamask.io/",
+      "Email": "",
+      "Twitter": "https://x.com/metamask?lang=en",
+      "Tags": [
+        "wallet"
+      ],
+      "Logo": [
+        {
+          "id": "r8luxbgwqjnf45jy9rwafi9h",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/metamask_4adff54796.jpg",
+          "filename": "metamask.jpg",
+          "size": 9.06,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Secret Network",
+      "Slug": "secret-network",
+      "Description": "decentralized confidential computing (DeCC), enabling dApps to make use of encrypted data.",
+      "Website": "https://scrt.network/",
+      "Email": "",
+      "Twitter": "https://x.com/SecretNetwork",
+      "Tags": [
+        "dev-tools"
+      ],
+      "Logo": [
+        {
+          "id": "z6lzf8e8p6ijh34k97m6yk3o",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Secret_Network_16f5423c95.jpg",
+          "filename": "Secret-Network.jpg",
+          "size": 25.22,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Pimlico",
+      "Slug": "pimlico",
+      "Description": "Pimlico provides a suite of tools and services to help you build, deploy, and manage smart accounts on Ethereum and other EVM-compatible chains.",
+      "Website": "https://www.pimlico.io/",
+      "Email": "",
+      "Twitter": "https://x.com/pimlicoHQ",
+      "Tags": [
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "lj6t2xzrf1co41o955wjsthj",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/pimlico_1478679553.jpg",
+          "filename": "pimlico.jpg",
+          "size": 5.04,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Magic.link",
+      "Slug": "magic-link",
+      "Description": "Unlock the benefits of web3 with highly scalable, battle-tested, secure wallet infrastructure.",
+      "Website": "https://magic.link/",
+      "Email": "",
+      "Twitter": "https://x.com/magic_labs",
+      "Tags": [
+        "dev-tools",
+        "ecosystem-partner"
+      ],
+      "Logo": [
+        {
+          "id": "erylo5magzd6z5avchjfpqeg",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Magic_Link_00ea3fe586.jpg",
+          "filename": "Magic-Link.jpg",
+          "size": 26.7,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Team Finance",
+      "Slug": "team-finance",
+      "Description": "Team Finance allows companies to create, vest, lock, track, and spin up staking pools for their tokens.",
+      "Website": "https://x.com/teamfinance_",
+      "Email": "",
+      "Twitter": "https://www.team.finance/",
+      "Tags": [
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "fqlzciu5vxui4y9zijpmv51d",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/teamfinance_1233a73f38.jpg",
+          "filename": "teamfinance.jpg",
+          "size": 7.8,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Homebase",
+      "Slug": "homebase",
+      "Description": "A user-friendly DAO creation and management platform.",
+      "Website": "https://tezos-homebase.io",
+      "Email": "",
+      "Twitter": "",
+      "Tags": [
+        "community",
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "o09q9td45taaqmhymngd8oxh",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/homebase_e0b276ce51.jpg",
+          "filename": "homebase.jpg",
+          "size": 18.41,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2025-03-22",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Spiko",
+      "Slug": "spiko",
+      "Description": "Spiko.io provides seamless access to risk-free rates through tokenized money market funds.",
+      "Website": "https://www.spiko.io/",
+      "Email": "",
+      "Twitter": "https://x.com/Spiko_finance",
+      "Tags": [
+        "defi",
+        "kyc"
+      ],
+      "Logo": [
+        {
+          "id": "tranodeju9pj5ja503msxxqz",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/v_Nau_KQSN_400x400_399171ed9c.jpg",
+          "filename": "vNauKQSN_400x400.jpg",
+          "size": 16.9,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2025-03-28",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Sogni AI",
+      "Slug": "sogni-ai",
+      "Description": "Sogni AI: A privacy-focused decentralized GPU network democratizing creative AI rendering for creators, model creators, GPU owners, and builders.",
+      "Website": "https://www.sogni.ai/",
+      "Email": "",
+      "Twitter": "https://x.com/Sogni_Protocol",
+      "Tags": [
+        "AI",
+        "DePIN"
+      ],
+      "Logo": [
+        {
+          "id": "kbnp61soybuxxabhuyotjukj",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/FL_Sogni_df304accb8.jpg",
+          "filename": "FL_Sogni.jpg",
+          "size": 54.22,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2025-07-16",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Li.Fi",
+      "Slug": "li-fi",
+      "Description": "Cross-chain liquidity aggregator infrastructure for swapping and bridging across 30+ blockchains.",
+      "Website": "https://li.fi/",
+      "Email": "",
+      "Twitter": "https://x.com/lifiprotocol",
+      "Tags": [
+        "infra",
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "rl8t7pg5bjt4snjmnrs7zsiv",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/logo_lifi_light_vertical_0b575110fe.png",
+          "filename": "logo_lifi_light_vertical.png",
+          "size": 3.35,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-07-16",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "FDN",
+      "Slug": "fdn",
+      "Description": "The AI-Powered Facial DNA Distributed Network, Specializing in AI Agent Image Infrastructure.",
+      "Website": "https://facialdna.ai/",
+      "Email": "",
+      "Twitter": "https://x.com/project_fdn",
+      "Tags": [
+        "infra",
+        "social"
+      ],
+      "Logo": [
+        {
+          "id": "mrvogakx7p7cbyotoq1jrmom",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/fdn_logo_604f079ee0.jpg",
+          "filename": "fdn logo.jpg",
+          "size": 50.87,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2025-07-17",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Curve Finance",
+      "Slug": "curve-finance",
+      "Description": "Curve powers stablecoin and crypto markets with high-yield savings, protected borrowing, and low-slippage swaps. Enter the home of stablecoins",
+      "Website": "https://www.curve.finance",
+      "Email": "",
+      "Twitter": "https://x.com/CurveFinance",
+      "Tags": [
+        "defi",
+        "stablecoins"
+      ],
+      "Logo": [
+        {
+          "id": "u6a6302iw45hbabnigiexq27",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/CRV_lg_db23eb71b3.svg",
+          "filename": "CRV_lg.svg",
+          "size": 370.8,
+          "type": "image/svg+xml"
+        }
+      ],
+      "Date": "2025-08-07",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "BattleTabs",
+      "Slug": "battletabs",
+      "Description": "Strategic Battleship game with customisable ship NFTs.",
+      "Website": "https://battletabs.com/",
+      "Email": "",
+      "Twitter": "https://x.com/BattleTabs",
+      "Tags": [
+        "gaming",
+        "nfts"
+      ],
+      "Logo": [
+        {
+          "id": "m0qfh847d0g5l57a8579338h",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Youtube_Profile_Picture_6958f89a84.jpg",
+          "filename": "Youtube_ProfilePicture.jpg",
+          "size": 62.24,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2025-08-18",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Temple Wallet",
+      "Slug": "temple-wallet",
+      "Description": "Temple Wallet is a leading self-custodial wallet for Tezos, Etherlink & 90+ EVM networks, trusted by hundreds of thousands worldwide",
+      "Website": "https://www.templewallet.com",
+      "Email": "",
+      "Twitter": "https://x.com/TempleWallet",
+      "Tags": [
+        "wallet"
+      ],
+      "Logo": [
+        {
+          "id": "kddknl6vcoy0wtg83fbzugdr",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/image_2025_09_11_12_52_17_5107790bf9.png",
+          "filename": "image_2025-09-11_12-52-17.png",
+          "size": 41.87,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-09-16",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "KyberSwap",
+      "Slug": "kyberswap",
+      "Description": "A decentralized trading solution that helps users find the best swap rates by routing trades via multiple DEXs & liquidity sources across chains",
+      "Website": "https://kyberswap.com",
+      "Email": "",
+      "Twitter": "https://x.com/KyberNetwork",
+      "Tags": [
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "fa05pk0w1z4m06n9g625vqpx",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/kyber_logo_mark_0902ba1504.png",
+          "filename": "kyber-logo-mark.png",
+          "size": 8.39,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-10-06",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Chainspect",
+      "Slug": "chainspect",
+      "Description": "Web3’s top blockchain fundamentals tracker covering scalability, decentralization and developer activity across 50+ chains, including Etherlink",
+      "Website": "https://chainspect.app/",
+      "Email": "",
+      "Twitter": "https://x.com/chainspect_app",
+      "Tags": [
+        "ecosystem-partner"
+      ],
+      "Logo": [
+        {
+          "id": "q3mhzky9sr22jjthz51vxw7o",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/chainspect_icon_squared_500_72bb0ab43e.svg",
+          "filename": "chainspect_icon_squared_500.svg",
+          "size": 0.88,
+          "type": "image/svg+xml"
+        }
+      ],
+      "Date": "2025-10-17",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "DipDup",
+      "Slug": "dipdup",
+      "Description": "A Python framework for building smart contract indexers. Helps to focus on business logic instead of storing and serving data.",
+      "Website": "https://dipdup.io/",
+      "Email": "",
+      "Twitter": "https://x.com/dipdup_io",
+      "Tags": [
+        "dev-tools",
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "h9p8d0poqqjw2hz24v8bo1a8",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/500_b5e38c13be.jpg",
+          "filename": "500.jpg",
+          "size": 10.54,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-10-24",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "xU3O8 | Uranium.io",
+      "Slug": "xu3o8-uranium-io",
+      "Description": "xU3O8 enables digital ownership and transfer of uranium, supported by Curzon, Archax, with physical uranium stored in Cameco.",
+      "Website": "https://uranium.io",
+      "Email": "",
+      "Twitter": "https://x.com/uranium_io",
+      "Tags": [
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "o3kovnmr6ifk4jstklt8w48s",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Logo_square_1_c76c70a6ed.png",
+          "filename": "Logo square 1.png",
+          "size": 6.33,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-03-12",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Goldsky",
+      "Slug": "goldsky",
+      "Description": "High-performance indexing via subgraphs and realtime data replication pipelines.",
+      "Website": "https://www.goldsky.com",
+      "Email": "",
+      "Twitter": "https://x.com/goldskyio",
+      "Tags": [
+        "dev-tools",
+        "ecosystem-partner"
+      ],
+      "Logo": [
+        {
+          "id": "f84ey3fi0irtco826y4wjlvz",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/IMG_1957_df3414f9e5.png",
+          "filename": "IMG_1957.png",
+          "size": 138.11,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-03-25",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "OnChainGM",
+      "Slug": "onchaingm",
+      "Description": "OnChainGM is an on-chain engagement platform that brings the daily “GM” (Good Morning) culture of Web3 onto the blockchain.",
+      "Website": "https://onchaingm.com/",
+      "Email": "",
+      "Twitter": "https://x.com/onchainGM",
+      "Tags": [
+        "social",
+        "community"
+      ],
+      "Logo": [
+        {
+          "id": "quiuik0rfjnekrlj8nyx64of",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Logo_2e0adcf058.jpg",
+          "filename": "Logo.jpg",
+          "size": 185.74,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2025-05-12",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "IDRX Stablecoin",
+      "Slug": "idrx-stablecoin",
+      "Description": "IDRX is a regulated digital asset that offers seamless conversions and can be redeemed at a fixed rate for Indonesian Rupiah.",
+      "Website": "https://home.idrx.co/en",
+      "Email": "",
+      "Twitter": "https://x.com/idrx_co",
+      "Tags": [
+        "stablecoins"
+      ],
+      "Logo": [
+        {
+          "id": "f7ygueoler8m8e35233pffsg",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/FL_IDRX_e03e9e7a76.jpg",
+          "filename": "FL_IDRX.jpg",
+          "size": 41.88,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2025-07-16",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Jumper.Exchange",
+      "Slug": "jumper-exchange",
+      "Description": "User-friendly cross-chain swap and bridge aggregator built on Li.Fi, supporting 25+ networks and major DEXs.",
+      "Website": "https://jumper.exchange/",
+      "Email": "",
+      "Twitter": "https://x.com/JumperExchange",
+      "Tags": [
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "bckxhh96dbmgsq2syyyk3ivo",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/logo_jumper_light_vertical_2711901f32.png",
+          "filename": "logo_jumper_light_vertical.png",
+          "size": 4.03,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-07-16",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Spectrum",
+      "Slug": "spectrum",
+      "Description": "Spectrum provides Reliable, Scalable, Secure, High-Quality RPC and API Solutions to 170+ Blockchain Networks",
+      "Website": "https://spectrumnodes.com/",
+      "Email": "",
+      "Twitter": "https://x.com/SpectrumNodes",
+      "Tags": [
+        "infra",
+        "rpc"
+      ],
+      "Logo": [
+        {
+          "id": "of995t6prprk1yfrcjde0x66",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/spectrum_logo_blue_bg_500px_14f3ff3114.png",
+          "filename": "spectrum-logo-blue-bg-500px.png",
+          "size": 12.05,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-07-17",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Oku",
+      "Slug": "oku",
+      "Description": "CEX feel. DEX freedom. Trade everything across 36+ chains with zero fees, best rates, and real self-custody.",
+      "Website": "https://oku.trade/app/etherlink?utm_source=etherlink",
+      "Email": "",
+      "Twitter": "https://x.com/okutrade",
+      "Tags": [
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "x2jbi5uihalzjgog9pdodpx2",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/logo_500x500_c37889514f.png",
+          "filename": "logo 500x500.png",
+          "size": 23.34,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-07-24",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Gelato",
+      "Slug": "gelato",
+      "Description": "The all-in-one Rollup as a Service Platform built without limits, and Web3’s leading smart contract automation solution for builders on Etherlink",
+      "Website": "https://www.gelato.cloud",
+      "Email": "",
+      "Twitter": "https://twitter.com/gelatonetwork",
+      "Tags": [
+        "dev-tools",
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "mab4knfqnc82wr4s9idlipby",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/GELATO_ICON_4ce0964e9a.png",
+          "filename": "GELATO_ICON_.png",
+          "size": 13.46,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-07-25",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "Ankr RPC & Blockchain Infrastructure",
+      "Slug": "ankr-rpc-blockchain-infrastructure",
+      "Description": "Best-in-class Web3 infrastructure for any use case. Build on 80+ networks with fast, reliable access to RPCs, APIs & enterprise-grade solutions",
+      "Website": "https://www.ankr.com",
+      "Email": "",
+      "Twitter": "https://x.com/ankr",
+      "Tags": [
+        "infra",
+        "ecosystem-partner",
+        "rpc"
+      ],
+      "Logo": [
+        {
+          "id": "bod7uhyfni3wyrukk9js03r5",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/ankr_d6a0b106a8.png",
+          "filename": "ankr.png",
+          "size": 10.51,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-07-30",
+      "rank": 0,
+      "Featured": false
+    },
+    {
+      "Project": "LayerZero",
+      "Slug": "layerzero",
+      "Description": "An omnichain interoperability protocol that allows different blockchains to communicate with each other.",
+      "Website": "https://layerzero.network/",
+      "Email": "",
+      "Twitter": "https://twitter.com/LayerZero_Labs",
+      "Tags": [
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "m61c29qmb67tyednhk90f1wq",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Layer_Zero_bd946f94f4.jpeg",
+          "filename": "LayerZero.jpeg",
+          "size": 4.79,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 1,
+      "Featured": true
+    },
+    {
+      "Project": "Pyth Network",
+      "Slug": "pyth-network",
+      "Description": "A pull-model price feed oracle that provides market data from the world’s largest professional traders and exchanges to any smart contract.",
+      "Website": "https://pyth.network/",
+      "Email": "",
+      "Twitter": "https://x.com/PythNetwork",
+      "Tags": [
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "ywowu1ijkohbecymif0dzln1",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Pyth_Network_8d45bbff04.jpeg",
+          "filename": "Pyth-Network.jpeg",
+          "size": 5.95,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 2,
+      "Featured": false
+    },
+    {
+      "Project": "The Graph",
+      "Slug": "the-graph",
+      "Description": "A web3 protocol for organizing and accessing blockchain data",
+      "Website": "https://thegraph.com",
+      "Email": "",
+      "Twitter": "https://x.com/graphprotocol",
+      "Tags": [
+        "infra"
+      ],
+      "Logo": [
+        {
+          "id": "agl2wg99j86kb3p7awx6xzm5",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/The_Graph_30353df867.jpg",
+          "filename": "TheGraph.jpg",
+          "size": 9.01,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 3,
+      "Featured": false
+    },
+    {
+      "Project": "Sequence",
+      "Slug": "sequence",
+      "Description": "Sequence.xyz is a unified, open-source web3 platform for building scalable games, apps, wallets, and marketplaces.",
+      "Website": "https://sequence.xyz",
+      "Email": "",
+      "Twitter": "",
+      "Tags": [
+        "infra",
+        "dev-tools"
+      ],
+      "Logo": [
+        {
+          "id": "zwpsh3b2xbailftlph3x3rmj",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/image_9f85ba4a7f.png",
+          "filename": "image.png",
+          "size": 10.99,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-07-09",
+      "rank": 4,
+      "Featured": true
+    },
+    {
+      "Project": "Google Cloud Platform",
+      "Slug": "google-cloud-platform",
+      "Description": "Cloud infrastructure, credits, and tools to power Web3 builders with scale and reliability.",
+      "Website": "https://cloud.google.com/startup/web3",
+      "Email": "",
+      "Twitter": "https://twitter.com/googlecloud",
+      "Tags": [
+        "ecosystem-partner",
+        "dev-tools"
+      ],
+      "Logo": [
+        {
+          "id": "wpda39hz0zwungrtkw5w1akj",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/gcp_32d8867fd0.png",
+          "filename": "gcp.png",
+          "size": 25.42,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2025-07-21",
+      "rank": 5,
+      "Featured": false
+    },
+    {
+      "Project": "Redstone",
+      "Slug": "redstone",
+      "Description": "A price feed oracle protocol that provides both the push-model and the pull-model.",
+      "Website": "https://redstone.finance/",
+      "Email": "",
+      "Twitter": "https://twitter.com/redstone_defi",
+      "Tags": [
+        "infra",
+        "dev-tools"
+      ],
+      "Logo": [
+        {
+          "id": "ix3t9mg4vced8obywtol1klq",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Redstone_11141bea4a.png",
+          "filename": "Redstone.png",
+          "size": 3.63,
+          "type": "image/png"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 6,
+      "Featured": false
+    },
+    {
+      "Project": "Thirdweb",
+      "Slug": "thirdweb",
+      "Description": "A platform that provides a suite of tools for developers to build, launch, and manage their web3 projects.",
+      "Website": "https://thirdweb.com/",
+      "Email": "",
+      "Twitter": "https://twitter.com/thirdweb",
+      "Tags": [
+        "dev-tools"
+      ],
+      "Logo": [
+        {
+          "id": "j08hb5cbkmw2be353rbmdl6z",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Thirdweb_fbdd69a2f8.jpg",
+          "filename": "Thirdweb.jpg",
+          "size": 7.71,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 7,
+      "Featured": false
+    },
+    {
+      "Project": "Layer3",
+      "Slug": "layer3",
+      "Description": "Discover the world of crypto like never before. With interactive Quests that make learning and exploring crypto fun, engaging, and rewarding.",
+      "Website": "https://layer3.xyz/",
+      "Email": "",
+      "Twitter": "https://x.com/layer3xyz",
+      "Tags": [
+        "social"
+      ],
+      "Logo": [
+        {
+          "id": "q01ndru9huws1qz0lo9sbaes",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/Layer3_cc5e06414e.jpg",
+          "filename": "Layer3.jpg",
+          "size": 6.34,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 8,
+      "Featured": true
+    },
+    {
+      "Project": "IguanaDEX",
+      "Slug": "iguanadex",
+      "Description": "One-stop decentralized trading on Etherlink",
+      "Website": "https://www.iguanadex.com/?chain=etherlink",
+      "Email": "",
+      "Twitter": "https://x.com/iguanadex",
+      "Tags": [
+        "defi"
+      ],
+      "Logo": [
+        {
+          "id": "f1nln8u8ffdqhtbipimvvhdq",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/iguanadex_465b574b49.jpg",
+          "filename": "iguanadex.jpg",
+          "size": 23.79,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 9,
+      "Featured": false
+    },
+    {
+      "Project": "Rarible",
+      "Slug": "rarible",
+      "Description": "Rarible is an aggregated NFT marketplace that provides a platform for buying, selling, and trading non-fungible tokens (NFTs).",
+      "Website": "https://rarible.com/",
+      "Email": "",
+      "Twitter": "https://x.com/rarible",
+      "Tags": [
+        "nfts"
+      ],
+      "Logo": [
+        {
+          "id": "r3kh9ug5anl8ko3398uyunk6",
+          "url": "https://light-power-29443cc779.media.strapiapp.com/rarible_a929b0b6bf.jpg",
+          "filename": "rarible.jpg",
+          "size": 4.11,
+          "type": "image/jpeg"
+        }
+      ],
+      "Date": "2024-05-31",
+      "rank": 10,
+      "Featured": false
+    }
+  ]
+}
