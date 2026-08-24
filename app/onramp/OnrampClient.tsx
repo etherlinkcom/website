@@ -37,16 +37,6 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
   },
   {
     org: 'Centralized Exchange',
-    title: 'AscendEX',
-    description: 'Buy and transfer $XTZ to Etherlink',
-    link: 'https://www.ascendex.com/',
-    image: '/img/onramp/ascendex-logo.webp',
-    event: {
-      name: 'onboard:cex:ascendex:click'
-    },
-  },
-  {
-    org: 'Centralized Exchange',
     title: 'LBank',
     description: 'Buy and transfer $XTZ to Etherlink',
     link: 'https://www.lbank.com/',
@@ -132,7 +122,7 @@ const ONBOARD_DATA: OnBoardCardProps[] = [
     link: 'https://rampnow.io/',
     image: '/img/onramp/rampnow-logo.png',
     event: {
-      name: 'onboard:onramp:moonpay:click'
+      name: 'onboard:onramp:rampnow:click'
     },
   },
 ]
