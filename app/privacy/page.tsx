@@ -346,17 +346,15 @@ const Privacy = () => {
       <p className={`mb-8 ${startStyle}`}>
         or
         <br />
-        VeraSafe Ireland Ltd.
+        VeraSafe Czech Republic s.r.o.
         <br />
-        Unit 3D North Point House
+        Rohanské nábřeží 678/23
         <br />
-        North Point Business Park
+        Prague 8, 18600
         <br />
-        New Mallow Road
+        Czech Republic
         <br />
-        Cork T23AT2P
-        <br />
-        Ireland
+        Databox ID: eicpabq
       </p>
     </Container>
   )
