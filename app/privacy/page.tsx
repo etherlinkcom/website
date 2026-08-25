@@ -334,14 +334,16 @@ const Privacy = () => {
       <p className={`mb-8 ${startStyle}`}>
         Alternatively, VeraSafe may be contacted at:
       </p>
-      <p className={`mb-4 ${startStyle}`}>
-        Matthew Joseph
+      <p className={`mb-8 ${startStyle}`}>
+        VeraSafe Czech Republic s.r.o.
         <br />
-        Zahradníčkova 1220/20A
+        Rohanské nábřeží 678/23
         <br />
-        Prague 15000
+        Prague 8, 18600
         <br />
         Czech Republic
+        <br />
+        Databox ID: eicpabq
       </p>
       <p className={`mb-8 ${startStyle}`}>
         or
