@@ -345,6 +345,21 @@ const Privacy = () => {
         <br />
         Databox ID: eicpabq
       </p>
+      <p className={`mb-8 ${startStyle}`}>
+        or
+        <br />
+        VeraSafe Ireland Ltd.
+        <br />
+        Unit 3D North Point House
+        <br />
+        North Point Business Park
+        <br />
+        New Mallow Road
+        <br />
+        Cork T23AT2P
+        <br />
+        Ireland
+      </p>
     </Container>
   )
 }
