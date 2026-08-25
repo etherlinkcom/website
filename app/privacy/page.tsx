@@ -334,18 +334,7 @@ const Privacy = () => {
       <p className={`mb-8 ${startStyle}`}>
         Alternatively, VeraSafe may be contacted at:
       </p>
-      <p className={`mb-4 ${startStyle}`}>
-        Matthew Joseph
-        <br />
-        Zahradníčkova 1220/20A
-        <br />
-        Prague 15000
-        <br />
-        Czech Republic
-      </p>
       <p className={`mb-8 ${startStyle}`}>
-        or
-        <br />
         VeraSafe Czech Republic s.r.o.
         <br />
         Rohanské nábřeží 678/23
