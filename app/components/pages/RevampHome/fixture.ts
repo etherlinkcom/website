@@ -96,7 +96,7 @@ export const PARTNERS = [
     image: '/img/newPartners/safe.jpeg'
   },
   {
-    alt: 'secret-netwrok',
+    alt: 'secret-network',
     image: '/img/newPartners/secret-netwrok.jpeg'
   },
   {
